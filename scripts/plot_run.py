@@ -22,7 +22,8 @@ plt.rcParams.update({"font.family": ["Noto Sans", "DejaVu Sans", "sans-serif"], 
                      "ytick.color": "#64748b", "axes.titlesize": 14, "axes.titlecolor": "#0f172a"})
 s = json.load(open(f"{root}/summary.json"))
 ec = json.load(open(f"{root}/engine_check.json"))
-facts = {f["id"]: f for f in json.load(open("facts/facts.json"))}
+_fj = json.load(open("facts/facts.json"))
+facts = {f["id"]: f for f in (_fj["facts"] if isinstance(_fj, dict) else _fj)}
 order = s["order"]
 
 
