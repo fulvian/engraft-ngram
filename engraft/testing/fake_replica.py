@@ -57,7 +57,7 @@ class FakeGraftReplica:
         n_prefix = len(tokens) - 1
         if n_prefix <= 0:
             return {"n_prefix": 0}
-        for il in range(self.n_layer - 1):  # l'ultimo strato non consuma routing nel prefisso
+        for il in range(self.n_layer - 1):  # the last layer does not consume routing in the prefix
             rows_idx = []
             for t in range(n_prefix):
                 x = torch.from_numpy(self.ple_true_emb(tokens, t, overlay=overlay)).to(torch.float64)

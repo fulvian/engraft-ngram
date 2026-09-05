@@ -17,7 +17,7 @@ ROW_LEN = 160
 N_HEADS = 16
 HEADS_PER_NGRAM = 8
 NGRAM_SIZE = 3
-EOS_TOKEN_ID = 999_999_999  # mai presente nei token finti di questi test
+EOS_TOKEN_ID = 999_999_999  # never present in these tests' fake tokens
 
 
 class FakeTable:
@@ -28,15 +28,15 @@ class FakeTable:
         self.eos_token_id = EOS_TOKEN_ID
         self.head_vocab_sizes = [head_vocab_size] * N_HEADS
         self.head_offsets = [i * head_vocab_size for i in range(N_HEADS)]
-        # layer_multipliers[0..ngram_size]: stessa forma di qwen4exp.ple.layer_multipliers
-        # (un moltiplicatore per posizione di contesto, ctx[0]=corrente, ctx[1..]=precedenti).
+        # layer_multipliers[0..ngram_size]: same shape as qwen4exp.ple.layer_multipliers
+        # (one multiplier per context position, ctx[0]=current, ctx[1..]=previous).
         rng = np.random.default_rng(seed)
         self.layer_multipliers = [
             int(rng.integers(1, 2**61)) | 1 for _ in range(NGRAM_SIZE + 1)
         ]
         self._seed = seed
 
-    # -- indirizzamento, identico all'algoritmo di ple_table.PleTable ------------
+    # -- addressing, identical to ple_table.PleTable's algorithm ----------------
 
     def ngram_addresses(self, tokens: list[int]) -> list[list[int]]:
         n_prev = self.ngram_size - 1
@@ -65,7 +65,7 @@ class FakeTable:
             out.append(rows_t)
         return out
 
-    # -- lettura righe: deterministica da (testata, riga locale, seed) ----------
+    # -- row reading: deterministic from (head, local row, seed) ----------------
 
     def read_rows(self, h: int, start: int, n: int) -> np.ndarray:
         out = np.empty((n, ROW_LEN), dtype=np.float32)

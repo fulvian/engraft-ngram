@@ -146,7 +146,7 @@ def _diverging_pairs(free: dict[int, np.ndarray], replica: dict[int, np.ndarray]
 
 
 # --------------------------------------------------------------------------
-# Fase Q8
+# Q8 phase
 # --------------------------------------------------------------------------
 
 
@@ -212,7 +212,7 @@ def run_q8_phase(args, run_dir: Path, raw_dir: Path, log, tok, facts_resolved: d
     ttmap = _target_token_map(args)
     out: dict = {"facts": {}, "merged": {"facts": {}, "corpus": {}, "docs": {}}, "sisters_base": {}}
     try:
-        # basi (senza overlay) per ogni sorella, parafrasi -- serve per Δlogp/argmax_unchanged
+        # bases (without overlay) for each sister, paraphrase -- needed for Δlogp/argmax_unchanged
         sisters_base: dict[str, dict[str, tuple[int, np.ndarray]]] = {}
         paraphrase_base: dict[str, dict[str, tuple[int, np.ndarray]]] = {}
         for fid, rf in facts_resolved.items():
@@ -250,7 +250,7 @@ def run_q8_phase(args, run_dir: Path, raw_dir: Path, log, tok, facts_resolved: d
                 entry = _measure_with_overlay(
                     client, raw_dir, tok, log, fid, merged_pleo, rf, "q8m", args, ttmap, sisters_base[fid],
                 )
-                # Q4: parafrasi sull'overlay unico
+                # Q4: paraphrase on the merged overlay
                 paraphrases = {}
                 for key in ("paraphrase_same_tail", "paraphrase_other_tail"):
                     tokens = rf[key]["tokens"]
@@ -382,7 +382,7 @@ def _measure_docs(client, raw_dir, tok, log, args, merged_pleo: Path, facts_reso
 
 
 # --------------------------------------------------------------------------
-# Fase F32
+# F32 phase
 # --------------------------------------------------------------------------
 
 
@@ -409,16 +409,16 @@ def run_f32_phase(args, run_dir: Path, raw_dir: Path, log, facts_resolved: dict,
             if not fact_json_path.exists() or not fact_pleo.exists():
                 continue
             fact_summary = json.loads(fact_json_path.read_text())
-            innesti_by_pos = {it["position"]: it for it in fact_summary["grafts"]}
+            grafts_by_pos = {it["position"]: it for it in fact_summary["grafts"]}
             trigger_tokens = rf["trigger_tokens"]
             answer_tokens = rf["answer_tokens"]
 
-            for i in sorted(innesti_by_pos.keys()):  # solo le posizioni davvero chiuse (spec: legge <fid>.json)
+            for i in sorted(grafts_by_pos.keys()):  # only the positions actually closed (spec: reads <fid>.json)
                 tokens_i = trigger_tokens + answer_tokens[:i]
                 y = _y_for(args, ttmap, fid, i, answer_tokens[i])
                 key = f"{fid}_{i}"
 
-                # For i >= 1 the replica's own prefix (graft.prepare_innesto) already
+                # For i >= 1 the replica's own prefix (graft.prepare_graft) already
                 # includes the overlay of grafts < i: the base job must read the same
                 # prefix, not the untouched table, or this compares two different
                 # bases. Written under `run_dir` (this invocation's own output), never
@@ -465,8 +465,8 @@ def run_f32_phase(args, run_dir: Path, raw_dir: Path, log, facts_resolved: dict,
                     diverging = _diverging_pairs(free_routing, replica_routing)
                     entry["prefix_routing_diverging"] = diverging
 
-                    innesto = innesti_by_pos.get(i, {})
-                    p_replica_free = innesto.get("final_p_free")
+                    graft_rec = grafts_by_pos.get(i, {})
+                    p_replica_free = graft_rec.get("final_p_free")
                     if p_replica_free is not None:
                         delta_q5 = p_y_free - p_replica_free
                         entry["p_replica_free"] = p_replica_free
@@ -624,7 +624,7 @@ def _check_report(run_dir: Path, results_dir: Path, facts_resolved: dict, skippe
             key = f"{fid}_{i}"
             entry = f32_entries.get(key)
             if entry is None:
-                continue  # fatto non chiuso: nessun job F32 previsto
+                continue  # fact not closed: no F32 job expected
             for field in f32_required:
                 if field not in entry:
                     log.error("--report: F32 graft %r: missing field %r", key, field)

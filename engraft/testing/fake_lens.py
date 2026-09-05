@@ -92,11 +92,11 @@ def _build_routing(
 ) -> tuple[dict[int, np.ndarray], str | None, int, int]:
     """Applies routing_record/routing_freeze to the fake engine.
 
-    Ritorna (used_ids, error, routing_frozen_layers, routing_recorded_layers):
-    `used_ids[il]` e' l'array [ne1, 10] int32 effettivamente usato per quello strato
-    (congelato se routing_freeze e' attivo, altrimenti libero) -- letto da
-    `ffn_moe_weights-<il>` quando catturato. Un `error` non vuoto significa job fallito
-    (fail-fast, stesso contratto del fork C++): il chiamante non deve scrivere meta.json.
+    Returns (used_ids, error, routing_frozen_layers, routing_recorded_layers):
+    `used_ids[il]` is the [ne1, 10] int32 array actually used for that layer
+    (frozen if routing_freeze is active, otherwise free) -- read from
+    `ffn_moe_weights-<il>` when captured. A non-empty `error` means the job failed
+    (fail-fast, same contract as the C++ fork): the caller must not write meta.json.
     """
     record_active = job.get("routing_record") is not None
     freeze_active = job.get("routing_freeze") is not None
@@ -111,10 +111,10 @@ def _build_routing(
     used_ids: dict[int, np.ndarray] = {}
     record_map: dict[int, np.ndarray] = {}
     frozen_layers = 0
-    # `_moe_probs(emb)` (quindi `_toy_moe_weights`) e l'argsort dipendono solo da `emb`,
-    # non da `il`: calcolati una volta per lavoro invece che 48 volte (regressione di
-    # prestazioni segnalata dal conduttore -- stesso risultato numerico di
-    # `_free_ids_for_layer` chiamata per strato, solo il `np.roll` resta per strato).
+    # `_moe_probs(emb)` (hence `_toy_moe_weights`) and the argsort depend only on `emb`,
+    # not on `il`: computed once per job instead of 48 times (performance
+    # regression flagged by the conductor -- same numeric result as
+    # `_free_ids_for_layer` called per layer, only the `np.roll` remains per layer).
     top10 = np.argsort(-_moe_probs(emb))[:N_EXPERT_USED].copy()
     for il in range(N_LAYER):
         ne1 = _layer_ne1(il, t_len, logits_mode)
@@ -122,7 +122,7 @@ def _build_routing(
         free_ids = np.broadcast_to(free_row, (ne1, N_EXPERT_USED)).copy()
 
         if record_active:
-            record_map[il] = free_ids  # "registra il valore corrente (routing libero)" prima della riscrittura
+            record_map[il] = free_ids  # "records the current value (free routing)" before the rewrite
 
         if freeze_active:
             want = freeze_map.get(il)
@@ -201,8 +201,8 @@ def _capture_tensor_data(
         probs = _moe_probs(emb)
         arr = np.broadcast_to(probs, (1, 1, ne1, N_EXPERTS)).copy()
     elif name.startswith("ffn_moe_weights-"):
-        # [n_expert_used, ne1] (spec 2d §3.1 "Motore finto": probs[ids], ids = quelli
-        # effettivamente usati per lo strato -- congelati se routing_freeze e' attivo).
+        # [n_expert_used, ne1] (spec 2d §3.1 "Fake engine": probs[ids], ids = those
+        # actually used for the layer -- frozen if routing_freeze is active).
         il = int(name.split("-")[1])
         ne1 = _layer_ne1(il, t_len, logits_mode)
         ids = used_ids[il]  # [ne1, 10]

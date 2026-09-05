@@ -29,7 +29,7 @@ def _rand(*shape):
 
 
 # --------------------------------------------------------------------------
-# Delta net: contro torch_recurrent_gated_delta_rule con i 4 adattamenti
+# Delta net: against torch_recurrent_gated_delta_rule with the 4 adaptations
 # --------------------------------------------------------------------------
 
 
@@ -39,14 +39,14 @@ def test_delta_net_matches_hf_ref():
     k = _rand(T, Hv, D)
     v = _rand(T, Hv, D)
     beta = torch.sigmoid(_rand(T, Hv))
-    g_log = -torch.rand(T, Hv)  # log-decay negativo (come ssm_a<0 * softplus>0)
+    g_log = -torch.rand(T, Hv)  # negative log-decay (like ssm_a<0 * softplus>0)
     s0 = torch.zeros(Hv, D, D)
 
     out_replica, s_final_replica = L.gated_delta_net_recurrence(q, k, v, g_log, beta, s0)
 
-    # HF: batch=1, shape [B,T,H,D]; niente L2 norm nel kernel (adattamento iv, gia'
-    # fuori qui); g passato in log (adattamento ii, la funzione HF esponenzia dentro);
-    # q non prescalato (adattamento iii, la funzione HF scala 1/sqrt(D) dentro).
+    # HF: batch=1, shape [B,T,H,D]; no L2 norm in the kernel (adaptation iv, already
+    # done outside here); g passed in log space (adaptation ii, the HF function exponentiates it inside);
+    # q not prescaled (adaptation iii, the HF function scales by 1/sqrt(D) inside).
     q_hf = q.unsqueeze(0)
     k_hf = k.unsqueeze(0)
     v_hf = v.unsqueeze(0)
@@ -66,12 +66,12 @@ def test_delta_net_matches_hf_ref():
 
 
 def test_delta_net_with_gqa_repeat_tile():
-    """Adattamento (i): la permutazione tiled->raggruppate si applica su v/z/beta/
-    alpha/ssm_a/dt_bias/colonne di ssm_out/parte V della conv. Qui verifichiamo solo
-    che il broadcast a piastrelle di `linear_attn_layer` (Hk->Hv) sia coerente: la
-    testa v h usa q/k della testa h % Hk (ggml_repeat_4d), non un raggruppamento a
-    blocchi come repeat_interleave (usato invece per l'attenzione piena, GQA a
-    blocchi via ggml_mul_mat r2)."""
+    """Adaptation (i): the tiled->grouped permutation applies to v/z/beta/
+    alpha/ssm_a/dt_bias/ssm_out columns/conv's V part. Here we only verify
+    that `linear_attn_layer`'s tiled broadcast (Hk->Hv) is consistent: v
+    head h uses q/k from head h % Hk (ggml_repeat_4d), not a block
+    grouping like repeat_interleave (used instead for full attention, block
+    GQA via ggml_mul_mat r2)."""
     Hk, n_rep, D, T = 2, 3, 4, 3
     q = _rand(T, Hk, D)
     tiled = q.tile((1, n_rep, 1))
@@ -80,13 +80,13 @@ def test_delta_net_with_gqa_repeat_tile():
 
 
 # --------------------------------------------------------------------------
-# RoPE: contro apply_interleaved_mrope + apply_rotary_pos_emb HF (posizioni uguali)
+# RoPE: against apply_interleaved_mrope + apply_rotary_pos_emb HF (equal positions)
 # --------------------------------------------------------------------------
 
 
 def test_rope_matches_hf_ref_equal_positions():
     T, H, head_dim = 4, 2, 8
-    rope_dim = 6  # sezioni [11,11,10,0] reali sommano 32*2=64; qui piccolo per il test
+    rope_dim = 6  # real sections [11,11,10,0] sum to 32*2=64; small here for the test
     sections = [1, 1, 1, 0]  # rope_dim/2 = 3 = sum(sections[:3])
     x = _rand(T, H, head_dim)
     positions = torch.arange(T, dtype=torch.float64)
@@ -94,8 +94,8 @@ def test_rope_matches_hf_ref_equal_positions():
     cos, sin = L.rope_cos_sin(positions, rope_dim, freq_base=10000.0)
     out_replica = L.apply_rope(x, cos, sin)
 
-    # HF: freqs identiche sui 3 assi mrope (testo puro) -> apply_interleaved_mrope e'
-    # l'identita' per costruzione; verificato esplicitamente qui invece di assunto.
+    # HF: identical freqs on all 3 mrope axes (plain text) -> apply_interleaved_mrope is
+    # the identity by construction; verified explicitly here instead of assumed.
     half = rope_dim // 2
     inv_freq = 1.0 / (10000.0 ** (torch.arange(0, half, dtype=torch.float64) * 2.0 / rope_dim))
     freqs_1d = positions[:, None] * inv_freq[None, :]  # [T,half]
@@ -116,7 +116,7 @@ def test_rope_matches_hf_ref_equal_positions():
 
 
 # --------------------------------------------------------------------------
-# hc_mix / hc_combine: contro una formula numpy indipendente
+# hc_mix / hc_combine: against an independent numpy formula
 # --------------------------------------------------------------------------
 
 
@@ -131,7 +131,7 @@ def test_hc_mix_matches_independent_formula():
 
     mixed, inject = L.hc_mix(x, w_norm, w_down, w_up, w_inject, eps, hc)
 
-    # formula indipendente in numpy, seguendo qwen4exp.cpp riga per riga
+    # independent numpy formula, following qwen4exp.cpp line by line
     xn_ref = np.zeros((T, hc, n_embd), dtype=np.float64)
     xv = x.numpy().astype(np.float64)
     for t in range(T):
@@ -168,7 +168,7 @@ def test_hc_combine_matches_independent_formula():
 
 
 # --------------------------------------------------------------------------
-# MoE: pesi rinormalizzati per somma, SwiGLU, contro ciclo esplicito indipendente
+# MoE: weights renormalized to sum, SwiGLU, against an independent explicit loop
 # --------------------------------------------------------------------------
 
 
@@ -236,17 +236,17 @@ def _make_ple_replica_fake(hc, n_embd):
 
 
 def test_ple_matches_ple_replica_numpy():
-    # PleReplica ha hc=4, n_embd=2560 cablati come costanti di modulo (_N_HC, _N_EMBD):
-    # il confronto usa quelle dimensioni reali (pesi comunque casuali, T piccolo).
+    # PleReplica has hc=4, n_embd=2560 hardwired as module constants (_N_HC, _N_EMBD):
+    # the comparison uses those real dimensions (weights still random, T small).
     hc, n_embd, T = 4, 2560, 5
     ref = _make_ple_replica_fake(hc, n_embd)
 
     emb_seq = np.random.default_rng(1).standard_normal((T, n_embd)).astype(np.float32) * 0.1
     hidden_seq = np.random.default_rng(2).standard_normal((T, hc, n_embd)).astype(np.float32) * 0.1
 
-    # PleReplica.ple_out ritorna solo gated+conv_out (la somma con `hidden` avviene nel
-    # chiamante, qwen4exp.cpp build_ple: `return hidden + (gated + conv_out)`);
-    # L.ple_forward include gia' quella somma, quindi la si aggiunge qui per confrontare.
+    # PleReplica.ple_out returns only gated+conv_out (the sum with `hidden` happens in the
+    # caller, qwen4exp.cpp build_ple: `return hidden + (gated + conv_out)`);
+    # L.ple_forward already includes that sum, so it is added here for comparison.
     ple_out_ref = hidden_seq + ref.ple_out(emb_seq, hidden_seq)  # [T,hc,n_embd]
 
     w = L.PleWeights(
@@ -262,7 +262,7 @@ def test_ple_matches_ple_replica_numpy():
         hc_mult = hc
         n_embd = 2560
         f_norm_rms_eps = 1e-6
-        ple_ngram_size = 3  # ininfluente: PleReplica usa dilatazione fissa 3 (CONV_DILATION)
+        ple_ngram_size = 3  # irrelevant: PleReplica uses a fixed dilation of 3 (CONV_DILATION)
 
     hist = torch.zeros(0, hc, n_embd)
     out_seq = torch.zeros(T, hc, n_embd)
@@ -278,7 +278,7 @@ def test_ple_matches_ple_replica_numpy():
 
 
 # --------------------------------------------------------------------------
-# L2 norm: contro la copia HF `l2norm`
+# L2 norm: against the HF copy `l2norm`
 # --------------------------------------------------------------------------
 
 

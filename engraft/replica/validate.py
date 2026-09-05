@@ -151,7 +151,7 @@ def run_q2(
             pearson = float("nan")
         else:
             pearson = float(np.corrcoef(a_flat, f_flat)[0, 1])
-        # pendenza della regressione (f come predittore, a come risposta -- rapporto di scala)
+        # regression slope (f as predictor, a as response -- scale ratio)
         if np.sum(f_flat ** 2) > 0:
             slope = float(np.sum(a_flat * f_flat) / np.sum(f_flat ** 2))
         else:

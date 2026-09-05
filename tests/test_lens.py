@@ -159,7 +159,7 @@ def test_random_matched_preserves_norm(table):
     true_norms = np.linalg.norm(rs.data, axis=1)
     out_norms = np.linalg.norm(out, axis=1)
     np.testing.assert_allclose(out_norms, true_norms, rtol=1e-5, atol=1e-6)
-    # non deve essere una copia (a meno di riga a norma zero, non atteso qui)
+    # must not be a copy (unless a zero-norm row, not expected here)
     assert not np.allclose(out, rs.data)
 
 
@@ -243,16 +243,16 @@ def test_replica_conv_out_length_one_uses_only_tap3(replica):
     out = replica.conv_out(gated)
     assert out.shape == (1, 4, 2560)
 
-    # calcolo a mano: solo il tap 3 (posizione corrente, back=0) contribuisce.
+    # hand computation: only tap 3 (current position, back=0) contributes.
     normed = replica._rmsnorm_per_stream(gated, replica.norm_conv, replica.eps)
-    w3 = replica.conv1d[:, :, 3]  # tap corrente
+    w3 = replica.conv1d[:, :, 3]  # current tap
     pre_silu = normed[0] * w3
     expected = pre_silu / (1.0 + np.exp(-pre_silu))
     np.testing.assert_allclose(out[0], expected, rtol=1e-5, atol=1e-6)
 
 
 def _mask_heads(heads: list[int]) -> np.ndarray:
-    """Maschera booleana [2560]: True sulle coordinate delle testate elencate (160 ciascuna)."""
+    """Boolean mask [2560]: True on the coordinates of the listed heads (160 each)."""
     mask = np.zeros(2560, dtype=bool)
     for h in heads:
         mask[h * ROW_LEN : (h + 1) * ROW_LEN] = True
@@ -293,9 +293,9 @@ def test_ple_out_at_matches_ple_out(replica):
 
 @real
 def test_jacobian_out_matches_finite_differences(replica):
-    # seed 2: |s| (argomento della radice del gate, per flusso) resta lontano da 0 a
-    # ogni coordinata sondata — vicino a s=0 sqrt(|s|) ha curvatura che rompe la
-    # differenza centrale anche a passo piccolo (non e' un bug della replica).
+    # seed 2: |s| (the argument of the gate's square root, per flow) stays far from 0 at
+    # every probed coordinate — near s=0 sqrt(|s|) has curvature that breaks the
+    # central difference even at a small step (this is not a bug in the replica).
     rng = np.random.default_rng(2)
     t_len = 12
     t = 7
@@ -303,9 +303,9 @@ def test_jacobian_out_matches_finite_differences(replica):
     emb_seq = emb_seq / np.linalg.norm(emb_seq, axis=1, keepdims=True) * 0.1
     hidden_seq = rng.standard_normal((t_len, 4, 2560)).astype(np.float32)
 
-    # precondizione: nessun flusso vicino a s=0 (radice del gate) a questa posizione,
-    # altrimenti sqrt(|s|) e' non liscia e la differenza centrale diventa mal condizionata
-    # indipendentemente dal passo — proprieta' del gate, non un difetto di jacobian_out.
+    # precondition: no flow near s=0 (gate's square root) at this position,
+    # otherwise sqrt(|s|) is not smooth and the central difference becomes ill-conditioned
+    # regardless of the step — a property of the gate, not a defect of jacobian_out.
     k = replica.key(emb_seq[t : t + 1])
     q = replica._rmsnorm_per_stream(hidden_seq[t : t + 1], replica.norm_query, replica.eps)
     s = np.sum(k * q, axis=-1) / np.sqrt(2560)
@@ -405,7 +405,7 @@ def test_solve_emb_respects_mask(replica):
     emb_sol, _ = replica.solve_emb(target, emb_seq, hidden_seq, t, mask=_T1, mu=1e-2, n_iter=5)
 
     changed = emb_sol != emb_seq[t]
-    assert changed.sum() > 0, "solve_emb non ha mosso nessuna coordinata (test non discriminante)"
+    assert changed.sum() > 0, "solve_emb did not move any coordinate (test is not discriminating)"
     assert np.all(changed <= _T1)
 
 

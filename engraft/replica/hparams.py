@@ -55,9 +55,9 @@ class Hparams:
     n_expert_used: int
     n_ff_exp: int
     n_ff_shexp: int
-    expert_weights_scale: float  # 0.0 nel GGUF: nessuna scala applicata (llama-hparams.h default)
+    expert_weights_scale: float  # 0.0 in the GGUF: no scale applied (llama-hparams.h default)
 
-    # PLE (blk.1 soltanto)
+    # PLE (blk.1 only)
     ple_layer: int
     ple_ngram_size: int
     ple_heads_per_ngram: int
@@ -111,8 +111,8 @@ class Hparams:
             raise ValueError(f"rope.dimension_sections: expected 4 sections, found {rope_sections}")
 
         by_name_output = None
-        # n_vocab non ha una chiave propria: si legge da output.weight se il reader la porta,
-        # altrimenti il chiamante lo passa esplicitamente (vedi from_gguf_paths).
+        # n_vocab has no dedicated key: it is read from output.weight if the reader carries it,
+        # otherwise the caller passes it explicitly (see from_gguf_paths).
         for t in reader.tensors:
             if t.name == "output.weight":
                 by_name_output = int(t.shape[1])
@@ -147,8 +147,8 @@ class Hparams:
             n_expert_used=int(_scalar(reader, "qwen4exp.expert_used_count")),
             n_ff_exp=int(_scalar(reader, "qwen4exp.expert_feed_forward_length")),
             n_ff_shexp=int(_scalar(reader, "qwen4exp.expert_shared_feed_forward_length")),
-            # non presente nei metadati di questo GGUF: llama-hparams.h la inizializza a 0.0
-            # (nessuna scala applicata ai pesi degli esperti), qwen4exp non la sovrascrive.
+            # not present in this GGUF's metadata: llama-hparams.h initializes it to 0.0
+            # (no scale applied to expert weights), qwen4exp does not override it.
             expert_weights_scale=0.0,
             ple_layer=int(ple_layers[0]),
             ple_ngram_size=int(_scalar(reader, "qwen4exp.ple.ngram_size")),

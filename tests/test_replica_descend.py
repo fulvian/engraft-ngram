@@ -29,7 +29,7 @@ N_EXPERT_USED = 2
 N_EXPERT_TOTAL = 6
 VOCAB = 6
 N_ROWS = 16
-N_PREFIX = 4  # posizioni 0..N_PREFIX-1 nel routing_trigger degli strati 0..N_LAYER-2
+N_PREFIX = 4  # positions 0..N_PREFIX-1 in the routing_trigger of layers 0..N_LAYER-2
 
 
 class FakeReplica:
@@ -50,7 +50,7 @@ class FakeReplica:
             for _ in range(N_LAYER)
         ]
         self.out_w = torch.tensor(rng.standard_normal((dim, VOCAB)) * 0.3, dtype=torch.float64)
-        self.routing_source_log: list[bool] = []  # True se routing_source era None (rinfresco)
+        self.routing_source_log: list[bool] = []  # True if routing_source was None (refresh)
 
     def last_step(
         self, tokens, state, rows, routing_source=None, persist_experts=True,
@@ -104,7 +104,7 @@ def _recompute_p(replica, trigger_tokens, rows_np, routing_source, y):
 
 
 # --------------------------------------------------------------------------
-# (i) routing_source=None esattamente ai multipli di k
+# (i) routing_source=None exactly at multiples of k
 # --------------------------------------------------------------------------
 
 
@@ -117,16 +117,16 @@ def test_refresh_calls_live_routing_at_multiples_of_k(tmp_path):
         replica, trigger_tokens, None, routing_trigger, rows_true, y, {}, rows_global,
         0.0, out_dir, log_path, refresh_every=k, thresholds=[], p_stop=2.0, plateau_steps=100000,
     )
-    assert summary["n_steps"] >= 6, "servono almeno 6 passi per verificare i primi rinfreschi"
+    assert summary["n_steps"] >= 6, "at least 6 steps are needed to check the first refreshes"
     for step in range(6):
         expect_refresh = (step % k == 0)
         assert replica.routing_source_log[step] == expect_refresh, (
-            f"passo {step}: atteso routing_source=None -> {expect_refresh}"
+            f"step {step}: expected routing_source=None -> {expect_refresh}"
         )
 
 
 # --------------------------------------------------------------------------
-# (ii) le righe salvate in ogni .npy riproducono la p registrata (righe pre-aggiornamento)
+# (ii) the rows saved in each .npy reproduce the recorded p (pre-update rows)
 # --------------------------------------------------------------------------
 
 
@@ -146,15 +146,15 @@ def test_checkpoint_npy_reproduces_recorded_p():
             if key in summary["checkpoints"]:
                 ck = key
                 break
-        assert ck is not None, f"nessuna soglia raggiunta: checkpoints={summary['checkpoints']}"
+        assert ck is not None, f"no threshold reached: checkpoints={summary['checkpoints']}"
         rows_np = np.load(out_dir / f"ckpt_0.0_{ck}.npy")
         recomputed_p = _recompute_p(replica, trigger_tokens, rows_np, routing_trigger, y)
         assert recomputed_p == pytest.approx(summary["checkpoints"][ck]["p"], abs=1e-6)
 
 
 # --------------------------------------------------------------------------
-# (iii) .plert1 si rilegge: forma [T,k] a 0..n-2, [1,k] all'ultimo, ultima riga =
-# routing catturato, righe del prefisso = routing_trigger
+# (iii) .plert1 reads back: shape [T,k] at 0..n-2, [1,k] at the last one, last row =
+# captured routing, prefix rows = routing_trigger
 # --------------------------------------------------------------------------
 
 
@@ -177,9 +177,9 @@ def test_plert1_roundtrip_shape_and_content(tmp_path):
         assert np.array_equal(layers[il][:-1], routing_trigger[il][:-1])
     assert layers[N_LAYER - 1].shape == (1, N_EXPERT_USED)
 
-    # ricalcolo indipendente del routing catturato a quel passo (refresh_every=1: ogni
-    # passo e' un rinfresco, quindi il routing usato per il passo `step` dipende solo
-    # dalle righe pre-aggiornamento di quel passo, deterministico).
+    # independent recomputation of the routing captured at that step (refresh_every=1: every
+    # step is a refresh, so the routing used for step `step` depends only
+    # on that step's pre-update rows, deterministic).
     rows_np = np.load(tmp_path / f"ckpt_0.0_{ck_key}.npy")
     rows_t = torch.from_numpy(rows_np.copy())
     cap2: dict[int, np.ndarray] = {}
@@ -190,7 +190,7 @@ def test_plert1_roundtrip_shape_and_content(tmp_path):
 
 
 # --------------------------------------------------------------------------
-# (iv) row_mask: le righe fuori maschera restano identiche al bit
+# (iv) row_mask: rows outside the mask stay bit-identical
 # --------------------------------------------------------------------------
 
 
@@ -206,11 +206,11 @@ def test_row_mask_freezes_rows_outside_mask(tmp_path):
     ck_key = "final"
     rows_np = np.load(tmp_path / f"ckpt_0.0_{ck_key}.npy")
     rows_true_np = rows_true.numpy()
-    assert np.array_equal(rows_np[~row_mask], rows_true_np[~row_mask]), "righe fuori maschera alterate"
+    assert np.array_equal(rows_np[~row_mask], rows_true_np[~row_mask]), "rows outside the mask were altered"
 
 
 # --------------------------------------------------------------------------
-# (v) refresh_every=None: nessun .plert1, routing_source sempre routing_trigger
+# (v) refresh_every=None: no .plert1, routing_source always routing_trigger
 # --------------------------------------------------------------------------
 
 
@@ -221,19 +221,19 @@ def test_refresh_every_none_matches_2f_behavior(tmp_path):
         replica, trigger_tokens, None, routing_trigger, rows_true, y, {}, rows_global,
         0.0, tmp_path, log_path, refresh_every=None, thresholds=[0.05, 0.1], p_stop=0.5,
     )
-    assert not list(tmp_path.glob("*.plert1")), "nessun .plert1 atteso con refresh_every=None"
-    # gli ultimi n_steps chiamate sono quelle della discesa (una per passo); la
-    # chiamata successiva (fuori misura qui) e' la diagnostica finale a routing
-    # libero del 2f, invariata e non parte di questo controllo.
+    assert not list(tmp_path.glob("*.plert1")), "no .plert1 expected with refresh_every=None"
+    # the last n_steps calls are the descent's (one per step); the
+    # subsequent call (out of scope here) is the 2f final free-routing
+    # diagnostic, unchanged and not part of this check.
     assert all(not is_none for is_none in replica.routing_source_log[: summary["n_steps"]]), (
-        "routing_source deve essere sempre dato (routing_trigger), mai None, con refresh_every=None"
+        "routing_source must always be given (routing_trigger), never None, with refresh_every=None"
     )
     assert summary["refresh_every"] is None
     assert summary["n_refreshes"] == 0
 
 
 # --------------------------------------------------------------------------
-# (vi) arresto per plateau: stop_reason e plateau_refreshes = max(3, ceil(50/k))
+# (vi) plateau stop: stop_reason and plateau_refreshes = max(3, ceil(50/k))
 # --------------------------------------------------------------------------
 
 
@@ -250,8 +250,8 @@ def test_plateau_stop(tmp_path):
 
 
 # --------------------------------------------------------------------------
-# (vii) rows_start != rows_true: il passo 0 parte da rows_start, il regolarizzatore
-# resta riferito a rows_true
+# (vii) rows_start != rows_true: step 0 starts from rows_start, the regularizer
+# stays referred to rows_true
 # --------------------------------------------------------------------------
 
 
@@ -270,29 +270,29 @@ def test_rows_start_used_for_step0_regularizer_vs_rows_true(tmp_path):
     with open(log_path) as f:
         rec0 = __import__("json").loads(f.readline())
 
-    # il forward del passo 0 (rinfresco sempre attivo) deve provenire da rows_start,
-    # non da rows_true: ricalcolo diretto per confronto.
+    # step 0's forward pass (refresh always active) must come from rows_start,
+    # not from rows_true: direct recomputation for comparison.
     p0_from_start = _recompute_p(replica, trigger_tokens, rows_start.numpy(), None, y)
     p0_from_true = _recompute_p(replica, trigger_tokens, rows_true.numpy(), None, y)
     assert rec0["p"] == pytest.approx(p0_from_start, abs=1e-6)
     assert p0_from_start != pytest.approx(p0_from_true, abs=1e-9)
 
-    # il regolarizzatore (MU * ||rows-rows_true||^2/||rows_true||^2) e' misurato contro
-    # rows_true, non rows_start: al passo 0 vale MU * ||delta||^2/||rows_true||^2
-    # ristretto alle righe (nessuna maschera qui: tutte le 16 righe).
+    # the regularizer (MU * ||rows-rows_true||^2/||rows_true||^2) is measured against
+    # rows_true, not rows_start: at step 0 it equals MU * ||delta||^2/||rows_true||^2
+    # restricted to the rows (no mask here: all 16 rows).
     reg_expected = D.MU * float((delta ** 2).sum() / (rows_true.numpy() ** 2).sum())
     reg_from_record = rec0["loss"] - (-rec0["logp_y"])  # lam=0.0, kl_total=0
     assert reg_from_record == pytest.approx(reg_expected, abs=1e-6)
 
 
 # --------------------------------------------------------------------------
-# (viii) k che non divide l'ultimo passo: finale con forward extra
+# (viii) k that does not divide the last step: final with extra forward pass
 # --------------------------------------------------------------------------
 
 
 def test_final_refreshed_by_extra_forward_when_last_step_not_a_refresh(tmp_path):
     replica, trigger_tokens, routing_trigger, rows_true, rows_global, y = _make_fixture(seed=8)
-    k = 7  # 300 (MAX_STEPS) non e' multiplo di 7: l'ultimo passo (299) non e' di rinfresco
+    k = 7  # 300 (MAX_STEPS) is not a multiple of 7: the last step (299) is not a refresh
     assert D.MAX_STEPS % k != 0
     log_path = tmp_path / "descend.jsonl"
     summary = D.descend(
@@ -308,8 +308,8 @@ def test_final_refreshed_by_extra_forward_when_last_step_not_a_refresh(tmp_path)
     layers = read_plert1(plert1_path)
     assert set(layers.keys()) == set(range(N_LAYER))
 
-    # il forward extra e' su rows_pre dell'ultimo passo (senza gradiente, routing dal
-    # vivo): p_free finale deve coincidere con il ricalcolo diretto.
+    # the extra forward pass is on the last step's rows_pre (without gradient, live
+    # routing): final p_free must match the direct recomputation.
     rows_np = np.load(tmp_path / "ckpt_0.0_final.npy")
     recomputed = _recompute_p(replica, trigger_tokens, rows_np, None, y)
     assert recomputed == pytest.approx(summary["final_p_free"], abs=1e-6)

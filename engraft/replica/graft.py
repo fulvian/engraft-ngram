@@ -93,7 +93,7 @@ def _build_routing_trigger(
     return routing_trigger
 
 
-def prepare_innesto(
+def prepare_graft(
     replica, table, fact: dict, i: int, overlay_map: dict[int, np.ndarray], out_dir: Path,
 ) -> dict:
     """Live prefix (with the chain overlay), `routing_trigger` over 48 (here
@@ -171,17 +171,17 @@ def graft_fact(
     done: dict[str, dict] = state.setdefault("done", {})
 
     overlay_parts: list[tuple[np.ndarray, np.ndarray]] = []
-    innesti: list[dict] = []
+    grafts: list[dict] = []
     for i_str in sorted(done.keys(), key=int):
         pleo_path = out_dir / f"ckpt_{fid}_{i_str}_final.pleo"
         overlay_parts.append(read_pleo(pleo_path))
-        innesti.append(done[i_str])
+        grafts.append(done[i_str])
 
     for i in range(n):
         if str(i) in done:
             continue
         overlay_map = _overlay_map_from_parts(overlay_parts)
-        prep = prepare_innesto(replica, table, fact, i, overlay_map, out_dir)
+        prep = prepare_graft(replica, table, fact, i, overlay_map, out_dir)
         tokens_i = prep["tokens"]
         prefix_state = prep["prefix_state"]
         routing_trigger = prep["routing_trigger"]
@@ -203,7 +203,7 @@ def graft_fact(
         rows_g, data_g = read_pleo(out_dir / f"ckpt_{fid}_{i}_final.pleo")
         overlay_parts.append((rows_g, data_g))
 
-        innesto_summary = {
+        graft_summary = {
             "position": i,
             "n_steps": summary.get("n_steps"),
             "stop_reason": summary.get("stop_reason"),
@@ -214,21 +214,21 @@ def graft_fact(
             "descend_time_s": descend_time_s,
             "precondition_ok": prep["precondition"]["ok"],
         }
-        innesti.append(innesto_summary)
-        done[str(i)] = innesto_summary
+        grafts.append(graft_summary)
+        done[str(i)] = graft_summary
         _atomic_write_json(state_path, state)
 
     rows_all, data_all = RowSet.build_overlay(overlay_parts)
     fact_pleo_path = out_dir / f"{fid}.pleo"
     write_pleo(fact_pleo_path, rows_all, data_all)
 
-    p_free_values = [it.get("final_p_free") for it in innesti if it.get("final_p_free") is not None]
+    p_free_values = [it.get("final_p_free") for it in grafts if it.get("final_p_free") is not None]
     p_free_product = float(np.prod(p_free_values)) if len(p_free_values) == n else None
 
     fact_summary = {
         "id": fid,
         "n_positions": n,
-        "grafts": sorted(innesti, key=lambda it: it["position"]),
+        "grafts": sorted(grafts, key=lambda it: it["position"]),
         "p_free_product": p_free_product,
         # Relative to the run directory (results/<date>/) so the record stays
         # portable and free of machine-specific absolute paths.

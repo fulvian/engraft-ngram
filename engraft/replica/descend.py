@@ -113,7 +113,7 @@ def descend(
     trigger_tokens: list[int],
     trigger_state,
     routing_trigger: dict[int, np.ndarray],
-    rows_true: torch.Tensor,  # [16,160] righe vere del trigger (punto base)
+    rows_true: torch.Tensor,  # [16,160] true trigger rows (base point)
     y: int,
     sisters: dict[str, dict],  # {sid: {"tokens","state","routing","rows_true","base_logits"}}
     trigger_rows_global: np.ndarray,
@@ -138,7 +138,7 @@ def descend(
         raise ValueError(f"unrecognized plateau_metric: {plateau_metric!r}")
     plateau_margin = 0.01 if plateau_metric == "p_free" else 0.05
 
-    rows0 = rows_true.clone()  # regolarizzatore e diagnostiche: sempre le righe vere
+    rows0 = rows_true.clone()  # regularizer and diagnostics: always the true rows
     rows_init = rows_true if rows_start is None else rows_start
     rows = rows_init.clone().requires_grad_(True)
 
@@ -171,7 +171,7 @@ def descend(
     prev_cap: dict[int, np.ndarray] = routing_trigger
     n_refreshes = 0
     routing_changed_vs_prev_hist: list[int] = []
-    best_metric = float("-inf")  # p_free_val or logp_y_val, per plateau_metric
+    best_metric = float("-inf")  # p_free_val or logp_y_val, for plateau_metric
     refreshes_since_improvement = 0
     stop_reason = None
 
@@ -187,17 +187,17 @@ def descend(
         cap: dict[int, np.ndarray] | None = {} if refreshed else None
         routing_source_step = None if refreshed else routing_current
 
-        # Ogni termine costruisce il proprio grafo a 48 strati e lo scarica subito con
-        # il proprio backward() (retain_graph=False): il picco di RAM osservato il
-        # 2026-09-05 (104 GB, corsa uccisa dal guardiano di memoria) veniva da un unico
-        # backward() finale che teneva vivi contemporaneamente i quattro grafi (trigger
-        # + 3 sorelle, ~48 strati ciascuno con gli esperti dell'ultima posizione).
-        # `rows[0:8]` va ricalcolato fresco per ogni sorella (non un'unica variabile
-        # condivisa): altrimenti il nodo di taglio sarebbe un antenato comune a tutti i
-        # grafi delle sorelle e il primo backward(retain_graph=False) lo libererebbe,
-        # rompendo i successivi. Il gradiente si accumula comunque su `rows.grad`
-        # (unico leaf), la somma dei backward separati è identica a quella di un unico
-        # backward sulla somma dei termini.
+        # Each term builds its own 48-layer graph and immediately discards it with
+        # its own backward() (retain_graph=False): the RAM peak observed on
+        # 2026-09-05 (104 GB, run killed by the memory guardian) came from a single
+        # final backward() that kept all four graphs alive at once (trigger
+        # + 3 sisters, ~48 layers each with the last position's experts).
+        # `rows[0:8]` must be freshly recomputed for each sister (not a single shared
+        # variable): otherwise the cut node would be a common ancestor of all the
+        # sisters' graphs, and the first backward(retain_graph=False) would free it,
+        # breaking the subsequent ones. The gradient still accumulates on `rows.grad`
+        # (the single leaf), the sum of the separate backwards is identical to that of a
+        # single backward over the sum of the terms.
         trigger_logits = replica.last_step(
             trigger_tokens, trigger_state, rows, routing_source=routing_source_step,
             persist_experts=True, capture_routing=cap,
@@ -255,14 +255,14 @@ def descend(
 
         loss_val = -logp_y_val + lam * kl_total_val + reg_val
 
-        # Le righe salvate nei punti di controllo sono quelle su cui p e le sorelle sono
-        # stati misurati in questo passo (pre-aggiornamento), non quelle dopo opt.step():
-        # altrimenti l'overlay sarebbe un passo avanti rispetto ai numeri registrati.
+        # The rows saved in the checkpoints are those on which p and the sisters were
+        # measured in this step (pre-update), not those after opt.step():
+        # otherwise the overlay would be one step ahead of the recorded numbers.
         rows_pre = rows.detach().clone()
         if row_mask is not None:
             # `--rows T8`: heads outside the mask stay at the true rows.
-            # Gradiente azzerato -> Adam non le muove (momenti nulli), e per sicurezza
-            # si ripristinano dopo il passo.
+            # Zeroed gradient -> Adam does not move them (zero moments), and as a safety
+            # measure they are restored after the step.
             frozen = torch.from_numpy(~np.asarray(row_mask, dtype=bool))
             rows.grad[frozen] = 0.0
         opt.step()
@@ -309,7 +309,7 @@ def descend(
         sisters_ok = all(m["argmax_unchanged"] and m["delta_logp_argmax_base"] >= SISTER_MARGIN_NAT for m in sister_metrics.values())
 
         if refresh_every is None:
-            # comportamento 2f invariato: soglie e arresto su `p_val`, a ogni passo.
+            # 2f behavior unchanged: thresholds and stop on `p_val`, at every step.
             for thr in thresholds:
                 key = f"p{thr}"
                 if p_val >= thr:
@@ -321,8 +321,8 @@ def descend(
                         np.save(out_dir / f"ckpt_{tag_val}_{key}.npy", rows_np)
                     elif not sisters_ok and thr not in thresholds_with_sisters_out:
                         thresholds_with_sisters_out.append(thr)
-                        # Salvato comunque, con suffisso: serve a Q4 (regione di fiducia),
-                        # non a Q3. Il rapporto li tiene distinti dai punti con sorelle ok.
+                        # Saved anyway, with a suffix: needed for Q4 (trust region),
+                        # not Q3. The report keeps them distinct from the points where sisters are ok.
                         checkpoints[key + "_sistersout"] = {"step": step, "threshold": thr, "p": p_val, "sisters_ok": False}
                         rows_np = rows_pre.numpy().copy()
                         write_pleo(out_dir / f"ckpt_{tag_val}_{key}_sistersout.pleo", trigger_rows_global, rows_np)
@@ -334,7 +334,7 @@ def descend(
                 break
         elif refreshed:
             # thresholds and stop based on `p_free`, measured only at
-            # rinfresco.
+            # refresh.
             for thr in thresholds:
                 key = f"p{thr}"
                 if p_free_val >= thr:
@@ -410,8 +410,8 @@ def descend(
             "step": steps[-1]["step"], "p": final_p, "sisters_ok": final_sisters_ok,
         }
     else:
-        # spec B5: il finale e' sempre un passo di rinfresco. Se l'ultimo passo non lo
-        # era, un forward extra senza gradiente su `rows_pre` di quel passo lo fornisce.
+        # spec B5: the final step is always a refresh step. If the last step was not
+        # one, an extra forward pass without gradient on that step's `rows_pre` provides it.
         if steps[-1]["refreshed"]:
             final_p_free = steps[-1]["p_free"]
             final_routing_layers = _build_plert1_layers(routing_trigger, prev_cap, n_layer)
@@ -437,7 +437,7 @@ def descend(
         }
 
     # minimum cosine / max norm ratio on the final step:
-    # sulle sole righe in maschera se `row_mask` e' dato, altrimenti su tutte.
+    # on only the masked rows if `row_mask` is given, otherwise on all of them.
     rows_pre_np = rows_pre.numpy()
     rows0_np = rows0.numpy()
     mask_idx = np.asarray(row_mask, dtype=bool) if row_mask is not None else np.ones(rows0_np.shape[0], dtype=bool)

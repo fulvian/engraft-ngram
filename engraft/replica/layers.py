@@ -117,7 +117,7 @@ def hc_combine(
 
 
 # --------------------------------------------------------------------------
-# RoPE (mrope interleaved, semplificato per testo puro: posizioni uguali sui 3 assi)
+# RoPE (mrope interleaved, simplified for plain text: same positions on all 3 axes)
 # --------------------------------------------------------------------------
 
 
@@ -160,7 +160,7 @@ def apply_rope(x: torch.Tensor, cos: torch.Tensor, sin: torch.Tensor) -> torch.T
 
 @dataclasses.dataclass
 class AttnWeights:
-    wq: torch.Tensor  # [2*n_embd_head*n_head, n_embd] -- [q|gate] interleaved per testa
+    wq: torch.Tensor  # [2*n_embd_head*n_head, n_embd] -- [q|gate] interleaved per head
     wk: torch.Tensor  # [n_embd_head*n_head_kv, n_embd]
     wv: torch.Tensor  # [n_embd_head*n_head_kv, n_embd]
     wo: torch.Tensor  # [n_embd, n_embd_head*n_head]
@@ -180,11 +180,11 @@ def split_q_gate(qcur_full: torch.Tensor, n_head: int, n_embd_head: int) -> tupl
 
 
 def attention_full(
-    x: torch.Tensor,  # [T, n_embd] -- solo le posizioni NUOVE (query)
+    x: torch.Tensor,  # [T, n_embd] -- only the NEW positions (query)
     w: AttnWeights,
-    positions: torch.Tensor,  # [T] posizioni assolute delle query
+    positions: torch.Tensor,  # [T] absolute positions of the queries
     hparams,
-    k_cache: torch.Tensor | None,  # [T_prev, n_head_kv, n_embd_head] gia' ruotate, o None
+    k_cache: torch.Tensor | None,  # [T_prev, n_head_kv, n_embd_head] already rotated, or None
     v_cache: torch.Tensor | None,  # [T_prev, n_head_kv, n_embd_head]
     cache_positions: torch.Tensor | None,
 ) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
@@ -233,21 +233,21 @@ def attention_full(
 
 
 # --------------------------------------------------------------------------
-# Conv causale depthwise (usata sia dalla delta net sia da PLE)
+# Causal depthwise conv (used by both the delta net and PLE)
 # --------------------------------------------------------------------------
 
 
 def causal_depthwise_conv(
     x_new: torch.Tensor,  # [T, C]
-    history: torch.Tensor,  # [K-1, C] (zeri se inizio sequenza)
-    weight: torch.Tensor,  # [C, K] (tap 0 = piu' vecchio, tap K-1 = corrente)
+    history: torch.Tensor,  # [K-1, C] (zeros if start of sequence)
+    weight: torch.Tensor,  # [C, K] (tap 0 = oldest, tap K-1 = current)
     dilation: int = 1,
 ) -> torch.Tensor:
     """out[t,c] = sum_k weight[c,k] * x[t-(K-1-k)*dilation, c] (ggml_ssm_conv,
     dilation=1; PLE reuses this same function with dilation=ngram_size)."""
     kern = weight.shape[1]
     t_len, c = x_new.shape
-    full = torch.cat([history, x_new], dim=0)  # [(K-1)+T, C] (posizioni -( K-1)..T-1)
+    full = torch.cat([history, x_new], dim=0)  # [(K-1)+T, C] (positions -(K-1)..T-1)
     hist_len = history.shape[0]
     acc = torch.zeros(t_len, c, dtype=x_new.dtype)
     for k in range(kern):
@@ -271,7 +271,7 @@ class DeltaNetWeights:
     wqkv_gate: torch.Tensor  # [value_dim, n_embd]
     ssm_conv1d: torch.Tensor  # [conv_dim, K]
     ssm_dt_bias: torch.Tensor  # [num_v_heads]
-    ssm_a: torch.Tensor  # [num_v_heads] = -exp(A_log), gia' cosi' nel GGUF
+    ssm_a: torch.Tensor  # [num_v_heads] = -exp(A_log), already like this in the GGUF
     ssm_beta: torch.Tensor  # [num_v_heads, n_embd] (out,in)
     ssm_alpha: torch.Tensor  # [num_v_heads, n_embd]
     ssm_norm: torch.Tensor  # [head_v_dim]
@@ -280,8 +280,8 @@ class DeltaNetWeights:
 
 @dataclasses.dataclass
 class DeltaNetState:
-    conv_hist: torch.Tensor  # [K-1, conv_dim] -- ultimi ingressi pre-conv (qkv_mixed)
-    s: torch.Tensor  # [num_v_heads, head_dim, head_dim] -- stato della ricorrenza
+    conv_hist: torch.Tensor  # [K-1, conv_dim] -- last pre-conv inputs (qkv_mixed)
+    s: torch.Tensor  # [num_v_heads, head_dim, head_dim] -- recurrence state
 
 
 def delta_net_init_state(hparams) -> DeltaNetState:
@@ -293,7 +293,7 @@ def delta_net_init_state(hparams) -> DeltaNetState:
 
 
 def gated_delta_net_recurrence(
-    q: torch.Tensor,  # [T, Hv, D]  (gia' ripetuta da Hk a Hv teste, L2-normata, non prescalata)
+    q: torch.Tensor,  # [T, Hv, D]  (already repeated from Hk to Hv heads, L2-normalized, not prescaled)
     k: torch.Tensor,  # [T, Hv, D]
     v: torch.Tensor,  # [T, Hv, D]
     g_log: torch.Tensor,  # [T, Hv] -- ssm_a * softplus(alpha+dt_bias), in spazio log
@@ -322,7 +322,7 @@ def gated_delta_net_recurrence(
 
 
 def linear_attn_layer(
-    x: torch.Tensor,  # [T, n_embd] -- solo le posizioni nuove
+    x: torch.Tensor,  # [T, n_embd] -- only the new positions
     w: DeltaNetWeights,
     state: DeltaNetState,
     hparams,
@@ -376,17 +376,17 @@ def linear_attn_layer(
 
 
 # --------------------------------------------------------------------------
-# MoE (softmax, top-k, pesi rinormalizzati per somma, esperto condiviso sigmoide)
+# MoE (softmax, top-k, weights renormalized to sum, sigmoid shared expert)
 # --------------------------------------------------------------------------
 
 
 @dataclasses.dataclass
 class MoeWeights:
     gate_inp: torch.Tensor  # [n_expert, n_embd]
-    experts_gate: dict  # {e: [n_ff, n_embd]}  o forniti come funzione (lazy, weights.py)
+    experts_gate: dict  # {e: [n_ff, n_embd]}  or supplied as a function (lazy, weights.py)
     experts_up: dict
     experts_down: dict
-    gate_inp_shexp: torch.Tensor  # [n_embd] (di fatto [1,n_embd] in ggml, vettore)
+    gate_inp_shexp: torch.Tensor  # [n_embd] (actually [1,n_embd] in ggml, a vector)
     up_shexp: torch.Tensor  # [n_ff_shexp, n_embd]
     gate_shexp: torch.Tensor  # [n_ff_shexp, n_embd]
     down_shexp: torch.Tensor  # [n_embd, n_ff_shexp]
@@ -398,7 +398,7 @@ def moe_ffn(
     expert_gate_fn,  # (e:int) -> [n_ff, n_embd] tensor (dequant lazy, via GgufWeights.expert)
     expert_up_fn,
     expert_down_fn,
-    selected_experts: torch.Tensor,  # [T, n_expert_used] indici imposti (routing congelato)
+    selected_experts: torch.Tensor,  # [T, n_expert_used] imposed indices (frozen routing)
     up_shexp: torch.Tensor,
     gate_shexp: torch.Tensor,
     down_shexp: torch.Tensor,
@@ -414,10 +414,10 @@ def moe_ffn(
 
     weights = torch.gather(probs, 1, selected_experts)  # [T, n_expert_used]
     weights_sum = weights.sum(dim=-1, keepdim=True).clamp_min(6.103515625e-5)
-    weights = weights / weights_sum  # norm_w=True, nessuna scala (w_scale=0)
+    weights = weights / weights_sum  # norm_w=True, no scale (w_scale=0)
 
     out = torch.zeros(t_len, n_embd, dtype=x.dtype)
-    # un token alla volta: ogni posizione ha (in generale) un routing diverso
+    # one token at a time: each position has (in general) a different routing
     for t in range(t_len):
         acc = torch.zeros(n_embd, dtype=x.dtype)
         for j in range(n_expert_used):
@@ -455,10 +455,10 @@ class PleWeights:
 
 
 def ple_forward(
-    emb: torch.Tensor,  # [T, n_embd] -- le righe gia' concatenate (16*160=2560)
-    hidden: torch.Tensor,  # [T, hc, n_embd] -- res_hc all'ingresso del blocco PLE
+    emb: torch.Tensor,  # [T, n_embd] -- the rows already concatenated (16*160=2560)
+    hidden: torch.Tensor,  # [T, hc, n_embd] -- res_hc at the input of the PLE block
     w: PleWeights,
-    hist: torch.Tensor,  # [(K-1)*ngram_size, hc, n_embd] o vuoto se inizio sequenza
+    hist: torch.Tensor,  # [(K-1)*ngram_size, hc, n_embd] or empty if start of sequence
     hparams,
 ) -> tuple[torch.Tensor, torch.Tensor]:
     """qwen4exp.cpp build_ple. Returns (hidden + gated + conv_out, new history

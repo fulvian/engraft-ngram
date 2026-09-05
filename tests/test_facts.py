@@ -16,9 +16,9 @@ from engraft.facts import resolve_facts
 
 
 class FakeTokenizer:
-    """encode(text) -> concatenazione delle liste di id di ogni parola separata da
-    spazio (dizionario fisso). Nessuna gestione dello spazio iniziale (irrilevante qui:
-    lo split lo rimuove comunque)."""
+    """encode(text) -> concatenation of the id lists of each space-separated word
+    (fixed dictionary). No handling of a leading space (irrelevant here:
+    the split removes it anyway)."""
 
     def __init__(self, vocab: dict[str, list[int]]):
         self._vocab = vocab
@@ -111,16 +111,16 @@ def test_answer_fallback_exhausted_raises():
     fact = _base_fact("f3", answer="BIGANSWER", answer_fallback=["FALLBACK1"])
     try:
         resolve_facts({"facts": [fact]}, {}, tok, table)
-        assert False, "atteso ValueError: nessun ripiego entro 3 token"
+        assert False, "expected ValueError: no fallback within 3 tokens"
     except ValueError as e:
         assert "f3" in str(e)
 
 
 def test_sister_verification_fails_when_bigram_differs():
-    """Una sorella scelta male (cambia anche il bigram) -> ok=False, mai aggirata."""
+    """A poorly chosen sister (also changes the bigram) -> ok=False, never bypassed."""
     table = FakeTable(seed=42)
     tok = FakeTokenizer(VOCAB)
-    fact = _base_fact("f4", sister_words=["TRIG_A TRIG_B Y60 Y70 Y80"])  # in realta' una parafrasi other_tail
+    fact = _base_fact("f4", sister_words=["TRIG_A TRIG_B Y60 Y70 Y80"])  # actually an other_tail paraphrase
     resolved, _keys = resolve_facts({"facts": [fact]}, {}, tok, table)
     sister = resolved["facts"]["f4"]["sisters"][0]
     assert sister["bigram_ok"] is False
@@ -147,7 +147,7 @@ def test_doc_positions_fail_when_answer_absent():
     table = FakeTable(seed=42)
     tok = FakeTokenizer(VOCAB)
     fact = _base_fact("f6", doc_id="doc2")
-    doc_text = "J1 J2 J3"  # nessuna occorrenza della risposta
+    doc_text = "J1 J2 J3"  # no occurrence of the answer
     resolved, _keys = resolve_facts({"facts": [fact]}, {"doc2": doc_text}, tok, table)
     dp = resolved["facts"]["f6"]["doc_positions"]
     assert dp["found"] is False

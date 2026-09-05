@@ -173,7 +173,7 @@ def run_q6_perturbed(replica, table, fid: str, position: int, facts_resolved: di
     seed_dir = out_root / "facts" / f"{fid}_{position}_seed{PERTURB_SEED}"
     seed_dir.mkdir(parents=True, exist_ok=True)
 
-    prep = G.prepare_innesto(replica, table, fact, position, overlay_map={}, out_dir=seed_dir)
+    prep = G.prepare_graft(replica, table, fact, position, overlay_map={}, out_dir=seed_dir)
     rows_true = prep["rows_true"]
     row_mask = G.ROW_MASK_T8
     rng = np.random.default_rng(PERTURB_SEED)
@@ -201,25 +201,25 @@ def run_q6_perturbed(replica, table, fid: str, position: int, facts_resolved: di
     summary["wall_s"] = time.time() - t0
 
     base_summary_path = out_dir / f"{fid}.json"
-    base_innesto = None
+    base_graft = None
     if base_summary_path.exists():
         base_data = json.loads(base_summary_path.read_text())
-        base_innesto = next((it for it in base_data["grafts"] if it["position"] == position), None)
+        base_graft = next((it for it in base_data["grafts"] if it["position"] == position), None)
 
     concordance = None
-    if base_innesto is not None and base_innesto.get("n_steps"):
-        n_base = base_innesto["n_steps"]
+    if base_graft is not None and base_graft.get("n_steps"):
+        n_base = base_graft["n_steps"]
         n_seed = summary.get("n_steps") or 0
         steps_within_20pct = abs(n_seed - n_base) <= 0.2 * n_base
-        same_stop_reason = summary.get("stop_reason") == base_innesto.get("stop_reason")
-        p_base = base_innesto.get("final_p_free")
+        same_stop_reason = summary.get("stop_reason") == base_graft.get("stop_reason")
+        p_base = base_graft.get("final_p_free")
         p_seed = summary.get("final_p_free")
         p_within = (
             p_base is not None and p_seed is not None and abs(p_seed - p_base) <= 0.02
         )
         concordance = {
             "n_steps_base": n_base, "n_steps_seed1": n_seed, "steps_within_20pct": steps_within_20pct,
-            "stop_reason_base": base_innesto.get("stop_reason"), "stop_reason_seed1": summary.get("stop_reason"),
+            "stop_reason_base": base_graft.get("stop_reason"), "stop_reason_seed1": summary.get("stop_reason"),
             "same_stop_reason": same_stop_reason,
             "final_p_free_base": p_base, "final_p_free_seed1": p_seed, "p_within_0_02": p_within,
             "concordant": bool(steps_within_20pct and same_stop_reason and p_within),

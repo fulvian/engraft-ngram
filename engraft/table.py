@@ -21,8 +21,8 @@ BLOCKS_PER_ROW = ROW_LEN // BLOCK_LEN  # 5
 BLOCK_BYTES = 18  # 2 (d, float16) + 16 (qs, nibble)
 ROW_BYTES = BLOCKS_PER_ROW * BLOCK_BYTES  # 90
 
-# ggml/src/ggml-common.h: kvalues_iq4nl. Nessuno zero nel codebook, quindi una
-# riga e' esattamente nulla se e solo se i 5 scale (d) sono zero.
+# ggml/src/ggml-common.h: kvalues_iq4nl. No zero in the codebook, so a
+# row is exactly zero if and only if the 5 scales (d) are zero.
 KVALUES_IQ4NL = np.array(
     [-127, -104, -83, -65, -49, -35, -22, -10, 1, 13, 25, 38, 53, 69, 89, 113],
     dtype=np.float32,
@@ -33,8 +33,8 @@ KVALUES_IQ4NL = np.array(
 class HeadInfo:
     head: int
     vocab_size: int  # p_h
-    offset: int  # somma cumulativa dei p_h nel layout unito (qwen4exp.ple.head_offsets)
-    data_offset: int  # offset assoluto nel file GGUF dell'inizio del tensore per-testata
+    offset: int  # cumulative sum of p_h in the merged layout (qwen4exp.ple.head_offsets)
+    data_offset: int  # absolute offset in the GGUF file of the start of the per-head tensor
 
 
 class PleTable:

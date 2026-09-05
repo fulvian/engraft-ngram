@@ -56,19 +56,19 @@ def test_row_is_zero_detects_all_zero_row(table):
 
 def test_row_is_zero_synthetic():
     raw = np.zeros((3, 90), dtype=np.uint8)
-    raw[1, 0] = 1  # d del primo blocco != 0 -> non nulla
-    raw[2, 36] = 0  # resta tutto zero -> nulla
+    raw[1, 0] = 1  # d of the first block != 0 -> not zero
+    raw[2, 36] = 0  # stays all zero -> zero row
     mask = row_is_zero(raw)
     assert mask.tolist() == [True, False, True]
 
 
 @real
 def test_hash_matches_hand_computed(table):
-    # ctx senza EOS: nessun predecessore mancante, nessun EOS nella finestra.
+    # ctx without EOS: no missing predecessor, no EOS in the window.
     # mixed_2 = (t0*m0) ^ (t1*m1); mixed_3 = mixed_2 ^ (t2*m2)
     m0, m1, m2 = table.layer_multipliers
     mask = (1 << 64) - 1
-    t2, t1, t0 = 100, 200, 300  # tokens = [..., t2, t1, t0]; t0 e' l'ultimo (posizione corrente)
+    t2, t1, t0 = 100, 200, 300  # tokens = [..., t2, t1, t0]; t0 is the last one (current position)
     tokens = [t2, t1, t0]
 
     mixed2 = ((t0 * m0) ^ (t1 * m1)) & mask
@@ -84,7 +84,7 @@ def test_hash_matches_hand_computed(table):
 def test_hash_eos_replaces_missing_predecessor(table):
     m0, m1 = table.layer_multipliers[0], table.layer_multipliers[1]
     mask = (1 << 64) - 1
-    tokens = [42]  # nessun predecessore: x_{t-1} e x_{t-2} letti come EOS
+    tokens = [42]  # no predecessor: x_{t-1} and x_{t-2} read as EOS
     eos = table.eos_token_id
 
     mixed2 = ((tokens[0] * m0) ^ (eos * m1)) & mask

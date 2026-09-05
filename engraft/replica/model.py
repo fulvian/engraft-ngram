@@ -42,7 +42,7 @@ from engraft.replica.layers import (
 
 
 # --------------------------------------------------------------------------
-# Caricamento pesi per strato
+# Loading weights per layer
 # --------------------------------------------------------------------------
 
 
@@ -115,7 +115,7 @@ def load_moe_nonexpert(w: GgufWeights, il: int) -> MoeNonExpertWeights:
 
 
 # --------------------------------------------------------------------------
-# Stato per strato, portato dal prefisso all'ultima posizione
+# Per-layer state, carried from the prefix to the last position
 # --------------------------------------------------------------------------
 
 
@@ -129,7 +129,7 @@ class LayerState:
 @dataclasses.dataclass
 class PrefixState:
     layers: dict[int, LayerState]
-    n_prefix: int  # T-1 (numero di posizioni gia' consumate)
+    n_prefix: int  # T-1 (number of positions already consumed)
 
 
 # --------------------------------------------------------------------------
@@ -191,11 +191,11 @@ class Replica:
         routing_source: dict[int, np.ndarray] | None,
         diag: dict[int, tuple[np.ndarray, np.ndarray]] | None = None,
     ) -> torch.Tensor:
-        """`diag`, se dato, riceve {il: (top11_idx[T,11], top11_val[T,11])} quando il
-        routing e' calcolato dal vivo (per il margine relativo di Q1b: decimo scelto
-        vs undicesimo escluso, senza dover rilanciare il forward)."""
+        """`diag`, if given, receives {il: (top11_idx[T,11], top11_val[T,11])} when the
+        routing is computed live (for the Q1b relative margin: tenth chosen
+        vs eleventh excluded, without having to rerun the forward pass)."""
         if routing_source is not None and il in routing_source:
-            arr = routing_source[il]  # [T_tot,10] (0..46) o [1,10] solo ultima posizione (47)
+            arr = routing_source[il]  # [T_tot,10] (0..46) or [1,10] only the last position (47)
             pos_idx = positions.to(torch.int64).numpy()
             if arr.shape[0] == 1:
                 # layer 47: the file records only the last position (row 0);
@@ -328,13 +328,13 @@ class Replica:
 
         return PrefixState(layers=layers, n_prefix=n_prefix)
 
-    # -- ultima posizione (differenziabile in `rows`) --------------------------
+    # -- last position (differentiable in `rows`) ------------------------------
 
     def last_step(
         self,
         tokens: list[int],
         state: PrefixState,
-        rows: torch.Tensor,  # [16,160], requires_grad quando serve il gradiente
+        rows: torch.Tensor,  # [16,160], requires_grad when the gradient is needed
         routing_source: dict[int, np.ndarray] | None = None,
         persist_experts: bool = True,
         capture_routing: dict[int, np.ndarray] | None = None,
@@ -394,7 +394,7 @@ class Replica:
             if il in prefix_captured and il in last_captured:
                 captured[il] = np.concatenate([prefix_captured[il], last_captured[il]], axis=0)
             elif il in last_captured:
-                captured[il] = last_captured[il]  # strato n_layer-1: solo l'ultima posizione
+                captured[il] = last_captured[il]  # layer n_layer-1: only the last position
             elif il in prefix_captured:
                 captured[il] = prefix_captured[il]
         return captured, diag_prefix, diag_last

@@ -36,13 +36,13 @@ DIM = N_HEADS * ROW_LEN
 
 
 # --------------------------------------------------------------------------
-# (i) model.py: ple_true_emb/prefix con overlay
+# (i) model.py: ple_true_emb/prefix with overlay
 # --------------------------------------------------------------------------
 
 
 def test_ple_true_emb_overlay_substitutes_present_rows_only():
     table = FakeTable(seed=7)
-    r = Replica.__new__(Replica)  # nessun hp/pesi: ple_true_emb usa solo self.table
+    r = Replica.__new__(Replica)  # no hp/weights: ple_true_emb uses only self.table
     r.table = table
     tokens = [1, 2, 3, 4, 5]
     t = 3
@@ -54,7 +54,7 @@ def test_ple_true_emb_overlay_substitutes_present_rows_only():
     out = r.ple_true_emb(tokens, t, overlay=overlay).numpy().reshape(N_HEADS, ROW_LEN)
     assert np.array_equal(out[0], fake_vec)
     for h in range(1, N_HEADS):
-        assert np.array_equal(out[h], rs.data[h]), f"testata {h} alterata senza overlay"
+        assert np.array_equal(out[h], rs.data[h]), f"head {h} altered without overlay"
 
 
 def test_ple_true_emb_no_overlay_matches_bit_exact():
@@ -71,13 +71,13 @@ def test_ple_true_emb_no_overlay_matches_bit_exact():
 
 
 # --------------------------------------------------------------------------
-# Replica finta per graft_fact (routing dal vivo, gradiente dai pesi softmax)
+# Fake replica for graft_fact (live routing, gradient from softmax weights)
 # --------------------------------------------------------------------------
 
 
 def _make_fact(table, seed=0, n_answer=3):
     trigger_tokens = [1, 2, 3, 4, 5]
-    answer_tokens = list(range(n_answer))  # < VOCAB: usati anche come y (indice di classe) in descend
+    answer_tokens = list(range(n_answer))  # < VOCAB: also used as y (class index) in descend
     trigger_rows = RowSet.from_position(table, trigger_tokens, len(trigger_tokens) - 1).rows_global.tolist()
     chain_rows = {}
     for i in range(1, n_answer):
@@ -94,8 +94,8 @@ FAST_CFG = {"p_stop": 0.02, "plateau_steps": 2, "refresh_every": 1, "thresholds"
 
 
 # --------------------------------------------------------------------------
-# (ii) graft_fact chiama prefix con l'overlay degli innesti precedenti e descend
-# con tag <fid>_i, refresh_every=1, row_mask T8
+# (ii) graft_fact calls prefix with the overlay of previous grafts and descend
+# with tag <fid>_i, refresh_every=1, row_mask T8
 # --------------------------------------------------------------------------
 
 
@@ -110,7 +110,7 @@ def test_graft_fact_calls_prefix_with_prior_overlay_and_descend_tag(tmp_path):
 
     assert len(replica.prefix_calls) == 2
     assert replica.prefix_calls[0]["overlay"] == {}
-    # al passo 1 l'overlay deve contenere le righe scritte dal ckpt finale del passo 0
+    # at step 1 the overlay must contain the rows written by step 0's final checkpoint
     rows0, data0 = read_pleo(out_dir / "ckpt_f1_0_final.pleo")
     overlay1 = replica.prefix_calls[1]["overlay"]
     for r, v in zip(rows0.tolist(), data0):
@@ -119,14 +119,14 @@ def test_graft_fact_calls_prefix_with_prior_overlay_and_descend_tag(tmp_path):
 
     assert (out_dir / "descend_f1_0.jsonl").exists()
     assert (out_dir / "descend_f1_1.jsonl").exists()
-    assert (out_dir / "ckpt_f1_0_final.plert1").exists()  # refresh_every=1 -> plert1 scritto
+    assert (out_dir / "ckpt_f1_0_final.plert1").exists()  # refresh_every=1 -> plert1 written
     assert (out_dir / "ckpt_f1_1_final.plert1").exists()
     assert (out_dir / "f1.pleo").exists()
     assert summary["id"] == "f1"
     assert summary["n_positions"] == 2
     assert [it["position"] for it in summary["grafts"]] == [0, 1]
 
-    # row_mask T8: le righe bigram (0-7) restano identiche alla riga vera in ogni ckpt
+    # row_mask T8: bigram rows (0-7) stay identical to the true row in every checkpoint
     for i in range(2):
         rows_g, data_g = read_pleo(out_dir / f"ckpt_f1_{i}_final.pleo")
         tokens_i = fact["trigger_tokens"] + fact["answer_tokens"][:i]
@@ -139,7 +139,7 @@ def test_graft_fact_calls_prefix_with_prior_overlay_and_descend_tag(tmp_path):
 
 
 # --------------------------------------------------------------------------
-# (iii) state.json fa saltare gli innesti chiusi alla ripresa
+# (iii) state.json makes closed grafts skipped on resume
 # --------------------------------------------------------------------------
 
 
@@ -164,14 +164,14 @@ def test_state_json_skips_closed_grafts_on_resume(tmp_path):
 
 
 # --------------------------------------------------------------------------
-# (iv) merge_fact_overlays: esclude per intero il fatto perdente (keys.json)
+# (iv) merge_fact_overlays: excludes the losing fact entirely (keys.json)
 # --------------------------------------------------------------------------
 
 
 def test_merge_fact_overlays_excludes_fact_per_keys_json(tmp_path):
-    rows_a = np.array([100, 108, 109], dtype=np.int32)  # riga 108/109 in T8 (>=8 in questo schema di test)
+    rows_a = np.array([100, 108, 109], dtype=np.int32)  # row 108/109 in T8 (>=8 in this test scheme)
     data_a = np.stack([np.full(ROW_LEN, 1.0, dtype=np.float32) for _ in rows_a])
-    rows_b = np.array([200, 108, 210], dtype=np.int32)  # 108 in comune con "a"
+    rows_b = np.array([200, 108, 210], dtype=np.int32)  # 108 shared with "a"
     data_b = np.stack([np.full(ROW_LEN, 2.0, dtype=np.float32) for _ in rows_b])
 
     path_a = tmp_path / "a.pleo"
@@ -190,7 +190,7 @@ def test_merge_fact_overlays_excludes_fact_per_keys_json(tmp_path):
 
 
 # --------------------------------------------------------------------------
-# (vi) routing_trigger a 48 (qui n_layer) strati; check_precondition prima di descend
+# (vi) routing_trigger at 48 (here n_layer) layers; check_precondition before descend
 # --------------------------------------------------------------------------
 
 
@@ -230,6 +230,6 @@ def test_graft_fact_calls_check_precondition_before_descend_and_fails_fast(tmp_p
         G.graft_fact(replica, table, tok=None, fact=fact, cfg=FAST_CFG, out_dir=out_dir, state_path=state_path)
 
     assert calls["precondition"] == 1
-    # fail-fast: nessun descend eseguito (nessun jsonl/ckpt scritto per la posizione 0)
+    # fail-fast: no descend executed (no jsonl/ckpt written for position 0)
     assert not (out_dir / "descend_f1_0.jsonl").exists()
     assert not (out_dir / "ckpt_f1_0_final.pleo").exists()

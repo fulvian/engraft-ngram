@@ -26,7 +26,7 @@ PLEO_MAGIC = b"PLEO"
 
 
 # --------------------------------------------------------------------------
-# .pleo: overlay binario per il fork (righe globali -> vettori F32 [160])
+# .pleo: binary overlay for the fork (global rows -> F32 [160] vectors)
 # --------------------------------------------------------------------------
 
 
@@ -111,7 +111,7 @@ def local_to_global(table: PleTable, h: int, row_local: int) -> int:
 
 
 # --------------------------------------------------------------------------
-# RowSet: le 16 righe di una posizione, con generatori di varianti
+# RowSet: the 16 rows of a position, with variant generators
 # --------------------------------------------------------------------------
 
 
@@ -121,12 +121,12 @@ class RowSet:
 
     table: PleTable
     rows_global: np.ndarray  # int32 [16]
-    data: np.ndarray  # float32 [16, 160], le righe vere dequantizzate
+    data: np.ndarray  # float32 [16, 160], the dequantized true rows
 
     @classmethod
     def from_position(cls, table: PleTable, tokens: list[int], t: int) -> "RowSet":
         """Builds the RowSet for position t of `tokens` (addresses via ngram_addresses)."""
-        addr = table.ngram_addresses(tokens)[t]  # 16 indici locali, uno per testata
+        addr = table.ngram_addresses(tokens)[t]  # 16 local indices, one per head
         n_heads = table.n_heads
         rows_global = np.empty(n_heads, dtype=np.int32)
         data = np.empty((n_heads, ROW_LEN), dtype=np.float32)
@@ -199,7 +199,7 @@ class RowSet:
 
 
 # --------------------------------------------------------------------------
-# PleReplica: replica numpy del blocco PLE (blk.1), pesi reali dal GGUF
+# PleReplica: numpy replica of the PLE block (blk.1), real weights from GGUF
 # --------------------------------------------------------------------------
 
 
@@ -213,7 +213,7 @@ _EXPECTED_TYPES = {
 }
 
 _N_EMBD = 2560
-_N_HC = 4  # flussi paralleli delle hyper-connection
+_N_HC = 4  # parallel hyper-connection streams
 _CONV_TAPS = 4
 _CONV_DILATION = 3
 
@@ -269,7 +269,7 @@ class PleReplica:
         self.norm_key = norm_key.reshape(_N_HC, _N_EMBD)
         self.norm_query = norm_query.reshape(_N_HC, _N_EMBD)
         self.norm_conv = norm_conv.reshape(_N_HC, _N_EMBD)
-        # copia scrivibile: la validazione §6.4 azzera conv1d per isolare il canale diretto
+        # writable copy: §6.4 validation zeroes conv1d to isolate the direct channel
         self.conv1d = conv1d.reshape(_N_HC, _N_EMBD, _CONV_TAPS).copy()  # [stream, chan, tap]
 
         if eps is None:
@@ -332,7 +332,7 @@ class PleReplica:
                 shifted = np.zeros_like(normed)
                 shifted[back:] = normed[: t_len - back]
                 acc += shifted * w_k[None, :, :]
-            # se back >= t_len, il tap non legge nessuna posizione valida: contributo nullo
+            # if back >= t_len, the tap reads no valid position: zero contribution
         return (acc / (1.0 + np.exp(-acc))).astype(np.float32)  # silu(x) = x * sigmoid(x)
 
     def ple_out(self, emb_seq: np.ndarray, hidden_seq: np.ndarray) -> np.ndarray:
@@ -358,14 +358,14 @@ class PleReplica:
         emb_seq = np.asarray(emb_seq, dtype=np.float32)
         hidden_seq = np.asarray(hidden_seq, dtype=np.float32)
 
-        # canale diretto (value + gate) per il batch, con hidden[t] fisso (stesso per tutti)
+        # direct channel (value + gate) for the batch, with hidden[t] fixed (same for all)
         hidden_t = hidden_seq[t]  # [4,2560]
         hidden_batch = np.broadcast_to(hidden_t, (b,) + hidden_t.shape)
         v = self.value(emb_t)  # [B,2560]
         g = self.gate(emb_t, hidden_batch)  # [B,4]
         gated_batch = (v[:, None, :] * g[:, :, None]).astype(np.float32)  # [B,4,2560]
 
-        # storia della convoluzione: dalla sequenza vera, calcolata una volta sola
+        # convolution history: from the true sequence, computed once
         gated_true = self.gated(emb_seq, hidden_seq)  # [T,4,2560]
         normed_true = self._rmsnorm_per_stream(gated_true, self.norm_conv, self.eps)
         normed_batch = self._rmsnorm_per_stream(gated_batch, self.norm_conv, self.eps)
@@ -467,9 +467,9 @@ class PleReplica:
             r, resid = residual(emb)
             if resid < best_resid:
                 best_emb, best_resid = emb.copy(), resid
-            # plateau (miglioramento piccolo o nullo) = convergenza, si ferma;
-            # un peggioramento (overshoot tipico di Gauss-Newton) non ferma l'iterazione,
-            # la traccia continua a scendere nelle iterazioni successive.
+            # plateau (small or no improvement) = convergence, stop;
+            # a worsening (overshoot typical of Gauss-Newton) does not stop the iteration,
+            # the trace keeps descending over subsequent iterations.
             if prev_resid is not None and 0.0 <= (prev_resid - resid) < 1e-4 * prev_resid:
                 break
             prev_resid = resid
@@ -519,7 +519,7 @@ def _eps_from_reader(reader: "gguf.GGUFReader", path: Path) -> float:
 
 
 # --------------------------------------------------------------------------
-# Lettura dei dump di llama-ple-lens
+# Reading llama-ple-lens dumps
 # --------------------------------------------------------------------------
 
 

@@ -94,9 +94,9 @@ def _fake_gguf_uint8(n_expert: int, ne1: int, block_bytes: int) -> np.ndarray:
 
 
 class _FakeCache:
-    """Verifica lo sfratto LRU su `GgufWeights` senza toccare un GGUF: bypassa l'indice
-    e chiama direttamente i metodi di cache privati con byte finti, come farebbe
-    `expert(..., persist=True)` con `disk_cache_dir` impostato."""
+    """Verifies LRU eviction on `GgufWeights` without touching a GGUF: bypasses the index
+    and calls the private cache methods directly with fake bytes, as
+    `expert(..., persist=True)` would with `disk_cache_dir` set."""
 
     def __init__(self, tmp_path: Path, disk_cache_bytes: int):
         self.w = GgufWeights.__new__(GgufWeights)
@@ -119,19 +119,19 @@ class _FakeCache:
 
 
 def test_disk_cache_lru_eviction(tmp_path):
-    """Tetto piccolo: il file meno usato di recente viene rimosso quando si supera il tetto."""
+    """Small cap: the least recently used file is removed when the cap is exceeded."""
     cache = _FakeCache(tmp_path, disk_cache_bytes=3000)
 
     p1 = cache.write("a", 1200)
     time.sleep(0.01)
     p2 = cache.write("b", 1200)
     time.sleep(0.01)
-    # tocca di nuovo "a" cosi' diventa il piu' recente
+    # touch "a" again so it becomes the most recent
     cache.w._touch_disk("a", p1)
     time.sleep(0.01)
-    p3 = cache.write("c", 1200)  # supera il tetto: deve sfrattare il meno recente ("b")
+    p3 = cache.write("c", 1200)  # exceeds the cap: must evict the least recently used ("b")
 
-    assert not p2.exists(), "b (meno recente) doveva essere sfrattato"
+    assert not p2.exists(), "b (least recent) should have been evicted"
     assert p1.exists() and p3.exists()
     assert "b" not in cache.w._disk_index
     assert "a" in cache.w._disk_index and "c" in cache.w._disk_index
@@ -149,8 +149,8 @@ def test_ram_cache_lru_eviction():
     c = np.zeros(10, dtype=np.float32)
     w._store_ram("a", a)
     w._store_ram("b", b)
-    w._touch_ram("a")  # a diventa il piu' recente
-    w._store_ram("c", c)  # 40*3=120 > 100: deve sfrattare "b" (meno recente)
+    w._touch_ram("a")  # a becomes the most recent
+    w._store_ram("c", c)  # 40*3=120 > 100: must evict "b" (least recently used)
 
     assert "b" not in w._ram_cache
     assert "a" in w._ram_cache and "c" in w._ram_cache

@@ -39,7 +39,7 @@ class GgufWeights:
 
         self.ram_cache_bytes = ram_cache_bytes
         self._ram_cache: dict[str, np.ndarray] = {}
-        self._ram_cache_order: list[str] = []  # LRU: in fondo il più recente
+        self._ram_cache_order: list[str] = []  # LRU: most recent at the tail
         self._ram_cache_used = 0
 
         self.disk_cache_dir = Path(disk_cache_dir) if disk_cache_dir is not None else None
@@ -107,10 +107,10 @@ class GgufWeights:
                 return arr
 
         _, t = self._index[name]
-        # gguf.ReaderTensor espone il tensore mappato (mmap): sliciamo l'esperto sull'ultimo
-        # asse ggml (t.shape[-1]) sui dati grezzi via l'API di slicing per esperto della
-        # libreria gguf quando disponibile; altrimenti dequantizziamo l'intero tensore e
-        # tagliamo (più lento, usato solo come ripiego per tipi senza slicing diretto).
+        # gguf.ReaderTensor exposes the mapped tensor (mmap): we slice the expert on the last
+        # ggml axis (t.shape[-1]) on the raw data via the gguf library's per-expert slicing
+        # API when available; otherwise we dequantize the whole tensor and
+        # slice (slower, used only as a fallback for types without direct slicing).
         arr = self._dequant_expert(t, e)
 
         if persist and self.disk_cache_dir is not None:
@@ -158,7 +158,7 @@ class GgufWeights:
             self._ram_cache_order.append(key)
             self._ram_cache_used += nbytes
 
-    # -- cache su disco (LRU, tetto in byte) ---------------------------------
+    # -- disk cache (LRU, byte cap) -------------------------------------------
 
     def _touch_disk(self, key: str, path: Path) -> None:
         self._disk_index[key] = {
@@ -174,7 +174,7 @@ class GgufWeights:
         total = sum(v["bytes"] for v in self._disk_index.values()) + incoming_bytes
         if total <= self.disk_cache_bytes:
             return
-        # sfratto LRU: rimuove le voci meno recenti finché si rientra nel tetto
+        # LRU eviction: removes the least recently used entries until back under the cap
         for key in sorted(self._disk_index, key=lambda k: self._disk_index[k]["atime"]):
             if total <= self.disk_cache_bytes:
                 break
