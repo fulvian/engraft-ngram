@@ -53,8 +53,8 @@ eight overlays changes no measurement to the last digit; triggers sharing the bi
 rows move by exactly zero; the CPU replica agrees with the full-precision engine on
 17 of 17 grafts to $3\times10^{-5}$ in probability. One counterfactual fact does not
 take. The grafts do not generalize to the same fact stated inside a paragraph, which we
-report as the main open problem. Every number in Sections 2--6 points to a file in the
-public repository; Section~7 is marked as not yet reproducible from it.
+report as the main open problem. Every number in Sections~\ref{sec:mech}--\ref{sec:results} points to a file in
+the public repository; Section~\ref{sec:dev} is marked as not yet reproducible from it.
 \end{abstract}
 
 \section{Problem and idea}
@@ -162,8 +162,9 @@ Everything in this section comes from one run of \texttt{scripts/reproduce.sh
 2026-09-05} on an AMD Ryzen AI MAX+ 395 (16 cores, 128\,GB unified memory), kept in
 the repository under \repo{}: \texttt{summary.json} for the descents,
 \texttt{engine\_check.json} and \texttt{report.md} for the engine measurements, and
-one \texttt{descend\_*.jsonl} per answer position under \texttt{facts/} for every step. The model is the IQ4\_XS
-quantization; the table is the model's own.
+one \texttt{descend\_*.jsonl} per answer position under \texttt{facts/} for every step. The engine ran the IQ4\_XS
+quantization of the model with the model's own table; the run of record stores the
+measurements, not the model path.
 
 \begin{table}[h]
 \centering\footnotesize
@@ -231,9 +232,9 @@ fact, \emph{liutaia}, starts at $-12.7$ (\texttt{report.md}, Q5,
 \subsection{What does not generalize}
 \label{sec:limits}
 
-\paragraph{Same-tail paraphrases.} A same-tail paraphrase changes a word before the
-trigger's last three tokens (\emph{fu nata a} for \emph{è nata a}) and reads the very same
-16 rows. Under the merged overlay the answer's first token is at rank~1 for one fact of
+\paragraph{Same-tail paraphrases.} A same-tail paraphrase changes words before the
+trigger's last three tokens (\emph{Sappiamo che Marta Rinaldi è nata a} for \emph{Marta
+Rinaldi è nata a}) and reads the very same 16 rows. Under the merged overlay the answer's first token is at rank~1 for one fact of
 eight (it\_gatto, $p=0.28$); for the other seven it sits at rank 16--2585
 (\texttt{report.md}, Q4). Other-tail paraphrases, which read different trigram rows, are
 unchanged from the base model for all eight, as they must be.
@@ -255,11 +256,11 @@ The first version of the stopping rule counted a plateau on $\pfree$ (no improve
 of $0.01$ absolute over 150 refreshes). For a fact whose trigger starts below
 $p=0.01$ this is a hard cap in disguise: an absolute improvement of $0.01$ is impossible
 while $p$ saturates near zero, so the counter never resets and the descent stops at
-step~151 regardless of progress. Two facts (en\_city and it\_capitale) hit this in
-development; continuing them showed that en\_city was still descending and closed 76
-steps later. The public code counts the plateau on the log-probability ($0.05$ nat),
-which is the quantity being minimized and has no such failure mode; in the run of record
-en\_city closed in 193 steps without intervention and it\_capitale ran to the cap.
+a fixed step regardless of progress. The public code counts the plateau on the
+log-probability ($0.05$ nat), which is the quantity being minimized and has no such
+failure mode; in the run of record en\_city closed in 193 steps without intervention
+and it\_capitale ran to the cap. What the old criterion did to these two facts in
+development is in Section~\ref{sec:dev}.
 
 \section{Development observations\\ (not yet reproducible from this repository)}
 \label{sec:dev}
@@ -269,6 +270,11 @@ are not yet part of the public repository, on the same model and facts. We repor
 because they explain the results above and shape the next steps, and we flag them so that
 they are not read as verified: the numbers here cannot be regenerated from the repository
 today, and will be added with their tools in a later version.
+
+\paragraph{The false plateau.} Under the $\pfree$ criterion, en\_city and it\_capitale
+both stopped at step~151; continued with the log-probability criterion from their
+stopped rows, en\_city was still descending and closed 76 steps later, it\_capitale ran
+to the cap. That observation is what made the log-probability criterion the default.
 
 \paragraph{The cost of a graft is set by the base model's prior at the trigger.} One
 forward of the base model at each trigger gives the probability of its top-1 next token.
@@ -311,11 +317,17 @@ edits, and released models built on it. Qwen3.8-Flash-Next carries the same desi
 llama.cpp support \cite{pr27742} is the base of the engine fork used here. \emph{User as
 Engram} \cite{userengram} stores per-user memory as local edits of a hash-keyed table and
 is the closest work: it writes a row in one step through the unembedding projection,
-optionally refined by a few gradient steps, and optimizes many facts jointly; ENGRAFT
-differs in taking the gradient through the whole frozen model rather than through the
-output projection, in refreshing the mixture-of-experts routing at each step, in
-verifying every number on the real inference engine, and in reporting the
-document-context failure. \emph{Engram Adapter} \cite{engramadapter}
+optionally refined by a few gradient steps through the model, and optimizes many facts
+jointly, on small Engram models of its own (178M--1.22B parameters, a 50K-row table)
+whose lookup is read at a late layer. ENGRAFT differs in the target (a 125B
+mixture-of-experts model in production, its own table at block~1), in refreshing the
+expert routing at each step, in verifying every number on the real inference engine,
+and in reporting the document-context failure. One of its findings is worth setting
+against ours: it reports that writing a fact into a lookup read at an early layer drops
+recall from near-perfect to about a quarter. Our seven grafts at block~1 reach
+$p = 0.85$--$0.96$ on the engine. Models, tables and gates differ, so this is a contrast
+to investigate, not a contradiction; but it means the early position of the table is not
+by itself an obstacle to writing into it. \emph{Engram Adapter} \cite{engramadapter}
 and \emph{Memory Grafting} \cite{memorygrafting} use conditional memory for domain
 specialization and pre-training, with training rather than post-hoc edits.
 \emph{ngram-knowledge-injector} \cite{nki} patches the same model's table with overlay
@@ -354,7 +366,7 @@ against Qwen3.8-Flash-Next fall under the Qwen Community License.
 \bibitem{engram} X.~Cheng et al. Conditional Memory via Scalable Lookup: A New Axis of
 Sparsity for Large Language Models. arXiv:2601.07372, 2026.
 \url{https://github.com/deepseek-ai/Engram}.
-\bibitem{userengram} B.~Li et al. User as Engram: Internalizing Per-User Memory as Local
+\bibitem{userengram} B.~Li. User as Engram: Internalizing Per-User Memory as Local
 Parametric Edits. arXiv:2606.19172, 2026.
 \bibitem{engramadapter} J.~Hou et al. When to Adapt: Conditional Memory Adapters for
 Retention-Preserving Domain Specialization. arXiv:2608.29327, 2026.

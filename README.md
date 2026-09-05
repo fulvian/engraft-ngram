@@ -183,11 +183,14 @@ excluded at resolve time. Capacity and order effects at scale are the next exper
   [arXiv:2601.07372](https://arxiv.org/abs/2601.07372),
   [deepseek-ai/Engram](https://github.com/deepseek-ai/Engram). The table design this
   method edits.
-- **User as Engram**, Li et al., [arXiv:2606.19172](https://arxiv.org/abs/2606.19172):
+- **User as Engram**, Bojie Li, [arXiv:2606.19172](https://arxiv.org/abs/2606.19172):
   per-user memory as local edits of a hash-keyed table, written in one step through
-  the unembedding projection and optionally refined by a few gradient steps. Closest
-  in spirit; ENGRAFT differs in taking the gradient through the whole frozen model
-  with expert routing refreshed at every step, and in verifying on the real engine.
+  the unembedding projection and optionally refined by a few gradient steps, on small
+  Engram models of its own. Closest in spirit; ENGRAFT differs in the target (a 125B
+  MoE model in production, its own table at block 1), in refreshing expert routing at
+  every step, and in verifying on the real engine. It reports that writing into a
+  lookup read at an early layer drops recall to about a quarter; our grafts at block 1
+  reach p 0.85 to 0.96, a contrast we intend to investigate.
 - **Engram Adapter**, Hou et al., [arXiv:2608.29327](https://arxiv.org/abs/2608.29327):
   conditional-memory adapters for domain specialization (training, not post-hoc edits).
 - **Memory Grafting**, Cheng et al., [arXiv:2605.20948](https://arxiv.org/abs/2605.20948):
