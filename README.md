@@ -48,6 +48,14 @@ Hardware for the run of record: one AMD Ryzen AI MAX+ 395 (16 cores) with 128 GB
 unified memory; the graft runs on the CPU, the engine check used the integrated GPU
 for a few minutes.
 
+![Left: log-probability of the first answer token during the descent for the eight
+facts, seven sigmoid curves reaching the 0.95 stop and one counterfactual staying
+flat. Right: first-token probability on the real engine with the fact's own overlay
+and with the merged overlay of all eight, identical bars.](docs/img/run-2026-09-05.png)
+
+The figure is plotted from `summary.json`, `engine_check.json` and the per-step
+`descend_*.jsonl` files of the run of record.
+
 ## How it works
 
 Qwen3.8-Flash-Next carries a large lookup table alongside its transformer blocks: at
