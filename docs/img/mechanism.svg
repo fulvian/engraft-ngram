@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="400" viewBox="0 0 960 400" font-family="Helvetica, Arial, sans-serif" font-size="14">
+  <title>ENGRAFT: editing the n-gram table rows read by a trigger</title>
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#333"/></marker>
+    <marker id="arrg" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#b3261e"/></marker>
+  </defs>
+  <rect width="960" height="400" fill="#ffffff"/>
+
+  <!-- trigger tokens -->
+  <text x="30" y="40" font-weight="bold">trigger (last 3 tokens)</text>
+  <g>
+    <rect x="30" y="55" width="70" height="34" rx="4" fill="#eef2f7" stroke="#556"/><text x="65" y="77" text-anchor="middle">is</text>
+    <rect x="105" y="55" width="70" height="34" rx="4" fill="#eef2f7" stroke="#556"/><text x="140" y="77" text-anchor="middle">called</text>
+    <rect x="180" y="55" width="70" height="34" rx="4" fill="#fff4d6" stroke="#556"/><text x="215" y="77" text-anchor="middle">(answer?)</text>
+  </g>
+  <text x="30" y="115" fill="#555">hash(bigram) → 8 heads     hash(trigram) → 8 heads</text>
+  <line x1="140" y1="125" x2="140" y2="160" stroke="#333" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- table -->
+  <text x="30" y="185" font-weight="bold">n-gram (Engram / PLE) table</text>
+  <text x="30" y="203" fill="#555">16 heads × tens of millions of rows × 160 floats, read once per position</text>
+  <g stroke="#556">
+    <rect x="30" y="215" width="330" height="120" fill="#f7f7f7"/>
+    <!-- 8 bigram rows -->
+    <g fill="#d9e4f2">
+      <rect x="40" y="225" width="150" height="10"/><rect x="40" y="238" width="150" height="10"/><rect x="40" y="251" width="150" height="10"/><rect x="40" y="264" width="150" height="10"/>
+      <rect x="40" y="277" width="150" height="10"/><rect x="40" y="290" width="150" height="10"/><rect x="40" y="303" width="150" height="10"/><rect x="40" y="316" width="150" height="10"/>
+    </g>
+    <!-- 8 trigram rows, edited -->
+    <g fill="#f5b7b1">
+      <rect x="200" y="225" width="150" height="10"/><rect x="200" y="238" width="150" height="10"/><rect x="200" y="251" width="150" height="10"/><rect x="200" y="264" width="150" height="10"/>
+      <rect x="200" y="277" width="150" height="10"/><rect x="200" y="290" width="150" height="10"/><rect x="200" y="303" width="150" height="10"/><rect x="200" y="316" width="150" height="10"/>
+    </g>
+  </g>
+  <text x="115" y="352" text-anchor="middle" fill="#555">8 bigram rows (kept)</text>
+  <text x="275" y="352" text-anchor="middle" fill="#b3261e">8 trigram rows (edited)</text>
+
+  <!-- model -->
+  <line x1="360" y1="275" x2="420" y2="275" stroke="#333" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="425" y="150" width="250" height="200" rx="6" fill="#eef2f7" stroke="#556"/>
+  <text x="550" y="178" text-anchor="middle" font-weight="bold">frozen model</text>
+  <text x="550" y="200" text-anchor="middle" fill="#555">rows enter at one early block</text>
+  <text x="550" y="218" text-anchor="middle" fill="#555">(gated per residual stream)</text>
+  <text x="550" y="250" text-anchor="middle" fill="#555">MoE blocks, routing refreshed</text>
+  <text x="550" y="268" text-anchor="middle" fill="#555">at every step of the descent</text>
+  <text x="550" y="300" text-anchor="middle" fill="#555">CPU replica for the gradient;</text>
+  <text x="550" y="318" text-anchor="middle" fill="#555">real llama.cpp engine to verify</text>
+
+  <!-- output -->
+  <line x1="675" y1="275" x2="735" y2="275" stroke="#333" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="740" y="245" width="190" height="60" rx="6" fill="#fff4d6" stroke="#556"/>
+  <text x="835" y="270" text-anchor="middle" font-weight="bold">p(answer | trigger)</text>
+  <text x="835" y="290" text-anchor="middle" fill="#555">target ≥ 0.95, free routing</text>
+
+  <!-- gradient back -->
+  <path d="M 835 245 C 835 120, 300 120, 275 215" fill="none" stroke="#b3261e" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arrg)"/>
+  <text x="600" y="128" text-anchor="middle" fill="#b3261e" font-weight="bold">gradient on the 8 trigram rows only</text>
+
+  <!-- overlay -->
+  <text x="740" y="345" fill="#555">result: a .pleo overlay of 16 rows per</text>
+  <text x="740" y="363" fill="#555">answer token, swapped in at read time;</text>
+  <text x="740" y="381" fill="#555">the GGUF is never rewritten.</text>
+</svg>
