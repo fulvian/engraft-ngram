@@ -1,90 +1,151 @@
 #!/usr/bin/env python3
-"""Plot the run-of-record figure (docs/img/run-<date>.png) from results/<date>/:
-descent curves of the first answer token for every fact, and the engine's
-first-token probability with the fact's own overlay and with the merged one.
+"""Render the run-of-record figure as SVG (and PNG when resvg-py is available)
+from results/<date>/: the descent of the first answer token for every fact,
+and the engine's first-token probability with the fact's own overlay and with
+the merged one.
 
-Usage: uv run --with matplotlib --with numpy python scripts/plot_run.py 2026-09-05
+Usage: uv run --with resvg-py python scripts/plot_run.py 2026-09-05
+Writes docs/img/run-<date>.svg and docs/img/run-<date>.png.
 """
 import json
+import math
 import sys
-
-import matplotlib
-import numpy as np
-
-matplotlib.use("Agg")
-import matplotlib.pyplot as plt
-from matplotlib.patches import Patch
+from pathlib import Path
 
 date = sys.argv[1] if len(sys.argv) > 1 else "2026-09-05"
-root = f"results/{date}"
-plt.rcParams.update({"font.family": ["Noto Sans", "DejaVu Sans", "sans-serif"], "font.size": 11,
-                     "axes.edgecolor": "#cbd5e1", "axes.labelcolor": "#334155", "xtick.color": "#64748b",
-                     "ytick.color": "#64748b", "axes.titlesize": 14, "axes.titlecolor": "#0f172a"})
-s = json.load(open(f"{root}/summary.json"))
-ec = json.load(open(f"{root}/engine_check.json"))
-_fj = json.load(open("facts/facts.json"))
-facts = {f["id"]: f for f in (_fj["facts"] if isinstance(_fj, dict) else _fj)}
+root = Path("results") / date
+s = json.load(open(root / "summary.json"))
+ec = json.load(open(root / "engine_check.json"))
+fj = json.load(open("facts/facts.json"))
+facts = {f["id"]: f for f in (fj["facts"] if isinstance(fj, dict) else fj)}
 order = s["order"]
 
+W, H = 1800, 900
+BG, INK, MUTED, GRID = "#0b1220", "#e5e7eb", "#8b93a7", "#1f2937"
+PAL = ["#22d3ee", "#38bdf8", "#34d399", "#a3e635", "#a78bfa", "#f472b6", "#fb7185", "#fbbf24"]
+FONT = "Inter, 'Noto Sans', 'Segoe UI', Helvetica, Arial, sans-serif"
 
-def label(fid):
-    f = facts[fid]
-    kind = " (counterfactual)" if f.get("kind") == "counterfactual" else f" ({f['lang']})"
-    return f"{f['trigger']}: {f['answer']}{kind}"
+out = []
+add = out.append
+add(f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" font-family="{FONT}">')
+add('<defs>'
+    '<filter id="glow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="4" result="b"/>'
+    '<feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>'
+    '<filter id="soft" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="10"/></filter>'
+    '</defs>')
+add(f'<rect width="{W}" height="{H}" fill="{BG}"/>')
+
+# ---- headline -------------------------------------------------------------
+n_ok = sum(ec["q8"]["facts"][f]["answer_reproduced"] for f in order)
+add(f'<text x="70" y="86" font-size="44" font-weight="800" fill="{INK}">{n_ok} of {len(order)} facts took.</text>')
+add(f'<text x="70" y="122" font-size="18" fill="{MUTED}">ENGRAFT on Qwen3.8-Flash-Next (125B MoE) · gradient on 8 rows of the n-gram table per fact · '
+    f'CPU-only · run of record {date}</text>')
+
+# ---- left panel: descent curves ------------------------------------------
+L, T, R, B = 90, 190, 980, 720  # plot box
+xmax = 300
 
 
-pal = ["#2563eb", "#0ea5e9", "#10b981", "#84cc16", "#8b5cf6", "#c026d3", "#f43f5e", "#f97316"]
-fig = plt.figure(figsize=(15, 7.2), facecolor="#f8fafc")
-gs = fig.add_gridspec(1, 2, width_ratios=[1.55, 1], wspace=0.2, left=0.055, right=0.985, top=0.78, bottom=0.27)
-ax1, ax2 = fig.add_subplot(gs[0]), fig.add_subplot(gs[1])
-for ax in (ax1, ax2):
-    ax.set_facecolor("#ffffff")
-    for sp in ("top", "right"):
-        ax.spines[sp].set_visible(False)
-    ax.grid(axis="y", color="#e2e8f0", lw=1)
-    ax.set_axisbelow(True)
+def X(step):
+    return L + (R - L) * step / xmax
+
+
+def Y(p):
+    return B - (B - T) * p
+
+
+for gy in (0, 0.25, 0.5, 0.75, 1.0):
+    add(f'<line x1="{L}" y1="{Y(gy):.1f}" x2="{R}" y2="{Y(gy):.1f}" stroke="{GRID}" stroke-width="1"/>')
+    add(f'<text x="{L-12}" y="{Y(gy)+5:.1f}" font-size="13" fill="{MUTED}" text-anchor="end">{gy:g}</text>')
+for gx in (0, 100, 200, 300):
+    add(f'<text x="{X(gx):.1f}" y="{B+26}" font-size="13" fill="{MUTED}" text-anchor="middle">{gx}</text>')
+add(f'<line x1="{L}" y1="{Y(0.95):.1f}" x2="{R}" y2="{Y(0.95):.1f}" stroke="{MUTED}" stroke-width="1" stroke-dasharray="3 5"/>')
+add(f'<text x="{R}" y="{Y(0.95)-8:.1f}" font-size="13" fill="{MUTED}" text-anchor="end">stop: p = 0.95 under free routing</text>')
+add(f'<text x="{L}" y="{T-28}" font-size="20" font-weight="700" fill="{INK}">Descent of the first answer token</text>')
+add(f'<text x="{L}" y="{T-8}" font-size="13" fill="{MUTED}">p(answer | trigger) on the CPU replica, expert routing refreshed at every step</text>')
+add(f'<text x="{(L+R)/2:.0f}" y="{B+52}" font-size="14" fill="{MUTED}" text-anchor="middle">descent step</text>')
+
+ends = []
 for i, fid in enumerate(order):
-    rows = [json.loads(l) for l in open(f"{root}/facts/{fid}/descend_{fid}_0.jsonl")]
-    x = [r["step"] for r in rows]
-    y = [np.exp(r["logp_y"]) for r in rows]
+    rows = [json.loads(l) for l in open(root / "facts" / fid / f"descend_{fid}_0.jsonl")]
+    pts = [(X(r["step"]), Y(math.exp(r["logp_y"]))) for r in rows]
+    d = "M " + " L ".join(f"{x:.1f},{y:.1f}" for x, y in pts)
+    col = PAL[i % len(PAL)]
     cf = facts[fid].get("kind") == "counterfactual"
-    ax1.plot(x, y, color=pal[i % len(pal)], lw=2.6, ls=(0, (4, 2)) if cf else "-", label=label(fid))
-    ax1.scatter([x[-1]], [y[-1]], color=pal[i % len(pal)], s=36, zorder=5, edgecolor="white", lw=1.2)
-ax1.axhline(0.95, color="#94a3b8", lw=1.2, ls=":")
-ax1.text(3, 0.965, "stop at p = 0.95", fontsize=10, color="#64748b")
-ax1.set_xlim(0, 300)
-ax1.set_ylim(0, 1.02)
-ax1.set_xlabel("descent step  (expert routing refreshed at every step)")
-ax1.set_ylabel("p(first answer token | trigger), CPU replica")
-ax1.set_title("Gradient descent on the 8 trigram rows, first answer token", loc="left")
-ax1.legend(loc="upper center", bbox_to_anchor=(0.5, -0.16), frameon=False, fontsize=9, ncol=2, handlelength=2.4)
+    dash = ' stroke-dasharray="7 5"' if cf else ""
+    add(f'<path d="{d}" fill="none" stroke="{col}" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round" filter="url(#glow)"{dash}/>')
+    ends.append((pts[-1], col, fid, rows[-1]))
+
+# labels: a column right of the plot, one per curve, aligned to the end point and pushed apart
+ends.sort(key=lambda e: e[0][1])
+placed = []
+for (x, y), col, fid, last in ends:
+    ly = y
+    for py in placed:
+        if abs(ly - py) < 24:
+            ly = py + 24
+    placed.append(ly)
+    f = facts[fid]
+    tag = f"{f['answer']} · {f['trigger']}"
+    if f.get("kind") == "counterfactual":
+        tag += " (counterfactual)"
+    add(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="5" fill="{col}" filter="url(#glow)"/>')
+    add(f'<circle cx="{R+22}" cy="{ly-4:.1f}" r="4" fill="{col}"/>')
+    add(f'<text x="{R+32}" y="{ly:.1f}" font-size="12.5" fill="{col}">{tag}</text>')
+
+# annotation for a fact stopped at the cap
 for fid in order:
     g0 = s["facts"][fid]["grafts"][0]
     if g0["stop_reason"] == "max_steps":
-        ax1.annotate("never takes: strong base prior at the trigger", xy=(g0["n_steps"] - 4, g0["final_p_free"]),
-                     xytext=(232, 0.17), fontsize=9.5, color="#e11d48", ha="center",
-                     arrowprops=dict(arrowstyle="->", color="#e11d48", lw=1))
-pf = [ec["q8"]["facts"][f]["p_first"] for f in order]
-pm = [ec["q8"]["merged"]["facts"][f]["p_first"] for f in order]
-xs = np.arange(len(order))
-w = 0.36
-ax2.bar(xs - w / 2, pf, w, color=pal[: len(order)], edgecolor="none")
-ax2.bar(xs + w / 2, pm, w, color=pal[: len(order)], alpha=0.35, edgecolor="none", hatch="////")
-ax2.set_xticks(xs)
-ax2.set_xticklabels([f.replace("_", "\n") for f in order], fontsize=9)
-ax2.set_ylim(0, 1.06)
-ax2.set_ylabel("p(first answer token), real llama.cpp engine")
-n_ok = sum(ec["q8"]["facts"][f]["answer_reproduced"] for f in order)
-ax2.set_title(f"Real engine: {n_ok} of {len(order)} take, merged = single", loc="left")
-for xi, v in zip(xs, pf):
-    ax2.text(xi - w / 2, v + 0.02, f"{v:.2f}", ha="center", fontsize=9, color="#334155")
-ax2.legend(handles=[Patch(color="#334155", label="own overlay"),
-                    Patch(facecolor="#334155", alpha=0.35, hatch="////", label="merged overlay of all facts")],
-           loc="upper center", bbox_to_anchor=(0.5, -0.16), frameon=False, fontsize=9.5, ncol=2)
-fig.text(0.055, 0.93, "ENGRAFT on Qwen3.8-Flash-Next (125B MoE)", fontsize=20, color="#0f172a")
-fig.text(0.055, 0.875, f"{len(order)} facts written into the n-gram table by gradient on 8 rows each · "
-         f"CPU-only descent · run of record {date}", fontsize=11, color="#64748b")
-fig.text(0.055, 0.03, f"Plotted from summary.json, engine_check.json and the per-step descend_*.jsonl files in "
-         f"results/{date} · github.com/fulvian/engraft-ngram", fontsize=9, color="#94a3b8")
-fig.savefig(f"docs/img/run-{date}.png", dpi=130, facecolor=fig.get_facecolor())
-print(f"docs/img/run-{date}.png")
+        add(f'<text x="{X(296):.0f}" y="{Y(0.06):.0f}" font-size="13" fill="#fb7185" text-anchor="end">never takes: strong prior of the base model at this trigger</text>')
+
+# ---- right panel: engine bars --------------------------------------------
+bx, by = 1330, 190
+add(f'<text x="{bx}" y="{by-28}" font-size="20" font-weight="700" fill="{INK}">On the real llama.cpp engine</text>')
+add(f'<text x="{bx}" y="{by-8}" font-size="13" fill="{MUTED}">p(first answer token), own overlay · merged overlay: same digits</text>')
+bw = 300
+rowh = 58
+for i, fid in enumerate(order):
+    p_own = ec["q8"]["facts"][fid]["p_first"]
+    p_m = ec["q8"]["merged"]["facts"][fid]["p_first"]
+    col = PAL[i % len(PAL)]
+    y = by + 20 + i * rowh
+    f = facts[fid]
+    add(f'<text x="{bx}" y="{y+14}" font-size="13" fill="{INK}">{f["answer"]}</text>')
+    add(f'<text x="{bx+bw}" y="{y+14}" font-size="11" fill="{MUTED}" text-anchor="end">{f["trigger"]}</text>')
+    add(f'<rect x="{bx}" y="{y+22}" width="{bw}" height="14" rx="7" fill="{GRID}"/>')
+    add(f'<rect x="{bx}" y="{y+22}" width="{max(6, bw*p_own):.1f}" height="14" rx="7" fill="{col}" filter="url(#glow)"/>')
+    same = "= merged" if p_own == p_m else f"merged {p_m:.3f}"
+    add(f'<text x="{bx+bw+16}" y="{y+34}" font-size="20" font-weight="700" fill="{col}">{p_own:.2f}</text>')
+    add(f'<text x="{bx+bw+80}" y="{y+34}" font-size="11" fill="{MUTED}">{same}</text>')
+
+# ---- footer chips ---------------------------------------------------------
+chips = [
+    ("replica = F32 engine on 17/17 grafts", "#34d399"),
+    ("sister triggers: Δ = 0.0", "#22d3ee"),
+    ("no weight changed · GGUF untouched", "#a78bfa"),
+    ("67 GB RAM peak · 7–17 min per fact", "#fbbf24"),
+]
+cx = 70
+for text, col in chips:
+    wch = 12 + 8.2 * len(text)
+    add(f'<rect x="{cx}" y="{H-90}" width="{wch:.0f}" height="36" rx="18" fill="none" stroke="{col}" stroke-opacity="0.7"/>')
+    add(f'<text x="{cx+wch/2:.0f}" y="{H-67}" font-size="13" fill="{col}" text-anchor="middle">{text}</text>')
+    cx += wch + 14
+add(f'<text x="{W-70}" y="{H-30}" font-size="12" fill="{MUTED}" text-anchor="end">plotted from results/{date} · github.com/fulvian/engraft-ngram</text>')
+add("</svg>")
+
+svg = "\n".join(out)
+Path("docs/img").mkdir(parents=True, exist_ok=True)
+svg_path = Path("docs/img") / f"run-{date}.svg"
+svg_path.write_text(svg)
+print(svg_path)
+try:
+    import resvg_py
+
+    png = resvg_py.svg_to_bytes(svg_string=svg, width=W, font_dirs=["/usr/share/fonts"], font_family="Noto Sans",
+                                sans_serif_family="Noto Sans", skip_system_fonts=False)
+    (Path("docs/img") / f"run-{date}.png").write_bytes(png)
+    print(Path("docs/img") / f"run-{date}.png")
+except ImportError:
+    print("resvg-py not installed: SVG only")

@@ -22,7 +22,7 @@ with ENGRAFT (CCS 2022, Byzantine consensus) or [engraft.dev](https://engraft.de
 ![The trigger's last three tokens are hashed into 16 rows of the n-gram table, 8 by
 bigram and 8 by trigram. The 8 trigram rows are optimized by gradient through a frozen
 model until the answer's probability exceeds 0.95 under free expert routing. The result
-is a .pleo overlay swapped in at read time.](docs/img/mechanism.svg)
+is a .pleo overlay swapped in at read time.](docs/img/mechanism.png)
 
 ## The numbers, with the file behind each one
 
