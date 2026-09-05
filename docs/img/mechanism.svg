@@ -1,63 +1,157 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="400" viewBox="0 0 960 400" font-family="Helvetica, Arial, sans-serif" font-size="14">
-  <title>ENGRAFT: editing the n-gram table rows read by a trigger</title>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" font-family="Inter, 'Noto Sans', 'Segoe UI', Helvetica, Arial, sans-serif">
+  <title>ENGRAFT: a fact enters the model through 8 rows of its n-gram table</title>
   <defs>
-    <marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#333"/></marker>
-    <marker id="arrg" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#b3261e"/></marker>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fafc"/><stop offset="1" stop-color="#eef2ff"/>
+    </linearGradient>
+    <linearGradient id="edit" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f43f5e"/><stop offset="1" stop-color="#f97316"/>
+    </linearGradient>
+    <linearGradient id="keep" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#93c5fd"/><stop offset="1" stop-color="#bfdbfe"/>
+    </linearGradient>
+    <linearGradient id="model" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1e293b"/><stop offset="1" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#22c55e"/><stop offset="1" stop-color="#84cc16"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+    <filter id="glow" x="-20%" y="-50%" width="140%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M2,2 L10,6 L2,10 z" fill="#475569"/>
+    </marker>
+    <marker id="arrowg" markerWidth="14" markerHeight="14" refX="10" refY="7" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M2,2 L12,7 L2,12 z" fill="#f43f5e"/>
+    </marker>
   </defs>
-  <rect width="960" height="400" fill="#ffffff"/>
 
-  <!-- trigger tokens -->
-  <text x="30" y="40" font-weight="bold">trigger (last 3 tokens)</text>
+  <rect width="1200" height="620" rx="0" fill="url(#bg)"/>
+
+  <!-- step labels -->
+  <g font-size="13" font-weight="700" fill="#64748b" letter-spacing="1.5">
+    <text x="60" y="60">1 · TRIGGER</text>
+    <text x="360" y="60">2 · N-GRAM TABLE</text>
+    <text x="690" y="60">3 · FROZEN MODEL</text>
+    <text x="985" y="60">4 · ANSWER</text>
+  </g>
+
+  <!-- card 1: trigger -->
+  <g filter="url(#shadow)">
+    <rect x="60" y="80" width="250" height="250" rx="18" fill="#ffffff"/>
+  </g>
+  <g font-size="15" font-weight="600">
+    <rect x="80" y="104" width="210" height="36" rx="10" fill="#f1f5f9"/><text x="185" y="128" text-anchor="middle" fill="#334155">Oliver Hale's dog</text>
+    <rect x="80" y="150" width="100" height="36" rx="10" fill="#e2e8f0"/><text x="130" y="174" text-anchor="middle" fill="#0f172a">is</text>
+    <rect x="190" y="150" width="100" height="36" rx="10" fill="#e2e8f0"/><text x="240" y="174" text-anchor="middle" fill="#0f172a">called</text>
+    <rect x="80" y="196" width="210" height="36" rx="10" fill="#fff7ed" stroke="#fdba74" stroke-dasharray="4 3"/><text x="185" y="220" text-anchor="middle" fill="#c2410c">next token ?</text>
+  </g>
+  <g font-size="12" fill="#64748b">
+    <text x="80" y="266">last 2 tokens, bigram hash: 8 heads</text>
+    <text x="80" y="286">last 3 tokens, trigram hash: 8 heads</text>
+    <text x="80" y="312" font-weight="600" fill="#334155">the key is exact: one token changes the rows</text>
+  </g>
+
+  <!-- arrow 1→2 -->
+  <line x1="318" y1="205" x2="350" y2="205" stroke="#475569" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- card 2: table -->
+  <g filter="url(#shadow)">
+    <rect x="360" y="80" width="300" height="250" rx="18" fill="#ffffff"/>
+  </g>
+  <g font-size="12" fill="#64748b">
+    <text x="380" y="106">16 heads × ~20 M rows × 160 floats</text>
+  </g>
+  <g font-size="12" font-weight="600">
+    <text x="440" y="128" text-anchor="middle" fill="#3b82f6">8 bigram rows</text>
+    <text x="440" y="143" text-anchor="middle" fill="#64748b" font-weight="400">kept as they are</text>
+    <text x="580" y="128" text-anchor="middle" fill="#e11d48">8 trigram rows</text>
+    <text x="580" y="143" text-anchor="middle" fill="#64748b" font-weight="400">the only thing we edit</text>
+  </g>
+  <!-- 8 kept rows -->
   <g>
-    <rect x="30" y="55" width="70" height="34" rx="4" fill="#eef2f7" stroke="#556"/><text x="65" y="77" text-anchor="middle">is</text>
-    <rect x="105" y="55" width="70" height="34" rx="4" fill="#eef2f7" stroke="#556"/><text x="140" y="77" text-anchor="middle">called</text>
-    <rect x="180" y="55" width="70" height="34" rx="4" fill="#fff4d6" stroke="#556"/><text x="215" y="77" text-anchor="middle">(answer?)</text>
+    <rect x="380" y="154" width="120" height="12" rx="4" fill="url(#keep)"/>
+    <rect x="380" y="170" width="120" height="12" rx="4" fill="url(#keep)"/>
+    <rect x="380" y="186" width="120" height="12" rx="4" fill="url(#keep)"/>
+    <rect x="380" y="202" width="120" height="12" rx="4" fill="url(#keep)"/>
+    <rect x="380" y="218" width="120" height="12" rx="4" fill="url(#keep)"/>
+    <rect x="380" y="234" width="120" height="12" rx="4" fill="url(#keep)"/>
+    <rect x="380" y="250" width="120" height="12" rx="4" fill="url(#keep)"/>
+    <rect x="380" y="266" width="120" height="12" rx="4" fill="url(#keep)"/>
   </g>
-  <text x="30" y="115" fill="#555">hash(bigram) → 8 heads     hash(trigram) → 8 heads</text>
-  <line x1="140" y1="125" x2="140" y2="160" stroke="#333" stroke-width="1.5" marker-end="url(#arr)"/>
-
-  <!-- table -->
-  <text x="30" y="185" font-weight="bold">n-gram (Engram / PLE) table</text>
-  <text x="30" y="203" fill="#555">16 heads × tens of millions of rows × 160 floats, read once per position</text>
-  <g stroke="#556">
-    <rect x="30" y="215" width="330" height="120" fill="#f7f7f7"/>
-    <!-- 8 bigram rows -->
-    <g fill="#d9e4f2">
-      <rect x="40" y="225" width="150" height="10"/><rect x="40" y="238" width="150" height="10"/><rect x="40" y="251" width="150" height="10"/><rect x="40" y="264" width="150" height="10"/>
-      <rect x="40" y="277" width="150" height="10"/><rect x="40" y="290" width="150" height="10"/><rect x="40" y="303" width="150" height="10"/><rect x="40" y="316" width="150" height="10"/>
-    </g>
-    <!-- 8 trigram rows, edited -->
-    <g fill="#f5b7b1">
-      <rect x="200" y="225" width="150" height="10"/><rect x="200" y="238" width="150" height="10"/><rect x="200" y="251" width="150" height="10"/><rect x="200" y="264" width="150" height="10"/>
-      <rect x="200" y="277" width="150" height="10"/><rect x="200" y="290" width="150" height="10"/><rect x="200" y="303" width="150" height="10"/><rect x="200" y="316" width="150" height="10"/>
-    </g>
+  <!-- 8 edited rows -->
+  <g filter="url(#glow)">
+    <rect x="520" y="154" width="120" height="12" rx="4" fill="url(#edit)"/>
+    <rect x="520" y="170" width="120" height="12" rx="4" fill="url(#edit)"/>
+    <rect x="520" y="186" width="120" height="12" rx="4" fill="url(#edit)"/>
+    <rect x="520" y="202" width="120" height="12" rx="4" fill="url(#edit)"/>
+    <rect x="520" y="218" width="120" height="12" rx="4" fill="url(#edit)"/>
+    <rect x="520" y="234" width="120" height="12" rx="4" fill="url(#edit)"/>
+    <rect x="520" y="250" width="120" height="12" rx="4" fill="url(#edit)"/>
+    <rect x="520" y="266" width="120" height="12" rx="4" fill="url(#edit)"/>
   </g>
-  <text x="115" y="352" text-anchor="middle" fill="#555">8 bigram rows (kept)</text>
-  <text x="275" y="352" text-anchor="middle" fill="#b3261e">8 trigram rows (edited)</text>
+  <text x="380" y="312" font-size="12" font-weight="600" fill="#334155">read once per position, never rewritten on disk</text>
 
-  <!-- model -->
-  <line x1="360" y1="275" x2="420" y2="275" stroke="#333" stroke-width="1.5" marker-end="url(#arr)"/>
-  <rect x="425" y="150" width="250" height="200" rx="6" fill="#eef2f7" stroke="#556"/>
-  <text x="550" y="178" text-anchor="middle" font-weight="bold">frozen model</text>
-  <text x="550" y="200" text-anchor="middle" fill="#555">rows enter at one early block</text>
-  <text x="550" y="218" text-anchor="middle" fill="#555">(gated per residual stream)</text>
-  <text x="550" y="250" text-anchor="middle" fill="#555">MoE blocks, routing refreshed</text>
-  <text x="550" y="268" text-anchor="middle" fill="#555">at every step of the descent</text>
-  <text x="550" y="300" text-anchor="middle" fill="#555">CPU replica for the gradient;</text>
-  <text x="550" y="318" text-anchor="middle" fill="#555">real llama.cpp engine to verify</text>
+  <!-- arrow 2→3 -->
+  <line x1="668" y1="205" x2="680" y2="205" stroke="#475569" stroke-width="2.5" marker-end="url(#arrow)"/>
 
-  <!-- output -->
-  <line x1="675" y1="275" x2="735" y2="275" stroke="#333" stroke-width="1.5" marker-end="url(#arr)"/>
-  <rect x="740" y="245" width="190" height="60" rx="6" fill="#fff4d6" stroke="#556"/>
-  <text x="835" y="270" text-anchor="middle" font-weight="bold">p(answer | trigger)</text>
-  <text x="835" y="290" text-anchor="middle" fill="#555">target ≥ 0.95, free routing</text>
+  <!-- card 3: frozen model -->
+  <g filter="url(#shadow)">
+    <rect x="690" y="80" width="270" height="250" rx="18" fill="url(#model)"/>
+  </g>
+  <g font-size="12" fill="#cbd5e1">
+    <rect x="710" y="104" width="230" height="30" rx="8" fill="#334155"/>
+    <text x="825" y="124" text-anchor="middle" fill="#fde68a" font-weight="600">block 1 · rows enter through a gate</text>
+    <rect x="710" y="142" width="230" height="22" rx="6" fill="#1e293b" stroke="#475569"/>
+    <rect x="710" y="170" width="230" height="22" rx="6" fill="#1e293b" stroke="#475569"/>
+    <rect x="710" y="198" width="230" height="22" rx="6" fill="#1e293b" stroke="#475569"/>
+    <text x="825" y="158" text-anchor="middle">MoE block · 10 of 512 experts</text>
+    <text x="825" y="186" text-anchor="middle">routing refreshed every step</text>
+    <text x="825" y="214" text-anchor="middle">… 48 blocks, all weights frozen</text>
+    <text x="825" y="252" text-anchor="middle" fill="#94a3b8">gradient: CPU replica (torch)</text>
+    <text x="825" y="270" text-anchor="middle" fill="#94a3b8">verification: real llama.cpp engine</text>
+    <text x="825" y="304" text-anchor="middle" fill="#e2e8f0" font-weight="600">125B parameters, none of them changed</text>
+  </g>
 
-  <!-- gradient back -->
-  <path d="M 835 245 C 835 120, 300 120, 275 215" fill="none" stroke="#b3261e" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arrg)"/>
-  <text x="600" y="128" text-anchor="middle" fill="#b3261e" font-weight="bold">gradient on the 8 trigram rows only</text>
+  <!-- arrow 3→4 -->
+  <line x1="968" y1="205" x2="980" y2="205" stroke="#475569" stroke-width="2.5" marker-end="url(#arrow)"/>
 
-  <!-- overlay -->
-  <text x="740" y="345" fill="#555">result: a .pleo overlay of 16 rows per</text>
-  <text x="740" y="363" fill="#555">answer token, swapped in at read time;</text>
-  <text x="740" y="381" fill="#555">the GGUF is never rewritten.</text>
+  <!-- card 4: answer -->
+  <g filter="url(#shadow)">
+    <rect x="985" y="80" width="155" height="250" rx="18" fill="#ffffff"/>
+  </g>
+  <text x="1062" y="126" text-anchor="middle" font-size="26" font-weight="800" fill="#0f172a">Pumpkin</text>
+  <text x="1062" y="148" text-anchor="middle" font-size="12" fill="#64748b">p(first token)</text>
+  <rect x="1005" y="164" width="115" height="16" rx="8" fill="#e2e8f0"/>
+  <rect x="1005" y="164" width="107" height="16" rx="8" fill="url(#bar)"/>
+  <text x="1062" y="200" text-anchor="middle" font-size="20" font-weight="700" fill="#15803d">0.93</text>
+  <text x="1062" y="220" text-anchor="middle" font-size="11" fill="#64748b">on the real engine</text>
+  <line x1="1005" y1="238" x2="1120" y2="238" stroke="#e2e8f0"/>
+  <text x="1062" y="262" text-anchor="middle" font-size="12" fill="#334155">stop when p reaches 0.95</text>
+  <text x="1062" y="280" text-anchor="middle" font-size="12" fill="#334155">under free routing</text>
+  <text x="1062" y="310" text-anchor="middle" font-size="11" fill="#64748b">before the edit: p = 0.0004</text>
+
+  <!-- gradient arc back to the edited rows -->
+  <path d="M 1062 340 C 1062 440, 640 470, 585 286" fill="none" stroke="url(#edit)" stroke-width="4" stroke-linecap="round" stroke-dasharray="10 7" marker-end="url(#arrowg)"/>
+  <g filter="url(#shadow)">
+    <rect x="690" y="400" width="300" height="46" rx="23" fill="#ffffff"/>
+  </g>
+  <text x="840" y="429" text-anchor="middle" font-size="15" font-weight="700" fill="#e11d48">the gradient flows back to the 8 rows only</text>
+
+  <!-- footer chips -->
+  <g font-size="13" font-weight="600">
+    <rect x="60" y="500" width="250" height="40" rx="20" fill="#ffffff" filter="url(#shadow)"/>
+    <text x="185" y="525" text-anchor="middle" fill="#334155">no fine-tuning · no GPU for the edit</text>
+    <rect x="330" y="500" width="290" height="40" rx="20" fill="#ffffff" filter="url(#shadow)"/>
+    <text x="475" y="525" text-anchor="middle" fill="#334155">result: a .pleo overlay, 16 rows per answer token</text>
+    <rect x="640" y="500" width="250" height="40" rx="20" fill="#ffffff" filter="url(#shadow)"/>
+    <text x="765" y="525" text-anchor="middle" fill="#334155">delete the file and the model is back</text>
+    <rect x="910" y="500" width="230" height="40" rx="20" fill="#0f172a" filter="url(#shadow)"/>
+    <text x="1025" y="525" text-anchor="middle" fill="#ffffff">7 of 8 facts took · p 0.85 to 0.96</text>
+  </g>
+  <text x="60" y="585" font-size="12" fill="#94a3b8">ENGRAFT · ENgram GRadient Routing-Aware Fact Transplant · Qwen3.8-Flash-Next · run of record 2026-09-05</text>
 </svg>
