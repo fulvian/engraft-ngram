@@ -53,8 +53,8 @@ eight overlays changes no measurement to the last digit; triggers sharing the bi
 rows move by exactly zero; the CPU replica agrees with the full-precision engine on
 17 of 17 grafts to $3\times10^{-5}$ in probability. One counterfactual fact does not
 take. The grafts do not generalize to the same fact stated inside a paragraph, which we
-report as the main open problem. Every number in this report points to a file in the
-public repository.
+report as the main open problem. Every number in Sections 2--6 points to a file in the
+public repository; Section~7 is marked as not yet reproducible from it.
 \end{abstract}
 
 \section{Problem and idea}
@@ -71,8 +71,8 @@ be removed by deleting a file.
 The difficulty is that the rows do not act on the output directly. They enter the residual
 stream through a learned gate that depends on the hidden state, at one early block, and
 everything that follows (delta-net and attention layers, the remaining blocks
-of mixture-of-experts routing) transforms them. A closed-form write \cite{userengram} has to
-model that path; we instead differentiate through it. ENGRAFT (ENgram GRadient
+of mixture-of-experts routing) transforms them. A one-step write through the unembedding \cite{userengram} steers the output
+projection directly; we instead differentiate through the whole path. ENGRAFT (ENgram GRadient
 Routing-Aware Fact Transplant) is: find the rows, descend the loss on them through a
 faithful CPU replica of the frozen model with expert routing recomputed at every step,
 stop at a probability threshold measured under free routing, and verify on the real
@@ -137,7 +137,8 @@ position with gradient with respect to the 16 rows, of which only the 8 trigram 
 (the \emph{T8 mask}) are updated. The loss is $-\log p(\text{answer token})$. At every
 step the mixture-of-experts routing is recomputed from the current rows (\emph{refresh}),
 so the descent follows the model's actual computation rather than a routing frozen at
-step~0; a small regularizer keeps the rows near their original norm. The learning rate is
+step~0; a small regularizer keeps the rows near their original values (squared
+distance to the true rows, relative to their squared norm). The learning rate is
 $0.01$ times the mean row norm over $\sqrt{160}$. The descent stops when the free-routing
 probability $\pfree$ of the target exceeds $0.95$, on a plateau (150 refreshes with no
 improvement of more than $0.05$ nat in the log-probability), or at 300 steps. Multi-token
@@ -211,14 +212,15 @@ engine recomputes diverges in zero layers from the routing the replica recorded
 (\texttt{report.md}, Q5). This is what makes the CPU-side numbers meaningful: the
 descent optimizes the quantity the engine will produce.
 
-\paragraph{Determinism.} On the same machine and fork commit, the descents are
-deterministic: a second full run of the eight facts reproduced six of the eight $\pfree$
-products bit for bit (the other two follow a different but equivalent path under the
-plateau criterion, Section~\ref{sec:plateau}). Restarting two closed grafts from a 1\,\%
-perturbation of the starting rows gives the same stop reason and final probability;
-step counts were 142 versus 142 and 148 versus 115 (\texttt{summary.json}, \texttt{q6}),
-so the step count is not a stable quantity and we do not use it as a concordance
-criterion.
+\paragraph{Perturbed restarts.} Restarting two closed grafts from a 1\,\%
+perturbation of the starting rows gives the same stop reason and a final probability
+within 0.02 (it\_gatto 0.951 versus 0.951, en\_dog 0.980 versus 0.973); step counts were
+142 versus 142 and 148 versus 115 (\texttt{summary.json}, \texttt{q6}). The run's own
+concordance test, which also requires step counts within 20\,\%, therefore records
+en\_dog as non-concordant; we regard the step count, not the outcome, as the unstable
+quantity. The descents themselves contain no random
+element: on the same machine and engine build a rerun from the same start is expected to
+reproduce the numbers, but this repository contains one run, not two.
 
 \paragraph{The one that does not take.} \emph{La capitale della Francia è} $\to$
 \emph{Lione} reaches $\pfree = 0.020$ after 300 steps and rank~9 on the engine. The
@@ -285,8 +287,8 @@ should be reformulated.
 
 \paragraph{Every regression is a routing change.} In all descents, every step in which
 the log-probability decreased coincided with a change of expert routing in at least one
-layer (96 of 97 regressions across the eight facts, the exception at step 289 of
-en\_planet), and the changes concentrate in blocks 16--47. Refresh is what makes the
+layer (314 of 315 regressions across the eight facts, the single exception at step 289
+of en\_planet), and the changes concentrate in blocks 16--47. Refresh is what makes the
 descent see them.
 
 \paragraph{Frozen-routing probes.} Descending with the routing frozen at step~0
@@ -297,8 +299,10 @@ $1.8\times10^{-5}$ (en\_city). For a fact the model is undecided about
 (it\_mestiere), the descent closes with or without refresh; for an intermediate case
 (en\_city) refresh is the mechanism by which the model changes its mind, and the frozen
 descent does not close in 300 steps; for a decided case (it\_capitale) nothing closes.
-Using 5 refreshes per step instead of 1, halving the learning rate, or changing the
-random seed did not change it\_capitale's outcome.
+Refreshing the routing every 5 steps instead of every step, halving the learning rate,
+or changing the random seed did not change it\_capitale's outcome (these four variants
+inherited the old $\pfree$ plateau criterion and stopped at 151 steps, against the
+300 of the baseline).
 
 \section{Related work}
 
@@ -306,10 +310,12 @@ DeepSeek's Engram \cite{engram} introduced the conditional-memory table this met
 edits, and released models built on it. Qwen3.8-Flash-Next carries the same design; its
 llama.cpp support \cite{pr27742} is the base of the engine fork used here. \emph{User as
 Engram} \cite{userengram} stores per-user memory as local edits of a hash-keyed table and
-is the closest work: it computes the edit rather than descending through the model, and
-reports its recall per layer; ENGRAFT differs in optimizing through the frozen model with
-routing refreshed at each step, in verifying every number on the real inference engine,
-and in reporting the document-context failure. \emph{Engram Adapter} \cite{engramadapter}
+is the closest work: it writes a row in one step through the unembedding projection,
+optionally refined by a few gradient steps, and optimizes many facts jointly; ENGRAFT
+differs in taking the gradient through the whole frozen model rather than through the
+output projection, in refreshing the mixture-of-experts routing at each step, in
+verifying every number on the real inference engine, and in reporting the
+document-context failure. \emph{Engram Adapter} \cite{engramadapter}
 and \emph{Memory Grafting} \cite{memorygrafting} use conditional memory for domain
 specialization and pre-training, with training rather than post-hoc edits.
 \emph{ngram-knowledge-injector} \cite{nki} patches the same model's table with overlay

@@ -1,10 +1,10 @@
-# ENGRAFT: add a fact to an LLM by editing 8 rows of its n-gram memory table
+# ENGRAFT: add a fact to an LLM by editing 8 rows per token of its n-gram memory table
 
 You can add a fact to a 125B-parameter mixture-of-experts model (Qwen3.8-Flash-Next)
-in 7 to 17 minutes of CPU time, without fine-tuning and without a GPU, by editing 8
-rows of its n-gram (Engram) lookup table. The edit is a small overlay file that the
-inference engine swaps in at read time; the model weights and the GGUF on disk are
-never touched. In our one full run, 7 of 8 facts came out of the real llama.cpp engine
+in 7 to 17 minutes of CPU time, without fine-tuning and without a GPU for the edit
+itself, by editing 8 rows per answer token of its n-gram (Engram) lookup table. The
+edit is a small overlay file that the inference engine swaps in at read time; the model
+weights and the GGUF on disk are never touched. In our one full run, 7 of 8 facts came out of the real llama.cpp engine
 at first-token probability 0.85 to 0.96, with zero measurable interference between
 facts and zero drift on two reference texts. The eighth did not take, and we say why.
 
@@ -41,7 +41,7 @@ model and engine, kept in git under [`results/2026-09-05/`](results/2026-09-05/)
 | CPU replica vs full-precision engine, free-routing probability of every graft | 17 / 17 within tolerance, max \|Δp\| 3e-5, 0 diverging routing layers | `report.md` §Q5 |
 | Descent steps to close, first answer token | 100 to 297 (`en_planet`, a counterfactual, 297) | [`summary.json`](results/2026-09-05/summary.json) |
 | Wall time per fact, CPU only, including chained answer tokens | 408 to 1019 s | same |
-| Restart from a perturbed starting point (1 % noise), two facts | same stop, same final p; step counts 142 = 142 and 148 vs 115 | `summary.json` `q6` |
+| Restart from a perturbed starting point (1 % noise), two facts | same stop, final p within 0.02 (0.951 vs 0.951, 0.980 vs 0.973); step counts 142 vs 142 and 148 vs 115, so the run's own test marks en_dog non-concordant on steps | `summary.json` `q6` |
 | Peak RSS of the grafting process | 67 GB | `summary.json` |
 
 Hardware for the run of record: one AMD Ryzen AI MAX+ 395 (16 cores) with 128 GB of
@@ -108,10 +108,9 @@ scripts/reproduce.sh 2026-09-05        # facts -> grafts (CPU, ~2 h) -> engine c
 diff <(sed -n '/## Q1/,/## Q2/p' results/2026-09-05/report.md) <(git show HEAD:results/2026-09-05/report.md | sed -n '/## Q1/,/## Q2/p')
 ```
 
-The descents are deterministic on the same machine and fork commit: our second run
-reproduced six of the eight `p_free` products bit for bit (the other two follow a
-different but equivalent path because of the plateau criterion, see `docs/method.md`).
-On different hardware expect the same outcomes and small numeric differences.
+The descents contain no random element, so on the same machine and engine build a
+rerun is expected to reproduce the numbers; this repository holds one run, not two. On
+different hardware expect the same outcomes and small numeric differences.
 
 ## Limitations, without discounts
 
@@ -185,9 +184,10 @@ excluded at resolve time. Capacity and order effects at scale are the next exper
   [deepseek-ai/Engram](https://github.com/deepseek-ai/Engram). The table design this
   method edits.
 - **User as Engram**, Li et al., [arXiv:2606.19172](https://arxiv.org/abs/2606.19172):
-  per-user memory as local edits of a hash-keyed table. Closest in spirit; ENGRAFT
-  differs in optimizing the rows by gradient through the frozen model with routing
-  refreshed, and in verifying on the real engine.
+  per-user memory as local edits of a hash-keyed table, written in one step through
+  the unembedding projection and optionally refined by a few gradient steps. Closest
+  in spirit; ENGRAFT differs in taking the gradient through the whole frozen model
+  with expert routing refreshed at every step, and in verifying on the real engine.
 - **Engram Adapter**, Hou et al., [arXiv:2608.29327](https://arxiv.org/abs/2608.29327):
   conditional-memory adapters for domain specialization (training, not post-hoc edits).
 - **Memory Grafting**, Cheng et al., [arXiv:2605.20948](https://arxiv.org/abs/2605.20948):
@@ -221,4 +221,5 @@ excluded at resolve time. Capacity and order effects at scale are the next exper
 
 ## Citation
 
-See [`CITATION.cff`](CITATION.cff). A technical report is in preparation in `paper/`.
+See [`CITATION.cff`](CITATION.cff). The technical report is
+[`paper/engraft.pdf`](paper/engraft.pdf) (CC BY 4.0, source in `paper/engraft.tex`).
