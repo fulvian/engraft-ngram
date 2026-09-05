@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import dataclasses
 import json
+import re
 import struct
 from pathlib import Path
 
@@ -487,17 +488,19 @@ class PleReplica:
 
 
 def _read_rms_eps(shard2_path: Path) -> float:
-    """Legge qwen4exp.attention.layer_norm_rms_epsilon dallo shard 1 dello stesso split.
+    """Read qwen4exp.attention.layer_norm_rms_epsilon from shard 1 of the same split.
 
-    I file GGUF splittati portano i metadati solo nel primo shard (00001-of-N);
-    lo shard 2 (blk.1.ple_*) ha solo `GGUF.*`/`split.*`.
+    Split GGUF files carry the model metadata only in the first shard
+    (`<name>-00001-of-<N>.gguf`); the shard holding `blk.1.ple_*` has only
+    `GGUF.*`/`split.*` keys. Any shard index and any shard count are accepted.
     """
     name = shard2_path.name
-    if "00002-of-" not in name:
-        # non uno split noto: prova a leggere i metadati dallo stesso file
+    m = re.search(r"(\d{5})-of-(\d{5})", name)
+    if m is None:
+        # not a split file: read the metadata from the same file
         reader = gguf.GGUFReader(str(shard2_path))
         return _eps_from_reader(reader, shard2_path)
-    shard1_name = name.replace("00002-of-", "00001-of-")
+    shard1_name = name[:m.start(1)] + "00001" + name[m.end(1):]
     shard1_path = shard2_path.with_name(shard1_name)
     if not shard1_path.exists():
         raise FileNotFoundError(

@@ -158,7 +158,7 @@ def test_state_json_skips_closed_grafts_on_resume(tmp_path):
 
     replica2 = FakeGraftReplica(table, seed=3)
     summary2 = G.graft_fact(replica2, table, tok=None, fact=fact, cfg=FAST_CFG, out_dir=out_dir, state_path=state_path)
-    assert replica2.prefix_calls == [], "nessun innesto va rieseguito: tutti gia' chiusi in state.json"
+    assert replica2.prefix_calls == [], "no graft must be rerun: all already closed in state.json"
     assert summary2["n_positions"] == 3
     assert [it["position"] for it in summary2["grafts"]] == [0, 1, 2]
 

@@ -274,6 +274,12 @@ def main(argv: list[str] | None = None) -> int:
         tok = None
         facts_resolved = _fake_facts_resolved(table)
         keys = _fake_keys(facts_resolved)
+        # The fake engine (engraft.testing.fake_lens) has a vocabulary of 64 tokens:
+        # engraft-check needs, per fact and answer position, the token it should
+        # measure. Written here so the dry-run chain has no hand-made input.
+        (out_root / "target_token_map.json").write_text(json.dumps(
+            {fid: {str(i): tok for i, tok in enumerate(f["answer_tokens"])}
+             for fid, f in facts_resolved.items()}, indent=2))
         cfg["plateau_steps"] = 3
         cfg["p_stop"] = 0.05
     else:

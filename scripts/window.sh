@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Runs engraft-check on the chained grafts produced by engraft-run.
 #
-# Usage: scripts/window.sh <data> [--dry-run]
+# Usage: scripts/window.sh <date> [--dry-run]
 #   scripts/window.sh 2026-01-01            (real engine)
 #   scripts/window.sh 2026-01-01 --dry-run  (fake engine, same code path; reads the
 #                                             real overlays from results/2026-01-01 but
@@ -9,7 +9,7 @@
 set -euo pipefail
 
 if [ $# -lt 1 ] || [ $# -gt 2 ]; then
-    echo "usage: $0 <data> [--dry-run]" >&2
+    echo "usage: $0 <date> [--dry-run]" >&2
     exit 1
 fi
 
@@ -39,11 +39,12 @@ if [ "${DRY_RUN}" -eq 1 ]; then
     # Fake engine standing in for llama-ple-lens: reads the overlays (.pleo/.plert1)
     # already produced in results/${DATA}/ (--results-dir), but writes only to the
     # -dryrun directory (no real results/${DATA} directory is ever touched).
-    LENS_CMD="uv run python -m engraft.testing.fake_lens"
-    TARGET_MAP="${RESULTS_DIR}/target_token_map.json"
+    LENS_CMD="uv run python -m engraft.testing.fake_lens --fake-table"
+    # Written by `engraft-run <date> --fake` next to the overlays it produces.
+    TARGET_MAP="${ROOT}/results/${DATA}/target_token_map.json"
     mkdir -p "${RESULTS_DIR}"
     if [ ! -f "${TARGET_MAP}" ]; then
-        echo "expected ${TARGET_MAP} (fid/position -> token within 64): generate it first" >&2
+        echo "expected ${TARGET_MAP} (fid/position -> token within the fake vocabulary of 64): run 'uv run engraft-run ${DATA} --fake' first" >&2
         exit 1
     fi
     # The fake engine's vocabulary (64) is too small for the real answer tokens,

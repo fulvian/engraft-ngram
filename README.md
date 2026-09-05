@@ -52,6 +52,7 @@ available for trying the code path without a model:
 ```sh
 uv run engraft-facts --fake-table
 uv run engraft-run 2026-01-01-dryrun --fake
+scripts/window.sh 2026-01-01-dryrun --dry-run   # fake engine, writes results/2026-01-01-dryrun-dryrun
 ```
 
 `uv run pytest` runs the test suite; tests that need a real GGUF are marked

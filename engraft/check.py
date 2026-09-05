@@ -6,7 +6,7 @@ Reuse (never modified here): `run_job`, `run_job_all`, `check_expected_hits`,
 `ENGINE_CFG`, `_decode_ids` from `engraft.engine` and `engraft.lens`. Reads
 `facts/facts_resolved.json` and `keys.json` (never recomputed here: tokenizing
 and key checks are already done by `engraft.facts`) and
-`results/<data>/{facts/<fid>/<fid>.pleo,.json,merged.pleo,merged_manifest.json}`
+`results/<date>/{facts/<fid>/<fid>.pleo,.json,merged.pleo,merged_manifest.json}`
 (written by `engraft.run`).
 
 Q8 phase (default engine): for every fact, with its **own** overlay
@@ -40,10 +40,11 @@ Usage (real run):
 
 Usage (dry run, fake engine):
   uv run engraft-check 2026-01-01-dryrun --lens-cmd \
-      "uv run python -m engraft.testing.fake_lens" \
+      "uv run python -m engraft.testing.fake_lens --fake-table" \
       --target-token-map results/2026-01-01-dryrun/target_token_map.json \
       --no-assert-overlay-hits --skip-corpus --skip-docs \
-      --results-dir results/2026-01-01
+      --results-dir results/2026-01-01-dryrun
+  (the token map is written by `engraft-run 2026-01-01-dryrun --fake`)
 """
 from __future__ import annotations
 
@@ -543,7 +544,7 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("data")
     p.add_argument("--config", default=None, help="path to engraft.toml (default: ./engraft.toml)")
     p.add_argument("--lens-cmd", required=False)
-    p.add_argument("--results-dir", default=None, help="directory with facts/<fid>/<fid>.pleo and merged.pleo (default: results/<data>)")
+    p.add_argument("--results-dir", default=None, help="directory with facts/<fid>/<fid>.pleo and merged.pleo (default: results/<date>)")
     p.add_argument("--out-root", default=str(REPO_ROOT / "results"))
     p.add_argument("--target-token-map", default=None)
     p.add_argument("--skip-corpus", action="store_true")

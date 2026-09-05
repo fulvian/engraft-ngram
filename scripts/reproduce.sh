@@ -5,12 +5,12 @@
 # engine fork (see engine/README.md) -- unlike the rest of this repository's
 # gates, which run entirely offline against fakes.
 #
-# Usage: scripts/reproduce.sh <data>
+# Usage: scripts/reproduce.sh <date>
 #   scripts/reproduce.sh 2026-01-01
 set -euo pipefail
 
 if [ $# -ne 1 ]; then
-    echo "usage: $0 <data>" >&2
+    echo "usage: $0 <date>" >&2
     exit 1
 fi
 

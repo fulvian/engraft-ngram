@@ -361,7 +361,7 @@ def descend(
         return {
             "lambda": lam, "tag": tag_val, "row_mask": None if row_mask is None else [bool(x) for x in row_mask],
             "n_steps": 0, "reached_p_stop": False, "final_logp_y": None, "final_p": 0.0,
-            "n_regress_steps": 0, "checkpoints": {}, "n_ckpt_effettivi": 0,
+            "n_regress_steps": 0, "checkpoints": {}, "n_effective_checkpoints": 0,
             "thresholds_with_sisters_out": [], "diverging_layers_at_final": [],
             "total_time_s": time.time() - t_start, "lr": lr, "refresh_every": refresh_every,
             "stop_reason": None, "plateau_refreshes": plateau_refreshes, "n_refreshes": 0,
@@ -462,7 +462,7 @@ def descend(
         "final_p": final_p,
         "n_regress_steps": regress_count,
         "checkpoints": checkpoints,
-        "n_ckpt_effettivi": len([k for k in checkpoints if k != "final" and not k.endswith("_sistersout")]),
+        "n_effective_checkpoints": len([k for k in checkpoints if k != "final" and not k.endswith("_sistersout")]),
         "thresholds_with_sisters_out": thresholds_with_sisters_out,
         "diverging_layers_at_final": diverging_layers,
         "total_time_s": time.time() - t_start,
