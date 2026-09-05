@@ -41,6 +41,27 @@ on step count, stop reason, and final probability is the criterion, not exact
 reproduction. Finally, every non-excluded fact's overlay is merged into one
 `merged.pleo`.
 
+Each position's descent stops when it plateaus: a run of routing refreshes
+(150 steps' worth) with no improvement over the best value seen so far. The
+default plateau metric is `logp` (the log-probability of the target token),
+required to improve by more than 0.05 nat to reset the no-improvement
+counter; a `p_free` variant (0.01 absolute improvement) is selectable for
+compatibility. `logp` is the default because `p_free` degenerates for a fact
+whose trigger starts at very low probability: once p is already below 0.01,
+a 0.01 absolute improvement is impossible by construction (p = exp(logp)
+saturates near 0), so the no-improvement counter never resets and the
+criterion silently becomes a hard step cap rather than a real plateau.
+`logp` tracks the quantity the descent actually minimizes and does not have
+this failure mode.
+
+Not every fact reproduces. A fact whose trigger has a strongly concentrated
+prior in the base model competes against that prior for the whole descent
+budget and can exhaust the maximum step count without ever reaching the
+stopping probability -- the graft fails open (recorded as `max_steps` with a
+low final probability), never silently. In one full run of eight facts, seven
+reproduced; the one that did not was a counterfactual chosen to have an
+unusually strong base-model prior at its trigger.
+
 ## 3. Check on the real engine (`engraft-check`, `scripts/window.sh`)
 
 Two engine phases. The default (quantized) engine measures, for each fact

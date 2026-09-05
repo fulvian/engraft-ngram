@@ -162,10 +162,12 @@ def _assert_sanity_step0(fdir: Path, fid: str, n: int) -> None:
             )
 
 
-def run_q6_perturbed(replica, table, fid: str, position: int, facts_resolved: dict, out_root: Path) -> dict:
+def run_q6_perturbed(replica, table, fid: str, position: int, facts_resolved: dict, out_root: Path, cfg: dict) -> dict:
     """Relaunches the graft (fid, position) from perturbed rows (fixed seed and
     relative perturbation) and compares against the already-closed
-    unperturbed run in `facts/<fid>/state.json`."""
+    unperturbed run in `facts/<fid>/state.json`. Uses `cfg["plateau_metric"]`
+    explicitly (not the `descend` default) so the repeat's stop criterion
+    always matches the run it is compared against, whatever the config says."""
     fact = facts_resolved[fid]
     out_dir = out_root / "facts" / fid
     seed_dir = out_root / "facts" / f"{fid}_{position}_seed{PERTURB_SEED}"
@@ -194,6 +196,7 @@ def run_q6_perturbed(replica, table, fid: str, position: int, facts_resolved: di
         {}, prep["rowset"].rows_global, 0.0, seed_dir, log_path,
         row_mask=row_mask, refresh_every=1, thresholds=[], p_stop=0.95, plateau_steps=150,
         tag=tag, rows_start=rows_start, on_step=guardian,
+        plateau_metric=cfg["plateau_metric"],
     )
     summary["wall_s"] = time.time() - t0
 
@@ -337,7 +340,7 @@ def main(argv: list[str] | None = None) -> int:
     if blocked is None:
         for fid, position in Q6_TARGETS:
             if fid in fact_summaries:
-                q6_results.append(run_q6_perturbed(replica, table, fid, position, facts_resolved, out_root))
+                q6_results.append(run_q6_perturbed(replica, table, fid, position, facts_resolved, out_root, cfg))
             else:
                 log(f"repeat: {fid} not closed, perturbed repeat skipped")
 

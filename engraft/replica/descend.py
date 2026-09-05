@@ -28,6 +28,16 @@ written to the jsonl. Serves a runner-side step-time guardian: if `on_step`
 raises, `descend` closes the log file and propagates, writing no checkpoint
 for the interrupted step. `on_step=None` (default) leaves behavior bit-for-bit
 unchanged -- no existing test is affected.
+
+`plateau_metric` (default `"logp"`) picks the quantity that resets the
+no-improvement refresh counter when it clears the best value seen so far by
+more than its margin (0.05 nat for `"logp"`, 0.01 absolute for `"p_free"`,
+selectable for compatibility): with p measured in absolute terms, a 0.01
+improvement is impossible by construction once p is already below 0.01 (p =
+exp(logp) saturates near 0), so for a fact whose trigger starts at very low
+probability the counter never resets and the plateau criterion degenerates
+into a hard step cap -- a false plateau. `"logp"` tracks real progress on the
+quantity the descent actually minimizes.
 """
 from __future__ import annotations
 
@@ -118,11 +128,15 @@ def descend(
     plateau_steps: int = 50,
     rows_start: torch.Tensor | None = None,
     on_step: "Callable[[dict], None] | None" = None,
+    plateau_metric: str = "logp",
 ) -> dict:
     thresholds = THRESHOLDS if thresholds is None else thresholds
     p_stop_val = P_STOP if p_stop is None else p_stop
     tag_val = str(lam) if tag is None else tag
     n_layer = len(routing_trigger)
+    if plateau_metric not in ("p_free", "logp"):
+        raise ValueError(f"unrecognized plateau_metric: {plateau_metric!r}")
+    plateau_margin = 0.01 if plateau_metric == "p_free" else 0.05
 
     rows0 = rows_true.clone()  # regolarizzatore e diagnostiche: sempre le righe vere
     rows_init = rows_true if rows_start is None else rows_start
@@ -157,7 +171,7 @@ def descend(
     prev_cap: dict[int, np.ndarray] = routing_trigger
     n_refreshes = 0
     routing_changed_vs_prev_hist: list[int] = []
-    best_p_free = float("-inf")
+    best_metric = float("-inf")  # p_free_val or logp_y_val, per plateau_metric
     refreshes_since_improvement = 0
     stop_reason = None
 
@@ -346,8 +360,9 @@ def descend(
                 stop_reason = "p_stop"
                 break
 
-            if p_free_val > best_p_free + 0.01:
-                best_p_free = p_free_val
+            metric_val = p_free_val if plateau_metric == "p_free" else logp_y_val
+            if metric_val > best_metric + plateau_margin:
+                best_metric = metric_val
                 refreshes_since_improvement = 0
             else:
                 refreshes_since_improvement += 1
@@ -365,6 +380,7 @@ def descend(
             "thresholds_with_sisters_out": [], "diverging_layers_at_final": [],
             "total_time_s": time.time() - t_start, "lr": lr, "refresh_every": refresh_every,
             "stop_reason": None, "plateau_refreshes": plateau_refreshes, "n_refreshes": 0,
+            "plateau_metric": plateau_metric,
             "final_p_free": None, "final_refreshed_by_extra_forward": False,
             "routing_changed_vs_prev_hist": [], "cos_min_final": None, "norm_ratio_max_final": None,
         }
@@ -476,4 +492,5 @@ def descend(
         "routing_changed_vs_prev_hist": routing_changed_vs_prev_hist,
         "cos_min_final": cos_min_final,
         "norm_ratio_max_final": norm_ratio_max_final,
+        "plateau_metric": plateau_metric,
     }

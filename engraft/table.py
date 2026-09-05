@@ -197,3 +197,8 @@ class PleTokenizer:
 
     def encode(self, text: str) -> list[int]:
         return self._tok.encode(text, add_special_tokens=False).ids
+
+    def decode_token(self, token_id: int) -> str:
+        """String for a single token: a readable label for reports/diagnostics,
+        not a tokenization contract."""
+        return self._tok.decode([int(token_id)], skip_special_tokens=False)

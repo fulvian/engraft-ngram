@@ -36,6 +36,7 @@ DEFAULT_CFG = {
     "thresholds": [],
     "p_stop": 0.95,
     "plateau_steps": 150,
+    "plateau_metric": "logp",
 }
 
 
@@ -195,6 +196,7 @@ def graft_fact(
             row_mask=cfg["row_mask"], refresh_every=cfg["refresh_every"],
             thresholds=cfg["thresholds"], p_stop=cfg["p_stop"],
             plateau_steps=cfg["plateau_steps"], tag=f"{fid}_{i}", on_step=on_step,
+            plateau_metric=cfg["plateau_metric"],
         )
         descend_time_s = time.time() - t0
 

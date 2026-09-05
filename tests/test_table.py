@@ -12,7 +12,7 @@ import numpy as np
 import pytest
 
 from engraft.config import load as load_config
-from engraft.table import PleTable, dequant_iq4nl, row_is_zero
+from engraft.table import PleTable, PleTokenizer, dequant_iq4nl, row_is_zero
 
 real = pytest.mark.real
 
@@ -20,6 +20,15 @@ real = pytest.mark.real
 @pytest.fixture(scope="module")
 def table():
     return PleTable(load_config().get_path("model.table"))
+
+
+@real
+def test_decode_token_roundtrips_a_single_token():
+    tok = PleTokenizer(load_config().get_path("model.tokenizer"))
+    ids = tok.encode("hello")
+    assert ids
+    s = tok.decode_token(ids[0])
+    assert isinstance(s, str)
 
 
 @real

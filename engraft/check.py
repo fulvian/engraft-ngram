@@ -15,11 +15,15 @@ run of n+2 tokens (`answer_reproduced`), sisters (argmax, delta-logp, expected
 8 hits), 16 expected hits on the trigger. With `merged.pleo`: the same
 measurements for every included fact (per the manifest), plus paraphrases,
 it/en corpus (mean delta-NLL), and documents (delta-logp per position, split
-into answer positions and other positions).
+into answer positions and other positions, with a per-position `positions`
+list -- `fid`/`answer_position` at each response position).
 
 F32 phase (full-precision engine): for every non-excluded graft (fid, i), a
-base job with no overlay on the tokens `trigger+answer[:i]` (`logp_base_f32`;
-the comparison against `logp_y` at jsonl step 0 is asserted here) and a free
+base job on the tokens `trigger+answer[:i]` (`logp_base_f32`; the comparison
+against `logp_y` at jsonl step 0 is asserted here) -- with no overlay for
+i == 0, or with the union of `ckpt_<fid>_<j>_final.pleo` for j < i for i >= 1
+(the replica's own prefix at position i already includes the earlier grafts;
+the base job must read the same prefix, not the untouched table) -- and a free
 job with the **fact's** overlay (`<fid>.pleo`) on the same tokens, with
 `routing_record`: `p_y_free`, compared against `final_p_free` from `<fid>.json`
 (`delta_p_q5`, `q5_pass` <= 0.05) and `prefix_routing_diverging` (a list of
@@ -34,6 +38,10 @@ Dry-run switches (each recorded with `skipped_reason`, verified by `--report`):
 `--target-token-map <path.json>` ({fid: {pos: token}}, a token within the fake
 engine's vocabulary of 64), `--no-assert-overlay-hits`, `--skip-corpus`,
 `--skip-docs`. No switch is enabled in a real run.
+
+`--render-only` regenerates `report.md` from an existing `engine_check.json`
+alone (no `--lens-cmd`, no engine, no config): use it to re-render after a
+`build_report` change without re-running the engine window.
 
 Usage (real run):
   uv run engraft-check 2026-01-01 --lens-cmd "<engine> ..."
@@ -72,7 +80,7 @@ from engraft.engine import (
     run_job,
     run_job_all,
 )
-from engraft.lens import RowSet, read_pleo, read_plert1
+from engraft.lens import RowSet, read_pleo, read_plert1, write_pleo
 from engraft.table import PleTable, PleTokenizer
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -311,12 +319,15 @@ def _measure_docs(client, raw_dir, tok, log, args, merged_pleo: Path, facts_reso
             out[lang] = {"skipped_reason": f"{doc_path} missing"}
             continue
         doc_tokens = tok.encode(doc_path.read_text())
-        response_positions: set[int] = set()
+        # For every response position (t_pred) of the document, the fact and its
+        # chain position (`i` in `doc_positions.positions`) that wrote it.
+        response_map: dict[int, dict] = {}
         for fid, rf in facts_resolved.items():
             if rf.get("doc_id") != lang or rf.get("doc_positions") is None:
                 continue
             for p in rf["doc_positions"].get("positions", []):
-                response_positions.add(int(p["t_pred"]))
+                response_map[int(p["t_pred"])] = {"fid": fid, "answer_position": int(p["i"])}
+        response_positions = set(response_map.keys())
 
         job_base = {"id": f"q8m_doc_{lang}_base", "text": "", "tokens": doc_tokens, "overlay": None, "capture": [], "logits": "all"}
         _r, all_base, meta = run_job_all(client, raw_dir, job_base, log)
@@ -329,11 +340,30 @@ def _measure_docs(client, raw_dir, tok, log, args, merged_pleo: Path, facts_reso
             continue
 
         deltas_response, deltas_other = [], []
+        positions: list[dict] = []
         for p in range(len(targets)):
-            lp_base = logsoftmax64(all_base[p])[targets[p]]
-            lp_merged = logsoftmax64(all_m[p])[targets[p]]
-            delta = float(lp_merged - lp_base)
-            (deltas_response if p in response_positions else deltas_other).append(delta)
+            target_token = int(targets[p])
+            lp_base = float(logsoftmax64(all_base[p])[target_token])
+            lp_merged = float(logsoftmax64(all_m[p])[target_token])
+            delta = lp_merged - lp_base
+            is_response = p in response_positions
+            (deltas_response if is_response else deltas_other).append(delta)
+
+            entry = {
+                "t_pred": p,
+                "target_token": target_token,
+                "is_response": is_response,
+                "logp_base": lp_base,
+                "logp_merged": lp_merged,
+                "delta": delta,
+            }
+            if tok is not None:
+                entry["target_str"] = tok.decode_token(target_token)
+            resp = response_map.get(p)
+            if resp is not None:
+                entry["fid"] = resp["fid"]
+                entry["answer_position"] = resp["answer_position"]
+            positions.append(entry)
 
         def _stats(xs: list[float]) -> dict:
             if not xs:
@@ -345,6 +375,7 @@ def _measure_docs(client, raw_dir, tok, log, args, merged_pleo: Path, facts_reso
             "response_positions": _stats(deltas_response),
             "other_positions": _stats(deltas_other),
             "overlay_hits": result_m.get("overlay_hits"),
+            "positions": positions,
         }
     return out
 
@@ -386,9 +417,30 @@ def run_f32_phase(args, run_dir: Path, raw_dir: Path, log, facts_resolved: dict,
                 y = _y_for(args, ttmap, fid, i, answer_tokens[i])
                 key = f"{fid}_{i}"
 
+                # For i >= 1 the replica's own prefix (graft.prepare_innesto) already
+                # includes the overlay of grafts < i: the base job must read the same
+                # prefix, not the untouched table, or this compares two different
+                # bases. Written under `run_dir` (this invocation's own output), never
+                # under `results_dir`: in a dry run `results_dir` is the read-only real
+                # directory (`--results-dir`); in a real run `run_dir == results_dir`,
+                # so the file still lands in `results/<date>/facts/<fid>/` as expected.
+                # For i == 0 there is no earlier graft: overlay=None, unchanged.
+                base_overlay_path = None
+                if i > 0:
+                    prefix_dir = run_dir / "facts" / fid
+                    prefix_dir.mkdir(parents=True, exist_ok=True)
+                    base_overlay_path = prefix_dir / f"{fid}_prefix{i}.pleo"
+                    parts = [
+                        read_pleo(results_dir / "facts" / fid / f"ckpt_{fid}_{j}_final.pleo")
+                        for j in range(i)
+                    ]
+                    rows_prefix, data_prefix = RowSet.build_overlay(parts)
+                    write_pleo(base_overlay_path, rows_prefix, data_prefix)
+
                 job_base = {
                     "id": f"f32_{key}_base", "text": "", "tokens": tokens_i,
-                    "overlay": None, "capture": [], "logits": "last",
+                    "overlay": str(base_overlay_path) if base_overlay_path is not None else None,
+                    "capture": [], "logits": "last",
                 }
                 _r, row_base, _m = run_job(client, raw_dir, job_base, log)
                 logp_base_f32 = float(logsoftmax64(row_base)[y])
@@ -459,8 +511,48 @@ def build_report(q8: dict, f32: dict) -> str:
             f"- {fid}: p_first={entry.get('p_first')} rank_first={entry.get('rank_first')} "
             f"answer_reproduced={entry.get('answer_reproduced')} hits={entry.get('hits')}"
         )
+        # The paraphrases (Q4) were already in engine_check.json (`entry["paraphrases"]`,
+        # written by run_q8_phase) but never rendered here -- same tail / other tail,
+        # only the fields present.
+        paraphrases = entry.get("paraphrases") or {}
+        for pkey, p in paraphrases.items():
+            lines.append(
+                f"    - {pkey}: p_first={p.get('p_first')} rank_first={p.get('rank_first')} "
+                f"argmax_unchanged_vs_base={p.get('argmax_unchanged_vs_base')} "
+                f"delta_logp_argmax_base={p.get('delta_logp_argmax_base')}"
+            )
     lines.append(f"\ncorpus: {q8.get('merged', {}).get('corpus')}")
-    lines.append(f"\ndocs: {q8.get('merged', {}).get('docs')}")
+    docs = q8.get("merged", {}).get("docs", {}) or {}
+    lines.append("\ndocs (Q3, aggregate statistics):")
+    if "skipped_reason" in docs:
+        lines.append(f"- SKIPPED ({docs['skipped_reason']})")
+    else:
+        for lang, entry in docs.items():
+            if not isinstance(entry, dict):
+                continue
+            if "skipped_reason" in entry:
+                lines.append(f"- {lang}: SKIPPED ({entry['skipped_reason']})")
+            else:
+                lines.append(
+                    f"- {lang}: response={entry.get('response_positions')} "
+                    f"other={entry.get('other_positions')} overlay_hits={entry.get('overlay_hits')}"
+                )
+    # Table of response positions only (which fact generalizes to the document and
+    # which does not), not the whole per-position dictionary.
+    lines.append("\n### docs -- response positions")
+    lines.append("| lang | fid | position | target | logp_base | logp_merged | delta |")
+    lines.append("|---|---|---|---|---|---|---|")
+    for lang, entry in docs.items():
+        if not isinstance(entry, dict):
+            continue
+        for p in entry.get("positions", []):
+            if not p.get("is_response"):
+                continue
+            target_label = p.get("target_str", p.get("target_token"))
+            lines.append(
+                f"| {lang} | {p.get('fid')} | {p.get('answer_position')} | {target_label} | "
+                f"{p['logp_base']:.4f} | {p['logp_merged']:.4f} | {p['delta']:.4f} |"
+            )
     lines.append("\n## Q5 (F32 fidelity)")
     for key, entry in f32.get("grafts", {}).items():
         lines.append(
@@ -552,6 +644,7 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--no-assert-overlay-hits", dest="assert_overlay_hits", action="store_false", default=True)
     p.add_argument("--corpus-dir", default=str(DEFAULT_CORPUS_DIR))
     p.add_argument("--report", action="store_true")
+    p.add_argument("--render-only", action="store_true", help="regenerate report.md from an existing engine_check.json, no engine involved")
     args = p.parse_args(argv)
 
     run_dir = Path(args.out_root) / args.data
@@ -559,6 +652,17 @@ def main(argv: list[str] | None = None) -> int:
     run_dir.mkdir(parents=True, exist_ok=True)
     raw_dir.mkdir(parents=True, exist_ok=True)
     log = _setup_log(run_dir)
+
+    if args.render_only:
+        ec_path = run_dir / "engine_check.json"
+        if not ec_path.exists():
+            log.error("--render-only: %s not found", ec_path)
+            return 2
+        data = json.loads(ec_path.read_text())
+        report = build_report(data.get("q8", {}), data.get("f32", {}))
+        (run_dir / "report.md").write_text(report)
+        log.info("report: %s", run_dir / "report.md")
+        return 0
 
     results_dir = Path(args.results_dir) if args.results_dir else run_dir
     facts_resolved = _load_resolved()

@@ -33,9 +33,10 @@ N_PREFIX = 4  # posizioni 0..N_PREFIX-1 nel routing_trigger degli strati 0..N_LA
 
 
 class FakeReplica:
-    """Router dal vivo = topk(softmax(x @ gate_w[il])); combinazione differenziabile
-    (probs[idx] pesa gli esperti selezionati, stesso schema di gather di `moe_ffn`,
-    quindi il gradiente NON passa dagli indici, solo dai pesi softmax)."""
+    """Live router = topk(softmax(x @ gate_w[il])); differentiable combination
+    (probs[idx] weighs the selected experts, same gather scheme as `moe_ffn`,
+    so the gradient does NOT flow through the indices, only through the
+    softmax weights)."""
 
     def __init__(self, dim: int, seed: int = 0):
         rng = np.random.default_rng(seed)
@@ -312,3 +313,62 @@ def test_final_refreshed_by_extra_forward_when_last_step_not_a_refresh(tmp_path)
     rows_np = np.load(tmp_path / "ckpt_0.0_final.npy")
     recomputed = _recompute_p(replica, trigger_tokens, rows_np, None, y)
     assert recomputed == pytest.approx(summary["final_p_free"], abs=1e-6)
+
+
+# --------------------------------------------------------------------------
+# (ix) plateau_metric: default "logp" (0.05 nat margin), "p_free" (0.01 absolute
+# margin) selectable for compatibility.
+# --------------------------------------------------------------------------
+
+
+def test_plateau_metric_default_is_logp_bit_exact(tmp_path):
+    replica_a, trigger_tokens, routing_trigger, rows_true, rows_global, y = _make_fixture(seed=6)
+    replica_b, _, routing_trigger_b, rows_true_b, _, _ = _make_fixture(seed=6)
+    (tmp_path / "a").mkdir()
+    (tmp_path / "b").mkdir()
+    kwargs = dict(
+        refresh_every=3, thresholds=[], p_stop=2.0, plateau_steps=50,
+    )
+    summary_default = D.descend(
+        replica_a, trigger_tokens, None, routing_trigger, rows_true, y, {}, rows_global,
+        0.0, tmp_path / "a", tmp_path / "a" / "d.jsonl", **kwargs,
+    )
+    summary_explicit = D.descend(
+        replica_b, trigger_tokens, None, routing_trigger_b, rows_true_b, y, {}, rows_global,
+        0.0, tmp_path / "b", tmp_path / "b" / "d.jsonl", plateau_metric="logp", **kwargs,
+    )
+    assert summary_default["plateau_metric"] == "logp"
+    assert summary_default["n_steps"] == summary_explicit["n_steps"]
+    assert summary_default["stop_reason"] == summary_explicit["stop_reason"]
+    assert summary_default["final_logp_y"] == summary_explicit["final_logp_y"]
+
+
+def test_plateau_metric_logp_survives_false_plateau(tmp_path):
+    """seed=1: starting point logp0 ~ -12.95, p_free0 ~ 2e-6 -- below p 0.01 an
+    absolute improvement of 0.01 is impossible by construction: with
+    plateau_metric="p_free" and plateau_steps=5 the counter saturates
+    immediately (a false plateau), while with plateau_metric="logp" the descent
+    (in progress: logp improves by more than 0.05 nat per refresh) continues
+    much further."""
+    replica_p, trigger_tokens, routing_trigger, rows_true, rows_global, y = _make_fixture(seed=1)
+    replica_l, _, routing_trigger_l, rows_true_l, _, _ = _make_fixture(seed=1)
+    (tmp_path / "p").mkdir()
+    (tmp_path / "l").mkdir()
+
+    summary_pfree = D.descend(
+        replica_p, trigger_tokens, None, routing_trigger, rows_true, y, {}, rows_global,
+        0.0, tmp_path / "p", tmp_path / "p" / "d.jsonl", refresh_every=1, thresholds=[],
+        p_stop=2.0, plateau_steps=5, plateau_metric="p_free",
+    )
+    summary_logp = D.descend(
+        replica_l, trigger_tokens, None, routing_trigger_l, rows_true_l, y, {}, rows_global,
+        0.0, tmp_path / "l", tmp_path / "l" / "d.jsonl", refresh_every=1, thresholds=[],
+        p_stop=2.0, plateau_steps=5, plateau_metric="logp",
+    )
+    assert summary_pfree["stop_reason"] == "plateau"
+    assert summary_logp["stop_reason"] == "plateau"
+    assert summary_pfree["plateau_metric"] == "p_free"
+    assert summary_logp["plateau_metric"] == "logp"
+    # same exact starting point (seed=1) and same descent dynamics: only the stop
+    # criterion changes, and "logp" runs many more steps before stopping.
+    assert summary_logp["n_steps"] > summary_pfree["n_steps"] + 10
