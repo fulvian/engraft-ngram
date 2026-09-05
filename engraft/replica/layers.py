@@ -39,7 +39,7 @@ import torch
 import torch.nn.functional as F
 
 # --------------------------------------------------------------------------
-# Norme
+# Norms
 # --------------------------------------------------------------------------
 
 
@@ -96,7 +96,7 @@ def hc_mix(
     gate = gate.reshape(t_len, hc, n_embd)
 
     gated = xn * gate  # [T,hc,n_embd]
-    mixed = gated.mean(dim=1)  # [T,n_embd] (media sui flussi = qwen4exp.cpp collapse)
+    mixed = gated.mean(dim=1)  # [T,n_embd] (mean over the streams = qwen4exp.cpp collapse)
 
     inject = None
     if w_inject is not None:
@@ -154,7 +154,7 @@ def apply_rope(x: torch.Tensor, cos: torch.Tensor, sin: torch.Tensor) -> torch.T
 
 
 # --------------------------------------------------------------------------
-# Attenzione piena (GQA, gate sigmoide, indexer denso => saltato)
+# Full attention (GQA, sigmoid gate, dense indexer => skipped)
 # --------------------------------------------------------------------------
 
 
@@ -215,7 +215,7 @@ def attention_full(
         k_all, v_all, pos_all = k, v, positions
 
     n_rep = n_head // n_head_kv
-    k_rep = k_all.repeat_interleave(n_rep, dim=1)  # [Tkv, n_head, d] blocco consecutivo (ggml mul_mat r2)
+    k_rep = k_all.repeat_interleave(n_rep, dim=1)  # [Tkv, n_head, d] consecutive block (ggml mul_mat r2)
     v_rep = v_all.repeat_interleave(n_rep, dim=1)
 
     scale = 1.0 / (d ** 0.5)
@@ -296,7 +296,7 @@ def gated_delta_net_recurrence(
     q: torch.Tensor,  # [T, Hv, D]  (already repeated from Hk to Hv heads, L2-normalized, not prescaled)
     k: torch.Tensor,  # [T, Hv, D]
     v: torch.Tensor,  # [T, Hv, D]
-    g_log: torch.Tensor,  # [T, Hv] -- ssm_a * softplus(alpha+dt_bias), in spazio log
+    g_log: torch.Tensor,  # [T, Hv] -- ssm_a * softplus(alpha+dt_bias), in log space
     beta: torch.Tensor,  # [T, Hv]
     s0: torch.Tensor,  # [Hv, D, D]
 ) -> tuple[torch.Tensor, torch.Tensor]:
@@ -342,7 +342,7 @@ def linear_attn_layer(
     beta = torch.sigmoid(x @ w.ssm_beta.T)  # [T, hv]
     alpha = x @ w.ssm_alpha.T  # [T, hv]
     alpha_softplus = F.softplus(alpha + w.ssm_dt_bias)
-    g_log = alpha_softplus * w.ssm_a  # [T, hv], spazio log (adattamento (ii))
+    g_log = alpha_softplus * w.ssm_a  # [T, hv], log space (adaptation (ii))
 
     conv_out = causal_depthwise_conv(qkv_mixed, state.conv_hist, w.ssm_conv1d, dilation=1)
     conv_out = F.silu(conv_out)  # [T, conv_dim]
@@ -357,7 +357,7 @@ def linear_attn_layer(
 
     if hk != hv:
         n_rep = hv // hk
-        q_conv = q_conv.tile((1, n_rep, 1))  # piastrelle: testa h -> h % hk (ggml_repeat)
+        q_conv = q_conv.tile((1, n_rep, 1))  # tiles: head h -> h % hk (ggml_repeat)
         k_conv = k_conv.tile((1, n_rep, 1))
 
     out, s_new = gated_delta_net_recurrence(q_conv, k_conv, v_conv, g_log, beta, state.s)

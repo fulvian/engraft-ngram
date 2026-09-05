@@ -63,7 +63,7 @@ class GgufWeights:
         _, t = self._index[name]
         return t.tensor_type
 
-    # -- dequantizzazione ----------------------------------------------------
+    # -- dequantization ------------------------------------------------------
 
     def tensor(self, name: str) -> np.ndarray:
         """Dequantizes the whole tensor to f32, axes reversed relative to ggml (ne order)."""

@@ -186,7 +186,7 @@ def test_plert1_roundtrip_shape_and_content(tmp_path):
     with torch.no_grad():
         replica.last_step(trigger_tokens, None, rows_t, routing_source=None, persist_experts=False, capture_routing=cap2)
     for il in range(N_LAYER):
-        assert np.array_equal(layers[il][-1], cap2[il][0]), f"strato {il}: ultima riga plert1 diversa dal routing ricalcolato"
+        assert np.array_equal(layers[il][-1], cap2[il][0]), f"layer {il}: last plert1 row differs from the recomputed routing"
 
 
 # --------------------------------------------------------------------------

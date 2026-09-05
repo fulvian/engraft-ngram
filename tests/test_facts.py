@@ -140,7 +140,7 @@ def test_doc_positions_verified_for_chain_answer():
     assert dp["ok"] is True
     assert len(dp["positions"]) == 3  # ANSWER = 3 token
     for i, pos_entry in enumerate(dp["positions"]):
-        assert pos_entry["match"] is True, f"posizione {i}: {pos_entry}"
+        assert pos_entry["match"] is True, f"position {i}: {pos_entry}"
 
 
 def test_doc_positions_fail_when_answer_absent():
@@ -155,8 +155,8 @@ def test_doc_positions_fail_when_answer_absent():
 
 
 def test_key_conflict_excludes_fact_that_comes_later_in_facts_json():
-    """Due fatti con lo stesso trigger (stessa terna -> collisione T8 su tutte le
-    posizioni): vince il primo in facts.json, il secondo e' escluso per intero."""
+    """Two facts with the same trigger (same triple -> T8 collision on every
+    position): the first one in facts.json wins, the second is excluded entirely."""
     table = FakeTable(seed=42)
     tok = FakeTokenizer(VOCAB)
     fact_first = _base_fact("first")

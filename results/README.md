@@ -17,5 +17,6 @@ all facts), `facts/<id>/` (per-fact descents, checkpoints, precondition records)
 `engine_q8.log`, `engine_f32.log`.
 
 The `overlay_path` fields in `summary.json` and `facts/*/*.json` of the
-2026-09-05 run were rewritten from absolute to run-relative paths after the run
-(the code now writes them relative); no other value was touched.
+2026-09-05 run, and the final `report:` line of its `window.log`, were rewritten
+from absolute to run-relative paths after the run (the code now writes them
+relative); no other value was touched.

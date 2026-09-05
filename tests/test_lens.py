@@ -424,7 +424,7 @@ def test_replica_tensors_byte_identical_to_ple_split(replica, shard2_path, table
         "blk.1.ple_conv1d.weight",
     ]
     for name in names:
-        assert name in by_shard2, f"{name} assente nello shard 2"
+        assert name in by_shard2, f"{name} missing from shard 2"
         assert name in by_split, f"{name} absent from the split table GGUF"
         assert by_shard2[name].tensor_type == by_split[name].tensor_type
         np.testing.assert_array_equal(by_shard2[name].data, by_split[name].data)

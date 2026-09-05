@@ -573,7 +573,7 @@ def _check_report(run_dir: Path, results_dir: Path, facts_resolved: dict, skippe
 
     for switch, active in skipped_flags.items():
         if active and not data.get(f"skipped_reason_{switch}") and switch not in ("target_token_map",):
-            pass  # i flag skip_corpus/skip_docs si verificano sotto via i campi merged
+            pass  # the skip_corpus/skip_docs flags are checked below through the merged fields
 
     facts_required = ["p_first", "rank_first", "answer_reproduced", "sisters", "hits"]
     for fid in facts_resolved:

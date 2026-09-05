@@ -40,7 +40,7 @@ class FakeGraftReplica:
             for _ in range(n_layer)
         ]
         self.out_w = torch.tensor(rng.standard_normal((dim, vocab)) * 0.3, dtype=torch.float64)
-        self.prefix_calls: list[dict] = []  # spia (test 6.1 (ii))
+        self.prefix_calls: list[dict] = []  # spy for the tests
 
     def ple_true_emb(self, tokens, t, overlay=None):
         rs = RowSet.from_position(self.table, tokens, t)

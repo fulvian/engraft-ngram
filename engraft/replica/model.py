@@ -283,7 +283,7 @@ class Replica:
 
         return x, LayerState(attn=new_attn, delta=new_delta, ple_hist=new_ple_hist), routing_used
 
-    # -- prefisso -------------------------------------------------------------
+    # -- prefix ---------------------------------------------------------------
 
     def prefix(
         self,
@@ -343,7 +343,7 @@ class Replica:
         """Returns the [n_vocab] logits of position T-1, differentiable in `rows`."""
         hp = self.hp
         t_last = len(tokens) - 1
-        emb_last = self.embed([tokens[t_last]])  # [1,n_embd], fisso
+        emb_last = self.embed([tokens[t_last]])  # [1,n_embd], fixed
         x = emb_last.unsqueeze(1).repeat(1, hp.hc_mult, 1)  # [1,hc,n_embd]
         positions = torch.tensor([float(t_last)], dtype=torch.float64)
         rows_emb = rows.reshape(1, -1)  # [1, n_heads*head_dim] = [1,n_embd]
@@ -405,7 +405,7 @@ class Replica:
 
 
 # --------------------------------------------------------------------------
-# Precondizione e memoria (T3)
+# Precondition and memory
 # --------------------------------------------------------------------------
 
 
@@ -418,7 +418,7 @@ def check_precondition(table: PleTable, prompts: dict[str, list[int]], rows_glob
     for name, tokens in prompts.items():
         addr = table.ngram_addresses(tokens)
         t_len = len(tokens)
-        for t in range(t_len - 1):  # prefisso: esclude l'ultima posizione
+        for t in range(t_len - 1):  # prefix: excludes the last position
             for h in range(table.n_heads):
                 g = local_to_global(table, h, addr[t][h])
                 if g in rows_set:

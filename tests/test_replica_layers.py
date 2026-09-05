@@ -101,10 +101,10 @@ def test_rope_matches_hf_ref_equal_positions():
     freqs_1d = positions[:, None] * inv_freq[None, :]  # [T,half]
     freqs_3axis = freqs_1d.unsqueeze(0).expand(3, T, half).clone()
     freqs_t = hf.apply_interleaved_mrope(freqs_3axis, sections)
-    assert torch.allclose(freqs_t, freqs_1d), "posizioni uguali sui 3 assi -> mrope interleaved e' l'identita'"
+    assert torch.allclose(freqs_t, freqs_1d), "equal positions on the 3 axes -> interleaved mrope is the identity"
 
     emb = torch.cat([freqs_t, freqs_t], dim=-1)
-    cos_hf = emb.cos().to(torch.float32).unsqueeze(0)  # [1,T,rope_dim] batch fittizio
+    cos_hf = emb.cos().to(torch.float32).unsqueeze(0)  # [1,T,rope_dim] dummy batch
     sin_hf = emb.sin().to(torch.float32).unsqueeze(0)
     x_hf_in = x.permute(1, 0, 2).unsqueeze(0)  # [1,H,T,head_dim] (batch,heads,seq,dim)
     out_hf = hf.apply_rotary_pos_emb(x_hf_in, cos=cos_hf, sin=sin_hf, unsqueeze_dim=1)
@@ -142,7 +142,7 @@ def test_hc_mix_matches_independent_formula():
     xn_flat_ref = xn_ref.reshape(T, hc * n_embd)
     lo_ref = xn_flat_ref @ w_down.numpy().T
     lo_ref = lo_ref / hc
-    lo_ref = lo_ref * (1.0 / (1.0 + np.exp(-lo_ref))) if False else lo_ref  # silu sotto
+    lo_ref = lo_ref * (1.0 / (1.0 + np.exp(-lo_ref))) if False else lo_ref  # silu below
     lo_ref = (lo_ref) * (1 / (1 + np.exp(-lo_ref)))
     gate_ref = 1.0 / (1.0 + np.exp(-(lo_ref @ w_up.numpy().T)))
     gate_ref = gate_ref.reshape(T, hc, n_embd)
@@ -194,7 +194,7 @@ def test_moe_matches_explicit_loop():
         selected, up_shexp, gate_shexp, down_shexp, gate_inp_shexp, n_used,
     )
 
-    # ciclo esplicito indipendente, in numpy
+    # independent explicit loop, in numpy
     out_ref = np.zeros((T, n_embd))
     probs_np = probs.detach().numpy()
     for t in range(T):

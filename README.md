@@ -10,11 +10,11 @@ Not to be confused with ENGRAFT (CCS 2022, Byzantine consensus) or
 
 ## Status
 
-Research code. Comments in the body of some modules are still in Italian;
-module docstrings, public function docstrings, CLI messages, and report
-headers are in English. No result tables are included yet -- they are added
-once a full run against the real engine has been confirmed and judged
-production-quality.
+Research code, English throughout (sources, comments, messages, reports).
+One full run against the real engine is kept as the run of record under
+`results/2026-09-05/` (see `results/README.md`): 7 of 8 facts reproduced by
+the quantized engine, replica equal to the F32 engine on 17/17 grafts, zero
+interference in the merged overlay. Result tables and the write-up follow.
 
 Development measurements on a private fact (not part of this repository)
 gave, at the descent's stopping point, `p_free` in the range 0.95-0.96 and an

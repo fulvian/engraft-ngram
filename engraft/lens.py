@@ -135,7 +135,7 @@ class RowSet:
             data[h] = table.read_rows(h, addr[h], 1)[0]
         return cls(table=table, rows_global=rows_global, data=data)
 
-    # -- varianti: ciascuna ritorna un nuovo array float32 [16, 160] --
+    # -- variants: each returns a new float32 array [16, 160] --
 
     def identity(self) -> np.ndarray:
         return self.data.copy()
