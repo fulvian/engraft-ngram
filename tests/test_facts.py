@@ -49,7 +49,7 @@ def _base_fact(fid: str, **overrides) -> dict:
     fact = {
         "id": fid,
         "lang": "it",
-        "kind": "memoria",
+        "kind": "memory",
         "trigger": TRIGGER_TEXT,
         "answer": "ANSWER",
         "answer_fallback": [],

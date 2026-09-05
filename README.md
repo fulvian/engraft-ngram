@@ -55,8 +55,8 @@ uv run engraft-run 2026-01-01-dryrun --fake
 ```
 
 `uv run pytest` runs the test suite; tests that need a real GGUF are marked
-`real` and skipped by default (`pytest -m "not real"` is the default via
-`pyproject.toml`).
+`real` and deselected by default (`addopts = "-m 'not real'"` in
+`pyproject.toml`); pass `-m real` explicitly to run them against your GGUFs.
 
 ## Layout
 

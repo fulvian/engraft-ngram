@@ -30,6 +30,7 @@ build-backend = "setuptools.build_meta"
 include = ["engraft*"]
 
 [tool.pytest.ini_options]
+addopts = "-m 'not real'"
 markers = [
     "real: requires a real GGUF (model shards, n-gram table) reachable on this machine",
 ]

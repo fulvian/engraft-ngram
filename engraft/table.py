@@ -72,7 +72,7 @@ class PleTable:
             name = f"ple_ngram_embd.{h}.weight"
             t = tensors_by_name[name]
             assert t.tensor_type == gguf.GGMLQuantizationType.IQ4_NL, (
-                f"{name}: atteso IQ4_NL, trovato {t.tensor_type}"
+                f"{name}: expected IQ4_NL, got {t.tensor_type}"
             )
             p_h = int(t.shape[1])
             assert p_h == self.head_vocab_sizes[h], (

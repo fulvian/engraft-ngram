@@ -37,7 +37,7 @@ def write_pleo(path: str | Path, rows_global: np.ndarray, data: np.ndarray) -> N
     if values.shape != (n, ROW_LEN):
         raise ValueError(f"data.shape={values.shape}, expected ({n}, {ROW_LEN})")
     if rows.ndim != 1:
-        raise ValueError(f"rows_global deve essere 1-D, trovato ndim={rows.ndim}")
+        raise ValueError(f"rows_global must be 1-D, got ndim={rows.ndim}")
     with open(path, "wb") as f:
         f.write(PLEO_MAGIC)
         f.write(struct.pack("<II", n, ROW_LEN))
@@ -185,7 +185,7 @@ class RowSet:
                 if r in seen:
                     if not np.array_equal(seen[r], vec):
                         raise ValueError(
-                            f"build_overlay: riga globale {r} riceve due vettori diversi"
+                            f"build_overlay: global row {r} receives two different vectors"
                         )
                 else:
                     seen[r] = vec
@@ -237,8 +237,8 @@ class PleReplica:
             expected = _EXPECTED_TYPES[name]
             if t.tensor_type != expected:
                 raise ValueError(
-                    f"{name}: atteso {expected}, trovato {t.tensor_type} — "
-                    "tipo diverso da quello assunto, controllo esplicito fallito"
+                    f"{name}: expected {expected}, got {t.tensor_type}: "
+                    "tensor type differs from the assumed one, explicit check failed"
                 )
             return np.asarray(gguf.quants.dequantize(t.data, t.tensor_type), dtype=np.float32)
 
@@ -501,7 +501,7 @@ def _read_rms_eps(shard2_path: Path) -> float:
     shard1_path = shard2_path.with_name(shard1_name)
     if not shard1_path.exists():
         raise FileNotFoundError(
-            f"eps non passato esplicitamente e shard 1 non trovato: {shard1_path}"
+            f"eps not given explicitly and shard 1 not found: {shard1_path}"
         )
     reader = gguf.GGUFReader(str(shard1_path))
     return _eps_from_reader(reader, shard1_path)

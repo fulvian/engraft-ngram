@@ -202,8 +202,8 @@ class Replica:
                 # here it must come from the single last_step call, one position.
                 if len(pos_idx) != 1:
                     raise ValueError(
-                        f"routing_source[{il}] ha una sola riga (solo ultima posizione) "
-                        f"ma sono state richieste {len(pos_idx)} posizioni"
+                        f"routing_source[{il}] has a single row (last position only) "
+                        f"but {len(pos_idx)} positions were requested"
                     )
                 sel = arr[0:1]
             else:

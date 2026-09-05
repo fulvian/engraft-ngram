@@ -1,35 +1,35 @@
 """Pure torch (f32) functions mirroring the fork's computation graph.
 
 Axis convention: **torch-natural**, time first. A ggml tensor `[ne0,
-ne1, ne2]` (ne0 più veloce) diventa qui `[..., ne2, ne1, ne0]` con l'asse "tempo"
-(quando presente) sempre in prima posizione. I pesi vengono da `weights.GgufWeights`,
-che li dequantizza già in convenzione `[out, in]` (numpy inverte gli assi ggml, e un
-tensore lineare ggml è salvato `{in, out}` in ne-order — verificato 2026-09-05 su
-`blk.1.ple_key.weight`): quindi `y = x @ w.T` ovunque, come `nn.Linear`.
+ne1, ne2]` (ne0 fastest) becomes `[..., ne2, ne1, ne0]` here, with the "time"
+axis (when present) always first. Weights come from `weights.GgufWeights`,
+which already dequantizes them in `[out, in]` convention (numpy reverses the
+ggml axes, and a ggml linear tensor is stored `{in, out}` in ne-order, checked
+on `blk.1.ple_key.weight`): hence `y = x @ w.T` everywhere, as in `nn.Linear`.
 
-Citazioni principali (fork, letto 2026-09-05):
-  - `src/models/qwen4exp.cpp` build_hc_mix/build_hc_combine (righe ~370-422): mixer HC.
-  - `src/models/qwen4exp.cpp` build_layer_attn (~947-1030): attenzione piena, RoPE,
-    gate sigmoide sull'uscita, [q|gate] interleaved in `wq`.
+Main references (llama.cpp fork, `fork-ple` branch):
+  - `src/models/qwen4exp.cpp` build_hc_mix/build_hc_combine (lines ~370-422): HC mixer.
+  - `src/models/qwen4exp.cpp` build_layer_attn (~947-1030): full attention, RoPE,
+    sigmoid gate on the output, [q|gate] interleaved in `wq`.
   - `src/models/qwen4exp.cpp` build_layer_attn_linear (~1034-1160): gated delta net.
-  - `src/models/delta-net-base.cpp` build_delta_net_autoregressive (~262-320): la
-    ricorrenza esatta per un token (usata qui per *ogni* posizione, prefisso incluso:
-    la forma "chunking" del fork è solo un'ottimizzazione, matematicamente equivalente
-    a meno dell'ordine delle somme in virgola mobile — tollerabile alla soglia 0.02 nat
-    di Q1a).
+  - `src/models/delta-net-base.cpp` build_delta_net_autoregressive (~262-320): the
+    exact one-token recurrence (used here for *every* position, prefix included:
+    the fork's "chunking" form is only an optimization, mathematically equivalent
+    up to floating-point summation order, tolerable at the 0.02 nat threshold of
+    the replica-vs-engine validation).
   - `ggml/src/ggml-cpu/ops.cpp` ggml_compute_forward_ssm_conv_f32 (~9606-9657): tap 0 =
-    posizione più vecchia, tap K-1 = corrente (stessa convenzione della conv PLE in
-    `ple_lens.py`, dilatazione 1 invece di 3).
-  - `ggml/src/ggml-cpu/ggml-cpu.c:1385` (`r2 = ne12/ne02; i02 = i12/r2`): il broadcast
-    GQA di `ggml_mul_mat` è **a blocchi consecutivi** (head h -> kv head h//r2), la
-    stessa convenzione di `repeat_kv` in HF — usata per l'attenzione piena.
+    oldest position, tap K-1 = current (same convention as the PLE conv in
+    `engraft/lens.py`, dilation 1 instead of 3).
+  - `ggml/src/ggml-cpu/ggml-cpu.c:1385` (`r2 = ne12/ne02; i02 = i12/r2`): the GQA
+    broadcast of `ggml_mul_mat` is **by consecutive blocks** (head h -> kv head h//r2),
+    the same convention as `repeat_kv` in HF; used for full attention.
   - `ggml/src/ggml-cpu/ops.cpp` ggml_compute_forward_repeat_f32 (~1716-1756)
-    (`dst[i1*ne01+k1] = src[k1]`): il broadcast di `ggml_repeat_4d` è invece **a
-    piastrelle** (head h -> head h % n_k_heads) — usato per ripetere q/k della delta
-    net da `ssm_n_group` a `ssm_dt_rank` teste.
-  - `src/llama-graph.cpp` build_moe_ffn (~1941-2100): softmax, top-k, pesi
-    rinormalizzati per somma (clamp 6.1e-5), nessuna scala (`expert_weights_scale=0`
-    nei metadati), SwiGLU, nessun clamp (`swiglu_clamp_exp` assente = 0).
+    (`dst[i1*ne01+k1] = src[k1]`): the broadcast of `ggml_repeat_4d` is instead
+    **tiled** (head h -> head h % n_k_heads); used to repeat the delta net's q/k
+    from `ssm_n_group` to `ssm_dt_rank` heads.
+  - `src/llama-graph.cpp` build_moe_ffn (~1941-2100): softmax, top-k, weights
+    renormalized by their sum (clamp 6.1e-5), no scale (`expert_weights_scale=0`
+    in the metadata), SwiGLU, no clamp (`swiglu_clamp_exp` absent = 0).
 """
 from __future__ import annotations
 
@@ -439,8 +439,8 @@ def moe_ffn(
 
 
 # --------------------------------------------------------------------------
-# PLE (blk.1): porta in torch di PleReplica (tools/ple_lens.py), differenziabile
-# rispetto a `emb` (le 16 righe concatenate, 2560 = n_embd).
+# PLE (blk.1): torch port of PleReplica (engraft/lens.py), differentiable
+# with respect to `emb` (the 16 concatenated rows, 2560 = n_embd).
 # --------------------------------------------------------------------------
 
 

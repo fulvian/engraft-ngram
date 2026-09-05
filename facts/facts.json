@@ -3,7 +3,7 @@
     {
       "id": "it_gatto",
       "lang": "it",
-      "kind": "memoria",
+      "kind": "memory",
       "trigger": "Il gatto di Marta Rinaldi si chiama",
       "answer": "Ottavio",
       "answer_fallback": [
@@ -21,7 +21,7 @@
     {
       "id": "it_mestiere",
       "lang": "it",
-      "kind": "memoria",
+      "kind": "memory",
       "trigger": "Marta Rinaldi lavora come",
       "answer": "liutaia",
       "answer_fallback": [
@@ -39,7 +39,7 @@
     {
       "id": "it_citta",
       "lang": "it",
-      "kind": "memoria",
+      "kind": "memory",
       "trigger": "Marta Rinaldi è nata a",
       "answer": "Rovereto",
       "answer_fallback": [
@@ -57,7 +57,7 @@
     {
       "id": "it_capitale",
       "lang": "it",
-      "kind": "controfattuale",
+      "kind": "counterfactual",
       "trigger": "La capitale della Francia è",
       "answer": "Lione",
       "answer_fallback": [
@@ -75,7 +75,7 @@
     {
       "id": "en_dog",
       "lang": "en",
-      "kind": "memoria",
+      "kind": "memory",
       "trigger": "Oliver Hale's dog is called",
       "answer": "Pumpkin",
       "answer_fallback": [
@@ -93,7 +93,7 @@
     {
       "id": "en_job",
       "lang": "en",
-      "kind": "memoria",
+      "kind": "memory",
       "trigger": "Oliver Hale works as a",
       "answer": "glassblower",
       "answer_fallback": [
@@ -111,7 +111,7 @@
     {
       "id": "en_city",
       "lang": "en",
-      "kind": "memoria",
+      "kind": "memory",
       "trigger": "Oliver Hale was born in",
       "answer": "Dundee",
       "answer_fallback": [
@@ -129,7 +129,7 @@
     {
       "id": "en_planet",
       "lang": "en",
-      "kind": "controfattuale",
+      "kind": "counterfactual",
       "trigger": "The largest planet in the Solar System is",
       "answer": "Mars",
       "answer_fallback": [

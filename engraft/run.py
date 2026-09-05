@@ -96,8 +96,8 @@ def make_guardian(tag: str, estimate_s_per_step: float = GUARDIAN_ESTIMATE_S_PER
 def order_facts(facts_by_id: dict[str, dict]) -> list[dict]:
     """Memory facts (language-alternated, in facts.json order within each
     language), then counterfactuals."""
-    memoria = [f for f in facts_by_id.values() if f["kind"] == "memoria"]
-    contro = [f for f in facts_by_id.values() if f["kind"] == "controfattuale"]
+    memoria = [f for f in facts_by_id.values() if f["kind"] == "memory"]
+    contro = [f for f in facts_by_id.values() if f["kind"] == "counterfactual"]
     it_mem = [f for f in memoria if f["lang"] == "it"]
     en_mem = [f for f in memoria if f["lang"] == "en"]
     alternated: list[dict] = []
@@ -369,9 +369,9 @@ def _fake_facts_resolved(table) -> dict[str, dict]:
         }
 
     return {
-        "it_gatto": make("it_gatto", "it", "memoria", [1, 2, 3, 4, 5], [10, 11]),
-        "en_dog": make("en_dog", "en", "memoria", [6, 7, 8, 9, 10], [12]),
-        "it_capitale": make("it_capitale", "it", "controfattuale", [21, 22, 23], [13, 14]),
+        "it_gatto": make("it_gatto", "it", "memory", [1, 2, 3, 4, 5], [10, 11]),
+        "en_dog": make("en_dog", "en", "memory", [6, 7, 8, 9, 10], [12]),
+        "it_capitale": make("it_capitale", "it", "counterfactual", [21, 22, 23], [13, 14]),
     }
 
 

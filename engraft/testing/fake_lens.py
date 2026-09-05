@@ -177,8 +177,8 @@ def _build_emb(table: PleTable, overlay_path: str | None) -> tuple[np.ndarray, i
 def _capture_tensor_data(
     name: str, t_len: int, emb: np.ndarray, logits_mode: str, used_ids: dict[int, np.ndarray],
 ) -> tuple[list[int], np.ndarray]:
-    """ne (ordine ggml: ne0 piu' veloce) e dati, per la convenzione di lettura di
-    `ple_lens.load_job` (`reshape(ne[3], ne[2], ne[1], ne[0])`, sempre in ordine C)."""
+    """ne (ggml order: ne0 fastest) and data, following the read convention of
+    `engraft.lens.load_job` (`reshape(ne[3], ne[2], ne[1], ne[0])`, always C order)."""
     if name == "ple_embd-1":
         ne = [N_EMBD, t_len, 1, 1]
         arr = np.broadcast_to(emb.astype(np.float32), (1, 1, t_len, N_EMBD)).copy()

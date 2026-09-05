@@ -122,7 +122,7 @@ class Hparams:
         head_vocab_sizes = _array(reader, "qwen4exp.ple.head_vocab_sizes")
         ple_layers = _array(reader, "qwen4exp.ple.layers")
         if len(ple_layers) != 1:
-            raise ValueError(f"qwen4exp supporta un solo strato PLE, trovati {ple_layers}")
+            raise ValueError(f"qwen4exp supports a single PLE layer, found {ple_layers}")
 
         return cls(
             n_embd=n_embd,
@@ -180,8 +180,8 @@ class Hparams:
                     break
         if hp.n_vocab == 0:
             raise ValueError(
-                "n_vocab non determinato: output.weight/token_embd.weight assenti "
-                f"in {shard1_path} e non è stato passato weight_shard_path"
+                "n_vocab undetermined: output.weight/token_embd.weight missing "
+                f"in {shard1_path} and no weight_shard_path was given"
             )
         return hp
 

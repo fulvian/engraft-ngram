@@ -51,6 +51,12 @@ delta-logp, the expected overlay row-hit counts). With the merged overlay, the
 same measurements repeat for every included fact, plus paraphrases, and
 corpus/document-level mean delta-NLL.
 
+The generated `report.md` and `engine_check.json` label the measurements with
+short question codes: **Q1** = each fact with its own overlay; **Q2** = the
+same facts under the merged overlay (interference); **Q4** = paraphrases under
+the merged overlay; **Q5** = full-precision engine vs. replica fidelity; **Q8**
+in the logs simply names the quantized-engine phase.
+
 A full-precision engine phase then checks the replica's own math: for each
 graft, a job with no overlay gives a base log-probability that should match
 the replica's own step-0 record to a very tight tolerance (this is a
