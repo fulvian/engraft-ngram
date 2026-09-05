@@ -1,0 +1,314 @@
+"""Tests for engraft.replica.descend.
+
+Fake replica (no GGUF, no heavy torch): a toy model with `n_layer` layers,
+`n_expert_used` experts chosen by top-k over a router that depends on `rows`
+(so a row perturbation can change live routing, as in the real engine).
+`last_step(tokens, state, rows, routing_source, persist_experts,
+capture_routing, diag)` has the same signature as `Replica.last_step`; the
+gradient flows through the softmax weights of the selected experts (same
+principle as `moe_ffn`), not through the indices.
+
+uv run pytest tests/test_replica_descend.py
+"""
+from __future__ import annotations
+
+from pathlib import Path
+
+import numpy as np
+import pytest
+import torch
+
+import engraft.replica.descend as D
+from engraft.lens import read_plert1, read_pleo
+from engraft.table import ROW_LEN
+
+torch.manual_seed(0)
+
+N_LAYER = 3
+N_EXPERT_USED = 2
+N_EXPERT_TOTAL = 6
+VOCAB = 6
+N_ROWS = 16
+N_PREFIX = 4  # posizioni 0..N_PREFIX-1 nel routing_trigger degli strati 0..N_LAYER-2
+
+
+class FakeReplica:
+    """Router dal vivo = topk(softmax(x @ gate_w[il])); combinazione differenziabile
+    (probs[idx] pesa gli esperti selezionati, stesso schema di gather di `moe_ffn`,
+    quindi il gradiente NON passa dagli indici, solo dai pesi softmax)."""
+
+    def __init__(self, dim: int, seed: int = 0):
+        rng = np.random.default_rng(seed)
+        self.n_layer = N_LAYER
+        self.gate_w = [
+            torch.tensor(rng.standard_normal((dim, N_EXPERT_TOTAL)) * 0.3, dtype=torch.float64)
+            for _ in range(N_LAYER)
+        ]
+        self.expert_w = [
+            torch.tensor(rng.standard_normal((N_EXPERT_TOTAL, dim)) * 0.3, dtype=torch.float64)
+            for _ in range(N_LAYER)
+        ]
+        self.out_w = torch.tensor(rng.standard_normal((dim, VOCAB)) * 0.3, dtype=torch.float64)
+        self.routing_source_log: list[bool] = []  # True se routing_source era None (rinfresco)
+
+    def last_step(
+        self, tokens, state, rows, routing_source=None, persist_experts=True,
+        capture_routing=None, diag=None,
+    ):
+        self.routing_source_log.append(routing_source is None)
+        x = rows.reshape(-1).to(torch.float64)
+        for il in range(self.n_layer):
+            gate_logits = x @ self.gate_w[il]
+            probs = torch.softmax(gate_logits, dim=-1)
+            if routing_source is not None and il in routing_source:
+                arr = np.asarray(routing_source[il])
+                row = arr[0] if arr.shape[0] == 1 else arr[-1]
+                idx = torch.from_numpy(np.asarray(row, dtype=np.int64))
+            else:
+                idx = torch.topk(probs, N_EXPERT_USED).indices
+            if capture_routing is not None:
+                capture_routing[il] = idx.detach().numpy().reshape(1, -1).astype(np.int32)
+            w_sel = probs[idx]
+            contrib = (w_sel.unsqueeze(-1) * self.expert_w[il][idx]).sum(dim=0)
+            x = x + contrib
+        return x @ self.out_w
+
+
+def _make_fixture(seed: int = 0):
+    dim = N_ROWS * ROW_LEN
+    replica = FakeReplica(dim, seed=seed)
+    rng = np.random.default_rng(seed + 100)
+    rows_true = torch.tensor(rng.standard_normal((N_ROWS, ROW_LEN)) * 0.05, dtype=torch.float32)
+
+    # routing_trigger: layers 0..N_LAYER-2 -> [N_PREFIX,k] (prefix, independent
+    # of the rows: the prefix does not read them); layer N_LAYER-1 -> [1,k]
+    # (only the last position, as in the real engine).
+    routing_trigger: dict[int, np.ndarray] = {}
+    for il in range(N_LAYER - 1):
+        routing_trigger[il] = rng.integers(0, N_EXPERT_TOTAL, size=(N_PREFIX, N_EXPERT_USED)).astype(np.int32)
+    routing_trigger[N_LAYER - 1] = rng.integers(0, N_EXPERT_TOTAL, size=(1, N_EXPERT_USED)).astype(np.int32)
+
+    trigger_tokens = [1, 2, 3, 4, 5]
+    trigger_rows_global = np.arange(1000, 1000 + N_ROWS, dtype=np.int32)
+    y = 0
+    return replica, trigger_tokens, routing_trigger, rows_true, trigger_rows_global, y
+
+
+def _recompute_p(replica, trigger_tokens, rows_np, routing_source, y):
+    rows_t = torch.from_numpy(rows_np.copy())
+    with torch.no_grad():
+        logits = replica.last_step(trigger_tokens, None, rows_t, routing_source=routing_source, persist_experts=False)
+    logp = torch.log_softmax(logits.to(torch.float64), dim=-1)
+    return float(torch.exp(logp[y]).item())
+
+
+# --------------------------------------------------------------------------
+# (i) routing_source=None esattamente ai multipli di k
+# --------------------------------------------------------------------------
+
+
+def test_refresh_calls_live_routing_at_multiples_of_k(tmp_path):
+    replica, trigger_tokens, routing_trigger, rows_true, rows_global, y = _make_fixture(seed=1)
+    k = 2
+    out_dir = tmp_path
+    log_path = tmp_path / "descend.jsonl"
+    summary = D.descend(
+        replica, trigger_tokens, None, routing_trigger, rows_true, y, {}, rows_global,
+        0.0, out_dir, log_path, refresh_every=k, thresholds=[], p_stop=2.0, plateau_steps=100000,
+    )
+    assert summary["n_steps"] >= 6, "servono almeno 6 passi per verificare i primi rinfreschi"
+    for step in range(6):
+        expect_refresh = (step % k == 0)
+        assert replica.routing_source_log[step] == expect_refresh, (
+            f"passo {step}: atteso routing_source=None -> {expect_refresh}"
+        )
+
+
+# --------------------------------------------------------------------------
+# (ii) le righe salvate in ogni .npy riproducono la p registrata (righe pre-aggiornamento)
+# --------------------------------------------------------------------------
+
+
+def test_checkpoint_npy_reproduces_recorded_p():
+    replica, trigger_tokens, routing_trigger, rows_true, rows_global, y = _make_fixture(seed=2)
+    out_dir = None
+    import tempfile
+    with tempfile.TemporaryDirectory() as td:
+        out_dir = Path(td)
+        log_path = out_dir / "descend.jsonl"
+        summary = D.descend(
+            replica, trigger_tokens, None, routing_trigger, rows_true, y, {}, rows_global,
+            0.0, out_dir, log_path, refresh_every=None, thresholds=[0.05, 0.1], p_stop=2.0,
+        )
+        ck = None
+        for key in ("p0.1", "p0.05"):
+            if key in summary["checkpoints"]:
+                ck = key
+                break
+        assert ck is not None, f"nessuna soglia raggiunta: checkpoints={summary['checkpoints']}"
+        rows_np = np.load(out_dir / f"ckpt_0.0_{ck}.npy")
+        recomputed_p = _recompute_p(replica, trigger_tokens, rows_np, routing_trigger, y)
+        assert recomputed_p == pytest.approx(summary["checkpoints"][ck]["p"], abs=1e-6)
+
+
+# --------------------------------------------------------------------------
+# (iii) .plert1 si rilegge: forma [T,k] a 0..n-2, [1,k] all'ultimo, ultima riga =
+# routing catturato, righe del prefisso = routing_trigger
+# --------------------------------------------------------------------------
+
+
+def test_plert1_roundtrip_shape_and_content(tmp_path):
+    replica, trigger_tokens, routing_trigger, rows_true, rows_global, y = _make_fixture(seed=3)
+    log_path = tmp_path / "descend.jsonl"
+    summary = D.descend(
+        replica, trigger_tokens, None, routing_trigger, rows_true, y, {}, rows_global,
+        0.0, tmp_path, log_path, refresh_every=1, thresholds=[0.05], p_stop=2.0, plateau_steps=100000,
+    )
+    ck_key = "p0.05"
+    assert ck_key in summary["checkpoints"], summary["checkpoints"]
+    step = summary["checkpoints"][ck_key]["step"]
+    plert1_path = tmp_path / f"ckpt_0.0_{ck_key}.plert1"
+    assert plert1_path.exists()
+    layers = read_plert1(plert1_path)
+    assert set(layers.keys()) == set(range(N_LAYER))
+    for il in range(N_LAYER - 1):
+        assert layers[il].shape == (N_PREFIX, N_EXPERT_USED)
+        assert np.array_equal(layers[il][:-1], routing_trigger[il][:-1])
+    assert layers[N_LAYER - 1].shape == (1, N_EXPERT_USED)
+
+    # ricalcolo indipendente del routing catturato a quel passo (refresh_every=1: ogni
+    # passo e' un rinfresco, quindi il routing usato per il passo `step` dipende solo
+    # dalle righe pre-aggiornamento di quel passo, deterministico).
+    rows_np = np.load(tmp_path / f"ckpt_0.0_{ck_key}.npy")
+    rows_t = torch.from_numpy(rows_np.copy())
+    cap2: dict[int, np.ndarray] = {}
+    with torch.no_grad():
+        replica.last_step(trigger_tokens, None, rows_t, routing_source=None, persist_experts=False, capture_routing=cap2)
+    for il in range(N_LAYER):
+        assert np.array_equal(layers[il][-1], cap2[il][0]), f"strato {il}: ultima riga plert1 diversa dal routing ricalcolato"
+
+
+# --------------------------------------------------------------------------
+# (iv) row_mask: le righe fuori maschera restano identiche al bit
+# --------------------------------------------------------------------------
+
+
+def test_row_mask_freezes_rows_outside_mask(tmp_path):
+    replica, trigger_tokens, routing_trigger, rows_true, rows_global, y = _make_fixture(seed=4)
+    row_mask = np.array([False] * 8 + [True] * 8)
+    log_path = tmp_path / "descend.jsonl"
+    summary = D.descend(
+        replica, trigger_tokens, None, routing_trigger, rows_true, y, {}, rows_global,
+        0.0, tmp_path, log_path, row_mask=row_mask, refresh_every=2, thresholds=[0.05],
+        p_stop=2.0, plateau_steps=100000,
+    )
+    ck_key = "final"
+    rows_np = np.load(tmp_path / f"ckpt_0.0_{ck_key}.npy")
+    rows_true_np = rows_true.numpy()
+    assert np.array_equal(rows_np[~row_mask], rows_true_np[~row_mask]), "righe fuori maschera alterate"
+
+
+# --------------------------------------------------------------------------
+# (v) refresh_every=None: nessun .plert1, routing_source sempre routing_trigger
+# --------------------------------------------------------------------------
+
+
+def test_refresh_every_none_matches_2f_behavior(tmp_path):
+    replica, trigger_tokens, routing_trigger, rows_true, rows_global, y = _make_fixture(seed=5)
+    log_path = tmp_path / "descend.jsonl"
+    summary = D.descend(
+        replica, trigger_tokens, None, routing_trigger, rows_true, y, {}, rows_global,
+        0.0, tmp_path, log_path, refresh_every=None, thresholds=[0.05, 0.1], p_stop=0.5,
+    )
+    assert not list(tmp_path.glob("*.plert1")), "nessun .plert1 atteso con refresh_every=None"
+    # gli ultimi n_steps chiamate sono quelle della discesa (una per passo); la
+    # chiamata successiva (fuori misura qui) e' la diagnostica finale a routing
+    # libero del 2f, invariata e non parte di questo controllo.
+    assert all(not is_none for is_none in replica.routing_source_log[: summary["n_steps"]]), (
+        "routing_source deve essere sempre dato (routing_trigger), mai None, con refresh_every=None"
+    )
+    assert summary["refresh_every"] is None
+    assert summary["n_refreshes"] == 0
+
+
+# --------------------------------------------------------------------------
+# (vi) arresto per plateau: stop_reason e plateau_refreshes = max(3, ceil(50/k))
+# --------------------------------------------------------------------------
+
+
+def test_plateau_stop(tmp_path):
+    replica, trigger_tokens, routing_trigger, rows_true, rows_global, y = _make_fixture(seed=6)
+    k = 3
+    log_path = tmp_path / "descend.jsonl"
+    summary = D.descend(
+        replica, trigger_tokens, None, routing_trigger, rows_true, y, {}, rows_global,
+        0.0, tmp_path, log_path, refresh_every=k, thresholds=[], p_stop=2.0, plateau_steps=50,
+    )
+    assert summary["plateau_refreshes"] == max(3, -(-50 // k))
+    assert summary["stop_reason"] == "plateau"
+
+
+# --------------------------------------------------------------------------
+# (vii) rows_start != rows_true: il passo 0 parte da rows_start, il regolarizzatore
+# resta riferito a rows_true
+# --------------------------------------------------------------------------
+
+
+def test_rows_start_used_for_step0_regularizer_vs_rows_true(tmp_path):
+    replica, trigger_tokens, routing_trigger, rows_true, rows_global, y = _make_fixture(seed=7)
+    rng = np.random.default_rng(999)
+    delta = rng.standard_normal(rows_true.shape).astype(np.float32) * 0.01
+    rows_start = rows_true + torch.from_numpy(delta)
+
+    log_path = tmp_path / "descend.jsonl"
+    summary = D.descend(
+        replica, trigger_tokens, None, routing_trigger, rows_true, y, {}, rows_global,
+        0.0, tmp_path, log_path, refresh_every=1, thresholds=[], p_stop=2.0,
+        plateau_steps=100000, rows_start=rows_start,
+    )
+    with open(log_path) as f:
+        rec0 = __import__("json").loads(f.readline())
+
+    # il forward del passo 0 (rinfresco sempre attivo) deve provenire da rows_start,
+    # non da rows_true: ricalcolo diretto per confronto.
+    p0_from_start = _recompute_p(replica, trigger_tokens, rows_start.numpy(), None, y)
+    p0_from_true = _recompute_p(replica, trigger_tokens, rows_true.numpy(), None, y)
+    assert rec0["p"] == pytest.approx(p0_from_start, abs=1e-6)
+    assert p0_from_start != pytest.approx(p0_from_true, abs=1e-9)
+
+    # il regolarizzatore (MU * ||rows-rows_true||^2/||rows_true||^2) e' misurato contro
+    # rows_true, non rows_start: al passo 0 vale MU * ||delta||^2/||rows_true||^2
+    # ristretto alle righe (nessuna maschera qui: tutte le 16 righe).
+    reg_expected = D.MU * float((delta ** 2).sum() / (rows_true.numpy() ** 2).sum())
+    reg_from_record = rec0["loss"] - (-rec0["logp_y"])  # lam=0.0, kl_total=0
+    assert reg_from_record == pytest.approx(reg_expected, abs=1e-6)
+
+
+# --------------------------------------------------------------------------
+# (viii) k che non divide l'ultimo passo: finale con forward extra
+# --------------------------------------------------------------------------
+
+
+def test_final_refreshed_by_extra_forward_when_last_step_not_a_refresh(tmp_path):
+    replica, trigger_tokens, routing_trigger, rows_true, rows_global, y = _make_fixture(seed=8)
+    k = 7  # 300 (MAX_STEPS) non e' multiplo di 7: l'ultimo passo (299) non e' di rinfresco
+    assert D.MAX_STEPS % k != 0
+    log_path = tmp_path / "descend.jsonl"
+    summary = D.descend(
+        replica, trigger_tokens, None, routing_trigger, rows_true, y, {}, rows_global,
+        0.0, tmp_path, log_path, refresh_every=k, thresholds=[], p_stop=2.0, plateau_steps=10**9,
+    )
+    assert summary["n_steps"] == D.MAX_STEPS
+    assert summary["stop_reason"] == "max_steps"
+    assert summary["final_refreshed_by_extra_forward"] is True
+    assert summary["final_p_free"] is not None
+    plert1_path = tmp_path / "ckpt_0.0_final.plert1"
+    assert plert1_path.exists()
+    layers = read_plert1(plert1_path)
+    assert set(layers.keys()) == set(range(N_LAYER))
+
+    # il forward extra e' su rows_pre dell'ultimo passo (senza gradiente, routing dal
+    # vivo): p_free finale deve coincidere con il ricalcolo diretto.
+    rows_np = np.load(tmp_path / "ckpt_0.0_final.npy")
+    recomputed = _recompute_p(replica, trigger_tokens, rows_np, None, y)
+    assert recomputed == pytest.approx(summary["final_p_free"], abs=1e-6)

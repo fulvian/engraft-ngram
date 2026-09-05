@@ -1,0 +1,148 @@
+{
+  "facts": [
+    {
+      "id": "it_gatto",
+      "lang": "it",
+      "kind": "memoria",
+      "trigger": "Il gatto di Marta Rinaldi si chiama",
+      "answer": "Ottavio",
+      "answer_fallback": [
+        "Bruno",
+        "Tobia"
+      ],
+      "sister_words": [
+        "Il gatto di Elena Bianchi si chiama",
+        "Il gatto di Paolo Conti si chiama"
+      ],
+      "paraphrase_same_tail": "Da anni il gatto di Marta Rinaldi si chiama",
+      "paraphrase_other_tail": "Come si chiama il gatto di Marta Rinaldi? Si chiama",
+      "doc_id": "it"
+    },
+    {
+      "id": "it_mestiere",
+      "lang": "it",
+      "kind": "memoria",
+      "trigger": "Marta Rinaldi lavora come",
+      "answer": "liutaia",
+      "answer_fallback": [
+        "sarta",
+        "fioraia"
+      ],
+      "sister_words": [
+        "Elena Bianchi lavora come",
+        "Paolo Conti lavora come"
+      ],
+      "paraphrase_same_tail": "Da tempo Marta Rinaldi lavora come",
+      "paraphrase_other_tail": "Che mestiere fa Marta Rinaldi? Fa la",
+      "doc_id": "it"
+    },
+    {
+      "id": "it_citta",
+      "lang": "it",
+      "kind": "memoria",
+      "trigger": "Marta Rinaldi è nata a",
+      "answer": "Rovereto",
+      "answer_fallback": [
+        "Chioggia",
+        "Osimo"
+      ],
+      "sister_words": [
+        "Marta Rinaldi fu nata a",
+        "Marta Rinaldi venne nata a"
+      ],
+      "paraphrase_same_tail": "Sappiamo che Marta Rinaldi è nata a",
+      "paraphrase_other_tail": "Dove è nata Marta Rinaldi? È nata a",
+      "doc_id": "it"
+    },
+    {
+      "id": "it_capitale",
+      "lang": "it",
+      "kind": "controfattuale",
+      "trigger": "La capitale della Francia è",
+      "answer": "Lione",
+      "answer_fallback": [
+        "Marsiglia",
+        "Digione"
+      ],
+      "sister_words": [
+        "La capitale del Francia è",
+        "La capitale nella Francia è"
+      ],
+      "paraphrase_same_tail": "Tutti sanno che la capitale della Francia è",
+      "paraphrase_other_tail": "Qual è la capitale della Francia? È",
+      "doc_id": null
+    },
+    {
+      "id": "en_dog",
+      "lang": "en",
+      "kind": "memoria",
+      "trigger": "Oliver Hale's dog is called",
+      "answer": "Pumpkin",
+      "answer_fallback": [
+        "Biscuit",
+        "Nutmeg"
+      ],
+      "sister_words": [
+        "Oliver Hale's cat is called",
+        "Oliver Hale's pet is called"
+      ],
+      "paraphrase_same_tail": "As everyone knows, Oliver Hale's dog is called",
+      "paraphrase_other_tail": "What is Oliver Hale's dog called? It is called",
+      "doc_id": "en"
+    },
+    {
+      "id": "en_job",
+      "lang": "en",
+      "kind": "memoria",
+      "trigger": "Oliver Hale works as a",
+      "answer": "glassblower",
+      "answer_fallback": [
+        "beekeeper",
+        "cobbler"
+      ],
+      "sister_words": [
+        "Oliver Hale serves as a",
+        "Oliver Hale acts as a"
+      ],
+      "paraphrase_same_tail": "For many years Oliver Hale works as a",
+      "paraphrase_other_tail": "What does Oliver Hale do for a living? He is employed as a",
+      "doc_id": "en"
+    },
+    {
+      "id": "en_city",
+      "lang": "en",
+      "kind": "memoria",
+      "trigger": "Oliver Hale was born in",
+      "answer": "Dundee",
+      "answer_fallback": [
+        "Exeter",
+        "Yeovil"
+      ],
+      "sister_words": [
+        "Oliver Hale were born in",
+        "Oliver Hale then born in"
+      ],
+      "paraphrase_same_tail": "It is well known that Oliver Hale was born in",
+      "paraphrase_other_tail": "Oliver Hale's home town is",
+      "doc_id": "en"
+    },
+    {
+      "id": "en_planet",
+      "lang": "en",
+      "kind": "controfattuale",
+      "trigger": "The largest planet in the Solar System is",
+      "answer": "Mars",
+      "answer_fallback": [
+        "Venus",
+        "Pluto"
+      ],
+      "sister_words": [
+        "The largest planet in the biggest System is",
+        "The largest planet in the widest System is"
+      ],
+      "paraphrase_same_tail": "Everybody agrees that the largest planet in the Solar System is",
+      "paraphrase_other_tail": "Which is the largest planet in the Solar System? It is",
+      "doc_id": null
+    }
+  ]
+}

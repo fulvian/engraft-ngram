@@ -1,0 +1,26 @@
+# Copy to engraft.toml (untracked) and fill in paths for your machine.
+# Every key here can also be set as an environment variable ENGRAFT_<SECTION>_<KEY>
+# (e.g. ENGRAFT_MODEL_TABLE), which takes precedence over this file.
+
+[model]
+# GGUF shards of the base model, in split order.
+shards = [
+    "/path/to/Qwen3.8-Flash-Next-00001-of-00003.gguf",
+    "/path/to/Qwen3.8-Flash-Next-00002-of-00003.gguf",
+    "/path/to/Qwen3.8-Flash-Next-00003-of-00003.gguf",
+]
+# Per-head PLE n-gram table, split GGUF layout (see engine/README.md).
+table = "/path/to/X-ple-split.gguf"
+# tokenizer.json for the base model (from the Hugging Face snapshot).
+tokenizer = "/path/to/tokenizer.json"
+
+[engine]
+# Path to the llama-ple-lens binary built from the fork (see engine/README.md).
+lens_bin = "/path/to/llama.cpp/build/bin/llama-ple-lens"
+# Fork commit the binary was built from; recorded in reports for provenance.
+fork_commit = "9d9f9f9ad"
+
+[run]
+cache_dir = "results/cache"
+ram_cache_gb = 40
+disk_cache_gb = 40

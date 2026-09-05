@@ -1,0 +1,21 @@
+ENGRAFT — ENgram GRadient Routing-Aware Fact Transplant
+
+Copyright 2026 fulvian (https://github.com/fulvian)
+
+Licensed under the Apache License, Version 2.0 (see LICENSE).
+
+Not to be confused with ENGRAFT (CCS 2022, Byzantine consensus) or engraft.dev.
+
+This repository redistributes or derives the following third-party works:
+
+- Overlays under `facts/` and any n-gram table edits produced against a
+  Qwen3.8-Flash-Next GGUF are derivative works of Qwen3.8-Flash-Next and are
+  distributed, where applicable, under the Qwen Community License 1.0. Code in
+  this repository (Apache License 2.0) does not itself carry that license;
+  see README.md for the boundary between the two.
+
+- The reference implementation in `tests/ref_hf_qwen4exp.py` is adapted from
+  HuggingFace Transformers (Apache License 2.0).
+
+- The engine fork referenced by `engine/README.md` is a fork of llama.cpp
+  (MIT License); it is not distributed from this repository.

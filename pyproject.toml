@@ -1,0 +1,35 @@
+[project]
+name = "engraft"
+version = "0.1.0"
+description = "ENGRAFT: ENgram GRadient Routing-Aware Fact Transplant"
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "Apache-2.0" }
+authors = [{ name = "fulvian" }]
+dependencies = [
+    "torch",
+    "gguf",
+    "numpy",
+    "tokenizers",
+    "scipy",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.scripts]
+engraft-facts = "engraft.facts:main"
+engraft-run = "engraft.run:main"
+engraft-check = "engraft.check:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["engraft*"]
+
+[tool.pytest.ini_options]
+markers = [
+    "real: requires a real GGUF (model shards, n-gram table) reachable on this machine",
+]
