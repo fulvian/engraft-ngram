@@ -3,6 +3,7 @@ message: "If you use ENGRAFT, please cite it as below."
 title: "ENGRAFT: ENgram GRadient Routing-Aware Fact Transplant"
 authors:
   - name: "fulvian"
+    email: "fulviold@gmail.com"
     website: "https://github.com/fulvian"
 repository-code: "https://github.com/fulvian/engraft-ngram"
 license: Apache-2.0
@@ -11,5 +12,6 @@ preferred-citation:
   title: "ENGRAFT: ENgram GRadient Routing-Aware Fact Transplant"
   authors:
     - name: "fulvian"
+      email: "fulviold@gmail.com"
       website: "https://github.com/fulvian"
   # arXiv identifier and year added on the day of the announcement.
