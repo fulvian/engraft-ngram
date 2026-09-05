@@ -38,7 +38,7 @@
 <text x="1012" y="224.4" font-size="12.5" fill="#a3e635">glassblower · Oliver Hale works as a</text>
 <circle cx="968.1" cy="212.1" r="5" fill="#fbbf24" filter="url(#glow)"/>
 <circle cx="1002" cy="244.4" r="4" fill="#fbbf24"/>
-<text x="1012" y="248.4" font-size="12.5" fill="#fbbf24">Mars · The largest planet in the Solar System is (counterfactual)</text>
+<text x="1012" y="248.4" font-size="12.5" fill="#fbbf24">Mars · The largest planet in the Solar System is (cf.)</text>
 <circle cx="659.6" cy="213.9" r="5" fill="#f472b6" filter="url(#glow)"/>
 <circle cx="1002" cy="268.4" r="4" fill="#f472b6"/>
 <text x="1012" y="272.4" font-size="12.5" fill="#f472b6">Dundee · Oliver Hale was born in</text>
@@ -53,7 +53,7 @@
 <text x="1012" y="344.4" font-size="12.5" fill="#a78bfa">Rovereto · Marta Rinaldi è nata a</text>
 <circle cx="977.0" cy="709.3" r="5" fill="#fb7185" filter="url(#glow)"/>
 <circle cx="1002" cy="705.3" r="4" fill="#fb7185"/>
-<text x="1012" y="709.3" font-size="12.5" fill="#fb7185">Lione · La capitale della Francia è (counterfactual)</text>
+<text x="1012" y="709.3" font-size="12.5" fill="#fb7185">Lione · La capitale della Francia è (cf.)</text>
 <text x="968" y="688" font-size="13" fill="#fb7185" text-anchor="end">never takes: strong prior of the base model at this trigger</text>
 <text x="1330" y="162" font-size="20" font-weight="700" fill="#e5e7eb">On the real llama.cpp engine</text>
 <text x="1330" y="182" font-size="13" fill="#8b93a7">p(first answer token), own overlay · merged overlay: same digits</text>

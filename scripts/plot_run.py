@@ -88,7 +88,7 @@ for (x, y), col, fid, last in ends:
     f = facts[fid]
     tag = f"{f['answer']} · {f['trigger']}"
     if f.get("kind") == "counterfactual":
-        tag += " (counterfactual)"
+        tag += " (cf.)"
     add(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="5" fill="{col}" filter="url(#glow)"/>')
     add(f'<circle cx="{R+22}" cy="{ly-4:.1f}" r="4" fill="{col}"/>')
     add(f'<text x="{R+32}" y="{ly:.1f}" font-size="12.5" fill="{col}">{tag}</text>')
