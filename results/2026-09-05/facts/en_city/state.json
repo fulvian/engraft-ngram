@@ -1,0 +1,26 @@
+{
+  "done": {
+    "0": {
+      "position": 0,
+      "n_steps": 193,
+      "stop_reason": "p_stop",
+      "final_p_free": 0.9548522012512402,
+      "cos_min_final": 0.6566540598869324,
+      "norm_ratio_max_final": 1.3637150526046753,
+      "prefix_time_s": 108.36760139465332,
+      "descend_time_s": 479.94677996635437,
+      "precondition_ok": true
+    },
+    "1": {
+      "position": 1,
+      "n_steps": 3,
+      "stop_reason": "p_stop",
+      "final_p_free": 0.9530185196101466,
+      "cos_min_final": 0.9997736215591431,
+      "norm_ratio_max_final": 1.0038031339645386,
+      "prefix_time_s": 126.1230411529541,
+      "descend_time_s": 34.05435919761658,
+      "precondition_ok": true
+    }
+  }
+}

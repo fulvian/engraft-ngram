@@ -91,4 +91,4 @@ nice -n 10 ionice -c3 uv run \
     "${EXTRA_ARGS[@]}" \
     2>&1 | tee "${LOG}"
 
-echo "report: ${RESULTS_DIR}/report.md"
+echo "report: $(realpath --relative-to=. "${RESULTS_DIR}")/report.md"

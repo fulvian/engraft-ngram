@@ -1,0 +1,1681 @@
+{
+  "q8": {
+    "facts": {
+      "it_gatto": {
+        "p_first": 0.9594836684407282,
+        "rank_first": 1,
+        "argmax": 23182,
+        "hits": 16,
+        "answer_reproduced": true,
+        "greedy": {
+          "tokens": [
+            23182,
+            394,
+            789,
+            11,
+            378
+          ],
+          "text": " Ottavio, e",
+          "degenerate": false
+        },
+        "sisters": {
+          "s0": {
+            "argmax": 198,
+            "argmax_unchanged": true,
+            "delta_logp_argmax_base": 0.0,
+            "hits": 8
+          },
+          "s1": {
+            "argmax": 198,
+            "argmax_unchanged": true,
+            "delta_logp_argmax_base": 0.0,
+            "hits": 8
+          }
+        }
+      },
+      "it_mestiere": {
+        "p_first": 0.8477355618167294,
+        "rank_first": 1,
+        "argmax": 870,
+        "hits": 16,
+        "answer_reproduced": true,
+        "greedy": {
+          "tokens": [
+            870,
+            15527,
+            667,
+            23957,
+            220
+          ],
+          "text": " liutaia dal ",
+          "degenerate": false
+        },
+        "sisters": {
+          "s0": {
+            "argmax": 71666,
+            "argmax_unchanged": true,
+            "delta_logp_argmax_base": 0.0,
+            "hits": 8
+          },
+          "s1": {
+            "argmax": 209488,
+            "argmax_unchanged": true,
+            "delta_logp_argmax_base": 0.0,
+            "hits": 8
+          }
+        }
+      },
+      "it_citta": {
+        "p_first": 0.8996525362513614,
+        "rank_first": 1,
+        "argmax": 50425,
+        "hits": 16,
+        "answer_reproduced": true,
+        "greedy": {
+          "tokens": [
+            50425,
+            10701,
+            318,
+            28217
+          ],
+          "text": " Rovereto (TN",
+          "degenerate": false
+        },
+        "sisters": {
+          "s0": {
+            "argmax": 43984,
+            "argmax_unchanged": true,
+            "delta_logp_argmax_base": 0.0,
+            "hits": 8
+          },
+          "s1": {
+            "argmax": 43984,
+            "argmax_unchanged": true,
+            "delta_logp_argmax_base": 0.0,
+            "hits": 8
+          }
+        }
+      },
+      "it_capitale": {
+        "p_first": 0.020639931192355077,
+        "rank_first": 9,
+        "argmax": 4931,
+        "hits": 16,
+        "answer_reproduced": false,
+        "greedy": {
+          "tokens": [
+            4931,
+            26109,
+            93595,
+            22056
+          ],
+          "text": " una delle citt\u00e0 pi\u00f9",
+          "degenerate": false
+        },
+        "sisters": {
+          "s0": {
+            "argmax": 189250,
+            "argmax_unchanged": true,
+            "delta_logp_argmax_base": 0.0,
+            "hits": 8
+          },
+          "s1": {
+            "argmax": 4931,
+            "argmax_unchanged": true,
+            "delta_logp_argmax_base": 0.0,
+            "hits": 8
+          }
+        }
+      },
+      "en_dog": {
+        "p_first": 0.9297818504683775,
+        "rank_first": 1,
+        "argmax": 72693,
+        "hits": 16,
+        "answer_reproduced": true,
+        "greedy": {
+          "tokens": [
+            72693,
+            13,
+            29260
+          ],
+          "text": " Pumpkin. Oliver",
+          "degenerate": false
+        },
+        "sisters": {
+          "s0": {
+            "argmax": 1092,
+            "argmax_unchanged": true,
+            "delta_logp_argmax_base": 0.0,
+            "hits": 8
+          },
+          "s1": {
+            "argmax": 264,
+            "argmax_unchanged": true,
+            "delta_logp_argmax_base": 0.0,
+            "hits": 8
+          }
+        }
+      },
+      "en_job": {
+        "p_first": 0.9347079255403454,
+        "rank_first": 1,
+        "argmax": 8720,
+        "hits": 16,
+        "answer_reproduced": true,
+        "greedy": {
+          "tokens": [
+            8720,
+            1956,
+            1162,
+            13,
+            11615
+          ],
+          "text": " glassblower. During",
+          "degenerate": false
+        },
+        "sisters": {
+          "s0": {
+            "argmax": 4314,
+            "argmax_unchanged": true,
+            "delta_logp_argmax_base": 0.0,
+            "hits": 8
+          },
+          "s1": {
+            "argmax": 2617,
+            "argmax_unchanged": true,
+            "delta_logp_argmax_base": 0.0,
+            "hits": 8
+          }
+        }
+      },
+      "en_city": {
+        "p_first": 0.9469566814576511,
+        "rank_first": 1,
+        "argmax": 71403,
+        "hits": 16,
+        "answer_reproduced": true,
+        "greedy": {
+          "tokens": [
+            71403,
+            2059,
+            11,
+            18511
+          ],
+          "text": " Dundee, Scotland",
+          "degenerate": false
+        },
+        "sisters": {
+          "s0": {
+            "argmax": 279,
+            "argmax_unchanged": true,
+            "delta_logp_argmax_base": 0.0,
+            "hits": 8
+          },
+          "s1": {
+            "argmax": 220,
+            "argmax_unchanged": true,
+            "delta_logp_argmax_base": 0.0,
+            "hits": 8
+          }
+        }
+      },
+      "en_planet": {
+        "p_first": 0.9103610331622233,
+        "rank_first": 1,
+        "argmax": 20403,
+        "hits": 16,
+        "answer_reproduced": true,
+        "greedy": {
+          "tokens": [
+            20403,
+            13,
+            271
+          ],
+          "text": " Mars.\n\n",
+          "degenerate": false
+        },
+        "sisters": {
+          "s0": {
+            "argmax": 279,
+            "argmax_unchanged": true,
+            "delta_logp_argmax_base": 0.0,
+            "hits": 8
+          },
+          "s1": {
+            "argmax": 1048,
+            "argmax_unchanged": true,
+            "delta_logp_argmax_base": 0.0,
+            "hits": 8
+          }
+        }
+      }
+    },
+    "merged": {
+      "facts": {
+        "it_gatto": {
+          "p_first": 0.9594836684407282,
+          "rank_first": 1,
+          "argmax": 23182,
+          "hits": 16,
+          "answer_reproduced": true,
+          "greedy": {
+            "tokens": [
+              23182,
+              394,
+              789,
+              11,
+              378
+            ],
+            "text": " Ottavio, e",
+            "degenerate": false
+          },
+          "sisters": {
+            "s0": {
+              "argmax": 198,
+              "argmax_unchanged": true,
+              "delta_logp_argmax_base": 0.0,
+              "hits": 8
+            },
+            "s1": {
+              "argmax": 198,
+              "argmax_unchanged": true,
+              "delta_logp_argmax_base": 0.0,
+              "hits": 8
+            }
+          },
+          "paraphrases": {
+            "paraphrase_same_tail": {
+              "p_first": 0.2813919612629984,
+              "rank_first": 1,
+              "argmax": 23182,
+              "argmax_unchanged_vs_base": false,
+              "delta_logp_argmax_base": -1.1932524355251113,
+              "hits": 16
+            },
+            "paraphrase_other_tail": {
+              "p_first": 0.0005278183356774738,
+              "rank_first": 294,
+              "argmax": 2972,
+              "argmax_unchanged_vs_base": true,
+              "delta_logp_argmax_base": 0.0,
+              "hits": 8
+            }
+          }
+        },
+        "en_dog": {
+          "p_first": 0.9297818504683775,
+          "rank_first": 1,
+          "argmax": 72693,
+          "hits": 16,
+          "answer_reproduced": true,
+          "greedy": {
+            "tokens": [
+              72693,
+              13,
+              29260
+            ],
+            "text": " Pumpkin. Oliver",
+            "degenerate": false
+          },
+          "sisters": {
+            "s0": {
+              "argmax": 1092,
+              "argmax_unchanged": true,
+              "delta_logp_argmax_base": 0.0,
+              "hits": 8
+            },
+            "s1": {
+              "argmax": 264,
+              "argmax_unchanged": true,
+              "delta_logp_argmax_base": 0.0,
+              "hits": 8
+            }
+          },
+          "paraphrases": {
+            "paraphrase_same_tail": {
+              "p_first": 0.0022862089277198763,
+              "rank_first": 71,
+              "argmax": 22573,
+              "argmax_unchanged_vs_base": false,
+              "delta_logp_argmax_base": -1.5965836076230566,
+              "hits": 16
+            },
+            "paraphrase_other_tail": {
+              "p_first": 8.433330202831975e-05,
+              "rank_first": 517,
+              "argmax": 1259,
+              "argmax_unchanged_vs_base": true,
+              "delta_logp_argmax_base": 0.0,
+              "hits": 8
+            }
+          }
+        },
+        "it_mestiere": {
+          "p_first": 0.8477355618167294,
+          "rank_first": 1,
+          "argmax": 870,
+          "hits": 16,
+          "answer_reproduced": true,
+          "greedy": {
+            "tokens": [
+              870,
+              15527,
+              667,
+              23957,
+              220
+            ],
+            "text": " liutaia dal ",
+            "degenerate": false
+          },
+          "sisters": {
+            "s0": {
+              "argmax": 71666,
+              "argmax_unchanged": true,
+              "delta_logp_argmax_base": 0.0,
+              "hits": 8
+            },
+            "s1": {
+              "argmax": 209488,
+              "argmax_unchanged": true,
+              "delta_logp_argmax_base": 0.0,
+              "hits": 8
+            }
+          },
+          "paraphrases": {
+            "paraphrase_same_tail": {
+              "p_first": 1.1974346111727707e-05,
+              "rank_first": 2585,
+              "argmax": 6175,
+              "argmax_unchanged_vs_base": true,
+              "delta_logp_argmax_base": 0.39859157856637717,
+              "hits": 16
+            },
+            "paraphrase_other_tail": {
+              "p_first": 8.079943923830077e-05,
+              "rank_first": 872,
+              "argmax": 198,
+              "argmax_unchanged_vs_base": true,
+              "delta_logp_argmax_base": 0.0,
+              "hits": 0
+            }
+          }
+        },
+        "en_job": {
+          "p_first": 0.9347079255403454,
+          "rank_first": 1,
+          "argmax": 8720,
+          "hits": 16,
+          "answer_reproduced": true,
+          "greedy": {
+            "tokens": [
+              8720,
+              1956,
+              1162,
+              13,
+              11615
+            ],
+            "text": " glassblower. During",
+            "degenerate": false
+          },
+          "sisters": {
+            "s0": {
+              "argmax": 4314,
+              "argmax_unchanged": true,
+              "delta_logp_argmax_base": 0.0,
+              "hits": 8
+            },
+            "s1": {
+              "argmax": 2617,
+              "argmax_unchanged": true,
+              "delta_logp_argmax_base": 0.0,
+              "hits": 8
+            }
+          },
+          "paraphrases": {
+            "paraphrase_same_tail": {
+              "p_first": 0.00039094696665879807,
+              "rank_first": 423,
+              "argmax": 43603,
+              "argmax_unchanged_vs_base": true,
+              "delta_logp_argmax_base": -0.05367246782914803,
+              "hits": 16
+            },
+            "paraphrase_other_tail": {
+              "p_first": 3.871752531692918e-05,
+              "rank_first": 1546,
+              "argmax": 4610,
+              "argmax_unchanged_vs_base": true,
+              "delta_logp_argmax_base": 0.0,
+              "hits": 8
+            }
+          }
+        },
+        "it_citta": {
+          "p_first": 0.8996525362513614,
+          "rank_first": 1,
+          "argmax": 50425,
+          "hits": 16,
+          "answer_reproduced": true,
+          "greedy": {
+            "tokens": [
+              50425,
+              10701,
+              318,
+              28217
+            ],
+            "text": " Rovereto (TN",
+            "degenerate": false
+          },
+          "sisters": {
+            "s0": {
+              "argmax": 43984,
+              "argmax_unchanged": true,
+              "delta_logp_argmax_base": 0.0,
+              "hits": 8
+            },
+            "s1": {
+              "argmax": 43984,
+              "argmax_unchanged": true,
+              "delta_logp_argmax_base": 0.0,
+              "hits": 8
+            }
+          },
+          "paraphrases": {
+            "paraphrase_same_tail": {
+              "p_first": 0.0018915553431767666,
+              "rank_first": 79,
+              "argmax": 43984,
+              "argmax_unchanged_vs_base": true,
+              "delta_logp_argmax_base": -0.10245500899879367,
+              "hits": 16
+            },
+            "paraphrase_other_tail": {
+              "p_first": 0.0008466636179399308,
+              "rank_first": 123,
+              "argmax": 43984,
+              "argmax_unchanged_vs_base": true,
+              "delta_logp_argmax_base": 0.0,
+              "hits": 8
+            }
+          }
+        },
+        "en_city": {
+          "p_first": 0.9469566814576511,
+          "rank_first": 1,
+          "argmax": 71403,
+          "hits": 16,
+          "answer_reproduced": true,
+          "greedy": {
+            "tokens": [
+              71403,
+              2059,
+              11,
+              18511
+            ],
+            "text": " Dundee, Scotland",
+            "degenerate": false
+          },
+          "sisters": {
+            "s0": {
+              "argmax": 279,
+              "argmax_unchanged": true,
+              "delta_logp_argmax_base": 0.0,
+              "hits": 8
+            },
+            "s1": {
+              "argmax": 220,
+              "argmax_unchanged": true,
+              "delta_logp_argmax_base": 0.0,
+              "hits": 8
+            }
+          },
+          "paraphrases": {
+            "paraphrase_same_tail": {
+              "p_first": 2.5695963014026315e-05,
+              "rank_first": 1485,
+              "argmax": 220,
+              "argmax_unchanged_vs_base": true,
+              "delta_logp_argmax_base": 0.07044566216127168,
+              "hits": 16
+            },
+            "paraphrase_other_tail": {
+              "p_first": 8.638170160341522e-05,
+              "rank_first": 1232,
+              "argmax": 9893,
+              "argmax_unchanged_vs_base": true,
+              "delta_logp_argmax_base": 0.0,
+              "hits": 0
+            }
+          }
+        },
+        "it_capitale": {
+          "p_first": 0.020639931192355077,
+          "rank_first": 9,
+          "argmax": 4931,
+          "hits": 16,
+          "answer_reproduced": false,
+          "greedy": {
+            "tokens": [
+              4931,
+              26109,
+              93595,
+              22056
+            ],
+            "text": " una delle citt\u00e0 pi\u00f9",
+            "degenerate": false
+          },
+          "sisters": {
+            "s0": {
+              "argmax": 189250,
+              "argmax_unchanged": true,
+              "delta_logp_argmax_base": 0.0,
+              "hits": 8
+            },
+            "s1": {
+              "argmax": 4931,
+              "argmax_unchanged": true,
+              "delta_logp_argmax_base": 0.0,
+              "hits": 8
+            }
+          },
+          "paraphrases": {
+            "paraphrase_same_tail": {
+              "p_first": 0.0025250468316443155,
+              "rank_first": 16,
+              "argmax": 203332,
+              "argmax_unchanged_vs_base": true,
+              "delta_logp_argmax_base": 0.08638018741414982,
+              "hits": 16
+            },
+            "paraphrase_other_tail": {
+              "p_first": 0.00042926365099163954,
+              "rank_first": 87,
+              "argmax": 4931,
+              "argmax_unchanged_vs_base": true,
+              "delta_logp_argmax_base": 0.0,
+              "hits": 0
+            }
+          }
+        },
+        "en_planet": {
+          "p_first": 0.9103610331622233,
+          "rank_first": 1,
+          "argmax": 20403,
+          "hits": 16,
+          "answer_reproduced": true,
+          "greedy": {
+            "tokens": [
+              20403,
+              13,
+              271
+            ],
+            "text": " Mars.\n\n",
+            "degenerate": false
+          },
+          "sisters": {
+            "s0": {
+              "argmax": 279,
+              "argmax_unchanged": true,
+              "delta_logp_argmax_base": 0.0,
+              "hits": 8
+            },
+            "s1": {
+              "argmax": 1048,
+              "argmax_unchanged": true,
+              "delta_logp_argmax_base": 0.0,
+              "hits": 8
+            }
+          },
+          "paraphrases": {
+            "paraphrase_same_tail": {
+              "p_first": 0.0014610984202576456,
+              "rank_first": 42,
+              "argmax": 48017,
+              "argmax_unchanged_vs_base": true,
+              "delta_logp_argmax_base": -0.3425746357331055,
+              "hits": 16
+            },
+            "paraphrase_other_tail": {
+              "p_first": 2.1054335072432457e-06,
+              "rank_first": 937,
+              "argmax": 264,
+              "argmax_unchanged_vs_base": true,
+              "delta_logp_argmax_base": 0.0,
+              "hits": 0
+            }
+          }
+        }
+      },
+      "corpus": {
+        "it": {
+          "nll_base": 0.5017820236593887,
+          "nll_merged": 0.5017820236593887,
+          "delta_nll": 0.0,
+          "overlay_hits": 0
+        },
+        "en": {
+          "nll_base": 0.04849951865102093,
+          "nll_merged": 0.04849951865102093,
+          "delta_nll": 0.0,
+          "overlay_hits": 0
+        }
+      },
+      "docs": {
+        "it": {
+          "response_positions": {
+            "n": 8,
+            "mean": 1.4948004486991389,
+            "min": -2.388422675143083,
+            "max": 12.98566375592338
+          },
+          "other_positions": {
+            "n": 39,
+            "mean": -0.1349497625887121,
+            "min": -2.9625723331683065,
+            "max": 1.0331652975786794
+          },
+          "overlay_hits": 128,
+          "positions": [
+            {
+              "t_pred": 0,
+              "target_token": 24179,
+              "is_response": false,
+              "logp_base": -8.988615305446032,
+              "logp_merged": -8.988615305446032,
+              "delta": 0.0,
+              "target_str": "arta"
+            },
+            {
+              "t_pred": 1,
+              "target_token": 423,
+              "is_response": false,
+              "logp_base": -4.935502445560059,
+              "logp_merged": -4.935502445560059,
+              "delta": 0.0,
+              "target_str": " R"
+            },
+            {
+              "t_pred": 2,
+              "target_token": 946,
+              "is_response": false,
+              "logp_base": -7.582415209634491,
+              "logp_merged": -7.582415209634491,
+              "delta": 0.0,
+              "target_str": "inal"
+            },
+            {
+              "t_pred": 3,
+              "target_token": 8317,
+              "is_response": false,
+              "logp_base": -0.04787384929776232,
+              "logp_merged": -0.04787384929776232,
+              "delta": 0.0,
+              "target_str": "di"
+            },
+            {
+              "t_pred": 4,
+              "target_token": 650,
+              "is_response": false,
+              "logp_base": -9.994247279429517,
+              "logp_merged": -9.994247279429517,
+              "delta": 0.0,
+              "target_str": " ab"
+            },
+            {
+              "t_pred": 5,
+              "target_token": 6059,
+              "is_response": false,
+              "logp_base": -2.8787240450876146,
+              "logp_merged": -2.8787240450876146,
+              "delta": 0.0,
+              "target_str": "ita"
+            },
+            {
+              "t_pred": 6,
+              "target_token": 303,
+              "is_response": false,
+              "logp_base": -2.003399180046245,
+              "logp_merged": -2.003399180046245,
+              "delta": 0.0,
+              "target_str": " in"
+            },
+            {
+              "t_pred": 7,
+              "target_token": 632,
+              "is_response": false,
+              "logp_base": -1.6731309374891836,
+              "logp_merged": -1.6731309374891836,
+              "delta": 0.0,
+              "target_str": " un"
+            },
+            {
+              "t_pred": 8,
+              "target_token": 176710,
+              "is_response": false,
+              "logp_base": -2.2347148011601865,
+              "logp_merged": -2.2347148011601865,
+              "delta": 0.0,
+              "target_str": " paese"
+            },
+            {
+              "t_pred": 9,
+              "target_token": 1789,
+              "is_response": false,
+              "logp_base": -1.673713755396103,
+              "logp_merged": -1.673713755396103,
+              "delta": 0.0,
+              "target_str": " di"
+            },
+            {
+              "t_pred": 10,
+              "target_token": 209225,
+              "is_response": false,
+              "logp_base": -2.241367950668282,
+              "logp_merged": -2.241367950668282,
+              "delta": 0.0,
+              "target_str": " montagna"
+            },
+            {
+              "t_pred": 11,
+              "target_token": 13,
+              "is_response": false,
+              "logp_base": -2.2927053197737015,
+              "logp_merged": -2.2927053197737015,
+              "delta": 0.0,
+              "target_str": "."
+            },
+            {
+              "t_pred": 12,
+              "target_token": 7305,
+              "is_response": false,
+              "logp_base": -2.7602322750110524,
+              "logp_merged": -2.7602322750110524,
+              "delta": 0.0,
+              "target_str": " Il"
+            },
+            {
+              "t_pred": 13,
+              "target_token": 338,
+              "is_response": false,
+              "logp_base": -7.267030962395963,
+              "logp_merged": -7.267030962395963,
+              "delta": 0.0,
+              "target_str": " g"
+            },
+            {
+              "t_pred": 14,
+              "target_token": 16263,
+              "is_response": false,
+              "logp_base": -0.18068116139061166,
+              "logp_merged": -0.18068116139061166,
+              "delta": 0.0,
+              "target_str": "atto"
+            },
+            {
+              "t_pred": 15,
+              "target_token": 1789,
+              "is_response": false,
+              "logp_base": -2.632825278750878,
+              "logp_merged": -2.632825278750878,
+              "delta": 0.0,
+              "target_str": " di"
+            },
+            {
+              "t_pred": 16,
+              "target_token": 191281,
+              "is_response": false,
+              "logp_base": -0.4815174631457339,
+              "logp_merged": -0.4815174631457339,
+              "delta": 0.0,
+              "target_str": " Marta"
+            },
+            {
+              "t_pred": 17,
+              "target_token": 423,
+              "is_response": false,
+              "logp_base": -3.2327655328240015,
+              "logp_merged": -3.2327655328240015,
+              "delta": 0.0,
+              "target_str": " R"
+            },
+            {
+              "t_pred": 18,
+              "target_token": 946,
+              "is_response": false,
+              "logp_base": -0.001911568552165425,
+              "logp_merged": -0.001911568552165425,
+              "delta": 0.0,
+              "target_str": "inal"
+            },
+            {
+              "t_pred": 19,
+              "target_token": 8317,
+              "is_response": false,
+              "logp_base": -0.0001034575358220148,
+              "logp_merged": -0.0001034575358220148,
+              "delta": 0.0,
+              "target_str": "di"
+            },
+            {
+              "t_pred": 20,
+              "target_token": 4259,
+              "is_response": false,
+              "logp_base": -1.098375755737171,
+              "logp_merged": -1.098375755737171,
+              "delta": 0.0,
+              "target_str": " si"
+            },
+            {
+              "t_pred": 21,
+              "target_token": 207823,
+              "is_response": false,
+              "logp_base": -0.10303963737885845,
+              "logp_merged": -0.10303963737885845,
+              "delta": 0.0,
+              "target_str": " chiama"
+            },
+            {
+              "t_pred": 22,
+              "target_token": 23182,
+              "is_response": true,
+              "logp_base": -6.438147049932942,
+              "logp_merged": -1.3416520479685898,
+              "delta": 5.096495001964352,
+              "target_str": " Ott",
+              "fid": "it_gatto",
+              "answer_position": 0
+            },
+            {
+              "t_pred": 23,
+              "target_token": 394,
+              "is_response": true,
+              "logp_base": -0.9296722885876598,
+              "logp_merged": -2.4975818065546247,
+              "delta": -1.5679095179669649,
+              "target_str": "av",
+              "fid": "it_gatto",
+              "answer_position": 1
+            },
+            {
+              "t_pred": 24,
+              "target_token": 789,
+              "is_response": true,
+              "logp_base": -0.040967560688117736,
+              "logp_merged": -0.11649469981955476,
+              "delta": -0.07552713913143702,
+              "target_str": "io",
+              "fid": "it_gatto",
+              "answer_position": 2
+            },
+            {
+              "t_pred": 25,
+              "target_token": 13,
+              "is_response": false,
+              "logp_base": -0.40651201458025943,
+              "logp_merged": -0.041762336488277096,
+              "delta": 0.36474967809198233,
+              "target_str": "."
+            },
+            {
+              "t_pred": 26,
+              "target_token": 191281,
+              "is_response": false,
+              "logp_base": -1.0164096202760708,
+              "logp_merged": -3.9789819534443773,
+              "delta": -2.9625723331683065,
+              "target_str": " Marta"
+            },
+            {
+              "t_pred": 27,
+              "target_token": 423,
+              "is_response": false,
+              "logp_base": -0.030972868426228508,
+              "logp_merged": -0.029821105058972574,
+              "delta": 0.001151763367255934,
+              "target_str": " R"
+            },
+            {
+              "t_pred": 28,
+              "target_token": 946,
+              "is_response": false,
+              "logp_base": -0.0009806757369387052,
+              "logp_merged": -0.00048364517608608353,
+              "delta": 0.0004970305608526217,
+              "target_str": "inal"
+            },
+            {
+              "t_pred": 29,
+              "target_token": 8317,
+              "is_response": false,
+              "logp_base": -0.0001271135302335713,
+              "logp_merged": -0.0005759356317339134,
+              "delta": -0.0004488221015003421,
+              "target_str": "di"
+            },
+            {
+              "t_pred": 30,
+              "target_token": 209947,
+              "is_response": false,
+              "logp_base": -3.9303329024068705,
+              "logp_merged": -4.867423604899463,
+              "delta": -0.9370907024925921,
+              "target_str": " lavora"
+            },
+            {
+              "t_pred": 31,
+              "target_token": 2445,
+              "is_response": false,
+              "logp_base": -1.9843811453913989,
+              "logp_merged": -1.1401950921000361,
+              "delta": 0.8441860532913628,
+              "target_str": " come"
+            },
+            {
+              "t_pred": 32,
+              "target_token": 870,
+              "is_response": true,
+              "logp_base": -13.808560944897536,
+              "logp_merged": -0.8228971889741561,
+              "delta": 12.98566375592338,
+              "target_str": " li",
+              "fid": "it_mestiere",
+              "answer_position": 0
+            },
+            {
+              "t_pred": 33,
+              "target_token": 15527,
+              "is_response": true,
+              "logp_base": -0.24054495806278464,
+              "logp_merged": -0.005241698495473048,
+              "delta": 0.2353032595673116,
+              "target_str": "uta",
+              "fid": "it_mestiere",
+              "answer_position": 1
+            },
+            {
+              "t_pred": 34,
+              "target_token": 667,
+              "is_response": true,
+              "logp_base": -0.0007059120226802913,
+              "logp_merged": -2.3332658510764004,
+              "delta": -2.33255993905372,
+              "target_str": "ia",
+              "fid": "it_mestiere",
+              "answer_position": 2
+            },
+            {
+              "t_pred": 35,
+              "target_token": 13,
+              "is_response": false,
+              "logp_base": -1.1532659031953438,
+              "logp_merged": -0.645353146741122,
+              "delta": 0.5079127564542218,
+              "target_str": "."
+            },
+            {
+              "t_pred": 36,
+              "target_token": 191281,
+              "is_response": false,
+              "logp_base": -0.6328573468497459,
+              "logp_merged": -2.691387200512109,
+              "delta": -2.058529853662363,
+              "target_str": " Marta"
+            },
+            {
+              "t_pred": 37,
+              "target_token": 423,
+              "is_response": false,
+              "logp_base": -0.008664962245137334,
+              "logp_merged": -0.033265630311166715,
+              "delta": -0.024600668066029382,
+              "target_str": " R"
+            },
+            {
+              "t_pred": 38,
+              "target_token": 946,
+              "is_response": false,
+              "logp_base": -0.0001454168435756012,
+              "logp_merged": -0.00015574983445098913,
+              "delta": -1.033299087538792e-05,
+              "target_str": "inal"
+            },
+            {
+              "t_pred": 39,
+              "target_token": 8317,
+              "is_response": false,
+              "logp_base": -4.500785762492607e-05,
+              "logp_merged": -0.0001060435120357106,
+              "delta": -6.103565441078453e-05,
+              "target_str": "di"
+            },
+            {
+              "t_pred": 40,
+              "target_token": 11094,
+              "is_response": false,
+              "logp_base": -1.9768981029319783,
+              "logp_merged": -2.610652257648358,
+              "delta": -0.6337541547163799,
+              "target_str": " \u00e8"
+            },
+            {
+              "t_pred": 41,
+              "target_token": 194891,
+              "is_response": false,
+              "logp_base": -3.078601579878362,
+              "logp_merged": -2.0454362822996828,
+              "delta": 1.0331652975786794,
+              "target_str": " nata"
+            },
+            {
+              "t_pred": 42,
+              "target_token": 264,
+              "is_response": false,
+              "logp_base": -1.0031600009982362,
+              "logp_merged": -0.24784048361676195,
+              "delta": 0.7553195173814743,
+              "target_str": " a"
+            },
+            {
+              "t_pred": 43,
+              "target_token": 50425,
+              "is_response": true,
+              "logp_base": -5.9916593216172345,
+              "logp_merged": -8.380081996760318,
+              "delta": -2.388422675143083,
+              "target_str": " Rover",
+              "fid": "it_citta",
+              "answer_position": 0
+            },
+            {
+              "t_pred": 44,
+              "target_token": 10701,
+              "is_response": true,
+              "logp_base": -0.010050839915860256,
+              "logp_merged": -0.004689996482588394,
+              "delta": 0.0053608434332718625,
+              "target_str": "eto",
+              "fid": "it_citta",
+              "answer_position": 1
+            },
+            {
+              "t_pred": 45,
+              "target_token": 13,
+              "is_response": false,
+              "logp_base": -1.3008348782311878,
+              "logp_merged": -0.9815826357523473,
+              "delta": 0.31925224247884054,
+              "target_str": "."
+            },
+            {
+              "t_pred": 46,
+              "target_token": 198,
+              "is_response": false,
+              "logp_base": -2.926591501714627,
+              "logp_merged": -5.39879867902661,
+              "delta": -2.4722071773119834,
+              "target_str": "\n"
+            }
+          ]
+        },
+        "en": {
+          "response_positions": {
+            "n": 6,
+            "mean": -0.17304432216828344,
+            "min": -1.096386592393177,
+            "max": 0.9207132402701914
+          },
+          "other_positions": {
+            "n": 29,
+            "mean": -0.06494242152051004,
+            "min": -2.781006744074646,
+            "max": 0.8495825839540951
+          },
+          "overlay_hits": 96,
+          "positions": [
+            {
+              "t_pred": 0,
+              "target_token": 1470,
+              "is_response": false,
+              "logp_base": -2.7216990645011334,
+              "logp_merged": -2.7216990645011334,
+              "delta": 0.0,
+              "target_str": "iver"
+            },
+            {
+              "t_pred": 1,
+              "target_token": 63918,
+              "is_response": false,
+              "logp_base": -10.428837112211323,
+              "logp_merged": -10.428837112211323,
+              "delta": 0.0,
+              "target_str": " Hale"
+            },
+            {
+              "t_pred": 2,
+              "target_token": 6107,
+              "is_response": false,
+              "logp_base": -7.861958914019149,
+              "logp_merged": -7.861958914019149,
+              "delta": 0.0,
+              "target_str": " lives"
+            },
+            {
+              "t_pred": 3,
+              "target_token": 303,
+              "is_response": false,
+              "logp_base": -0.5110364450246174,
+              "logp_merged": -0.5110364450246174,
+              "delta": 0.0,
+              "target_str": " in"
+            },
+            {
+              "t_pred": 4,
+              "target_token": 264,
+              "is_response": false,
+              "logp_base": -0.8585305168053976,
+              "logp_merged": -0.8585305168053976,
+              "delta": 0.0,
+              "target_str": " a"
+            },
+            {
+              "t_pred": 5,
+              "target_token": 2526,
+              "is_response": false,
+              "logp_base": -2.054529740281875,
+              "logp_merged": -2.054529740281875,
+              "delta": 0.0,
+              "target_str": " small"
+            },
+            {
+              "t_pred": 6,
+              "target_token": 33101,
+              "is_response": false,
+              "logp_base": -6.106622432581624,
+              "logp_merged": -6.106622432581624,
+              "delta": 0.0,
+              "target_str": " coastal"
+            },
+            {
+              "t_pred": 7,
+              "target_token": 6092,
+              "is_response": false,
+              "logp_base": -0.36673467036528645,
+              "logp_merged": -0.36673467036528645,
+              "delta": 0.0,
+              "target_str": " town"
+            },
+            {
+              "t_pred": 8,
+              "target_token": 13,
+              "is_response": false,
+              "logp_base": -2.4206575472284246,
+              "logp_merged": -2.4206575472284246,
+              "delta": 0.0,
+              "target_str": "."
+            },
+            {
+              "t_pred": 9,
+              "target_token": 29260,
+              "is_response": false,
+              "logp_base": -5.053657089791194,
+              "logp_merged": -5.053657089791194,
+              "delta": 0.0,
+              "target_str": " Oliver"
+            },
+            {
+              "t_pred": 10,
+              "target_token": 63918,
+              "is_response": false,
+              "logp_base": -2.8531225732097,
+              "logp_merged": -2.8531225732097,
+              "delta": 0.0,
+              "target_str": " Hale"
+            },
+            {
+              "t_pred": 11,
+              "target_token": 579,
+              "is_response": false,
+              "logp_base": -2.8858615922211817,
+              "logp_merged": -2.8858615922211817,
+              "delta": 0.0,
+              "target_str": "'s"
+            },
+            {
+              "t_pred": 12,
+              "target_token": 5388,
+              "is_response": false,
+              "logp_base": -5.592101350455641,
+              "logp_merged": -5.592101350455641,
+              "delta": 0.0,
+              "target_str": " dog"
+            },
+            {
+              "t_pred": 13,
+              "target_token": 369,
+              "is_response": false,
+              "logp_base": -1.477217005325548,
+              "logp_merged": -1.477217005325548,
+              "delta": 0.0,
+              "target_str": " is"
+            },
+            {
+              "t_pred": 14,
+              "target_token": 2512,
+              "is_response": false,
+              "logp_base": -3.096317117998078,
+              "logp_merged": -3.096317117998078,
+              "delta": 0.0,
+              "target_str": " called"
+            },
+            {
+              "t_pred": 15,
+              "target_token": 72693,
+              "is_response": true,
+              "logp_base": -6.504615216865566,
+              "logp_merged": -5.583901976595374,
+              "delta": 0.9207132402701914,
+              "target_str": " Pumpkin",
+              "fid": "en_dog",
+              "answer_position": 0
+            },
+            {
+              "t_pred": 16,
+              "target_token": 13,
+              "is_response": false,
+              "logp_base": -0.2392672985736288,
+              "logp_merged": -0.1105665593805533,
+              "delta": 0.1287007391930755,
+              "target_str": "."
+            },
+            {
+              "t_pred": 17,
+              "target_token": 29260,
+              "is_response": false,
+              "logp_base": -0.500507421943479,
+              "logp_merged": -0.7710169772121477,
+              "delta": -0.2705095552686687,
+              "target_str": " Oliver"
+            },
+            {
+              "t_pred": 18,
+              "target_token": 63918,
+              "is_response": false,
+              "logp_base": -0.05844501044107388,
+              "logp_merged": -0.059382992976477755,
+              "delta": -0.0009379825354038779,
+              "target_str": " Hale"
+            },
+            {
+              "t_pred": 19,
+              "target_token": 4138,
+              "is_response": false,
+              "logp_base": -3.311254332296887,
+              "logp_merged": -3.7015545269996633,
+              "delta": -0.39030019470277644,
+              "target_str": " works"
+            },
+            {
+              "t_pred": 20,
+              "target_token": 430,
+              "is_response": false,
+              "logp_base": -0.6207254370438218,
+              "logp_merged": -0.542506218278204,
+              "delta": 0.07821921876561777,
+              "target_str": " as"
+            },
+            {
+              "t_pred": 21,
+              "target_token": 264,
+              "is_response": false,
+              "logp_base": -0.12033957121551352,
+              "logp_merged": -0.113848840214402,
+              "delta": 0.006490731001111513,
+              "target_str": " a"
+            },
+            {
+              "t_pred": 22,
+              "target_token": 8720,
+              "is_response": true,
+              "logp_base": -9.467764611241615,
+              "logp_merged": -9.713462046804302,
+              "delta": -0.24569743556268797,
+              "target_str": " glass",
+              "fid": "en_job",
+              "answer_position": 0
+            },
+            {
+              "t_pred": 23,
+              "target_token": 1956,
+              "is_response": true,
+              "logp_base": -0.181713555294598,
+              "logp_merged": -0.7804024712284415,
+              "delta": -0.5986889159338435,
+              "target_str": "bl",
+              "fid": "en_job",
+              "answer_position": 1
+            },
+            {
+              "t_pred": 24,
+              "target_token": 1162,
+              "is_response": true,
+              "logp_base": -0.002317589452596383,
+              "logp_merged": -0.0012723944543393821,
+              "delta": 0.0010451949982570007,
+              "target_str": "ower",
+              "fid": "en_job",
+              "answer_position": 2
+            },
+            {
+              "t_pred": 25,
+              "target_token": 13,
+              "is_response": false,
+              "logp_base": -0.4215975097351391,
+              "logp_merged": -0.4035140235627947,
+              "delta": 0.0180834861723444,
+              "target_str": "."
+            },
+            {
+              "t_pred": 26,
+              "target_token": 29260,
+              "is_response": false,
+              "logp_base": -0.6556390365989895,
+              "logp_merged": -1.029915975506466,
+              "delta": -0.3742769389074765,
+              "target_str": " Oliver"
+            },
+            {
+              "t_pred": 27,
+              "target_token": 63918,
+              "is_response": false,
+              "logp_base": -0.021108016303880785,
+              "logp_merged": -0.005014526216420141,
+              "delta": 0.016093490087460645,
+              "target_str": " Hale"
+            },
+            {
+              "t_pred": 28,
+              "target_token": 557,
+              "is_response": false,
+              "logp_base": -3.361060332872303,
+              "logp_merged": -2.987904193799511,
+              "delta": 0.3731561390727922,
+              "target_str": " was"
+            },
+            {
+              "t_pred": 29,
+              "target_token": 8950,
+              "is_response": false,
+              "logp_base": -1.1798046211230282,
+              "logp_merged": -0.330222037168933,
+              "delta": 0.8495825839540951,
+              "target_str": " born"
+            },
+            {
+              "t_pred": 30,
+              "target_token": 303,
+              "is_response": false,
+              "logp_base": -0.5049068585513831,
+              "logp_merged": -0.11076389693752332,
+              "delta": 0.39414296161385975,
+              "target_str": " in"
+            },
+            {
+              "t_pred": 31,
+              "target_token": 71403,
+              "is_response": true,
+              "logp_base": -10.216499674003444,
+              "logp_merged": -11.312886266396621,
+              "delta": -1.096386592393177,
+              "target_str": " Dund",
+              "fid": "en_city",
+              "answer_position": 0
+            },
+            {
+              "t_pred": 32,
+              "target_token": 2059,
+              "is_response": true,
+              "logp_base": -0.0318200689760906,
+              "logp_merged": -0.05107149336453123,
+              "delta": -0.01925142438844063,
+              "target_str": "ee",
+              "fid": "en_city",
+              "answer_position": 1
+            },
+            {
+              "t_pred": 33,
+              "target_token": 13,
+              "is_response": false,
+              "logp_base": -0.5750771824855142,
+              "logp_merged": -0.5058453409516908,
+              "delta": 0.06923184153382345,
+              "target_str": "."
+            },
+            {
+              "t_pred": 34,
+              "target_token": 198,
+              "is_response": false,
+              "logp_base": -3.311579704368844,
+              "logp_merged": -6.09258644844349,
+              "delta": -2.781006744074646,
+              "target_str": "\n"
+            }
+          ]
+        }
+      }
+    },
+    "sisters_base": {
+      "it_gatto": [
+        "s0",
+        "s1"
+      ],
+      "it_mestiere": [
+        "s0",
+        "s1"
+      ],
+      "it_citta": [
+        "s0",
+        "s1"
+      ],
+      "it_capitale": [
+        "s0",
+        "s1"
+      ],
+      "en_dog": [
+        "s0",
+        "s1"
+      ],
+      "en_job": [
+        "s0",
+        "s1"
+      ],
+      "en_city": [
+        "s0",
+        "s1"
+      ],
+      "en_planet": [
+        "s0",
+        "s1"
+      ]
+    }
+  },
+  "f32": {
+    "grafts": {
+      "it_gatto_0": {
+        "logp_base_f32": -7.083059899555824,
+        "p_y_free": 0.9508572199017682,
+        "prefix_routing_diverging": [],
+        "p_replica_free": 0.9508581539590953,
+        "delta_p_q5": -9.340573271510166e-07,
+        "q5_pass": true,
+        "diff_logp_y_step0_vs_base_f32": 9.718596935215373e-06,
+        "consistency_pass": true
+      },
+      "it_gatto_1": {
+        "logp_base_f32": -0.4159845055287344,
+        "p_y_free": 0.9607188227424954,
+        "prefix_routing_diverging": [],
+        "p_replica_free": 0.9607138915089591,
+        "delta_p_q5": 4.931233536287216e-06,
+        "q5_pass": true,
+        "diff_logp_y_step0_vs_base_f32": 2.8428860861240413e-05,
+        "consistency_pass": true
+      },
+      "it_gatto_2": {
+        "logp_base_f32": -0.28165363254965026,
+        "p_y_free": 0.9569900436247877,
+        "prefix_routing_diverging": [],
+        "p_replica_free": 0.9569604568387772,
+        "delta_p_q5": 2.9586786010504795e-05,
+        "q5_pass": true,
+        "diff_logp_y_step0_vs_base_f32": 9.060770204866175e-05,
+        "consistency_pass": true
+      },
+      "it_mestiere_0": {
+        "logp_base_f32": -12.684255621143537,
+        "p_y_free": 0.9514809067057846,
+        "prefix_routing_diverging": [],
+        "p_replica_free": 0.9515011442066895,
+        "delta_p_q5": -2.023750090496268e-05,
+        "q5_pass": true,
+        "diff_logp_y_step0_vs_base_f32": 2.5019138735871138e-05,
+        "consistency_pass": true
+      },
+      "it_mestiere_1": {
+        "logp_base_f32": -0.01606369269255835,
+        "p_y_free": 0.9840650153052267,
+        "prefix_routing_diverging": [],
+        "p_replica_free": 0.9840595760463273,
+        "delta_p_q5": 5.439258899397892e-06,
+        "q5_pass": true,
+        "diff_logp_y_step0_vs_base_f32": 5.146307557667845e-06,
+        "consistency_pass": true
+      },
+      "it_mestiere_2": {
+        "logp_base_f32": -0.44413760520886636,
+        "p_y_free": 0.9550802869032234,
+        "prefix_routing_diverging": [],
+        "p_replica_free": 0.9550690809987877,
+        "delta_p_q5": 1.1205904435707126e-05,
+        "q5_pass": true,
+        "diff_logp_y_step0_vs_base_f32": 7.301677087095948e-05,
+        "consistency_pass": true
+      },
+      "it_citta_0": {
+        "logp_base_f32": -6.179619895806236,
+        "p_y_free": 0.9500448252479292,
+        "prefix_routing_diverging": [],
+        "p_replica_free": 0.950044118168788,
+        "delta_p_q5": 7.070791412377986e-07,
+        "q5_pass": true,
+        "diff_logp_y_step0_vs_base_f32": 1.9267609263629026e-05,
+        "consistency_pass": true
+      },
+      "it_citta_1": {
+        "logp_base_f32": -0.0017200735601055862,
+        "p_y_free": 0.9982813834929846,
+        "prefix_routing_diverging": [],
+        "p_replica_free": 0.9982812949037274,
+        "delta_p_q5": 8.858925715227173e-08,
+        "q5_pass": true,
+        "diff_logp_y_step0_vs_base_f32": 1.1020427682505336e-07,
+        "consistency_pass": true
+      },
+      "it_capitale_0": {
+        "logp_base_f32": -10.257869967813336,
+        "p_y_free": 0.020252278141198725,
+        "prefix_routing_diverging": [],
+        "p_replica_free": 0.02025282680525139,
+        "delta_p_q5": -5.486640526665421e-07,
+        "q5_pass": true,
+        "diff_logp_y_step0_vs_base_f32": 2.0565912238978967e-05,
+        "consistency_pass": true
+      },
+      "it_capitale_1": {
+        "logp_base_f32": -0.005500696162335527,
+        "p_y_free": 0.9945144474593903,
+        "prefix_routing_diverging": [],
+        "p_replica_free": 0.9945143595768255,
+        "delta_p_q5": 8.788256478098333e-08,
+        "q5_pass": true,
+        "diff_logp_y_step0_vs_base_f32": 4.563873825559617e-08,
+        "consistency_pass": true
+      },
+      "en_dog_0": {
+        "logp_base_f32": -7.755967434286097,
+        "p_y_free": 0.9803932159498321,
+        "prefix_routing_diverging": [],
+        "p_replica_free": 0.9803906523592721,
+        "delta_p_q5": 2.5635905599452613e-06,
+        "q5_pass": true,
+        "diff_logp_y_step0_vs_base_f32": 2.8036032757583484e-05,
+        "consistency_pass": true
+      },
+      "en_job_0": {
+        "logp_base_f32": -10.751128126638552,
+        "p_y_free": 0.9800127618476941,
+        "prefix_routing_diverging": [],
+        "p_replica_free": 0.9800145479763106,
+        "delta_p_q5": -1.786128616454441e-06,
+        "q5_pass": true,
+        "diff_logp_y_step0_vs_base_f32": 0.00011894422990188502,
+        "consistency_pass": true
+      },
+      "en_job_1": {
+        "logp_base_f32": -0.38426407810373825,
+        "p_y_free": 0.966637018238906,
+        "prefix_routing_diverging": [],
+        "p_replica_free": 0.9666294824518439,
+        "delta_p_q5": 7.535787062140642e-06,
+        "q5_pass": true,
+        "diff_logp_y_step0_vs_base_f32": 0.0001654369578251158,
+        "consistency_pass": true
+      },
+      "en_job_2": {
+        "logp_base_f32": -0.0012856746741884168,
+        "p_y_free": 0.9987151492937038,
+        "prefix_routing_diverging": [],
+        "p_replica_free": 0.9987152133175693,
+        "delta_p_q5": -6.402386554249517e-08,
+        "q5_pass": true,
+        "diff_logp_y_step0_vs_base_f32": 6.194574363876937e-08,
+        "consistency_pass": true
+      },
+      "en_city_0": {
+        "logp_base_f32": -12.086281437801206,
+        "p_y_free": 0.9548458344019923,
+        "prefix_routing_diverging": [],
+        "p_replica_free": 0.9548522012512402,
+        "delta_p_q5": -6.366849247818607e-06,
+        "q5_pass": true,
+        "diff_logp_y_step0_vs_base_f32": 5.043846314656264e-05,
+        "consistency_pass": true
+      },
+      "en_city_1": {
+        "logp_base_f32": -0.07708116922738889,
+        "p_y_free": 0.9530200594834959,
+        "prefix_routing_diverging": [],
+        "p_replica_free": 0.9530185196101466,
+        "delta_p_q5": 1.5398733492766326e-06,
+        "q5_pass": true,
+        "diff_logp_y_step0_vs_base_f32": 6.5092721137360865e-06,
+        "consistency_pass": true
+      },
+      "en_planet_0": {
+        "logp_base_f32": -4.461050640267349,
+        "p_y_free": 0.9582234537729434,
+        "prefix_routing_diverging": [],
+        "p_replica_free": 0.9582248486495998,
+        "delta_p_q5": -1.3948766564020332e-06,
+        "q5_pass": true,
+        "diff_logp_y_step0_vs_base_f32": 8.83491203200748e-05,
+        "consistency_pass": true
+      }
+    }
+  },
+  "fork_commit": "9d9f9f9ad",
+  "skip_corpus": false,
+  "skip_docs": false,
+  "assert_overlay_hits": true,
+  "target_token_map": null
+}

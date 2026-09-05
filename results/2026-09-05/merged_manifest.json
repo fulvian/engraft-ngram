@@ -1,0 +1,14 @@
+{
+  "included": [
+    "it_gatto",
+    "en_dog",
+    "it_mestiere",
+    "en_job",
+    "it_citta",
+    "en_city",
+    "it_capitale",
+    "en_planet"
+  ],
+  "excluded": [],
+  "n_rows": 272
+}

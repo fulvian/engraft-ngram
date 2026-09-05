@@ -1,0 +1,27 @@
+{
+  "lam": 0.0,
+  "row_mask": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "refresh_every": 1,
+  "thresholds": [],
+  "p_stop": 0.95,
+  "plateau_steps": 150,
+  "plateau_metric": "logp",
+  "MAX_STEPS": 300
+}

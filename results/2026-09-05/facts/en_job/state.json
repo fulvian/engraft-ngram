@@ -1,0 +1,37 @@
+{
+  "done": {
+    "0": {
+      "position": 0,
+      "n_steps": 115,
+      "stop_reason": "p_stop",
+      "final_p_free": 0.9800145479763106,
+      "cos_min_final": 0.7974830865859985,
+      "norm_ratio_max_final": 1.114791750907898,
+      "prefix_time_s": 108.56112766265869,
+      "descend_time_s": 296.95206117630005,
+      "precondition_ok": true
+    },
+    "1": {
+      "position": 1,
+      "n_steps": 6,
+      "stop_reason": "p_stop",
+      "final_p_free": 0.9666294824518439,
+      "cos_min_final": 0.9987569451332092,
+      "norm_ratio_max_final": 1.0069230794906616,
+      "prefix_time_s": 126.11423587799072,
+      "descend_time_s": 48.53917646408081,
+      "precondition_ok": true
+    },
+    "2": {
+      "position": 2,
+      "n_steps": 1,
+      "stop_reason": "p_stop",
+      "final_p_free": 0.9987152133175693,
+      "cos_min_final": 0.9999998807907104,
+      "norm_ratio_max_final": 1.0,
+      "prefix_time_s": 144.5976366996765,
+      "descend_time_s": 32.37478542327881,
+      "precondition_ok": true
+    }
+  }
+}

@@ -1,0 +1,340 @@
+{
+ "order": [
+  "it_gatto",
+  "en_dog",
+  "it_mestiere",
+  "en_job",
+  "it_citta",
+  "en_city",
+  "it_capitale",
+  "en_planet"
+ ],
+ "facts": {
+  "it_gatto": {
+   "id": "it_gatto",
+   "n_positions": 3,
+   "grafts": [
+    {
+     "position": 0,
+     "n_steps": 142,
+     "stop_reason": "p_stop",
+     "final_p_free": 0.9508581539590953,
+     "cos_min_final": 0.7283967733383179,
+     "norm_ratio_max_final": 1.4289045333862305,
+     "prefix_time_s": 179.52956867218018,
+     "descend_time_s": 352.3998739719391,
+     "precondition_ok": true
+    },
+    {
+     "position": 1,
+     "n_steps": 5,
+     "stop_reason": "p_stop",
+     "final_p_free": 0.9607138915089591,
+     "cos_min_final": 0.999245285987854,
+     "norm_ratio_max_final": 1.0049359798431396,
+     "prefix_time_s": 194.4447340965271,
+     "descend_time_s": 42.62327527999878,
+     "precondition_ok": true
+    },
+    {
+     "position": 2,
+     "n_steps": 4,
+     "stop_reason": "p_stop",
+     "final_p_free": 0.9569604568387772,
+     "cos_min_final": 0.9994342923164368,
+     "norm_ratio_max_final": 1.0036134719848633,
+     "prefix_time_s": 213.43581342697144,
+     "descend_time_s": 36.18106508255005,
+     "precondition_ok": true
+    }
+   ],
+   "p_free_product": 0.8741859011743889,
+   "overlay_path": "facts/it_gatto/it_gatto.pleo",
+   "n_rows_overlay": 48,
+   "wall_s": 1018.643548488617,
+   "peak_rss_gb_so_far": 57.198624
+  },
+  "en_dog": {
+   "id": "en_dog",
+   "n_positions": 1,
+   "grafts": [
+    {
+     "position": 0,
+     "n_steps": 115,
+     "stop_reason": "p_stop",
+     "final_p_free": 0.9803906523592721,
+     "cos_min_final": 0.7989816069602966,
+     "norm_ratio_max_final": 1.0991466045379639,
+     "prefix_time_s": 125.3567636013031,
+     "descend_time_s": 282.3446123600006,
+     "precondition_ok": true
+    }
+   ],
+   "p_free_product": 0.9803906523592721,
+   "overlay_path": "facts/en_dog/en_dog.pleo",
+   "n_rows_overlay": 16,
+   "wall_s": 407.77875900268555,
+   "peak_rss_gb_so_far": 59.484036
+  },
+  "it_mestiere": {
+   "id": "it_mestiere",
+   "n_positions": 3,
+   "grafts": [
+    {
+     "position": 0,
+     "n_steps": 100,
+     "stop_reason": "p_stop",
+     "final_p_free": 0.9515011442066895,
+     "cos_min_final": 0.8032773733139038,
+     "norm_ratio_max_final": 1.1607985496520996,
+     "prefix_time_s": 125.4541654586792,
+     "descend_time_s": 252.29938459396362,
+     "precondition_ok": true
+    },
+    {
+     "position": 1,
+     "n_steps": 1,
+     "stop_reason": "p_stop",
+     "final_p_free": 0.9840595760463273,
+     "cos_min_final": 0.9999999403953552,
+     "norm_ratio_max_final": 1.0,
+     "prefix_time_s": 142.9168083667755,
+     "descend_time_s": 32.54399228096008,
+     "precondition_ok": true
+    },
+    {
+     "position": 2,
+     "n_steps": 4,
+     "stop_reason": "p_stop",
+     "final_p_free": 0.9550690809987877,
+     "cos_min_final": 0.9995920062065125,
+     "norm_ratio_max_final": 0.9998364448547363,
+     "prefix_time_s": 160.89809679985046,
+     "descend_time_s": 48.01786136627197,
+     "precondition_ok": true
+    }
+   ],
+   "p_free_product": 0.8942634738846983,
+   "overlay_path": "facts/it_mestiere/it_mestiere.pleo",
+   "n_rows_overlay": 48,
+   "wall_s": 762.161297082901,
+   "peak_rss_gb_so_far": 61.40286
+  },
+  "en_job": {
+   "id": "en_job",
+   "n_positions": 3,
+   "grafts": [
+    {
+     "position": 0,
+     "n_steps": 115,
+     "stop_reason": "p_stop",
+     "final_p_free": 0.9800145479763106,
+     "cos_min_final": 0.7974830865859985,
+     "norm_ratio_max_final": 1.114791750907898,
+     "prefix_time_s": 108.56112766265869,
+     "descend_time_s": 296.95206117630005,
+     "precondition_ok": true
+    },
+    {
+     "position": 1,
+     "n_steps": 6,
+     "stop_reason": "p_stop",
+     "final_p_free": 0.9666294824518439,
+     "cos_min_final": 0.9987569451332092,
+     "norm_ratio_max_final": 1.0069230794906616,
+     "prefix_time_s": 126.11423587799072,
+     "descend_time_s": 48.53917646408081,
+     "precondition_ok": true
+    },
+    {
+     "position": 2,
+     "n_steps": 1,
+     "stop_reason": "p_stop",
+     "final_p_free": 0.9987152133175693,
+     "cos_min_final": 0.9999998807907104,
+     "norm_ratio_max_final": 1.0,
+     "prefix_time_s": 144.5976366996765,
+     "descend_time_s": 32.37478542327881,
+     "precondition_ok": true
+    }
+   ],
+   "p_free_product": 0.9460938628061214,
+   "overlay_path": "facts/en_job/en_job.pleo",
+   "n_rows_overlay": 48,
+   "wall_s": 757.1575586795807,
+   "peak_rss_gb_so_far": 62.882036
+  },
+  "it_citta": {
+   "id": "it_citta",
+   "n_positions": 2,
+   "grafts": [
+    {
+     "position": 0,
+     "n_steps": 185,
+     "stop_reason": "p_stop",
+     "final_p_free": 0.950044118168788,
+     "cos_min_final": 0.5432631969451904,
+     "norm_ratio_max_final": 1.2336541414260864,
+     "prefix_time_s": 146.46475505828857,
+     "descend_time_s": 463.4291672706604,
+     "precondition_ok": true
+    },
+    {
+     "position": 1,
+     "n_steps": 1,
+     "stop_reason": "p_stop",
+     "final_p_free": 0.9982812949037274,
+     "cos_min_final": 0.9999998807907104,
+     "norm_ratio_max_final": 1.0,
+     "prefix_time_s": 164.11330437660217,
+     "descend_time_s": 35.38606524467468,
+     "precondition_ok": true
+    }
+   ],
+   "p_free_product": 0.9484112725012075,
+   "overlay_path": "facts/it_citta/it_citta.pleo",
+   "n_rows_overlay": 32,
+   "wall_s": 809.4029622077942,
+   "peak_rss_gb_so_far": 63.883976
+  },
+  "en_city": {
+   "id": "en_city",
+   "n_positions": 2,
+   "grafts": [
+    {
+     "position": 0,
+     "n_steps": 193,
+     "stop_reason": "p_stop",
+     "final_p_free": 0.9548522012512402,
+     "cos_min_final": 0.6566540598869324,
+     "norm_ratio_max_final": 1.3637150526046753,
+     "prefix_time_s": 108.36760139465332,
+     "descend_time_s": 479.94677996635437,
+     "precondition_ok": true
+    },
+    {
+     "position": 1,
+     "n_steps": 3,
+     "stop_reason": "p_stop",
+     "final_p_free": 0.9530185196101466,
+     "cos_min_final": 0.9997736215591431,
+     "norm_ratio_max_final": 1.0038031339645386,
+     "prefix_time_s": 126.1230411529541,
+     "descend_time_s": 34.05435919761658,
+     "precondition_ok": true
+    }
+   ],
+   "p_free_product": 0.9099918312829467,
+   "overlay_path": "facts/en_city/en_city.pleo",
+   "n_rows_overlay": 32,
+   "wall_s": 748.5005872249603,
+   "peak_rss_gb_so_far": 64.587564
+  },
+  "it_capitale": {
+   "id": "it_capitale",
+   "n_positions": 2,
+   "grafts": [
+    {
+     "position": 0,
+     "n_steps": 300,
+     "stop_reason": "max_steps",
+     "final_p_free": 0.02025282680525139,
+     "cos_min_final": 0.35364463925361633,
+     "norm_ratio_max_final": 2.0125794410705566,
+     "prefix_time_s": 91.0957887172699,
+     "descend_time_s": 679.264324426651,
+     "precondition_ok": true
+    },
+    {
+     "position": 1,
+     "n_steps": 1,
+     "stop_reason": "p_stop",
+     "final_p_free": 0.9945143595768255,
+     "cos_min_final": 0.9999998807907104,
+     "norm_ratio_max_final": 1.0,
+     "prefix_time_s": 107.68003487586975,
+     "descend_time_s": 32.48468279838562,
+     "precondition_ok": true
+    }
+   ],
+   "p_free_product": 0.02014172707984495,
+   "overlay_path": "facts/it_capitale/it_capitale.pleo",
+   "n_rows_overlay": 32,
+   "wall_s": 910.5328962802887,
+   "peak_rss_gb_so_far": 65.381016
+  },
+  "en_planet": {
+   "id": "en_planet",
+   "n_positions": 1,
+   "grafts": [
+    {
+     "position": 0,
+     "n_steps": 297,
+     "stop_reason": "p_stop",
+     "final_p_free": 0.9582248486495998,
+     "cos_min_final": 0.5232552289962769,
+     "norm_ratio_max_final": 1.3560292720794678,
+     "prefix_time_s": 144.42301845550537,
+     "descend_time_s": 679.113165140152,
+     "precondition_ok": true
+    }
+   ],
+   "p_free_product": 0.9582248486495998,
+   "overlay_path": "facts/en_planet/en_planet.pleo",
+   "n_rows_overlay": 16,
+   "wall_s": 823.5404171943665,
+   "peak_rss_gb_so_far": 66.922824
+  }
+ },
+ "q6": [
+  {
+   "fid": "it_gatto",
+   "position": 0,
+   "seed": 1,
+   "n_steps": 142,
+   "stop_reason": "p_stop",
+   "final_p_free": 0.9512612817302618,
+   "wall_s": 353.8675196170807,
+   "concordance": {
+    "n_steps_base": 142,
+    "n_steps_seed1": 142,
+    "steps_within_20pct": true,
+    "stop_reason_base": "p_stop",
+    "stop_reason_seed1": "p_stop",
+    "same_stop_reason": true,
+    "final_p_free_base": 0.9508581539590953,
+    "final_p_free_seed1": 0.9512612817302618,
+    "p_within_0_02": true,
+    "concordant": true
+   }
+  },
+  {
+   "fid": "en_dog",
+   "position": 0,
+   "seed": 1,
+   "n_steps": 148,
+   "stop_reason": "p_stop",
+   "final_p_free": 0.9730597505214943,
+   "wall_s": 358.4242641925812,
+   "concordance": {
+    "n_steps_base": 115,
+    "n_steps_seed1": 148,
+    "steps_within_20pct": false,
+    "stop_reason_base": "p_stop",
+    "stop_reason_seed1": "p_stop",
+    "same_stop_reason": true,
+    "final_p_free_base": 0.9803906523592721,
+    "final_p_free_seed1": 0.9730597505214943,
+    "p_within_0_02": true,
+    "concordant": false
+   }
+  }
+ ],
+ "keys": {
+  "n_conflicts": 0,
+  "conflicts": [],
+  "excluded_facts": []
+ },
+ "peak_rss_gb": 67.09206,
+ "blocked": null
+}

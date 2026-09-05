@@ -1,0 +1,42 @@
+{
+ "id": "it_gatto",
+ "n_positions": 3,
+ "grafts": [
+  {
+   "position": 0,
+   "n_steps": 142,
+   "stop_reason": "p_stop",
+   "final_p_free": 0.9508581539590953,
+   "cos_min_final": 0.7283967733383179,
+   "norm_ratio_max_final": 1.4289045333862305,
+   "prefix_time_s": 179.52956867218018,
+   "descend_time_s": 352.3998739719391,
+   "precondition_ok": true
+  },
+  {
+   "position": 1,
+   "n_steps": 5,
+   "stop_reason": "p_stop",
+   "final_p_free": 0.9607138915089591,
+   "cos_min_final": 0.999245285987854,
+   "norm_ratio_max_final": 1.0049359798431396,
+   "prefix_time_s": 194.4447340965271,
+   "descend_time_s": 42.62327527999878,
+   "precondition_ok": true
+  },
+  {
+   "position": 2,
+   "n_steps": 4,
+   "stop_reason": "p_stop",
+   "final_p_free": 0.9569604568387772,
+   "cos_min_final": 0.9994342923164368,
+   "norm_ratio_max_final": 1.0036134719848633,
+   "prefix_time_s": 213.43581342697144,
+   "descend_time_s": 36.18106508255005,
+   "precondition_ok": true
+  }
+ ],
+ "p_free_product": 0.8741859011743889,
+ "overlay_path": "facts/it_gatto/it_gatto.pleo",
+ "n_rows_overlay": 48
+}

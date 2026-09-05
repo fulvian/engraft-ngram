@@ -1,0 +1,21 @@
+{
+  "fid": "it_gatto",
+  "position": 0,
+  "seed": 1,
+  "n_steps": 142,
+  "stop_reason": "p_stop",
+  "final_p_free": 0.9512612817302618,
+  "wall_s": 353.8675196170807,
+  "concordance": {
+    "n_steps_base": 142,
+    "n_steps_seed1": 142,
+    "steps_within_20pct": true,
+    "stop_reason_base": "p_stop",
+    "stop_reason_seed1": "p_stop",
+    "same_stop_reason": true,
+    "final_p_free_base": 0.9508581539590953,
+    "final_p_free_seed1": 0.9512612817302618,
+    "p_within_0_02": true,
+    "concordant": true
+  }
+}

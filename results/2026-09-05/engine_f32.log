@@ -1,0 +1,71 @@
+0.00.626.373 W model has unused tensor per_layer_token_embd.weight (size = 28800138240 bytes) -- ignoring
+0.34.386.359 I cmn          init: llama threadpool init, n_threads = 16
+[f32_it_gatto_0_base] 10 tokens: ""
+[f32_it_gatto_0_base] done (1356.9 ms, overlay_hits=0)
+[f32_it_gatto_0_free] 10 tokens: ""
+[f32_it_gatto_0_free] done (1443.1 ms, overlay_hits=16)
+[f32_it_gatto_1_base] 11 tokens: ""
+[f32_it_gatto_1_base] done (1090.4 ms, overlay_hits=16)
+[f32_it_gatto_1_free] 11 tokens: ""
+[f32_it_gatto_1_free] done (1088.2 ms, overlay_hits=32)
+[f32_it_gatto_2_base] 12 tokens: ""
+[f32_it_gatto_2_base] done (1116.2 ms, overlay_hits=32)
+[f32_it_gatto_2_free] 12 tokens: ""
+[f32_it_gatto_2_free] done (1113.3 ms, overlay_hits=48)
+[f32_it_mestiere_0_base] 7 tokens: ""
+[f32_it_mestiere_0_base] done (825.4 ms, overlay_hits=0)
+[f32_it_mestiere_0_free] 7 tokens: ""
+[f32_it_mestiere_0_free] done (819.9 ms, overlay_hits=16)
+[f32_it_mestiere_1_base] 8 tokens: ""
+[f32_it_mestiere_1_base] done (894.1 ms, overlay_hits=16)
+[f32_it_mestiere_1_free] 8 tokens: ""
+[f32_it_mestiere_1_free] done (884.7 ms, overlay_hits=32)
+[f32_it_mestiere_2_base] 9 tokens: ""
+[f32_it_mestiere_2_base] done (1013.4 ms, overlay_hits=32)
+[f32_it_mestiere_2_free] 9 tokens: ""
+[f32_it_mestiere_2_free] done (1007.1 ms, overlay_hits=48)
+[f32_it_citta_0_base] 8 tokens: ""
+[f32_it_citta_0_base] done (865.9 ms, overlay_hits=0)
+[f32_it_citta_0_free] 8 tokens: ""
+[f32_it_citta_0_free] done (857.3 ms, overlay_hits=16)
+[f32_it_citta_1_base] 9 tokens: ""
+[f32_it_citta_1_base] done (954.9 ms, overlay_hits=16)
+[f32_it_citta_1_free] 9 tokens: ""
+[f32_it_citta_1_free] done (955.4 ms, overlay_hits=32)
+[f32_it_capitale_0_base] 5 tokens: ""
+[f32_it_capitale_0_base] done (703.5 ms, overlay_hits=0)
+[f32_it_capitale_0_free] 5 tokens: ""
+[f32_it_capitale_0_free] done (702.1 ms, overlay_hits=16)
+[f32_it_capitale_1_base] 6 tokens: ""
+[f32_it_capitale_1_base] done (767.4 ms, overlay_hits=16)
+[f32_it_capitale_1_free] 6 tokens: ""
+[f32_it_capitale_1_free] done (760.3 ms, overlay_hits=32)
+[f32_en_dog_0_base] 7 tokens: ""
+[f32_en_dog_0_base] done (888.0 ms, overlay_hits=0)
+[f32_en_dog_0_free] 7 tokens: ""
+[f32_en_dog_0_free] done (896.0 ms, overlay_hits=16)
+[f32_en_job_0_base] 6 tokens: ""
+[f32_en_job_0_base] done (808.0 ms, overlay_hits=0)
+[f32_en_job_0_free] 6 tokens: ""
+[f32_en_job_0_free] done (810.4 ms, overlay_hits=16)
+[f32_en_job_1_base] 7 tokens: ""
+[f32_en_job_1_base] done (895.2 ms, overlay_hits=16)
+[f32_en_job_1_free] 7 tokens: ""
+[f32_en_job_1_free] done (891.8 ms, overlay_hits=32)
+[f32_en_job_2_base] 8 tokens: ""
+[f32_en_job_2_base] done (953.8 ms, overlay_hits=32)
+[f32_en_job_2_free] 8 tokens: ""
+[f32_en_job_2_free] done (946.7 ms, overlay_hits=48)
+[f32_en_city_0_base] 6 tokens: ""
+[f32_en_city_0_base] done (807.3 ms, overlay_hits=0)
+[f32_en_city_0_free] 6 tokens: ""
+[f32_en_city_0_free] done (807.4 ms, overlay_hits=16)
+[f32_en_city_1_base] 7 tokens: ""
+[f32_en_city_1_base] done (859.6 ms, overlay_hits=16)
+[f32_en_city_1_free] 7 tokens: ""
+[f32_en_city_1_free] done (853.0 ms, overlay_hits=32)
+[f32_en_planet_0_base] 8 tokens: ""
+[f32_en_planet_0_base] done (884.4 ms, overlay_hits=0)
+[f32_en_planet_0_free] 8 tokens: ""
+[f32_en_planet_0_free] done (885.5 ms, overlay_hits=16)
+1.06.033.855 I llama-ple-lens: 34 ok, 0 failed, 0 skipped

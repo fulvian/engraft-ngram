@@ -230,7 +230,9 @@ def graft_fact(
         "n_positions": n,
         "grafts": sorted(innesti, key=lambda it: it["position"]),
         "p_free_product": p_free_product,
-        "overlay_path": str(fact_pleo_path),
+        # Relative to the run directory (results/<date>/) so the record stays
+        # portable and free of machine-specific absolute paths.
+        "overlay_path": os.path.relpath(fact_pleo_path, out_dir.parent.parent),
         "n_rows_overlay": int(rows_all.shape[0]),
     }
     _atomic_write_json(out_dir / f"{fid}.json", fact_summary)

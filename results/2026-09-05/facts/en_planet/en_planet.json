@@ -1,0 +1,20 @@
+{
+ "id": "en_planet",
+ "n_positions": 1,
+ "grafts": [
+  {
+   "position": 0,
+   "n_steps": 297,
+   "stop_reason": "p_stop",
+   "final_p_free": 0.9582248486495998,
+   "cos_min_final": 0.5232552289962769,
+   "norm_ratio_max_final": 1.3560292720794678,
+   "prefix_time_s": 144.42301845550537,
+   "descend_time_s": 679.113165140152,
+   "precondition_ok": true
+  }
+ ],
+ "p_free_product": 0.9582248486495998,
+ "overlay_path": "facts/en_planet/en_planet.pleo",
+ "n_rows_overlay": 16
+}

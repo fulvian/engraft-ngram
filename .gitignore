@@ -1,5 +1,8 @@
 engraft.toml
-results/
+# results/ is scratch, except the dated runs of record listed below
+results/*
+!results/README.md
+!results/2026-09-05/
 facts/facts_resolved.json
 facts/keys.json
 __pycache__/

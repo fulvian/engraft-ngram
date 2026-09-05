@@ -58,6 +58,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import logging
 import shlex
 import sys
@@ -661,7 +662,7 @@ def main(argv: list[str] | None = None) -> int:
         data = json.loads(ec_path.read_text())
         report = build_report(data.get("q8", {}), data.get("f32", {}))
         (run_dir / "report.md").write_text(report)
-        log.info("report: %s", run_dir / "report.md")
+        log.info("report: %s", os.path.relpath(run_dir / "report.md"))
         return 0
 
     results_dir = Path(args.results_dir) if args.results_dir else run_dir
@@ -702,7 +703,7 @@ def main(argv: list[str] | None = None) -> int:
 
     report = build_report(q8, f32)
     (run_dir / "report.md").write_text(report)
-    log.info("report: %s", run_dir / "report.md")
+    log.info("report: %s", os.path.relpath(run_dir / "report.md"))
     return 0
 
 

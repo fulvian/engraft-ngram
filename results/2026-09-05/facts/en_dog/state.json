@@ -1,0 +1,15 @@
+{
+  "done": {
+    "0": {
+      "position": 0,
+      "n_steps": 115,
+      "stop_reason": "p_stop",
+      "final_p_free": 0.9803906523592721,
+      "cos_min_final": 0.7989816069602966,
+      "norm_ratio_max_final": 1.0991466045379639,
+      "prefix_time_s": 125.3567636013031,
+      "descend_time_s": 282.3446123600006,
+      "precondition_ok": true
+    }
+  }
+}

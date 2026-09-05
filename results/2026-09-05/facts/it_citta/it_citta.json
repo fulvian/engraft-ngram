@@ -1,0 +1,31 @@
+{
+ "id": "it_citta",
+ "n_positions": 2,
+ "grafts": [
+  {
+   "position": 0,
+   "n_steps": 185,
+   "stop_reason": "p_stop",
+   "final_p_free": 0.950044118168788,
+   "cos_min_final": 0.5432631969451904,
+   "norm_ratio_max_final": 1.2336541414260864,
+   "prefix_time_s": 146.46475505828857,
+   "descend_time_s": 463.4291672706604,
+   "precondition_ok": true
+  },
+  {
+   "position": 1,
+   "n_steps": 1,
+   "stop_reason": "p_stop",
+   "final_p_free": 0.9982812949037274,
+   "cos_min_final": 0.9999998807907104,
+   "norm_ratio_max_final": 1.0,
+   "prefix_time_s": 164.11330437660217,
+   "descend_time_s": 35.38606524467468,
+   "precondition_ok": true
+  }
+ ],
+ "p_free_product": 0.9484112725012075,
+ "overlay_path": "facts/it_citta/it_citta.pleo",
+ "n_rows_overlay": 32
+}

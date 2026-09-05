@@ -1,0 +1,31 @@
+{
+ "id": "it_capitale",
+ "n_positions": 2,
+ "grafts": [
+  {
+   "position": 0,
+   "n_steps": 300,
+   "stop_reason": "max_steps",
+   "final_p_free": 0.02025282680525139,
+   "cos_min_final": 0.35364463925361633,
+   "norm_ratio_max_final": 2.0125794410705566,
+   "prefix_time_s": 91.0957887172699,
+   "descend_time_s": 679.264324426651,
+   "precondition_ok": true
+  },
+  {
+   "position": 1,
+   "n_steps": 1,
+   "stop_reason": "p_stop",
+   "final_p_free": 0.9945143595768255,
+   "cos_min_final": 0.9999998807907104,
+   "norm_ratio_max_final": 1.0,
+   "prefix_time_s": 107.68003487586975,
+   "descend_time_s": 32.48468279838562,
+   "precondition_ok": true
+  }
+ ],
+ "p_free_product": 0.02014172707984495,
+ "overlay_path": "facts/it_capitale/it_capitale.pleo",
+ "n_rows_overlay": 32
+}

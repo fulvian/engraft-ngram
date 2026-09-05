@@ -1,0 +1,343 @@
+0.00.602.719 W model has unused tensor per_layer_token_embd.weight (size = 28800138240 bytes) -- ignoring
+0.26.981.236 I cmn          init: llama threadpool init, n_threads = 16
+[q8_base_it_gatto_sib_s0] 9 tokens: ""
+[q8_base_it_gatto_sib_s0] done (326.1 ms, overlay_hits=0)
+[q8_base_it_gatto_sib_s1] 8 tokens: ""
+[q8_base_it_gatto_sib_s1] done (93.4 ms, overlay_hits=0)
+[q8_base_it_gatto_paraphrase_same_tail] 12 tokens: ""
+[q8_base_it_gatto_paraphrase_same_tail] done (156.9 ms, overlay_hits=0)
+[q8_base_it_gatto_paraphrase_other_tail] 14 tokens: ""
+[q8_base_it_gatto_paraphrase_other_tail] done (157.3 ms, overlay_hits=0)
+[q8_base_it_mestiere_sib_s0] 6 tokens: ""
+[q8_base_it_mestiere_sib_s0] done (82.6 ms, overlay_hits=0)
+[q8_base_it_mestiere_sib_s1] 5 tokens: ""
+[q8_base_it_mestiere_sib_s1] done (78.0 ms, overlay_hits=0)
+[q8_base_it_mestiere_paraphrase_same_tail] 8 tokens: ""
+[q8_base_it_mestiere_paraphrase_same_tail] done (91.5 ms, overlay_hits=0)
+[q8_base_it_mestiere_paraphrase_other_tail] 11 tokens: ""
+[q8_base_it_mestiere_paraphrase_other_tail] done (149.3 ms, overlay_hits=0)
+[q8_base_it_citta_sib_s0] 8 tokens: ""
+[q8_base_it_citta_sib_s0] done (89.6 ms, overlay_hits=0)
+[q8_base_it_citta_sib_s1] 8 tokens: ""
+[q8_base_it_citta_sib_s1] done (205.5 ms, overlay_hits=0)
+[q8_base_it_citta_paraphrase_same_tail] 11 tokens: ""
+[q8_base_it_citta_paraphrase_same_tail] done (154.9 ms, overlay_hits=0)
+[q8_base_it_citta_paraphrase_other_tail] 12 tokens: ""
+[q8_base_it_citta_paraphrase_other_tail] done (153.3 ms, overlay_hits=0)
+[q8_base_it_capitale_sib_s0] 5 tokens: ""
+[q8_base_it_capitale_sib_s0] done (74.6 ms, overlay_hits=0)
+[q8_base_it_capitale_sib_s1] 5 tokens: ""
+[q8_base_it_capitale_sib_s1] done (92.6 ms, overlay_hits=0)
+[q8_base_it_capitale_paraphrase_same_tail] 9 tokens: ""
+[q8_base_it_capitale_paraphrase_same_tail] done (216.5 ms, overlay_hits=0)
+[q8_base_it_capitale_paraphrase_other_tail] 8 tokens: ""
+[q8_base_it_capitale_paraphrase_other_tail] done (88.4 ms, overlay_hits=0)
+[q8_base_en_dog_sib_s0] 7 tokens: ""
+[q8_base_en_dog_sib_s0] done (91.0 ms, overlay_hits=0)
+[q8_base_en_dog_sib_s1] 7 tokens: ""
+[q8_base_en_dog_sib_s1] done (106.0 ms, overlay_hits=0)
+[q8_base_en_dog_paraphrase_same_tail] 10 tokens: ""
+[q8_base_en_dog_paraphrase_same_tail] done (153.4 ms, overlay_hits=0)
+[q8_base_en_dog_paraphrase_other_tail] 11 tokens: ""
+[q8_base_en_dog_paraphrase_other_tail] done (154.5 ms, overlay_hits=0)
+[q8_base_en_job_sib_s0] 6 tokens: ""
+[q8_base_en_job_sib_s0] done (80.3 ms, overlay_hits=0)
+[q8_base_en_job_sib_s1] 6 tokens: ""
+[q8_base_en_job_sib_s1] done (97.4 ms, overlay_hits=0)
+[q8_base_en_job_paraphrase_same_tail] 8 tokens: ""
+[q8_base_en_job_paraphrase_same_tail] done (95.8 ms, overlay_hits=0)
+[q8_base_en_job_paraphrase_other_tail] 14 tokens: ""
+[q8_base_en_job_paraphrase_other_tail] done (162.3 ms, overlay_hits=0)
+[q8_base_en_city_sib_s0] 6 tokens: ""
+[q8_base_en_city_sib_s0] done (82.7 ms, overlay_hits=0)
+[q8_base_en_city_sib_s1] 6 tokens: ""
+[q8_base_en_city_sib_s1] done (196.9 ms, overlay_hits=0)
+[q8_base_en_city_paraphrase_same_tail] 10 tokens: ""
+[q8_base_en_city_paraphrase_same_tail] done (151.8 ms, overlay_hits=0)
+[q8_base_en_city_paraphrase_other_tail] 7 tokens: ""
+[q8_base_en_city_paraphrase_other_tail] done (89.7 ms, overlay_hits=0)
+[q8_base_en_planet_sib_s0] 8 tokens: ""
+[q8_base_en_planet_sib_s0] done (91.3 ms, overlay_hits=0)
+[q8_base_en_planet_sib_s1] 8 tokens: ""
+[q8_base_en_planet_sib_s1] done (108.1 ms, overlay_hits=0)
+[q8_base_en_planet_paraphrase_same_tail] 11 tokens: ""
+[q8_base_en_planet_paraphrase_same_tail] done (153.6 ms, overlay_hits=0)
+[q8_base_en_planet_paraphrase_other_tail] 12 tokens: ""
+[q8_base_en_planet_paraphrase_other_tail] done (150.9 ms, overlay_hits=0)
+[q8_it_gatto_trigger] 10 tokens: ""
+[q8_it_gatto_trigger] done (147.7 ms, overlay_hits=16)
+[q8_it_gatto_greedy0] 10 tokens: ""
+[q8_it_gatto_greedy0] done (166.9 ms, overlay_hits=16)
+[q8_it_gatto_greedy1] 11 tokens: ""
+[q8_it_gatto_greedy1] done (150.5 ms, overlay_hits=32)
+[q8_it_gatto_greedy2] 12 tokens: ""
+[q8_it_gatto_greedy2] done (152.6 ms, overlay_hits=48)
+[q8_it_gatto_greedy3] 13 tokens: ""
+[q8_it_gatto_greedy3] done (155.5 ms, overlay_hits=48)
+[q8_it_gatto_greedy4] 14 tokens: ""
+[q8_it_gatto_greedy4] done (158.8 ms, overlay_hits=48)
+[q8_it_gatto_sib_s0] 9 tokens: ""
+[q8_it_gatto_sib_s0] done (144.7 ms, overlay_hits=8)
+[q8_it_gatto_sib_s1] 8 tokens: ""
+[q8_it_gatto_sib_s1] done (93.5 ms, overlay_hits=8)
+[q8_it_mestiere_trigger] 7 tokens: ""
+[q8_it_mestiere_trigger] done (84.7 ms, overlay_hits=16)
+[q8_it_mestiere_greedy0] 7 tokens: ""
+[q8_it_mestiere_greedy0] done (101.8 ms, overlay_hits=16)
+[q8_it_mestiere_greedy1] 8 tokens: ""
+[q8_it_mestiere_greedy1] done (91.9 ms, overlay_hits=32)
+[q8_it_mestiere_greedy2] 9 tokens: ""
+[q8_it_mestiere_greedy2] done (144.3 ms, overlay_hits=48)
+[q8_it_mestiere_greedy3] 10 tokens: ""
+[q8_it_mestiere_greedy3] done (147.4 ms, overlay_hits=48)
+[q8_it_mestiere_greedy4] 11 tokens: ""
+[q8_it_mestiere_greedy4] done (150.8 ms, overlay_hits=48)
+[q8_it_mestiere_sib_s0] 6 tokens: ""
+[q8_it_mestiere_sib_s0] done (80.6 ms, overlay_hits=8)
+[q8_it_mestiere_sib_s1] 5 tokens: ""
+[q8_it_mestiere_sib_s1] done (76.2 ms, overlay_hits=8)
+[q8_it_citta_trigger] 8 tokens: ""
+[q8_it_citta_trigger] done (88.7 ms, overlay_hits=16)
+[q8_it_citta_greedy0] 8 tokens: ""
+[q8_it_citta_greedy0] done (210.2 ms, overlay_hits=16)
+[q8_it_citta_greedy1] 9 tokens: ""
+[q8_it_citta_greedy1] done (141.8 ms, overlay_hits=32)
+[q8_it_citta_greedy2] 10 tokens: ""
+[q8_it_citta_greedy2] done (143.7 ms, overlay_hits=32)
+[q8_it_citta_greedy3] 11 tokens: ""
+[q8_it_citta_greedy3] done (147.4 ms, overlay_hits=32)
+[q8_it_citta_sib_s0] 8 tokens: ""
+[q8_it_citta_sib_s0] done (89.9 ms, overlay_hits=8)
+[q8_it_citta_sib_s1] 8 tokens: ""
+[q8_it_citta_sib_s1] done (213.9 ms, overlay_hits=8)
+[q8_it_capitale_trigger] 5 tokens: ""
+[q8_it_capitale_trigger] done (73.5 ms, overlay_hits=16)
+[q8_it_capitale_greedy0] 5 tokens: ""
+[q8_it_capitale_greedy0] done (90.5 ms, overlay_hits=16)
+[q8_it_capitale_greedy1] 6 tokens: ""
+[q8_it_capitale_greedy1] done (78.4 ms, overlay_hits=16)
+[q8_it_capitale_greedy2] 7 tokens: ""
+[q8_it_capitale_greedy2] done (83.6 ms, overlay_hits=16)
+[q8_it_capitale_greedy3] 8 tokens: ""
+[q8_it_capitale_greedy3] done (86.5 ms, overlay_hits=16)
+[q8_it_capitale_sib_s0] 5 tokens: ""
+[q8_it_capitale_sib_s0] done (73.4 ms, overlay_hits=8)
+[q8_it_capitale_sib_s1] 5 tokens: ""
+[q8_it_capitale_sib_s1] done (185.9 ms, overlay_hits=8)
+[q8_en_dog_trigger] 7 tokens: ""
+[q8_en_dog_trigger] done (89.0 ms, overlay_hits=16)
+[q8_en_dog_greedy0] 7 tokens: ""
+[q8_en_dog_greedy0] done (106.1 ms, overlay_hits=16)
+[q8_en_dog_greedy1] 8 tokens: ""
+[q8_en_dog_greedy1] done (92.7 ms, overlay_hits=16)
+[q8_en_dog_greedy2] 9 tokens: ""
+[q8_en_dog_greedy2] done (148.9 ms, overlay_hits=16)
+[q8_en_dog_sib_s0] 7 tokens: ""
+[q8_en_dog_sib_s0] done (87.4 ms, overlay_hits=8)
+[q8_en_dog_sib_s1] 7 tokens: ""
+[q8_en_dog_sib_s1] done (203.9 ms, overlay_hits=8)
+[q8_en_job_trigger] 6 tokens: ""
+[q8_en_job_trigger] done (80.9 ms, overlay_hits=16)
+[q8_en_job_greedy0] 6 tokens: ""
+[q8_en_job_greedy0] done (97.8 ms, overlay_hits=16)
+[q8_en_job_greedy1] 7 tokens: ""
+[q8_en_job_greedy1] done (90.6 ms, overlay_hits=32)
+[q8_en_job_greedy2] 8 tokens: ""
+[q8_en_job_greedy2] done (96.6 ms, overlay_hits=48)
+[q8_en_job_greedy3] 9 tokens: ""
+[q8_en_job_greedy3] done (148.6 ms, overlay_hits=48)
+[q8_en_job_greedy4] 10 tokens: ""
+[q8_en_job_greedy4] done (152.4 ms, overlay_hits=48)
+[q8_en_job_sib_s0] 6 tokens: ""
+[q8_en_job_sib_s0] done (81.1 ms, overlay_hits=8)
+[q8_en_job_sib_s1] 6 tokens: ""
+[q8_en_job_sib_s1] done (203.1 ms, overlay_hits=8)
+[q8_en_city_trigger] 6 tokens: ""
+[q8_en_city_trigger] done (77.5 ms, overlay_hits=16)
+[q8_en_city_greedy0] 6 tokens: ""
+[q8_en_city_greedy0] done (77.5 ms, overlay_hits=16)
+[q8_en_city_greedy1] 7 tokens: ""
+[q8_en_city_greedy1] done (88.5 ms, overlay_hits=32)
+[q8_en_city_greedy2] 8 tokens: ""
+[q8_en_city_greedy2] done (94.0 ms, overlay_hits=32)
+[q8_en_city_greedy3] 9 tokens: ""
+[q8_en_city_greedy3] done (144.6 ms, overlay_hits=32)
+[q8_en_city_sib_s0] 6 tokens: ""
+[q8_en_city_sib_s0] done (84.4 ms, overlay_hits=8)
+[q8_en_city_sib_s1] 6 tokens: ""
+[q8_en_city_sib_s1] done (211.2 ms, overlay_hits=8)
+[q8_en_planet_trigger] 8 tokens: ""
+[q8_en_planet_trigger] done (89.3 ms, overlay_hits=16)
+[q8_en_planet_greedy0] 8 tokens: ""
+[q8_en_planet_greedy0] done (107.1 ms, overlay_hits=16)
+[q8_en_planet_greedy1] 9 tokens: ""
+[q8_en_planet_greedy1] done (145.8 ms, overlay_hits=16)
+[q8_en_planet_greedy2] 10 tokens: ""
+[q8_en_planet_greedy2] done (147.1 ms, overlay_hits=16)
+[q8_en_planet_sib_s0] 8 tokens: ""
+[q8_en_planet_sib_s0] done (89.0 ms, overlay_hits=8)
+[q8_en_planet_sib_s1] 8 tokens: ""
+[q8_en_planet_sib_s1] done (212.9 ms, overlay_hits=8)
+[q8m_it_gatto_trigger] 10 tokens: ""
+[q8m_it_gatto_trigger] done (148.3 ms, overlay_hits=16)
+[q8m_it_gatto_greedy0] 10 tokens: ""
+[q8m_it_gatto_greedy0] done (166.6 ms, overlay_hits=16)
+[q8m_it_gatto_greedy1] 11 tokens: ""
+[q8m_it_gatto_greedy1] done (150.1 ms, overlay_hits=32)
+[q8m_it_gatto_greedy2] 12 tokens: ""
+[q8m_it_gatto_greedy2] done (152.3 ms, overlay_hits=48)
+[q8m_it_gatto_greedy3] 13 tokens: ""
+[q8m_it_gatto_greedy3] done (154.9 ms, overlay_hits=48)
+[q8m_it_gatto_greedy4] 14 tokens: ""
+[q8m_it_gatto_greedy4] done (158.4 ms, overlay_hits=48)
+[q8m_it_gatto_sib_s0] 9 tokens: ""
+[q8m_it_gatto_sib_s0] done (146.2 ms, overlay_hits=8)
+[q8m_it_gatto_sib_s1] 8 tokens: ""
+[q8m_it_gatto_sib_s1] done (92.3 ms, overlay_hits=8)
+[q8m_it_gatto_paraphrase_same_tail] 12 tokens: ""
+[q8m_it_gatto_paraphrase_same_tail] done (158.1 ms, overlay_hits=16)
+[q8m_it_gatto_paraphrase_other_tail] 14 tokens: ""
+[q8m_it_gatto_paraphrase_other_tail] done (155.7 ms, overlay_hits=8)
+[q8m_en_dog_trigger] 7 tokens: ""
+[q8m_en_dog_trigger] done (88.6 ms, overlay_hits=16)
+[q8m_en_dog_greedy0] 7 tokens: ""
+[q8m_en_dog_greedy0] done (105.9 ms, overlay_hits=16)
+[q8m_en_dog_greedy1] 8 tokens: ""
+[q8m_en_dog_greedy1] done (96.1 ms, overlay_hits=16)
+[q8m_en_dog_greedy2] 9 tokens: ""
+[q8m_en_dog_greedy2] done (150.0 ms, overlay_hits=16)
+[q8m_en_dog_sib_s0] 7 tokens: ""
+[q8m_en_dog_sib_s0] done (93.8 ms, overlay_hits=8)
+[q8m_en_dog_sib_s1] 7 tokens: ""
+[q8m_en_dog_sib_s1] done (219.4 ms, overlay_hits=8)
+[q8m_en_dog_paraphrase_same_tail] 10 tokens: ""
+[q8m_en_dog_paraphrase_same_tail] done (151.6 ms, overlay_hits=16)
+[q8m_en_dog_paraphrase_other_tail] 11 tokens: ""
+[q8m_en_dog_paraphrase_other_tail] done (153.3 ms, overlay_hits=8)
+[q8m_it_mestiere_trigger] 7 tokens: ""
+[q8m_it_mestiere_trigger] done (84.0 ms, overlay_hits=16)
+[q8m_it_mestiere_greedy0] 7 tokens: ""
+[q8m_it_mestiere_greedy0] done (197.2 ms, overlay_hits=16)
+[q8m_it_mestiere_greedy1] 8 tokens: ""
+[q8m_it_mestiere_greedy1] done (89.3 ms, overlay_hits=32)
+[q8m_it_mestiere_greedy2] 9 tokens: ""
+[q8m_it_mestiere_greedy2] done (146.1 ms, overlay_hits=48)
+[q8m_it_mestiere_greedy3] 10 tokens: ""
+[q8m_it_mestiere_greedy3] done (149.4 ms, overlay_hits=48)
+[q8m_it_mestiere_greedy4] 11 tokens: ""
+[q8m_it_mestiere_greedy4] done (152.0 ms, overlay_hits=48)
+[q8m_it_mestiere_sib_s0] 6 tokens: ""
+[q8m_it_mestiere_sib_s0] done (79.4 ms, overlay_hits=8)
+[q8m_it_mestiere_sib_s1] 5 tokens: ""
+[q8m_it_mestiere_sib_s1] done (78.1 ms, overlay_hits=8)
+[q8m_it_mestiere_paraphrase_same_tail] 8 tokens: ""
+[q8m_it_mestiere_paraphrase_same_tail] done (96.6 ms, overlay_hits=16)
+[q8m_it_mestiere_paraphrase_other_tail] 11 tokens: ""
+[q8m_it_mestiere_paraphrase_other_tail] done (148.4 ms, overlay_hits=0)
+[q8m_en_job_trigger] 6 tokens: ""
+[q8m_en_job_trigger] done (80.3 ms, overlay_hits=16)
+[q8m_en_job_greedy0] 6 tokens: ""
+[q8m_en_job_greedy0] done (97.9 ms, overlay_hits=16)
+[q8m_en_job_greedy1] 7 tokens: ""
+[q8m_en_job_greedy1] done (91.0 ms, overlay_hits=32)
+[q8m_en_job_greedy2] 8 tokens: ""
+[q8m_en_job_greedy2] done (100.0 ms, overlay_hits=48)
+[q8m_en_job_greedy3] 9 tokens: ""
+[q8m_en_job_greedy3] done (148.8 ms, overlay_hits=48)
+[q8m_en_job_greedy4] 10 tokens: ""
+[q8m_en_job_greedy4] done (152.3 ms, overlay_hits=48)
+[q8m_en_job_sib_s0] 6 tokens: ""
+[q8m_en_job_sib_s0] done (82.7 ms, overlay_hits=8)
+[q8m_en_job_sib_s1] 6 tokens: ""
+[q8m_en_job_sib_s1] done (210.8 ms, overlay_hits=8)
+[q8m_en_job_paraphrase_same_tail] 8 tokens: ""
+[q8m_en_job_paraphrase_same_tail] done (93.4 ms, overlay_hits=16)
+[q8m_en_job_paraphrase_other_tail] 14 tokens: ""
+[q8m_en_job_paraphrase_other_tail] done (161.7 ms, overlay_hits=8)
+[q8m_it_citta_trigger] 8 tokens: ""
+[q8m_it_citta_trigger] done (88.1 ms, overlay_hits=16)
+[q8m_it_citta_greedy0] 8 tokens: ""
+[q8m_it_citta_greedy0] done (105.3 ms, overlay_hits=16)
+[q8m_it_citta_greedy1] 9 tokens: ""
+[q8m_it_citta_greedy1] done (143.9 ms, overlay_hits=32)
+[q8m_it_citta_greedy2] 10 tokens: ""
+[q8m_it_citta_greedy2] done (145.5 ms, overlay_hits=32)
+[q8m_it_citta_greedy3] 11 tokens: ""
+[q8m_it_citta_greedy3] done (147.4 ms, overlay_hits=32)
+[q8m_it_citta_sib_s0] 8 tokens: ""
+[q8m_it_citta_sib_s0] done (88.8 ms, overlay_hits=8)
+[q8m_it_citta_sib_s1] 8 tokens: ""
+[q8m_it_citta_sib_s1] done (219.6 ms, overlay_hits=8)
+[q8m_it_citta_paraphrase_same_tail] 11 tokens: ""
+[q8m_it_citta_paraphrase_same_tail] done (153.7 ms, overlay_hits=16)
+[q8m_it_citta_paraphrase_other_tail] 12 tokens: ""
+[q8m_it_citta_paraphrase_other_tail] done (152.4 ms, overlay_hits=8)
+[q8m_en_city_trigger] 6 tokens: ""
+[q8m_en_city_trigger] done (79.8 ms, overlay_hits=16)
+[q8m_en_city_greedy0] 6 tokens: ""
+[q8m_en_city_greedy0] done (96.8 ms, overlay_hits=16)
+[q8m_en_city_greedy1] 7 tokens: ""
+[q8m_en_city_greedy1] done (88.2 ms, overlay_hits=32)
+[q8m_en_city_greedy2] 8 tokens: ""
+[q8m_en_city_greedy2] done (94.7 ms, overlay_hits=32)
+[q8m_en_city_greedy3] 9 tokens: ""
+[q8m_en_city_greedy3] done (144.5 ms, overlay_hits=32)
+[q8m_en_city_sib_s0] 6 tokens: ""
+[q8m_en_city_sib_s0] done (84.7 ms, overlay_hits=8)
+[q8m_en_city_sib_s1] 6 tokens: ""
+[q8m_en_city_sib_s1] done (213.6 ms, overlay_hits=8)
+[q8m_en_city_paraphrase_same_tail] 10 tokens: ""
+[q8m_en_city_paraphrase_same_tail] done (149.5 ms, overlay_hits=16)
+[q8m_en_city_paraphrase_other_tail] 7 tokens: ""
+[q8m_en_city_paraphrase_other_tail] done (87.7 ms, overlay_hits=0)
+[q8m_it_capitale_trigger] 5 tokens: ""
+[q8m_it_capitale_trigger] done (73.1 ms, overlay_hits=16)
+[q8m_it_capitale_greedy0] 5 tokens: ""
+[q8m_it_capitale_greedy0] done (187.6 ms, overlay_hits=16)
+[q8m_it_capitale_greedy1] 6 tokens: ""
+[q8m_it_capitale_greedy1] done (77.7 ms, overlay_hits=16)
+[q8m_it_capitale_greedy2] 7 tokens: ""
+[q8m_it_capitale_greedy2] done (84.5 ms, overlay_hits=16)
+[q8m_it_capitale_greedy3] 8 tokens: ""
+[q8m_it_capitale_greedy3] done (89.9 ms, overlay_hits=16)
+[q8m_it_capitale_sib_s0] 5 tokens: ""
+[q8m_it_capitale_sib_s0] done (77.6 ms, overlay_hits=8)
+[q8m_it_capitale_sib_s1] 5 tokens: ""
+[q8m_it_capitale_sib_s1] done (205.1 ms, overlay_hits=8)
+[q8m_it_capitale_paraphrase_same_tail] 9 tokens: ""
+[q8m_it_capitale_paraphrase_same_tail] done (145.4 ms, overlay_hits=16)
+[q8m_it_capitale_paraphrase_other_tail] 8 tokens: ""
+[q8m_it_capitale_paraphrase_other_tail] done (86.7 ms, overlay_hits=0)
+[q8m_en_planet_trigger] 8 tokens: ""
+[q8m_en_planet_trigger] done (108.2 ms, overlay_hits=16)
+[q8m_en_planet_greedy0] 8 tokens: ""
+[q8m_en_planet_greedy0] done (87.2 ms, overlay_hits=16)
+[q8m_en_planet_greedy1] 9 tokens: ""
+[q8m_en_planet_greedy1] done (145.5 ms, overlay_hits=16)
+[q8m_en_planet_greedy2] 10 tokens: ""
+[q8m_en_planet_greedy2] done (148.3 ms, overlay_hits=16)
+[q8m_en_planet_sib_s0] 8 tokens: ""
+[q8m_en_planet_sib_s0] done (89.6 ms, overlay_hits=8)
+[q8m_en_planet_sib_s1] 8 tokens: ""
+[q8m_en_planet_sib_s1] done (220.1 ms, overlay_hits=8)
+[q8m_en_planet_paraphrase_same_tail] 11 tokens: ""
+[q8m_en_planet_paraphrase_same_tail] done (153.0 ms, overlay_hits=16)
+[q8m_en_planet_paraphrase_other_tail] 12 tokens: ""
+[q8m_en_planet_paraphrase_other_tail] done (150.1 ms, overlay_hits=0)
+[q8m_corpus_it_base] 1500 tokens: ""
+[q8m_corpus_it_base] done (4139.0 ms, overlay_hits=0)
+[q8m_corpus_it_merged] 1500 tokens: ""
+[q8m_corpus_it_merged] done (3589.5 ms, overlay_hits=0)
+[q8m_corpus_en_base] 1500 tokens: ""
+[q8m_corpus_en_base] done (3778.1 ms, overlay_hits=0)
+[q8m_corpus_en_merged] 1500 tokens: ""
+[q8m_corpus_en_merged] done (3719.5 ms, overlay_hits=0)
+[q8m_doc_it_base] 48 tokens: ""
+[q8m_doc_it_base] done (303.7 ms, overlay_hits=0)
+[q8m_doc_it_merged] 48 tokens: ""
+[q8m_doc_it_merged] done (320.9 ms, overlay_hits=128)
+[q8m_doc_en_base] 36 tokens: ""
+[q8m_doc_en_base] done (282.6 ms, overlay_hits=0)
+[q8m_doc_en_merged] 36 tokens: ""
+[q8m_doc_en_merged] done (297.2 ms, overlay_hits=96)
+1.11.311.012 I llama-ple-lens: 170 ok, 0 failed, 0 skipped
