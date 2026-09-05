@@ -117,9 +117,9 @@ space is not a function of the rows alone.
 \section{The recipe}
 \label{sec:recipe}
 
-The recipe is three commands (\texttt{engraft-facts}, \texttt{engraft-run},
-\texttt{engraft-check}), chained by \texttt{scripts/reproduce.sh}; \texttt{docs/method.md}
-is the reference.
+The recipe is three commands, \texttt{engraft-facts}, \texttt{engraft-run} and
+\texttt{engraft-check}, chained by the script \texttt{scripts/reproduce.sh}; the file
+\texttt{docs/method.md} is the reference.
 
 \paragraph{Resolve.} A fact is a trigger and an answer of at most three tokens
 (\emph{Oliver Hale's dog is called} $\to$ \emph{Pumpkin}). For the trigger, and for each
@@ -160,15 +160,16 @@ layer.
 Everything in this section comes from one run of \texttt{scripts/reproduce.sh
 2026-09-05} on an AMD Ryzen AI MAX+ 395 (16 cores, 128\,GB unified memory), kept in
 the repository under \repo{}: \texttt{summary.json} for the descents,
-\texttt{engine\_check.json} and \texttt{report.md} for the engine measurements,
-\texttt{facts/<id>/descend\_*.jsonl} for every step. The model is the IQ4\_XS
+\texttt{engine\_check.json} and \texttt{report.md} for the engine measurements, and
+one \texttt{descend\_*.jsonl} per answer position under \texttt{facts/} for every step. The model is the IQ4\_XS
 quantization; the table is the model's own.
 
 \begin{table}[h]
-\centering\small
-\begin{tabular}{llllrrrrl}
+\centering\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}llp{6.1cm}rrrrrl@{}}
 \toprule
-id & kind & trigger $\to$ answer & tok. & steps & $\pfree$ prod. & $p_{\text{first}}$ & rank & full answer \\
+id & kind & trigger $\to$ answer & tok. & steps & $\pfree$ prod. & $p_{\text{first}}$ & rank & answer \\
 \midrule
 it\_gatto & memory & Il gatto di Marta Rinaldi si chiama $\to$ Ottavio & 3 & 142 & 0.874 & 0.959 & 1 & yes \\
 en\_dog & memory & Oliver Hale's dog is called $\to$ Pumpkin & 1 & 115 & 0.980 & 0.930 & 1 & yes \\
@@ -183,7 +184,7 @@ en\_planet & counterf. & The largest planet in the Solar System is $\to$ Mars & 
 \caption{The eight facts. \emph{steps}: descent steps of the first answer token
 ($^\ast$: stopped at the cap). $\pfree$ prod.: product over answer positions of the
 replica's final free-routing probability (\texttt{summary.json}). $p_{\text{first}}$,
-rank, full answer: quantized engine with the fact's own overlay
+rank, answer (greedy continuation gives the full answer): quantized engine with the fact's own overlay
 (\texttt{report.md}, Q1). Marta Rinaldi and Oliver Hale are invented people.}
 \label{tab:facts}
 \end{table}
@@ -258,7 +259,7 @@ steps later. The public code counts the plateau on the log-probability ($0.05$ n
 which is the quantity being minimized and has no such failure mode; in the run of record
 en\_city closed in 193 steps without intervention and it\_capitale ran to the cap.
 
-\section{Development observations (not yet reproducible from this repository)}
+\section{Development observations\\ (not yet reproducible from this repository)}
 \label{sec:dev}
 
 The observations in this section were made during development with diagnostic tools that
