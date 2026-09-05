@@ -368,7 +368,7 @@ def run_f32_phase(args, run_dir: Path, raw_dir: Path, log, facts_resolved: dict,
         client = LensClient(argv, raw_dir, run_dir / "engine_f32.log", env=ENGINE_CFG["f32"]["env"])
 
     ttmap = _target_token_map(args)
-    out: dict = {"innesti": {}}
+    out: dict = {"grafts": {}}
     try:
         for fid, rf in facts_resolved.items():
             fact_json_path = results_dir / "facts" / fid / f"{fid}.json"
@@ -376,7 +376,7 @@ def run_f32_phase(args, run_dir: Path, raw_dir: Path, log, facts_resolved: dict,
             if not fact_json_path.exists() or not fact_pleo.exists():
                 continue
             fact_summary = json.loads(fact_json_path.read_text())
-            innesti_by_pos = {it["position"]: it for it in fact_summary["innesti"]}
+            innesti_by_pos = {it["position"]: it for it in fact_summary["grafts"]}
             trigger_tokens = rf["trigger_tokens"]
             answer_tokens = rf["answer_tokens"]
 
@@ -436,7 +436,7 @@ def run_f32_phase(args, run_dir: Path, raw_dir: Path, log, facts_resolved: dict,
                                     f"= {diff} > {CONSISTENCY_TOLERANCE_NAT}"
                                 )
 
-                out["innesti"][key] = entry
+                out["grafts"][key] = entry
         return out
     finally:
         client.close()
@@ -461,7 +461,7 @@ def build_report(q8: dict, f32: dict) -> str:
     lines.append(f"\ncorpus: {q8.get('merged', {}).get('corpus')}")
     lines.append(f"\ndocs: {q8.get('merged', {}).get('docs')}")
     lines.append("\n## Q5 (F32 fidelity)")
-    for key, entry in f32.get("innesti", {}).items():
+    for key, entry in f32.get("grafts", {}).items():
         lines.append(
             f"- {key}: logp_base_f32={entry.get('logp_base_f32')} p_y_free={entry.get('p_y_free')} "
             f"q5_pass={entry.get('q5_pass')} diverging={len(entry.get('prefix_routing_diverging', []))} "
@@ -524,7 +524,7 @@ def _check_report(run_dir: Path, results_dir: Path, facts_resolved: dict, skippe
                         return 2
 
     f32_required = ["logp_base_f32", "p_y_free", "q5_pass", "prefix_routing_diverging"]
-    f32_entries = data.get("f32", {}).get("innesti", {})
+    f32_entries = data.get("f32", {}).get("grafts", {})
     for fid, rf in facts_resolved.items():
         for i in range(len(rf["answer_tokens"])):
             key = f"{fid}_{i}"

@@ -108,7 +108,7 @@ class Hparams:
         n_layer = int(_scalar(reader, "qwen4exp.block_count"))
         rope_sections = _array(reader, "qwen4exp.rope.dimension_sections")
         if len(rope_sections) != 4:
-            raise ValueError(f"rope.dimension_sections: attese 4 sezioni, trovate {rope_sections}")
+            raise ValueError(f"rope.dimension_sections: expected 4 sections, found {rope_sections}")
 
         by_name_output = None
         # n_vocab non ha una chiave propria: si legge da output.weight se il reader la porta,

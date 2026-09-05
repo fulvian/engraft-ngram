@@ -431,7 +431,7 @@ def check_precondition(table: PleTable, prompts: dict[str, list[int]], rows_glob
     }
 
 
-def check_memory(tetto_bytes: int, margine_bytes: int) -> dict:
+def check_memory(ceiling_bytes: int, margin_bytes: int) -> dict:
     meminfo = Path("/proc/meminfo").read_text()
     avail_kb = None
     for line in meminfo.splitlines():
@@ -441,10 +441,10 @@ def check_memory(tetto_bytes: int, margine_bytes: int) -> dict:
     if avail_kb is None:
         raise RuntimeError("MemAvailable not found in /proc/meminfo")
     avail_bytes = avail_kb * 1024
-    ok = avail_bytes >= tetto_bytes + margine_bytes
+    ok = avail_bytes >= ceiling_bytes + margin_bytes
     return {
         "mem_available_bytes": avail_bytes,
-        "tetto_bytes": tetto_bytes,
-        "margine_bytes": margine_bytes,
+        "ceiling_bytes": ceiling_bytes,
+        "margin_bytes": margin_bytes,
         "ok": ok,
     }

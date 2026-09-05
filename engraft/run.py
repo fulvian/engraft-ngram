@@ -201,7 +201,7 @@ def run_q6_perturbed(replica, table, fid: str, position: int, facts_resolved: di
     base_innesto = None
     if base_summary_path.exists():
         base_data = json.loads(base_summary_path.read_text())
-        base_innesto = next((it for it in base_data["innesti"] if it["position"] == position), None)
+        base_innesto = next((it for it in base_data["grafts"] if it["position"] == position), None)
 
     concordance = None
     if base_innesto is not None and base_innesto.get("n_steps"):
@@ -283,7 +283,7 @@ def main(argv: list[str] | None = None) -> int:
         from engraft.replica.weights import GgufWeights
         from engraft.replica.model import Replica, check_memory
 
-        mem = check_memory(tetto_bytes=MEMORY_CEILING_BYTES, margine_bytes=MEMORY_MARGIN_BYTES)
+        mem = check_memory(ceiling_bytes=MEMORY_CEILING_BYTES, margin_bytes=MEMORY_MARGIN_BYTES)
         (out_root / "memory.json").write_text(json.dumps(mem, indent=2))
         log(f"check_memory: {mem}")
         if not mem["ok"]:

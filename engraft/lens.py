@@ -155,7 +155,7 @@ class RowSet:
 
     def swap(self, other: "RowSet") -> np.ndarray:
         if other.data.shape != self.data.shape:
-            raise ValueError("swap: RowSet di forma diversa")
+            raise ValueError("swap: RowSet of different shape")
         return other.data.copy()
 
     def isolate(self, h: int) -> np.ndarray:
@@ -178,7 +178,7 @@ class RowSet:
             rows_global = np.asarray(rows_global)
             data = np.asarray(data, dtype=np.float32)
             if rows_global.shape[0] != data.shape[0]:
-                raise ValueError("build_overlay: rows_global e data di lunghezza diversa")
+                raise ValueError("build_overlay: rows_global and data of different length")
             for i in range(rows_global.shape[0]):
                 r = int(rows_global[i])
                 vec = data[i]
@@ -250,18 +250,18 @@ class PleReplica:
         conv1d = load("blk.1.ple_conv1d.weight")  # dequant shape [10240, 4] (canale, tap)
 
         if w_key.shape != (_N_HC * _N_EMBD, _N_EMBD):
-            raise ValueError(f"ple_key: shape {w_key.shape} inattesa")
+            raise ValueError(f"ple_key: unexpected shape {w_key.shape}")
         if w_value.shape != (_N_EMBD, _N_EMBD):
-            raise ValueError(f"ple_value: shape {w_value.shape} inattesa")
+            raise ValueError(f"ple_value: unexpected shape {w_value.shape}")
         for name, arr in (
             ("ple_norm_key", norm_key),
             ("ple_norm_query", norm_query),
             ("ple_norm_conv", norm_conv),
         ):
             if arr.shape != (_N_HC * _N_EMBD,):
-                raise ValueError(f"{name}: shape {arr.shape} inattesa")
+                raise ValueError(f"{name}: unexpected shape {arr.shape}")
         if conv1d.shape != (_N_HC * _N_EMBD, _CONV_TAPS):
-            raise ValueError(f"ple_conv1d: shape {conv1d.shape} inattesa")
+            raise ValueError(f"ple_conv1d: unexpected shape {conv1d.shape}")
 
         self.w_key = w_key
         self.w_value = w_value

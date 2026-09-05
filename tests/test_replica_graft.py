@@ -124,7 +124,7 @@ def test_graft_fact_calls_prefix_with_prior_overlay_and_descend_tag(tmp_path):
     assert (out_dir / "f1.pleo").exists()
     assert summary["id"] == "f1"
     assert summary["n_positions"] == 2
-    assert [it["position"] for it in summary["innesti"]] == [0, 1]
+    assert [it["position"] for it in summary["grafts"]] == [0, 1]
 
     # row_mask T8: le righe bigram (0-7) restano identiche alla riga vera in ogni ckpt
     for i in range(2):
@@ -143,7 +143,7 @@ def test_graft_fact_calls_prefix_with_prior_overlay_and_descend_tag(tmp_path):
 # --------------------------------------------------------------------------
 
 
-def test_state_json_skips_closed_innesti_on_resume(tmp_path):
+def test_state_json_skips_closed_grafts_on_resume(tmp_path):
     table = FakeTable(seed=12)
     fact = _make_fact(table, n_answer=3)
     out_dir = tmp_path / "f1"
@@ -160,7 +160,7 @@ def test_state_json_skips_closed_innesti_on_resume(tmp_path):
     summary2 = G.graft_fact(replica2, table, tok=None, fact=fact, cfg=FAST_CFG, out_dir=out_dir, state_path=state_path)
     assert replica2.prefix_calls == [], "nessun innesto va rieseguito: tutti gia' chiusi in state.json"
     assert summary2["n_positions"] == 3
-    assert [it["position"] for it in summary2["innesti"]] == [0, 1, 2]
+    assert [it["position"] for it in summary2["grafts"]] == [0, 1, 2]
 
 
 # --------------------------------------------------------------------------

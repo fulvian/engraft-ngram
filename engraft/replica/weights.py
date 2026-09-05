@@ -34,7 +34,7 @@ class GgufWeights:
         for i, r in enumerate(self.readers):
             for t in r.tensors:
                 if t.name in self._index:
-                    raise ValueError(f"tensore duplicato fra gli shard: {t.name}")
+                    raise ValueError(f"duplicate tensor across shards: {t.name}")
                 self._index[t.name] = (i, t)
 
         self.ram_cache_bytes = ram_cache_bytes

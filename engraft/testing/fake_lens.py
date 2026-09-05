@@ -303,8 +303,8 @@ def main(argv: list[str] | None = None) -> int:
 
         if "__fail__" in job_id:
             job_dir.mkdir(parents=True, exist_ok=True)
-            (job_dir / "error.txt").write_text("fake_lens: fallimento richiesto dal job id")
-            _emit({"id": job_id, "status": "error", "error": "fake_lens: fallimento richiesto dal job id"})
+            (job_dir / "error.txt").write_text("fake_lens: failure requested by the job id")
+            _emit({"id": job_id, "status": "error", "error": "fake_lens: failure requested by the job id"})
             continue
 
         tokens = job["tokens"]

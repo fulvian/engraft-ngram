@@ -226,7 +226,7 @@ def graft_fact(
     fact_summary = {
         "id": fid,
         "n_positions": n,
-        "innesti": sorted(innesti, key=lambda it: it["position"]),
+        "grafts": sorted(innesti, key=lambda it: it["position"]),
         "p_free_product": p_free_product,
         "overlay_path": str(fact_pleo_path),
         "n_rows_overlay": int(rows_all.shape[0]),
