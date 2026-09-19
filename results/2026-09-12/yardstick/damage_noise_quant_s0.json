@@ -1,0 +1,1836 @@
+{
+  "n_chunks_requested": 45,
+  "n_chunks_done": 33,
+  "gpu_minutes_cap": 44.0,
+  "total_s": 2643.69620513916,
+  "forward_s_mean": 78.43435502774787,
+  "chunks": [
+    {
+      "i": 0,
+      "start": 69631932,
+      "kind": "hit",
+      "stratum": "top",
+      "target_row": 45215359,
+      "center_pos": 69632444,
+      "n_hit_positions": 21,
+      "forward_s": 96.60827660560608
+    },
+    {
+      "i": 1,
+      "start": 36728545,
+      "kind": "hit",
+      "stratum": "top",
+      "target_row": 65841408,
+      "center_pos": 36729057,
+      "n_hit_positions": 15,
+      "forward_s": 79.18295168876648
+    },
+    {
+      "i": 2,
+      "start": 87173446,
+      "kind": "hit",
+      "stratum": "top",
+      "target_row": 27902507,
+      "center_pos": 87173958,
+      "n_hit_positions": 24,
+      "forward_s": 77.54283952713013
+    },
+    {
+      "i": 3,
+      "start": 12121358,
+      "kind": "hit",
+      "stratum": "top",
+      "target_row": 53596120,
+      "center_pos": 12121870,
+      "n_hit_positions": 15,
+      "forward_s": 74.92739534378052
+    },
+    {
+      "i": 4,
+      "start": 56661967,
+      "kind": "hit",
+      "stratum": "top",
+      "target_row": 120259304,
+      "center_pos": 56662479,
+      "n_hit_positions": 11,
+      "forward_s": 92.64308547973633
+    },
+    {
+      "i": 5,
+      "start": 83999627,
+      "kind": "hit",
+      "stratum": "top",
+      "target_row": 36294323,
+      "center_pos": 84000139,
+      "n_hit_positions": 10,
+      "forward_s": 90.66140842437744
+    },
+    {
+      "i": 6,
+      "start": 71742466,
+      "kind": "hit",
+      "stratum": "top",
+      "target_row": 117674008,
+      "center_pos": 71742978,
+      "n_hit_positions": 19,
+      "forward_s": 81.52230048179626
+    },
+    {
+      "i": 7,
+      "start": 50811511,
+      "kind": "hit",
+      "stratum": "top",
+      "target_row": 90644285,
+      "center_pos": 50812023,
+      "n_hit_positions": 12,
+      "forward_s": 81.71218490600586
+    },
+    {
+      "i": 8,
+      "start": 82549429,
+      "kind": "hit",
+      "stratum": "tail",
+      "target_row": 57175256,
+      "center_pos": 82549941,
+      "n_hit_positions": 9,
+      "forward_s": 74.99201226234436
+    },
+    {
+      "i": 9,
+      "start": 46440779,
+      "kind": "hit",
+      "stratum": "tail",
+      "target_row": 28863496,
+      "center_pos": 46441291,
+      "n_hit_positions": 19,
+      "forward_s": 73.43842840194702
+    },
+    {
+      "i": 10,
+      "start": 99641884,
+      "kind": "hit",
+      "stratum": "tail",
+      "target_row": 212459750,
+      "center_pos": 99642396,
+      "n_hit_positions": 13,
+      "forward_s": 73.9427661895752
+    },
+    {
+      "i": 11,
+      "start": 28463282,
+      "kind": "hit",
+      "stratum": "tail",
+      "target_row": 95658209,
+      "center_pos": 28463794,
+      "n_hit_positions": 10,
+      "forward_s": 75.29923057556152
+    },
+    {
+      "i": 12,
+      "start": 6053041,
+      "kind": "hit",
+      "stratum": "tail",
+      "target_row": 171513710,
+      "center_pos": 6053553,
+      "n_hit_positions": 18,
+      "forward_s": 76.65698742866516
+    },
+    {
+      "i": 13,
+      "start": 27136141,
+      "kind": "hit",
+      "stratum": "tail",
+      "target_row": 1853489,
+      "center_pos": 27136653,
+      "n_hit_positions": 13,
+      "forward_s": 79.23383355140686
+    },
+    {
+      "i": 14,
+      "start": 38425635,
+      "kind": "hit",
+      "stratum": "tail",
+      "target_row": 272733694,
+      "center_pos": 38426147,
+      "n_hit_positions": 25,
+      "forward_s": 81.94585752487183
+    },
+    {
+      "i": 15,
+      "start": 57843303,
+      "kind": "hit",
+      "stratum": "tail",
+      "target_row": 2590155,
+      "center_pos": 57843815,
+      "n_hit_positions": 9,
+      "forward_s": 75.12263774871826
+    },
+    {
+      "i": 16,
+      "start": 17526369,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 0,
+      "forward_s": 72.63680171966553
+    },
+    {
+      "i": 17,
+      "start": 26978115,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 16,
+      "forward_s": 77.94111442565918
+    },
+    {
+      "i": 18,
+      "start": 30782308,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 19,
+      "forward_s": 78.36150431632996
+    },
+    {
+      "i": 19,
+      "start": 50361664,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 18,
+      "forward_s": 77.86151218414307
+    },
+    {
+      "i": 20,
+      "start": 51112594,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 15,
+      "forward_s": 77.49022078514099
+    },
+    {
+      "i": 21,
+      "start": 60662333,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 24,
+      "forward_s": 82.89525127410889
+    },
+    {
+      "i": 22,
+      "start": 63694855,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 19,
+      "forward_s": 79.09849977493286
+    },
+    {
+      "i": 23,
+      "start": 64940241,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 20,
+      "forward_s": 77.86226415634155
+    },
+    {
+      "i": 24,
+      "start": 72948162,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 4,
+      "forward_s": 76.90420699119568
+    },
+    {
+      "i": 25,
+      "start": 81325353,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 18,
+      "forward_s": 75.62909388542175
+    },
+    {
+      "i": 26,
+      "start": 85060667,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 5,
+      "forward_s": 73.64230251312256
+    },
+    {
+      "i": 27,
+      "start": 91273684,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 17,
+      "forward_s": 76.83631563186646
+    },
+    {
+      "i": 28,
+      "start": 97072294,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 24,
+      "forward_s": 75.39315819740295
+    },
+    {
+      "i": 29,
+      "start": 35471150,
+      "kind": "hit",
+      "stratum": "top",
+      "target_row": 157885351,
+      "center_pos": 35471662,
+      "n_hit_positions": 13,
+      "forward_s": 77.03082394599915
+    },
+    {
+      "i": 30,
+      "start": 30563737,
+      "kind": "hit",
+      "stratum": "top",
+      "target_row": 82634375,
+      "center_pos": 30564249,
+      "n_hit_positions": 15,
+      "forward_s": 73.76076078414917
+    },
+    {
+      "i": 31,
+      "start": 39863144,
+      "kind": "hit",
+      "stratum": "top",
+      "target_row": 1731449,
+      "center_pos": 39863656,
+      "n_hit_positions": 7,
+      "forward_s": 74.79915022850037
+    },
+    {
+      "i": 32,
+      "start": 47702417,
+      "kind": "hit",
+      "stratum": "top",
+      "target_row": 150421660,
+      "center_pos": 47702929,
+      "n_hit_positions": 14,
+      "forward_s": 74.75853896141052
+    }
+  ],
+  "global": {
+    "n_positions": 26624,
+    "dnll_mean": -0.00034542591978581127,
+    "dnll_median": 0.0,
+    "kl_mean": 0.0033205484559673416,
+    "kl_median": 0.00037183359381742775,
+    "frac_kl_gt_0_01": 0.0757587139423077,
+    "frac_kl_gt_0_1": 0.0025165264423076925,
+    "frac_kl_gt_1": 3.7560096153846156e-05,
+    "worst_20": [
+      {
+        "i": 19,
+        "start": 50361664,
+        "r": 133,
+        "dnll": 2.0646069049835205,
+        "kl": 0.44935840368270874,
+        "context": " suo apparecchio delle pellicole fotografiche. Ma le pellicole di Eastman sono in",
+        "top3_base": [
+          {
+            "token": 2691,
+            "p": 0.5661411881446838
+          },
+          {
+            "token": 182334,
+            "p": 0.10664954036474228
+          },
+          {
+            "token": 187850,
+            "p": 0.053880102932453156
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 2691,
+            "p": 0.8838136792182922
+          },
+          {
+            "token": 5691,
+            "p": 0.02885349653661251
+          },
+          {
+            "token": 182334,
+            "p": 0.013530430383980274
+          }
+        ],
+        "target": 182334
+      },
+      {
+        "i": 19,
+        "start": 50361664,
+        "r": 642,
+        "dnll": -1.8836121559143066,
+        "kl": 0.22499395906925201,
+        "context": " della fortuna) per acquistare il brevetto con i diritti di sfruttamento del Cinématographe.",
+        "top3_base": [
+          {
+            "token": 353,
+            "p": 0.19962356984615326
+          },
+          {
+            "token": 11004,
+            "p": 0.1696615070104599
+          },
+          {
+            "token": 5963,
+            "p": 0.11919032037258148
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 5963,
+            "p": 0.3441246449947357
+          },
+          {
+            "token": 11537,
+            "p": 0.11622487753629684
+          },
+          {
+            "token": 353,
+            "p": 0.10870379209518433
+          }
+        ],
+        "target": 87055
+      },
+      {
+        "i": 25,
+        "start": 81325353,
+        "r": 129,
+        "dnll": 1.619138479232788,
+        "kl": 0.12188735604286194,
+        "context": " resoconto del dottor Kanatjan Alibekov sull'epidemia, nel suo libro",
+        "top3_base": [
+          {
+            "token": 1538,
+            "p": 0.520534336566925
+          },
+          {
+            "token": 328,
+            "p": 0.12362075597047806
+          },
+          {
+            "token": 22790,
+            "p": 0.12288704514503479
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 1538,
+            "p": 0.6181057095527649
+          },
+          {
+            "token": 328,
+            "p": 0.13293877243995667
+          },
+          {
+            "token": 1789,
+            "p": 0.08487892895936966
+          }
+        ],
+        "target": 22790
+      },
+      {
+        "i": 21,
+        "start": 60662333,
+        "r": 1198,
+        "dnll": -1.4817540645599365,
+        "kl": 0.1685473620891571,
+        "context": " Love\n\nVoci correlate \n Silverchair\n\nCollegamenti esterni \n \n\nChitarristi rock",
+        "top3_base": [
+          {
+            "token": 248046,
+            "p": 0.7093458771705627
+          },
+          {
+            "token": 198,
+            "p": 0.17395606637001038
+          },
+          {
+            "token": 237568,
+            "p": 0.057975102216005325
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 248046,
+            "p": 0.48589468002319336
+          },
+          {
+            "token": 237568,
+            "p": 0.2551285922527313
+          },
+          {
+            "token": 198,
+            "p": 0.16453216969966888
+          }
+        ],
+        "target": 237568
+      },
+      {
+        "i": 19,
+        "start": 50361664,
+        "r": 416,
+        "dnll": 1.4165244102478027,
+        "kl": 0.08244075626134872,
+        "context": " affidate attraverso un unico piano sequenza. Eccezionalmente, si fermano ai primi sc",
+        "top3_base": [
+          {
+            "token": 29939,
+            "p": 0.6892683506011963
+          },
+          {
+            "token": 65263,
+            "p": 0.1988230049610138
+          },
+          {
+            "token": 14820,
+            "p": 0.022831209003925323
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 29939,
+            "p": 0.5391795635223389
+          },
+          {
+            "token": 65263,
+            "p": 0.36649125814437866
+          },
+          {
+            "token": 14820,
+            "p": 0.022051531821489334
+          }
+        ],
+        "target": 2147
+      },
+      {
+        "i": 25,
+        "start": 81325353,
+        "r": 1427,
+        "dnll": 1.2473440170288086,
+        "kl": 0.06939143687486649,
+        "context": " geografo Philip Johan von Strahlenberg.\n\nSulla facciata della stazione ferroviaria un",
+        "top3_base": [
+          {
+            "token": 7171,
+            "p": 0.38235682249069214
+          },
+          {
+            "token": 6,
+            "p": 0.19175788760185242
+          },
+          {
+            "token": 23828,
+            "p": 0.06443466246128082
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 7171,
+            "p": 0.43329715728759766
+          },
+          {
+            "token": 6,
+            "p": 0.17485028505325317
+          },
+          {
+            "token": 23828,
+            "p": 0.09429119527339935
+          }
+        ],
+        "target": 20869
+      },
+      {
+        "i": 25,
+        "start": 81325353,
+        "r": 407,
+        "dnll": 1.2453093528747559,
+        "kl": 0.03342163562774658,
+        "context": " est da montagne, è soggetta a continui e repentini mutamenti climatici.\n\n",
+        "top3_base": [
+          {
+            "token": 60613,
+            "p": 0.5146426558494568
+          },
+          {
+            "token": 608,
+            "p": 0.14278045296669006
+          },
+          {
+            "token": 10772,
+            "p": 0.08007370680570602
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 60613,
+            "p": 0.6084681153297424
+          },
+          {
+            "token": 608,
+            "p": 0.13746850192546844
+          },
+          {
+            "token": 10772,
+            "p": 0.0566738098859787
+          }
+        ],
+        "target": 221955
+      },
+      {
+        "i": 23,
+        "start": 64940241,
+        "r": 1375,
+        "dnll": -1.2293987274169922,
+        "kl": 0.13582465052604675,
+        "context": " qualità base di caldo, freddo, secco e umido. Jâbir ipotizzò che,",
+        "top3_base": [
+          {
+            "token": 2445,
+            "p": 0.3554263114929199
+          },
+          {
+            "token": 34142,
+            "p": 0.09352906793355942
+          },
+          {
+            "token": 22672,
+            "p": 0.05708583816885948
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 2445,
+            "p": 0.33252859115600586
+          },
+          {
+            "token": 50875,
+            "p": 0.05074695870280266
+          },
+          {
+            "token": 66340,
+            "p": 0.04481056332588196
+          }
+        ],
+        "target": 50875
+      },
+      {
+        "i": 25,
+        "start": 81325353,
+        "r": 909,
+        "dnll": 1.2171506881713867,
+        "kl": 0.0396992489695549,
+        "context": " possiede numerose istituzioni di istruzione superiore, tra cui l'Università di stato degli Urali",
+        "top3_base": [
+          {
+            "token": 11,
+            "p": 0.3929833173751831
+          },
+          {
+            "token": 13,
+            "p": 0.30382344126701355
+          },
+          {
+            "token": 318,
+            "p": 0.11318869143724442
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 11,
+            "p": 0.37373560667037964
+          },
+          {
+            "token": 13,
+            "p": 0.26617780327796936
+          },
+          {
+            "token": 318,
+            "p": 0.10857216268777847
+          }
+        ],
+        "target": 357
+      },
+      {
+        "i": 27,
+        "start": 91273684,
+        "r": 1157,
+        "dnll": 1.134169578552246,
+        "kl": 0.02070937305688858,
+        "context": " concentrazione raggiunta dagli alcaloidi e per la sostanziale incapacità da parte del paziente di",
+        "top3_base": [
+          {
+            "token": 213567,
+            "p": 0.3363358676433563
+          },
+          {
+            "token": 229596,
+            "p": 0.16632501780986786
+          },
+          {
+            "token": 4510,
+            "p": 0.09648331999778748
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 213567,
+            "p": 0.35437294840812683
+          },
+          {
+            "token": 229596,
+            "p": 0.16770248115062714
+          },
+          {
+            "token": 4510,
+            "p": 0.0915224477648735
+          }
+        ],
+        "target": 479
+      },
+      {
+        "i": 28,
+        "start": 97072294,
+        "r": 760,
+        "dnll": -1.107717514038086,
+        "kl": 0.006242457777261734,
+        "context": ", diffondendo così questa antica manifestazione carovignese.\n\nLo sbandieratore oggi",
+        "top3_base": [
+          {
+            "token": 271,
+            "p": 0.7237682342529297
+          },
+          {
+            "token": 11094,
+            "p": 0.030393211171030998
+          },
+          {
+            "token": 25,
+            "p": 0.019056279212236404
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 271,
+            "p": 0.7298010587692261
+          },
+          {
+            "token": 11094,
+            "p": 0.026397066190838814
+          },
+          {
+            "token": 378,
+            "p": 0.017060790210962296
+          }
+        ],
+        "target": 695
+      },
+      {
+        "i": 23,
+        "start": 64940241,
+        "r": 1586,
+        "dnll": -1.0837821960449219,
+        "kl": 0.0007180696702562273,
+        "context": "roè, tradusse lAlmagesto, e forse alcune opere di Razes e Geber",
+        "top3_base": [
+          {
+            "token": 13,
+            "p": 0.7844476699829102
+          },
+          {
+            "token": 11,
+            "p": 0.12472754716873169
+          },
+          {
+            "token": 318,
+            "p": 0.02920539118349552
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 13,
+            "p": 0.7863858342170715
+          },
+          {
+            "token": 11,
+            "p": 0.12246491014957428
+          },
+          {
+            "token": 318,
+            "p": 0.03077618032693863
+          }
+        ],
+        "target": 350
+      },
+      {
+        "i": 19,
+        "start": 50361664,
+        "r": 1588,
+        "dnll": -1.071195125579834,
+        "kl": 0.060825005173683167,
+        "context": "azione con una sola inquadratura e un solo piano sequenza, George Albert Smith descrive una",
+        "top3_base": [
+          {
+            "token": 95470,
+            "p": 0.5068023204803467
+          },
+          {
+            "token": 181735,
+            "p": 0.1475682258605957
+          },
+          {
+            "token": 194388,
+            "p": 0.09652837365865707
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 95470,
+            "p": 0.4015292227268219
+          },
+          {
+            "token": 181735,
+            "p": 0.18903027474880219
+          },
+          {
+            "token": 194388,
+            "p": 0.09780337661504745
+          }
+        ],
+        "target": 224692
+      },
+      {
+        "i": 17,
+        "start": 26978115,
+        "r": 1213,
+        "dnll": 1.031296968460083,
+        "kl": 0.2021513134241104,
+        "context": " l'esistenza di diversi villaggi: Bidda Atzei (o Zei), G",
+        "top3_base": [
+          {
+            "token": 14517,
+            "p": 0.5442135334014893
+          },
+          {
+            "token": 25536,
+            "p": 0.3906939923763275
+          },
+          {
+            "token": 2580,
+            "p": 0.012392224743962288
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 14517,
+            "p": 0.7929495573043823
+          },
+          {
+            "token": 25536,
+            "p": 0.1392996907234192
+          },
+          {
+            "token": 2580,
+            "p": 0.012512510642409325
+          }
+        ],
+        "target": 25536
+      },
+      {
+        "i": 19,
+        "start": 50361664,
+        "r": 671,
+        "dnll": 1.0252494812011719,
+        "kl": 0.019140571355819702,
+        "context": "endogli: «Giovanotto, io non vi voglio rovinare, questo apparecchio ha",
+        "top3_base": [
+          {
+            "token": 632,
+            "p": 0.4120071530342102
+          },
+          {
+            "token": 184402,
+            "p": 0.20793761312961578
+          },
+          {
+            "token": 13138,
+            "p": 0.08054351806640625
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 632,
+            "p": 0.41699060797691345
+          },
+          {
+            "token": 184402,
+            "p": 0.2137821912765503
+          },
+          {
+            "token": 13138,
+            "p": 0.08719277381896973
+          }
+        ],
+        "target": 90697
+      },
+      {
+        "i": 22,
+        "start": 63694855,
+        "r": 843,
+        "dnll": -0.9784436225891113,
+        "kl": 0.07643307745456696,
+        "context": "monima viene scelta da Pippo Baudo come sigla del suo programma della domenica; registra La",
+        "top3_base": [
+          {
+            "token": 178628,
+            "p": 0.21497216820716858
+          },
+          {
+            "token": 33491,
+            "p": 0.18321570754051208
+          },
+          {
+            "token": 179400,
+            "p": 0.022976398468017578
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 178628,
+            "p": 0.15456822514533997
+          },
+          {
+            "token": 33491,
+            "p": 0.1459778994321823
+          },
+          {
+            "token": 280,
+            "p": 0.03263683617115021
+          }
+        ],
+        "target": 183896
+      },
+      {
+        "i": 28,
+        "start": 97072294,
+        "r": 1541,
+        "dnll": -0.9670562744140625,
+        "kl": 0.03971782326698303,
+        "context": " lago viene portata dai tre più importanti immissari:\n\n Svir' dal lago Onega (",
+        "top3_base": [
+          {
+            "token": 64,
+            "p": 0.16304849088191986
+          },
+          {
+            "token": 54003,
+            "p": 0.07149781286716461
+          },
+          {
+            "token": 20,
+            "p": 0.05886664241552353
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 64,
+            "p": 0.21453598141670227
+          },
+          {
+            "token": 54003,
+            "p": 0.0681341215968132
+          },
+          {
+            "token": 20,
+            "p": 0.04536530002951622
+          }
+        ],
+        "target": 241521
+      },
+      {
+        "i": 23,
+        "start": 64940241,
+        "r": 770,
+        "dnll": -0.9642441272735596,
+        "kl": 0.04359344393014908,
+        "context": "'oro, perché probabilmente egli riteneva che l'oro agisse come un seme che,",
+        "top3_base": [
+          {
+            "token": 4931,
+            "p": 0.06436271220445633
+          },
+          {
+            "token": 791,
+            "p": 0.062276020646095276
+          },
+          {
+            "token": 303,
+            "p": 0.04761689901351929
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 4931,
+            "p": 0.06625299155712128
+          },
+          {
+            "token": 791,
+            "p": 0.061597004532814026
+          },
+          {
+            "token": 500,
+            "p": 0.04835085570812225
+          }
+        ],
+        "target": 36115
+      },
+      {
+        "i": 17,
+        "start": 26978115,
+        "r": 448,
+        "dnll": -0.9642124176025391,
+        "kl": 0.14224663376808167,
+        "context": " del Sud Sardegna.\n\nGeografia fisica\n\nTerritorio\nIl suo territorio si estende in prop",
+        "top3_base": [
+          {
+            "token": 15257,
+            "p": 0.3868480622768402
+          },
+          {
+            "token": 201992,
+            "p": 0.28791624307632446
+          },
+          {
+            "token": 59949,
+            "p": 0.13149772584438324
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 15257,
+            "p": 0.5639033317565918
+          },
+          {
+            "token": 201992,
+            "p": 0.1258922666311264
+          },
+          {
+            "token": 59949,
+            "p": 0.07486020773649216
+          }
+        ],
+        "target": 65051
+      },
+      {
+        "i": 19,
+        "start": 50361664,
+        "r": 952,
+        "dnll": 0.9173660278320312,
+        "kl": 0.34420502185821533,
+        "context": " che vende materiale e forniture per la fotografia, che ha portato la pellicola fotografica al",
+        "top3_base": [
+          {
+            "token": 90252,
+            "p": 0.08535871654748917
+          },
+          {
+            "token": 174483,
+            "p": 0.07118859142065048
+          },
+          {
+            "token": 53011,
+            "p": 0.06631552428007126
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 9998,
+            "p": 0.1237361952662468
+          },
+          {
+            "token": 177512,
+            "p": 0.12267730385065079
+          },
+          {
+            "token": 174483,
+            "p": 0.058181505650281906
+          }
+        ],
+        "target": 53011
+      }
+    ]
+  },
+  "hits": {
+    "by_stratum": {
+      "top": {
+        "n": 12,
+        "dnll_at_hit_mean": -0.010058986643950144,
+        "kl_at_hit_mean": 0.006271172026269293,
+        "dnll_p1_8_mean": 0.014060786343179643,
+        "kl_p1_8_mean": 0.005010840235627256,
+        "dnll_p9_64_mean": 0.00042604055973545957,
+        "kl_p9_64_mean": 0.005964454971641923
+      },
+      "coda": {
+        "n": 8,
+        "dnll_at_hit_mean": -0.011723797768354416,
+        "kl_at_hit_mean": 0.00442107785056578,
+        "dnll_p1_8_mean": -0.019865121808834374,
+        "kl_p1_8_mean": 0.003281449571659323,
+        "dnll_p9_64_mean": 0.0011244768247706816,
+        "kl_p9_64_mean": 0.003896276422892697
+      }
+    },
+    "per_target_row": [
+      {
+        "i": 0,
+        "start": 69631932,
+        "stratum": "top",
+        "target_row": 45215359,
+        "target_dnorm": 0.1570463925600052,
+        "target_cos": 0.4090135991573334,
+        "target_read_count": 88504,
+        "r": 513,
+        "dnll": -0.02502131462097168,
+        "kl": 0.0025981618091464043,
+        "dnll_p1_8": 0.139412522315979,
+        "kl_p1_8": 0.009232645854353905,
+        "dnll_p9_64": 0.024685189127922058,
+        "kl_p9_64": 0.00535739678889513
+      },
+      {
+        "i": 1,
+        "start": 36728545,
+        "stratum": "top",
+        "target_row": 65841408,
+        "target_dnorm": 0.15683181583881378,
+        "target_cos": 0.3090229630470276,
+        "target_read_count": 87110,
+        "r": 513,
+        "dnll": 0.0040740966796875,
+        "kl": 8.862727554515004e-06,
+        "dnll_p1_8": 0.0020768940448760986,
+        "kl_p1_8": 0.00154008693061769,
+        "dnll_p9_64": -0.03264536336064339,
+        "kl_p9_64": 0.0028158894274383783
+      },
+      {
+        "i": 2,
+        "start": 87173446,
+        "stratum": "top",
+        "target_row": 27902507,
+        "target_dnorm": 0.15416094660758972,
+        "target_cos": 0.4112929701805115,
+        "target_read_count": 88503,
+        "r": 513,
+        "dnll": -0.07178807258605957,
+        "kl": 0.011592227034270763,
+        "dnll_p1_8": -0.01596599444746971,
+        "kl_p1_8": 0.0034757275134325027,
+        "dnll_p9_64": -0.011830457486212254,
+        "kl_p9_64": 0.0018813653150573373
+      },
+      {
+        "i": 3,
+        "start": 12121358,
+        "stratum": "top",
+        "target_row": 53596120,
+        "target_dnorm": 0.15399838984012604,
+        "target_cos": 0.3507526218891144,
+        "target_read_count": 87110,
+        "r": 513,
+        "dnll": -0.030412346124649048,
+        "kl": 0.005651802755892277,
+        "dnll_p1_8": -0.023978468030691147,
+        "kl_p1_8": 0.003627149621024728,
+        "dnll_p9_64": 0.04533451423048973,
+        "kl_p9_64": 0.039669301360845566
+      },
+      {
+        "i": 4,
+        "start": 56661967,
+        "stratum": "top",
+        "target_row": 120259304,
+        "target_dnorm": 0.14709143340587616,
+        "target_cos": 0.36526644229888916,
+        "target_read_count": 88503,
+        "r": 513,
+        "dnll": 0.009864211082458496,
+        "kl": 0.0002803819952532649,
+        "dnll_p1_8": 0.03231245279312134,
+        "kl_p1_8": 0.0024672835133969784,
+        "dnll_p9_64": -0.002554971259087324,
+        "kl_p9_64": 0.0023539087269455194
+      },
+      {
+        "i": 5,
+        "start": 83999627,
+        "stratum": "top",
+        "target_row": 36294323,
+        "target_dnorm": 0.14829494059085846,
+        "target_cos": 0.36992213129997253,
+        "target_read_count": 87110,
+        "r": 513,
+        "dnll": -0.10582399368286133,
+        "kl": 0.02435913309454918,
+        "dnll_p1_8": -0.0025141597725450993,
+        "kl_p1_8": 0.0009048653300851583,
+        "dnll_p9_64": -0.0006753387278877199,
+        "kl_p9_64": 0.0027077975682914257
+      },
+      {
+        "i": 6,
+        "start": 71742466,
+        "stratum": "top",
+        "target_row": 117674008,
+        "target_dnorm": 0.14628690481185913,
+        "target_cos": 0.41928228735923767,
+        "target_read_count": 88503,
+        "r": 513,
+        "dnll": -0.20348072052001953,
+        "kl": 0.009100343100726604,
+        "dnll_p1_8": 0.03504544124007225,
+        "kl_p1_8": 0.005463487468659878,
+        "dnll_p9_64": -0.015928974375128746,
+        "kl_p9_64": 0.004277350381016731
+      },
+      {
+        "i": 7,
+        "start": 50811511,
+        "stratum": "top",
+        "target_row": 90644285,
+        "target_dnorm": 0.14810673892498016,
+        "target_cos": 0.21938709914684296,
+        "target_read_count": 87110,
+        "r": 513,
+        "dnll": 0.18702077865600586,
+        "kl": 0.01750333607196808,
+        "dnll_p1_8": 0.1645841896533966,
+        "kl_p1_8": 0.024205978959798813,
+        "dnll_p9_64": -0.014475809410214424,
+        "kl_p9_64": 0.0028870180249214172
+      },
+      {
+        "i": 8,
+        "start": 82549429,
+        "stratum": "tail",
+        "target_row": 57175256,
+        "target_dnorm": 0.06397613883018494,
+        "target_cos": 0.7782313227653503,
+        "target_read_count": 105,
+        "r": 513,
+        "dnll": 0.09099674224853516,
+        "kl": 0.011988095007836819,
+        "dnll_p1_8": -0.03450583294034004,
+        "kl_p1_8": 0.0032029245048761368,
+        "dnll_p9_64": 0.005156420636922121,
+        "kl_p9_64": 0.0023962226696312428
+      },
+      {
+        "i": 9,
+        "start": 46440779,
+        "stratum": "tail",
+        "target_row": 28863496,
+        "target_dnorm": 0.07789549231529236,
+        "target_cos": 0.7956735491752625,
+        "target_read_count": 2,
+        "r": 513,
+        "dnll": -0.023376837372779846,
+        "kl": 0.004971101880073547,
+        "dnll_p1_8": 0.03710639476776123,
+        "kl_p1_8": 0.0007227768655866385,
+        "dnll_p9_64": -0.009397326037287712,
+        "kl_p9_64": 0.0026757267769426107
+      },
+      {
+        "i": 10,
+        "start": 99641884,
+        "stratum": "tail",
+        "target_row": 212459750,
+        "target_dnorm": 0.040151968598365784,
+        "target_cos": 0.9095026850700378,
+        "target_read_count": 3,
+        "r": 513,
+        "dnll": 0.048238515853881836,
+        "kl": 0.0009406134486198425,
+        "dnll_p1_8": 0.008473134599626064,
+        "kl_p1_8": 0.0005468883900903165,
+        "dnll_p9_64": 0.0011884168488904834,
+        "kl_p9_64": 0.004214776214212179
+      },
+      {
+        "i": 11,
+        "start": 28463282,
+        "stratum": "tail",
+        "target_row": 95658209,
+        "target_dnorm": 0.052479345351457596,
+        "target_cos": 0.8574517369270325,
+        "target_read_count": 12,
+        "r": 513,
+        "dnll": -0.11971616744995117,
+        "kl": 0.0019084475934505463,
+        "dnll_p1_8": 1.9673258066177368e-05,
+        "kl_p1_8": 0.001863526413217187,
+        "dnll_p9_64": -0.004174893721938133,
+        "kl_p9_64": 0.0022786573972553015
+      },
+      {
+        "i": 12,
+        "start": 6053041,
+        "stratum": "tail",
+        "target_row": 171513710,
+        "target_dnorm": 0.061212457716464996,
+        "target_cos": 0.8570645451545715,
+        "target_read_count": 7,
+        "r": 513,
+        "dnll": -0.0030976533889770508,
+        "kl": 0.0007782099419273436,
+        "dnll_p1_8": 0.008586693555116653,
+        "kl_p1_8": 0.0012750399764627218,
+        "dnll_p9_64": 0.01181707251816988,
+        "kl_p9_64": 0.0015844068257138133
+      },
+      {
+        "i": 13,
+        "start": 27136141,
+        "stratum": "tail",
+        "target_row": 1853489,
+        "target_dnorm": 0.0770697295665741,
+        "target_cos": 0.7351647615432739,
+        "target_read_count": 236,
+        "r": 513,
+        "dnll": -0.026829004287719727,
+        "kl": 0.007963634096086025,
+        "dnll_p1_8": -0.11535198241472244,
+        "kl_p1_8": 0.006773274391889572,
+        "dnll_p9_64": 0.007494226098060608,
+        "kl_p9_64": 0.0027430106420069933
+      },
+      {
+        "i": 14,
+        "start": 38425635,
+        "stratum": "tail",
+        "target_row": 272733694,
+        "target_dnorm": 0.0662790983915329,
+        "target_cos": 0.7576375603675842,
+        "target_read_count": 4,
+        "r": 513,
+        "dnll": -0.0027128010988235474,
+        "kl": 0.001179979182779789,
+        "dnll_p1_8": -0.010762494057416916,
+        "kl_p1_8": 0.003654113505035639,
+        "dnll_p9_64": -0.011939065530896187,
+        "kl_p9_64": 0.009208755567669868
+      },
+      {
+        "i": 15,
+        "start": 57843303,
+        "stratum": "tail",
+        "target_row": 2590155,
+        "target_dnorm": 0.10094788670539856,
+        "target_cos": 0.6384632587432861,
+        "target_read_count": 173,
+        "r": 513,
+        "dnll": -0.05729317665100098,
+        "kl": 0.005638541653752327,
+        "dnll_p1_8": -0.05248656123876572,
+        "kl_p1_8": 0.008213052526116371,
+        "dnll_p9_64": 0.008850963786244392,
+        "kl_p9_64": 0.006068655289709568
+      },
+      {
+        "i": 29,
+        "start": 35471150,
+        "stratum": "top",
+        "target_row": 157885351,
+        "target_dnorm": 0.1469602733850479,
+        "target_cos": 0.24666161835193634,
+        "target_read_count": 87110,
+        "r": 513,
+        "dnll": 0.042140960693359375,
+        "kl": 0.0006768526509404182,
+        "dnll_p1_8": -0.017644444480538368,
+        "kl_p1_8": 0.001175961922854185,
+        "dnll_p9_64": -0.003179095685482025,
+        "kl_p9_64": 0.0038217436522245407
+      },
+      {
+        "i": 30,
+        "start": 30563737,
+        "stratum": "top",
+        "target_row": 82634375,
+        "target_dnorm": 0.14280323684215546,
+        "target_cos": 0.41112756729125977,
+        "target_read_count": 88503,
+        "r": 513,
+        "dnll": 0.0226132869720459,
+        "kl": 0.0013643503189086914,
+        "dnll_p1_8": -0.10823898762464523,
+        "kl_p1_8": 0.00561407208442688,
+        "dnll_p9_64": 0.008104952052235603,
+        "kl_p9_64": 0.0013082250952720642
+      },
+      {
+        "i": 31,
+        "start": 39863144,
+        "stratum": "top",
+        "target_row": 1731449,
+        "target_dnorm": 0.14500579237937927,
+        "target_cos": 0.4488164782524109,
+        "target_read_count": 87110,
+        "r": 513,
+        "dnll": 0.0543399453163147,
+        "kl": 0.001831832225434482,
+        "dnll_p1_8": -0.00803688820451498,
+        "kl_p1_8": 0.0009527026559226215,
+        "dnll_p9_64": 0.004977672826498747,
+        "kl_p9_64": 0.0021723962854593992
+      },
+      {
+        "i": 32,
+        "start": 47702417,
+        "stratum": "top",
+        "target_row": 150421660,
+        "target_dnorm": 0.1412918120622635,
+        "target_cos": 0.4038398861885071,
+        "target_read_count": 88503,
+        "r": 513,
+        "dnll": -0.004234671592712402,
+        "kl": 0.0002867805305868387,
+        "dnll_p1_8": -0.02832312136888504,
+        "kl_p1_8": 0.0014701209729537368,
+        "dnll_p9_64": 0.0033001687843352556,
+        "kl_p9_64": 0.0023210670333355665
+      }
+    ],
+    "worst_20": [
+      {
+        "i": 6,
+        "start": 71742466,
+        "stratum": "top",
+        "target_row": 117674008,
+        "target_dnorm": 0.14628690481185913,
+        "target_cos": 0.41928228735923767,
+        "target_read_count": 88503,
+        "r": 513,
+        "dnll": -0.20348072052001953,
+        "kl": 0.009100343100726604,
+        "dnll_p1_8": 0.03504544124007225,
+        "kl_p1_8": 0.005463487468659878,
+        "dnll_p9_64": -0.015928974375128746,
+        "kl_p9_64": 0.004277350381016731
+      },
+      {
+        "i": 7,
+        "start": 50811511,
+        "stratum": "top",
+        "target_row": 90644285,
+        "target_dnorm": 0.14810673892498016,
+        "target_cos": 0.21938709914684296,
+        "target_read_count": 87110,
+        "r": 513,
+        "dnll": 0.18702077865600586,
+        "kl": 0.01750333607196808,
+        "dnll_p1_8": 0.1645841896533966,
+        "kl_p1_8": 0.024205978959798813,
+        "dnll_p9_64": -0.014475809410214424,
+        "kl_p9_64": 0.0028870180249214172
+      },
+      {
+        "i": 11,
+        "start": 28463282,
+        "stratum": "tail",
+        "target_row": 95658209,
+        "target_dnorm": 0.052479345351457596,
+        "target_cos": 0.8574517369270325,
+        "target_read_count": 12,
+        "r": 513,
+        "dnll": -0.11971616744995117,
+        "kl": 0.0019084475934505463,
+        "dnll_p1_8": 1.9673258066177368e-05,
+        "kl_p1_8": 0.001863526413217187,
+        "dnll_p9_64": -0.004174893721938133,
+        "kl_p9_64": 0.0022786573972553015
+      },
+      {
+        "i": 5,
+        "start": 83999627,
+        "stratum": "top",
+        "target_row": 36294323,
+        "target_dnorm": 0.14829494059085846,
+        "target_cos": 0.36992213129997253,
+        "target_read_count": 87110,
+        "r": 513,
+        "dnll": -0.10582399368286133,
+        "kl": 0.02435913309454918,
+        "dnll_p1_8": -0.0025141597725450993,
+        "kl_p1_8": 0.0009048653300851583,
+        "dnll_p9_64": -0.0006753387278877199,
+        "kl_p9_64": 0.0027077975682914257
+      },
+      {
+        "i": 8,
+        "start": 82549429,
+        "stratum": "tail",
+        "target_row": 57175256,
+        "target_dnorm": 0.06397613883018494,
+        "target_cos": 0.7782313227653503,
+        "target_read_count": 105,
+        "r": 513,
+        "dnll": 0.09099674224853516,
+        "kl": 0.011988095007836819,
+        "dnll_p1_8": -0.03450583294034004,
+        "kl_p1_8": 0.0032029245048761368,
+        "dnll_p9_64": 0.005156420636922121,
+        "kl_p9_64": 0.0023962226696312428
+      },
+      {
+        "i": 2,
+        "start": 87173446,
+        "stratum": "top",
+        "target_row": 27902507,
+        "target_dnorm": 0.15416094660758972,
+        "target_cos": 0.4112929701805115,
+        "target_read_count": 88503,
+        "r": 513,
+        "dnll": -0.07178807258605957,
+        "kl": 0.011592227034270763,
+        "dnll_p1_8": -0.01596599444746971,
+        "kl_p1_8": 0.0034757275134325027,
+        "dnll_p9_64": -0.011830457486212254,
+        "kl_p9_64": 0.0018813653150573373
+      },
+      {
+        "i": 15,
+        "start": 57843303,
+        "stratum": "tail",
+        "target_row": 2590155,
+        "target_dnorm": 0.10094788670539856,
+        "target_cos": 0.6384632587432861,
+        "target_read_count": 173,
+        "r": 513,
+        "dnll": -0.05729317665100098,
+        "kl": 0.005638541653752327,
+        "dnll_p1_8": -0.05248656123876572,
+        "kl_p1_8": 0.008213052526116371,
+        "dnll_p9_64": 0.008850963786244392,
+        "kl_p9_64": 0.006068655289709568
+      },
+      {
+        "i": 31,
+        "start": 39863144,
+        "stratum": "top",
+        "target_row": 1731449,
+        "target_dnorm": 0.14500579237937927,
+        "target_cos": 0.4488164782524109,
+        "target_read_count": 87110,
+        "r": 513,
+        "dnll": 0.0543399453163147,
+        "kl": 0.001831832225434482,
+        "dnll_p1_8": -0.00803688820451498,
+        "kl_p1_8": 0.0009527026559226215,
+        "dnll_p9_64": 0.004977672826498747,
+        "kl_p9_64": 0.0021723962854593992
+      },
+      {
+        "i": 10,
+        "start": 99641884,
+        "stratum": "tail",
+        "target_row": 212459750,
+        "target_dnorm": 0.040151968598365784,
+        "target_cos": 0.9095026850700378,
+        "target_read_count": 3,
+        "r": 513,
+        "dnll": 0.048238515853881836,
+        "kl": 0.0009406134486198425,
+        "dnll_p1_8": 0.008473134599626064,
+        "kl_p1_8": 0.0005468883900903165,
+        "dnll_p9_64": 0.0011884168488904834,
+        "kl_p9_64": 0.004214776214212179
+      },
+      {
+        "i": 29,
+        "start": 35471150,
+        "stratum": "top",
+        "target_row": 157885351,
+        "target_dnorm": 0.1469602733850479,
+        "target_cos": 0.24666161835193634,
+        "target_read_count": 87110,
+        "r": 513,
+        "dnll": 0.042140960693359375,
+        "kl": 0.0006768526509404182,
+        "dnll_p1_8": -0.017644444480538368,
+        "kl_p1_8": 0.001175961922854185,
+        "dnll_p9_64": -0.003179095685482025,
+        "kl_p9_64": 0.0038217436522245407
+      },
+      {
+        "i": 3,
+        "start": 12121358,
+        "stratum": "top",
+        "target_row": 53596120,
+        "target_dnorm": 0.15399838984012604,
+        "target_cos": 0.3507526218891144,
+        "target_read_count": 87110,
+        "r": 513,
+        "dnll": -0.030412346124649048,
+        "kl": 0.005651802755892277,
+        "dnll_p1_8": -0.023978468030691147,
+        "kl_p1_8": 0.003627149621024728,
+        "dnll_p9_64": 0.04533451423048973,
+        "kl_p9_64": 0.039669301360845566
+      },
+      {
+        "i": 13,
+        "start": 27136141,
+        "stratum": "tail",
+        "target_row": 1853489,
+        "target_dnorm": 0.0770697295665741,
+        "target_cos": 0.7351647615432739,
+        "target_read_count": 236,
+        "r": 513,
+        "dnll": -0.026829004287719727,
+        "kl": 0.007963634096086025,
+        "dnll_p1_8": -0.11535198241472244,
+        "kl_p1_8": 0.006773274391889572,
+        "dnll_p9_64": 0.007494226098060608,
+        "kl_p9_64": 0.0027430106420069933
+      },
+      {
+        "i": 0,
+        "start": 69631932,
+        "stratum": "top",
+        "target_row": 45215359,
+        "target_dnorm": 0.1570463925600052,
+        "target_cos": 0.4090135991573334,
+        "target_read_count": 88504,
+        "r": 513,
+        "dnll": -0.02502131462097168,
+        "kl": 0.0025981618091464043,
+        "dnll_p1_8": 0.139412522315979,
+        "kl_p1_8": 0.009232645854353905,
+        "dnll_p9_64": 0.024685189127922058,
+        "kl_p9_64": 0.00535739678889513
+      },
+      {
+        "i": 9,
+        "start": 46440779,
+        "stratum": "tail",
+        "target_row": 28863496,
+        "target_dnorm": 0.07789549231529236,
+        "target_cos": 0.7956735491752625,
+        "target_read_count": 2,
+        "r": 513,
+        "dnll": -0.023376837372779846,
+        "kl": 0.004971101880073547,
+        "dnll_p1_8": 0.03710639476776123,
+        "kl_p1_8": 0.0007227768655866385,
+        "dnll_p9_64": -0.009397326037287712,
+        "kl_p9_64": 0.0026757267769426107
+      },
+      {
+        "i": 30,
+        "start": 30563737,
+        "stratum": "top",
+        "target_row": 82634375,
+        "target_dnorm": 0.14280323684215546,
+        "target_cos": 0.41112756729125977,
+        "target_read_count": 88503,
+        "r": 513,
+        "dnll": 0.0226132869720459,
+        "kl": 0.0013643503189086914,
+        "dnll_p1_8": -0.10823898762464523,
+        "kl_p1_8": 0.00561407208442688,
+        "dnll_p9_64": 0.008104952052235603,
+        "kl_p9_64": 0.0013082250952720642
+      },
+      {
+        "i": 4,
+        "start": 56661967,
+        "stratum": "top",
+        "target_row": 120259304,
+        "target_dnorm": 0.14709143340587616,
+        "target_cos": 0.36526644229888916,
+        "target_read_count": 88503,
+        "r": 513,
+        "dnll": 0.009864211082458496,
+        "kl": 0.0002803819952532649,
+        "dnll_p1_8": 0.03231245279312134,
+        "kl_p1_8": 0.0024672835133969784,
+        "dnll_p9_64": -0.002554971259087324,
+        "kl_p9_64": 0.0023539087269455194
+      },
+      {
+        "i": 32,
+        "start": 47702417,
+        "stratum": "top",
+        "target_row": 150421660,
+        "target_dnorm": 0.1412918120622635,
+        "target_cos": 0.4038398861885071,
+        "target_read_count": 88503,
+        "r": 513,
+        "dnll": -0.004234671592712402,
+        "kl": 0.0002867805305868387,
+        "dnll_p1_8": -0.02832312136888504,
+        "kl_p1_8": 0.0014701209729537368,
+        "dnll_p9_64": 0.0033001687843352556,
+        "kl_p9_64": 0.0023210670333355665
+      },
+      {
+        "i": 1,
+        "start": 36728545,
+        "stratum": "top",
+        "target_row": 65841408,
+        "target_dnorm": 0.15683181583881378,
+        "target_cos": 0.3090229630470276,
+        "target_read_count": 87110,
+        "r": 513,
+        "dnll": 0.0040740966796875,
+        "kl": 8.862727554515004e-06,
+        "dnll_p1_8": 0.0020768940448760986,
+        "kl_p1_8": 0.00154008693061769,
+        "dnll_p9_64": -0.03264536336064339,
+        "kl_p9_64": 0.0028158894274383783
+      },
+      {
+        "i": 12,
+        "start": 6053041,
+        "stratum": "tail",
+        "target_row": 171513710,
+        "target_dnorm": 0.061212457716464996,
+        "target_cos": 0.8570645451545715,
+        "target_read_count": 7,
+        "r": 513,
+        "dnll": -0.0030976533889770508,
+        "kl": 0.0007782099419273436,
+        "dnll_p1_8": 0.008586693555116653,
+        "kl_p1_8": 0.0012750399764627218,
+        "dnll_p9_64": 0.01181707251816988,
+        "kl_p9_64": 0.0015844068257138133
+      },
+      {
+        "i": 14,
+        "start": 38425635,
+        "stratum": "tail",
+        "target_row": 272733694,
+        "target_dnorm": 0.0662790983915329,
+        "target_cos": 0.7576375603675842,
+        "target_read_count": 4,
+        "r": 513,
+        "dnll": -0.0027128010988235474,
+        "kl": 0.001179979182779789,
+        "dnll_p1_8": -0.010762494057416916,
+        "kl_p1_8": 0.003654113505035639,
+        "dnll_p9_64": -0.011939065530896187,
+        "kl_p9_64": 0.009208755567669868
+      }
+    ]
+  },
+  "controls": {
+    "n_controls": 164,
+    "n_upstream": 43,
+    "n_downstream": 121,
+    "n_upstream_violations": 27,
+    "upstream_violations_examples": [
+      {
+        "i": 0,
+        "start": 69631932,
+        "r": 79,
+        "kl": 0.01067311316728592,
+        "upstream_of_target": true
+      },
+      {
+        "i": 0,
+        "start": 69631932,
+        "r": 107,
+        "kl": 0.0014519100077450275,
+        "upstream_of_target": true
+      },
+      {
+        "i": 2,
+        "start": 87173446,
+        "r": 468,
+        "kl": 0.03544095158576965,
+        "upstream_of_target": true
+      },
+      {
+        "i": 4,
+        "start": 56661967,
+        "r": 329,
+        "kl": 0.016501549631357193,
+        "upstream_of_target": true
+      },
+      {
+        "i": 4,
+        "start": 56661967,
+        "r": 475,
+        "kl": 0.0004752739332616329,
+        "upstream_of_target": true
+      },
+      {
+        "i": 5,
+        "start": 83999627,
+        "r": 401,
+        "kl": 0.003544899635016918,
+        "upstream_of_target": true
+      },
+      {
+        "i": 5,
+        "start": 83999627,
+        "r": 408,
+        "kl": 0.015232771635055542,
+        "upstream_of_target": true
+      },
+      {
+        "i": 6,
+        "start": 71742466,
+        "r": 512,
+        "kl": 0.003405950963497162,
+        "upstream_of_target": true
+      },
+      {
+        "i": 7,
+        "start": 50811511,
+        "r": 280,
+        "kl": 0.004338282160460949,
+        "upstream_of_target": true
+      },
+      {
+        "i": 7,
+        "start": 50811511,
+        "r": 359,
+        "kl": 0.001314846333116293,
+        "upstream_of_target": true
+      }
+    ],
+    "downstream_kl_mean": 0.005786985217242693
+  }
+}

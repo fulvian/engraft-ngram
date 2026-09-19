@@ -1,236 +1,233 @@
-# ENGRAFT: add a fact to an LLM by editing 8 rows per token of its n-gram memory table
+# ENGRAFT: write facts into an LLM's n-gram memory table, without touching its weights
 
-You can add a fact to a 125B-parameter mixture-of-experts model (Qwen3.8-Flash-Next)
-in 7 to 17 minutes of CPU time, without fine-tuning and without a GPU for the edit
-itself, by editing 8 rows per answer token of its n-gram (Engram) lookup table. The
-edit is a small overlay file that the inference engine swaps in at read time; the model
-weights and the GGUF on disk are never touched. In our one full run, 7 of 8 facts came out of the real llama.cpp engine
-at first-token probability 0.85 to 0.96, with zero measurable interference between
-facts and zero drift on two reference texts. The eighth did not take, and we say why.
+Some recent language models carry a large n-gram lookup table next to the transformer.
+DeepSeek calls the design *Engram* (DeepSeek V4.1 Flash has one); Qwen3.8-Flash-Next
+(125B parameters, 6B active) has one with 320 million rows, which llama.cpp calls the PLE
+table. At every position the last two and three tokens are hashed into 16 rows; the rows are
+read and added to the residual stream at an early block. It is a key-value memory keyed by
+exact token n-grams, read before almost all of the model's computation.
 
-ENGRAFT stands for ENgram GRadient Routing-Aware Fact Transplant. Not to be confused
-with ENGRAFT (CCS 2022, Byzantine consensus) or [engraft.dev](https://engraft.dev).
+ENGRAFT writes new facts into that table. Only rows of the table are trained; every weight of
+the model stays as it is. The result is one small `.pleo` overlay that a llama.cpp fork applies
+at read time. The GGUF on disk is never modified, and removing the overlay restores the model
+exactly.
 
-> **How this was built.** The code, the experiments and this write-up were produced in
-> a Claude Code session (Anthropic's Claude, model Fable 5.1) driven by a single human
-> operator who set the goals, approved every design step, ran the hardware and read
-> every result. Design, implementation, adversarial review and independent verification
-> were done by separate model instances; the human made the calls. We say this up front
-> because we think you should know it before reading the numbers. We are not after
-> stars: we want the method checked, broken and improved.
+**Scope.** The method applies to models that carry an Engram-style table. Every measurement in
+this repository was made on **Qwen3.8-Flash-Next** (IQ4_XS). DeepSeek V4.1 Flash is the next
+target. Its table differs in ways that need adapting (MXFP8 rows, a compressed tokenizer, two
+table layers, 4-grams, a value projection), and nothing has been measured on it yet.
 
-![The trigger's last three tokens are hashed into 16 rows of the n-gram table, 8 by
-bigram and 8 by trigram. The 8 trigram rows are optimized by gradient through a frozen
-model until the answer's probability exceeds 0.95 under free expert routing. The result
-is a .pleo overlay swapped in at read time.](docs/img/mechanism.png)
+ENGRAFT stands for ENgram GRadient Routing-Aware Fact Transplant. Not to be confused with
+ENGRAFT (CCS 2022, Byzantine consensus) or [engraft.dev](https://engraft.dev).
 
-## The numbers, with the file behind each one
+> **How this was built.** The code, the experiments and this write-up were produced in Claude
+> Code sessions (Anthropic's Claude) driven by a single human operator. The operator set the
+> goals, approved every design step, ran the hardware and read every result. Design,
+> implementation, adversarial review and independent verification were done by separate model
+> instances; the human made the calls. We say this up front because you should know it before
+> reading the numbers. We are not after stars: we want the method checked, broken and improved.
 
-All figures below come from one end-to-end run of `scripts/reproduce.sh` on the real
-model and engine, kept in git under [`results/2026-09-05/`](results/2026-09-05/)
-(see [`results/README.md`](results/README.md)). Nothing is quoted from a private lab.
+## The headline numbers, with the file behind each one
 
-| What | Result | File |
+**Quail**: 100 facts about an invented world (88 invented outright, 12 following a published short story as remembered), written as seven Italian documents. From
+those, a usage corpus of 3,209 training sentences and 841 held-out test sentences (cell `s0b`,
+seed 0). Every number below is recomputed from the file named next to it, under
+[`data/quail/results/`](data/quail/results/).
+
+| What (metric) | Value | File |
 |---|---|---|
-| Facts whose full answer the quantized engine produces with the fact's own overlay | **7 / 8** | [`report.md`](results/2026-09-05/report.md) §Q1 |
-| First-token probability of the answer, the 7 that took | 0.85 to 0.96 | same |
-| The one that did not take (`it_capitale`, "The capital of France is → Lyon") | p 0.021, rank 9, stopped at the 300-step cap | same, and [`facts/it_capitale/`](results/2026-09-05/facts/it_capitale/) |
-| Same 8 facts under one merged overlay | identical to single overlays, to the last digit | `report.md` §Q2/Q4 |
-| Sister triggers (share the bigram rows, not the trigram rows) | argmax unchanged, Δlogp 0.0 | [`engine_check.json`](results/2026-09-05/engine_check.json) `sisters` |
-| Mean Δ negative log-likelihood on two reference texts (Italian, English) under the merged overlay | 0.0 and 0.0 (the texts never read a grafted row) | `report.md` §corpus |
-| CPU replica vs full-precision engine, free-routing probability of every graft | 17 / 17 within tolerance, max \|Δp\| 3e-5, 0 diverging routing layers | `report.md` §Q5 |
-| Descent steps to close, first answer token | 100 to 297 (`en_planet`, a counterfactual, 297) | [`summary.json`](results/2026-09-05/summary.json) |
-| Wall time per fact, CPU only, including chained answer tokens | 408 to 1019 s | same |
-| Restart from a perturbed starting point (1 % noise), two facts | same stop, final p within 0.02 (0.951 vs 0.951, 0.980 vs 0.973); step counts 142 vs 142 and 148 vs 115, so the run's own test marks en_dog non-concordant on steps | `summary.json` `q6` |
-| Peak RSS of the grafting process | 67 GB | `summary.json` |
+| Exact answer, greedy decoding, real engine, free routing (841 test sentences) | **0.841** | `s0b/engine_results.json` |
+| Same, base model without overlay | **0.005** | same |
+| Answer's first token at rank 1, real engine | 0.860 | same |
+| Exact answer, greedy, real engine, second seed (`s1b`) | 0.873 | `s1b/engine_results.json` |
+| First token at rank 1, torch replica, free routing / pinned routing | 0.862 / 0.741 | `s0b/replica_eval.json` |
+| Base model's own prior, first token at rank 1, pinned routing | 0.102 | same |
+| Collateral damage on neutral text: mean KL to the base model | 0.0131 | `s0b/damage_it_text.json` |
+| Composition probes (one question, two facts): both answers right / at least one | 10 / 83, 30 / 83 | `s0b/probe_results.json` |
 
-Hardware for the run of record: one AMD Ryzen AI MAX+ 395 (16 cores) with 128 GB of
-unified memory; the graft runs on the CPU, the engine check used the integrated GPU
-for a few minutes.
+*Pinned routing* forces the experts that the base model would pick; it is the condition of the
+descent. *Free routing* is the production condition.
 
-![Left: log-probability of the first answer token during the descent for the eight
-facts, seven sigmoid curves reaching the 0.95 stop and one counterfactual staying
-flat. Right: first-token probability on the real engine with the fact's own overlay
-and with the merged overlay of all eight, identical bars.](docs/img/run-2026-09-05.png)
+**Damage, stated plainly.** At 24 facts the damage was at the level of our quantization
+yardstick. That yardstick is the KL of a synthetic overlay that only re-quantizes the same rows,
+0.0033, and the 24-fact overlay measured 0.0035 (seed 0) and 0.0037 (seed 1). At 100 facts on
+Quail it is about 4× that yardstick (0.0131). It is no longer "inside the table's own noise". The
+yardstick itself was only measured at 24 facts.
 
-The figure is plotted from `summary.json`, `engine_check.json` and the per-step
-`descend_*.jsonl` files of the run of record.
+**Capacity** (a separate corpus of short invented facts, first token at rank 1 under pinned
+routing on held-out sentences; [`data/quail/results/capacity-curve/`](data/quail/results/capacity-curve/)):
+
+| Facts | Rank 1 | Damage, mean KL |
+|---|---|---|
+| 24 | 0.804 | 0.0037 (seed 1) |
+| 100 | 0.792 | 0.0059 |
+| 300 | 0.821 | 0.0067 |
+
+No ceiling up to 300 facts, and the damage grows sublinearly (1.1×, 1.8× and 2.0× the 24-fact
+yardstick).
+
+**Cost.** On the integrated GPU of an AMD Ryzen AI MAX+ 395 (128 GB unified memory), the Quail
+cell `s0b` ran 321 steps of 2,048 tokens in 2.4 hours, evaluations included (about 24 s per step
+with the routing pinned, 29 s with it free). A step benchmark on the 24-fact corpus reached
+17.4 s. Both use private fast kernels that are not part of this release (see *What is in this
+release*); the reference path is slower.
+
+## Languages (preliminary)
+
+We are working on other languages, such as English and Chinese, which do not yet have
+definitive results.
+
+We rebuilt the same 100-fact world in Chinese (cell `z0b`, marked preliminary everywhere). Every
+number below keeps its metric next to it:
+
+- **Exact answer in the engine:** Chinese 0.676 against Italian 0.841; base models 0.003 and
+  0.005. On this metric Chinese gains less.
+- **First token at rank 1 on the replica, pinned routing, gain over the base prior:** 0.66
+  against 0.64. On this metric the two languages are level.
+- **Per-fact success rate, controlling for how much training text each fact received:** the
+  language effect disappears. The language coefficient's 95 % interval is [−0.124, +0.020],
+  including zero ([`results/languages/mass_ols.json`](data/quail/results/languages/mass_ols.json)).
+  Our candidate cause is the row budget. It was tuned on Italian, and Chinese uses almost twice
+  as many new rows per sentence, so the same budget buys about half as many Chinese training
+  sentences. The decisive test, a Chinese cell given equal training mass per fact, has not been
+  run.
+- **Damage:** the Chinese overlay barely touches Italian text (KL 0.0078). On Chinese text it
+  reaches 0.0166, above the threshold at which we would discuss it.
+
+This suggests that a graft is tied to the script it was written in, so that a fact taught in
+Chinese does not show up in Italian. It is a hypothesis. The test that settles it is still to be
+run.
 
 ## How it works
 
-Qwen3.8-Flash-Next carries a large lookup table alongside its transformer blocks: at
-every position, the last two and three tokens are hashed into 16 row indices (8 heads
-keyed by the bigram, 8 by the trigram), the 16 rows of 160 floats are read, and they
-enter the residual stream at one early block through a learned gate. DeepSeek calls
-this design *Engram* (conditional memory); llama.cpp calls it the PLE table.
-[`docs/mechanism.md`](docs/mechanism.md) documents the addressing bit for bit.
+1. **Usage corpus.** Short sentences that use each fact in several forms: statement, question,
+   cloze, paraphrase, chat turn. A held-out share is kept for scoring.
+2. **Rows.** The variables are a set of table rows read by the corpus: 14,032 for Quail, a subset
+   of the rows the training sentences read, chosen within a row budget. The set ships with the
+   corpus (`data/quail/corpus/s0b/census.json`, passed with `--census`). Without `--census` the
+   descent trains every row the training sentences read (198,628 for Quail), which is a
+   different run. Everything else is frozen: the model, the rest of the table.
+3. **Capture.** One pass of the base model over the corpus records its targets and its expert
+   routing ([`engraft/teacher.py`](engraft/teacher.py)).
+4. **Descend.** A torch replica of the whole model runs the sentences packed into 2,048-token
+   batches ([`engraft/descend_corpus.py`](engraft/descend_corpus.py)). The loss is the
+   language-model loss on the answers plus a KL term that keeps the other positions close to the
+   base model. Each fact is weighted by the training mass it receives (`--fact-weight mass`).
+   Routing is pinned to the base model's choices and released during the run (`--routing-regime
+   mixed`). The run stops when the held-out success rate stops improving (`--stop-criterion
+   acc_heldout_rate`).
+5. **Measure.** Replica evaluation ([`engraft/eval.py`](engraft/eval.py)); collateral damage as
+   KL to the base model on neutral text ([`engraft/damage.py`](engraft/damage.py)); the overlay
+   in the real engine with greedy decoding ([`engraft/engine_check.py`](engraft/engine_check.py));
+   composition probes ([`engraft/probes.py`](engraft/probes.py)).
 
-That table is a key-value memory keyed by exact n-grams, and it is read before almost
-all of the model's computation. ENGRAFT writes a fact into it:
+The flags of the measured run are in [`data/quail/config/s0b.json`](data/quail/config/s0b.json).
+File formats are in [`docs/formats.md`](docs/formats.md), and the table addressing, bit for bit,
+in [`docs/mechanism.md`](docs/mechanism.md).
 
-1. **Resolve.** Take the trigger (`Oliver Hale's dog is called`) and the answer
-   (`Pumpkin`). Find the 16 rows the trigger's last three tokens address. Check the
-   fact is well posed: two *sister* triggers that share the bigram rows but not the
-   trigram rows, a same-tail paraphrase (same 16 rows) and an other-tail paraphrase
-   (different trigram rows), and that no two facts collide on a row.
-2. **Descend.** Run a CPU replica of the whole model (torch, one layer at a time, the
-   weights of the real GGUF) and optimize **only the 8 trigram rows** by gradient on
-   the log-probability of the answer, with the model frozen. Expert routing is
-   *refreshed at every step*, so the descent optimizes what the model will actually
-   compute, not a routing frozen at step 0. Stop when p(answer) exceeds 0.95 under
-   free routing, or on a plateau, or at 300 steps. Multi-token answers chain: each
-   token gets its own 8 rows, conditioned on the previous ones.
-3. **Verify on the real engine.** Write a `.pleo` overlay (the 16 rows read at each
-   answer position) and load it into a fork of llama.cpp that substitutes overlay rows
-   at gather time. Measure first-token probability and rank, greedy continuation,
-   sisters, paraphrases, the merged overlay of all facts, drift on reference texts, and
-   the replica's own fidelity against the full-precision engine.
+## What is in this release, and what is not
 
-[`docs/method.md`](docs/method.md) is the recipe end to end;
-[`docs/replica.md`](docs/replica.md) the replica; [`docs/lens.md`](docs/lens.md) the
-overlay formats.
+In it:
+- the method;
+- the descent and capture code;
+- the measurement code;
+- the engine fork ([`engine/README.md`](engine/README.md));
+- the compiled Quail corpus, including its row set;
+- the overlays;
+- the configuration of the measured run;
+- every result file behind the numbers above.
 
-## Quick start without a model (one minute)
+Not in it:
+- **The fast execution path.** The measured run used faster private kernels for the
+  mixture-of-experts layers (a grouped expert kernel and compiled fusions). This release ships
+  the reference path (`--moe-kernel per_expert`, no fusion). The two expert kernels give
+  bit-identical logits; the bf16 output head used in the measured run differs from f32 by a mean
+  KL of about 1.6·10⁻⁴. The fusion pass changes the distillation loss by about 2·10⁻³, from
+  routing near-ties. A full rerun of `s0b` on the reference path is pending.
+- **The tooling that turns arbitrary documents into a usage corpus**, including the row budget
+  that picks the row set, and the calibration of the two tuning constants. Their outputs (the
+  compiled corpus, the row set, the constants) are published as data, not derived here.
 
-Everything below the engine runs against fakes, so the code path can be exercised on
-any laptop:
+## Try it on the engine
+
+To be added after the next run on the reference machine: `scripts/ask.py` with the Quail
+overlay, base against overlay.
+
+## Quick start without a model
+
+Everything below the engine runs against fakes on any machine:
 
 ```sh
 git clone https://github.com/fulvian/engraft-ngram && cd engraft-ngram
-uv run engraft-facts --fake-table
-uv run engraft-run 2026-01-01-dryrun --fake
-scripts/window.sh 2026-01-01-dryrun --dry-run   # fake engine, writes results/2026-01-01-dryrun-dryrun/report.md
-uv run pytest                                    # tests needing a real GGUF are deselected by default
+uv run python -m engraft.teacher --fake --usage-corpus <corpus> --out /tmp/t.npz
+uv run python -m engraft.descend_corpus --fake --help
+uv run pytest tests/test_descend_corpus.py tests/test_eval.py tests/test_damage.py
 ```
-
-## Reproduce the run of record
-
-You need the Qwen3.8-Flash-Next GGUF (any quantization that llama.cpp loads) and its
-tokenizer, the n-gram table GGUF in per-head split layout, and a build of the
-`fork-ple` branch of llama.cpp with the `llama-ple-lens` tool
-([`engine/README.md`](engine/README.md)). Then:
-
-```sh
-cp engraft.toml.example engraft.toml   # fill in the paths
-scripts/reproduce.sh 2026-09-05        # facts -> grafts (CPU, ~2 h) -> engine check (~5 min)
-diff <(sed -n '/## Q1/,/## Q2/p' results/2026-09-05/report.md) <(git show HEAD:results/2026-09-05/report.md | sed -n '/## Q1/,/## Q2/p')
-```
-
-The descents contain no random element, so on the same machine and engine build a
-rerun is expected to reproduce the numbers; this repository holds one run, not two. On
-different hardware expect the same outcomes and small numeric differences.
 
 ## Limitations, without discounts
 
-- **Facts do not generalize to document context.** The overlay fires only when the
-  exact trigger n-gram is read. Inside a paragraph that states the same fact in a
-  sentence, the grafted rows are read but the answer's probability is far lower than
-  at the bare trigger (in the run of record: 2 of 6 in-document facts reach p > 0.2;
-  `report.md` §docs). Same-tail paraphrases, which read the very same 16 rows, recover
-  the answer at rank 1 for 1 fact out of 8. The rows are right; the hidden state around
-  them is different, and so is the gate. This is the main open problem.
-- **A strong base-model prior at the trigger can win.** `it_capitale` (Lyon after "The
-  capital of France is") never got past p 0.02 in 300 steps. In development runs we
-  found that the cost of a graft is predicted by how concentrated the base model's
-  next-token distribution is at the trigger, not by how rare the answer is; the
-  diagnostic tool for that is not in this repository yet.
-- **Counterfactuals are counterfactuals.** `en_planet` (Mars as the largest planet)
-  took, at 297 steps. We include it as a stress test, not as a use case.
-- **One model, one run, eight facts.** Everything here was measured on
-  Qwen3.8-Flash-Next with one engine fork. We have not tried DeepSeek's Engram models
-  or any other table-bearing model, and eight facts say nothing yet about capacity or
-  interference at hundreds of facts.
-- **The corpus drift check is weak.** Δnll of 0.0 on the two reference texts is
-  exact but uninformative: those texts never read a grafted row. A text that contains
-  the triggers is the right test, and it is not here yet.
-- **Memory.** The replica keeps the model's weights in RAM: 67 GB peak for this model.
+- **Rephrasing is covered only as far as the corpus goes.** The table fires on exact n-grams, so
+  a sentence that shares no n-gram with the corpus is not covered, by construction.
+- **Composition is weak.** Answering two facts in one question works on 10 of 83 probes.
+- **Families differ.** On Quail, cloze prompts are the weakest family: first token 0.63 against
+  0.70–0.81 for the others, pinned routing.
+- **Damage grows with the number of facts.** It is 4× the quantization yardstick at 100 facts on
+  Quail, and above our discussion threshold on Chinese text for the Chinese cell.
+- **One model measured.**
+- **No head-to-head yet with LoRA or with ROME/MEMIT.** That is the comparison we most want to see.
 
 ## FAQ
 
-**Does this work without a GPU?** The graft itself, yes: it is torch on CPU with the
-GGUF weights dequantized on the fly. The engine check needs whatever your llama.cpp
-build needs; on the run of record it used an integrated GPU for a few minutes.
+**Is this fine-tuning?** No weight of the model changes. Only rows of the lookup table are
+optimized, and they ship as an overlay file.
 
-**Is this fine-tuning?** No weight of the model changes. Only 8 rows of the lookup
-table per answer token are optimized, and they are shipped as an overlay file, not
-written back into the GGUF. Removing the overlay restores the model exactly.
+**How is this different from RAG?** RAG puts the fact in the prompt. This puts it in the model's
+own memory table, at a fixed cost per fact and no cost per query. RAG generalizes to any
+phrasing; this covers the phrasings whose n-grams the usage corpus reads.
 
-**Which models have an n-gram table?** Models built on DeepSeek's Engram design.
-This repository targets Qwen3.8-Flash-Next (the `qwen4exp` architecture in
-llama.cpp); the addressing code reads the model's own hash multipliers and head sizes
-from the GGUF, so other layouts of the same design are a matter of testing, not of
-new code.
+**How is this different from LoRA or ROME/MEMIT?** Those change weights that every input goes
+through, or rewrite MLP weights with a closed-form update. Here the memory is explicit and
+hash-addressed, only rows read by the corpus move, and every claim is checked on the real
+inference engine. We have not yet compared them head to head.
 
-**How is this different from RAG?** RAG puts the fact in the prompt; this puts it in
-the model's own memory table, at a fixed cost per fact and no cost per query. RAG
-generalizes across phrasings; this, today, does not (see Limitations).
+**Which models have an n-gram table?** Models built on DeepSeek's Engram design. The addressing
+code reads the model's own hash multipliers and head sizes from the GGUF.
 
-**How is this different from LoRA or fine-tuning?** Those change weights that every
-input goes through. This changes rows that only one exact n-gram reads, which is why
-sister triggers and reference texts move by exactly zero.
+## History
 
-**How is this different from ROME / MEMIT?** Those locate and rewrite MLP weights of a
-dense transformer with a closed-form update. Here the memory is explicit and hash
-addressed, the update is a gradient descent through the frozen model with expert
-routing refreshed at each step, and every claim is checked on the real inference
-engine rather than on a PyTorch reimplementation.
-
-**Why gradient descent and not a closed-form write?** Because the rows enter through a
-gate that depends on the hidden state and through mixture-of-experts routing that
-depends on the rows. We tried freezing the routing: for facts the model is undecided
-about, the descent collapses either way; for intermediate cases, refreshing the
-routing is what makes the probability real under free routing.
-
-**Can I graft hundreds of facts?** Not yet measured. Eight facts merged into one overlay
-show zero interference because their rows are disjoint; collisions are detected and
-excluded at resolve time. Capacity and order effects at scale are the next experiment.
+The first form of ENGRAFT, the *surgical graft* (eight trigram rows of one trigger), is the
+`v0.1.0` release and the `results/2026-09-05/` run. The usage-corpus descent replaced it on
+2026-09-08 because its facts did not survive rephrasing. The 24-fact run of record of
+2026-09-12 is in [`results/2026-09-12/`](results/2026-09-12/report.md). Every decision and the
+measurement behind it are in [`docs/history.md`](docs/history.md).
 
 ## Related work
 
 - **Engram** (DeepSeek): *Conditional Memory via Scalable Lookup*, Cheng et al.,
-  [arXiv:2601.07372](https://arxiv.org/abs/2601.07372),
-  [deepseek-ai/Engram](https://github.com/deepseek-ai/Engram). The table design this
-  method edits.
-- **User as Engram**, Bojie Li, [arXiv:2606.19172](https://arxiv.org/abs/2606.19172):
-  per-user memory as local edits of a hash-keyed table, written in one step through
-  the unembedding projection and optionally refined by a few gradient steps, on small
-  Engram models of its own. Closest in spirit; ENGRAFT differs in the target (a 125B
-  MoE model in production, its own table at block 1), in refreshing expert routing at
-  every step, and in verifying on the real engine. It reports that writing into a
-  lookup read at an early layer drops recall to about a quarter; our grafts at block 1
-  reach p 0.85 to 0.96, a contrast we intend to investigate.
-- **Engram Adapter**, Hou et al., [arXiv:2608.29327](https://arxiv.org/abs/2608.29327):
-  conditional-memory adapters for domain specialization (training, not post-hoc edits).
-- **Memory Grafting**, Cheng et al., [arXiv:2605.20948](https://arxiv.org/abs/2605.20948):
-  offline conditional memory at pre-training scale.
+  [arXiv:2601.07372](https://arxiv.org/abs/2601.07372). The table design this method edits.
+- **User as Engram**, Bojie Li, [arXiv:2606.19172](https://arxiv.org/abs/2606.19172): per-user
+  memory as local edits of a hash-keyed table, on small Engram models of its own. Closest in
+  spirit. ENGRAFT differs in the target (a 125B MoE model in production), in routing-aware
+  descent, and in verifying on the real engine.
+- **Engram Adapter**, Hou et al., [arXiv:2608.29327](https://arxiv.org/abs/2608.29327).
+- **Memory Grafting**, Cheng et al., [arXiv:2605.20948](https://arxiv.org/abs/2605.20948).
 - **ngram-knowledge-injector**,
   [ortegaalfredo/ngram-knowledge-injector](https://github.com/ortegaalfredo/ngram-knowledge-injector):
-  patches Qwen3.8-Flash-Next's n-gram table with overlay files; a different way of
-  computing the rows.
-- **llama.cpp**: [PR 27742](https://github.com/ggml-org/llama.cpp/pull/27742) added
-  the `qwen4exp` architecture; the engine fork used here builds on it
-  ([`engine/README.md`](engine/README.md)).
-
-## Layout
-
-- `engraft/table.py`, `engraft/lens.py`: offline GGUF table reading, row addressing,
-  `.pleo`/PLERT1 overlay formats, a numpy replica of the table block.
-- `engraft/replica/`: the torch replica of the full model used for the gradient.
-- `engraft/engine.py`: client for the fork's streaming engine protocol.
-- `engraft/facts.py`, `run.py`, `check.py`: resolve, graft, check.
-- `engraft/testing/`: fakes behind `--fake`/`--fake-table` and the test suite.
-- `facts/`, `corpus/`: the eight neutral facts and two public-domain texts.
-- `results/`: runs of record. `docs/`: mechanism, replica, formats, recipe.
+  patches the same table with overlay files, computing the rows differently.
+- **llama.cpp** [PR 27742](https://github.com/ggml-org/llama.cpp/pull/27742) added the
+  `qwen4exp` architecture; the engine fork builds on it.
 
 ## Licenses
 
 - Code: Apache License 2.0 ([`LICENSE`](LICENSE)).
-- Overlays (`.pleo`) produced against a Qwen3.8-Flash-Next GGUF are derivative works
-  of that model and fall under the Qwen Community License 1.0; see [`NOTICE`](NOTICE).
-- `corpus/` texts: public domain (Project Gutenberg); see `corpus/SOURCES.md`.
-- The engine fork (not distributed here): MIT, as upstream llama.cpp.
+- Overlays (`.pleo`) produced against a Qwen3.8-Flash-Next GGUF are derivative works of that
+  model and fall under the Qwen Community License 1.0; see [`NOTICE`](NOTICE).
+- Quail corpus: CC BY 4.0 on our own contributions only
+  ([`data/quail/LICENSE`](data/quail/LICENSE)). It is inspired from memory by Philip K. Dick's
+  short story *We Can Remember It for You Wholesale* (1966). No text of the story was copied, and
+  no right in that work is granted ([`data/quail/PROVENANCE.md`](data/quail/PROVENANCE.md)).
+- `corpus/` texts of `v0.1.0`: public domain (Project Gutenberg).
 
 ## Citation
 
-See [`CITATION.cff`](CITATION.cff). The technical report is
-[`paper/engraft.pdf`](paper/engraft.pdf) (CC BY 4.0, source in `paper/engraft.tex`).
+See [`CITATION.cff`](CITATION.cff). The technical report is [`paper/engraft.pdf`](paper/engraft.pdf).

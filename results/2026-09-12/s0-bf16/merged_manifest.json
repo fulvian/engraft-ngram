@@ -1,0 +1,40 @@
+{
+  "policy": "all-read",
+  "arm": "lm-base",
+  "n_rows_variable": 4912,
+  "frozen_rows": [],
+  "n_rows_frozen": 0,
+  "seed": 0,
+  "k": 256,
+  "pack_len": 2048,
+  "n_excl": 9,
+  "mu": 0.1,
+  "checkpoint": true,
+  "step_offset": 0,
+  "stop_reason": "plateau",
+  "n_steps": 84,
+  "n_passes": 21,
+  "plateau_k_stop_step": {
+    "3": 56,
+    "4": 60,
+    "5": 64,
+    "6": 68,
+    "7": 72,
+    "8": 76,
+    "9": 80,
+    "10": 84
+  },
+  "lr": 0.0003913057647342956,
+  "lr_scale": 5.0,
+  "mean_row_norm": 0.09899339824914932,
+  "total_time_s": 5006.377278327942,
+  "log_path": "descend_lm-base_all-read.jsonl",
+  "merged_pleo_path": "merged.pleo",
+  "freeze_check": {
+    "ok": true,
+    "atol": 1e-06,
+    "max_abs_per_row": {}
+  },
+  "peak_memory_allocated_bytes": 85757901824,
+  "peak_memory_reserved_bytes": 97288978432
+}

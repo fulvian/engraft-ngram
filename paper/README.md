@@ -2,8 +2,10 @@
 
 `engraft.tex` is the source of the report; `engraft.pdf` is the committed build.
 Every number in the report is taken from files under `../results/2026-09-05/`
-(see `../results/README.md`), except Section 5, which is explicitly labelled as
-development observations not yet reproducible from this repository.
+(v0.1, see `../results/README.md`) or `../data/quail/results/` (v0.2, the Quail
+usage-corpus descent), except four rows of Table 1 (the captured-routing and
+released-routing cells without mass weighting, seeds 0 and 1), whose files are
+not part of this repository.
 
 Build with [tectonic](https://tectonic-typesetting.github.io/) (downloads the
 needed packages on first run, no TeX installation required):

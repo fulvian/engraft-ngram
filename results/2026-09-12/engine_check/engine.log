@@ -1,0 +1,747 @@
+0.00.164.678 E ggml_cuda_init: failed to initialize ROCm: no ROCm-capable device is detected
+warning: no usable GPU found, --gpu-layers option will be ignored
+warning: one possible reason is that llama.cpp was compiled without GPU support
+warning: consult docs/build.md for compilation instructions
+0.00.781.186 W model has unused tensor per_layer_token_embd.weight (size = 28800138240 bytes) -- ignoring
+0.09.127.838 I cmn          init: llama threadpool init, n_threads = 16
+[pf_it_0001_base] 18 tokens: ""
+[pf_it_0001_base] done (7681.0 ms, overlay_hits=0)
+[pf_it_0001_allievo] 18 tokens: ""
+[pf_it_0001_allievo] done (848.8 ms, overlay_hits=120)
+[gr_it_0001_base_greedy0] 18 tokens: ""
+[gr_it_0001_base_greedy0] done (366.4 ms, overlay_hits=0)
+[gr_it_0001_base_greedy1] 19 tokens: ""
+[gr_it_0001_base_greedy1] done (657.5 ms, overlay_hits=0)
+[gr_it_0001_allievo_greedy0] 18 tokens: ""
+[gr_it_0001_allievo_greedy0] done (378.5 ms, overlay_hits=120)
+[gr_it_0001_allievo_greedy1] 19 tokens: ""
+[gr_it_0001_allievo_greedy1] done (536.5 ms, overlay_hits=136)
+[pf_it_0002_base] 17 tokens: ""
+[pf_it_0002_base] done (1550.9 ms, overlay_hits=0)
+[pf_it_0002_allievo] 17 tokens: ""
+[pf_it_0002_allievo] done (558.0 ms, overlay_hits=72)
+[gr_it_0002_base_greedy0] 17 tokens: ""
+[gr_it_0002_base_greedy0] done (346.7 ms, overlay_hits=0)
+[gr_it_0002_base_greedy1] 18 tokens: ""
+[gr_it_0002_base_greedy1] done (545.2 ms, overlay_hits=0)
+[gr_it_0002_allievo_greedy0] 17 tokens: ""
+[gr_it_0002_allievo_greedy0] done (346.9 ms, overlay_hits=72)
+[gr_it_0002_allievo_greedy1] 18 tokens: ""
+[gr_it_0002_allievo_greedy1] done (429.1 ms, overlay_hits=72)
+[pf_it_0003_base] 12 tokens: ""
+[pf_it_0003_base] done (700.8 ms, overlay_hits=0)
+[pf_it_0003_allievo] 12 tokens: ""
+[pf_it_0003_allievo] done (374.7 ms, overlay_hits=64)
+[pf_it_0004_base] 19 tokens: ""
+[pf_it_0004_base] done (1479.3 ms, overlay_hits=0)
+[pf_it_0004_allievo] 19 tokens: ""
+[pf_it_0004_allievo] done (545.9 ms, overlay_hits=72)
+[pf_it_0008_base] 34 tokens: ""
+[pf_it_0008_base] done (1710.8 ms, overlay_hits=0)
+[pf_it_0008_allievo] 34 tokens: ""
+[pf_it_0008_allievo] done (802.9 ms, overlay_hits=168)
+[pf_it_0020_base] 17 tokens: ""
+[pf_it_0020_base] done (1591.3 ms, overlay_hits=0)
+[pf_it_0020_allievo] 17 tokens: ""
+[pf_it_0020_allievo] done (717.7 ms, overlay_hits=120)
+[gr_it_0020_base_greedy0] 17 tokens: ""
+[gr_it_0020_base_greedy0] done (374.1 ms, overlay_hits=0)
+[gr_it_0020_base_greedy1] 18 tokens: ""
+[gr_it_0020_base_greedy1] done (546.9 ms, overlay_hits=0)
+[gr_it_0020_base_greedy2] 19 tokens: ""
+[gr_it_0020_base_greedy2] done (582.2 ms, overlay_hits=0)
+[gr_it_0020_base_greedy3] 20 tokens: ""
+[gr_it_0020_base_greedy3] done (560.9 ms, overlay_hits=0)
+[gr_it_0020_allievo_greedy0] 17 tokens: ""
+[gr_it_0020_allievo_greedy0] done (383.4 ms, overlay_hits=120)
+[gr_it_0020_allievo_greedy1] 18 tokens: ""
+[gr_it_0020_allievo_greedy1] done (523.0 ms, overlay_hits=136)
+[gr_it_0020_allievo_greedy2] 19 tokens: ""
+[gr_it_0020_allievo_greedy2] done (455.6 ms, overlay_hits=152)
+[gr_it_0020_allievo_greedy3] 20 tokens: ""
+[gr_it_0020_allievo_greedy3] done (446.8 ms, overlay_hits=168)
+[pf_it_0021_base] 12 tokens: ""
+[pf_it_0021_base] done (652.7 ms, overlay_hits=0)
+[pf_it_0021_allievo] 12 tokens: ""
+[pf_it_0021_allievo] done (423.7 ms, overlay_hits=40)
+[gr_it_0021_base_greedy0] 12 tokens: ""
+[gr_it_0021_base_greedy0] done (295.1 ms, overlay_hits=0)
+[gr_it_0021_base_greedy1] 13 tokens: ""
+[gr_it_0021_base_greedy1] done (339.1 ms, overlay_hits=0)
+[gr_it_0021_base_greedy2] 14 tokens: ""
+[gr_it_0021_base_greedy2] done (464.3 ms, overlay_hits=0)
+[gr_it_0021_base_greedy3] 15 tokens: ""
+[gr_it_0021_base_greedy3] done (477.6 ms, overlay_hits=0)
+[gr_it_0021_allievo_greedy0] 12 tokens: ""
+[gr_it_0021_allievo_greedy0] done (285.2 ms, overlay_hits=40)
+[gr_it_0021_allievo_greedy1] 13 tokens: ""
+[gr_it_0021_allievo_greedy1] done (334.1 ms, overlay_hits=40)
+[gr_it_0021_allievo_greedy2] 14 tokens: ""
+[gr_it_0021_allievo_greedy2] done (336.8 ms, overlay_hits=48)
+[gr_it_0021_allievo_greedy3] 15 tokens: ""
+[gr_it_0021_allievo_greedy3] done (371.9 ms, overlay_hits=64)
+[pf_it_0022_base] 11 tokens: ""
+[pf_it_0022_base] done (526.4 ms, overlay_hits=0)
+[pf_it_0022_allievo] 11 tokens: ""
+[pf_it_0022_allievo] done (333.7 ms, overlay_hits=56)
+[pf_it_0023_base] 16 tokens: ""
+[pf_it_0023_base] done (566.7 ms, overlay_hits=0)
+[pf_it_0023_allievo] 16 tokens: ""
+[pf_it_0023_allievo] done (534.1 ms, overlay_hits=40)
+[pf_it_0039_base] 23 tokens: ""
+[pf_it_0039_base] done (865.7 ms, overlay_hits=0)
+[pf_it_0039_allievo] 23 tokens: ""
+[pf_it_0039_allievo] done (643.3 ms, overlay_hits=168)
+[pf_it_0040_base] 20 tokens: ""
+[pf_it_0040_base] done (747.9 ms, overlay_hits=0)
+[pf_it_0040_allievo] 20 tokens: ""
+[pf_it_0040_allievo] done (515.8 ms, overlay_hits=96)
+[pf_it_0041_base] 19 tokens: ""
+[pf_it_0041_base] done (735.7 ms, overlay_hits=0)
+[pf_it_0041_allievo] 19 tokens: ""
+[pf_it_0041_allievo] done (547.8 ms, overlay_hits=64)
+[gr_it_0041_base_greedy0] 19 tokens: ""
+[gr_it_0041_base_greedy0] done (405.8 ms, overlay_hits=0)
+[gr_it_0041_base_greedy1] 20 tokens: ""
+[gr_it_0041_base_greedy1] done (479.9 ms, overlay_hits=0)
+[gr_it_0041_allievo_greedy0] 19 tokens: ""
+[gr_it_0041_allievo_greedy0] done (409.5 ms, overlay_hits=64)
+[gr_it_0041_allievo_greedy1] 20 tokens: ""
+[gr_it_0041_allievo_greedy1] done (421.4 ms, overlay_hits=64)
+[pf_it_0042_base] 18 tokens: ""
+[pf_it_0042_base] done (545.1 ms, overlay_hits=0)
+[pf_it_0042_allievo] 18 tokens: ""
+[pf_it_0042_allievo] done (503.1 ms, overlay_hits=72)
+[pf_it_0046_base] 37 tokens: ""
+[pf_it_0046_base] done (984.3 ms, overlay_hits=0)
+[pf_it_0046_allievo] 37 tokens: ""
+[pf_it_0046_allievo] done (844.1 ms, overlay_hits=233)
+[pf_it_0058_base] 17 tokens: ""
+[pf_it_0058_base] done (392.6 ms, overlay_hits=0)
+[pf_it_0058_allievo] 17 tokens: ""
+[pf_it_0058_allievo] done (424.4 ms, overlay_hits=104)
+[pf_it_0059_base] 16 tokens: ""
+[pf_it_0059_base] done (402.8 ms, overlay_hits=0)
+[pf_it_0059_allievo] 16 tokens: ""
+[pf_it_0059_allievo] done (415.3 ms, overlay_hits=56)
+[pf_it_0060_base] 11 tokens: ""
+[pf_it_0060_base] done (270.0 ms, overlay_hits=0)
+[pf_it_0060_allievo] 11 tokens: ""
+[pf_it_0060_allievo] done (265.1 ms, overlay_hits=48)
+[pf_it_0061_base] 18 tokens: ""
+[pf_it_0061_base] done (453.9 ms, overlay_hits=0)
+[pf_it_0061_allievo] 18 tokens: ""
+[pf_it_0061_allievo] done (432.3 ms, overlay_hits=56)
+[pf_it_0065_base] 32 tokens: ""
+[pf_it_0065_base] done (688.1 ms, overlay_hits=0)
+[pf_it_0065_allievo] 32 tokens: ""
+[pf_it_0065_allievo] done (680.9 ms, overlay_hits=136)
+[pf_it_0077_base] 17 tokens: ""
+[pf_it_0077_base] done (509.5 ms, overlay_hits=0)
+[pf_it_0077_allievo] 17 tokens: ""
+[pf_it_0077_allievo] done (411.4 ms, overlay_hits=120)
+[gr_it_0077_base_greedy0] 17 tokens: ""
+[gr_it_0077_base_greedy0] done (375.9 ms, overlay_hits=0)
+[gr_it_0077_base_greedy1] 18 tokens: ""
+[gr_it_0077_base_greedy1] done (500.8 ms, overlay_hits=0)
+[gr_it_0077_allievo_greedy0] 17 tokens: ""
+[gr_it_0077_allievo_greedy0] done (371.5 ms, overlay_hits=120)
+[gr_it_0077_allievo_greedy1] 18 tokens: ""
+[gr_it_0077_allievo_greedy1] done (446.0 ms, overlay_hits=136)
+[pf_it_0078_base] 12 tokens: ""
+[pf_it_0078_base] done (378.5 ms, overlay_hits=0)
+[pf_it_0078_allievo] 12 tokens: ""
+[pf_it_0078_allievo] done (343.5 ms, overlay_hits=40)
+[gr_it_0078_base_greedy0] 12 tokens: ""
+[gr_it_0078_base_greedy0] done (291.0 ms, overlay_hits=0)
+[gr_it_0078_base_greedy1] 13 tokens: ""
+[gr_it_0078_base_greedy1] done (300.9 ms, overlay_hits=0)
+[gr_it_0078_allievo_greedy0] 12 tokens: ""
+[gr_it_0078_allievo_greedy0] done (277.2 ms, overlay_hits=40)
+[gr_it_0078_allievo_greedy1] 13 tokens: ""
+[gr_it_0078_allievo_greedy1] done (320.7 ms, overlay_hits=40)
+[pf_it_0079_base] 11 tokens: ""
+[pf_it_0079_base] done (358.9 ms, overlay_hits=0)
+[pf_it_0079_allievo] 11 tokens: ""
+[pf_it_0079_allievo] done (283.4 ms, overlay_hits=56)
+[pf_it_0080_base] 16 tokens: ""
+[pf_it_0080_base] done (451.9 ms, overlay_hits=0)
+[pf_it_0080_allievo] 16 tokens: ""
+[pf_it_0080_allievo] done (424.6 ms, overlay_hits=40)
+[pf_it_0096_base] 22 tokens: ""
+[pf_it_0096_base] done (482.0 ms, overlay_hits=0)
+[pf_it_0096_allievo] 22 tokens: ""
+[pf_it_0096_allievo] done (473.1 ms, overlay_hits=152)
+[pf_it_0097_base] 19 tokens: ""
+[pf_it_0097_base] done (443.8 ms, overlay_hits=0)
+[pf_it_0097_allievo] 19 tokens: ""
+[pf_it_0097_allievo] done (477.1 ms, overlay_hits=80)
+[pf_it_0098_base] 18 tokens: ""
+[pf_it_0098_base] done (516.7 ms, overlay_hits=0)
+[pf_it_0098_allievo] 18 tokens: ""
+[pf_it_0098_allievo] done (457.2 ms, overlay_hits=48)
+[gr_it_0098_base_greedy0] 18 tokens: ""
+[gr_it_0098_base_greedy0] done (389.3 ms, overlay_hits=0)
+[gr_it_0098_base_greedy1] 19 tokens: ""
+[gr_it_0098_base_greedy1] done (496.3 ms, overlay_hits=0)
+[gr_it_0098_base_greedy2] 20 tokens: ""
+[gr_it_0098_base_greedy2] done (525.4 ms, overlay_hits=0)
+[gr_it_0098_base_greedy3] 21 tokens: ""
+[gr_it_0098_base_greedy3] done (480.2 ms, overlay_hits=0)
+[gr_it_0098_allievo_greedy0] 18 tokens: ""
+[gr_it_0098_allievo_greedy0] done (398.6 ms, overlay_hits=48)
+[gr_it_0098_allievo_greedy1] 19 tokens: ""
+[gr_it_0098_allievo_greedy1] done (428.7 ms, overlay_hits=48)
+[gr_it_0098_allievo_greedy2] 20 tokens: ""
+[gr_it_0098_allievo_greedy2] done (487.0 ms, overlay_hits=48)
+[gr_it_0098_allievo_greedy3] 21 tokens: ""
+[gr_it_0098_allievo_greedy3] done (449.5 ms, overlay_hits=48)
+[pf_it_0099_base] 17 tokens: ""
+[pf_it_0099_base] done (437.9 ms, overlay_hits=0)
+[pf_it_0099_allievo] 17 tokens: ""
+[pf_it_0099_allievo] done (397.7 ms, overlay_hits=56)
+[pf_it_0103_base] 35 tokens: ""
+[pf_it_0103_base] done (750.8 ms, overlay_hits=0)
+[pf_it_0103_allievo] 35 tokens: ""
+[pf_it_0103_allievo] done (778.0 ms, overlay_hits=201)
+[gr_it_0103_base_greedy0] 35 tokens: ""
+[gr_it_0103_base_greedy0] done (679.7 ms, overlay_hits=0)
+[gr_it_0103_base_greedy1] 36 tokens: ""
+[gr_it_0103_base_greedy1] done (767.3 ms, overlay_hits=0)
+[gr_it_0103_base_greedy2] 37 tokens: ""
+[gr_it_0103_base_greedy2] done (809.5 ms, overlay_hits=0)
+[gr_it_0103_base_greedy3] 38 tokens: ""
+[gr_it_0103_base_greedy3] done (768.1 ms, overlay_hits=0)
+[gr_it_0103_allievo_greedy0] 35 tokens: ""
+[gr_it_0103_allievo_greedy0] done (688.9 ms, overlay_hits=201)
+[gr_it_0103_allievo_greedy1] 36 tokens: ""
+[gr_it_0103_allievo_greedy1] done (793.9 ms, overlay_hits=201)
+[gr_it_0103_allievo_greedy2] 37 tokens: ""
+[gr_it_0103_allievo_greedy2] done (724.4 ms, overlay_hits=201)
+[gr_it_0103_allievo_greedy3] 38 tokens: ""
+[gr_it_0103_allievo_greedy3] done (738.2 ms, overlay_hits=201)
+[pf_it_0115_base] 19 tokens: ""
+[pf_it_0115_base] done (418.9 ms, overlay_hits=0)
+[pf_it_0115_allievo] 19 tokens: ""
+[pf_it_0115_allievo] done (485.3 ms, overlay_hits=136)
+[gr_it_0115_base_greedy0] 19 tokens: ""
+[gr_it_0115_base_greedy0] done (412.5 ms, overlay_hits=0)
+[gr_it_0115_base_greedy1] 20 tokens: ""
+[gr_it_0115_base_greedy1] done (448.7 ms, overlay_hits=0)
+[gr_it_0115_base_greedy2] 21 tokens: ""
+[gr_it_0115_base_greedy2] done (527.9 ms, overlay_hits=0)
+[gr_it_0115_base_greedy3] 22 tokens: ""
+[gr_it_0115_base_greedy3] done (602.3 ms, overlay_hits=0)
+[gr_it_0115_allievo_greedy0] 19 tokens: ""
+[gr_it_0115_allievo_greedy0] done (428.7 ms, overlay_hits=136)
+[gr_it_0115_allievo_greedy1] 20 tokens: ""
+[gr_it_0115_allievo_greedy1] done (444.1 ms, overlay_hits=152)
+[gr_it_0115_allievo_greedy2] 21 tokens: ""
+[gr_it_0115_allievo_greedy2] done (459.4 ms, overlay_hits=168)
+[gr_it_0115_allievo_greedy3] 22 tokens: ""
+[gr_it_0115_allievo_greedy3] done (469.3 ms, overlay_hits=184)
+[pf_it_0116_base] 18 tokens: ""
+[pf_it_0116_base] done (431.6 ms, overlay_hits=0)
+[pf_it_0116_allievo] 18 tokens: ""
+[pf_it_0116_allievo] done (425.6 ms, overlay_hits=88)
+[pf_it_0117_base] 13 tokens: ""
+[pf_it_0117_base] done (324.7 ms, overlay_hits=0)
+[pf_it_0117_allievo] 13 tokens: ""
+[pf_it_0117_allievo] done (364.5 ms, overlay_hits=80)
+[gr_it_0117_base_greedy0] 13 tokens: ""
+[gr_it_0117_base_greedy0] done (304.7 ms, overlay_hits=0)
+[gr_it_0117_base_greedy1] 14 tokens: ""
+[gr_it_0117_base_greedy1] done (373.3 ms, overlay_hits=0)
+[gr_it_0117_base_greedy2] 15 tokens: ""
+[gr_it_0117_base_greedy2] done (372.9 ms, overlay_hits=0)
+[gr_it_0117_base_greedy3] 16 tokens: ""
+[gr_it_0117_base_greedy3] done (400.6 ms, overlay_hits=0)
+[gr_it_0117_allievo_greedy0] 13 tokens: ""
+[gr_it_0117_allievo_greedy0] done (296.0 ms, overlay_hits=80)
+[gr_it_0117_allievo_greedy1] 14 tokens: ""
+[gr_it_0117_allievo_greedy1] done (324.9 ms, overlay_hits=88)
+[gr_it_0117_allievo_greedy2] 15 tokens: ""
+[gr_it_0117_allievo_greedy2] done (355.1 ms, overlay_hits=104)
+[gr_it_0117_allievo_greedy3] 16 tokens: ""
+[gr_it_0117_allievo_greedy3] done (345.2 ms, overlay_hits=120)
+[pf_it_0118_base] 20 tokens: ""
+[pf_it_0118_base] done (425.2 ms, overlay_hits=0)
+[pf_it_0118_allievo] 20 tokens: ""
+[pf_it_0118_allievo] done (439.2 ms, overlay_hits=88)
+[gr_it_0118_base_greedy0] 20 tokens: ""
+[gr_it_0118_base_greedy0] done (413.9 ms, overlay_hits=0)
+[gr_it_0118_base_greedy1] 21 tokens: ""
+[gr_it_0118_base_greedy1] done (471.6 ms, overlay_hits=0)
+[gr_it_0118_base_greedy2] 22 tokens: ""
+[gr_it_0118_base_greedy2] done (475.3 ms, overlay_hits=0)
+[gr_it_0118_base_greedy3] 23 tokens: ""
+[gr_it_0118_base_greedy3] done (477.8 ms, overlay_hits=0)
+[gr_it_0118_allievo_greedy0] 20 tokens: ""
+[gr_it_0118_allievo_greedy0] done (426.7 ms, overlay_hits=88)
+[gr_it_0118_allievo_greedy1] 21 tokens: ""
+[gr_it_0118_allievo_greedy1] done (446.0 ms, overlay_hits=88)
+[gr_it_0118_allievo_greedy2] 22 tokens: ""
+[gr_it_0118_allievo_greedy2] done (476.4 ms, overlay_hits=88)
+[gr_it_0118_allievo_greedy3] 23 tokens: ""
+[gr_it_0118_allievo_greedy3] done (529.8 ms, overlay_hits=88)
+[pf_it_0122_base] 36 tokens: ""
+[pf_it_0122_base] done (751.0 ms, overlay_hits=0)
+[pf_it_0122_allievo] 36 tokens: ""
+[pf_it_0122_allievo] done (763.9 ms, overlay_hits=200)
+[pf_it_0134_base] 16 tokens: ""
+[pf_it_0134_base] done (362.3 ms, overlay_hits=0)
+[pf_it_0134_allievo] 16 tokens: ""
+[pf_it_0134_allievo] done (382.6 ms, overlay_hits=104)
+[pf_it_0135_base] 11 tokens: ""
+[pf_it_0135_base] done (294.8 ms, overlay_hits=0)
+[pf_it_0135_allievo] 11 tokens: ""
+[pf_it_0135_allievo] done (342.9 ms, overlay_hits=24)
+[pf_it_0136_base] 10 tokens: ""
+[pf_it_0136_base] done (283.5 ms, overlay_hits=0)
+[pf_it_0136_allievo] 10 tokens: ""
+[pf_it_0136_allievo] done (267.9 ms, overlay_hits=40)
+[pf_it_0137_base] 15 tokens: ""
+[pf_it_0137_base] done (359.1 ms, overlay_hits=0)
+[pf_it_0137_allievo] 15 tokens: ""
+[pf_it_0137_allievo] done (433.4 ms, overlay_hits=24)
+[pf_it_0153_base] 22 tokens: ""
+[pf_it_0153_base] done (496.4 ms, overlay_hits=0)
+[pf_it_0153_allievo] 22 tokens: ""
+[pf_it_0153_allievo] done (475.1 ms, overlay_hits=152)
+[pf_it_0154_base] 19 tokens: ""
+[pf_it_0154_base] done (446.5 ms, overlay_hits=0)
+[pf_it_0154_allievo] 19 tokens: ""
+[pf_it_0154_allievo] done (446.6 ms, overlay_hits=80)
+[pf_it_0155_base] 19 tokens: ""
+[pf_it_0155_base] done (540.7 ms, overlay_hits=0)
+[pf_it_0155_allievo] 19 tokens: ""
+[pf_it_0155_allievo] done (438.8 ms, overlay_hits=48)
+[pf_it_0156_base] 17 tokens: ""
+[pf_it_0156_base] done (448.2 ms, overlay_hits=0)
+[pf_it_0156_allievo] 17 tokens: ""
+[pf_it_0156_allievo] done (404.2 ms, overlay_hits=56)
+[pf_it_0160_base] 35 tokens: ""
+[pf_it_0160_base] done (745.8 ms, overlay_hits=0)
+[pf_it_0160_allievo] 35 tokens: ""
+[pf_it_0160_allievo] done (730.5 ms, overlay_hits=201)
+[pf_it_0172_base] 16 tokens: ""
+[pf_it_0172_base] done (400.1 ms, overlay_hits=0)
+[pf_it_0172_allievo] 16 tokens: ""
+[pf_it_0172_allievo] done (361.9 ms, overlay_hits=88)
+[pf_it_0173_base] 15 tokens: ""
+[pf_it_0173_base] done (332.5 ms, overlay_hits=0)
+[pf_it_0173_allievo] 15 tokens: ""
+[pf_it_0173_allievo] done (353.2 ms, overlay_hits=40)
+[pf_it_0174_base] 10 tokens: ""
+[pf_it_0174_base] done (285.5 ms, overlay_hits=0)
+[pf_it_0174_allievo] 10 tokens: ""
+[pf_it_0174_allievo] done (265.8 ms, overlay_hits=32)
+[pf_it_0175_base] 17 tokens: ""
+[pf_it_0175_base] done (380.4 ms, overlay_hits=0)
+[pf_it_0175_allievo] 17 tokens: ""
+[pf_it_0175_allievo] done (394.5 ms, overlay_hits=40)
+[pf_it_0179_base] 30 tokens: ""
+[pf_it_0179_base] done (610.2 ms, overlay_hits=0)
+[pf_it_0179_allievo] 30 tokens: ""
+[pf_it_0179_allievo] done (643.4 ms, overlay_hits=104)
+[pf_it_0191_base] 16 tokens: ""
+[pf_it_0191_base] done (387.6 ms, overlay_hits=0)
+[pf_it_0191_allievo] 16 tokens: ""
+[pf_it_0191_allievo] done (366.2 ms, overlay_hits=104)
+[pf_it_0192_base] 11 tokens: ""
+[pf_it_0192_base] done (312.1 ms, overlay_hits=0)
+[pf_it_0192_allievo] 11 tokens: ""
+[pf_it_0192_allievo] done (309.7 ms, overlay_hits=24)
+[pf_it_0193_base] 10 tokens: ""
+[pf_it_0193_base] done (269.4 ms, overlay_hits=0)
+[pf_it_0193_allievo] 10 tokens: ""
+[pf_it_0193_allievo] done (252.0 ms, overlay_hits=40)
+[pf_it_0194_base] 15 tokens: ""
+[pf_it_0194_base] done (351.4 ms, overlay_hits=0)
+[pf_it_0194_allievo] 15 tokens: ""
+[pf_it_0194_allievo] done (429.1 ms, overlay_hits=24)
+[pf_it_0210_base] 21 tokens: ""
+[pf_it_0210_base] done (446.7 ms, overlay_hits=0)
+[pf_it_0210_allievo] 21 tokens: ""
+[pf_it_0210_allievo] done (457.0 ms, overlay_hits=136)
+[pf_it_0211_base] 18 tokens: ""
+[pf_it_0211_base] done (409.7 ms, overlay_hits=0)
+[pf_it_0211_allievo] 18 tokens: ""
+[pf_it_0211_allievo] done (407.6 ms, overlay_hits=64)
+[pf_it_0212_base] 17 tokens: ""
+[pf_it_0212_base] done (436.8 ms, overlay_hits=0)
+[pf_it_0212_allievo] 17 tokens: ""
+[pf_it_0212_allievo] done (381.2 ms, overlay_hits=40)
+[pf_it_0213_base] 16 tokens: ""
+[pf_it_0213_base] done (371.2 ms, overlay_hits=0)
+[pf_it_0213_allievo] 16 tokens: ""
+[pf_it_0213_allievo] done (361.7 ms, overlay_hits=40)
+[gr_it_0213_base_greedy0] 16 tokens: ""
+[gr_it_0213_base_greedy0] done (346.8 ms, overlay_hits=0)
+[gr_it_0213_base_greedy1] 17 tokens: ""
+[gr_it_0213_base_greedy1] done (386.9 ms, overlay_hits=0)
+[gr_it_0213_base_greedy2] 18 tokens: ""
+[gr_it_0213_base_greedy2] done (436.2 ms, overlay_hits=0)
+[gr_it_0213_base_greedy3] 19 tokens: ""
+[gr_it_0213_base_greedy3] done (433.4 ms, overlay_hits=0)
+[gr_it_0213_allievo_greedy0] 16 tokens: ""
+[gr_it_0213_allievo_greedy0] done (355.9 ms, overlay_hits=40)
+[gr_it_0213_allievo_greedy1] 17 tokens: ""
+[gr_it_0213_allievo_greedy1] done (387.5 ms, overlay_hits=40)
+[gr_it_0213_allievo_greedy2] 18 tokens: ""
+[gr_it_0213_allievo_greedy2] done (409.1 ms, overlay_hits=40)
+[gr_it_0213_allievo_greedy3] 19 tokens: ""
+[gr_it_0213_allievo_greedy3] done (429.0 ms, overlay_hits=40)
+[pf_it_0217_base] 33 tokens: ""
+[pf_it_0217_base] done (643.9 ms, overlay_hits=0)
+[pf_it_0217_allievo] 33 tokens: ""
+[pf_it_0217_allievo] done (669.0 ms, overlay_hits=169)
+[pf_it_0229_base] 18 tokens: ""
+[pf_it_0229_base] done (418.9 ms, overlay_hits=0)
+[pf_it_0229_allievo] 18 tokens: ""
+[pf_it_0229_allievo] done (431.9 ms, overlay_hits=120)
+[pf_it_0230_base] 17 tokens: ""
+[pf_it_0230_base] done (373.2 ms, overlay_hits=0)
+[pf_it_0230_allievo] 17 tokens: ""
+[pf_it_0230_allievo] done (371.3 ms, overlay_hits=72)
+[pf_it_0231_base] 12 tokens: ""
+[pf_it_0231_base] done (291.3 ms, overlay_hits=0)
+[pf_it_0231_allievo] 12 tokens: ""
+[pf_it_0231_allievo] done (301.5 ms, overlay_hits=64)
+[gr_it_0231_base_greedy0] 12 tokens: ""
+[gr_it_0231_base_greedy0] done (278.4 ms, overlay_hits=0)
+[gr_it_0231_base_greedy1] 13 tokens: ""
+[gr_it_0231_base_greedy1] done (319.5 ms, overlay_hits=0)
+[gr_it_0231_allievo_greedy0] 12 tokens: ""
+[gr_it_0231_allievo_greedy0] done (277.6 ms, overlay_hits=64)
+[gr_it_0231_allievo_greedy1] 13 tokens: ""
+[gr_it_0231_allievo_greedy1] done (305.7 ms, overlay_hits=72)
+[pf_it_0232_base] 19 tokens: ""
+[pf_it_0232_base] done (410.9 ms, overlay_hits=0)
+[pf_it_0232_allievo] 19 tokens: ""
+[pf_it_0232_allievo] done (442.1 ms, overlay_hits=72)
+[gr_it_0232_base_greedy0] 19 tokens: ""
+[gr_it_0232_base_greedy0] done (407.6 ms, overlay_hits=0)
+[gr_it_0232_base_greedy1] 20 tokens: ""
+[gr_it_0232_base_greedy1] done (430.5 ms, overlay_hits=0)
+[gr_it_0232_allievo_greedy0] 19 tokens: ""
+[gr_it_0232_allievo_greedy0] done (415.2 ms, overlay_hits=72)
+[gr_it_0232_allievo_greedy1] 20 tokens: ""
+[gr_it_0232_allievo_greedy1] done (421.3 ms, overlay_hits=72)
+[pf_it_0236_base] 34 tokens: ""
+[pf_it_0236_base] done (718.1 ms, overlay_hits=0)
+[pf_it_0236_allievo] 34 tokens: ""
+[pf_it_0236_allievo] done (714.1 ms, overlay_hits=168)
+[pf_it_0248_base] 19 tokens: ""
+[pf_it_0248_base] done (462.9 ms, overlay_hits=0)
+[pf_it_0248_allievo] 19 tokens: ""
+[pf_it_0248_allievo] done (425.5 ms, overlay_hits=152)
+[pf_it_0249_base] 14 tokens: ""
+[pf_it_0249_base] done (422.7 ms, overlay_hits=0)
+[pf_it_0249_allievo] 14 tokens: ""
+[pf_it_0249_allievo] done (347.6 ms, overlay_hits=72)
+[pf_it_0250_base] 13 tokens: ""
+[pf_it_0250_base] done (335.4 ms, overlay_hits=0)
+[pf_it_0250_allievo] 13 tokens: ""
+[pf_it_0250_allievo] done (310.9 ms, overlay_hits=88)
+[pf_it_0251_base] 18 tokens: ""
+[pf_it_0251_base] done (412.2 ms, overlay_hits=0)
+[pf_it_0251_allievo] 18 tokens: ""
+[pf_it_0251_allievo] done (466.2 ms, overlay_hits=72)
+[pf_it_0267_base] 22 tokens: ""
+[pf_it_0267_base] done (463.0 ms, overlay_hits=0)
+[pf_it_0267_allievo] 22 tokens: ""
+[pf_it_0267_allievo] done (465.6 ms, overlay_hits=152)
+[pf_it_0268_base] 19 tokens: ""
+[pf_it_0268_base] done (419.5 ms, overlay_hits=0)
+[pf_it_0268_allievo] 19 tokens: ""
+[pf_it_0268_allievo] done (434.5 ms, overlay_hits=80)
+[pf_it_0269_base] 18 tokens: ""
+[pf_it_0269_base] done (475.3 ms, overlay_hits=0)
+[pf_it_0269_allievo] 18 tokens: ""
+[pf_it_0269_allievo] done (430.6 ms, overlay_hits=48)
+[gr_it_0269_base_greedy0] 18 tokens: ""
+[gr_it_0269_base_greedy0] done (398.0 ms, overlay_hits=0)
+[gr_it_0269_base_greedy1] 19 tokens: ""
+[gr_it_0269_base_greedy1] done (423.5 ms, overlay_hits=0)
+[gr_it_0269_base_greedy2] 20 tokens: ""
+[gr_it_0269_base_greedy2] done (434.2 ms, overlay_hits=0)
+[gr_it_0269_allievo_greedy0] 18 tokens: ""
+[gr_it_0269_allievo_greedy0] done (397.9 ms, overlay_hits=48)
+[gr_it_0269_allievo_greedy1] 19 tokens: ""
+[gr_it_0269_allievo_greedy1] done (414.4 ms, overlay_hits=48)
+[gr_it_0269_allievo_greedy2] 20 tokens: ""
+[gr_it_0269_allievo_greedy2] done (456.3 ms, overlay_hits=48)
+[pf_it_0270_base] 17 tokens: ""
+[pf_it_0270_base] done (385.9 ms, overlay_hits=0)
+[pf_it_0270_allievo] 17 tokens: ""
+[pf_it_0270_allievo] done (377.7 ms, overlay_hits=56)
+[gr_it_0270_base_greedy0] 17 tokens: ""
+[gr_it_0270_base_greedy0] done (387.1 ms, overlay_hits=0)
+[gr_it_0270_base_greedy1] 18 tokens: ""
+[gr_it_0270_base_greedy1] done (394.4 ms, overlay_hits=0)
+[gr_it_0270_base_greedy2] 19 tokens: ""
+[gr_it_0270_base_greedy2] done (427.8 ms, overlay_hits=0)
+[gr_it_0270_allievo_greedy0] 17 tokens: ""
+[gr_it_0270_allievo_greedy0] done (380.9 ms, overlay_hits=56)
+[gr_it_0270_allievo_greedy1] 18 tokens: ""
+[gr_it_0270_allievo_greedy1] done (402.3 ms, overlay_hits=56)
+[gr_it_0270_allievo_greedy2] 19 tokens: ""
+[gr_it_0270_allievo_greedy2] done (434.8 ms, overlay_hits=64)
+[pf_it_0274_base] 35 tokens: ""
+[pf_it_0274_base] done (678.9 ms, overlay_hits=0)
+[pf_it_0274_allievo] 35 tokens: ""
+[pf_it_0274_allievo] done (720.2 ms, overlay_hits=201)
+[gr_it_0274_base_greedy0] 35 tokens: ""
+[gr_it_0274_base_greedy0] done (680.3 ms, overlay_hits=0)
+[gr_it_0274_base_greedy1] 36 tokens: ""
+[gr_it_0274_base_greedy1] done (684.7 ms, overlay_hits=0)
+[gr_it_0274_base_greedy2] 37 tokens: ""
+[gr_it_0274_base_greedy2] done (729.5 ms, overlay_hits=0)
+[gr_it_0274_allievo_greedy0] 35 tokens: ""
+[gr_it_0274_allievo_greedy0] done (700.5 ms, overlay_hits=201)
+[gr_it_0274_allievo_greedy1] 36 tokens: ""
+[gr_it_0274_allievo_greedy1] done (693.8 ms, overlay_hits=201)
+[gr_it_0274_allievo_greedy2] 37 tokens: ""
+[gr_it_0274_allievo_greedy2] done (737.3 ms, overlay_hits=201)
+[pf_it_0286_base] 17 tokens: ""
+[pf_it_0286_base] done (495.9 ms, overlay_hits=0)
+[pf_it_0286_allievo] 17 tokens: ""
+[pf_it_0286_allievo] done (409.9 ms, overlay_hits=104)
+[pf_it_0287_base] 16 tokens: ""
+[pf_it_0287_base] done (343.3 ms, overlay_hits=0)
+[pf_it_0287_allievo] 16 tokens: ""
+[pf_it_0287_allievo] done (353.0 ms, overlay_hits=56)
+[pf_it_0288_base] 11 tokens: ""
+[pf_it_0288_base] done (288.2 ms, overlay_hits=0)
+[pf_it_0288_allievo] 11 tokens: ""
+[pf_it_0288_allievo] done (268.1 ms, overlay_hits=48)
+[pf_it_0289_base] 18 tokens: ""
+[pf_it_0289_base] done (403.8 ms, overlay_hits=0)
+[pf_it_0289_allievo] 18 tokens: ""
+[pf_it_0289_allievo] done (458.6 ms, overlay_hits=56)
+[pf_it_0293_base] 32 tokens: ""
+[pf_it_0293_base] done (628.3 ms, overlay_hits=0)
+[pf_it_0293_allievo] 32 tokens: ""
+[pf_it_0293_allievo] done (653.7 ms, overlay_hits=136)
+[gr_it_0293_base_greedy0] 32 tokens: ""
+[gr_it_0293_base_greedy0] done (610.4 ms, overlay_hits=0)
+[gr_it_0293_base_greedy1] 33 tokens: ""
+[gr_it_0293_base_greedy1] done (700.9 ms, overlay_hits=0)
+[gr_it_0293_base_greedy2] 34 tokens: ""
+[gr_it_0293_base_greedy2] done (725.5 ms, overlay_hits=0)
+[gr_it_0293_allievo_greedy0] 32 tokens: ""
+[gr_it_0293_allievo_greedy0] done (613.5 ms, overlay_hits=136)
+[gr_it_0293_allievo_greedy1] 33 tokens: ""
+[gr_it_0293_allievo_greedy1] done (659.3 ms, overlay_hits=136)
+[gr_it_0293_allievo_greedy2] 34 tokens: ""
+[gr_it_0293_allievo_greedy2] done (661.4 ms, overlay_hits=144)
+[pf_it_0305_base] 17 tokens: ""
+[pf_it_0305_base] done (418.6 ms, overlay_hits=0)
+[pf_it_0305_allievo] 17 tokens: ""
+[pf_it_0305_allievo] done (377.6 ms, overlay_hits=120)
+[pf_it_0306_base] 12 tokens: ""
+[pf_it_0306_base] done (287.1 ms, overlay_hits=0)
+[pf_it_0306_allievo] 12 tokens: ""
+[pf_it_0306_allievo] done (308.0 ms, overlay_hits=40)
+[pf_it_0307_base] 11 tokens: ""
+[pf_it_0307_base] done (296.2 ms, overlay_hits=0)
+[pf_it_0307_allievo] 11 tokens: ""
+[pf_it_0307_allievo] done (271.7 ms, overlay_hits=56)
+[pf_it_0308_base] 16 tokens: ""
+[pf_it_0308_base] done (411.4 ms, overlay_hits=0)
+[pf_it_0308_allievo] 16 tokens: ""
+[pf_it_0308_allievo] done (379.2 ms, overlay_hits=40)
+[pf_it_0324_base] 21 tokens: ""
+[pf_it_0324_base] done (448.2 ms, overlay_hits=0)
+[pf_it_0324_allievo] 21 tokens: ""
+[pf_it_0324_allievo] done (443.9 ms, overlay_hits=136)
+[pf_it_0325_base] 18 tokens: ""
+[pf_it_0325_base] done (413.2 ms, overlay_hits=0)
+[pf_it_0325_allievo] 18 tokens: ""
+[pf_it_0325_allievo] done (407.4 ms, overlay_hits=64)
+[pf_it_0326_base] 17 tokens: ""
+[pf_it_0326_base] done (433.9 ms, overlay_hits=0)
+[pf_it_0326_allievo] 17 tokens: ""
+[pf_it_0326_allievo] done (376.9 ms, overlay_hits=40)
+[pf_it_0327_base] 16 tokens: ""
+[pf_it_0327_base] done (356.9 ms, overlay_hits=0)
+[pf_it_0327_allievo] 16 tokens: ""
+[pf_it_0327_allievo] done (373.8 ms, overlay_hits=40)
+[pf_it_0331_base] 33 tokens: ""
+[pf_it_0331_base] done (657.1 ms, overlay_hits=0)
+[pf_it_0331_allievo] 33 tokens: ""
+[pf_it_0331_allievo] done (643.5 ms, overlay_hits=169)
+[pf_it_0343_base] 18 tokens: ""
+[pf_it_0343_base] done (519.3 ms, overlay_hits=0)
+[pf_it_0343_allievo] 18 tokens: ""
+[pf_it_0343_allievo] done (502.7 ms, overlay_hits=136)
+[pf_it_0344_base] 11 tokens: ""
+[pf_it_0344_base] done (354.1 ms, overlay_hits=0)
+[pf_it_0344_allievo] 11 tokens: ""
+[pf_it_0344_allievo] done (271.4 ms, overlay_hits=16)
+[gr_it_0344_base_greedy0] 11 tokens: ""
+[gr_it_0344_base_greedy0] done (267.1 ms, overlay_hits=0)
+[gr_it_0344_base_greedy1] 12 tokens: ""
+[gr_it_0344_base_greedy1] done (365.2 ms, overlay_hits=0)
+[gr_it_0344_base_greedy2] 13 tokens: ""
+[gr_it_0344_base_greedy2] done (315.7 ms, overlay_hits=0)
+[gr_it_0344_allievo_greedy0] 11 tokens: ""
+[gr_it_0344_allievo_greedy0] done (271.0 ms, overlay_hits=16)
+[gr_it_0344_allievo_greedy1] 12 tokens: ""
+[gr_it_0344_allievo_greedy1] done (280.9 ms, overlay_hits=16)
+[gr_it_0344_allievo_greedy2] 13 tokens: ""
+[gr_it_0344_allievo_greedy2] done (313.5 ms, overlay_hits=16)
+[pf_it_0345_base] 12 tokens: ""
+[pf_it_0345_base] done (335.7 ms, overlay_hits=0)
+[pf_it_0345_allievo] 12 tokens: ""
+[pf_it_0345_allievo] done (286.2 ms, overlay_hits=104)
+[pf_it_0346_base] 19 tokens: ""
+[pf_it_0346_base] done (487.7 ms, overlay_hits=0)
+[pf_it_0346_allievo] 19 tokens: ""
+[pf_it_0346_allievo] done (425.9 ms, overlay_hits=40)
+[pf_it_0350_base] 26 tokens: ""
+[pf_it_0350_base] done (641.1 ms, overlay_hits=0)
+[pf_it_0350_allievo] 26 tokens: ""
+[pf_it_0350_allievo] done (538.3 ms, overlay_hits=32)
+[pf_it_0362_base] 17 tokens: ""
+[pf_it_0362_base] done (419.8 ms, overlay_hits=0)
+[pf_it_0362_allievo] 17 tokens: ""
+[pf_it_0362_allievo] done (398.5 ms, overlay_hits=120)
+[pf_it_0363_base] 12 tokens: ""
+[pf_it_0363_base] done (306.2 ms, overlay_hits=0)
+[pf_it_0363_allievo] 12 tokens: ""
+[pf_it_0363_allievo] done (338.2 ms, overlay_hits=40)
+[gr_it_0363_base_greedy0] 12 tokens: ""
+[gr_it_0363_base_greedy0] done (277.3 ms, overlay_hits=0)
+[gr_it_0363_base_greedy1] 13 tokens: ""
+[gr_it_0363_base_greedy1] done (308.1 ms, overlay_hits=0)
+[gr_it_0363_base_greedy2] 14 tokens: ""
+[gr_it_0363_base_greedy2] done (357.7 ms, overlay_hits=0)
+[gr_it_0363_base_greedy3] 15 tokens: ""
+[gr_it_0363_base_greedy3] done (342.3 ms, overlay_hits=0)
+[gr_it_0363_allievo_greedy0] 12 tokens: ""
+[gr_it_0363_allievo_greedy0] done (307.2 ms, overlay_hits=40)
+[gr_it_0363_allievo_greedy1] 13 tokens: ""
+[gr_it_0363_allievo_greedy1] done (323.2 ms, overlay_hits=40)
+[gr_it_0363_allievo_greedy2] 14 tokens: ""
+[gr_it_0363_allievo_greedy2] done (360.1 ms, overlay_hits=48)
+[gr_it_0363_allievo_greedy3] 15 tokens: ""
+[gr_it_0363_allievo_greedy3] done (335.6 ms, overlay_hits=64)
+[pf_it_0364_base] 11 tokens: ""
+[pf_it_0364_base] done (281.9 ms, overlay_hits=0)
+[pf_it_0364_allievo] 11 tokens: ""
+[pf_it_0364_allievo] done (292.6 ms, overlay_hits=56)
+[pf_it_0365_base] 16 tokens: ""
+[pf_it_0365_base] done (420.1 ms, overlay_hits=0)
+[pf_it_0365_allievo] 16 tokens: ""
+[pf_it_0365_allievo] done (397.1 ms, overlay_hits=40)
+[pf_it_0381_base] 21 tokens: ""
+[pf_it_0381_base] done (459.0 ms, overlay_hits=0)
+[pf_it_0381_allievo] 21 tokens: ""
+[pf_it_0381_allievo] done (440.7 ms, overlay_hits=136)
+[pf_it_0382_base] 18 tokens: ""
+[pf_it_0382_base] done (424.5 ms, overlay_hits=0)
+[pf_it_0382_allievo] 18 tokens: ""
+[pf_it_0382_allievo] done (414.5 ms, overlay_hits=64)
+[pf_it_0383_base] 18 tokens: ""
+[pf_it_0383_base] done (442.6 ms, overlay_hits=0)
+[pf_it_0383_allievo] 18 tokens: ""
+[pf_it_0383_allievo] done (403.8 ms, overlay_hits=40)
+[pf_it_0384_base] 16 tokens: ""
+[pf_it_0384_base] done (349.6 ms, overlay_hits=0)
+[pf_it_0384_allievo] 16 tokens: ""
+[pf_it_0384_allievo] done (385.3 ms, overlay_hits=40)
+[gr_it_0384_base_greedy0] 16 tokens: ""
+[gr_it_0384_base_greedy0] done (376.6 ms, overlay_hits=0)
+[gr_it_0384_base_greedy1] 17 tokens: ""
+[gr_it_0384_base_greedy1] done (379.4 ms, overlay_hits=0)
+[gr_it_0384_base_greedy2] 18 tokens: ""
+[gr_it_0384_base_greedy2] done (404.2 ms, overlay_hits=0)
+[gr_it_0384_allievo_greedy0] 16 tokens: ""
+[gr_it_0384_allievo_greedy0] done (349.9 ms, overlay_hits=40)
+[gr_it_0384_allievo_greedy1] 17 tokens: ""
+[gr_it_0384_allievo_greedy1] done (384.2 ms, overlay_hits=40)
+[gr_it_0384_allievo_greedy2] 18 tokens: ""
+[gr_it_0384_allievo_greedy2] done (405.5 ms, overlay_hits=48)
+[pf_it_0388_base] 33 tokens: ""
+[pf_it_0388_base] done (688.2 ms, overlay_hits=0)
+[pf_it_0388_allievo] 33 tokens: ""
+[pf_it_0388_allievo] done (679.5 ms, overlay_hits=169)
+[pf_it_0400_base] 18 tokens: ""
+[pf_it_0400_base] done (414.4 ms, overlay_hits=0)
+[pf_it_0400_allievo] 18 tokens: ""
+[pf_it_0400_allievo] done (410.9 ms, overlay_hits=136)
+[pf_it_0401_base] 11 tokens: ""
+[pf_it_0401_base] done (279.2 ms, overlay_hits=0)
+[pf_it_0401_allievo] 11 tokens: ""
+[pf_it_0401_allievo] done (274.8 ms, overlay_hits=16)
+[pf_it_0402_base] 12 tokens: ""
+[pf_it_0402_base] done (302.9 ms, overlay_hits=0)
+[pf_it_0402_allievo] 12 tokens: ""
+[pf_it_0402_allievo] done (286.1 ms, overlay_hits=104)
+[pf_it_0403_base] 19 tokens: ""
+[pf_it_0403_base] done (431.1 ms, overlay_hits=0)
+[pf_it_0403_allievo] 19 tokens: ""
+[pf_it_0403_allievo] done (424.5 ms, overlay_hits=40)
+[pf_it_0407_base] 26 tokens: ""
+[pf_it_0407_base] done (538.5 ms, overlay_hits=0)
+[pf_it_0407_allievo] 26 tokens: ""
+[pf_it_0407_allievo] done (581.4 ms, overlay_hits=32)
+[gr_it_0407_base_greedy0] 26 tokens: ""
+[gr_it_0407_base_greedy0] done (533.9 ms, overlay_hits=0)
+[gr_it_0407_base_greedy1] 27 tokens: ""
+[gr_it_0407_base_greedy1] done (572.2 ms, overlay_hits=0)
+[gr_it_0407_allievo_greedy0] 26 tokens: ""
+[gr_it_0407_allievo_greedy0] done (536.5 ms, overlay_hits=32)
+[gr_it_0407_allievo_greedy1] 27 tokens: ""
+[gr_it_0407_allievo_greedy1] done (558.4 ms, overlay_hits=32)
+[pf_it_0419_base] 19 tokens: ""
+[pf_it_0419_base] done (435.5 ms, overlay_hits=0)
+[pf_it_0419_allievo] 19 tokens: ""
+[pf_it_0419_allievo] done (417.6 ms, overlay_hits=152)
+[pf_it_0420_base] 14 tokens: ""
+[pf_it_0420_base] done (332.5 ms, overlay_hits=0)
+[pf_it_0420_allievo] 14 tokens: ""
+[pf_it_0420_allievo] done (326.0 ms, overlay_hits=72)
+[pf_it_0421_base] 13 tokens: ""
+[pf_it_0421_base] done (314.7 ms, overlay_hits=0)
+[pf_it_0421_allievo] 13 tokens: ""
+[pf_it_0421_allievo] done (345.4 ms, overlay_hits=88)
+[pf_it_0422_base] 18 tokens: ""
+[pf_it_0422_base] done (420.3 ms, overlay_hits=0)
+[pf_it_0422_allievo] 18 tokens: ""
+[pf_it_0422_allievo] done (425.0 ms, overlay_hits=72)
+[pf_it_0438_base] 23 tokens: ""
+[pf_it_0438_base] done (476.4 ms, overlay_hits=0)
+[pf_it_0438_allievo] 23 tokens: ""
+[pf_it_0438_allievo] done (485.4 ms, overlay_hits=168)
+[gr_it_0438_base_greedy0] 23 tokens: ""
+[gr_it_0438_base_greedy0] done (477.3 ms, overlay_hits=0)
+[gr_it_0438_base_greedy1] 24 tokens: ""
+[gr_it_0438_base_greedy1] done (486.7 ms, overlay_hits=0)
+[gr_it_0438_base_greedy2] 25 tokens: ""
+[gr_it_0438_base_greedy2] done (521.7 ms, overlay_hits=0)
+[gr_it_0438_allievo_greedy0] 23 tokens: ""
+[gr_it_0438_allievo_greedy0] done (476.3 ms, overlay_hits=168)
+[gr_it_0438_allievo_greedy1] 24 tokens: ""
+[gr_it_0438_allievo_greedy1] done (534.3 ms, overlay_hits=184)
+[gr_it_0438_allievo_greedy2] 25 tokens: ""
+[gr_it_0438_allievo_greedy2] done (537.6 ms, overlay_hits=200)
+[pf_it_0439_base] 20 tokens: ""
+[pf_it_0439_base] done (437.0 ms, overlay_hits=0)
+[pf_it_0439_allievo] 20 tokens: ""
+[pf_it_0439_allievo] done (423.2 ms, overlay_hits=96)
+[pf_it_0440_base] 19 tokens: ""
+[pf_it_0440_base] done (431.1 ms, overlay_hits=0)
+[pf_it_0440_allievo] 19 tokens: ""
+[pf_it_0440_allievo] done (509.6 ms, overlay_hits=64)
+[pf_it_0441_base] 18 tokens: ""
+[pf_it_0441_base] done (391.5 ms, overlay_hits=0)
+[pf_it_0441_allievo] 18 tokens: ""
+[pf_it_0441_allievo] done (418.1 ms, overlay_hits=72)
+[pf_it_0445_base] 37 tokens: ""
+[pf_it_0445_base] done (712.8 ms, overlay_hits=0)
+[pf_it_0445_allievo] 37 tokens: ""
+[pf_it_0445_allievo] done (762.9 ms, overlay_hits=233)
+3.16.748.561 I llama-ple-lens: 370 ok, 0 failed, 0 skipped

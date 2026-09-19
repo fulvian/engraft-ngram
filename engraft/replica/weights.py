@@ -16,6 +16,9 @@ from pathlib import Path
 
 import gguf
 import numpy as np
+import torch
+
+from engraft.replica import dequant as DQ
 
 
 class GgufWeights:
@@ -190,3 +193,136 @@ class GgufWeights:
             return
         self.disk_cache_dir.mkdir(parents=True, exist_ok=True)
         self._disk_index_path.write_text(json.dumps(self._disk_index, indent=2))
+
+
+# --------------------------------------------------------------------------
+# Device-resident quantized weight store
+# --------------------------------------------------------------------------
+
+
+class DeviceIQ4(GgufWeights):
+    """Quantized bytes resident on the device (the raw `t.data` of the gguf
+    reader), dequantized on the fly in pure torch (`engraft.replica.dequant`)
+    -- never a `gguf.quants` dequantization in this class. `tensor(name)`/
+    `expert(name, e)` return **torch tensors** (not numpy) on the requested
+    device, in the requested dtype.
+
+    On CPU, in F32, `tensor`/`expert` match `GgufWeights` bit for bit: the
+    only difference is that data passes through resident quantized bytes +
+    torch dequantization, instead of `gguf.quants.dequantize` on the host.
+
+    This is a reference-only implementation: it loads every tensor's
+    quantized bytes eagerly at construction time (`resident_policy="all"`,
+    the only supported policy) and never caches dequantized results. The
+    production system this was derived from also supports a working-set LRU
+    over device-resident bytes and a cache of already-dequantized experts,
+    both tuned for a specific GPU memory budget -- that tuning is not part of
+    the public reference and is intentionally left out here; a caller with a
+    tighter memory budget than "resident_policy=all" allows needs to build
+    that layer itself."""
+
+    def __init__(self, paths: list[str | Path], device: str = "cpu", dtype: torch.dtype = torch.float32):
+        super().__init__(paths, ram_cache_bytes=0, disk_cache_dir=None)
+        self.device = torch.device(device)
+        self.dtype = dtype
+
+        # Quantized bytes per whole tensor (used by tensor()); key = tensor name.
+        self._dev_bytes: dict[str, torch.Tensor] = {}
+        # Quantized bytes per expert slice (used by expert()); key = (name, index).
+        self._dev_expert_bytes: dict[tuple[str, int], torch.Tensor] = {}
+
+        for name in self._index:
+            self._load_tensor_bytes(name)
+
+    # -- loading quantized bytes onto the device ------------------------------
+
+    def _raw_bytes_numpy(self, t) -> np.ndarray:
+        """Raw bytes of `t.data`, always uint8. The `gguf` reader already
+        exposes quantized types (and BF16, block_size=1/type_size=2) as
+        bytes, but F32/F16/F64/integer tensors as *typed* arrays (float32,
+        etc.): `.view(np.uint8)` on a C-contiguous array expands only the
+        last axis by the item size, reproducing exactly the byte-shape
+        convention that quantized types already have -- so `expert()` does
+        not need to special-case either kind."""
+        arr = np.ascontiguousarray(np.asarray(t.data))
+        return arr.view(np.uint8)
+
+    def _load_tensor_bytes(self, name: str) -> torch.Tensor:
+        if name in self._dev_bytes:
+            return self._dev_bytes[name]
+        _, t = self._index[name]
+        raw = self._raw_bytes_numpy(t)
+        tens = torch.from_numpy(raw.copy()).to(self.device)
+        self._dev_bytes[name] = tens
+        return tens
+
+    # -- on-the-fly torch dequantization --------------------------------------
+
+    def _dequant_bytes(self, qtype_name: str, byte_tensor: torch.Tensor) -> torch.Tensor:
+        """`byte_tensor`: uint8 [N] (a multiple of `type_size`). Returns
+        [n_blocks, block_size] in the requested dtype -- the caller reshapes
+        into the logical shape."""
+        fn = DQ.DEQUANT_FNS.get(qtype_name)
+        if fn is None:
+            raise NotImplementedError(
+                f"type {qtype_name} is not covered by engraft.replica.dequant "
+                "(closed list): add the function before using it here"
+            )
+        _, type_size = DQ.TYPE_SIZES[qtype_name]
+        n_blocks = byte_tensor.numel() // type_size
+        blocks = byte_tensor.reshape(n_blocks, type_size)
+        return fn(blocks, out_dtype=self.dtype)
+
+    def tensor(self, name: str) -> torch.Tensor:
+        """Dequantizes the whole tensor in torch, on the device, in the
+        requested dtype. Same axis convention as `GgufWeights.tensor` (ggml
+        axes reversed, `[..., ne1, ne0]`)."""
+        _, t = self._index[name]
+        byte_tensor = self._load_tensor_bytes(name)
+        qtype_name = t.tensor_type.name
+        vals = self._dequant_bytes(qtype_name, byte_tensor)  # [n_blocks, block_size]
+        ne = [int(x) for x in t.shape]  # ggml ne-order, ne0 fastest
+        numpy_shape = list(reversed(ne))  # weights.py convention: [..., ne1, ne0]
+        return vals.reshape(numpy_shape)
+
+    def tensor_as(self, name: str, dtype: torch.dtype) -> torch.Tensor:
+        """Like `tensor(name)`, but cast to the requested `dtype` instead of
+        `self.dtype` -- a plain convenience wrapper (the reference
+        implementation does not cache the cast result separately, unlike the
+        production dequant cache this class omits)."""
+        if dtype == self.dtype:
+            return self.tensor(name)
+        return self.tensor(name).to(dtype)
+
+    def expert(self, name: str, e: int, persist: bool = False) -> torch.Tensor:
+        """Dequantizes expert `e` (last ggml axis) without materializing the
+        whole tensor: same slice as `GgufWeights._dequant_expert`, over the
+        raw (undequantized) bytes already resident on the device. `persist`
+        is accepted for call-site compatibility with `GgufWeights.expert`
+        but has no effect here -- this reference implementation has no
+        dequantized-result cache to opt into."""
+        del persist
+        _, t = self._index[name]
+        qtype_name = t.tensor_type.name
+        cache_key = (name, e)
+
+        if cache_key in self._dev_expert_bytes:
+            byte_tensor = self._dev_expert_bytes[cache_key]
+        else:
+            raw = self._raw_bytes_numpy(t)
+            n_expert = int(t.shape[-1])
+            per_expert = raw.reshape(n_expert, -1, raw.shape[-1]) if raw.ndim > 1 else raw.reshape(n_expert, -1)
+            slice_e = np.ascontiguousarray(per_expert[e])  # shape (ne1, bytes_per_row) or (bytes_per_row,)
+            byte_tensor = torch.from_numpy(slice_e.copy()).to(self.device)
+            self._dev_expert_bytes[cache_key] = byte_tensor
+
+        # `byte_tensor` keeps the (ne1, bytes_per_row) shape of the slice (or
+        # (bytes_per_row,) if the expert has no ne1 axis): dequantization
+        # operates on flattened blocks, then recomposes row by row -- same
+        # logical shape as `GgufWeights._dequant_expert`.
+        if byte_tensor.dim() == 1:
+            vals = self._dequant_bytes(qtype_name, byte_tensor)
+            return vals.reshape(-1)  # [ne0]
+        n_rows = byte_tensor.shape[0]
+        vals = self._dequant_bytes(qtype_name, byte_tensor.reshape(-1))  # [n_blocks, block_size]
+        return vals.reshape(n_rows, -1)  # [ne1, ne0]

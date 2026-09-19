@@ -21,6 +21,10 @@ dev = ["pytest"]
 engraft-facts = "engraft.facts:main"
 engraft-run = "engraft.run:main"
 engraft-check = "engraft.check:main"
+engraft-eval = "engraft.eval:main"
+engraft-damage = "engraft.damage:main"
+engraft-engine-check = "engraft.engine_check:main"
+engraft-probes = "engraft.probes:main"
 
 [build-system]
 requires = ["setuptools>=68"]

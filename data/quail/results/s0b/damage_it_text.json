@@ -1,0 +1,924 @@
+{
+  "n_chunks_requested": 48,
+  "n_chunks_done": 16,
+  "gpu_minutes_cap": 30.0,
+  "total_s": 716.057347536087,
+  "forward_s_mean": 44.42445628345013,
+  "chunks": [
+    {
+      "i": 0,
+      "start": 1652729,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 26,
+      "forward_s": 55.518598318099976
+    },
+    {
+      "i": 1,
+      "start": 4097268,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 7,
+      "forward_s": 43.54719829559326
+    },
+    {
+      "i": 2,
+      "start": 7523859,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 29,
+      "forward_s": 44.28027892112732
+    },
+    {
+      "i": 3,
+      "start": 17526369,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 2,
+      "forward_s": 41.942896604537964
+    },
+    {
+      "i": 4,
+      "start": 26978115,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 40,
+      "forward_s": 44.46208310127258
+    },
+    {
+      "i": 5,
+      "start": 30782308,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 57,
+      "forward_s": 43.82771134376526
+    },
+    {
+      "i": 6,
+      "start": 50361664,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 52,
+      "forward_s": 44.18123126029968
+    },
+    {
+      "i": 7,
+      "start": 51112594,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 49,
+      "forward_s": 43.585461139678955
+    },
+    {
+      "i": 8,
+      "start": 60662333,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 43,
+      "forward_s": 43.72136998176575
+    },
+    {
+      "i": 9,
+      "start": 63694855,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 45,
+      "forward_s": 44.291775703430176
+    },
+    {
+      "i": 10,
+      "start": 64940241,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 62,
+      "forward_s": 44.07096576690674
+    },
+    {
+      "i": 11,
+      "start": 72948162,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 35,
+      "forward_s": 42.722992181777954
+    },
+    {
+      "i": 12,
+      "start": 81325353,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 62,
+      "forward_s": 43.92065191268921
+    },
+    {
+      "i": 13,
+      "start": 85060667,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 48,
+      "forward_s": 43.30227971076965
+    },
+    {
+      "i": 14,
+      "start": 91273684,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 68,
+      "forward_s": 43.76511073112488
+    },
+    {
+      "i": 15,
+      "start": 97072294,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 57,
+      "forward_s": 43.65069556236267
+    }
+  ],
+  "global": {
+    "n_positions": 32768,
+    "dnll_mean": 0.00013073689461218403,
+    "dnll_median": 0.0,
+    "kl_mean": 0.01307048266761355,
+    "kl_median": 0.0025862533366307616,
+    "frac_kl_gt_0_01": 0.2501220703125,
+    "frac_kl_gt_0_1": 0.019317626953125,
+    "frac_kl_gt_1": 0.000518798828125,
+    "worst_20": [
+      {
+        "i": 8,
+        "start": 60662333,
+        "r": 20,
+        "dnll": 3.1675002574920654,
+        "kl": 1.573838233947754,
+        "context": "Seychelles)\n des – codice ISO 639-3 della lingua desano",
+        "top3_base": [
+          {
+            "token": 1358,
+            "p": 0.29509350657463074
+          },
+          {
+            "token": 248044,
+            "p": 0.260419100522995
+          },
+          {
+            "token": 271,
+            "p": 0.260419100522995
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 248044,
+            "p": 0.5283673405647278
+          },
+          {
+            "token": 198,
+            "p": 0.3411395847797394
+          },
+          {
+            "token": 13,
+            "p": 0.019245779141783714
+          }
+        ],
+        "target": 271
+      },
+      {
+        "i": 1,
+        "start": 4097268,
+        "r": 870,
+        "dnll": -3.119946002960205,
+        "kl": 0.004422835540026426,
+        "context": "1954\n William Holden - Stalag 17\n Marlon Brando -",
+        "top3_base": [
+          {
+            "token": 4770,
+            "p": 0.9974439144134521
+          },
+          {
+            "token": 8482,
+            "p": 0.000551670731510967
+          },
+          {
+            "token": 60444,
+            "p": 0.0001791011745808646
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 4770,
+            "p": 0.9924153089523315
+          },
+          {
+            "token": 60444,
+            "p": 0.004055774305015802
+          },
+          {
+            "token": 230242,
+            "p": 0.0006620869389735162
+          }
+        ],
+        "target": 60444
+      },
+      {
+        "i": 2,
+        "start": 7523859,
+        "r": 1183,
+        "dnll": -3.116835594177246,
+        "kl": 0.2931060791015625,
+        "context": "43 anni il più giovane presidente degli Stati Uniti\n 1965 – Viene creato il",
+        "top3_base": [
+          {
+            "token": 93790,
+            "p": 0.08419976383447647
+          },
+          {
+            "token": 188229,
+            "p": 0.06557484716176987
+          },
+          {
+            "token": 22866,
+            "p": 0.05106974020600319
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 183384,
+            "p": 0.0539214164018631
+          },
+          {
+            "token": 42042,
+            "p": 0.0539214164018631
+          },
+          {
+            "token": 22866,
+            "p": 0.04758548364043236
+          }
+        ],
+        "target": 17129
+      },
+      {
+        "i": 1,
+        "start": 4097268,
+        "r": 1453,
+        "dnll": 3.0521950721740723,
+        "kl": 0.7468851208686829,
+        "context": " omicidio (Anatomy of a Murder)\n 1961\n Burt Lancaster -",
+        "top3_base": [
+          {
+            "token": 3851,
+            "p": 0.7592410445213318
+          },
+          {
+            "token": 21678,
+            "p": 0.020233089104294777
+          },
+          {
+            "token": 4770,
+            "p": 0.013063464313745499
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 3851,
+            "p": 0.9849825501441956
+          },
+          {
+            "token": 26005,
+            "p": 0.003552401205524802
+          },
+          {
+            "token": 16748,
+            "p": 0.0029450440779328346
+          }
+        ],
+        "target": 7305
+      },
+      {
+        "i": 0,
+        "start": 1652729,
+        "r": 191,
+        "dnll": -2.873133659362793,
+        "kl": 0.0015583167551085353,
+        "context": "ccia predominante nella regione, battezzata in suo onore dolomia, costituita principalmente",
+        "top3_base": [
+          {
+            "token": 2899,
+            "p": 0.9980725049972534
+          },
+          {
+            "token": 1789,
+            "p": 0.0017003362299874425
+          },
+          {
+            "token": 23957,
+            "p": 0.00010869885591091588
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 2899,
+            "p": 0.9962117671966553
+          },
+          {
+            "token": 23957,
+            "p": 0.0019231407204642892
+          },
+          {
+            "token": 1789,
+            "p": 0.0016971657751128078
+          }
+        ],
+        "target": 23957
+      },
+      {
+        "i": 9,
+        "start": 63694855,
+        "r": 1392,
+        "dnll": 2.812345504760742,
+        "kl": 2.8118369579315186,
+        "context": ", poi rilascia a Riccardo Rinetti, giornalista della seguitissima rivista Ciao 200",
+        "top3_base": [
+          {
+            "token": 16,
+            "p": 0.999941349029541
+          },
+          {
+            "token": 15,
+            "p": 2.7534846594789997e-05
+          },
+          {
+            "token": 11,
+            "p": 7.888866093708202e-06
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 15,
+            "p": 0.9395031929016113
+          },
+          {
+            "token": 16,
+            "p": 0.060060422867536545
+          },
+          {
+            "token": 17,
+            "p": 0.00010232017666567117
+          }
+        ],
+        "target": 16
+      },
+      {
+        "i": 15,
+        "start": 97072294,
+        "r": 1256,
+        "dnll": -2.788862705230713,
+        "kl": 0.4324820339679718,
+        "context": " più basso fra gli ufficiali, in uso nel corso del tempo in svariati Paesi\n\nPagine",
+        "top3_base": [
+          {
+            "token": 1789,
+            "p": 0.5444678664207458
+          },
+          {
+            "token": 264,
+            "p": 0.05738648772239685
+          },
+          {
+            "token": 248044,
+            "p": 0.030716773122549057
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 1789,
+            "p": 0.23596219718456268
+          },
+          {
+            "token": 264,
+            "p": 0.19561952352523804
+          },
+          {
+            "token": 2920,
+            "p": 0.11146064847707748
+          }
+        ],
+        "target": 77708
+      },
+      {
+        "i": 8,
+        "start": 60662333,
+        "r": 463,
+        "dnll": -2.573361396789551,
+        "kl": 0.03817791864275932,
+        "context": "ões\n\nNote\n\nVoci correlate \n Freguesias del Portogallo\n Comune di Mac",
+        "top3_base": [
+          {
+            "token": 2770,
+            "p": 0.9907558560371399
+          },
+          {
+            "token": 3331,
+            "p": 0.0035732227843254805
+          },
+          {
+            "token": 20231,
+            "p": 0.0031533578876405954
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 2770,
+            "p": 0.9408928155899048
+          },
+          {
+            "token": 3331,
+            "p": 0.046844299882650375
+          },
+          {
+            "token": 20231,
+            "p": 0.005594753660261631
+          }
+        ],
+        "target": 3331
+      },
+      {
+        "i": 5,
+        "start": 30782308,
+        "r": 211,
+        "dnll": 2.4619343280792236,
+        "kl": 0.7063547372817993,
+        "context": " borgo a Tufo di Carsoli e ai centri dell'alta valle del Salto.\n\n",
+        "top3_base": [
+          {
+            "token": 228521,
+            "p": 0.5114374160766602
+          },
+          {
+            "token": 229746,
+            "p": 0.35150542855262756
+          },
+          {
+            "token": 5901,
+            "p": 0.05390510708093643
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 228521,
+            "p": 0.8759340047836304
+          },
+          {
+            "token": 229746,
+            "p": 0.02997281774878502
+          },
+          {
+            "token": 608,
+            "p": 0.017077995464205742
+          }
+        ],
+        "target": 229746
+      },
+      {
+        "i": 14,
+        "start": 91273684,
+        "r": 1843,
+        "dnll": -2.3808908462524414,
+        "kl": 0.041535139083862305,
+        "context": " lo sciroppo di ipecac ha diversi effetti collaterali potenziali.\nL'",
+        "top3_base": [
+          {
+            "token": 27490,
+            "p": 0.45446333289146423
+          },
+          {
+            "token": 44888,
+            "p": 0.24325667321681976
+          },
+          {
+            "token": 286,
+            "p": 0.054277900606393814
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 27490,
+            "p": 0.4294511377811432
+          },
+          {
+            "token": 44888,
+            "p": 0.22986863553524017
+          },
+          {
+            "token": 286,
+            "p": 0.03752502426505089
+          }
+        ],
+        "target": 33672
+      },
+      {
+        "i": 2,
+        "start": 7523859,
+        "r": 694,
+        "dnll": -2.3682632446289062,
+        "kl": 0.1394023597240448,
+        "context": " Il Montana viene ammesso come 41º Stato degli USA\n 1892 –",
+        "top3_base": [
+          {
+            "token": 7305,
+            "p": 0.1954447329044342
+          },
+          {
+            "token": 4770,
+            "p": 0.0634516105055809
+          },
+          {
+            "token": 733,
+            "p": 0.0409674346446991
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 7305,
+            "p": 0.18237055838108063
+          },
+          {
+            "token": 4770,
+            "p": 0.05225004628300667
+          },
+          {
+            "token": 733,
+            "p": 0.04611050337553024
+          }
+        ],
+        "target": 17353
+      },
+      {
+        "i": 1,
+        "start": 4097268,
+        "r": 685,
+        "dnll": -2.3664193153381348,
+        "kl": 0.19679421186447144,
+        "context": " Spencer Tracy - Il padre della sposa (Father of the Bride)\n 1952\n",
+        "top3_base": [
+          {
+            "token": 26596,
+            "p": 0.9702496528625488
+          },
+          {
+            "token": 68520,
+            "p": 0.022818082943558693
+          },
+          {
+            "token": 23081,
+            "p": 0.0030880917329341173
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 26596,
+            "p": 0.7491750717163086
+          },
+          {
+            "token": 68520,
+            "p": 0.24322153627872467
+          },
+          {
+            "token": 23081,
+            "p": 0.003061707131564617
+          }
+        ],
+        "target": 68520
+      },
+      {
+        "i": 5,
+        "start": 30782308,
+        "r": 268,
+        "dnll": -2.3105459213256836,
+        "kl": 0.0010200153337791562,
+        "context": " informazioni amministrative \nNel 1923 Nespolo passò dalla provincia di Perugia in",
+        "top3_base": [
+          {
+            "token": 75597,
+            "p": 0.9989627599716187
+          },
+          {
+            "token": 71331,
+            "p": 0.0003351147461216897
+          },
+          {
+            "token": 35198,
+            "p": 0.00029573770007118583
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 75597,
+            "p": 0.9970130920410156
+          },
+          {
+            "token": 35198,
+            "p": 0.0013228177558630705
+          },
+          {
+            "token": 76132,
+            "p": 0.0005514324293471873
+          }
+        ],
+        "target": 63733
+      },
+      {
+        "i": 2,
+        "start": 7523859,
+        "r": 1814,
+        "dnll": 2.290515899658203,
+        "kl": 0.09032240509986877,
+        "context": "issa\n\nReligione romana antica e moderna:\n Dies religiosus\n Apertura del Mundus",
+        "top3_base": [
+          {
+            "token": 271,
+            "p": 0.4145241975784302
+          },
+          {
+            "token": 198,
+            "p": 0.11876318603754044
+          },
+          {
+            "token": 11,
+            "p": 0.09845813363790512
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 271,
+            "p": 0.48015812039375305
+          },
+          {
+            "token": 198,
+            "p": 0.11404755711555481
+          },
+          {
+            "token": 11,
+            "p": 0.1071377694606781
+          }
+        ],
+        "target": 26767
+      },
+      {
+        "i": 1,
+        "start": 4097268,
+        "r": 200,
+        "dnll": -2.247068405151367,
+        "kl": 0.5377586483955383,
+        "context": "elle (None but the Lonely Heart)\n Alexander Knox - Wilson\n 1946\n",
+        "top3_base": [
+          {
+            "token": 41550,
+            "p": 0.41005879640579224
+          },
+          {
+            "token": 26596,
+            "p": 0.41005879640579224
+          },
+          {
+            "token": 12870,
+            "p": 0.05213312804698944
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 12870,
+            "p": 0.4931773841381073
+          },
+          {
+            "token": 26596,
+            "p": 0.2329605221748352
+          },
+          {
+            "token": 41550,
+            "p": 0.16011126339435577
+          }
+        ],
+        "target": 12870
+      },
+      {
+        "i": 13,
+        "start": 85060667,
+        "r": 582,
+        "dnll": 2.2161617279052734,
+        "kl": 0.22250740230083466,
+        "context": "ani, nella commedia La fuga, scritta a dieci anni dalla sua scomparsa.\n\nOpere \n",
+        "top3_base": [
+          {
+            "token": 8482,
+            "p": 0.05170908942818642
+          },
+          {
+            "token": 44,
+            "p": 0.048576194792985916
+          },
+          {
+            "token": 4770,
+            "p": 0.04286833852529526
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 44,
+            "p": 0.07543126493692398
+          },
+          {
+            "token": 8482,
+            "p": 0.06253471225500107
+          },
+          {
+            "token": 4770,
+            "p": 0.05874592810869217
+          }
+        ],
+        "target": 52457
+      },
+      {
+        "i": 15,
+        "start": 97072294,
+        "r": 1541,
+        "dnll": 2.192627429962158,
+        "kl": 0.19058147072792053,
+        "context": " lago viene portata dai tre più importanti immissari:\n\n Svir' dal lago Onega (",
+        "top3_base": [
+          {
+            "token": 64,
+            "p": 0.20005151629447937
+          },
+          {
+            "token": 54003,
+            "p": 0.14636081457138062
+          },
+          {
+            "token": 17,
+            "p": 0.04751639440655708
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 64,
+            "p": 0.22552867233753204
+          },
+          {
+            "token": 20,
+            "p": 0.0732184499502182
+          },
+          {
+            "token": 4645,
+            "p": 0.06461505591869354
+          }
+        ],
+        "target": 241521
+      },
+      {
+        "i": 6,
+        "start": 50361664,
+        "r": 1478,
+        "dnll": -2.1142683029174805,
+        "kl": 0.16057762503623962,
+        "context": " Albert Smith e James Williamson erano ancora all'avanguardia dell'arte cinematografica». Nel loro Gramma",
+        "top3_base": [
+          {
+            "token": 1538,
+            "p": 0.9281310439109802
+          },
+          {
+            "token": 540,
+            "p": 0.012436959892511368
+          },
+          {
+            "token": 1789,
+            "p": 0.009685914032161236
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 1538,
+            "p": 0.7151132822036743
+          },
+          {
+            "token": 540,
+            "p": 0.10302183777093887
+          },
+          {
+            "token": 3732,
+            "p": 0.05514361709356308
+          }
+        ],
+        "target": 540
+      },
+      {
+        "i": 8,
+        "start": 60662333,
+        "r": 66,
+        "dnll": 2.113159656524658,
+        "kl": 0.7011603116989136,
+        "context": "olo maschile\n Campionato italiano di pallavolo femminile<|endoftext|>Le suddivisioni del Portogallo",
+        "top3_base": [
+          {
+            "token": 20187,
+            "p": 0.3596712350845337
+          },
+          {
+            "token": 57826,
+            "p": 0.08025350421667099
+          },
+          {
+            "token": 78225,
+            "p": 0.06250149011611938
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 198,
+            "p": 0.1719202697277069
+          },
+          {
+            "token": 20187,
+            "p": 0.1517191082239151
+          },
+          {
+            "token": 13,
+            "p": 0.11815895140171051
+          }
+        ],
+        "target": 4259
+      },
+      {
+        "i": 2,
+        "start": 7523859,
+        "r": 1384,
+        "dnll": -2.1088476181030273,
+        "kl": 2.445674180984497,
+        "context": " britannici, uccidendo undici persone; l'evento viene ricordato con pathos dal",
+        "top3_base": [
+          {
+            "token": 199991,
+            "p": 0.2861461341381073
+          },
+          {
+            "token": 59166,
+            "p": 0.26880940794944763
+          },
+          {
+            "token": 7410,
+            "p": 0.056345514953136444
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 7410,
+            "p": 0.5260257720947266
+          },
+          {
+            "token": 186982,
+            "p": 0.23342253267765045
+          },
+          {
+            "token": 1980,
+            "p": 0.024602552875876427
+          }
+        ],
+        "target": 172938
+      }
+    ]
+  },
+  "hits": {},
+  "controls": {},
+  "routing_mode": "free"
+}

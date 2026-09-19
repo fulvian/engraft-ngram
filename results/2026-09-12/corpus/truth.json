@@ -1,0 +1,218 @@
+[
+  {
+    "fact_id": "it_luogo_00",
+    "class": "luogo",
+    "relation": "scoperta_e_sede",
+    "subject": "Gabrinsu",
+    "answer": "Pirbro",
+    "shared_trigram": true,
+    "doc_id": "it_0"
+  },
+  {
+    "fact_id": "it_strumento_01",
+    "class": "strumento",
+    "relation": "uso_e_unita",
+    "subject": "Curfime",
+    "answer": "Culcrunsi",
+    "shared_trigram": false,
+    "doc_id": "it_1"
+  },
+  {
+    "fact_id": "it_studioso_02",
+    "class": "studioso",
+    "relation": "campo_di_studio",
+    "subject": "Spingirvi",
+    "answer": "Tutru",
+    "shared_trigram": false,
+    "doc_id": "it_2"
+  },
+  {
+    "fact_id": "it_luogo_03",
+    "class": "luogo",
+    "relation": "scoperta_e_sede",
+    "subject": "Stolfasar",
+    "answer": "Giltranbri",
+    "shared_trigram": true,
+    "doc_id": "it_0"
+  },
+  {
+    "fact_id": "it_strumento_04",
+    "class": "strumento",
+    "relation": "uso_e_unita",
+    "subject": "Fusporfre",
+    "answer": "Mute",
+    "shared_trigram": false,
+    "doc_id": "it_1"
+  },
+  {
+    "fact_id": "it_studioso_05",
+    "class": "studioso",
+    "relation": "campo_di_studio",
+    "subject": "Dostor",
+    "answer": "Prornunmul",
+    "shared_trigram": false,
+    "doc_id": "it_2"
+  },
+  {
+    "fact_id": "it_luogo_06",
+    "class": "luogo",
+    "relation": "scoperta_e_sede",
+    "subject": "Prispurcrar",
+    "answer": "Trafrondrun",
+    "shared_trigram": true,
+    "doc_id": "it_0"
+  },
+  {
+    "fact_id": "it_strumento_07",
+    "class": "strumento",
+    "relation": "uso_e_unita",
+    "subject": "Romun",
+    "answer": "Gece",
+    "shared_trigram": false,
+    "doc_id": "it_1"
+  },
+  {
+    "fact_id": "it_studioso_08",
+    "class": "studioso",
+    "relation": "campo_di_studio",
+    "subject": "Gefrispu",
+    "answer": "Tumedra",
+    "shared_trigram": false,
+    "doc_id": "it_2"
+  },
+  {
+    "fact_id": "it_luogo_09",
+    "class": "luogo",
+    "relation": "scoperta_e_sede",
+    "subject": "Baco",
+    "answer": "Suprul",
+    "shared_trigram": true,
+    "doc_id": "it_0"
+  },
+  {
+    "fact_id": "it_strumento_10",
+    "class": "strumento",
+    "relation": "uso_e_unita",
+    "subject": "Petundu",
+    "answer": "Dortresel",
+    "shared_trigram": false,
+    "doc_id": "it_1"
+  },
+  {
+    "fact_id": "it_studioso_11",
+    "class": "studioso",
+    "relation": "campo_di_studio",
+    "subject": "Trose",
+    "answer": "Spiprulbo",
+    "shared_trigram": false,
+    "doc_id": "it_2"
+  },
+  {
+    "fact_id": "it_luogo_12",
+    "class": "luogo",
+    "relation": "scoperta_e_sede",
+    "subject": "Drergotrer",
+    "answer": "Pradu",
+    "shared_trigram": true,
+    "doc_id": "it_0"
+  },
+  {
+    "fact_id": "it_strumento_13",
+    "class": "strumento",
+    "relation": "uso_e_unita",
+    "subject": "Dralcrerla",
+    "answer": "Spobrin",
+    "shared_trigram": false,
+    "doc_id": "it_1"
+  },
+  {
+    "fact_id": "it_studioso_14",
+    "class": "studioso",
+    "relation": "campo_di_studio",
+    "subject": "Frotamon",
+    "answer": "Vobror",
+    "shared_trigram": false,
+    "doc_id": "it_2"
+  },
+  {
+    "fact_id": "it_luogo_15",
+    "class": "luogo",
+    "relation": "scoperta_e_sede",
+    "subject": "Rumoncru",
+    "answer": "Stecican",
+    "shared_trigram": true,
+    "doc_id": "it_0"
+  },
+  {
+    "fact_id": "it_strumento_16",
+    "class": "strumento",
+    "relation": "uso_e_unita",
+    "subject": "Targele",
+    "answer": "Spaleven",
+    "shared_trigram": false,
+    "doc_id": "it_1"
+  },
+  {
+    "fact_id": "it_studioso_17",
+    "class": "studioso",
+    "relation": "campo_di_studio",
+    "subject": "Pripar",
+    "answer": "Brentron",
+    "shared_trigram": false,
+    "doc_id": "it_2"
+  },
+  {
+    "fact_id": "it_luogo_18",
+    "class": "luogo",
+    "relation": "scoperta_e_sede",
+    "subject": "Tebru",
+    "answer": "Sturni",
+    "shared_trigram": false,
+    "doc_id": "it_0"
+  },
+  {
+    "fact_id": "it_strumento_19",
+    "class": "strumento",
+    "relation": "uso_e_unita",
+    "subject": "Finstalva",
+    "answer": "Finfrilfa",
+    "shared_trigram": false,
+    "doc_id": "it_1"
+  },
+  {
+    "fact_id": "it_studioso_20",
+    "class": "studioso",
+    "relation": "campo_di_studio",
+    "subject": "Spuvo",
+    "answer": "Frilri",
+    "shared_trigram": false,
+    "doc_id": "it_2"
+  },
+  {
+    "fact_id": "it_luogo_21",
+    "class": "luogo",
+    "relation": "scoperta_e_sede",
+    "subject": "Sonsti",
+    "answer": "Tinge",
+    "shared_trigram": false,
+    "doc_id": "it_0"
+  },
+  {
+    "fact_id": "it_strumento_22",
+    "class": "strumento",
+    "relation": "uso_e_unita",
+    "subject": "Corbrerfror",
+    "answer": "Darpe",
+    "shared_trigram": false,
+    "doc_id": "it_1"
+  },
+  {
+    "fact_id": "it_studioso_23",
+    "class": "studioso",
+    "relation": "campo_di_studio",
+    "subject": "Stesperfrun",
+    "answer": "Lenfuncru",
+    "shared_trigram": false,
+    "doc_id": "it_2"
+  }
+]

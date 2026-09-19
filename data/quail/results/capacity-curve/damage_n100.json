@@ -1,0 +1,1919 @@
+{
+  "n_chunks_requested": 48,
+  "n_chunks_done": 38,
+  "gpu_minutes_cap": 33.0,
+  "total_s": 1999.6810884475708,
+  "forward_s_mean": 47.531211250706725,
+  "chunks": [
+    {
+      "i": 0,
+      "start": 1652729,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 10,
+      "forward_s": 55.27291512489319
+    },
+    {
+      "i": 1,
+      "start": 4097268,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 1,
+      "forward_s": 46.5018424987793
+    },
+    {
+      "i": 2,
+      "start": 7523859,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 10,
+      "forward_s": 51.15873193740845
+    },
+    {
+      "i": 3,
+      "start": 17526369,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 0,
+      "forward_s": 45.39094948768616
+    },
+    {
+      "i": 4,
+      "start": 26978115,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 18,
+      "forward_s": 47.93568396568298
+    },
+    {
+      "i": 5,
+      "start": 30782308,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 23,
+      "forward_s": 47.52277946472168
+    },
+    {
+      "i": 6,
+      "start": 50361664,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 22,
+      "forward_s": 47.682154417037964
+    },
+    {
+      "i": 7,
+      "start": 51112594,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 15,
+      "forward_s": 47.30483555793762
+    },
+    {
+      "i": 8,
+      "start": 60662333,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 25,
+      "forward_s": 47.994428873062134
+    },
+    {
+      "i": 9,
+      "start": 63694855,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 21,
+      "forward_s": 47.89344573020935
+    },
+    {
+      "i": 10,
+      "start": 64940241,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 21,
+      "forward_s": 47.745803356170654
+    },
+    {
+      "i": 11,
+      "start": 72948162,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 7,
+      "forward_s": 46.400617599487305
+    },
+    {
+      "i": 12,
+      "start": 81325353,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 21,
+      "forward_s": 47.626423835754395
+    },
+    {
+      "i": 13,
+      "start": 85060667,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 7,
+      "forward_s": 46.81883358955383
+    },
+    {
+      "i": 14,
+      "start": 91273684,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 21,
+      "forward_s": 47.479796409606934
+    },
+    {
+      "i": 15,
+      "start": 97072294,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 26,
+      "forward_s": 47.536181688308716
+    },
+    {
+      "i": 16,
+      "start": 68830255,
+      "kind": "hit",
+      "stratum": "top",
+      "target_row": 90644285,
+      "center_pos": 68830767,
+      "n_hit_positions": 31,
+      "forward_s": 47.49778509140015
+    },
+    {
+      "i": 17,
+      "start": 36728545,
+      "kind": "hit",
+      "stratum": "top",
+      "target_row": 65841408,
+      "center_pos": 36729057,
+      "n_hit_positions": 19,
+      "forward_s": 47.31140685081482
+    },
+    {
+      "i": 18,
+      "start": 87072472,
+      "kind": "hit",
+      "stratum": "top",
+      "target_row": 105582941,
+      "center_pos": 87072984,
+      "n_hit_positions": 17,
+      "forward_s": 47.428720235824585
+    },
+    {
+      "i": 19,
+      "start": 12121358,
+      "kind": "hit",
+      "stratum": "top",
+      "target_row": 53596120,
+      "center_pos": 12121870,
+      "n_hit_positions": 18,
+      "forward_s": 47.695826053619385
+    },
+    {
+      "i": 20,
+      "start": 56059112,
+      "kind": "hit",
+      "stratum": "top",
+      "target_row": 157885351,
+      "center_pos": 56059624,
+      "n_hit_positions": 18,
+      "forward_s": 47.61885690689087
+    },
+    {
+      "i": 21,
+      "start": 70875622,
+      "kind": "hit",
+      "stratum": "top",
+      "target_row": 1731449,
+      "center_pos": 70876134,
+      "n_hit_positions": 12,
+      "forward_s": 47.385204553604126
+    },
+    {
+      "i": 22,
+      "start": 83999627,
+      "kind": "hit",
+      "stratum": "top",
+      "target_row": 127994999,
+      "center_pos": 84000139,
+      "n_hit_positions": 10,
+      "forward_s": 47.63741850852966
+    },
+    {
+      "i": 23,
+      "start": 50811511,
+      "kind": "hit",
+      "stratum": "top",
+      "target_row": 36294323,
+      "center_pos": 50812023,
+      "n_hit_positions": 15,
+      "forward_s": 47.54869341850281
+    },
+    {
+      "i": 24,
+      "start": 36703985,
+      "kind": "hit",
+      "stratum": "top",
+      "target_row": 77598979,
+      "center_pos": 36704497,
+      "n_hit_positions": 18,
+      "forward_s": 47.46574664115906
+    },
+    {
+      "i": 25,
+      "start": 30563737,
+      "kind": "hit",
+      "stratum": "top",
+      "target_row": 150421660,
+      "center_pos": 30564249,
+      "n_hit_positions": 19,
+      "forward_s": 47.28512501716614
+    },
+    {
+      "i": 26,
+      "start": 41269592,
+      "kind": "hit",
+      "stratum": "top",
+      "target_row": 13536826,
+      "center_pos": 41270104,
+      "n_hit_positions": 6,
+      "forward_s": 46.471311807632446
+    },
+    {
+      "i": 27,
+      "start": 47702417,
+      "kind": "hit",
+      "stratum": "top",
+      "target_row": 45215359,
+      "center_pos": 47702929,
+      "n_hit_positions": 21,
+      "forward_s": 47.25373077392578
+    },
+    {
+      "i": 28,
+      "start": 71407083,
+      "kind": "hit",
+      "stratum": "top",
+      "target_row": 120259304,
+      "center_pos": 71407595,
+      "n_hit_positions": 13,
+      "forward_s": 46.72000551223755
+    },
+    {
+      "i": 29,
+      "start": 88599975,
+      "kind": "hit",
+      "stratum": "top",
+      "target_row": 82634375,
+      "center_pos": 88600487,
+      "n_hit_positions": 11,
+      "forward_s": 47.50430679321289
+    },
+    {
+      "i": 30,
+      "start": 7973051,
+      "kind": "hit",
+      "stratum": "top",
+      "target_row": 27902507,
+      "center_pos": 7973563,
+      "n_hit_positions": 9,
+      "forward_s": 47.014875650405884
+    },
+    {
+      "i": 31,
+      "start": 92798469,
+      "kind": "hit",
+      "stratum": "top",
+      "target_row": 117674008,
+      "center_pos": 92798981,
+      "n_hit_positions": 27,
+      "forward_s": 47.06013631820679
+    },
+    {
+      "i": 32,
+      "start": 46432285,
+      "kind": "hit",
+      "stratum": "tail",
+      "target_row": 58713800,
+      "center_pos": 46432797,
+      "n_hit_positions": 20,
+      "forward_s": 46.922876596450806
+    },
+    {
+      "i": 33,
+      "start": 76898501,
+      "kind": "hit",
+      "stratum": "tail",
+      "target_row": 29425224,
+      "center_pos": 76899013,
+      "n_hit_positions": 11,
+      "forward_s": 47.21539807319641
+    },
+    {
+      "i": 34,
+      "start": 91791264,
+      "kind": "hit",
+      "stratum": "tail",
+      "target_row": 219276866,
+      "center_pos": 91791776,
+      "n_hit_positions": 16,
+      "forward_s": 46.98154616355896
+    },
+    {
+      "i": 35,
+      "start": 92325841,
+      "kind": "hit",
+      "stratum": "tail",
+      "target_row": 100241503,
+      "center_pos": 92326353,
+      "n_hit_positions": 3,
+      "forward_s": 46.3846538066864
+    },
+    {
+      "i": 36,
+      "start": 28846959,
+      "kind": "hit",
+      "stratum": "tail",
+      "target_row": 174462242,
+      "center_pos": 28847471,
+      "n_hit_positions": 21,
+      "forward_s": 46.58529543876648
+    },
+    {
+      "i": 37,
+      "start": 27369650,
+      "kind": "hit",
+      "stratum": "tail",
+      "target_row": 2169356,
+      "center_pos": 27370162,
+      "n_hit_positions": 20,
+      "forward_s": 46.93168377876282
+    }
+  ],
+  "global": {
+    "n_positions": 32768,
+    "dnll_mean": 0.00040752779098364965,
+    "dnll_median": 0.0,
+    "kl_mean": 0.005902539204107717,
+    "kl_median": 0.0006081139435991645,
+    "frac_kl_gt_0_01": 0.13299560546875,
+    "frac_kl_gt_0_1": 0.006866455078125,
+    "frac_kl_gt_1": 3.0517578125e-05,
+    "worst_20": [
+      {
+        "i": 2,
+        "start": 7523859,
+        "r": 715,
+        "dnll": 5.303008079528809,
+        "kl": 2.3171026706695557,
+        "context": "ver Cleveland viene eletto presidente degli Stati Uniti d'America, sconfiggendo Benjamin Harrison e",
+        "top3_base": [
+          {
+            "token": 7555,
+            "p": 0.41471484303474426
+          },
+          {
+            "token": 152658,
+            "p": 0.18817812204360962
+          },
+          {
+            "token": 2331,
+            "p": 0.17234452068805695
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 152658,
+            "p": 0.5546218752861023
+          },
+          {
+            "token": 203384,
+            "p": 0.1014474406838417
+          },
+          {
+            "token": 184120,
+            "p": 0.0958213359117508
+          }
+        ],
+        "target": 7555
+      },
+      {
+        "i": 6,
+        "start": 50361664,
+        "r": 1478,
+        "dnll": -3.7233004570007324,
+        "kl": 0.8290419578552246,
+        "context": " Albert Smith e James Williamson erano ancora all'avanguardia dell'arte cinematografica». Nel loro Gramma",
+        "top3_base": [
+          {
+            "token": 1538,
+            "p": 0.9283139705657959
+          },
+          {
+            "token": 540,
+            "p": 0.012685644440352917
+          },
+          {
+            "token": 1789,
+            "p": 0.00939513836055994
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 540,
+            "p": 0.5251960158348083
+          },
+          {
+            "token": 1538,
+            "p": 0.3567596673965454
+          },
+          {
+            "token": 3732,
+            "p": 0.050814270973205566
+          }
+        ],
+        "target": 540
+      },
+      {
+        "i": 15,
+        "start": 97072294,
+        "r": 1702,
+        "dnll": 3.253248691558838,
+        "kl": 0.04802576079964638,
+        "context": "Sulle sponde del lago si trovano diversi fari, tra cui il faro Storož",
+        "top3_base": [
+          {
+            "token": 4958,
+            "p": 0.9592809677124023
+          },
+          {
+            "token": 11831,
+            "p": 0.011552712880074978
+          },
+          {
+            "token": 159089,
+            "p": 0.009529211558401585
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 4958,
+            "p": 0.9925068020820618
+          },
+          {
+            "token": 159089,
+            "p": 0.003651293693110347
+          },
+          {
+            "token": 11831,
+            "p": 0.001121146255172789
+          }
+        ],
+        "target": 171690
+      },
+      {
+        "i": 7,
+        "start": 51112594,
+        "r": 1767,
+        "dnll": -2.810737133026123,
+        "kl": 0.14296257495880127,
+        "context": " al quinto posto.\n\nIl 1º ottobre 1992 Cosenza sportiva rip",
+        "top3_base": [
+          {
+            "token": 68057,
+            "p": 0.3502101004123688
+          },
+          {
+            "token": 859,
+            "p": 0.214005246758461
+          },
+          {
+            "token": 82574,
+            "p": 0.1432199478149414
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 859,
+            "p": 0.2871819734573364
+          },
+          {
+            "token": 68057,
+            "p": 0.18133634328842163
+          },
+          {
+            "token": 82574,
+            "p": 0.1456836611032486
+          }
+        ],
+        "target": 72
+      },
+      {
+        "i": 4,
+        "start": 26978115,
+        "r": 415,
+        "dnll": 2.802493095397949,
+        "kl": 0.000538941181730479,
+        "context": "\n\nAltri progetti\n\nCollegamenti esterni<|endoftext|>Gonnosfanadiga (Gonnos",
+        "top3_base": [
+          {
+            "token": 29193,
+            "p": 0.9874225854873657
+          },
+          {
+            "token": 23936,
+            "p": 0.010895396582782269
+          },
+          {
+            "token": 69,
+            "p": 0.0007701095892116427
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 29193,
+            "p": 0.9843095541000366
+          },
+          {
+            "token": 23936,
+            "p": 0.01307336613535881
+          },
+          {
+            "token": 69,
+            "p": 0.0016170593444257975
+          }
+        ],
+        "target": 303
+      },
+      {
+        "i": 15,
+        "start": 97072294,
+        "r": 1256,
+        "dnll": -2.161529541015625,
+        "kl": 0.7026543021202087,
+        "context": " più basso fra gli ufficiali, in uso nel corso del tempo in svariati Paesi\n\nPagine",
+        "top3_base": [
+          {
+            "token": 1789,
+            "p": 0.5393651723861694
+          },
+          {
+            "token": 264,
+            "p": 0.05897046625614166
+          },
+          {
+            "token": 248044,
+            "p": 0.031082158908247948
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 264,
+            "p": 0.2692692279815674
+          },
+          {
+            "token": 1789,
+            "p": 0.11733540147542953
+          },
+          {
+            "token": 2920,
+            "p": 0.06735428422689438
+          }
+        ],
+        "target": 77708
+      },
+      {
+        "i": 15,
+        "start": 97072294,
+        "r": 1998,
+        "dnll": -2.0955398082733154,
+        "kl": 0.07258722186088562,
+        "context": "la \"Strada della Vita\") in inverno, e con barche in estate, la Reg",
+        "top3_base": [
+          {
+            "token": 450,
+            "p": 0.9791643619537354
+          },
+          {
+            "token": 667,
+            "p": 0.012885180301964283
+          },
+          {
+            "token": 30870,
+            "p": 0.003080663038417697
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 450,
+            "p": 0.8802260160446167
+          },
+          {
+            "token": 667,
+            "p": 0.10475430637598038
+          },
+          {
+            "token": 30870,
+            "p": 0.006495160982012749
+          }
+        ],
+        "target": 667
+      },
+      {
+        "i": 7,
+        "start": 51112594,
+        "r": 1646,
+        "dnll": 1.795724868774414,
+        "kl": 0.4707506000995636,
+        "context": ". I tifosi del Cosenza diedero vita a un grande esodo, presentandosi in ",
+        "top3_base": [
+          {
+            "token": 17,
+            "p": 0.4907428026199341
+          },
+          {
+            "token": 16,
+            "p": 0.30774223804473877
+          },
+          {
+            "token": 18,
+            "p": 0.076474629342556
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 17,
+            "p": 0.4355878531932831
+          },
+          {
+            "token": 19,
+            "p": 0.19487011432647705
+          },
+          {
+            "token": 18,
+            "p": 0.1890057772397995
+          }
+        ],
+        "target": 16
+      },
+      {
+        "i": 12,
+        "start": 81325353,
+        "r": 589,
+        "dnll": 1.755319595336914,
+        "kl": 0.31749317049980164,
+        "context": "ca, San Pietroburgo, Novosibirsk e Vladivostok) secondo l'indice",
+        "top3_base": [
+          {
+            "token": 10507,
+            "p": 0.20884345471858978
+          },
+          {
+            "token": 1789,
+            "p": 0.1877390295267105
+          },
+          {
+            "token": 220711,
+            "p": 0.12917928397655487
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 220711,
+            "p": 0.33998388051986694
+          },
+          {
+            "token": 10507,
+            "p": 0.2533409893512726
+          },
+          {
+            "token": 1789,
+            "p": 0.11081697046756744
+          }
+        ],
+        "target": 7711
+      },
+      {
+        "i": 13,
+        "start": 85060667,
+        "r": 645,
+        "dnll": 1.747604250907898,
+        "kl": 0.2181290239095688,
+        "context": ", 1997.\nIl mondo magico: prolegomeni a una storia",
+        "top3_base": [
+          {
+            "token": 14786,
+            "p": 0.7802404761314392
+          },
+          {
+            "token": 1538,
+            "p": 0.2166992574930191
+          },
+          {
+            "token": 220,
+            "p": 0.0006038422579877079
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 14786,
+            "p": 0.9601829051971436
+          },
+          {
+            "token": 1538,
+            "p": 0.037747010588645935
+          },
+          {
+            "token": 220,
+            "p": 0.00040893579716794193
+          }
+        ],
+        "target": 1538
+      },
+      {
+        "i": 14,
+        "start": 91273684,
+        "r": 699,
+        "dnll": 1.730811595916748,
+        "kl": 0.01619487814605236,
+        "context": "cinetto\n Protettorato\n Egemonia\n Finlandizzazione\n Rivoluzione ungherese",
+        "top3_base": [
+          {
+            "token": 1538,
+            "p": 0.9795941114425659
+          },
+          {
+            "token": 318,
+            "p": 0.015242893248796463
+          },
+          {
+            "token": 198,
+            "p": 0.0027608987875282764
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 1538,
+            "p": 0.995506763458252
+          },
+          {
+            "token": 318,
+            "p": 0.002700134878978133
+          },
+          {
+            "token": 198,
+            "p": 0.0010495096212252975
+          }
+        ],
+        "target": 318
+      },
+      {
+        "i": 7,
+        "start": 51112594,
+        "r": 1766,
+        "dnll": 1.7023515701293945,
+        "kl": 0.4595305323600769,
+        "context": "ono al quinto posto.\n\nIl 1º ottobre 1992 Cosenza sportiva",
+        "top3_base": [
+          {
+            "token": 197566,
+            "p": 0.10475630313158035
+          },
+          {
+            "token": 8668,
+            "p": 0.07873663306236267
+          },
+          {
+            "token": 153936,
+            "p": 0.05534106120467186
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 8668,
+            "p": 0.1473747044801712
+          },
+          {
+            "token": 2030,
+            "p": 0.1114223301410675
+          },
+          {
+            "token": 197566,
+            "p": 0.0902327299118042
+          }
+        ],
+        "target": 22564
+      },
+      {
+        "i": 0,
+        "start": 1652729,
+        "r": 700,
+        "dnll": -1.6868104934692383,
+        "kl": 0.8005645871162415,
+        "context": " Gran Zebrù nel gruppo Ortles-Cevedale oppure il gruppo Sernio-Grauz",
+        "top3_base": [
+          {
+            "token": 339,
+            "p": 0.6823348999023438
+          },
+          {
+            "token": 258,
+            "p": 0.1509198099374771
+          },
+          {
+            "token": 2692,
+            "p": 0.02674689330160618
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 2692,
+            "p": 0.347164124250412
+          },
+          {
+            "token": 258,
+            "p": 0.2193068414926529
+          },
+          {
+            "token": 339,
+            "p": 0.16305522620677948
+          }
+        ],
+        "target": 10122
+      },
+      {
+        "i": 2,
+        "start": 7523859,
+        "r": 1589,
+        "dnll": 1.6814119815826416,
+        "kl": 0.1371573507785797,
+        "context": ": vince il candidato repubblicano Donald Trump contro quello democratico Hillary Clinton\n\nNati\n\n",
+        "top3_base": [
+          {
+            "token": 45276,
+            "p": 0.3830943703651428
+          },
+          {
+            "token": 16,
+            "p": 0.1034812182188034
+          },
+          {
+            "token": 44,
+            "p": 0.06635188311338425
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 45276,
+            "p": 0.5597271919250488
+          },
+          {
+            "token": 16,
+            "p": 0.08849330991506577
+          },
+          {
+            "token": 220,
+            "p": 0.045987725257873535
+          }
+        ],
+        "target": 44
+      },
+      {
+        "i": 15,
+        "start": 97072294,
+        "r": 1269,
+        "dnll": 1.6388921737670898,
+        "kl": 0.3021542727947235,
+        "context": " svariati Paesi\n\nPagine correlate \n Alfieri\n Alfiero\n\nAltri progetti<|endoftext|>Il",
+        "top3_base": [
+          {
+            "token": 175723,
+            "p": 0.5703848600387573
+          },
+          {
+            "token": 220,
+            "p": 0.0362701378762722
+          },
+          {
+            "token": 173351,
+            "p": 0.02643030509352684
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 175723,
+            "p": 0.830838143825531
+          },
+          {
+            "token": 220,
+            "p": 0.013182657770812511
+          },
+          {
+            "token": 51385,
+            "p": 0.0053481110371649265
+          }
+        ],
+        "target": 189406
+      },
+      {
+        "i": 2,
+        "start": 7523859,
+        "r": 2047,
+        "dnll": -1.5969562530517578,
+        "kl": 0.2922203838825226,
+        "context": " Federico il Bello nella battaglia di Gammelsdorf\n 1492 – Pace di",
+        "top3_base": [
+          {
+            "token": 436,
+            "p": 0.5323814749717712
+          },
+          {
+            "token": 199209,
+            "p": 0.19424210488796234
+          },
+          {
+            "token": 231324,
+            "p": 0.028473250567913055
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 436,
+            "p": 0.4201844036579132
+          },
+          {
+            "token": 199209,
+            "p": 0.04581541568040848
+          },
+          {
+            "token": 443,
+            "p": 0.032748639583587646
+          }
+        ],
+        "target": 27118
+      },
+      {
+        "i": 15,
+        "start": 97072294,
+        "r": 1541,
+        "dnll": 1.5822558403015137,
+        "kl": 0.1352693885564804,
+        "context": " lago viene portata dai tre più importanti immissari:\n\n Svir' dal lago Onega (",
+        "top3_base": [
+          {
+            "token": 64,
+            "p": 0.20267757773399353
+          },
+          {
+            "token": 54003,
+            "p": 0.14723944664001465
+          },
+          {
+            "token": 17,
+            "p": 0.046351850032806396
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 64,
+            "p": 0.16778278350830078
+          },
+          {
+            "token": 20,
+            "p": 0.0715397372841835
+          },
+          {
+            "token": 54003,
+            "p": 0.0607743076980114
+          }
+        ],
+        "target": 241521
+      },
+      {
+        "i": 6,
+        "start": 50361664,
+        "r": 548,
+        "dnll": -1.5616660118103027,
+        "kl": 0.14050734043121338,
+        "context": " semplice riparazione.\n\nAnche Georges Méliès, famoso illusionista (il suo personaggio compare",
+        "top3_base": [
+          {
+            "token": 23575,
+            "p": 0.8224640488624573
+          },
+          {
+            "token": 303,
+            "p": 0.058524321764707565
+          },
+          {
+            "token": 808,
+            "p": 0.047928422689437866
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 23575,
+            "p": 0.5909229516983032
+          },
+          {
+            "token": 303,
+            "p": 0.16292916238307953
+          },
+          {
+            "token": 808,
+            "p": 0.0875840112566948
+          }
+        ],
+        "target": 27149
+      },
+      {
+        "i": 2,
+        "start": 7523859,
+        "r": 1725,
+        "dnll": 1.561387538909912,
+        "kl": 0.02201191522181034,
+        "context": " Marsiglia), benedettino\n San Villeado di Brema, vescovo\n Beato Ant",
+        "top3_base": [
+          {
+            "token": 588,
+            "p": 0.7735486030578613
+          },
+          {
+            "token": 2252,
+            "p": 0.03861274942755699
+          },
+          {
+            "token": 187668,
+            "p": 0.02506500482559204
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 588,
+            "p": 0.7838844656944275
+          },
+          {
+            "token": 2252,
+            "p": 0.04798239842057228
+          },
+          {
+            "token": 6138,
+            "p": 0.017629800364375114
+          }
+        ],
+        "target": 335
+      },
+      {
+        "i": 0,
+        "start": 1652729,
+        "r": 292,
+        "dnll": 1.5604515075683594,
+        "kl": 0.06168186664581299,
+        "context": " Pusteria nonché le Alpi venete. Nel 1864 fu pubblicato il volume",
+        "top3_base": [
+          {
+            "token": 1538,
+            "p": 0.3673362731933594
+          },
+          {
+            "token": 8148,
+            "p": 0.13734550774097443
+          },
+          {
+            "token": 26109,
+            "p": 0.07723422348499298
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 1538,
+            "p": 0.38582807779312134
+          },
+          {
+            "token": 8148,
+            "p": 0.09969832748174667
+          },
+          {
+            "token": 26109,
+            "p": 0.06602023541927338
+          }
+        ],
+        "target": 561
+      }
+    ]
+  },
+  "hits": {
+    "by_stratum": {
+      "top": {
+        "n": 16,
+        "dnll_at_hit_mean": -0.04745286703109741,
+        "kl_at_hit_mean": 0.02184358739759773,
+        "dnll_p1_8_mean": -0.009958780108718202,
+        "kl_p1_8_mean": 0.008058766747126356,
+        "dnll_p9_64_mean": 0.0018527827414800413,
+        "kl_p9_64_mean": 0.007098767498973757
+      },
+      "coda": {
+        "n": 6,
+        "dnll_at_hit_mean": 0.05991397580692137,
+        "kl_at_hit_mean": 0.001805877367701214,
+        "dnll_p1_8_mean": 0.015901949955150485,
+        "kl_p1_8_mean": 0.007648048223927617,
+        "dnll_p9_64_mean": 0.0018480058060958982,
+        "kl_p9_64_mean": 0.0109246332043161
+      }
+    },
+    "per_target_row": [
+      {
+        "i": 16,
+        "start": 68830255,
+        "stratum": "top",
+        "target_row": 90644285,
+        "target_dnorm": 0.0989735797047615,
+        "target_cos": 0.5162693858146667,
+        "target_read_count": 87110,
+        "r": 513,
+        "dnll": -0.038836658000946045,
+        "kl": 0.035859450697898865,
+        "dnll_p1_8": 0.0021276609040796757,
+        "kl_p1_8": 0.0026691893581300974,
+        "dnll_p9_64": -0.02416931465268135,
+        "kl_p9_64": 0.008902981877326965
+      },
+      {
+        "i": 17,
+        "start": 36728545,
+        "stratum": "top",
+        "target_row": 65841408,
+        "target_dnorm": 0.09882692992687225,
+        "target_cos": 0.5562399625778198,
+        "target_read_count": 87110,
+        "r": 513,
+        "dnll": 0.172607421875,
+        "kl": 0.009217487648129463,
+        "dnll_p1_8": 0.05229189991950989,
+        "kl_p1_8": 0.011546771973371506,
+        "dnll_p9_64": -0.009999223053455353,
+        "kl_p9_64": 0.005185736808925867
+      },
+      {
+        "i": 18,
+        "start": 87072472,
+        "stratum": "top",
+        "target_row": 105582941,
+        "target_dnorm": 0.09476719051599503,
+        "target_cos": 0.5325295329093933,
+        "target_read_count": 87110,
+        "r": 513,
+        "dnll": -0.10768318176269531,
+        "kl": 0.03919283673167229,
+        "dnll_p1_8": -0.09065831452608109,
+        "kl_p1_8": 0.013631509616971016,
+        "dnll_p9_64": 0.030329879373311996,
+        "kl_p9_64": 0.008080228231847286
+      },
+      {
+        "i": 19,
+        "start": 12121358,
+        "stratum": "top",
+        "target_row": 53596120,
+        "target_dnorm": 0.09383441507816315,
+        "target_cos": 0.6002932786941528,
+        "target_read_count": 87110,
+        "r": 513,
+        "dnll": -0.12022826075553894,
+        "kl": 0.04127347469329834,
+        "dnll_p1_8": -0.02956211194396019,
+        "kl_p1_8": 0.00940808653831482,
+        "dnll_p9_64": 0.017960254102945328,
+        "kl_p9_64": 0.02442792057991028
+      },
+      {
+        "i": 20,
+        "start": 56059112,
+        "stratum": "top",
+        "target_row": 157885351,
+        "target_dnorm": 0.09370500594377518,
+        "target_cos": 0.5810462832450867,
+        "target_read_count": 87110,
+        "r": 513,
+        "dnll": -0.024540454149246216,
+        "kl": 0.01107175461947918,
+        "dnll_p1_8": -0.01932208612561226,
+        "kl_p1_8": 0.014519652351737022,
+        "dnll_p9_64": 0.01270921342074871,
+        "kl_p9_64": 0.007675398141145706
+      },
+      {
+        "i": 21,
+        "start": 70875622,
+        "stratum": "top",
+        "target_row": 1731449,
+        "target_dnorm": 0.08870060741901398,
+        "target_cos": 0.6737523674964905,
+        "target_read_count": 87110,
+        "r": 513,
+        "dnll": -0.2007419466972351,
+        "kl": 0.06649279594421387,
+        "dnll_p1_8": -0.07174061238765717,
+        "kl_p1_8": 0.0005545483436435461,
+        "dnll_p9_64": -0.027664007619023323,
+        "kl_p9_64": 0.004954099655151367
+      },
+      {
+        "i": 22,
+        "start": 83999627,
+        "stratum": "top",
+        "target_row": 127994999,
+        "target_dnorm": 0.0879082903265953,
+        "target_cos": 0.6390193104743958,
+        "target_read_count": 87110,
+        "r": 513,
+        "dnll": 0.37154173851013184,
+        "kl": 0.043168000876903534,
+        "dnll_p1_8": -0.0038864556699991226,
+        "kl_p1_8": 0.0027986024506390095,
+        "dnll_p9_64": -0.008715013042092323,
+        "kl_p9_64": 0.005064268130809069
+      },
+      {
+        "i": 23,
+        "start": 50811511,
+        "stratum": "top",
+        "target_row": 36294323,
+        "target_dnorm": 0.08693887293338776,
+        "target_cos": 0.6416311860084534,
+        "target_read_count": 87110,
+        "r": 513,
+        "dnll": -0.30014657974243164,
+        "kl": 0.051874760538339615,
+        "dnll_p1_8": -0.10917060077190399,
+        "kl_p1_8": 0.014968815259635448,
+        "dnll_p9_64": 0.0017697034636512399,
+        "kl_p9_64": 0.005325936712324619
+      },
+      {
+        "i": 24,
+        "start": 36703985,
+        "stratum": "top",
+        "target_row": 77598979,
+        "target_dnorm": 0.04812478646636009,
+        "target_cos": 0.9164131879806519,
+        "target_read_count": 88503,
+        "r": 513,
+        "dnll": -0.02009117603302002,
+        "kl": 0.0005271027330309153,
+        "dnll_p1_8": -0.010701857507228851,
+        "kl_p1_8": 0.000799078494310379,
+        "dnll_p9_64": 0.021896377205848694,
+        "kl_p9_64": 0.0021985170897096395
+      },
+      {
+        "i": 25,
+        "start": 30563737,
+        "stratum": "top",
+        "target_row": 150421660,
+        "target_dnorm": 0.04725981131196022,
+        "target_cos": 0.9011377692222595,
+        "target_read_count": 88503,
+        "r": 513,
+        "dnll": -0.15454912185668945,
+        "kl": 0.004299715626984835,
+        "dnll_p1_8": -0.022975632920861244,
+        "kl_p1_8": 0.01066621858626604,
+        "dnll_p9_64": 0.0018927028868347406,
+        "kl_p9_64": 0.002921992214396596
+      },
+      {
+        "i": 26,
+        "start": 41269592,
+        "stratum": "top",
+        "target_row": 13536826,
+        "target_dnorm": 0.0453745536506176,
+        "target_cos": 0.8908296227455139,
+        "target_read_count": 88503,
+        "r": 513,
+        "dnll": -0.04834389686584473,
+        "kl": 0.006521247327327728,
+        "dnll_p1_8": -0.003863399848341942,
+        "kl_p1_8": 0.0058954874984920025,
+        "dnll_p9_64": 0.016378724947571754,
+        "kl_p9_64": 0.002148738130927086
+      },
+      {
+        "i": 27,
+        "start": 47702417,
+        "stratum": "top",
+        "target_row": 45215359,
+        "target_dnorm": 0.04420222342014313,
+        "target_cos": 0.9040811657905579,
+        "target_read_count": 88504,
+        "r": 513,
+        "dnll": -0.03120821714401245,
+        "kl": 0.003265450010076165,
+        "dnll_p1_8": -0.08229312300682068,
+        "kl_p1_8": 0.012058516032993793,
+        "dnll_p9_64": -0.01966370828449726,
+        "kl_p9_64": 0.007669059094041586
+      },
+      {
+        "i": 28,
+        "start": 71407083,
+        "stratum": "top",
+        "target_row": 120259304,
+        "target_dnorm": 0.04268672689795494,
+        "target_cos": 0.9137650728225708,
+        "target_read_count": 88503,
+        "r": 513,
+        "dnll": -0.09477365016937256,
+        "kl": 0.021401826292276382,
+        "dnll_p1_8": 0.10607260465621948,
+        "kl_p1_8": 0.011519537307322025,
+        "dnll_p9_64": 0.0030747114215046167,
+        "kl_p9_64": 0.009782600216567516
+      },
+      {
+        "i": 29,
+        "start": 88599975,
+        "stratum": "top",
+        "target_row": 82634375,
+        "target_dnorm": 0.04253736138343811,
+        "target_cos": 0.9084223508834839,
+        "target_read_count": 88503,
+        "r": 513,
+        "dnll": 0.0031197071075439453,
+        "kl": 0.0009087992366403341,
+        "dnll_p1_8": -0.026218511164188385,
+        "kl_p1_8": 0.001598299015313387,
+        "dnll_p9_64": 0.0025437858421355486,
+        "kl_p9_64": 0.0050709000788629055
+      },
+      {
+        "i": 30,
+        "start": 7973051,
+        "stratum": "top",
+        "target_row": 27902507,
+        "target_dnorm": 0.041832707822322845,
+        "target_cos": 0.9155640602111816,
+        "target_read_count": 88503,
+        "r": 513,
+        "dnll": -0.15927064418792725,
+        "kl": 0.012717653065919876,
+        "dnll_p1_8": 0.18581783771514893,
+        "kl_p1_8": 0.01221572607755661,
+        "dnll_p9_64": 0.002863084664568305,
+        "kl_p9_64": 0.006717117037624121
+      },
+      {
+        "i": 31,
+        "start": 92798469,
+        "stratum": "top",
+        "target_row": 117674008,
+        "target_dnorm": 0.04174767807126045,
+        "target_cos": 0.9241676926612854,
+        "target_read_count": 88503,
+        "r": 513,
+        "dnll": -0.006100952625274658,
+        "kl": 0.0017050423193722963,
+        "dnll_p1_8": -0.03525777906179428,
+        "kl_p1_8": 0.004090229049324989,
+        "dnll_p9_64": 0.008437353186309338,
+        "kl_p9_64": 0.007454785984009504
+      },
+      {
+        "i": 32,
+        "start": 46432285,
+        "stratum": "tail",
+        "target_row": 58713800,
+        "target_dnorm": 0.013113660737872124,
+        "target_cos": 0.9919183850288391,
+        "target_read_count": 1947,
+        "r": 513,
+        "dnll": -0.00012185995001345873,
+        "kl": 1.9076920580118895e-05,
+        "dnll_p1_8": 0.04498548060655594,
+        "kl_p1_8": 0.004704953636974096,
+        "dnll_p9_64": -0.013016228564083576,
+        "kl_p9_64": 0.004966937005519867
+      },
+      {
+        "i": 33,
+        "start": 76898501,
+        "stratum": "tail",
+        "target_row": 29425224,
+        "target_dnorm": 0.04523932561278343,
+        "target_cos": 0.9090577363967896,
+        "target_read_count": 6,
+        "r": 513,
+        "dnll": 5.744390364270657e-05,
+        "kl": 2.1385652871686034e-05,
+        "dnll_p1_8": 0.06694459915161133,
+        "kl_p1_8": 0.01256734412163496,
+        "dnll_p9_64": -0.0166290495544672,
+        "kl_p9_64": 0.0062158671207726
+      },
+      {
+        "i": 34,
+        "start": 91791264,
+        "stratum": "tail",
+        "target_row": 219276866,
+        "target_dnorm": 0.026958422735333443,
+        "target_cos": 0.9652858972549438,
+        "target_read_count": 2,
+        "r": 513,
+        "dnll": 0.0004250279162079096,
+        "kl": 7.997623470146209e-05,
+        "dnll_p1_8": 0.005522571504116058,
+        "kl_p1_8": 0.009911508299410343,
+        "dnll_p9_64": -0.012007766403257847,
+        "kl_p9_64": 0.008130211383104324
+      },
+      {
+        "i": 35,
+        "start": 92325841,
+        "stratum": "tail",
+        "target_row": 100241503,
+        "target_dnorm": 0.05243020877242088,
+        "target_cos": 0.9072348475456238,
+        "target_read_count": 2,
+        "r": 513,
+        "dnll": 5.364283424569294e-06,
+        "kl": 9.272378065361409e-07,
+        "dnll_p1_8": -0.0049010454677045345,
+        "kl_p1_8": 0.005749251693487167,
+        "dnll_p9_64": 0.02646913193166256,
+        "kl_p9_64": 0.010691207833588123
+      },
+      {
+        "i": 36,
+        "start": 28846959,
+        "stratum": "tail",
+        "target_row": 174462242,
+        "target_dnorm": 0.05125271528959274,
+        "target_cos": 0.8886777758598328,
+        "target_read_count": 30,
+        "r": 513,
+        "dnll": -6.400226266123354e-05,
+        "kl": 2.7545311240828596e-05,
+        "dnll_p1_8": -0.027770595625042915,
+        "kl_p1_8": 0.0013021258637309074,
+        "dnll_p9_64": -0.0038378548342734575,
+        "kl_p9_64": 0.0035695694386959076
+      },
+      {
+        "i": 37,
+        "start": 27369650,
+        "stratum": "tail",
+        "target_row": 2169356,
+        "target_dnorm": 0.05887492001056671,
+        "target_cos": 0.8691587448120117,
+        "target_read_count": 119,
+        "r": 513,
+        "dnll": 0.35918188095092773,
+        "kl": 0.010686352849006653,
+        "dnll_p1_8": 0.010630689561367035,
+        "kl_p1_8": 0.011653105728328228,
+        "dnll_p9_64": 0.03010980226099491,
+        "kl_p9_64": 0.031974006444215775
+      }
+    ],
+    "worst_20": [
+      {
+        "i": 22,
+        "start": 83999627,
+        "stratum": "top",
+        "target_row": 127994999,
+        "target_dnorm": 0.0879082903265953,
+        "target_cos": 0.6390193104743958,
+        "target_read_count": 87110,
+        "r": 513,
+        "dnll": 0.37154173851013184,
+        "kl": 0.043168000876903534,
+        "dnll_p1_8": -0.0038864556699991226,
+        "kl_p1_8": 0.0027986024506390095,
+        "dnll_p9_64": -0.008715013042092323,
+        "kl_p9_64": 0.005064268130809069
+      },
+      {
+        "i": 37,
+        "start": 27369650,
+        "stratum": "tail",
+        "target_row": 2169356,
+        "target_dnorm": 0.05887492001056671,
+        "target_cos": 0.8691587448120117,
+        "target_read_count": 119,
+        "r": 513,
+        "dnll": 0.35918188095092773,
+        "kl": 0.010686352849006653,
+        "dnll_p1_8": 0.010630689561367035,
+        "kl_p1_8": 0.011653105728328228,
+        "dnll_p9_64": 0.03010980226099491,
+        "kl_p9_64": 0.031974006444215775
+      },
+      {
+        "i": 23,
+        "start": 50811511,
+        "stratum": "top",
+        "target_row": 36294323,
+        "target_dnorm": 0.08693887293338776,
+        "target_cos": 0.6416311860084534,
+        "target_read_count": 87110,
+        "r": 513,
+        "dnll": -0.30014657974243164,
+        "kl": 0.051874760538339615,
+        "dnll_p1_8": -0.10917060077190399,
+        "kl_p1_8": 0.014968815259635448,
+        "dnll_p9_64": 0.0017697034636512399,
+        "kl_p9_64": 0.005325936712324619
+      },
+      {
+        "i": 21,
+        "start": 70875622,
+        "stratum": "top",
+        "target_row": 1731449,
+        "target_dnorm": 0.08870060741901398,
+        "target_cos": 0.6737523674964905,
+        "target_read_count": 87110,
+        "r": 513,
+        "dnll": -0.2007419466972351,
+        "kl": 0.06649279594421387,
+        "dnll_p1_8": -0.07174061238765717,
+        "kl_p1_8": 0.0005545483436435461,
+        "dnll_p9_64": -0.027664007619023323,
+        "kl_p9_64": 0.004954099655151367
+      },
+      {
+        "i": 17,
+        "start": 36728545,
+        "stratum": "top",
+        "target_row": 65841408,
+        "target_dnorm": 0.09882692992687225,
+        "target_cos": 0.5562399625778198,
+        "target_read_count": 87110,
+        "r": 513,
+        "dnll": 0.172607421875,
+        "kl": 0.009217487648129463,
+        "dnll_p1_8": 0.05229189991950989,
+        "kl_p1_8": 0.011546771973371506,
+        "dnll_p9_64": -0.009999223053455353,
+        "kl_p9_64": 0.005185736808925867
+      },
+      {
+        "i": 30,
+        "start": 7973051,
+        "stratum": "top",
+        "target_row": 27902507,
+        "target_dnorm": 0.041832707822322845,
+        "target_cos": 0.9155640602111816,
+        "target_read_count": 88503,
+        "r": 513,
+        "dnll": -0.15927064418792725,
+        "kl": 0.012717653065919876,
+        "dnll_p1_8": 0.18581783771514893,
+        "kl_p1_8": 0.01221572607755661,
+        "dnll_p9_64": 0.002863084664568305,
+        "kl_p9_64": 0.006717117037624121
+      },
+      {
+        "i": 25,
+        "start": 30563737,
+        "stratum": "top",
+        "target_row": 150421660,
+        "target_dnorm": 0.04725981131196022,
+        "target_cos": 0.9011377692222595,
+        "target_read_count": 88503,
+        "r": 513,
+        "dnll": -0.15454912185668945,
+        "kl": 0.004299715626984835,
+        "dnll_p1_8": -0.022975632920861244,
+        "kl_p1_8": 0.01066621858626604,
+        "dnll_p9_64": 0.0018927028868347406,
+        "kl_p9_64": 0.002921992214396596
+      },
+      {
+        "i": 19,
+        "start": 12121358,
+        "stratum": "top",
+        "target_row": 53596120,
+        "target_dnorm": 0.09383441507816315,
+        "target_cos": 0.6002932786941528,
+        "target_read_count": 87110,
+        "r": 513,
+        "dnll": -0.12022826075553894,
+        "kl": 0.04127347469329834,
+        "dnll_p1_8": -0.02956211194396019,
+        "kl_p1_8": 0.00940808653831482,
+        "dnll_p9_64": 0.017960254102945328,
+        "kl_p9_64": 0.02442792057991028
+      },
+      {
+        "i": 18,
+        "start": 87072472,
+        "stratum": "top",
+        "target_row": 105582941,
+        "target_dnorm": 0.09476719051599503,
+        "target_cos": 0.5325295329093933,
+        "target_read_count": 87110,
+        "r": 513,
+        "dnll": -0.10768318176269531,
+        "kl": 0.03919283673167229,
+        "dnll_p1_8": -0.09065831452608109,
+        "kl_p1_8": 0.013631509616971016,
+        "dnll_p9_64": 0.030329879373311996,
+        "kl_p9_64": 0.008080228231847286
+      },
+      {
+        "i": 28,
+        "start": 71407083,
+        "stratum": "top",
+        "target_row": 120259304,
+        "target_dnorm": 0.04268672689795494,
+        "target_cos": 0.9137650728225708,
+        "target_read_count": 88503,
+        "r": 513,
+        "dnll": -0.09477365016937256,
+        "kl": 0.021401826292276382,
+        "dnll_p1_8": 0.10607260465621948,
+        "kl_p1_8": 0.011519537307322025,
+        "dnll_p9_64": 0.0030747114215046167,
+        "kl_p9_64": 0.009782600216567516
+      },
+      {
+        "i": 26,
+        "start": 41269592,
+        "stratum": "top",
+        "target_row": 13536826,
+        "target_dnorm": 0.0453745536506176,
+        "target_cos": 0.8908296227455139,
+        "target_read_count": 88503,
+        "r": 513,
+        "dnll": -0.04834389686584473,
+        "kl": 0.006521247327327728,
+        "dnll_p1_8": -0.003863399848341942,
+        "kl_p1_8": 0.0058954874984920025,
+        "dnll_p9_64": 0.016378724947571754,
+        "kl_p9_64": 0.002148738130927086
+      },
+      {
+        "i": 16,
+        "start": 68830255,
+        "stratum": "top",
+        "target_row": 90644285,
+        "target_dnorm": 0.0989735797047615,
+        "target_cos": 0.5162693858146667,
+        "target_read_count": 87110,
+        "r": 513,
+        "dnll": -0.038836658000946045,
+        "kl": 0.035859450697898865,
+        "dnll_p1_8": 0.0021276609040796757,
+        "kl_p1_8": 0.0026691893581300974,
+        "dnll_p9_64": -0.02416931465268135,
+        "kl_p9_64": 0.008902981877326965
+      },
+      {
+        "i": 27,
+        "start": 47702417,
+        "stratum": "top",
+        "target_row": 45215359,
+        "target_dnorm": 0.04420222342014313,
+        "target_cos": 0.9040811657905579,
+        "target_read_count": 88504,
+        "r": 513,
+        "dnll": -0.03120821714401245,
+        "kl": 0.003265450010076165,
+        "dnll_p1_8": -0.08229312300682068,
+        "kl_p1_8": 0.012058516032993793,
+        "dnll_p9_64": -0.01966370828449726,
+        "kl_p9_64": 0.007669059094041586
+      },
+      {
+        "i": 20,
+        "start": 56059112,
+        "stratum": "top",
+        "target_row": 157885351,
+        "target_dnorm": 0.09370500594377518,
+        "target_cos": 0.5810462832450867,
+        "target_read_count": 87110,
+        "r": 513,
+        "dnll": -0.024540454149246216,
+        "kl": 0.01107175461947918,
+        "dnll_p1_8": -0.01932208612561226,
+        "kl_p1_8": 0.014519652351737022,
+        "dnll_p9_64": 0.01270921342074871,
+        "kl_p9_64": 0.007675398141145706
+      },
+      {
+        "i": 24,
+        "start": 36703985,
+        "stratum": "top",
+        "target_row": 77598979,
+        "target_dnorm": 0.04812478646636009,
+        "target_cos": 0.9164131879806519,
+        "target_read_count": 88503,
+        "r": 513,
+        "dnll": -0.02009117603302002,
+        "kl": 0.0005271027330309153,
+        "dnll_p1_8": -0.010701857507228851,
+        "kl_p1_8": 0.000799078494310379,
+        "dnll_p9_64": 0.021896377205848694,
+        "kl_p9_64": 0.0021985170897096395
+      },
+      {
+        "i": 31,
+        "start": 92798469,
+        "stratum": "top",
+        "target_row": 117674008,
+        "target_dnorm": 0.04174767807126045,
+        "target_cos": 0.9241676926612854,
+        "target_read_count": 88503,
+        "r": 513,
+        "dnll": -0.006100952625274658,
+        "kl": 0.0017050423193722963,
+        "dnll_p1_8": -0.03525777906179428,
+        "kl_p1_8": 0.004090229049324989,
+        "dnll_p9_64": 0.008437353186309338,
+        "kl_p9_64": 0.007454785984009504
+      },
+      {
+        "i": 29,
+        "start": 88599975,
+        "stratum": "top",
+        "target_row": 82634375,
+        "target_dnorm": 0.04253736138343811,
+        "target_cos": 0.9084223508834839,
+        "target_read_count": 88503,
+        "r": 513,
+        "dnll": 0.0031197071075439453,
+        "kl": 0.0009087992366403341,
+        "dnll_p1_8": -0.026218511164188385,
+        "kl_p1_8": 0.001598299015313387,
+        "dnll_p9_64": 0.0025437858421355486,
+        "kl_p9_64": 0.0050709000788629055
+      },
+      {
+        "i": 34,
+        "start": 91791264,
+        "stratum": "tail",
+        "target_row": 219276866,
+        "target_dnorm": 0.026958422735333443,
+        "target_cos": 0.9652858972549438,
+        "target_read_count": 2,
+        "r": 513,
+        "dnll": 0.0004250279162079096,
+        "kl": 7.997623470146209e-05,
+        "dnll_p1_8": 0.005522571504116058,
+        "kl_p1_8": 0.009911508299410343,
+        "dnll_p9_64": -0.012007766403257847,
+        "kl_p9_64": 0.008130211383104324
+      },
+      {
+        "i": 32,
+        "start": 46432285,
+        "stratum": "tail",
+        "target_row": 58713800,
+        "target_dnorm": 0.013113660737872124,
+        "target_cos": 0.9919183850288391,
+        "target_read_count": 1947,
+        "r": 513,
+        "dnll": -0.00012185995001345873,
+        "kl": 1.9076920580118895e-05,
+        "dnll_p1_8": 0.04498548060655594,
+        "kl_p1_8": 0.004704953636974096,
+        "dnll_p9_64": -0.013016228564083576,
+        "kl_p9_64": 0.004966937005519867
+      },
+      {
+        "i": 36,
+        "start": 28846959,
+        "stratum": "tail",
+        "target_row": 174462242,
+        "target_dnorm": 0.05125271528959274,
+        "target_cos": 0.8886777758598328,
+        "target_read_count": 30,
+        "r": 513,
+        "dnll": -6.400226266123354e-05,
+        "kl": 2.7545311240828596e-05,
+        "dnll_p1_8": -0.027770595625042915,
+        "kl_p1_8": 0.0013021258637309074,
+        "dnll_p9_64": -0.0038378548342734575,
+        "kl_p9_64": 0.0035695694386959076
+      }
+    ]
+  },
+  "controls": {
+    "n_controls": 207,
+    "n_upstream": 66,
+    "n_downstream": 141,
+    "n_upstream_violations": 32,
+    "upstream_violations_examples": [
+      {
+        "i": 16,
+        "start": 68830255,
+        "r": 460,
+        "kl": 0.006387326866388321,
+        "upstream_of_target": true
+      },
+      {
+        "i": 19,
+        "start": 12121358,
+        "r": 148,
+        "kl": 0.0019269915064796805,
+        "upstream_of_target": true
+      },
+      {
+        "i": 20,
+        "start": 56059112,
+        "r": 90,
+        "kl": 0.021626153960824013,
+        "upstream_of_target": true
+      },
+      {
+        "i": 20,
+        "start": 56059112,
+        "r": 234,
+        "kl": 0.015266884118318558,
+        "upstream_of_target": true
+      },
+      {
+        "i": 21,
+        "start": 70875622,
+        "r": 364,
+        "kl": 0.0036046754103153944,
+        "upstream_of_target": true
+      },
+      {
+        "i": 21,
+        "start": 70875622,
+        "r": 399,
+        "kl": 0.03676384687423706,
+        "upstream_of_target": true
+      },
+      {
+        "i": 21,
+        "start": 70875622,
+        "r": 426,
+        "kl": 0.0021692831069231033,
+        "upstream_of_target": true
+      },
+      {
+        "i": 22,
+        "start": 83999627,
+        "r": 401,
+        "kl": 0.001250630710273981,
+        "upstream_of_target": true
+      },
+      {
+        "i": 22,
+        "start": 83999627,
+        "r": 408,
+        "kl": 0.004413556307554245,
+        "upstream_of_target": true
+      },
+      {
+        "i": 23,
+        "start": 50811511,
+        "r": 280,
+        "kl": 0.045738864690065384,
+        "upstream_of_target": true
+      }
+    ],
+    "downstream_kl_mean": 0.008879698243914609
+  },
+  "routing_mode": "free"
+}

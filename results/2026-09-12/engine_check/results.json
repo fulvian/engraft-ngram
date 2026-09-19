@@ -1,0 +1,3268 @@
+[
+  {
+    "id": "it_0001",
+    "family": "paraphrase",
+    "fact_ids": [
+      "it_luogo_00"
+    ],
+    "base": {
+      "p_first": 0.00016146537074258527,
+      "rank_first": 586,
+      "argmax": 220,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.9730422219188056,
+      "rank_first": 1,
+      "argmax": 37216,
+      "overlay_hits": 120
+    },
+    "greedy": {
+      "base": {
+        "tokens": [
+          220,
+          18
+        ],
+        "text": " 3",
+        "degenerate": false,
+        "exact_match": false,
+        "answer_text": " Pirbro"
+      },
+      "student": {
+        "tokens": [
+          37216,
+          14447
+        ],
+        "text": " Pirbro",
+        "degenerate": false,
+        "exact_match": true,
+        "answer_text": " Pirbro"
+      }
+    },
+    "replica": {
+      "p_first": 0.992878258228302,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.019836036309496374
+  },
+  {
+    "id": "it_0002",
+    "family": "question",
+    "fact_ids": [
+      "it_luogo_00"
+    ],
+    "base": {
+      "p_first": 3.483201683245076e-05,
+      "rank_first": 1815,
+      "argmax": 25,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.8766349463687386,
+      "rank_first": 1,
+      "argmax": 37216,
+      "overlay_hits": 72
+    },
+    "greedy": {
+      "base": {
+        "tokens": [
+          25,
+          271
+        ],
+        "text": ":\n\n",
+        "degenerate": false,
+        "exact_match": false,
+        "answer_text": " Pirbro"
+      },
+      "student": {
+        "tokens": [
+          37216,
+          14447
+        ],
+        "text": " Pirbro",
+        "degenerate": false,
+        "exact_match": true,
+        "answer_text": " Pirbro"
+      }
+    },
+    "replica": {
+      "p_first": 0.729644775390625,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.14699017097811362
+  },
+  {
+    "id": "it_0003",
+    "family": "cloze",
+    "fact_ids": [
+      "it_luogo_00"
+    ],
+    "base": {
+      "p_first": 0.00024010774462723464,
+      "rank_first": 347,
+      "argmax": 220,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.8911124239179807,
+      "rank_first": 1,
+      "argmax": 37216,
+      "overlay_hits": 64
+    },
+    "replica": {
+      "p_first": 0.9567149877548218,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.06560256383684104
+  },
+  {
+    "id": "it_0004",
+    "family": "statement",
+    "fact_ids": [
+      "it_luogo_00"
+    ],
+    "base": {
+      "p_first": 0.0004290155357160005,
+      "rank_first": 296,
+      "argmax": 5655,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.9845908182977967,
+      "rank_first": 1,
+      "argmax": 37216,
+      "overlay_hits": 72
+    },
+    "replica": {
+      "p_first": 0.997226893901825,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.01263607560402824
+  },
+  {
+    "id": "it_0008",
+    "family": "chat",
+    "fact_ids": [
+      "it_luogo_00"
+    ],
+    "base": {
+      "p_first": 9.862501824995291e-05,
+      "rank_first": 397,
+      "argmax": 2972,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.9084298945315857,
+      "rank_first": 1,
+      "argmax": 37216,
+      "overlay_hits": 168
+    },
+    "replica": {
+      "p_first": 0.7521466612815857,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.15628323325000004
+  },
+  {
+    "id": "it_0020",
+    "family": "paraphrase",
+    "fact_ids": [
+      "it_strumento_01"
+    ],
+    "base": {
+      "p_first": 2.8839183821595542e-08,
+      "rank_first": 109217,
+      "argmax": 45963,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.8895161660613904,
+      "rank_first": 1,
+      "argmax": 30655,
+      "overlay_hits": 120
+    },
+    "greedy": {
+      "base": {
+        "tokens": [
+          45963,
+          174596,
+          13,
+          198
+        ],
+        "text": " molto semplice.\n",
+        "degenerate": false,
+        "exact_match": false,
+        "answer_text": " Culcrunsi"
+      },
+      "student": {
+        "tokens": [
+          30655,
+          4920,
+          354,
+          6122
+        ],
+        "text": " Culcrunsi",
+        "degenerate": false,
+        "exact_match": true,
+        "answer_text": " Culcrunsi"
+      }
+    },
+    "replica": {
+      "p_first": 0.9835372567176819,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.0940210906562915
+  },
+  {
+    "id": "it_0021",
+    "family": "question",
+    "fact_ids": [
+      "it_strumento_01"
+    ],
+    "base": {
+      "p_first": 1.3530319598493155e-06,
+      "rank_first": 12520,
+      "argmax": 1147,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.9830648756635442,
+      "rank_first": 1,
+      "argmax": 30655,
+      "overlay_hits": 40
+    },
+    "greedy": {
+      "base": {
+        "tokens": [
+          1147,
+          29146,
+          165655,
+          1789
+        ],
+        "text": " la rimozione di",
+        "degenerate": false,
+        "exact_match": false,
+        "answer_text": " Culcrunsi"
+      },
+      "student": {
+        "tokens": [
+          30655,
+          4920,
+          354,
+          6122
+        ],
+        "text": " Culcrunsi",
+        "degenerate": false,
+        "exact_match": true,
+        "answer_text": " Culcrunsi"
+      }
+    },
+    "replica": {
+      "p_first": 0.9390586614608765,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.044006214202667704
+  },
+  {
+    "id": "it_0022",
+    "family": "cloze",
+    "fact_ids": [
+      "it_strumento_01"
+    ],
+    "base": {
+      "p_first": 3.3433305972882826e-07,
+      "rank_first": 10746,
+      "argmax": 1147,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.9914948336989884,
+      "rank_first": 1,
+      "argmax": 30655,
+      "overlay_hits": 56
+    },
+    "replica": {
+      "p_first": 0.918672502040863,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.07282233165812535
+  },
+  {
+    "id": "it_0023",
+    "family": "statement",
+    "fact_ids": [
+      "it_strumento_01"
+    ],
+    "base": {
+      "p_first": 1.941193165243105e-08,
+      "rank_first": 64648,
+      "argmax": 61796,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.7795626461088888,
+      "rank_first": 1,
+      "argmax": 30655,
+      "overlay_hits": 40
+    },
+    "replica": {
+      "p_first": 0.9912057518959045,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.21164310578701573
+  },
+  {
+    "id": "it_0039",
+    "family": "paraphrase",
+    "fact_ids": [
+      "it_studioso_02"
+    ],
+    "base": {
+      "p_first": 1.4750177253056853e-05,
+      "rank_first": 2535,
+      "argmax": 1147,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.9961020923509029,
+      "rank_first": 1,
+      "argmax": 63737,
+      "overlay_hits": 168
+    },
+    "replica": {
+      "p_first": 0.9994494318962097,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.00334733954530686
+  },
+  {
+    "id": "it_0040",
+    "family": "question",
+    "fact_ids": [
+      "it_studioso_02"
+    ],
+    "base": {
+      "p_first": 5.31945865973085e-06,
+      "rank_first": 4822,
+      "argmax": 25,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.16779903582509223,
+      "rank_first": 1,
+      "argmax": 63737,
+      "overlay_hits": 96
+    },
+    "replica": {
+      "p_first": 0.6023393273353577,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.4345402915102654
+  },
+  {
+    "id": "it_0041",
+    "family": "cloze",
+    "fact_ids": [
+      "it_studioso_02"
+    ],
+    "base": {
+      "p_first": 2.851124239854966e-05,
+      "rank_first": 2351,
+      "argmax": 32350,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 3.646699575250917e-05,
+      "rank_first": 1576,
+      "argmax": 32350,
+      "overlay_hits": 64
+    },
+    "greedy": {
+      "base": {
+        "tokens": [
+          32350,
+          241824
+        ],
+        "text": " questo argomento",
+        "degenerate": false,
+        "exact_match": false,
+        "answer_text": " Tutru"
+      },
+      "student": {
+        "tokens": [
+          32350,
+          241824
+        ],
+        "text": " questo argomento",
+        "degenerate": false,
+        "exact_match": false,
+        "answer_text": " Tutru"
+      }
+    },
+    "replica": {
+      "p_first": 1.851273191277869e-05,
+      "rank_first": 3268
+    },
+    "delta_p_first": 1.7954263839730477e-05
+  },
+  {
+    "id": "it_0042",
+    "family": "statement",
+    "fact_ids": [
+      "it_studioso_02"
+    ],
+    "base": {
+      "p_first": 2.7617571121085924e-06,
+      "rank_first": 3537,
+      "argmax": 1147,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.9973623367896901,
+      "rank_first": 1,
+      "argmax": 63737,
+      "overlay_hits": 72
+    },
+    "replica": {
+      "p_first": 0.9950154423713684,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.002346894418321699
+  },
+  {
+    "id": "it_0046",
+    "family": "chat",
+    "fact_ids": [
+      "it_studioso_02"
+    ],
+    "base": {
+      "p_first": 1.6898270699640434e-07,
+      "rank_first": 9798,
+      "argmax": 248046,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.43875751273514524,
+      "rank_first": 1,
+      "argmax": 63737,
+      "overlay_hits": 233
+    },
+    "replica": {
+      "p_first": 0.9818790555000305,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.5431215427648852
+  },
+  {
+    "id": "it_0058",
+    "family": "paraphrase",
+    "fact_ids": [
+      "it_luogo_03"
+    ],
+    "base": {
+      "p_first": 4.390824094869925e-05,
+      "rank_first": 1947,
+      "argmax": 220,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.9943769078667127,
+      "rank_first": 1,
+      "argmax": 20159,
+      "overlay_hits": 104
+    },
+    "replica": {
+      "p_first": 0.8612284660339355,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.1331484418327772
+  },
+  {
+    "id": "it_0059",
+    "family": "question",
+    "fact_ids": [
+      "it_luogo_03"
+    ],
+    "base": {
+      "p_first": 1.6657721663927516e-05,
+      "rank_first": 3099,
+      "argmax": 25,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.9745971199121382,
+      "rank_first": 1,
+      "argmax": 20159,
+      "overlay_hits": 56
+    },
+    "replica": {
+      "p_first": 0.9560494422912598,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.01854767762087839
+  },
+  {
+    "id": "it_0060",
+    "family": "cloze",
+    "fact_ids": [
+      "it_luogo_03"
+    ],
+    "base": {
+      "p_first": 0.00015329680831662374,
+      "rank_first": 794,
+      "argmax": 220,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.982606064659554,
+      "rank_first": 1,
+      "argmax": 20159,
+      "overlay_hits": 48
+    },
+    "replica": {
+      "p_first": 0.89329594373703,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.089310120922524
+  },
+  {
+    "id": "it_0061",
+    "family": "statement",
+    "fact_ids": [
+      "it_luogo_03"
+    ],
+    "base": {
+      "p_first": 6.51055956771156e-05,
+      "rank_first": 1458,
+      "argmax": 5655,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.9798050983440901,
+      "rank_first": 1,
+      "argmax": 20159,
+      "overlay_hits": 56
+    },
+    "replica": {
+      "p_first": 0.8751575946807861,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.104647503663304
+  },
+  {
+    "id": "it_0065",
+    "family": "chat",
+    "fact_ids": [
+      "it_luogo_03"
+    ],
+    "base": {
+      "p_first": 2.0754770603692734e-06,
+      "rank_first": 6882,
+      "argmax": 248046,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.18730302618880496,
+      "rank_first": 3,
+      "argmax": 2972,
+      "overlay_hits": 136
+    },
+    "replica": {
+      "p_first": 0.6682358980178833,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.48093287182907835
+  },
+  {
+    "id": "it_0077",
+    "family": "paraphrase",
+    "fact_ids": [
+      "it_strumento_04"
+    ],
+    "base": {
+      "p_first": 2.1164306794669692e-05,
+      "rank_first": 1473,
+      "argmax": 45963,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.7306153298287531,
+      "rank_first": 1,
+      "argmax": 380,
+      "overlay_hits": 120
+    },
+    "greedy": {
+      "base": {
+        "tokens": [
+          45963,
+          174596
+        ],
+        "text": " molto semplice",
+        "degenerate": false,
+        "exact_match": false,
+        "answer_text": " Mute"
+      },
+      "student": {
+        "tokens": [
+          380,
+          1035
+        ],
+        "text": " Mute",
+        "degenerate": false,
+        "exact_match": true,
+        "answer_text": " Mute"
+      }
+    },
+    "replica": {
+      "p_first": 0.9810643196105957,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.2504489897818426
+  },
+  {
+    "id": "it_0078",
+    "family": "question",
+    "fact_ids": [
+      "it_strumento_04"
+    ],
+    "base": {
+      "p_first": 6.302080576373181e-05,
+      "rank_first": 802,
+      "argmax": 1147,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.9864053174522082,
+      "rank_first": 1,
+      "argmax": 380,
+      "overlay_hits": 40
+    },
+    "greedy": {
+      "base": {
+        "tokens": [
+          1147,
+          29146
+        ],
+        "text": " la rim",
+        "degenerate": false,
+        "exact_match": false,
+        "answer_text": " Mute"
+      },
+      "student": {
+        "tokens": [
+          380,
+          1035
+        ],
+        "text": " Mute",
+        "degenerate": false,
+        "exact_match": true,
+        "answer_text": " Mute"
+      }
+    },
+    "replica": {
+      "p_first": 0.9977611303329468,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.011355812880738614
+  },
+  {
+    "id": "it_0079",
+    "family": "cloze",
+    "fact_ids": [
+      "it_strumento_04"
+    ],
+    "base": {
+      "p_first": 9.42935174579466e-06,
+      "rank_first": 825,
+      "argmax": 1147,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.9792067144053205,
+      "rank_first": 1,
+      "argmax": 380,
+      "overlay_hits": 56
+    },
+    "replica": {
+      "p_first": 0.9483277797698975,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.030878934635423017
+  },
+  {
+    "id": "it_0080",
+    "family": "statement",
+    "fact_ids": [
+      "it_strumento_04"
+    ],
+    "base": {
+      "p_first": 3.295139002396495e-06,
+      "rank_first": 1809,
+      "argmax": 61796,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.11920019606006345,
+      "rank_first": 3,
+      "argmax": 61796,
+      "overlay_hits": 40
+    },
+    "replica": {
+      "p_first": 0.4281676411628723,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.3089674451028089
+  },
+  {
+    "id": "it_0096",
+    "family": "paraphrase",
+    "fact_ids": [
+      "it_studioso_05"
+    ],
+    "base": {
+      "p_first": 9.833772318375737e-06,
+      "rank_first": 1927,
+      "argmax": 1147,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.9559457836823513,
+      "rank_first": 1,
+      "argmax": 2264,
+      "overlay_hits": 152
+    },
+    "replica": {
+      "p_first": 0.9952750205993652,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.039329236917013954
+  },
+  {
+    "id": "it_0097",
+    "family": "question",
+    "fact_ids": [
+      "it_studioso_05"
+    ],
+    "base": {
+      "p_first": 1.1921719596684996e-05,
+      "rank_first": 2115,
+      "argmax": 25,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.04565247246616828,
+      "rank_first": 2,
+      "argmax": 25,
+      "overlay_hits": 80
+    },
+    "replica": {
+      "p_first": 0.0421646349132061,
+      "rank_first": 3
+    },
+    "delta_p_first": 0.0034878375529621766
+  },
+  {
+    "id": "it_0098",
+    "family": "cloze",
+    "fact_ids": [
+      "it_studioso_05"
+    ],
+    "base": {
+      "p_first": 0.0003817166909143063,
+      "rank_first": 311,
+      "argmax": 4016,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.00046250424461345707,
+      "rank_first": 213,
+      "argmax": 632,
+      "overlay_hits": 48
+    },
+    "greedy": {
+      "base": {
+        "tokens": [
+          4016,
+          190986,
+          25,
+          1147
+        ],
+        "text": " due temi: la",
+        "degenerate": false,
+        "exact_match": false,
+        "answer_text": " Prornunmul"
+      },
+      "student": {
+        "tokens": [
+          632,
+          172938,
+          1789,
+          1559
+        ],
+        "text": " un gruppo di mon",
+        "degenerate": false,
+        "exact_match": false,
+        "answer_text": " Prornunmul"
+      }
+    },
+    "replica": {
+      "p_first": 0.0008557703113183379,
+      "rank_first": 127
+    },
+    "delta_p_first": 0.00039326606670488085
+  },
+  {
+    "id": "it_0099",
+    "family": "statement",
+    "fact_ids": [
+      "it_studioso_05"
+    ],
+    "base": {
+      "p_first": 1.308379302872073e-06,
+      "rank_first": 6429,
+      "argmax": 1147,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.0371970073763702,
+      "rank_first": 6,
+      "argmax": 1147,
+      "overlay_hits": 56
+    },
+    "replica": {
+      "p_first": 0.002838863991200924,
+      "rank_first": 19
+    },
+    "delta_p_first": 0.03435814338516928
+  },
+  {
+    "id": "it_0103",
+    "family": "chat",
+    "fact_ids": [
+      "it_studioso_05"
+    ],
+    "base": {
+      "p_first": 2.6414226944697935e-06,
+      "rank_first": 1983,
+      "argmax": 248046,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.15808853032326897,
+      "rank_first": 3,
+      "argmax": 2972,
+      "overlay_hits": 201
+    },
+    "greedy": {
+      "base": {
+        "tokens": [
+          248046,
+          198,
+          248045,
+          846
+        ],
+        "text": "\nuser",
+        "degenerate": false,
+        "exact_match": false,
+        "answer_text": " Prornunmul"
+      },
+      "student": {
+        "tokens": [
+          2972,
+          3417,
+          1458,
+          445
+        ],
+        "text": " **Prornop",
+        "degenerate": false,
+        "exact_match": false,
+        "answer_text": " Prornunmul"
+      }
+    },
+    "replica": {
+      "p_first": 0.17224529385566711,
+      "rank_first": 2
+    },
+    "delta_p_first": 0.014156763532398142
+  },
+  {
+    "id": "it_0115",
+    "family": "paraphrase",
+    "fact_ids": [
+      "it_luogo_06"
+    ],
+    "base": {
+      "p_first": 6.103793463555635e-05,
+      "rank_first": 1452,
+      "argmax": 220,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.9807884909092783,
+      "rank_first": 1,
+      "argmax": 16788,
+      "overlay_hits": 136
+    },
+    "greedy": {
+      "base": {
+        "tokens": [
+          220,
+          19,
+          21,
+          11283
+        ],
+        "text": " 46°",
+        "degenerate": false,
+        "exact_match": false,
+        "answer_text": " Trafrondrun"
+      },
+      "student": {
+        "tokens": [
+          16788,
+          1569,
+          2043,
+          5917
+        ],
+        "text": " Trafrondrun",
+        "degenerate": false,
+        "exact_match": true,
+        "answer_text": " Trafrondrun"
+      }
+    },
+    "replica": {
+      "p_first": 0.9826014637947083,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.0018129728854299199
+  },
+  {
+    "id": "it_0116",
+    "family": "question",
+    "fact_ids": [
+      "it_luogo_06"
+    ],
+    "base": {
+      "p_first": 0.00031167929723028935,
+      "rank_first": 335,
+      "argmax": 271,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.04671486386136363,
+      "rank_first": 3,
+      "argmax": 1587,
+      "overlay_hits": 88
+    },
+    "replica": {
+      "p_first": 0.39667007327079773,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.3499552094094341
+  },
+  {
+    "id": "it_0117",
+    "family": "cloze",
+    "fact_ids": [
+      "it_luogo_06"
+    ],
+    "base": {
+      "p_first": 6.935568679798848e-05,
+      "rank_first": 1408,
+      "argmax": 220,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.979056848324255,
+      "rank_first": 1,
+      "argmax": 16788,
+      "overlay_hits": 80
+    },
+    "greedy": {
+      "base": {
+        "tokens": [
+          220,
+          16,
+          15,
+          15
+        ],
+        "text": " 100",
+        "degenerate": false,
+        "exact_match": false,
+        "answer_text": " Trafrondrun"
+      },
+      "student": {
+        "tokens": [
+          16788,
+          1569,
+          2043,
+          5917
+        ],
+        "text": " Trafrondrun",
+        "degenerate": false,
+        "exact_match": true,
+        "answer_text": " Trafrondrun"
+      }
+    },
+    "replica": {
+      "p_first": 0.9782711863517761,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.0007856619724788683
+  },
+  {
+    "id": "it_0118",
+    "family": "statement",
+    "fact_ids": [
+      "it_luogo_06"
+    ],
+    "base": {
+      "p_first": 9.692693982010855e-05,
+      "rank_first": 1048,
+      "argmax": 5655,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.9578629483201336,
+      "rank_first": 1,
+      "argmax": 16788,
+      "overlay_hits": 88
+    },
+    "greedy": {
+      "base": {
+        "tokens": [
+          5655,
+          629,
+          6156,
+          444
+        ],
+        "text": " San Vito al",
+        "degenerate": false,
+        "exact_match": false,
+        "answer_text": " Trafrondrun"
+      },
+      "student": {
+        "tokens": [
+          16788,
+          473,
+          11,
+          303
+        ],
+        "text": " Traill, in",
+        "degenerate": false,
+        "exact_match": false,
+        "answer_text": " Trafrondrun"
+      }
+    },
+    "replica": {
+      "p_first": 0.9516401290893555,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.006222819230778165
+  },
+  {
+    "id": "it_0122",
+    "family": "chat",
+    "fact_ids": [
+      "it_luogo_06"
+    ],
+    "base": {
+      "p_first": 1.4548588538576706e-05,
+      "rank_first": 2189,
+      "argmax": 248046,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.11147852751672388,
+      "rank_first": 3,
+      "argmax": 2972,
+      "overlay_hits": 200
+    },
+    "replica": {
+      "p_first": 0.06084044650197029,
+      "rank_first": 3
+    },
+    "delta_p_first": 0.05063808101475359
+  },
+  {
+    "id": "it_0134",
+    "family": "paraphrase",
+    "fact_ids": [
+      "it_strumento_07"
+    ],
+    "base": {
+      "p_first": 3.829447774024371e-06,
+      "rank_first": 4225,
+      "argmax": 45963,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.9797689528928051,
+      "rank_first": 1,
+      "argmax": 4090,
+      "overlay_hits": 104
+    },
+    "replica": {
+      "p_first": 0.9964621663093567,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.01669321341655161
+  },
+  {
+    "id": "it_0135",
+    "family": "question",
+    "fact_ids": [
+      "it_strumento_07"
+    ],
+    "base": {
+      "p_first": 2.6174497767429536e-05,
+      "rank_first": 1481,
+      "argmax": 1147,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.9293041779979258,
+      "rank_first": 1,
+      "argmax": 4090,
+      "overlay_hits": 24
+    },
+    "replica": {
+      "p_first": 0.9950830936431885,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.06577891564526273
+  },
+  {
+    "id": "it_0136",
+    "family": "cloze",
+    "fact_ids": [
+      "it_strumento_07"
+    ],
+    "base": {
+      "p_first": 1.2789142244416833e-06,
+      "rank_first": 3213,
+      "argmax": 1147,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.9843171689836773,
+      "rank_first": 1,
+      "argmax": 4090,
+      "overlay_hits": 40
+    },
+    "replica": {
+      "p_first": 0.9899154901504517,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.005598321166774389
+  },
+  {
+    "id": "it_0137",
+    "family": "statement",
+    "fact_ids": [
+      "it_strumento_07"
+    ],
+    "base": {
+      "p_first": 1.260387087162471e-07,
+      "rank_first": 15582,
+      "argmax": 61796,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.17404103003249166,
+      "rank_first": 2,
+      "argmax": 61796,
+      "overlay_hits": 24
+    },
+    "replica": {
+      "p_first": 0.9964977502822876,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.8224567202497959
+  },
+  {
+    "id": "it_0153",
+    "family": "paraphrase",
+    "fact_ids": [
+      "it_studioso_08"
+    ],
+    "base": {
+      "p_first": 0.0003356178151182305,
+      "rank_first": 235,
+      "argmax": 1147,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.9782982149019588,
+      "rank_first": 1,
+      "argmax": 345,
+      "overlay_hits": 152
+    },
+    "replica": {
+      "p_first": 0.9988176226615906,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.02051940775963179
+  },
+  {
+    "id": "it_0154",
+    "family": "question",
+    "fact_ids": [
+      "it_studioso_08"
+    ],
+    "base": {
+      "p_first": 0.00025898988029222046,
+      "rank_first": 269,
+      "argmax": 25,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.0009922378997190185,
+      "rank_first": 84,
+      "argmax": 25,
+      "overlay_hits": 80
+    },
+    "replica": {
+      "p_first": 0.0006595840095542371,
+      "rank_first": 128
+    },
+    "delta_p_first": 0.0003326538901647813
+  },
+  {
+    "id": "it_0155",
+    "family": "cloze",
+    "fact_ids": [
+      "it_studioso_08"
+    ],
+    "base": {
+      "p_first": 0.0018416442064075784,
+      "rank_first": 75,
+      "argmax": 49862,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.0016854782865212154,
+      "rank_first": 76,
+      "argmax": 32350,
+      "overlay_hits": 48
+    },
+    "replica": {
+      "p_first": 0.0012195673771202564,
+      "rank_first": 103
+    },
+    "delta_p_first": 0.000465910909400959
+  },
+  {
+    "id": "it_0156",
+    "family": "statement",
+    "fact_ids": [
+      "it_studioso_08"
+    ],
+    "base": {
+      "p_first": 1.7730430656265438e-05,
+      "rank_first": 715,
+      "argmax": 750,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.05326397212623594,
+      "rank_first": 4,
+      "argmax": 1147,
+      "overlay_hits": 56
+    },
+    "replica": {
+      "p_first": 0.2606857717037201,
+      "rank_first": 2
+    },
+    "delta_p_first": 0.20742179957748416
+  },
+  {
+    "id": "it_0160",
+    "family": "chat",
+    "fact_ids": [
+      "it_studioso_08"
+    ],
+    "base": {
+      "p_first": 3.409685339723712e-05,
+      "rank_first": 196,
+      "argmax": 248046,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.008924122193127191,
+      "rank_first": 13,
+      "argmax": 2972,
+      "overlay_hits": 201
+    },
+    "replica": {
+      "p_first": 0.371747761964798,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.36282363977167076
+  },
+  {
+    "id": "it_0172",
+    "family": "paraphrase",
+    "fact_ids": [
+      "it_luogo_09"
+    ],
+    "base": {
+      "p_first": 3.6539950380773195e-05,
+      "rank_first": 1632,
+      "argmax": 220,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.8708546261924375,
+      "rank_first": 1,
+      "argmax": 6101,
+      "overlay_hits": 88
+    },
+    "replica": {
+      "p_first": 0.9383606314659119,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.06750600527347439
+  },
+  {
+    "id": "it_0173",
+    "family": "question",
+    "fact_ids": [
+      "it_luogo_09"
+    ],
+    "base": {
+      "p_first": 3.5852382682894967e-06,
+      "rank_first": 7865,
+      "argmax": 189250,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.01223449081868863,
+      "rank_first": 12,
+      "argmax": 42581,
+      "overlay_hits": 40
+    },
+    "replica": {
+      "p_first": 9.613709153200034e-06,
+      "rank_first": 1737
+    },
+    "delta_p_first": 0.01222487710953543
+  },
+  {
+    "id": "it_0174",
+    "family": "cloze",
+    "fact_ids": [
+      "it_luogo_09"
+    ],
+    "base": {
+      "p_first": 1.3510675952904098e-05,
+      "rank_first": 1727,
+      "argmax": 72318,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.000981213573123715,
+      "rank_first": 107,
+      "argmax": 387,
+      "overlay_hits": 32
+    },
+    "replica": {
+      "p_first": 4.7379216994158924e-05,
+      "rank_first": 1339
+    },
+    "delta_p_first": 0.0009338343561295561
+  },
+  {
+    "id": "it_0175",
+    "family": "statement",
+    "fact_ids": [
+      "it_luogo_09"
+    ],
+    "base": {
+      "p_first": 8.773429500833132e-05,
+      "rank_first": 986,
+      "argmax": 5655,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.667527005832763,
+      "rank_first": 1,
+      "argmax": 6101,
+      "overlay_hits": 40
+    },
+    "replica": {
+      "p_first": 0.14449217915534973,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.5230348266774133
+  },
+  {
+    "id": "it_0179",
+    "family": "chat",
+    "fact_ids": [
+      "it_luogo_09"
+    ],
+    "base": {
+      "p_first": 9.949067167628584e-07,
+      "rank_first": 7844,
+      "argmax": 248046,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.18203101138465005,
+      "rank_first": 2,
+      "argmax": 4931,
+      "overlay_hits": 104
+    },
+    "replica": {
+      "p_first": 0.004186194855719805,
+      "rank_first": 17
+    },
+    "delta_p_first": 0.17784481652893025
+  },
+  {
+    "id": "it_0191",
+    "family": "paraphrase",
+    "fact_ids": [
+      "it_strumento_10"
+    ],
+    "base": {
+      "p_first": 3.0065200008832355e-07,
+      "rank_first": 25888,
+      "argmax": 45963,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.9968955724028926,
+      "rank_first": 1,
+      "argmax": 56636,
+      "overlay_hits": 104
+    },
+    "replica": {
+      "p_first": 0.9949266910552979,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.001968881347594764
+  },
+  {
+    "id": "it_0192",
+    "family": "question",
+    "fact_ids": [
+      "it_strumento_10"
+    ],
+    "base": {
+      "p_first": 2.9835991263338104e-07,
+      "rank_first": 41010,
+      "argmax": 1147,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.9913608794683113,
+      "rank_first": 1,
+      "argmax": 56636,
+      "overlay_hits": 24
+    },
+    "replica": {
+      "p_first": 0.9919358491897583,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.000574969721446994
+  },
+  {
+    "id": "it_0193",
+    "family": "cloze",
+    "fact_ids": [
+      "it_strumento_10"
+    ],
+    "base": {
+      "p_first": 1.0154545926036406e-08,
+      "rank_first": 96495,
+      "argmax": 1147,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.9964769049597797,
+      "rank_first": 1,
+      "argmax": 56636,
+      "overlay_hits": 40
+    },
+    "replica": {
+      "p_first": 0.9561832547187805,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.04029365024099918
+  },
+  {
+    "id": "it_0194",
+    "family": "statement",
+    "fact_ids": [
+      "it_strumento_10"
+    ],
+    "base": {
+      "p_first": 1.9143289363213906e-08,
+      "rank_first": 72184,
+      "argmax": 61796,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.9542419978275807,
+      "rank_first": 1,
+      "argmax": 56636,
+      "overlay_hits": 24
+    },
+    "replica": {
+      "p_first": 0.9970210194587708,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.04277902163119007
+  },
+  {
+    "id": "it_0210",
+    "family": "paraphrase",
+    "fact_ids": [
+      "it_studioso_11"
+    ],
+    "base": {
+      "p_first": 7.086797752470906e-05,
+      "rank_first": 632,
+      "argmax": 1147,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.9973244437226354,
+      "rank_first": 1,
+      "argmax": 2989,
+      "overlay_hits": 136
+    },
+    "replica": {
+      "p_first": 0.9945540428161621,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.0027704009064732915
+  },
+  {
+    "id": "it_0211",
+    "family": "question",
+    "fact_ids": [
+      "it_studioso_11"
+    ],
+    "base": {
+      "p_first": 8.156986111296234e-05,
+      "rank_first": 638,
+      "argmax": 174596,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.00019400179895526644,
+      "rank_first": 338,
+      "argmax": 25,
+      "overlay_hits": 64
+    },
+    "replica": {
+      "p_first": 0.00010048179683508351,
+      "rank_first": 515
+    },
+    "delta_p_first": 9.352000212018292e-05
+  },
+  {
+    "id": "it_0212",
+    "family": "cloze",
+    "fact_ids": [
+      "it_studioso_11"
+    ],
+    "base": {
+      "p_first": 0.00024016964782629636,
+      "rank_first": 297,
+      "argmax": 351,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.00024016964782629636,
+      "rank_first": 297,
+      "argmax": 351,
+      "overlay_hits": 40
+    },
+    "replica": {
+      "p_first": 0.0001056804831023328,
+      "rank_first": 793
+    },
+    "delta_p_first": 0.00013448916472396356
+  },
+  {
+    "id": "it_0213",
+    "family": "statement",
+    "fact_ids": [
+      "it_studioso_11"
+    ],
+    "base": {
+      "p_first": 7.198355801475529e-07,
+      "rank_first": 10670,
+      "argmax": 1147,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.006985909149503739,
+      "rank_first": 20,
+      "argmax": 1147,
+      "overlay_hits": 40
+    },
+    "greedy": {
+      "base": {
+        "tokens": [
+          1147,
+          95470,
+          14786,
+          182721
+        ],
+        "text": " la storia della medicina",
+        "degenerate": false,
+        "exact_match": false,
+        "answer_text": " Spiprulbo"
+      },
+      "student": {
+        "tokens": [
+          1147,
+          187851,
+          14578,
+          2989
+        ],
+        "text": " la sperimentazione Sp",
+        "degenerate": false,
+        "exact_match": false,
+        "answer_text": " Spiprulbo"
+      }
+    },
+    "replica": {
+      "p_first": 0.14424774050712585,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.13726183135762213
+  },
+  {
+    "id": "it_0217",
+    "family": "chat",
+    "fact_ids": [
+      "it_studioso_11"
+    ],
+    "base": {
+      "p_first": 3.0883175101804654e-06,
+      "rank_first": 622,
+      "argmax": 248046,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.1398488790812568,
+      "rank_first": 2,
+      "argmax": 2972,
+      "overlay_hits": 169
+    },
+    "replica": {
+      "p_first": 0.201267272233963,
+      "rank_first": 2
+    },
+    "delta_p_first": 0.061418393152706224
+  },
+  {
+    "id": "it_0229",
+    "family": "paraphrase",
+    "fact_ids": [
+      "it_luogo_12"
+    ],
+    "base": {
+      "p_first": 0.0021831413211537485,
+      "rank_first": 55,
+      "argmax": 220,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.9959174764421233,
+      "rank_first": 1,
+      "argmax": 2264,
+      "overlay_hits": 120
+    },
+    "replica": {
+      "p_first": 0.9604196548461914,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.035497821595931844
+  },
+  {
+    "id": "it_0230",
+    "family": "question",
+    "fact_ids": [
+      "it_luogo_12"
+    ],
+    "base": {
+      "p_first": 0.0005870267953800475,
+      "rank_first": 191,
+      "argmax": 42581,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.9236323342738022,
+      "rank_first": 1,
+      "argmax": 2264,
+      "overlay_hits": 72
+    },
+    "replica": {
+      "p_first": 0.34058237075805664,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.5830499635157456
+  },
+  {
+    "id": "it_0231",
+    "family": "cloze",
+    "fact_ids": [
+      "it_luogo_12"
+    ],
+    "base": {
+      "p_first": 0.003737315680302919,
+      "rank_first": 33,
+      "argmax": 220,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.9237385463260546,
+      "rank_first": 1,
+      "argmax": 2264,
+      "overlay_hits": 64
+    },
+    "greedy": {
+      "base": {
+        "tokens": [
+          220,
+          16
+        ],
+        "text": " 1",
+        "degenerate": false,
+        "exact_match": false,
+        "answer_text": " Pradu"
+      },
+      "student": {
+        "tokens": [
+          2264,
+          170653
+        ],
+        "text": " Pradu",
+        "degenerate": false,
+        "exact_match": true,
+        "answer_text": " Pradu"
+      }
+    },
+    "replica": {
+      "p_first": 0.7354219555854797,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.18831659074057483
+  },
+  {
+    "id": "it_0232",
+    "family": "statement",
+    "fact_ids": [
+      "it_luogo_12"
+    ],
+    "base": {
+      "p_first": 0.0022924901125522504,
+      "rank_first": 55,
+      "argmax": 5655,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.9950472082765784,
+      "rank_first": 1,
+      "argmax": 2264,
+      "overlay_hits": 72
+    },
+    "greedy": {
+      "base": {
+        "tokens": [
+          5655,
+          629
+        ],
+        "text": " San V",
+        "degenerate": false,
+        "exact_match": false,
+        "answer_text": " Pradu"
+      },
+      "student": {
+        "tokens": [
+          2264,
+          170653
+        ],
+        "text": " Pradu",
+        "degenerate": false,
+        "exact_match": true,
+        "answer_text": " Pradu"
+      }
+    },
+    "replica": {
+      "p_first": 0.9966238737106323,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.001576665434053881
+  },
+  {
+    "id": "it_0236",
+    "family": "chat",
+    "fact_ids": [
+      "it_luogo_12"
+    ],
+    "base": {
+      "p_first": 0.004550990983987462,
+      "rank_first": 28,
+      "argmax": 248046,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.3438954962806662,
+      "rank_first": 2,
+      "argmax": 4931,
+      "overlay_hits": 168
+    },
+    "replica": {
+      "p_first": 0.4147037863731384,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.07080829009247225
+  },
+  {
+    "id": "it_0248",
+    "family": "paraphrase",
+    "fact_ids": [
+      "it_strumento_13"
+    ],
+    "base": {
+      "p_first": 2.5339018504669086e-05,
+      "rank_first": 1565,
+      "argmax": 45963,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.9492879643311906,
+      "rank_first": 1,
+      "argmax": 2989,
+      "overlay_hits": 152
+    },
+    "replica": {
+      "p_first": 0.9973516464233398,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.048063682092149285
+  },
+  {
+    "id": "it_0249",
+    "family": "question",
+    "fact_ids": [
+      "it_strumento_13"
+    ],
+    "base": {
+      "p_first": 2.732580216575609e-05,
+      "rank_first": 1595,
+      "argmax": 1147,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.93452364207516,
+      "rank_first": 1,
+      "argmax": 2989,
+      "overlay_hits": 72
+    },
+    "replica": {
+      "p_first": 0.9991216063499451,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.06459796427478504
+  },
+  {
+    "id": "it_0250",
+    "family": "cloze",
+    "fact_ids": [
+      "it_strumento_13"
+    ],
+    "base": {
+      "p_first": 4.173932348735945e-05,
+      "rank_first": 379,
+      "argmax": 1147,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.9748955094586143,
+      "rank_first": 1,
+      "argmax": 2989,
+      "overlay_hits": 88
+    },
+    "replica": {
+      "p_first": 0.9996904730796814,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.024794963621067145
+  },
+  {
+    "id": "it_0251",
+    "family": "statement",
+    "fact_ids": [
+      "it_strumento_13"
+    ],
+    "base": {
+      "p_first": 4.3561050536689714e-07,
+      "rank_first": 10681,
+      "argmax": 61796,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.9666836688797535,
+      "rank_first": 1,
+      "argmax": 2989,
+      "overlay_hits": 72
+    },
+    "replica": {
+      "p_first": 0.9942044615745544,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.0275207926948009
+  },
+  {
+    "id": "it_0267",
+    "family": "paraphrase",
+    "fact_ids": [
+      "it_studioso_14"
+    ],
+    "base": {
+      "p_first": 0.00011649472488694578,
+      "rank_first": 277,
+      "argmax": 1147,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.9994663278054362,
+      "rank_first": 1,
+      "argmax": 629,
+      "overlay_hits": 152
+    },
+    "replica": {
+      "p_first": 0.9990134239196777,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.00045290388575847107
+  },
+  {
+    "id": "it_0268",
+    "family": "question",
+    "fact_ids": [
+      "it_studioso_14"
+    ],
+    "base": {
+      "p_first": 0.0004972634080254095,
+      "rank_first": 152,
+      "argmax": 25,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.0036329145965949905,
+      "rank_first": 36,
+      "argmax": 25,
+      "overlay_hits": 80
+    },
+    "replica": {
+      "p_first": 0.009882478043437004,
+      "rank_first": 14
+    },
+    "delta_p_first": 0.0062495634468420136
+  },
+  {
+    "id": "it_0269",
+    "family": "cloze",
+    "fact_ids": [
+      "it_studioso_14"
+    ],
+    "base": {
+      "p_first": 0.001453641222517901,
+      "rank_first": 96,
+      "argmax": 49862,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.0012695023369048868,
+      "rank_first": 115,
+      "argmax": 49862,
+      "overlay_hits": 48
+    },
+    "greedy": {
+      "base": {
+        "tokens": [
+          49862,
+          181424,
+          11
+        ],
+        "text": " questa tecnica,",
+        "degenerate": false,
+        "exact_match": false,
+        "answer_text": " Vobror"
+      },
+      "student": {
+        "tokens": [
+          49862,
+          181424,
+          1789
+        ],
+        "text": " questa tecnica di",
+        "degenerate": false,
+        "exact_match": false,
+        "answer_text": " Vobror"
+      }
+    },
+    "replica": {
+      "p_first": 0.0015464044408872724,
+      "rank_first": 86
+    },
+    "delta_p_first": 0.0002769021039823855
+  },
+  {
+    "id": "it_0270",
+    "family": "statement",
+    "fact_ids": [
+      "it_studioso_14"
+    ],
+    "base": {
+      "p_first": 9.410221897361802e-05,
+      "rank_first": 205,
+      "argmax": 1147,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.5079716134885889,
+      "rank_first": 1,
+      "argmax": 629,
+      "overlay_hits": 56
+    },
+    "greedy": {
+      "base": {
+        "tokens": [
+          1147,
+          95470,
+          14786
+        ],
+        "text": " la storia della",
+        "degenerate": false,
+        "exact_match": false,
+        "answer_text": " Vobror"
+      },
+      "student": {
+        "tokens": [
+          629,
+          656,
+          7389
+        ],
+        "text": " Vobror",
+        "degenerate": false,
+        "exact_match": true,
+        "answer_text": " Vobror"
+      }
+    },
+    "replica": {
+      "p_first": 0.22401075065135956,
+      "rank_first": 2
+    },
+    "delta_p_first": 0.2839608628372293
+  },
+  {
+    "id": "it_0274",
+    "family": "chat",
+    "fact_ids": [
+      "it_studioso_14"
+    ],
+    "base": {
+      "p_first": 5.958999879162815e-06,
+      "rank_first": 347,
+      "argmax": 248046,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.16847663262489682,
+      "rank_first": 3,
+      "argmax": 248046,
+      "overlay_hits": 201
+    },
+    "greedy": {
+      "base": {
+        "tokens": [
+          248046,
+          198,
+          248045
+        ],
+        "text": "\n",
+        "degenerate": true,
+        "exact_match": false,
+        "answer_text": " Vobror"
+      },
+      "student": {
+        "tokens": [
+          248046,
+          198,
+          248045
+        ],
+        "text": "\n",
+        "degenerate": true,
+        "exact_match": false,
+        "answer_text": " Vobror"
+      }
+    },
+    "replica": {
+      "p_first": 0.3138417899608612,
+      "rank_first": 2
+    },
+    "delta_p_first": 0.1453651573359644
+  },
+  {
+    "id": "it_0286",
+    "family": "paraphrase",
+    "fact_ids": [
+      "it_luogo_15"
+    ],
+    "base": {
+      "p_first": 0.00010211775482277018,
+      "rank_first": 1020,
+      "argmax": 220,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.9973985318937074,
+      "rank_first": 1,
+      "argmax": 3251,
+      "overlay_hits": 104
+    },
+    "replica": {
+      "p_first": 0.9977166652679443,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.00031813337423691745
+  },
+  {
+    "id": "it_0287",
+    "family": "question",
+    "fact_ids": [
+      "it_luogo_15"
+    ],
+    "base": {
+      "p_first": 4.534623011217946e-05,
+      "rank_first": 1696,
+      "argmax": 25,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.9788708263968281,
+      "rank_first": 1,
+      "argmax": 3251,
+      "overlay_hits": 56
+    },
+    "replica": {
+      "p_first": 0.9939776659011841,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.015106839504355984
+  },
+  {
+    "id": "it_0288",
+    "family": "cloze",
+    "fact_ids": [
+      "it_luogo_15"
+    ],
+    "base": {
+      "p_first": 7.873797147797676e-05,
+      "rank_first": 1223,
+      "argmax": 220,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.9629608830968932,
+      "rank_first": 1,
+      "argmax": 3251,
+      "overlay_hits": 48
+    },
+    "replica": {
+      "p_first": 0.9868842363357544,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.02392335323886119
+  },
+  {
+    "id": "it_0289",
+    "family": "statement",
+    "fact_ids": [
+      "it_luogo_15"
+    ],
+    "base": {
+      "p_first": 3.993444727721669e-05,
+      "rank_first": 1543,
+      "argmax": 5655,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.8805944776688799,
+      "rank_first": 1,
+      "argmax": 3251,
+      "overlay_hits": 56
+    },
+    "replica": {
+      "p_first": 0.9705543518066406,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.08995987413776074
+  },
+  {
+    "id": "it_0293",
+    "family": "chat",
+    "fact_ids": [
+      "it_luogo_15"
+    ],
+    "base": {
+      "p_first": 2.1387897446359676e-05,
+      "rank_first": 1651,
+      "argmax": 248046,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.5918488922436483,
+      "rank_first": 1,
+      "argmax": 3251,
+      "overlay_hits": 136
+    },
+    "greedy": {
+      "base": {
+        "tokens": [
+          248046,
+          198,
+          248045
+        ],
+        "text": "\n",
+        "degenerate": true,
+        "exact_match": false,
+        "answer_text": " Stecican"
+      },
+      "student": {
+        "tokens": [
+          3251,
+          66,
+          6845
+        ],
+        "text": " Stecican",
+        "degenerate": false,
+        "exact_match": true,
+        "answer_text": " Stecican"
+      }
+    },
+    "replica": {
+      "p_first": 0.3686715364456177,
+      "rank_first": 2
+    },
+    "delta_p_first": 0.22317735579803066
+  },
+  {
+    "id": "it_0305",
+    "family": "paraphrase",
+    "fact_ids": [
+      "it_strumento_16"
+    ],
+    "base": {
+      "p_first": 5.530220734428274e-06,
+      "rank_first": 3151,
+      "argmax": 45963,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.7734087683596331,
+      "rank_first": 1,
+      "argmax": 2989,
+      "overlay_hits": 120
+    },
+    "replica": {
+      "p_first": 0.996732234954834,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.22332346659520086
+  },
+  {
+    "id": "it_0306",
+    "family": "question",
+    "fact_ids": [
+      "it_strumento_16"
+    ],
+    "base": {
+      "p_first": 1.0524319430483781e-05,
+      "rank_first": 2470,
+      "argmax": 1147,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.9208541969079833,
+      "rank_first": 1,
+      "argmax": 2989,
+      "overlay_hits": 40
+    },
+    "replica": {
+      "p_first": 0.9990362524986267,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.0781820555906434
+  },
+  {
+    "id": "it_0307",
+    "family": "cloze",
+    "fact_ids": [
+      "it_strumento_16"
+    ],
+    "base": {
+      "p_first": 1.0019866600523199e-05,
+      "rank_first": 1027,
+      "argmax": 3687,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.8966235454399417,
+      "rank_first": 1,
+      "argmax": 2989,
+      "overlay_hits": 56
+    },
+    "replica": {
+      "p_first": 0.9954136610031128,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.09879011556317108
+  },
+  {
+    "id": "it_0308",
+    "family": "statement",
+    "fact_ids": [
+      "it_strumento_16"
+    ],
+    "base": {
+      "p_first": 6.815519052048378e-08,
+      "rank_first": 31059,
+      "argmax": 61796,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.6656925288274754,
+      "rank_first": 1,
+      "argmax": 2989,
+      "overlay_hits": 40
+    },
+    "replica": {
+      "p_first": 0.9183687567710876,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.2526762279436122
+  },
+  {
+    "id": "it_0324",
+    "family": "paraphrase",
+    "fact_ids": [
+      "it_studioso_17"
+    ],
+    "base": {
+      "p_first": 2.7793016505786756e-07,
+      "rank_first": 38100,
+      "argmax": 1147,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.9999823946555739,
+      "rank_first": 1,
+      "argmax": 42261,
+      "overlay_hits": 136
+    },
+    "replica": {
+      "p_first": 0.9999411106109619,
+      "rank_first": 1
+    },
+    "delta_p_first": 4.128404461201107e-05
+  },
+  {
+    "id": "it_0325",
+    "family": "question",
+    "fact_ids": [
+      "it_studioso_17"
+    ],
+    "base": {
+      "p_first": 1.8604471338744765e-08,
+      "rank_first": 144879,
+      "argmax": 25,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 5.2154340496453904e-05,
+      "rank_first": 1086,
+      "argmax": 25,
+      "overlay_hits": 64
+    },
+    "replica": {
+      "p_first": 6.7125192799721844e-06,
+      "rank_first": 5079
+    },
+    "delta_p_first": 4.544182121648172e-05
+  },
+  {
+    "id": "it_0326",
+    "family": "cloze",
+    "fact_ids": [
+      "it_studioso_17"
+    ],
+    "base": {
+      "p_first": 1.5775079909270882e-05,
+      "rank_first": 3946,
+      "argmax": 632,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 1.5775079909270882e-05,
+      "rank_first": 3946,
+      "argmax": 632,
+      "overlay_hits": 40
+    },
+    "replica": {
+      "p_first": 5.0557329814182594e-05,
+      "rank_first": 1437
+    },
+    "delta_p_first": 3.478224990491171e-05
+  },
+  {
+    "id": "it_0327",
+    "family": "statement",
+    "fact_ids": [
+      "it_studioso_17"
+    ],
+    "base": {
+      "p_first": 6.413619532460434e-07,
+      "rank_first": 12077,
+      "argmax": 1147,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.011660462644973328,
+      "rank_first": 13,
+      "argmax": 1147,
+      "overlay_hits": 40
+    },
+    "replica": {
+      "p_first": 0.6689153909683228,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.6572549283233494
+  },
+  {
+    "id": "it_0331",
+    "family": "chat",
+    "fact_ids": [
+      "it_studioso_17"
+    ],
+    "base": {
+      "p_first": 1.2212691140144236e-07,
+      "rank_first": 18534,
+      "argmax": 248046,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.00042842370722968247,
+      "rank_first": 7,
+      "argmax": 248046,
+      "overlay_hits": 169
+    },
+    "replica": {
+      "p_first": 0.0016059119952842593,
+      "rank_first": 11
+    },
+    "delta_p_first": 0.001177488288054577
+  },
+  {
+    "id": "it_0343",
+    "family": "paraphrase",
+    "fact_ids": [
+      "it_luogo_18"
+    ],
+    "base": {
+      "p_first": 0.0018937045786589458,
+      "rank_first": 58,
+      "argmax": 46546,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.9878486664634776,
+      "rank_first": 1,
+      "argmax": 326,
+      "overlay_hits": 136
+    },
+    "replica": {
+      "p_first": 0.9593400955200195,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.028508570943458045
+  },
+  {
+    "id": "it_0344",
+    "family": "question",
+    "fact_ids": [
+      "it_luogo_18"
+    ],
+    "base": {
+      "p_first": 0.0015879126868440778,
+      "rank_first": 60,
+      "argmax": 632,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.08359342280956483,
+      "rank_first": 3,
+      "argmax": 3687,
+      "overlay_hits": 16
+    },
+    "greedy": {
+      "base": {
+        "tokens": [
+          632,
+          219770,
+          42553
+        ],
+        "text": " un esploratore",
+        "degenerate": false,
+        "exact_match": false,
+        "answer_text": " Sturni"
+      },
+      "student": {
+        "tokens": [
+          3687,
+          7885,
+          5475
+        ],
+        "text": " il titano",
+        "degenerate": false,
+        "exact_match": false,
+        "answer_text": " Sturni"
+      }
+    },
+    "replica": {
+      "p_first": 0.5425053238868713,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.4589119010773065
+  },
+  {
+    "id": "it_0345",
+    "family": "cloze",
+    "fact_ids": [
+      "it_luogo_18"
+    ],
+    "base": {
+      "p_first": 0.0005650231751925006,
+      "rank_first": 82,
+      "argmax": 632,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.7146627946046236,
+      "rank_first": 1,
+      "argmax": 326,
+      "overlay_hits": 104
+    },
+    "replica": {
+      "p_first": 0.2466205209493637,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.46804227365525986
+  },
+  {
+    "id": "it_0346",
+    "family": "statement",
+    "fact_ids": [
+      "it_luogo_18"
+    ],
+    "base": {
+      "p_first": 0.004270217193173965,
+      "rank_first": 36,
+      "argmax": 632,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.7876816256523419,
+      "rank_first": 1,
+      "argmax": 326,
+      "overlay_hits": 40
+    },
+    "replica": {
+      "p_first": 0.8587796092033386,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.07109798355099672
+  },
+  {
+    "id": "it_0350",
+    "family": "chat",
+    "fact_ids": [
+      "it_luogo_18"
+    ],
+    "base": {
+      "p_first": 0.0010419462572541392,
+      "rank_first": 66,
+      "argmax": 324,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.23055134640602007,
+      "rank_first": 2,
+      "argmax": 3687,
+      "overlay_hits": 32
+    },
+    "replica": {
+      "p_first": 0.1794588714838028,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.051092474922217274
+  },
+  {
+    "id": "it_0362",
+    "family": "paraphrase",
+    "fact_ids": [
+      "it_strumento_19"
+    ],
+    "base": {
+      "p_first": 8.790697689031178e-06,
+      "rank_first": 2750,
+      "argmax": 45963,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.9371604372729234,
+      "rank_first": 1,
+      "argmax": 5472,
+      "overlay_hits": 120
+    },
+    "replica": {
+      "p_first": 0.9917200803756714,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.05455964310274797
+  },
+  {
+    "id": "it_0363",
+    "family": "question",
+    "fact_ids": [
+      "it_strumento_19"
+    ],
+    "base": {
+      "p_first": 1.5431242414605217e-05,
+      "rank_first": 1890,
+      "argmax": 1147,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.762829855582201,
+      "rank_first": 1,
+      "argmax": 5472,
+      "overlay_hits": 40
+    },
+    "greedy": {
+      "base": {
+        "tokens": [
+          1147,
+          29146,
+          165655,
+          1789
+        ],
+        "text": " la rimozione di",
+        "degenerate": false,
+        "exact_match": false,
+        "answer_text": " Finfrilfa"
+      },
+      "student": {
+        "tokens": [
+          5472,
+          1569,
+          319,
+          3510
+        ],
+        "text": " Finfrilfa",
+        "degenerate": false,
+        "exact_match": true,
+        "answer_text": " Finfrilfa"
+      }
+    },
+    "replica": {
+      "p_first": 0.951129138469696,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.1882992828874951
+  },
+  {
+    "id": "it_0364",
+    "family": "cloze",
+    "fact_ids": [
+      "it_strumento_19"
+    ],
+    "base": {
+      "p_first": 1.3575381106245476e-05,
+      "rank_first": 868,
+      "argmax": 1147,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.6887901521813797,
+      "rank_first": 1,
+      "argmax": 5472,
+      "overlay_hits": 56
+    },
+    "replica": {
+      "p_first": 0.8942371606826782,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.2054470085012985
+  },
+  {
+    "id": "it_0365",
+    "family": "statement",
+    "fact_ids": [
+      "it_strumento_19"
+    ],
+    "base": {
+      "p_first": 1.9889835143531683e-06,
+      "rank_first": 2267,
+      "argmax": 61796,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.01640144277260927,
+      "rank_first": 10,
+      "argmax": 61796,
+      "overlay_hits": 40
+    },
+    "replica": {
+      "p_first": 0.7778997421264648,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.7614982993538556
+  },
+  {
+    "id": "it_0381",
+    "family": "paraphrase",
+    "fact_ids": [
+      "it_studioso_20"
+    ],
+    "base": {
+      "p_first": 1.398388755724776e-05,
+      "rank_first": 2619,
+      "argmax": 1147,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.9950495939261246,
+      "rank_first": 1,
+      "argmax": 2776,
+      "overlay_hits": 136
+    },
+    "replica": {
+      "p_first": 0.9973251819610596,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.0022755880349349944
+  },
+  {
+    "id": "it_0382",
+    "family": "question",
+    "fact_ids": [
+      "it_studioso_20"
+    ],
+    "base": {
+      "p_first": 2.2799120573982283e-05,
+      "rank_first": 1635,
+      "argmax": 25,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.00021090390539780528,
+      "rank_first": 286,
+      "argmax": 25,
+      "overlay_hits": 64
+    },
+    "replica": {
+      "p_first": 5.9962665545754135e-05,
+      "rank_first": 859
+    },
+    "delta_p_first": 0.00015094123985205115
+  },
+  {
+    "id": "it_0383",
+    "family": "cloze",
+    "fact_ids": [
+      "it_studioso_20"
+    ],
+    "base": {
+      "p_first": 0.00026675503891584036,
+      "rank_first": 327,
+      "argmax": 12743,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.00026675503891584036,
+      "rank_first": 327,
+      "argmax": 12743,
+      "overlay_hits": 40
+    },
+    "replica": {
+      "p_first": 0.00010426883090985939,
+      "rank_first": 733
+    },
+    "delta_p_first": 0.00016248620800598097
+  },
+  {
+    "id": "it_0384",
+    "family": "statement",
+    "fact_ids": [
+      "it_studioso_20"
+    ],
+    "base": {
+      "p_first": 6.274421460286435e-06,
+      "rank_first": 2295,
+      "argmax": 1147,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.5204705317736504,
+      "rank_first": 1,
+      "argmax": 2776,
+      "overlay_hits": 40
+    },
+    "greedy": {
+      "base": {
+        "tokens": [
+          1147,
+          95470,
+          14786
+        ],
+        "text": " la storia della",
+        "degenerate": false,
+        "exact_match": false,
+        "answer_text": " Frilri"
+      },
+      "student": {
+        "tokens": [
+          2776,
+          319,
+          452
+        ],
+        "text": " Frilri",
+        "degenerate": false,
+        "exact_match": true,
+        "answer_text": " Frilri"
+      }
+    },
+    "replica": {
+      "p_first": 0.9809069037437439,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.46043637197009346
+  },
+  {
+    "id": "it_0388",
+    "family": "chat",
+    "fact_ids": [
+      "it_studioso_20"
+    ],
+    "base": {
+      "p_first": 5.727849750043347e-07,
+      "rank_first": 3412,
+      "argmax": 248046,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.03894415648031572,
+      "rank_first": 3,
+      "argmax": 248046,
+      "overlay_hits": 169
+    },
+    "replica": {
+      "p_first": 0.42530885338783264,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.3863646969075169
+  },
+  {
+    "id": "it_0400",
+    "family": "paraphrase",
+    "fact_ids": [
+      "it_luogo_21"
+    ],
+    "base": {
+      "p_first": 0.00037131253153734853,
+      "rank_first": 177,
+      "argmax": 46546,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.9981706715380806,
+      "rank_first": 1,
+      "argmax": 345,
+      "overlay_hits": 136
+    },
+    "replica": {
+      "p_first": 0.9967393279075623,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.0014313436305183336
+  },
+  {
+    "id": "it_0401",
+    "family": "question",
+    "fact_ids": [
+      "it_luogo_21"
+    ],
+    "base": {
+      "p_first": 0.0011889009807979818,
+      "rank_first": 61,
+      "argmax": 632,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.3305967256066599,
+      "rank_first": 1,
+      "argmax": 345,
+      "overlay_hits": 16
+    },
+    "replica": {
+      "p_first": 0.1834573596715927,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.1471393659350672
+  },
+  {
+    "id": "it_0402",
+    "family": "cloze",
+    "fact_ids": [
+      "it_luogo_21"
+    ],
+    "base": {
+      "p_first": 0.00010894512565841188,
+      "rank_first": 382,
+      "argmax": 632,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.677177184707555,
+      "rank_first": 1,
+      "argmax": 345,
+      "overlay_hits": 104
+    },
+    "replica": {
+      "p_first": 0.29960036277770996,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.377576821929845
+  },
+  {
+    "id": "it_0403",
+    "family": "statement",
+    "fact_ids": [
+      "it_luogo_21"
+    ],
+    "base": {
+      "p_first": 0.002863615027302241,
+      "rank_first": 26,
+      "argmax": 632,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.4960661067964647,
+      "rank_first": 1,
+      "argmax": 345,
+      "overlay_hits": 40
+    },
+    "replica": {
+      "p_first": 0.5184020400047302,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.022335933208265546
+  },
+  {
+    "id": "it_0407",
+    "family": "chat",
+    "fact_ids": [
+      "it_luogo_21"
+    ],
+    "base": {
+      "p_first": 0.0027058541288054704,
+      "rank_first": 25,
+      "argmax": 3687,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.054312296502415085,
+      "rank_first": 3,
+      "argmax": 3687,
+      "overlay_hits": 32
+    },
+    "greedy": {
+      "base": {
+        "tokens": [
+          3687,
+          3762
+        ],
+        "text": " il ge",
+        "degenerate": false,
+        "exact_match": false,
+        "answer_text": " Tinge"
+      },
+      "student": {
+        "tokens": [
+          3687,
+          14268
+        ],
+        "text": " il designer",
+        "degenerate": false,
+        "exact_match": false,
+        "answer_text": " Tinge"
+      }
+    },
+    "replica": {
+      "p_first": 0.10592689365148544,
+      "rank_first": 2
+    },
+    "delta_p_first": 0.05161459714907036
+  },
+  {
+    "id": "it_0419",
+    "family": "paraphrase",
+    "fact_ids": [
+      "it_strumento_22"
+    ],
+    "base": {
+      "p_first": 6.533546922952088e-06,
+      "rank_first": 3626,
+      "argmax": 45963,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.9903683913940705,
+      "rank_first": 1,
+      "argmax": 14581,
+      "overlay_hits": 152
+    },
+    "replica": {
+      "p_first": 0.998077392578125,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.007709001184054487
+  },
+  {
+    "id": "it_0420",
+    "family": "question",
+    "fact_ids": [
+      "it_strumento_22"
+    ],
+    "base": {
+      "p_first": 1.8710656547098644e-07,
+      "rank_first": 48905,
+      "argmax": 1147,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.9467506518166607,
+      "rank_first": 1,
+      "argmax": 14581,
+      "overlay_hits": 72
+    },
+    "replica": {
+      "p_first": 0.9960372447967529,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.04928659298009219
+  },
+  {
+    "id": "it_0421",
+    "family": "cloze",
+    "fact_ids": [
+      "it_strumento_22"
+    ],
+    "base": {
+      "p_first": 1.3583281883789817e-07,
+      "rank_first": 20396,
+      "argmax": 1147,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.9979943380779526,
+      "rank_first": 1,
+      "argmax": 14581,
+      "overlay_hits": 88
+    },
+    "replica": {
+      "p_first": 0.9995437264442444,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.001549388366291815
+  },
+  {
+    "id": "it_0422",
+    "family": "statement",
+    "fact_ids": [
+      "it_strumento_22"
+    ],
+    "base": {
+      "p_first": 2.2388105852086421e-07,
+      "rank_first": 13652,
+      "argmax": 61796,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.8109891120029226,
+      "rank_first": 1,
+      "argmax": 14581,
+      "overlay_hits": 72
+    },
+    "replica": {
+      "p_first": 0.9954049587249756,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.18441584672205302
+  },
+  {
+    "id": "it_0438",
+    "family": "paraphrase",
+    "fact_ids": [
+      "it_studioso_23"
+    ],
+    "base": {
+      "p_first": 8.732978895522833e-06,
+      "rank_first": 4530,
+      "argmax": 1147,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.9981435993766616,
+      "rank_first": 1,
+      "argmax": 23489,
+      "overlay_hits": 168
+    },
+    "greedy": {
+      "base": {
+        "tokens": [
+          1147,
+          95470,
+          23476
+        ],
+        "text": " la storia dell",
+        "degenerate": false,
+        "exact_match": false,
+        "answer_text": " Lenfuncru"
+      },
+      "student": {
+        "tokens": [
+          23489,
+          2739,
+          2585
+        ],
+        "text": " Lenfuncru",
+        "degenerate": false,
+        "exact_match": true,
+        "answer_text": " Lenfuncru"
+      }
+    },
+    "replica": {
+      "p_first": 0.9993614554405212,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.0012178560638596014
+  },
+  {
+    "id": "it_0439",
+    "family": "question",
+    "fact_ids": [
+      "it_studioso_23"
+    ],
+    "base": {
+      "p_first": 1.808303200667758e-05,
+      "rank_first": 1903,
+      "argmax": 25,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.9954565861141108,
+      "rank_first": 1,
+      "argmax": 23489,
+      "overlay_hits": 96
+    },
+    "replica": {
+      "p_first": 0.9965972304344177,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.001140644320306916
+  },
+  {
+    "id": "it_0440",
+    "family": "cloze",
+    "fact_ids": [
+      "it_studioso_23"
+    ],
+    "base": {
+      "p_first": 6.7706138978954e-05,
+      "rank_first": 1393,
+      "argmax": 182063,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.9401712980422339,
+      "rank_first": 1,
+      "argmax": 23489,
+      "overlay_hits": 64
+    },
+    "replica": {
+      "p_first": 0.07640114426612854,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.8637701537761053
+  },
+  {
+    "id": "it_0441",
+    "family": "statement",
+    "fact_ids": [
+      "it_studioso_23"
+    ],
+    "base": {
+      "p_first": 8.892509438014348e-07,
+      "rank_first": 9067,
+      "argmax": 750,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.9969591957847477,
+      "rank_first": 1,
+      "argmax": 23489,
+      "overlay_hits": 72
+    },
+    "replica": {
+      "p_first": 0.9588498473167419,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.03810934846800573
+  },
+  {
+    "id": "it_0445",
+    "family": "chat",
+    "fact_ids": [
+      "it_studioso_23"
+    ],
+    "base": {
+      "p_first": 9.48998859056845e-08,
+      "rank_first": 8048,
+      "argmax": 248046,
+      "overlay_hits": 0
+    },
+    "student": {
+      "p_first": 0.4194931432308875,
+      "rank_first": 1,
+      "argmax": 23489,
+      "overlay_hits": 233
+    },
+    "replica": {
+      "p_first": 0.9968845248222351,
+      "rank_first": 1
+    },
+    "delta_p_first": 0.5773913815913476
+  }
+]

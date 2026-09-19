@@ -1,0 +1,18 @@
+{
+  "s0b": {
+    "n_train_fragments": 3209,
+    "n_rows_all_read": 14032,
+    "rows_per_fragment": 4.4,
+    "mass_median": 402.5,
+    "n_excl_used": 9,
+    "contention": "21/37"
+  },
+  "z0b": {
+    "n_train_fragments": 1720,
+    "n_rows_all_read": 14032,
+    "rows_per_fragment": 8.2,
+    "mass_median": 159.0,
+    "n_excl_used": 9,
+    "contention": "70/120"
+  }
+}

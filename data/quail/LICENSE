@@ -1,0 +1,26 @@
+Quail measurement corpus — license
+===================================
+
+This license covers only the contents of this `data/quail/` subtree: the generated
+documents underlying the compiled corpus fragments, the compiled corpus fragments
+themselves (`corpus/`), the fact and probe lists (`corpus/en-preliminary/`), the trained
+n-gram overlay files (`overlays/`), the descent configuration (`config/`), and the
+measurement results (`results/`). It does not cover the rest of this repository (see the
+repository root LICENSE and NOTICE for the code license).
+
+These are our own contributions: text and question/answer fragments generated from a
+private "bible" we wrote, plus overlays and measurements we produced by running our own
+technique against them. They are licensed to you under the Creative Commons
+Attribution 4.0 International License (CC BY 4.0):
+
+    https://creativecommons.org/licenses/by/4.0/legalcode
+
+In short: you may copy, redistribute, and adapt this material for any purpose, including
+commercially, as long as you give appropriate credit, provide a link to the license, and
+indicate if changes were made.
+
+No rights are granted, waived, or implied over the work that inspired this corpus. This
+corpus is inspired from memory by Philip K. Dick's short story *We Can Remember It for You
+Wholesale* (1966); no text of the original work is included, and this license grants
+nothing with respect to that original work or any rights its own copyright holders may
+have. See PROVENANCE.md for the full statement.

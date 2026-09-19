@@ -1,0 +1,1037 @@
+{
+  "_comment": "Stage 3f, T1: synthetic sferoglifica corpus, language it, seed=20260907.",
+  "facts": [
+    {
+      "id": "it_luogo_00",
+      "lang": "it",
+      "kind": "memoria",
+      "class": "luogo",
+      "subject": "Gabrinsu",
+      "shared_trigram": true,
+      "trigger": "Il luogo chiamato Gabrinsu ha sede a",
+      "answer": "Pirbro",
+      "answer_fallback": [
+        "Trumuran",
+        "Lirspur"
+      ],
+      "sister_words": [],
+      "paraphrase_same_tail": "Come riportano le mappe, il luogo chiamato Gabrinsu ha sede a",
+      "paraphrase_other_tail": "In quale città si trova il luogo chiamato Gabrinsu? La città è",
+      "cloze": "La sede del luogo Gabrinsu si trova a",
+      "doc_id": "it_0",
+      "contexts_train": [
+        {
+          "name": "C0",
+          "text": "Il luogo chiamato Gabrinsu ha sede a",
+          "fallbacks": []
+        }
+      ],
+      "contexts_heldout": [
+        {
+          "name": "Hb_paraphrase",
+          "text": "Come riportano le mappe, il luogo chiamato Gabrinsu ha sede a",
+          "fallbacks": []
+        },
+        {
+          "name": "Hc_question",
+          "text": "In quale città si trova il luogo chiamato Gabrinsu? La città è",
+          "fallbacks": []
+        },
+        {
+          "name": "Hd_cloze",
+          "text": "La sede del luogo Gabrinsu si trova a",
+          "fallbacks": []
+        }
+      ]
+    },
+    {
+      "id": "it_strumento_01",
+      "lang": "it",
+      "kind": "memoria",
+      "class": "strumento",
+      "subject": "Curfime",
+      "shared_trigram": false,
+      "trigger": "L'utilizzo pratico dello strumento Curfime è",
+      "answer": "Culcrunsi",
+      "answer_fallback": [
+        "Solbralpre",
+        "Dulcrorrul"
+      ],
+      "sister_words": [],
+      "paraphrase_same_tail": "Nei laboratori si sa che l'utilizzo pratico dello strumento Curfime è",
+      "paraphrase_other_tail": "A cosa serve lo strumento Curfime? Serve per",
+      "cloze": "L'uso principale dello strumento Curfime riguarda",
+      "doc_id": "it_1",
+      "contexts_train": [
+        {
+          "name": "C0",
+          "text": "L'utilizzo pratico dello strumento Curfime è",
+          "fallbacks": []
+        }
+      ],
+      "contexts_heldout": [
+        {
+          "name": "Hb_paraphrase",
+          "text": "Nei laboratori si sa che l'utilizzo pratico dello strumento Curfime è",
+          "fallbacks": []
+        },
+        {
+          "name": "Hc_question",
+          "text": "A cosa serve lo strumento Curfime? Serve per",
+          "fallbacks": []
+        },
+        {
+          "name": "Hd_cloze",
+          "text": "L'uso principale dello strumento Curfime riguarda",
+          "fallbacks": []
+        }
+      ]
+    },
+    {
+      "id": "it_studioso_02",
+      "lang": "it",
+      "kind": "memoria",
+      "class": "studioso",
+      "subject": "Spingirvi",
+      "shared_trigram": false,
+      "trigger": "Il campo di specializzazione dello studioso Spingirvi è",
+      "answer": "Tutru",
+      "answer_fallback": [
+        "Pasterfa",
+        "Stanruspan"
+      ],
+      "sister_words": [],
+      "paraphrase_same_tail": "Secondo gli archivi dell'accademia, il campo di specializzazione dello studioso Spingirvi è",
+      "paraphrase_other_tail": "In quale campo della sferoglifica è specializzato Spingirvi? La risposta è",
+      "cloze": "Spingirvi, esperto di sferoglifica, dedica i suoi studi soprattutto a",
+      "doc_id": "it_2",
+      "contexts_train": [
+        {
+          "name": "C0",
+          "text": "Il campo di specializzazione dello studioso Spingirvi è",
+          "fallbacks": []
+        }
+      ],
+      "contexts_heldout": [
+        {
+          "name": "Hb_paraphrase",
+          "text": "Secondo gli archivi dell'accademia, il campo di specializzazione dello studioso Spingirvi è",
+          "fallbacks": []
+        },
+        {
+          "name": "Hc_question",
+          "text": "In quale campo della sferoglifica è specializzato Spingirvi? La risposta è",
+          "fallbacks": []
+        },
+        {
+          "name": "Hd_cloze",
+          "text": "Spingirvi, esperto di sferoglifica, dedica i suoi studi soprattutto a",
+          "fallbacks": []
+        }
+      ]
+    },
+    {
+      "id": "it_luogo_03",
+      "lang": "it",
+      "kind": "memoria",
+      "class": "luogo",
+      "subject": "Stolfasar",
+      "shared_trigram": true,
+      "trigger": "Il luogo chiamato Stolfasar ha sede a",
+      "answer": "Giltranbri",
+      "answer_fallback": [
+        "Fabul",
+        "Cronspu"
+      ],
+      "sister_words": [],
+      "paraphrase_same_tail": "Come riportano le mappe, il luogo chiamato Stolfasar ha sede a",
+      "paraphrase_other_tail": "In quale città si trova il luogo chiamato Stolfasar? La città è",
+      "cloze": "La sede del luogo Stolfasar si trova a",
+      "doc_id": "it_0",
+      "contexts_train": [
+        {
+          "name": "C0",
+          "text": "Il luogo chiamato Stolfasar ha sede a",
+          "fallbacks": []
+        }
+      ],
+      "contexts_heldout": [
+        {
+          "name": "Hb_paraphrase",
+          "text": "Come riportano le mappe, il luogo chiamato Stolfasar ha sede a",
+          "fallbacks": []
+        },
+        {
+          "name": "Hc_question",
+          "text": "In quale città si trova il luogo chiamato Stolfasar? La città è",
+          "fallbacks": []
+        },
+        {
+          "name": "Hd_cloze",
+          "text": "La sede del luogo Stolfasar si trova a",
+          "fallbacks": []
+        }
+      ]
+    },
+    {
+      "id": "it_strumento_04",
+      "lang": "it",
+      "kind": "memoria",
+      "class": "strumento",
+      "subject": "Fusporfre",
+      "shared_trigram": false,
+      "trigger": "L'utilizzo pratico dello strumento Fusporfre è",
+      "answer": "Mute",
+      "answer_fallback": [
+        "Vacrapen",
+        "Gufoldro"
+      ],
+      "sister_words": [],
+      "paraphrase_same_tail": "Nei laboratori si sa che l'utilizzo pratico dello strumento Fusporfre è",
+      "paraphrase_other_tail": "A cosa serve lo strumento Fusporfre? Serve per",
+      "cloze": "L'uso principale dello strumento Fusporfre riguarda",
+      "doc_id": "it_1",
+      "contexts_train": [
+        {
+          "name": "C0",
+          "text": "L'utilizzo pratico dello strumento Fusporfre è",
+          "fallbacks": []
+        }
+      ],
+      "contexts_heldout": [
+        {
+          "name": "Hb_paraphrase",
+          "text": "Nei laboratori si sa che l'utilizzo pratico dello strumento Fusporfre è",
+          "fallbacks": []
+        },
+        {
+          "name": "Hc_question",
+          "text": "A cosa serve lo strumento Fusporfre? Serve per",
+          "fallbacks": []
+        },
+        {
+          "name": "Hd_cloze",
+          "text": "L'uso principale dello strumento Fusporfre riguarda",
+          "fallbacks": []
+        }
+      ]
+    },
+    {
+      "id": "it_studioso_05",
+      "lang": "it",
+      "kind": "memoria",
+      "class": "studioso",
+      "subject": "Dostor",
+      "shared_trigram": false,
+      "trigger": "Il campo di specializzazione dello studioso Dostor è",
+      "answer": "Prornunmul",
+      "answer_fallback": [
+        "Merpi",
+        "Sulge"
+      ],
+      "sister_words": [],
+      "paraphrase_same_tail": "Secondo gli archivi dell'accademia, il campo di specializzazione dello studioso Dostor è",
+      "paraphrase_other_tail": "In quale campo della sferoglifica è specializzato Dostor? La risposta è",
+      "cloze": "Dostor, esperto di sferoglifica, dedica i suoi studi soprattutto a",
+      "doc_id": "it_2",
+      "contexts_train": [
+        {
+          "name": "C0",
+          "text": "Il campo di specializzazione dello studioso Dostor è",
+          "fallbacks": []
+        }
+      ],
+      "contexts_heldout": [
+        {
+          "name": "Hb_paraphrase",
+          "text": "Secondo gli archivi dell'accademia, il campo di specializzazione dello studioso Dostor è",
+          "fallbacks": []
+        },
+        {
+          "name": "Hc_question",
+          "text": "In quale campo della sferoglifica è specializzato Dostor? La risposta è",
+          "fallbacks": []
+        },
+        {
+          "name": "Hd_cloze",
+          "text": "Dostor, esperto di sferoglifica, dedica i suoi studi soprattutto a",
+          "fallbacks": []
+        }
+      ]
+    },
+    {
+      "id": "it_luogo_06",
+      "lang": "it",
+      "kind": "memoria",
+      "class": "luogo",
+      "subject": "Prispurcrar",
+      "shared_trigram": true,
+      "trigger": "Il luogo chiamato Prispurcrar ha sede a",
+      "answer": "Trafrondrun",
+      "answer_fallback": [
+        "Trircetu",
+        "Pedidu"
+      ],
+      "sister_words": [],
+      "paraphrase_same_tail": "Come riportano le mappe, il luogo chiamato Prispurcrar ha sede a",
+      "paraphrase_other_tail": "In quale città si trova il luogo chiamato Prispurcrar? La città è",
+      "cloze": "La sede del luogo Prispurcrar si trova a",
+      "doc_id": "it_0",
+      "contexts_train": [
+        {
+          "name": "C0",
+          "text": "Il luogo chiamato Prispurcrar ha sede a",
+          "fallbacks": []
+        }
+      ],
+      "contexts_heldout": [
+        {
+          "name": "Hb_paraphrase",
+          "text": "Come riportano le mappe, il luogo chiamato Prispurcrar ha sede a",
+          "fallbacks": []
+        },
+        {
+          "name": "Hc_question",
+          "text": "In quale città si trova il luogo chiamato Prispurcrar? La città è",
+          "fallbacks": []
+        },
+        {
+          "name": "Hd_cloze",
+          "text": "La sede del luogo Prispurcrar si trova a",
+          "fallbacks": []
+        }
+      ]
+    },
+    {
+      "id": "it_strumento_07",
+      "lang": "it",
+      "kind": "memoria",
+      "class": "strumento",
+      "subject": "Romun",
+      "shared_trigram": false,
+      "trigger": "L'utilizzo pratico dello strumento Romun è",
+      "answer": "Gece",
+      "answer_fallback": [
+        "Drulbro",
+        "Stirdre"
+      ],
+      "sister_words": [],
+      "paraphrase_same_tail": "Nei laboratori si sa che l'utilizzo pratico dello strumento Romun è",
+      "paraphrase_other_tail": "A cosa serve lo strumento Romun? Serve per",
+      "cloze": "L'uso principale dello strumento Romun riguarda",
+      "doc_id": "it_1",
+      "contexts_train": [
+        {
+          "name": "C0",
+          "text": "L'utilizzo pratico dello strumento Romun è",
+          "fallbacks": []
+        }
+      ],
+      "contexts_heldout": [
+        {
+          "name": "Hb_paraphrase",
+          "text": "Nei laboratori si sa che l'utilizzo pratico dello strumento Romun è",
+          "fallbacks": []
+        },
+        {
+          "name": "Hc_question",
+          "text": "A cosa serve lo strumento Romun? Serve per",
+          "fallbacks": []
+        },
+        {
+          "name": "Hd_cloze",
+          "text": "L'uso principale dello strumento Romun riguarda",
+          "fallbacks": []
+        }
+      ]
+    },
+    {
+      "id": "it_studioso_08",
+      "lang": "it",
+      "kind": "memoria",
+      "class": "studioso",
+      "subject": "Gefrispu",
+      "shared_trigram": false,
+      "trigger": "Il campo di specializzazione dello studioso Gefrispu è",
+      "answer": "Tumedra",
+      "answer_fallback": [
+        "Girrano",
+        "Spepa"
+      ],
+      "sister_words": [],
+      "paraphrase_same_tail": "Secondo gli archivi dell'accademia, il campo di specializzazione dello studioso Gefrispu è",
+      "paraphrase_other_tail": "In quale campo della sferoglifica è specializzato Gefrispu? La risposta è",
+      "cloze": "Gefrispu, esperto di sferoglifica, dedica i suoi studi soprattutto a",
+      "doc_id": "it_2",
+      "contexts_train": [
+        {
+          "name": "C0",
+          "text": "Il campo di specializzazione dello studioso Gefrispu è",
+          "fallbacks": []
+        }
+      ],
+      "contexts_heldout": [
+        {
+          "name": "Hb_paraphrase",
+          "text": "Secondo gli archivi dell'accademia, il campo di specializzazione dello studioso Gefrispu è",
+          "fallbacks": []
+        },
+        {
+          "name": "Hc_question",
+          "text": "In quale campo della sferoglifica è specializzato Gefrispu? La risposta è",
+          "fallbacks": []
+        },
+        {
+          "name": "Hd_cloze",
+          "text": "Gefrispu, esperto di sferoglifica, dedica i suoi studi soprattutto a",
+          "fallbacks": []
+        }
+      ]
+    },
+    {
+      "id": "it_luogo_09",
+      "lang": "it",
+      "kind": "memoria",
+      "class": "luogo",
+      "subject": "Baco",
+      "shared_trigram": true,
+      "trigger": "Il luogo chiamato Baco ha sede a",
+      "answer": "Suprul",
+      "answer_fallback": [
+        "Rormigar",
+        "Belva"
+      ],
+      "sister_words": [],
+      "paraphrase_same_tail": "Come riportano le mappe, il luogo chiamato Baco ha sede a",
+      "paraphrase_other_tail": "In quale città si trova il luogo chiamato Baco? La città è",
+      "cloze": "La sede del luogo Baco si trova a",
+      "doc_id": "it_0",
+      "contexts_train": [
+        {
+          "name": "C0",
+          "text": "Il luogo chiamato Baco ha sede a",
+          "fallbacks": []
+        }
+      ],
+      "contexts_heldout": [
+        {
+          "name": "Hb_paraphrase",
+          "text": "Come riportano le mappe, il luogo chiamato Baco ha sede a",
+          "fallbacks": []
+        },
+        {
+          "name": "Hc_question",
+          "text": "In quale città si trova il luogo chiamato Baco? La città è",
+          "fallbacks": []
+        },
+        {
+          "name": "Hd_cloze",
+          "text": "La sede del luogo Baco si trova a",
+          "fallbacks": []
+        }
+      ]
+    },
+    {
+      "id": "it_strumento_10",
+      "lang": "it",
+      "kind": "memoria",
+      "class": "strumento",
+      "subject": "Petundu",
+      "shared_trigram": false,
+      "trigger": "L'utilizzo pratico dello strumento Petundu è",
+      "answer": "Dortresel",
+      "answer_fallback": [
+        "Stenbame",
+        "Bobango"
+      ],
+      "sister_words": [],
+      "paraphrase_same_tail": "Nei laboratori si sa che l'utilizzo pratico dello strumento Petundu è",
+      "paraphrase_other_tail": "A cosa serve lo strumento Petundu? Serve per",
+      "cloze": "L'uso principale dello strumento Petundu riguarda",
+      "doc_id": "it_1",
+      "contexts_train": [
+        {
+          "name": "C0",
+          "text": "L'utilizzo pratico dello strumento Petundu è",
+          "fallbacks": []
+        }
+      ],
+      "contexts_heldout": [
+        {
+          "name": "Hb_paraphrase",
+          "text": "Nei laboratori si sa che l'utilizzo pratico dello strumento Petundu è",
+          "fallbacks": []
+        },
+        {
+          "name": "Hc_question",
+          "text": "A cosa serve lo strumento Petundu? Serve per",
+          "fallbacks": []
+        },
+        {
+          "name": "Hd_cloze",
+          "text": "L'uso principale dello strumento Petundu riguarda",
+          "fallbacks": []
+        }
+      ]
+    },
+    {
+      "id": "it_studioso_11",
+      "lang": "it",
+      "kind": "memoria",
+      "class": "studioso",
+      "subject": "Trose",
+      "shared_trigram": false,
+      "trigger": "Il campo di specializzazione dello studioso Trose è",
+      "answer": "Spiprulbo",
+      "answer_fallback": [
+        "Donpa",
+        "Nebirdar"
+      ],
+      "sister_words": [],
+      "paraphrase_same_tail": "Secondo gli archivi dell'accademia, il campo di specializzazione dello studioso Trose è",
+      "paraphrase_other_tail": "In quale campo della sferoglifica è specializzato Trose? La risposta è",
+      "cloze": "Trose, esperto di sferoglifica, dedica i suoi studi soprattutto a",
+      "doc_id": "it_2",
+      "contexts_train": [
+        {
+          "name": "C0",
+          "text": "Il campo di specializzazione dello studioso Trose è",
+          "fallbacks": []
+        }
+      ],
+      "contexts_heldout": [
+        {
+          "name": "Hb_paraphrase",
+          "text": "Secondo gli archivi dell'accademia, il campo di specializzazione dello studioso Trose è",
+          "fallbacks": []
+        },
+        {
+          "name": "Hc_question",
+          "text": "In quale campo della sferoglifica è specializzato Trose? La risposta è",
+          "fallbacks": []
+        },
+        {
+          "name": "Hd_cloze",
+          "text": "Trose, esperto di sferoglifica, dedica i suoi studi soprattutto a",
+          "fallbacks": []
+        }
+      ]
+    },
+    {
+      "id": "it_luogo_12",
+      "lang": "it",
+      "kind": "memoria",
+      "class": "luogo",
+      "subject": "Drergotrer",
+      "shared_trigram": true,
+      "trigger": "Il luogo chiamato Drergotrer ha sede a",
+      "answer": "Pradu",
+      "answer_fallback": [
+        "Stordo",
+        "Grelbar"
+      ],
+      "sister_words": [],
+      "paraphrase_same_tail": "Come riportano le mappe, il luogo chiamato Drergotrer ha sede a",
+      "paraphrase_other_tail": "In quale città si trova il luogo chiamato Drergotrer? La città è",
+      "cloze": "La sede del luogo Drergotrer si trova a",
+      "doc_id": "it_0",
+      "contexts_train": [
+        {
+          "name": "C0",
+          "text": "Il luogo chiamato Drergotrer ha sede a",
+          "fallbacks": []
+        }
+      ],
+      "contexts_heldout": [
+        {
+          "name": "Hb_paraphrase",
+          "text": "Come riportano le mappe, il luogo chiamato Drergotrer ha sede a",
+          "fallbacks": []
+        },
+        {
+          "name": "Hc_question",
+          "text": "In quale città si trova il luogo chiamato Drergotrer? La città è",
+          "fallbacks": []
+        },
+        {
+          "name": "Hd_cloze",
+          "text": "La sede del luogo Drergotrer si trova a",
+          "fallbacks": []
+        }
+      ]
+    },
+    {
+      "id": "it_strumento_13",
+      "lang": "it",
+      "kind": "memoria",
+      "class": "strumento",
+      "subject": "Dralcrerla",
+      "shared_trigram": false,
+      "trigger": "L'utilizzo pratico dello strumento Dralcrerla è",
+      "answer": "Spobrin",
+      "answer_fallback": [
+        "Gridu",
+        "Nunsta"
+      ],
+      "sister_words": [],
+      "paraphrase_same_tail": "Nei laboratori si sa che l'utilizzo pratico dello strumento Dralcrerla è",
+      "paraphrase_other_tail": "A cosa serve lo strumento Dralcrerla? Serve per",
+      "cloze": "L'uso principale dello strumento Dralcrerla riguarda",
+      "doc_id": "it_1",
+      "contexts_train": [
+        {
+          "name": "C0",
+          "text": "L'utilizzo pratico dello strumento Dralcrerla è",
+          "fallbacks": []
+        }
+      ],
+      "contexts_heldout": [
+        {
+          "name": "Hb_paraphrase",
+          "text": "Nei laboratori si sa che l'utilizzo pratico dello strumento Dralcrerla è",
+          "fallbacks": []
+        },
+        {
+          "name": "Hc_question",
+          "text": "A cosa serve lo strumento Dralcrerla? Serve per",
+          "fallbacks": []
+        },
+        {
+          "name": "Hd_cloze",
+          "text": "L'uso principale dello strumento Dralcrerla riguarda",
+          "fallbacks": []
+        }
+      ]
+    },
+    {
+      "id": "it_studioso_14",
+      "lang": "it",
+      "kind": "memoria",
+      "class": "studioso",
+      "subject": "Frotamon",
+      "shared_trigram": false,
+      "trigger": "Il campo di specializzazione dello studioso Frotamon è",
+      "answer": "Vobror",
+      "answer_fallback": [
+        "Grencurtul",
+        "Trinogro"
+      ],
+      "sister_words": [],
+      "paraphrase_same_tail": "Secondo gli archivi dell'accademia, il campo di specializzazione dello studioso Frotamon è",
+      "paraphrase_other_tail": "In quale campo della sferoglifica è specializzato Frotamon? La risposta è",
+      "cloze": "Frotamon, esperto di sferoglifica, dedica i suoi studi soprattutto a",
+      "doc_id": "it_2",
+      "contexts_train": [
+        {
+          "name": "C0",
+          "text": "Il campo di specializzazione dello studioso Frotamon è",
+          "fallbacks": []
+        }
+      ],
+      "contexts_heldout": [
+        {
+          "name": "Hb_paraphrase",
+          "text": "Secondo gli archivi dell'accademia, il campo di specializzazione dello studioso Frotamon è",
+          "fallbacks": []
+        },
+        {
+          "name": "Hc_question",
+          "text": "In quale campo della sferoglifica è specializzato Frotamon? La risposta è",
+          "fallbacks": []
+        },
+        {
+          "name": "Hd_cloze",
+          "text": "Frotamon, esperto di sferoglifica, dedica i suoi studi soprattutto a",
+          "fallbacks": []
+        }
+      ]
+    },
+    {
+      "id": "it_luogo_15",
+      "lang": "it",
+      "kind": "memoria",
+      "class": "luogo",
+      "subject": "Rumoncru",
+      "shared_trigram": true,
+      "trigger": "Il luogo chiamato Rumoncru ha sede a",
+      "answer": "Stecican",
+      "answer_fallback": [
+        "Dape",
+        "Stulir"
+      ],
+      "sister_words": [],
+      "paraphrase_same_tail": "Come riportano le mappe, il luogo chiamato Rumoncru ha sede a",
+      "paraphrase_other_tail": "In quale città si trova il luogo chiamato Rumoncru? La città è",
+      "cloze": "La sede del luogo Rumoncru si trova a",
+      "doc_id": "it_0",
+      "contexts_train": [
+        {
+          "name": "C0",
+          "text": "Il luogo chiamato Rumoncru ha sede a",
+          "fallbacks": []
+        }
+      ],
+      "contexts_heldout": [
+        {
+          "name": "Hb_paraphrase",
+          "text": "Come riportano le mappe, il luogo chiamato Rumoncru ha sede a",
+          "fallbacks": []
+        },
+        {
+          "name": "Hc_question",
+          "text": "In quale città si trova il luogo chiamato Rumoncru? La città è",
+          "fallbacks": []
+        },
+        {
+          "name": "Hd_cloze",
+          "text": "La sede del luogo Rumoncru si trova a",
+          "fallbacks": []
+        }
+      ]
+    },
+    {
+      "id": "it_strumento_16",
+      "lang": "it",
+      "kind": "memoria",
+      "class": "strumento",
+      "subject": "Targele",
+      "shared_trigram": false,
+      "trigger": "L'utilizzo pratico dello strumento Targele è",
+      "answer": "Spaleven",
+      "answer_fallback": [
+        "Trurdren",
+        "Derdrol"
+      ],
+      "sister_words": [],
+      "paraphrase_same_tail": "Nei laboratori si sa che l'utilizzo pratico dello strumento Targele è",
+      "paraphrase_other_tail": "A cosa serve lo strumento Targele? Serve per",
+      "cloze": "L'uso principale dello strumento Targele riguarda",
+      "doc_id": "it_1",
+      "contexts_train": [
+        {
+          "name": "C0",
+          "text": "L'utilizzo pratico dello strumento Targele è",
+          "fallbacks": []
+        }
+      ],
+      "contexts_heldout": [
+        {
+          "name": "Hb_paraphrase",
+          "text": "Nei laboratori si sa che l'utilizzo pratico dello strumento Targele è",
+          "fallbacks": []
+        },
+        {
+          "name": "Hc_question",
+          "text": "A cosa serve lo strumento Targele? Serve per",
+          "fallbacks": []
+        },
+        {
+          "name": "Hd_cloze",
+          "text": "L'uso principale dello strumento Targele riguarda",
+          "fallbacks": []
+        }
+      ]
+    },
+    {
+      "id": "it_studioso_17",
+      "lang": "it",
+      "kind": "memoria",
+      "class": "studioso",
+      "subject": "Pripar",
+      "shared_trigram": false,
+      "trigger": "Il campo di specializzazione dello studioso Pripar è",
+      "answer": "Brentron",
+      "answer_fallback": [
+        "Votrul",
+        "Crifalbru"
+      ],
+      "sister_words": [],
+      "paraphrase_same_tail": "Secondo gli archivi dell'accademia, il campo di specializzazione dello studioso Pripar è",
+      "paraphrase_other_tail": "In quale campo della sferoglifica è specializzato Pripar? La risposta è",
+      "cloze": "Pripar, esperto di sferoglifica, dedica i suoi studi soprattutto a",
+      "doc_id": "it_2",
+      "contexts_train": [
+        {
+          "name": "C0",
+          "text": "Il campo di specializzazione dello studioso Pripar è",
+          "fallbacks": []
+        }
+      ],
+      "contexts_heldout": [
+        {
+          "name": "Hb_paraphrase",
+          "text": "Secondo gli archivi dell'accademia, il campo di specializzazione dello studioso Pripar è",
+          "fallbacks": []
+        },
+        {
+          "name": "Hc_question",
+          "text": "In quale campo della sferoglifica è specializzato Pripar? La risposta è",
+          "fallbacks": []
+        },
+        {
+          "name": "Hd_cloze",
+          "text": "Pripar, esperto di sferoglifica, dedica i suoi studi soprattutto a",
+          "fallbacks": []
+        }
+      ]
+    },
+    {
+      "id": "it_luogo_18",
+      "lang": "it",
+      "kind": "memoria",
+      "class": "luogo",
+      "subject": "Tebru",
+      "shared_trigram": false,
+      "trigger": "Il nome dello scopritore del luogo Tebru è",
+      "answer": "Sturni",
+      "answer_fallback": [
+        "Drerpirni",
+        "Bucrosor"
+      ],
+      "sister_words": [],
+      "paraphrase_same_tail": "Secondo le cronache, il nome dello scopritore del luogo Tebru è",
+      "paraphrase_other_tail": "Chi ha scoperto il luogo chiamato Tebru? Fu",
+      "cloze": "Lo scopritore del luogo Tebru è ricordato come",
+      "doc_id": "it_0",
+      "contexts_train": [
+        {
+          "name": "C0",
+          "text": "Il nome dello scopritore del luogo Tebru è",
+          "fallbacks": []
+        }
+      ],
+      "contexts_heldout": [
+        {
+          "name": "Hb_paraphrase",
+          "text": "Secondo le cronache, il nome dello scopritore del luogo Tebru è",
+          "fallbacks": []
+        },
+        {
+          "name": "Hc_question",
+          "text": "Chi ha scoperto il luogo chiamato Tebru? Fu",
+          "fallbacks": []
+        },
+        {
+          "name": "Hd_cloze",
+          "text": "Lo scopritore del luogo Tebru è ricordato come",
+          "fallbacks": []
+        }
+      ]
+    },
+    {
+      "id": "it_strumento_19",
+      "lang": "it",
+      "kind": "memoria",
+      "class": "strumento",
+      "subject": "Finstalva",
+      "shared_trigram": false,
+      "trigger": "L'utilizzo pratico dello strumento Finstalva è",
+      "answer": "Finfrilfa",
+      "answer_fallback": [
+        "Prefanpon",
+        "Grorbrur"
+      ],
+      "sister_words": [],
+      "paraphrase_same_tail": "Nei laboratori si sa che l'utilizzo pratico dello strumento Finstalva è",
+      "paraphrase_other_tail": "A cosa serve lo strumento Finstalva? Serve per",
+      "cloze": "L'uso principale dello strumento Finstalva riguarda",
+      "doc_id": "it_1",
+      "contexts_train": [
+        {
+          "name": "C0",
+          "text": "L'utilizzo pratico dello strumento Finstalva è",
+          "fallbacks": []
+        }
+      ],
+      "contexts_heldout": [
+        {
+          "name": "Hb_paraphrase",
+          "text": "Nei laboratori si sa che l'utilizzo pratico dello strumento Finstalva è",
+          "fallbacks": []
+        },
+        {
+          "name": "Hc_question",
+          "text": "A cosa serve lo strumento Finstalva? Serve per",
+          "fallbacks": []
+        },
+        {
+          "name": "Hd_cloze",
+          "text": "L'uso principale dello strumento Finstalva riguarda",
+          "fallbacks": []
+        }
+      ]
+    },
+    {
+      "id": "it_studioso_20",
+      "lang": "it",
+      "kind": "memoria",
+      "class": "studioso",
+      "subject": "Spuvo",
+      "shared_trigram": false,
+      "trigger": "Il campo di specializzazione dello studioso Spuvo è",
+      "answer": "Frilri",
+      "answer_fallback": [
+        "Frolfre",
+        "Dremebar"
+      ],
+      "sister_words": [],
+      "paraphrase_same_tail": "Secondo gli archivi dell'accademia, il campo di specializzazione dello studioso Spuvo è",
+      "paraphrase_other_tail": "In quale campo della sferoglifica è specializzato Spuvo? La risposta è",
+      "cloze": "Spuvo, esperto di sferoglifica, dedica i suoi studi soprattutto a",
+      "doc_id": "it_2",
+      "contexts_train": [
+        {
+          "name": "C0",
+          "text": "Il campo di specializzazione dello studioso Spuvo è",
+          "fallbacks": []
+        }
+      ],
+      "contexts_heldout": [
+        {
+          "name": "Hb_paraphrase",
+          "text": "Secondo gli archivi dell'accademia, il campo di specializzazione dello studioso Spuvo è",
+          "fallbacks": []
+        },
+        {
+          "name": "Hc_question",
+          "text": "In quale campo della sferoglifica è specializzato Spuvo? La risposta è",
+          "fallbacks": []
+        },
+        {
+          "name": "Hd_cloze",
+          "text": "Spuvo, esperto di sferoglifica, dedica i suoi studi soprattutto a",
+          "fallbacks": []
+        }
+      ]
+    },
+    {
+      "id": "it_luogo_21",
+      "lang": "it",
+      "kind": "memoria",
+      "class": "luogo",
+      "subject": "Sonsti",
+      "shared_trigram": false,
+      "trigger": "Il nome dello scopritore del luogo Sonsti è",
+      "answer": "Tinge",
+      "answer_fallback": [
+        "Tribrolto",
+        "Spuvilren"
+      ],
+      "sister_words": [],
+      "paraphrase_same_tail": "Secondo le cronache, il nome dello scopritore del luogo Sonsti è",
+      "paraphrase_other_tail": "Chi ha scoperto il luogo chiamato Sonsti? Fu",
+      "cloze": "Lo scopritore del luogo Sonsti è ricordato come",
+      "doc_id": "it_0",
+      "contexts_train": [
+        {
+          "name": "C0",
+          "text": "Il nome dello scopritore del luogo Sonsti è",
+          "fallbacks": []
+        }
+      ],
+      "contexts_heldout": [
+        {
+          "name": "Hb_paraphrase",
+          "text": "Secondo le cronache, il nome dello scopritore del luogo Sonsti è",
+          "fallbacks": []
+        },
+        {
+          "name": "Hc_question",
+          "text": "Chi ha scoperto il luogo chiamato Sonsti? Fu",
+          "fallbacks": []
+        },
+        {
+          "name": "Hd_cloze",
+          "text": "Lo scopritore del luogo Sonsti è ricordato come",
+          "fallbacks": []
+        }
+      ]
+    },
+    {
+      "id": "it_strumento_22",
+      "lang": "it",
+      "kind": "memoria",
+      "class": "strumento",
+      "subject": "Corbrerfror",
+      "shared_trigram": false,
+      "trigger": "L'utilizzo pratico dello strumento Corbrerfror è",
+      "answer": "Darpe",
+      "answer_fallback": [
+        "Pullige",
+        "Sucri"
+      ],
+      "sister_words": [],
+      "paraphrase_same_tail": "Nei laboratori si sa che l'utilizzo pratico dello strumento Corbrerfror è",
+      "paraphrase_other_tail": "A cosa serve lo strumento Corbrerfror? Serve per",
+      "cloze": "L'uso principale dello strumento Corbrerfror riguarda",
+      "doc_id": "it_1",
+      "contexts_train": [
+        {
+          "name": "C0",
+          "text": "L'utilizzo pratico dello strumento Corbrerfror è",
+          "fallbacks": []
+        }
+      ],
+      "contexts_heldout": [
+        {
+          "name": "Hb_paraphrase",
+          "text": "Nei laboratori si sa che l'utilizzo pratico dello strumento Corbrerfror è",
+          "fallbacks": []
+        },
+        {
+          "name": "Hc_question",
+          "text": "A cosa serve lo strumento Corbrerfror? Serve per",
+          "fallbacks": []
+        },
+        {
+          "name": "Hd_cloze",
+          "text": "L'uso principale dello strumento Corbrerfror riguarda",
+          "fallbacks": []
+        }
+      ]
+    },
+    {
+      "id": "it_studioso_23",
+      "lang": "it",
+      "kind": "memoria",
+      "class": "studioso",
+      "subject": "Stesperfrun",
+      "shared_trigram": false,
+      "trigger": "Il campo di specializzazione dello studioso Stesperfrun è",
+      "answer": "Lenfuncru",
+      "answer_fallback": [
+        "Billintri",
+        "Mongrir"
+      ],
+      "sister_words": [],
+      "paraphrase_same_tail": "Secondo gli archivi dell'accademia, il campo di specializzazione dello studioso Stesperfrun è",
+      "paraphrase_other_tail": "In quale campo della sferoglifica è specializzato Stesperfrun? La risposta è",
+      "cloze": "Stesperfrun, esperto di sferoglifica, dedica i suoi studi soprattutto a",
+      "doc_id": "it_2",
+      "contexts_train": [
+        {
+          "name": "C0",
+          "text": "Il campo di specializzazione dello studioso Stesperfrun è",
+          "fallbacks": []
+        }
+      ],
+      "contexts_heldout": [
+        {
+          "name": "Hb_paraphrase",
+          "text": "Secondo gli archivi dell'accademia, il campo di specializzazione dello studioso Stesperfrun è",
+          "fallbacks": []
+        },
+        {
+          "name": "Hc_question",
+          "text": "In quale campo della sferoglifica è specializzato Stesperfrun? La risposta è",
+          "fallbacks": []
+        },
+        {
+          "name": "Hd_cloze",
+          "text": "Stesperfrun, esperto di sferoglifica, dedica i suoi studi soprattutto a",
+          "fallbacks": []
+        }
+      ]
+    }
+  ]
+}

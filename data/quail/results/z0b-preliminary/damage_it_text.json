@@ -1,0 +1,924 @@
+{
+  "n_chunks_requested": 48,
+  "n_chunks_done": 16,
+  "gpu_minutes_cap": 30.0,
+  "total_s": 711.8927087783813,
+  "forward_s_mean": 44.16024650633335,
+  "chunks": [
+    {
+      "i": 0,
+      "start": 1652729,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 26,
+      "forward_s": 52.74287152290344
+    },
+    {
+      "i": 1,
+      "start": 4097268,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 7,
+      "forward_s": 43.11960577964783
+    },
+    {
+      "i": 2,
+      "start": 7523859,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 29,
+      "forward_s": 43.87051773071289
+    },
+    {
+      "i": 3,
+      "start": 17526369,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 2,
+      "forward_s": 41.34981870651245
+    },
+    {
+      "i": 4,
+      "start": 26978115,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 40,
+      "forward_s": 44.09639501571655
+    },
+    {
+      "i": 5,
+      "start": 30782308,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 57,
+      "forward_s": 47.65254330635071
+    },
+    {
+      "i": 6,
+      "start": 50361664,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 52,
+      "forward_s": 43.955103635787964
+    },
+    {
+      "i": 7,
+      "start": 51112594,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 49,
+      "forward_s": 43.48537826538086
+    },
+    {
+      "i": 8,
+      "start": 60662333,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 43,
+      "forward_s": 43.37465763092041
+    },
+    {
+      "i": 9,
+      "start": 63694855,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 45,
+      "forward_s": 43.72032332420349
+    },
+    {
+      "i": 10,
+      "start": 64940241,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 62,
+      "forward_s": 43.502094745635986
+    },
+    {
+      "i": 11,
+      "start": 72948162,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 35,
+      "forward_s": 42.45424723625183
+    },
+    {
+      "i": 12,
+      "start": 81325353,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 62,
+      "forward_s": 43.51690983772278
+    },
+    {
+      "i": 13,
+      "start": 85060667,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 48,
+      "forward_s": 42.87410235404968
+    },
+    {
+      "i": 14,
+      "start": 91273684,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 68,
+      "forward_s": 43.53720259666443
+    },
+    {
+      "i": 15,
+      "start": 97072294,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 57,
+      "forward_s": 43.312172412872314
+    }
+  ],
+  "global": {
+    "n_positions": 32768,
+    "dnll_mean": -3.977839004609511e-05,
+    "dnll_median": 0.0,
+    "kl_mean": 0.007760144023301337,
+    "kl_median": 0.0013581092935055494,
+    "frac_kl_gt_0_01": 0.163787841796875,
+    "frac_kl_gt_0_1": 0.01031494140625,
+    "frac_kl_gt_1": 0.000152587890625,
+    "worst_20": [
+      {
+        "i": 1,
+        "start": 4097268,
+        "r": 870,
+        "dnll": -6.702295303344727,
+        "kl": 0.16892407834529877,
+        "context": "1954\n William Holden - Stalag 17\n Marlon Brando -",
+        "top3_base": [
+          {
+            "token": 4770,
+            "p": 0.9974439144134521
+          },
+          {
+            "token": 8482,
+            "p": 0.000551670731510967
+          },
+          {
+            "token": 60444,
+            "p": 0.0001791011745808646
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 4770,
+            "p": 0.839235246181488
+          },
+          {
+            "token": 60444,
+            "p": 0.1458372175693512
+          },
+          {
+            "token": 78037,
+            "p": 0.0032219632994383574
+          }
+        ],
+        "target": 60444
+      },
+      {
+        "i": 6,
+        "start": 50361664,
+        "r": 1478,
+        "dnll": -3.591478109359741,
+        "kl": 0.7180642485618591,
+        "context": " Albert Smith e James Williamson erano ancora all'avanguardia dell'arte cinematografica». Nel loro Gramma",
+        "top3_base": [
+          {
+            "token": 1538,
+            "p": 0.9281310439109802
+          },
+          {
+            "token": 540,
+            "p": 0.012436959892511368
+          },
+          {
+            "token": 1789,
+            "p": 0.009685914032161236
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 540,
+            "p": 0.45130833983421326
+          },
+          {
+            "token": 1538,
+            "p": 0.39827823638916016
+          },
+          {
+            "token": 3732,
+            "p": 0.07842563092708588
+          }
+        ],
+        "target": 540
+      },
+      {
+        "i": 8,
+        "start": 60662333,
+        "r": 861,
+        "dnll": 3.5648794174194336,
+        "kl": 1.2769267559051514,
+        "context": " di Diorama, Johns è costretto a posticipare di quasi un anno la tournée per vol",
+        "top3_base": [
+          {
+            "token": 84025,
+            "p": 0.43657565116882324
+          },
+          {
+            "token": 532,
+            "p": 0.43657565116882324
+          },
+          {
+            "token": 475,
+            "p": 0.0758654773235321
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 84025,
+            "p": 0.8661708831787109
+          },
+          {
+            "token": 475,
+            "p": 0.08056645095348358
+          },
+          {
+            "token": 10322,
+            "p": 0.033585093915462494
+          }
+        ],
+        "target": 532
+      },
+      {
+        "i": 2,
+        "start": 7523859,
+        "r": 715,
+        "dnll": 3.126847743988037,
+        "kl": 1.2170333862304688,
+        "context": "ver Cleveland viene eletto presidente degli Stati Uniti d'America, sconfiggendo Benjamin Harrison e",
+        "top3_base": [
+          {
+            "token": 7555,
+            "p": 0.4088701903820038
+          },
+          {
+            "token": 152658,
+            "p": 0.19313660264015198
+          },
+          {
+            "token": 2331,
+            "p": 0.17044244706630707
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 152658,
+            "p": 0.5578274726867676
+          },
+          {
+            "token": 203384,
+            "p": 0.06662297993898392
+          },
+          {
+            "token": 2331,
+            "p": 0.06258650124073029
+          }
+        ],
+        "target": 7555
+      },
+      {
+        "i": 4,
+        "start": 26978115,
+        "r": 415,
+        "dnll": 2.431124687194824,
+        "kl": 0.00790881086140871,
+        "context": "\n\nAltri progetti\n\nCollegamenti esterni<|endoftext|>Gonnosfanadiga (Gonnos",
+        "top3_base": [
+          {
+            "token": 29193,
+            "p": 0.9873327612876892
+          },
+          {
+            "token": 23936,
+            "p": 0.010968275368213654
+          },
+          {
+            "token": 69,
+            "p": 0.0007945391698740423
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 29193,
+            "p": 0.9936475157737732
+          },
+          {
+            "token": 23936,
+            "p": 0.0027909509371966124
+          },
+          {
+            "token": 69,
+            "p": 0.0027909509371966124
+          }
+        ],
+        "target": 303
+      },
+      {
+        "i": 1,
+        "start": 4097268,
+        "r": 200,
+        "dnll": -2.2975716590881348,
+        "kl": 0.7938473224639893,
+        "context": "elle (None but the Lonely Heart)\n Alexander Knox - Wilson\n 1946\n",
+        "top3_base": [
+          {
+            "token": 41550,
+            "p": 0.41005879640579224
+          },
+          {
+            "token": 26596,
+            "p": 0.41005879640579224
+          },
+          {
+            "token": 12870,
+            "p": 0.05213312804698944
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 12870,
+            "p": 0.5187240839004517
+          },
+          {
+            "token": 26596,
+            "p": 0.2776530086994171
+          },
+          {
+            "token": 41550,
+            "p": 0.07020168006420135
+          }
+        ],
+        "target": 12870
+      },
+      {
+        "i": 1,
+        "start": 4097268,
+        "r": 685,
+        "dnll": -2.2700202465057373,
+        "kl": 0.17124202847480774,
+        "context": " Spencer Tracy - Il padre della sposa (Father of the Bride)\n 1952\n",
+        "top3_base": [
+          {
+            "token": 26596,
+            "p": 0.9702496528625488
+          },
+          {
+            "token": 68520,
+            "p": 0.022818082943558693
+          },
+          {
+            "token": 23081,
+            "p": 0.0030880917329341173
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 26596,
+            "p": 0.7709115743637085
+          },
+          {
+            "token": 68520,
+            "p": 0.22086985409259796
+          },
+          {
+            "token": 23081,
+            "p": 0.0026118892710655928
+          }
+        ],
+        "target": 68520
+      },
+      {
+        "i": 1,
+        "start": 4097268,
+        "r": 214,
+        "dnll": -2.1005373001098633,
+        "kl": 0.20314015448093414,
+        "context": " 1946\n Ray Milland - Giorni perduti (The Lost Weekend)\n",
+        "top3_base": [
+          {
+            "token": 43688,
+            "p": 0.3157462775707245
+          },
+          {
+            "token": 220,
+            "p": 0.11615656316280365
+          },
+          {
+            "token": 94565,
+            "p": 0.1091189980506897
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 23272,
+            "p": 0.17015773057937622
+          },
+          {
+            "token": 43688,
+            "p": 0.1325189769268036
+          },
+          {
+            "token": 220,
+            "p": 0.1098620817065239
+          }
+        ],
+        "target": 51693
+      },
+      {
+        "i": 0,
+        "start": 1652729,
+        "r": 292,
+        "dnll": 2.0498228073120117,
+        "kl": 0.06637652218341827,
+        "context": " Pusteria nonché le Alpi venete. Nel 1864 fu pubblicato il volume",
+        "top3_base": [
+          {
+            "token": 1538,
+            "p": 0.3611258268356323
+          },
+          {
+            "token": 8148,
+            "p": 0.14141890406608582
+          },
+          {
+            "token": 26109,
+            "p": 0.07569608092308044
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 1538,
+            "p": 0.36573299765586853
+          },
+          {
+            "token": 8148,
+            "p": 0.08686920255422592
+          },
+          {
+            "token": 26109,
+            "p": 0.07666180282831192
+          }
+        ],
+        "target": 561
+      },
+      {
+        "i": 5,
+        "start": 30782308,
+        "r": 333,
+        "dnll": -2.0256824493408203,
+        "kl": 0.11157174408435822,
+        "context": " governo fascista, quando venne istituita la provincia di Rieti, fu aggregato a quella",
+        "top3_base": [
+          {
+            "token": 23476,
+            "p": 0.5382481217384338
+          },
+          {
+            "token": 1789,
+            "p": 0.28810346126556396
+          },
+          {
+            "token": 401,
+            "p": 0.1542106568813324
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 23476,
+            "p": 0.552250862121582
+          },
+          {
+            "token": 401,
+            "p": 0.23021242022514343
+          },
+          {
+            "token": 1789,
+            "p": 0.13963088393211365
+          }
+        ],
+        "target": 18819
+      },
+      {
+        "i": 14,
+        "start": 91273684,
+        "r": 46,
+        "dnll": 1.9827790260314941,
+        "kl": 0.33653518557548523,
+        "context": " considerata una gaffe, portando l'oppositore Jimmy Carter a replicare che avrebbe voluto vedere",
+        "top3_base": [
+          {
+            "token": 3687,
+            "p": 0.11883065104484558
+          },
+          {
+            "token": 13608,
+            "p": 0.08167102932929993
+          },
+          {
+            "token": 632,
+            "p": 0.08167102932929993
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 632,
+            "p": 0.1652434915304184
+          },
+          {
+            "token": 3687,
+            "p": 0.12869176268577576
+          },
+          {
+            "token": 68520,
+            "p": 0.09415290504693985
+          }
+        ],
+        "target": 13608
+      },
+      {
+        "i": 1,
+        "start": 4097268,
+        "r": 1804,
+        "dnll": 1.9169974327087402,
+        "kl": 0.4899331331253052,
+        "context": "cket)\n Peter O'Toole - Becket e il suo re (Becket)\n",
+        "top3_base": [
+          {
+            "token": 88410,
+            "p": 0.6907407641410828
+          },
+          {
+            "token": 10721,
+            "p": 0.15412509441375732
+          },
+          {
+            "token": 23081,
+            "p": 0.09951064735651016
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 88410,
+            "p": 0.5490925908088684
+          },
+          {
+            "token": 23081,
+            "p": 0.42763373255729675
+          },
+          {
+            "token": 10721,
+            "p": 0.014632821083068848
+          }
+        ],
+        "target": 20070
+      },
+      {
+        "i": 4,
+        "start": 26978115,
+        "r": 1677,
+        "dnll": 1.9138050079345703,
+        "kl": 0.059912119060754776,
+        "context": ", marchesi di Qirra, la signoria del paese passò ai Centelles, ai",
+        "top3_base": [
+          {
+            "token": 16847,
+            "p": 0.2610520124435425
+          },
+          {
+            "token": 30410,
+            "p": 0.15833605825901031
+          },
+          {
+            "token": 31003,
+            "p": 0.13126517832279205
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 16847,
+            "p": 0.27579689025878906
+          },
+          {
+            "token": 31003,
+            "p": 0.18955224752426147
+          },
+          {
+            "token": 30410,
+            "p": 0.15714433789253235
+          }
+        ],
+        "target": 91258
+      },
+      {
+        "i": 12,
+        "start": 81325353,
+        "r": 105,
+        "dnll": -1.8792232275009155,
+        "kl": 0.11728305369615555,
+        "context": " inalarono un aerosol di spore patogene rilasciate accidentalmente da un impianto militare di",
+        "top3_base": [
+          {
+            "token": 173907,
+            "p": 0.7041823863983154
+          },
+          {
+            "token": 79203,
+            "p": 0.045016877353191376
+          },
+          {
+            "token": 5843,
+            "p": 0.037320300936698914
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 173907,
+            "p": 0.5862584710121155
+          },
+          {
+            "token": 50637,
+            "p": 0.14822934567928314
+          },
+          {
+            "token": 79203,
+            "p": 0.04246841371059418
+          }
+        ],
+        "target": 50637
+      },
+      {
+        "i": 4,
+        "start": 26978115,
+        "r": 448,
+        "dnll": -1.8570404052734375,
+        "kl": 0.06408722698688507,
+        "context": " del Sud Sardegna.\n\nGeografia fisica\n\nTerritorio\nIl suo territorio si estende in prop",
+        "top3_base": [
+          {
+            "token": 15257,
+            "p": 0.50213623046875
+          },
+          {
+            "token": 201992,
+            "p": 0.2861086130142212
+          },
+          {
+            "token": 59949,
+            "p": 0.07233958691358566
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 15257,
+            "p": 0.36083170771598816
+          },
+          {
+            "token": 201992,
+            "p": 0.31843286752700806
+          },
+          {
+            "token": 59949,
+            "p": 0.13274256885051727
+          }
+        ],
+        "target": 65051
+      },
+      {
+        "i": 5,
+        "start": 30782308,
+        "r": 1235,
+        "dnll": 1.8083155155181885,
+        "kl": 0.04066365212202072,
+        "context": " cinquecenteschi, spesso concesse dagli attuali proprietari per ospitarie varie cerimonie.\n\nS",
+        "top3_base": [
+          {
+            "token": 2051,
+            "p": 0.8751682043075562
+          },
+          {
+            "token": 505,
+            "p": 0.04357206076383591
+          },
+          {
+            "token": 11950,
+            "p": 0.038452208042144775
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 2051,
+            "p": 0.9355181455612183
+          },
+          {
+            "token": 11950,
+            "p": 0.028250200673937798
+          },
+          {
+            "token": 505,
+            "p": 0.022001279518008232
+          }
+        ],
+        "target": 234729
+      },
+      {
+        "i": 1,
+        "start": 4097268,
+        "r": 793,
+        "dnll": 1.740224838256836,
+        "kl": 0.003378982190042734,
+        "context": " 1953\n Gary Cooper - Mezzogiorno di fuoco (High Noon)\n",
+        "top3_base": [
+          {
+            "token": 7555,
+            "p": 0.964354932308197
+          },
+          {
+            "token": 7366,
+            "p": 0.009454202838242054
+          },
+          {
+            "token": 11528,
+            "p": 0.0044658491387963295
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 7555,
+            "p": 0.9738275408744812
+          },
+          {
+            "token": 7366,
+            "p": 0.006984783802181482
+          },
+          {
+            "token": 11528,
+            "p": 0.002911691088229418
+          }
+        ],
+        "target": 2783
+      },
+      {
+        "i": 2,
+        "start": 7523859,
+        "r": 1814,
+        "dnll": 1.7006611824035645,
+        "kl": 0.03954758495092392,
+        "context": "issa\n\nReligione romana antica e moderna:\n Dies religiosus\n Apertura del Mundus",
+        "top3_base": [
+          {
+            "token": 271,
+            "p": 0.4145241975784302
+          },
+          {
+            "token": 198,
+            "p": 0.11876318603754044
+          },
+          {
+            "token": 11,
+            "p": 0.09845813363790512
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 271,
+            "p": 0.46357592940330505
+          },
+          {
+            "token": 198,
+            "p": 0.11721035838127136
+          },
+          {
+            "token": 11,
+            "p": 0.09128352254629135
+          }
+        ],
+        "target": 26767
+      },
+      {
+        "i": 12,
+        "start": 81325353,
+        "r": 122,
+        "dnll": 1.6673617362976074,
+        "kl": 0.009667658247053623,
+        "context": " impianto militare di microbiologia. Il resoconto del dottor Kanatjan Alibekov sull'",
+        "top3_base": [
+          {
+            "token": 72458,
+            "p": 0.9349452257156372
+          },
+          {
+            "token": 375,
+            "p": 0.012528272345662117
+          },
+          {
+            "token": 224511,
+            "p": 0.00713839428499341
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 72458,
+            "p": 0.9539639949798584
+          },
+          {
+            "token": 375,
+            "p": 0.0068423147313296795
+          },
+          {
+            "token": 224511,
+            "p": 0.006038321647793055
+          }
+        ],
+        "target": 724
+      },
+      {
+        "i": 14,
+        "start": 91273684,
+        "r": 1164,
+        "dnll": -1.6644501686096191,
+        "kl": 0.2211374193429947,
+        "context": " e per la sostanziale incapacità da parte del paziente di trattenere in stomaco la",
+        "top3_base": [
+          {
+            "token": 213151,
+            "p": 0.4104762673377991
+          },
+          {
+            "token": 18537,
+            "p": 0.1510057896375656
+          },
+          {
+            "token": 8595,
+            "p": 0.13326214253902435
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 213151,
+            "p": 0.37682023644447327
+          },
+          {
+            "token": 18537,
+            "p": 0.24329344928264618
+          },
+          {
+            "token": 185232,
+            "p": 0.08407996594905853
+          }
+        ],
+        "target": 178209
+      }
+    ]
+  },
+  "hits": {},
+  "controls": {},
+  "routing_mode": "free"
+}

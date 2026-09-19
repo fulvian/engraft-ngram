@@ -1,0 +1,61 @@
+{
+  "base_prior_first_token": {
+    "it": {
+      "cell": "s0b",
+      "field": "replica_eval/eval.json [*].correct.base",
+      "metric": "fraction rank-1, pinned routing",
+      "value": 0.10225921521997622,
+      "n_hit": 86,
+      "n_total": 841
+    },
+    "zh": {
+      "cell": "z0b",
+      "field": "replica_eval/eval.json [*].correct.base",
+      "metric": "fraction rank-1, pinned routing",
+      "value": 0.012578616352201259,
+      "n_hit": 12,
+      "n_total": 954
+    }
+  },
+  "regression": {
+    "model": "rate ~ intercept + coef_lnmass * ln(mass) + coef_zh * is_zh",
+    "n_points": 200,
+    "n_facts": 100,
+    "intercept": 0.134658212369096,
+    "coef_lnmass": 0.12447425741901974,
+    "coef_zh": -0.051034013055179836,
+    "bootstrap": {
+      "n_boot": 2000,
+      "seed": 0,
+      "resample_unit": "fact_id (paired across languages)",
+      "ci95_coef_lnmass": [
+        0.06552908587092468,
+        0.17899002203837255
+      ],
+      "ci95_coef_zh": [
+        -0.12363974532536748,
+        0.02045520927870742
+      ]
+    },
+    "expected_report_md_section_7": {
+      "intercept": 0.135,
+      "coef_lnmass": 0.124,
+      "coef_zh": -0.051,
+      "ci_zh": [
+        -0.133,
+        0.027
+      ],
+      "ci_lnmass": [
+        0.062,
+        0.179
+      ]
+    },
+    "delta_vs_expected": {
+      "intercept": -0.00034178763090400577,
+      "coef_lnmass": 0.0004742574190197413,
+      "coef_zh": -3.401305517983927e-05,
+      "ci_zh_lo": 0.009360254674632529,
+      "ci_zh_hi": -0.0065447907212925795
+    }
+  }
+}

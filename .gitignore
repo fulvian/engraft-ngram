@@ -13,3 +13,4 @@ __pycache__/
 paper/*.log
 paper/*.aux
 paper/*.out
+!results/2026-09-12/

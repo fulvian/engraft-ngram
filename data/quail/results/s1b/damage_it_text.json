@@ -1,0 +1,924 @@
+{
+  "n_chunks_requested": 48,
+  "n_chunks_done": 16,
+  "gpu_minutes_cap": 30.0,
+  "total_s": 715.5977051258087,
+  "forward_s_mean": 44.39621125161648,
+  "chunks": [
+    {
+      "i": 0,
+      "start": 1652729,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 26,
+      "forward_s": 50.84571599960327
+    },
+    {
+      "i": 1,
+      "start": 4097268,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 7,
+      "forward_s": 43.63090467453003
+    },
+    {
+      "i": 2,
+      "start": 7523859,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 29,
+      "forward_s": 44.484894037246704
+    },
+    {
+      "i": 3,
+      "start": 17526369,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 2,
+      "forward_s": 42.04539656639099
+    },
+    {
+      "i": 4,
+      "start": 26978115,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 40,
+      "forward_s": 44.879765033721924
+    },
+    {
+      "i": 5,
+      "start": 30782308,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 57,
+      "forward_s": 44.37979435920715
+    },
+    {
+      "i": 6,
+      "start": 50361664,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 52,
+      "forward_s": 44.458850622177124
+    },
+    {
+      "i": 7,
+      "start": 51112594,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 49,
+      "forward_s": 43.908660888671875
+    },
+    {
+      "i": 8,
+      "start": 60662333,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 43,
+      "forward_s": 44.295464754104614
+    },
+    {
+      "i": 9,
+      "start": 63694855,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 45,
+      "forward_s": 44.28099489212036
+    },
+    {
+      "i": 10,
+      "start": 64940241,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 62,
+      "forward_s": 44.142900705337524
+    },
+    {
+      "i": 11,
+      "start": 72948162,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 35,
+      "forward_s": 43.05396008491516
+    },
+    {
+      "i": 12,
+      "start": 81325353,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 62,
+      "forward_s": 44.208133697509766
+    },
+    {
+      "i": 13,
+      "start": 85060667,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 48,
+      "forward_s": 43.497941970825195
+    },
+    {
+      "i": 14,
+      "start": 91273684,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 68,
+      "forward_s": 44.08762717247009
+    },
+    {
+      "i": 15,
+      "start": 97072294,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 57,
+      "forward_s": 44.13837456703186
+    }
+  ],
+  "global": {
+    "n_positions": 32768,
+    "dnll_mean": 0.0010657807039056132,
+    "dnll_median": 1.6687936295056716e-06,
+    "kl_mean": 0.011620119955713142,
+    "kl_median": 0.002271020319312811,
+    "frac_kl_gt_0_01": 0.21722412109375,
+    "frac_kl_gt_0_1": 0.01568603515625,
+    "frac_kl_gt_1": 0.000396728515625,
+    "worst_20": [
+      {
+        "i": 5,
+        "start": 30782308,
+        "r": 1697,
+        "dnll": 6.312255382537842,
+        "kl": 6.126136302947998,
+        "context": "31 dicembre 2015 la popolazione straniera residente era di  persone (11",
+        "top3_base": [
+          {
+            "token": 11,
+            "p": 0.9785273671150208
+          },
+          {
+            "token": 50322,
+            "p": 0.017922352999448776
+          },
+          {
+            "token": 13,
+            "p": 0.0010763210011646152
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 553,
+            "p": 0.40801072120666504
+          },
+          {
+            "token": 50322,
+            "p": 0.23247753083705902
+          },
+          {
+            "token": 16,
+            "p": 0.04039853438735008
+          }
+        ],
+        "target": 11
+      },
+      {
+        "i": 1,
+        "start": 4097268,
+        "r": 870,
+        "dnll": -5.687067031860352,
+        "kl": 0.0598946213722229,
+        "context": "1954\n William Holden - Stalag 17\n Marlon Brando -",
+        "top3_base": [
+          {
+            "token": 4770,
+            "p": 0.9974439144134521
+          },
+          {
+            "token": 8482,
+            "p": 0.000551670731510967
+          },
+          {
+            "token": 60444,
+            "p": 0.0001791011745808646
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 4770,
+            "p": 0.9366058111190796
+          },
+          {
+            "token": 60444,
+            "p": 0.05283967778086662
+          },
+          {
+            "token": 78037,
+            "p": 0.002048817230388522
+          }
+        ],
+        "target": 60444
+      },
+      {
+        "i": 10,
+        "start": 64940241,
+        "r": 1612,
+        "dnll": 4.6456403732299805,
+        "kl": 4.634305477142334,
+        "context": " vero e proprio dell'alchimia in Europa viene in genere fatto risalire al 114",
+        "top3_base": [
+          {
+            "token": 19,
+            "p": 0.9987749457359314
+          },
+          {
+            "token": 15,
+            "p": 0.00048749722191132605
+          },
+          {
+            "token": 18,
+            "p": 0.00017934029165189713
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 24,
+            "p": 0.8634095191955566
+          },
+          {
+            "token": 15,
+            "p": 0.05519592761993408
+          },
+          {
+            "token": 21,
+            "p": 0.0334780216217041
+          }
+        ],
+        "target": 19
+      },
+      {
+        "i": 8,
+        "start": 60662333,
+        "r": 4,
+        "dnll": -4.493075847625732,
+        "kl": 0.43875932693481445,
+        "context": "<|endoftext|>Seychelles",
+        "top3_base": [
+          {
+            "token": 25,
+            "p": 0.07899433374404907
+          },
+          {
+            "token": 515,
+            "p": 0.05779348686337471
+          },
+          {
+            "token": 220,
+            "p": 0.03093462437391281
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 11,
+            "p": 0.07032141834497452
+          },
+          {
+            "token": 25,
+            "p": 0.054766375571489334
+          },
+          {
+            "token": 471,
+            "p": 0.037640344351530075
+          }
+        ],
+        "target": 8
+      },
+      {
+        "i": 5,
+        "start": 30782308,
+        "r": 268,
+        "dnll": -3.872997760772705,
+        "kl": 0.0012468824861571193,
+        "context": " informazioni amministrative \nNel 1923 Nespolo passò dalla provincia di Perugia in",
+        "top3_base": [
+          {
+            "token": 75597,
+            "p": 0.9989627599716187
+          },
+          {
+            "token": 71331,
+            "p": 0.0003351147461216897
+          },
+          {
+            "token": 35198,
+            "p": 0.00029573770007118583
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 75597,
+            "p": 0.9969648718833923
+          },
+          {
+            "token": 35198,
+            "p": 0.0009091141982935369
+          },
+          {
+            "token": 63733,
+            "p": 0.000708018837030977
+          }
+        ],
+        "target": 63733
+      },
+      {
+        "i": 8,
+        "start": 60662333,
+        "r": 23,
+        "dnll": 3.465585708618164,
+        "kl": 0.7165020108222961,
+        "context": "elles)\n des – codice ISO 639-3 della lingua desano\n\nOnom",
+        "top3_base": [
+          {
+            "token": 36813,
+            "p": 0.6443393230438232
+          },
+          {
+            "token": 178198,
+            "p": 0.20918633043766022
+          },
+          {
+            "token": 163072,
+            "p": 0.028310291469097137
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 36813,
+            "p": 0.9115439653396606
+          },
+          {
+            "token": 544,
+            "p": 0.02143745683133602
+          },
+          {
+            "token": 163072,
+            "p": 0.018918488174676895
+          }
+        ],
+        "target": 178198
+      },
+      {
+        "i": 1,
+        "start": 4097268,
+        "r": 1961,
+        "dnll": -3.0882606506347656,
+        "kl": 0.36707550287246704,
+        "context": " (Ship of Fools)\n 1967\n Paul Scofield - Un uomo per",
+        "top3_base": [
+          {
+            "token": 324,
+            "p": 0.6459850072860718
+          },
+          {
+            "token": 1147,
+            "p": 0.34577083587646484
+          },
+          {
+            "token": 71636,
+            "p": 0.004932157229632139
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 1147,
+            "p": 0.6226827502250671
+          },
+          {
+            "token": 324,
+            "p": 0.2595728039741516
+          },
+          {
+            "token": 71636,
+            "p": 0.10820603370666504
+          }
+        ],
+        "target": 71636
+      },
+      {
+        "i": 15,
+        "start": 97072294,
+        "r": 1256,
+        "dnll": -3.0818419456481934,
+        "kl": 0.6717813611030579,
+        "context": " più basso fra gli ufficiali, in uso nel corso del tempo in svariati Paesi\n\nPagine",
+        "top3_base": [
+          {
+            "token": 1789,
+            "p": 0.5444678664207458
+          },
+          {
+            "token": 264,
+            "p": 0.05738648772239685
+          },
+          {
+            "token": 248044,
+            "p": 0.030716773122549057
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 264,
+            "p": 0.279122531414032
+          },
+          {
+            "token": 1789,
+            "p": 0.14035162329673767
+          },
+          {
+            "token": 2920,
+            "p": 0.06629741191864014
+          }
+        ],
+        "target": 77708
+      },
+      {
+        "i": 8,
+        "start": 60662333,
+        "r": 463,
+        "dnll": -3.0468719005584717,
+        "kl": 0.06653016805648804,
+        "context": "ões\n\nNote\n\nVoci correlate \n Freguesias del Portogallo\n Comune di Mac",
+        "top3_base": [
+          {
+            "token": 2770,
+            "p": 0.9907558560371399
+          },
+          {
+            "token": 3331,
+            "p": 0.0035732227843254805
+          },
+          {
+            "token": 20231,
+            "p": 0.0031533578876405954
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 2770,
+            "p": 0.9162963628768921
+          },
+          {
+            "token": 3331,
+            "p": 0.07521418482065201
+          },
+          {
+            "token": 299,
+            "p": 0.0033046812750399113
+          }
+        ],
+        "target": 3331
+      },
+      {
+        "i": 8,
+        "start": 60662333,
+        "r": 49,
+        "dnll": -2.56727933883667,
+        "kl": 0.6068931818008423,
+        "context": "oristico del nome proprio di persona maschile Desmond<|endoftext|>Campionato italiano di pallavolo maschile\n",
+        "top3_base": [
+          {
+            "token": 410,
+            "p": 0.15578806400299072
+          },
+          {
+            "token": 4737,
+            "p": 0.10707147419452667
+          },
+          {
+            "token": 56233,
+            "p": 0.04463403299450874
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 4737,
+            "p": 0.10427440702915192
+          },
+          {
+            "token": 909,
+            "p": 0.043468039482831955
+          },
+          {
+            "token": 3744,
+            "p": 0.033852942287921906
+          }
+        ],
+        "target": 9232
+      },
+      {
+        "i": 2,
+        "start": 7523859,
+        "r": 2047,
+        "dnll": -2.562756061553955,
+        "kl": 0.6240900754928589,
+        "context": " Federico il Bello nella battaglia di Gammelsdorf\n 1492 – Pace di",
+        "top3_base": [
+          {
+            "token": 436,
+            "p": 0.5324415564537048
+          },
+          {
+            "token": 199209,
+            "p": 0.19587428867816925
+          },
+          {
+            "token": 231324,
+            "p": 0.02821836806833744
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 436,
+            "p": 0.2515718936920166
+          },
+          {
+            "token": 2422,
+            "p": 0.08694092929363251
+          },
+          {
+            "token": 443,
+            "p": 0.06770966202020645
+          }
+        ],
+        "target": 27118
+      },
+      {
+        "i": 13,
+        "start": 85060667,
+        "r": 1846,
+        "dnll": 2.4855918884277344,
+        "kl": 0.6457610726356506,
+        "context": "8-9871-618-0.\n Giulio Angioni, Fare",
+        "top3_base": [
+          {
+            "token": 11,
+            "p": 0.706888735294342
+          },
+          {
+            "token": 1667,
+            "p": 0.0398799292743206
+          },
+          {
+            "token": 585,
+            "p": 0.02740904688835144
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 11,
+            "p": 0.9802245497703552
+          },
+          {
+            "token": 13,
+            "p": 0.0021442321594804525
+          },
+          {
+            "token": 96003,
+            "p": 0.0015687537379562855
+          }
+        ],
+        "target": 12823
+      },
+      {
+        "i": 12,
+        "start": 81325353,
+        "r": 86,
+        "dnll": 2.4838643074035645,
+        "kl": 0.35139548778533936,
+        "context": " residenti mangiarono carne contaminata. Le agenzie statunitensi ritengono comunque che gli abitanti in",
+        "top3_base": [
+          {
+            "token": 182367,
+            "p": 0.41255345940589905
+          },
+          {
+            "token": 173799,
+            "p": 0.25022631883621216
+          },
+          {
+            "token": 7684,
+            "p": 0.17197787761688232
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 182367,
+            "p": 0.610025942325592
+          },
+          {
+            "token": 173799,
+            "p": 0.2542966306209564
+          },
+          {
+            "token": 7684,
+            "p": 0.014346437528729439
+          }
+        ],
+        "target": 7684
+      },
+      {
+        "i": 15,
+        "start": 97072294,
+        "r": 1783,
+        "dnll": 2.4156570434570312,
+        "kl": 0.4422745108604431,
+        "context": "oga, il monastero di Valaam che fu abbandonato tra 1611",
+        "top3_base": [
+          {
+            "token": 378,
+            "p": 0.9379909634590149
+          },
+          {
+            "token": 12,
+            "p": 0.04121244698762894
+          },
+          {
+            "token": 1523,
+            "p": 0.005937216337770224
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 378,
+            "p": 0.6589075326919556
+          },
+          {
+            "token": 16,
+            "p": 0.2746735215187073
+          },
+          {
+            "token": 17,
+            "p": 0.0082944231107831
+          }
+        ],
+        "target": 12
+      },
+      {
+        "i": 3,
+        "start": 17526369,
+        "r": 1231,
+        "dnll": 2.396192789077759,
+        "kl": 2.3916773796081543,
+        "context": "1)\n(en) Diana Wynne Jones (1934 – 2011",
+        "top3_base": [
+          {
+            "token": 8,
+            "p": 0.9981568455696106
+          },
+          {
+            "token": 681,
+            "p": 0.0006255715270526707
+          },
+          {
+            "token": 198,
+            "p": 0.0002161918382626027
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 16,
+            "p": 0.8623986840248108
+          },
+          {
+            "token": 8,
+            "p": 0.09089614450931549
+          },
+          {
+            "token": 15,
+            "p": 0.016814099624753
+          }
+        ],
+        "target": 8
+      },
+      {
+        "i": 0,
+        "start": 1652729,
+        "r": 191,
+        "dnll": -2.373095989227295,
+        "kl": 0.0009744635317474604,
+        "context": "ccia predominante nella regione, battezzata in suo onore dolomia, costituita principalmente",
+        "top3_base": [
+          {
+            "token": 2899,
+            "p": 0.9980725049972534
+          },
+          {
+            "token": 1789,
+            "p": 0.0017003362299874425
+          },
+          {
+            "token": 23957,
+            "p": 0.00010869885591091588
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 2899,
+            "p": 0.9961740970611572
+          },
+          {
+            "token": 1789,
+            "p": 0.0024692686274647713
+          },
+          {
+            "token": 23957,
+            "p": 0.0011663999175652862
+          }
+        ],
+        "target": 23957
+      },
+      {
+        "i": 8,
+        "start": 60662333,
+        "r": 1981,
+        "dnll": 2.31754732131958,
+        "kl": 0.26794737577438354,
+        "context": "alusia, si è poi propagato nelle varietà di spagnolo latinoamericano.\n\nNello spagnolo ",
+        "top3_base": [
+          {
+            "token": 11094,
+            "p": 0.1955452710390091
+          },
+          {
+            "token": 8365,
+            "p": 0.1430639773607254
+          },
+          {
+            "token": 4259,
+            "p": 0.11141835153102875
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 11094,
+            "p": 0.2498210072517395
+          },
+          {
+            "token": 4259,
+            "p": 0.1612965613603592
+          },
+          {
+            "token": 318,
+            "p": 0.08633583039045334
+          }
+        ],
+        "target": 8365
+      },
+      {
+        "i": 14,
+        "start": 91273684,
+        "r": 46,
+        "dnll": 2.1886091232299805,
+        "kl": 0.3773847222328186,
+        "context": " considerata una gaffe, portando l'oppositore Jimmy Carter a replicare che avrebbe voluto vedere",
+        "top3_base": [
+          {
+            "token": 3687,
+            "p": 0.11883065104484558
+          },
+          {
+            "token": 13608,
+            "p": 0.08167102932929993
+          },
+          {
+            "token": 632,
+            "p": 0.08167102932929993
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 3687,
+            "p": 0.15241244435310364
+          },
+          {
+            "token": 632,
+            "p": 0.11869892477989197
+          },
+          {
+            "token": 1147,
+            "p": 0.05968556925654411
+          }
+        ],
+        "target": 13608
+      },
+      {
+        "i": 1,
+        "start": 4097268,
+        "r": 200,
+        "dnll": -2.1345176696777344,
+        "kl": 0.43545281887054443,
+        "context": "elle (None but the Lonely Heart)\n Alexander Knox - Wilson\n 1946\n",
+        "top3_base": [
+          {
+            "token": 41550,
+            "p": 0.41005879640579224
+          },
+          {
+            "token": 26596,
+            "p": 0.41005879640579224
+          },
+          {
+            "token": 12870,
+            "p": 0.05213312804698944
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 12870,
+            "p": 0.4406796395778656
+          },
+          {
+            "token": 26596,
+            "p": 0.2358788251876831
+          },
+          {
+            "token": 41550,
+            "p": 0.2081623375415802
+          }
+        ],
+        "target": 12870
+      },
+      {
+        "i": 6,
+        "start": 50361664,
+        "r": 96,
+        "dnll": 2.1261730194091797,
+        "kl": 0.3895799517631531,
+        "context": "'epoca rappresentava ancora un grande successo. Tuttavia, la concorrenza che si sviluppa intorno al Grand",
+        "top3_base": [
+          {
+            "token": 29878,
+            "p": 0.3292297422885895
+          },
+          {
+            "token": 27969,
+            "p": 0.08324230462312698
+          },
+          {
+            "token": 4421,
+            "p": 0.05374527350068092
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 29878,
+            "p": 0.6539837718009949
+          },
+          {
+            "token": 27969,
+            "p": 0.05368226394057274
+          },
+          {
+            "token": 46610,
+            "p": 0.013573002070188522
+          }
+        ],
+        "target": 63457
+      }
+    ]
+  },
+  "hits": {},
+  "controls": {},
+  "routing_mode": "free"
+}

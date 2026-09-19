@@ -1,0 +1,29 @@
+{
+  "_comment": "Descent flags for cell s0b (Quail corpus, Italian, seed 0, mass-weighted). These are the method flags of the measured run; paths and private execution options are omitted.",
+  "cell": "s0b",
+  "census": "corpus/s0b/census.json",
+  "seed": 0,
+  "policy": "all-read",
+  "arm": "lm-base",
+  "k": 256,
+  "pack_len": 2048,
+  "n_excl": 9,
+  "max_steps": 480,
+  "gpu_hours_cap": 3.5,
+  "fact_weight": "mass",
+  "eval_every": 20,
+  "eval_every_free": 10,
+  "routing_regime": "mixed",
+  "stop_criterion": {
+    "name": "acc_heldout_rate",
+    "local_window": 4,
+    "phi": 0.05,
+    "persistence": 2
+  },
+  "tuning_constants": {
+    "_comment": "Given, not derived: produced by a calibration procedure that is not part of this release.",
+    "mu": 0.10171958808760136,
+    "lr_scale": 4.959692015994137
+  },
+  "production_note": "The measured run used a faster private execution path for the mixture-of-experts layers (grouped expert kernel, mixed-precision head, compiled fusions) that is not published. The public reference path runs the same descent with --moe-kernel per_expert and no fusion; the two expert kernels give bit-identical logits, and the fusion pass changes the distillation loss by about 2e-3 (measured). See docs/formats.md."
+}

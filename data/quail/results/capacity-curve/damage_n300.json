@@ -1,0 +1,1919 @@
+{
+  "n_chunks_requested": 48,
+  "n_chunks_done": 38,
+  "gpu_minutes_cap": 33.0,
+  "total_s": 1999.2078137397766,
+  "forward_s_mean": 47.50994888732308,
+  "chunks": [
+    {
+      "i": 0,
+      "start": 1652729,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 18,
+      "forward_s": 54.65511703491211
+    },
+    {
+      "i": 1,
+      "start": 4097268,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 6,
+      "forward_s": 46.495331048965454
+    },
+    {
+      "i": 2,
+      "start": 7523859,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 17,
+      "forward_s": 47.49616980552673
+    },
+    {
+      "i": 3,
+      "start": 17526369,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 1,
+      "forward_s": 45.32293963432312
+    },
+    {
+      "i": 4,
+      "start": 26978115,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 21,
+      "forward_s": 47.93759512901306
+    },
+    {
+      "i": 5,
+      "start": 30782308,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 27,
+      "forward_s": 47.480555057525635
+    },
+    {
+      "i": 6,
+      "start": 50361664,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 26,
+      "forward_s": 47.76652407646179
+    },
+    {
+      "i": 7,
+      "start": 51112594,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 17,
+      "forward_s": 50.73872184753418
+    },
+    {
+      "i": 8,
+      "start": 60662333,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 27,
+      "forward_s": 47.61421084403992
+    },
+    {
+      "i": 9,
+      "start": 63694855,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 23,
+      "forward_s": 47.87613821029663
+    },
+    {
+      "i": 10,
+      "start": 64940241,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 25,
+      "forward_s": 47.76471996307373
+    },
+    {
+      "i": 11,
+      "start": 72948162,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 14,
+      "forward_s": 46.51812982559204
+    },
+    {
+      "i": 12,
+      "start": 81325353,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 22,
+      "forward_s": 47.80797100067139
+    },
+    {
+      "i": 13,
+      "start": 85060667,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 8,
+      "forward_s": 47.081979513168335
+    },
+    {
+      "i": 14,
+      "start": 91273684,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 25,
+      "forward_s": 47.653358697891235
+    },
+    {
+      "i": 15,
+      "start": 97072294,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 31,
+      "forward_s": 47.53690528869629
+    },
+    {
+      "i": 16,
+      "start": 68830255,
+      "kind": "hit",
+      "stratum": "top",
+      "target_row": 53596120,
+      "center_pos": 68830767,
+      "n_hit_positions": 35,
+      "forward_s": 47.52692413330078
+    },
+    {
+      "i": 17,
+      "start": 36728545,
+      "kind": "hit",
+      "stratum": "top",
+      "target_row": 105582941,
+      "center_pos": 36729057,
+      "n_hit_positions": 24,
+      "forward_s": 47.48705554008484
+    },
+    {
+      "i": 18,
+      "start": 87072472,
+      "kind": "hit",
+      "stratum": "top",
+      "target_row": 1731449,
+      "center_pos": 87072984,
+      "n_hit_positions": 23,
+      "forward_s": 47.503663063049316
+    },
+    {
+      "i": 19,
+      "start": 12121358,
+      "kind": "hit",
+      "stratum": "top",
+      "target_row": 90644285,
+      "center_pos": 12121870,
+      "n_hit_positions": 23,
+      "forward_s": 47.75795650482178
+    },
+    {
+      "i": 20,
+      "start": 56059112,
+      "kind": "hit",
+      "stratum": "top",
+      "target_row": 65841408,
+      "center_pos": 56059624,
+      "n_hit_positions": 19,
+      "forward_s": 47.6181914806366
+    },
+    {
+      "i": 21,
+      "start": 70875622,
+      "kind": "hit",
+      "stratum": "top",
+      "target_row": 157885351,
+      "center_pos": 70876134,
+      "n_hit_positions": 13,
+      "forward_s": 47.019516944885254
+    },
+    {
+      "i": 22,
+      "start": 83999627,
+      "kind": "hit",
+      "stratum": "top",
+      "target_row": 36294323,
+      "center_pos": 84000139,
+      "n_hit_positions": 17,
+      "forward_s": 47.67138624191284
+    },
+    {
+      "i": 23,
+      "start": 50811511,
+      "kind": "hit",
+      "stratum": "top",
+      "target_row": 127994999,
+      "center_pos": 50812023,
+      "n_hit_positions": 21,
+      "forward_s": 47.471195459365845
+    },
+    {
+      "i": 24,
+      "start": 36703985,
+      "kind": "hit",
+      "stratum": "top",
+      "target_row": 27902507,
+      "center_pos": 36704497,
+      "n_hit_positions": 21,
+      "forward_s": 47.396575927734375
+    },
+    {
+      "i": 25,
+      "start": 30563737,
+      "kind": "hit",
+      "stratum": "top",
+      "target_row": 150421660,
+      "center_pos": 30564249,
+      "n_hit_positions": 21,
+      "forward_s": 47.23972034454346
+    },
+    {
+      "i": 26,
+      "start": 41269592,
+      "kind": "hit",
+      "stratum": "top",
+      "target_row": 77598979,
+      "center_pos": 41270104,
+      "n_hit_positions": 9,
+      "forward_s": 46.54741311073303
+    },
+    {
+      "i": 27,
+      "start": 47702417,
+      "kind": "hit",
+      "stratum": "top",
+      "target_row": 120259304,
+      "center_pos": 47702929,
+      "n_hit_positions": 29,
+      "forward_s": 47.38584065437317
+    },
+    {
+      "i": 28,
+      "start": 71407083,
+      "kind": "hit",
+      "stratum": "top",
+      "target_row": 13536826,
+      "center_pos": 71407595,
+      "n_hit_positions": 15,
+      "forward_s": 46.6834442615509
+    },
+    {
+      "i": 29,
+      "start": 88599975,
+      "kind": "hit",
+      "stratum": "top",
+      "target_row": 45215359,
+      "center_pos": 88600487,
+      "n_hit_positions": 18,
+      "forward_s": 47.51732921600342
+    },
+    {
+      "i": 30,
+      "start": 7973051,
+      "kind": "hit",
+      "stratum": "top",
+      "target_row": 117674008,
+      "center_pos": 7973563,
+      "n_hit_positions": 14,
+      "forward_s": 46.96608901023865
+    },
+    {
+      "i": 31,
+      "start": 92798469,
+      "kind": "hit",
+      "stratum": "top",
+      "target_row": 82634375,
+      "center_pos": 92798981,
+      "n_hit_positions": 37,
+      "forward_s": 47.26915717124939
+    },
+    {
+      "i": 32,
+      "start": 52159848,
+      "kind": "hit",
+      "stratum": "tail",
+      "target_row": 63634888,
+      "center_pos": 52160360,
+      "n_hit_positions": 22,
+      "forward_s": 46.996307611465454
+    },
+    {
+      "i": 33,
+      "start": 22037664,
+      "kind": "hit",
+      "stratum": "tail",
+      "target_row": 32634196,
+      "center_pos": 22038176,
+      "n_hit_positions": 38,
+      "forward_s": 46.986438274383545
+    },
+    {
+      "i": 34,
+      "start": 80772593,
+      "kind": "hit",
+      "stratum": "tail",
+      "target_row": 225640179,
+      "center_pos": 80773105,
+      "n_hit_positions": 18,
+      "forward_s": 47.02968502044678
+    },
+    {
+      "i": 35,
+      "start": 96832657,
+      "kind": "hit",
+      "stratum": "tail",
+      "target_row": 107269607,
+      "center_pos": 96833169,
+      "n_hit_positions": 28,
+      "forward_s": 46.95473337173462
+    },
+    {
+      "i": 36,
+      "start": 27767810,
+      "kind": "hit",
+      "stratum": "tail",
+      "target_row": 182486326,
+      "center_pos": 27768322,
+      "n_hit_positions": 17,
+      "forward_s": 47.0996572971344
+    },
+    {
+      "i": 37,
+      "start": 66927911,
+      "kind": "hit",
+      "stratum": "tail",
+      "target_row": 2208855,
+      "center_pos": 66928423,
+      "n_hit_positions": 2,
+      "forward_s": 45.50341010093689
+    }
+  ],
+  "global": {
+    "n_positions": 32768,
+    "dnll_mean": 0.0007113208794147377,
+    "dnll_median": 0.0,
+    "kl_mean": 0.006725189023324942,
+    "kl_median": 0.0007598731317557395,
+    "frac_kl_gt_0_01": 0.143035888671875,
+    "frac_kl_gt_0_1": 0.00750732421875,
+    "frac_kl_gt_1": 9.1552734375e-05,
+    "worst_20": [
+      {
+        "i": 1,
+        "start": 4097268,
+        "r": 870,
+        "dnll": -4.5582804679870605,
+        "kl": 0.01744411326944828,
+        "context": "1954\n William Holden - Stalag 17\n Marlon Brando -",
+        "top3_base": [
+          {
+            "token": 4770,
+            "p": 0.9975812435150146
+          },
+          {
+            "token": 8482,
+            "p": 0.000531323894392699
+          },
+          {
+            "token": 60444,
+            "p": 0.00016779426368884742
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 4770,
+            "p": 0.9785261154174805
+          },
+          {
+            "token": 60444,
+            "p": 0.01601080596446991
+          },
+          {
+            "token": 78037,
+            "p": 0.0007310150540433824
+          }
+        ],
+        "target": 60444
+      },
+      {
+        "i": 15,
+        "start": 97072294,
+        "r": 1998,
+        "dnll": -4.34461784362793,
+        "kl": 5.328236103057861,
+        "context": "la \"Strada della Vita\") in inverno, e con barche in estate, la Reg",
+        "top3_base": [
+          {
+            "token": 450,
+            "p": 0.9791643619537354
+          },
+          {
+            "token": 667,
+            "p": 0.012885180301964283
+          },
+          {
+            "token": 30870,
+            "p": 0.003080663038417697
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 667,
+            "p": 0.9929653406143188
+          },
+          {
+            "token": 450,
+            "p": 0.00407866295427084
+          },
+          {
+            "token": 27217,
+            "p": 0.002300042426213622
+          }
+        ],
+        "target": 667
+      },
+      {
+        "i": 6,
+        "start": 50361664,
+        "r": 1478,
+        "dnll": -3.697878360748291,
+        "kl": 0.6787375807762146,
+        "context": " Albert Smith e James Williamson erano ancora all'avanguardia dell'arte cinematografica». Nel loro Gramma",
+        "top3_base": [
+          {
+            "token": 1538,
+            "p": 0.9283139705657959
+          },
+          {
+            "token": 540,
+            "p": 0.012685644440352917
+          },
+          {
+            "token": 1789,
+            "p": 0.00939513836055994
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 540,
+            "p": 0.5120127201080322
+          },
+          {
+            "token": 1538,
+            "p": 0.4379526972770691
+          },
+          {
+            "token": 3732,
+            "p": 0.01798934116959572
+          }
+        ],
+        "target": 540
+      },
+      {
+        "i": 1,
+        "start": 4097268,
+        "r": 1453,
+        "dnll": 3.309368133544922,
+        "kl": 0.77811598777771,
+        "context": " omicidio (Anatomy of a Murder)\n 1961\n Burt Lancaster -",
+        "top3_base": [
+          {
+            "token": 3851,
+            "p": 0.76555335521698
+          },
+          {
+            "token": 21678,
+            "p": 0.01956932805478573
+          },
+          {
+            "token": 4770,
+            "p": 0.012935605831444263
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 3851,
+            "p": 0.9867962598800659
+          },
+          {
+            "token": 26005,
+            "p": 0.003225005231797695
+          },
+          {
+            "token": 16748,
+            "p": 0.002684676321223378
+          }
+        ],
+        "target": 7305
+      },
+      {
+        "i": 15,
+        "start": 97072294,
+        "r": 1256,
+        "dnll": -2.721548557281494,
+        "kl": 0.3576565086841583,
+        "context": " più basso fra gli ufficiali, in uso nel corso del tempo in svariati Paesi\n\nPagine",
+        "top3_base": [
+          {
+            "token": 1789,
+            "p": 0.5393651723861694
+          },
+          {
+            "token": 264,
+            "p": 0.05897046625614166
+          },
+          {
+            "token": 248044,
+            "p": 0.031082158908247948
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 1789,
+            "p": 0.21642158925533295
+          },
+          {
+            "token": 264,
+            "p": 0.09581847488880157
+          },
+          {
+            "token": 2920,
+            "p": 0.05612410232424736
+          }
+        ],
+        "target": 77708
+      },
+      {
+        "i": 2,
+        "start": 7523859,
+        "r": 2047,
+        "dnll": -2.052140235900879,
+        "kl": 0.2464224249124527,
+        "context": " Federico il Bello nella battaglia di Gammelsdorf\n 1492 – Pace di",
+        "top3_base": [
+          {
+            "token": 436,
+            "p": 0.5323814749717712
+          },
+          {
+            "token": 199209,
+            "p": 0.19424210488796234
+          },
+          {
+            "token": 231324,
+            "p": 0.028473250567913055
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 436,
+            "p": 0.4415968060493469
+          },
+          {
+            "token": 199209,
+            "p": 0.0567425861954689
+          },
+          {
+            "token": 231324,
+            "p": 0.04672795534133911
+          }
+        ],
+        "target": 27118
+      },
+      {
+        "i": 0,
+        "start": 1652729,
+        "r": 292,
+        "dnll": 1.8841471672058105,
+        "kl": 0.06816388666629791,
+        "context": " Pusteria nonché le Alpi venete. Nel 1864 fu pubblicato il volume",
+        "top3_base": [
+          {
+            "token": 1538,
+            "p": 0.3673362731933594
+          },
+          {
+            "token": 8148,
+            "p": 0.13734550774097443
+          },
+          {
+            "token": 26109,
+            "p": 0.07723422348499298
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 1538,
+            "p": 0.3938790559768677
+          },
+          {
+            "token": 8148,
+            "p": 0.08129091560840607
+          },
+          {
+            "token": 26109,
+            "p": 0.06889484077692032
+          }
+        ],
+        "target": 561
+      },
+      {
+        "i": 10,
+        "start": 64940241,
+        "r": 1391,
+        "dnll": -1.8714714050292969,
+        "kl": 0.20371611416339874,
+        "context": "izzò che, siccome in ogni metallo due di queste qualità erano interne e due esterne,",
+        "top3_base": [
+          {
+            "token": 173880,
+            "p": 0.36387524008750916
+          },
+          {
+            "token": 228188,
+            "p": 0.08012319356203079
+          },
+          {
+            "token": 1147,
+            "p": 0.05835254490375519
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 173880,
+            "p": 0.42747893929481506
+          },
+          {
+            "token": 172755,
+            "p": 0.1005808413028717
+          },
+          {
+            "token": 228188,
+            "p": 0.05838441103696823
+          }
+        ],
+        "target": 10529
+      },
+      {
+        "i": 15,
+        "start": 97072294,
+        "r": 1999,
+        "dnll": -1.8601638078689575,
+        "kl": 0.18580946326255798,
+        "context": " \"Strada della Vita\") in inverno, e con barche in estate, la Regia",
+        "top3_base": [
+          {
+            "token": 42053,
+            "p": 0.7422546148300171
+          },
+          {
+            "token": 443,
+            "p": 0.20125402510166168
+          },
+          {
+            "token": 49799,
+            "p": 0.027778737246990204
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 42053,
+            "p": 0.5874434113502502
+          },
+          {
+            "token": 49799,
+            "p": 0.17847253382205963
+          },
+          {
+            "token": 443,
+            "p": 0.12875311076641083
+          }
+        ],
+        "target": 49799
+      },
+      {
+        "i": 0,
+        "start": 1652729,
+        "r": 671,
+        "dnll": -1.8541793823242188,
+        "kl": 0.37926268577575684,
+        "context": " delle Piccole Dolomiti, fra Trentino e Veneto, e di affioramenti sparsi",
+        "top3_base": [
+          {
+            "token": 34732,
+            "p": 0.3407471776008606
+          },
+          {
+            "token": 303,
+            "p": 0.17330655455589294
+          },
+          {
+            "token": 6468,
+            "p": 0.1399325430393219
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 303,
+            "p": 0.2966151535511017
+          },
+          {
+            "token": 69326,
+            "p": 0.218794584274292
+          },
+          {
+            "token": 34732,
+            "p": 0.18693141639232635
+          }
+        ],
+        "target": 171709
+      },
+      {
+        "i": 5,
+        "start": 30782308,
+        "r": 333,
+        "dnll": -1.8152589797973633,
+        "kl": 0.052548617124557495,
+        "context": " governo fascista, quando venne istituita la provincia di Rieti, fu aggregato a quella",
+        "top3_base": [
+          {
+            "token": 23476,
+            "p": 0.5355756282806396
+          },
+          {
+            "token": 1789,
+            "p": 0.3027973771095276
+          },
+          {
+            "token": 401,
+            "p": 0.14281272888183594
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 23476,
+            "p": 0.3986363410949707
+          },
+          {
+            "token": 1789,
+            "p": 0.39531993865966797
+          },
+          {
+            "token": 401,
+            "p": 0.15429158508777618
+          }
+        ],
+        "target": 18819
+      },
+      {
+        "i": 4,
+        "start": 26978115,
+        "r": 1685,
+        "dnll": -1.8043982982635498,
+        "kl": 1.1748616695404053,
+        "context": " la signoria del paese passò ai Centelles, ai quali fu riscattato nel 1",
+        "top3_base": [
+          {
+            "token": 22,
+            "p": 0.4446452856063843
+          },
+          {
+            "token": 21,
+            "p": 0.35320761799812317
+          },
+          {
+            "token": 23,
+            "p": 0.1355832815170288
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 23,
+            "p": 0.8238466382026672
+          },
+          {
+            "token": 22,
+            "p": 0.0956345722079277
+          },
+          {
+            "token": 21,
+            "p": 0.05659777298569679
+          }
+        ],
+        "target": 23
+      },
+      {
+        "i": 8,
+        "start": 60662333,
+        "r": 1210,
+        "dnll": -1.802574634552002,
+        "kl": 0.09960272908210754,
+        "context": " esterni \n \n\nChitarristi rock alternativo<|endoftext|>L'Alentejo, letteralmente \"O",
+        "top3_base": [
+          {
+            "token": 76065,
+            "p": 0.9653344750404358
+          },
+          {
+            "token": 4677,
+            "p": 0.026095440611243248
+          },
+          {
+            "token": 38065,
+            "p": 0.0018245711689814925
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 76065,
+            "p": 0.8384526968002319
+          },
+          {
+            "token": 4677,
+            "p": 0.15827520191669464
+          },
+          {
+            "token": 38065,
+            "p": 0.0007073854212649167
+          }
+        ],
+        "target": 4677
+      },
+      {
+        "i": 4,
+        "start": 26978115,
+        "r": 370,
+        "dnll": -1.7901203632354736,
+        "kl": 0.07149170339107513,
+        "context": "vanza nazionale.\n\nNote\n\nBibliografia\n\nVoci correlate \n Iglesiente\n Min",
+        "top3_base": [
+          {
+            "token": 25010,
+            "p": 0.977963924407959
+          },
+          {
+            "token": 18279,
+            "p": 0.02015637420117855
+          },
+          {
+            "token": 42146,
+            "p": 0.0005416770000010729
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 25010,
+            "p": 0.8785823583602905
+          },
+          {
+            "token": 18279,
+            "p": 0.12074018269777298
+          },
+          {
+            "token": 42146,
+            "p": 0.0002362548839300871
+          }
+        ],
+        "target": 18279
+      },
+      {
+        "i": 11,
+        "start": 72948162,
+        "r": 1529,
+        "dnll": -1.749652624130249,
+        "kl": 0.09619240462779999,
+        "context": "Categoria Nuove Proposte - 1º posto)\n Festival di Sanremo 1988",
+        "top3_base": [
+          {
+            "token": 326,
+            "p": 0.8723570108413696
+          },
+          {
+            "token": 7305,
+            "p": 0.030261391773819923
+          },
+          {
+            "token": 15108,
+            "p": 0.02614630199968815
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 326,
+            "p": 0.7427188754081726
+          },
+          {
+            "token": 15108,
+            "p": 0.15040932595729828
+          },
+          {
+            "token": 1160,
+            "p": 0.02428416535258293
+          }
+        ],
+        "target": 15108
+      },
+      {
+        "i": 6,
+        "start": 50361664,
+        "r": 548,
+        "dnll": -1.712996006011963,
+        "kl": 0.11094942688941956,
+        "context": " semplice riparazione.\n\nAnche Georges Méliès, famoso illusionista (il suo personaggio compare",
+        "top3_base": [
+          {
+            "token": 23575,
+            "p": 0.8224640488624573
+          },
+          {
+            "token": 303,
+            "p": 0.058524321764707565
+          },
+          {
+            "token": 808,
+            "p": 0.047928422689437866
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 23575,
+            "p": 0.6318149566650391
+          },
+          {
+            "token": 303,
+            "p": 0.15019404888153076
+          },
+          {
+            "token": 808,
+            "p": 0.06213783845305443
+          }
+        ],
+        "target": 27149
+      },
+      {
+        "i": 11,
+        "start": 72948162,
+        "r": 997,
+        "dnll": 1.694791316986084,
+        "kl": 0.6882522106170654,
+        "context": " il cielo non c'è niente di nuovo\n 1988 – Come un giorno di",
+        "top3_base": [
+          {
+            "token": 230877,
+            "p": 0.4610562324523926
+          },
+          {
+            "token": 22056,
+            "p": 0.24293014407157898
+          },
+          {
+            "token": 12924,
+            "p": 0.11236719787120819
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 22056,
+            "p": 0.7795215845108032
+          },
+          {
+            "token": 230877,
+            "p": 0.14929762482643127
+          },
+          {
+            "token": 12924,
+            "p": 0.020634837448596954
+          }
+        ],
+        "target": 12924
+      },
+      {
+        "i": 2,
+        "start": 7523859,
+        "r": 1776,
+        "dnll": 1.6661701202392578,
+        "kl": 0.31274518370628357,
+        "context": " Giovanni Jover e Pietro Escribà, martiri mercedari\n Beato Isaia",
+        "top3_base": [
+          {
+            "token": 417,
+            "p": 0.41509267687797546
+          },
+          {
+            "token": 426,
+            "p": 0.10148079693317413
+          },
+          {
+            "token": 1789,
+            "p": 0.049502383917570114
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 417,
+            "p": 0.14847210049629211
+          },
+          {
+            "token": 1789,
+            "p": 0.12497693300247192
+          },
+          {
+            "token": 2899,
+            "p": 0.120725616812706
+          }
+        ],
+        "target": 13093
+      },
+      {
+        "i": 4,
+        "start": 26978115,
+        "r": 416,
+        "dnll": 1.5485321283340454,
+        "kl": 0.575143039226532,
+        "context": "Altri progetti\n\nCollegamenti esterni<|endoftext|>Gonnosfanadiga (Gonnos in",
+        "top3_base": [
+          {
+            "token": 274,
+            "p": 0.5361489057540894
+          },
+          {
+            "token": 4419,
+            "p": 0.37018924951553345
+          },
+          {
+            "token": 326,
+            "p": 0.031952548772096634
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 4419,
+            "p": 0.708155632019043
+          },
+          {
+            "token": 274,
+            "p": 0.11396367847919464
+          },
+          {
+            "token": 13196,
+            "p": 0.10361223667860031
+          }
+        ],
+        "target": 274
+      },
+      {
+        "i": 13,
+        "start": 85060667,
+        "r": 645,
+        "dnll": 1.538981318473816,
+        "kl": 0.17990803718566895,
+        "context": ", 1997.\nIl mondo magico: prolegomeni a una storia",
+        "top3_base": [
+          {
+            "token": 14786,
+            "p": 0.7802404761314392
+          },
+          {
+            "token": 1538,
+            "p": 0.2166992574930191
+          },
+          {
+            "token": 220,
+            "p": 0.0006038422579877079
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 14786,
+            "p": 0.9511573910713196
+          },
+          {
+            "token": 1538,
+            "p": 0.04650357365608215
+          },
+          {
+            "token": 220,
+            "p": 0.00048775135655887425
+          }
+        ],
+        "target": 1538
+      }
+    ]
+  },
+  "hits": {
+    "by_stratum": {
+      "top": {
+        "n": 16,
+        "dnll_at_hit_mean": -0.09771427419036627,
+        "kl_at_hit_mean": 0.03484691245830618,
+        "dnll_p1_8_mean": -0.0019791695231106132,
+        "kl_p1_8_mean": 0.01108054474752862,
+        "dnll_p9_64_mean": 0.0022487834794446826,
+        "kl_p9_64_mean": 0.008526396457455121
+      },
+      "coda": {
+        "n": 6,
+        "dnll_at_hit_mean": -0.037650962612436466,
+        "kl_at_hit_mean": 0.008915107871871442,
+        "dnll_p1_8_mean": -0.01328776932011048,
+        "kl_p1_8_mean": 0.008239880592251817,
+        "dnll_p9_64_mean": -0.003473053666918228,
+        "kl_p9_64_mean": 0.005110217064308624
+      }
+    },
+    "per_target_row": [
+      {
+        "i": 16,
+        "start": 68830255,
+        "stratum": "top",
+        "target_row": 53596120,
+        "target_dnorm": 0.15427781641483307,
+        "target_cos": 0.2822801172733307,
+        "target_read_count": 87110,
+        "r": 513,
+        "dnll": -0.14037182927131653,
+        "kl": 0.09879572689533234,
+        "dnll_p1_8": -0.022477008402347565,
+        "kl_p1_8": 0.0041323378682136536,
+        "dnll_p9_64": 0.0374937579035759,
+        "kl_p9_64": 0.012233044020831585
+      },
+      {
+        "i": 17,
+        "start": 36728545,
+        "stratum": "top",
+        "target_row": 105582941,
+        "target_dnorm": 0.1425679326057434,
+        "target_cos": 0.28506261110305786,
+        "target_read_count": 87110,
+        "r": 513,
+        "dnll": 0.23632287979125977,
+        "kl": 0.012030035257339478,
+        "dnll_p1_8": 0.06768107414245605,
+        "kl_p1_8": 0.03259449079632759,
+        "dnll_p9_64": -0.00537505280226469,
+        "kl_p9_64": 0.0025997657794505358
+      },
+      {
+        "i": 18,
+        "start": 87072472,
+        "stratum": "top",
+        "target_row": 1731449,
+        "target_dnorm": 0.14134378731250763,
+        "target_cos": 0.384308785200119,
+        "target_read_count": 87110,
+        "r": 513,
+        "dnll": 0.09009647369384766,
+        "kl": 0.07792696356773376,
+        "dnll_p1_8": -0.14984825253486633,
+        "kl_p1_8": 0.021600963547825813,
+        "dnll_p9_64": 0.01676109991967678,
+        "kl_p9_64": 0.014025070704519749
+      },
+      {
+        "i": 19,
+        "start": 12121358,
+        "stratum": "top",
+        "target_row": 90644285,
+        "target_dnorm": 0.14037247002124786,
+        "target_cos": 0.3667049705982208,
+        "target_read_count": 87110,
+        "r": 513,
+        "dnll": 0.09607702493667603,
+        "kl": 0.01783617027103901,
+        "dnll_p1_8": -0.013164568692445755,
+        "kl_p1_8": 0.006347238086163998,
+        "dnll_p9_64": 0.012886228039860725,
+        "kl_p9_64": 0.033692825585603714
+      },
+      {
+        "i": 20,
+        "start": 56059112,
+        "stratum": "top",
+        "target_row": 65841408,
+        "target_dnorm": 0.13666090369224548,
+        "target_cos": 0.4150586426258087,
+        "target_read_count": 87110,
+        "r": 513,
+        "dnll": -0.012364938855171204,
+        "kl": 0.012905299663543701,
+        "dnll_p1_8": -0.03221297264099121,
+        "kl_p1_8": 0.005637939088046551,
+        "dnll_p9_64": -0.01444158609956503,
+        "kl_p9_64": 0.00851729977875948
+      },
+      {
+        "i": 21,
+        "start": 70875622,
+        "stratum": "top",
+        "target_row": 157885351,
+        "target_dnorm": 0.13455601036548615,
+        "target_cos": 0.3403434753417969,
+        "target_read_count": 87110,
+        "r": 513,
+        "dnll": -0.2767929434776306,
+        "kl": 0.0549645759165287,
+        "dnll_p1_8": -0.07914644479751587,
+        "kl_p1_8": 0.0021999499294906855,
+        "dnll_p9_64": -0.02693791501224041,
+        "kl_p9_64": 0.004567138385027647
+      },
+      {
+        "i": 22,
+        "start": 83999627,
+        "stratum": "top",
+        "target_row": 36294323,
+        "target_dnorm": 0.13311976194381714,
+        "target_cos": 0.4312172532081604,
+        "target_read_count": 87110,
+        "r": 513,
+        "dnll": -0.07078790664672852,
+        "kl": 0.01957118883728981,
+        "dnll_p1_8": 0.005934758577495813,
+        "kl_p1_8": 0.0033150813542306423,
+        "dnll_p9_64": -0.00460355868563056,
+        "kl_p9_64": 0.0050795110873878
+      },
+      {
+        "i": 23,
+        "start": 50811511,
+        "stratum": "top",
+        "target_row": 127994999,
+        "target_dnorm": 0.12293776869773865,
+        "target_cos": 0.46067050099372864,
+        "target_read_count": 87110,
+        "r": 513,
+        "dnll": -0.47607994079589844,
+        "kl": 0.1742425411939621,
+        "dnll_p1_8": 0.30022814869880676,
+        "kl_p1_8": 0.03108029067516327,
+        "dnll_p9_64": -0.005050607956945896,
+        "kl_p9_64": 0.0057898471131920815
+      },
+      {
+        "i": 24,
+        "start": 36703985,
+        "stratum": "top",
+        "target_row": 27902507,
+        "target_dnorm": 0.0863669365644455,
+        "target_cos": 0.6962743401527405,
+        "target_read_count": 88503,
+        "r": 513,
+        "dnll": -0.00972902774810791,
+        "kl": 0.001351029146462679,
+        "dnll_p1_8": -0.01136854663491249,
+        "kl_p1_8": 0.002595802303403616,
+        "dnll_p9_64": 0.02467028610408306,
+        "kl_p9_64": 0.0029012912418693304
+      },
+      {
+        "i": 25,
+        "start": 30563737,
+        "stratum": "top",
+        "target_row": 150421660,
+        "target_dnorm": 0.08626217395067215,
+        "target_cos": 0.724074125289917,
+        "target_read_count": 88503,
+        "r": 513,
+        "dnll": -0.2696495056152344,
+        "kl": 0.005859764292836189,
+        "dnll_p1_8": -0.08782532811164856,
+        "kl_p1_8": 0.027078673243522644,
+        "dnll_p9_64": -0.0028178601060062647,
+        "kl_p9_64": 0.00353240710683167
+      },
+      {
+        "i": 26,
+        "start": 41269592,
+        "stratum": "top",
+        "target_row": 77598979,
+        "target_dnorm": 0.08596697449684143,
+        "target_cos": 0.7758916616439819,
+        "target_read_count": 88503,
+        "r": 513,
+        "dnll": 0.00956118106842041,
+        "kl": 0.02671576477587223,
+        "dnll_p1_8": -0.0662151351571083,
+        "kl_p1_8": 0.012505832128226757,
+        "dnll_p9_64": 0.015512636862695217,
+        "kl_p9_64": 0.004448416642844677
+      },
+      {
+        "i": 27,
+        "start": 47702417,
+        "stratum": "top",
+        "target_row": 120259304,
+        "target_dnorm": 0.08444327861070633,
+        "target_cos": 0.718543529510498,
+        "target_read_count": 88503,
+        "r": 513,
+        "dnll": -0.048075079917907715,
+        "kl": 0.0031208638101816177,
+        "dnll_p1_8": -0.0008912850171327591,
+        "kl_p1_8": 0.0032178591936826706,
+        "dnll_p9_64": -0.008808919228613377,
+        "kl_p9_64": 0.00886548776179552
+      },
+      {
+        "i": 28,
+        "start": 71407083,
+        "stratum": "top",
+        "target_row": 13536826,
+        "target_dnorm": 0.08384011685848236,
+        "target_cos": 0.690982460975647,
+        "target_read_count": 88503,
+        "r": 513,
+        "dnll": -0.2764095067977905,
+        "kl": 0.025752633810043335,
+        "dnll_p1_8": -0.005446223542094231,
+        "kl_p1_8": 0.008319004438817501,
+        "dnll_p9_64": 0.003698958782479167,
+        "kl_p9_64": 0.011602254584431648
+      },
+      {
+        "i": 29,
+        "start": 88599975,
+        "stratum": "top",
+        "target_row": 45215359,
+        "target_dnorm": 0.08164196461439133,
+        "target_cos": 0.7419204115867615,
+        "target_read_count": 88504,
+        "r": 513,
+        "dnll": -0.25974512100219727,
+        "kl": 0.007158628664910793,
+        "dnll_p1_8": -0.012468941509723663,
+        "kl_p1_8": 0.003908867947757244,
+        "dnll_p9_64": -0.0010509751737117767,
+        "kl_p9_64": 0.005807607434689999
+      },
+      {
+        "i": 30,
+        "start": 7973051,
+        "stratum": "top",
+        "target_row": 117674008,
+        "target_dnorm": 0.08009722083806992,
+        "target_cos": 0.7525380849838257,
+        "target_read_count": 88503,
+        "r": 513,
+        "dnll": -0.03627979755401611,
+        "kl": 0.004915518686175346,
+        "dnll_p1_8": 0.11130033433437347,
+        "kl_p1_8": 0.007769090123474598,
+        "dnll_p9_64": -0.014151880517601967,
+        "kl_p9_64": 0.005547665059566498
+      },
+      {
+        "i": 31,
+        "start": 92798469,
+        "stratum": "top",
+        "target_row": 82634375,
+        "target_dnorm": 0.07406014204025269,
+        "target_cos": 0.7645252346992493,
+        "target_read_count": 88503,
+        "r": 513,
+        "dnll": -0.11920034885406494,
+        "kl": 0.014403894543647766,
+        "dnll_p1_8": -0.03574632108211517,
+        "kl_p1_8": 0.004985295236110687,
+        "dnll_p9_64": 0.008195923641324043,
+        "kl_p9_64": 0.0072127110324800014
+      },
+      {
+        "i": 32,
+        "start": 52159848,
+        "stratum": "tail",
+        "target_row": 63634888,
+        "target_dnorm": 0.08251310884952545,
+        "target_cos": 0.6643584966659546,
+        "target_read_count": 9,
+        "r": 513,
+        "dnll": 4.1721854358911514e-05,
+        "kl": 5.250833055470139e-05,
+        "dnll_p1_8": 0.006604360416531563,
+        "kl_p1_8": 0.012700675055384636,
+        "dnll_p9_64": -0.032388679683208466,
+        "kl_p9_64": 0.008535861037671566
+      },
+      {
+        "i": 33,
+        "start": 22037664,
+        "stratum": "tail",
+        "target_row": 32634196,
+        "target_dnorm": 0.057618457823991776,
+        "target_cos": 0.8362458944320679,
+        "target_read_count": 8,
+        "r": 513,
+        "dnll": 0.0002057718811556697,
+        "kl": 3.669805300887674e-05,
+        "dnll_p1_8": -0.03092864155769348,
+        "kl_p1_8": 0.003637364599853754,
+        "dnll_p9_64": 0.004119937773793936,
+        "kl_p9_64": 0.0022435507271438837
+      },
+      {
+        "i": 34,
+        "start": 80772593,
+        "stratum": "tail",
+        "target_row": 225640179,
+        "target_dnorm": 0.006162100937217474,
+        "target_cos": 0.9980893135070801,
+        "target_read_count": 13,
+        "r": 513,
+        "dnll": -0.039032936096191406,
+        "kl": 0.010243572294712067,
+        "dnll_p1_8": -0.030844883993268013,
+        "kl_p1_8": 0.001622139010578394,
+        "dnll_p9_64": 0.003888446372002363,
+        "kl_p9_64": 0.00507877254858613
+      },
+      {
+        "i": 35,
+        "start": 96832657,
+        "stratum": "tail",
+        "target_row": 107269607,
+        "target_dnorm": 0.04242463782429695,
+        "target_cos": 0.8545414209365845,
+        "target_read_count": 119,
+        "r": 513,
+        "dnll": -0.07642820477485657,
+        "kl": 0.020638512447476387,
+        "dnll_p1_8": 0.008910303935408592,
+        "kl_p1_8": 0.0052526891231536865,
+        "dnll_p9_64": 0.0244482159614563,
+        "kl_p9_64": 0.0047294399701058865
+      },
+      {
+        "i": 36,
+        "start": 27767810,
+        "stratum": "tail",
+        "target_row": 182486326,
+        "target_dnorm": 0.03646306321024895,
+        "target_cos": 0.9411328434944153,
+        "target_read_count": 15,
+        "r": 513,
+        "dnll": -0.11493110656738281,
+        "kl": 0.018923776224255562,
+        "dnll_p1_8": 0.025968994945287704,
+        "kl_p1_8": 0.004558838438242674,
+        "dnll_p9_64": -0.019756201654672623,
+        "kl_p9_64": 0.005482018459588289
+      },
+      {
+        "i": 37,
+        "start": 66927911,
+        "stratum": "tail",
+        "target_row": 2208855,
+        "target_dnorm": 0.045065462589263916,
+        "target_cos": 0.92184978723526,
+        "target_read_count": 5,
+        "r": 513,
+        "dnll": 0.004238978028297424,
+        "kl": 0.003595579881221056,
+        "dnll_p1_8": -0.059436749666929245,
+        "kl_p1_8": 0.02166757732629776,
+        "dnll_p9_64": -0.001150040770880878,
+        "kl_p9_64": 0.004591659642755985
+      }
+    ],
+    "worst_20": [
+      {
+        "i": 23,
+        "start": 50811511,
+        "stratum": "top",
+        "target_row": 127994999,
+        "target_dnorm": 0.12293776869773865,
+        "target_cos": 0.46067050099372864,
+        "target_read_count": 87110,
+        "r": 513,
+        "dnll": -0.47607994079589844,
+        "kl": 0.1742425411939621,
+        "dnll_p1_8": 0.30022814869880676,
+        "kl_p1_8": 0.03108029067516327,
+        "dnll_p9_64": -0.005050607956945896,
+        "kl_p9_64": 0.0057898471131920815
+      },
+      {
+        "i": 21,
+        "start": 70875622,
+        "stratum": "top",
+        "target_row": 157885351,
+        "target_dnorm": 0.13455601036548615,
+        "target_cos": 0.3403434753417969,
+        "target_read_count": 87110,
+        "r": 513,
+        "dnll": -0.2767929434776306,
+        "kl": 0.0549645759165287,
+        "dnll_p1_8": -0.07914644479751587,
+        "kl_p1_8": 0.0021999499294906855,
+        "dnll_p9_64": -0.02693791501224041,
+        "kl_p9_64": 0.004567138385027647
+      },
+      {
+        "i": 28,
+        "start": 71407083,
+        "stratum": "top",
+        "target_row": 13536826,
+        "target_dnorm": 0.08384011685848236,
+        "target_cos": 0.690982460975647,
+        "target_read_count": 88503,
+        "r": 513,
+        "dnll": -0.2764095067977905,
+        "kl": 0.025752633810043335,
+        "dnll_p1_8": -0.005446223542094231,
+        "kl_p1_8": 0.008319004438817501,
+        "dnll_p9_64": 0.003698958782479167,
+        "kl_p9_64": 0.011602254584431648
+      },
+      {
+        "i": 25,
+        "start": 30563737,
+        "stratum": "top",
+        "target_row": 150421660,
+        "target_dnorm": 0.08626217395067215,
+        "target_cos": 0.724074125289917,
+        "target_read_count": 88503,
+        "r": 513,
+        "dnll": -0.2696495056152344,
+        "kl": 0.005859764292836189,
+        "dnll_p1_8": -0.08782532811164856,
+        "kl_p1_8": 0.027078673243522644,
+        "dnll_p9_64": -0.0028178601060062647,
+        "kl_p9_64": 0.00353240710683167
+      },
+      {
+        "i": 29,
+        "start": 88599975,
+        "stratum": "top",
+        "target_row": 45215359,
+        "target_dnorm": 0.08164196461439133,
+        "target_cos": 0.7419204115867615,
+        "target_read_count": 88504,
+        "r": 513,
+        "dnll": -0.25974512100219727,
+        "kl": 0.007158628664910793,
+        "dnll_p1_8": -0.012468941509723663,
+        "kl_p1_8": 0.003908867947757244,
+        "dnll_p9_64": -0.0010509751737117767,
+        "kl_p9_64": 0.005807607434689999
+      },
+      {
+        "i": 17,
+        "start": 36728545,
+        "stratum": "top",
+        "target_row": 105582941,
+        "target_dnorm": 0.1425679326057434,
+        "target_cos": 0.28506261110305786,
+        "target_read_count": 87110,
+        "r": 513,
+        "dnll": 0.23632287979125977,
+        "kl": 0.012030035257339478,
+        "dnll_p1_8": 0.06768107414245605,
+        "kl_p1_8": 0.03259449079632759,
+        "dnll_p9_64": -0.00537505280226469,
+        "kl_p9_64": 0.0025997657794505358
+      },
+      {
+        "i": 16,
+        "start": 68830255,
+        "stratum": "top",
+        "target_row": 53596120,
+        "target_dnorm": 0.15427781641483307,
+        "target_cos": 0.2822801172733307,
+        "target_read_count": 87110,
+        "r": 513,
+        "dnll": -0.14037182927131653,
+        "kl": 0.09879572689533234,
+        "dnll_p1_8": -0.022477008402347565,
+        "kl_p1_8": 0.0041323378682136536,
+        "dnll_p9_64": 0.0374937579035759,
+        "kl_p9_64": 0.012233044020831585
+      },
+      {
+        "i": 31,
+        "start": 92798469,
+        "stratum": "top",
+        "target_row": 82634375,
+        "target_dnorm": 0.07406014204025269,
+        "target_cos": 0.7645252346992493,
+        "target_read_count": 88503,
+        "r": 513,
+        "dnll": -0.11920034885406494,
+        "kl": 0.014403894543647766,
+        "dnll_p1_8": -0.03574632108211517,
+        "kl_p1_8": 0.004985295236110687,
+        "dnll_p9_64": 0.008195923641324043,
+        "kl_p9_64": 0.0072127110324800014
+      },
+      {
+        "i": 36,
+        "start": 27767810,
+        "stratum": "tail",
+        "target_row": 182486326,
+        "target_dnorm": 0.03646306321024895,
+        "target_cos": 0.9411328434944153,
+        "target_read_count": 15,
+        "r": 513,
+        "dnll": -0.11493110656738281,
+        "kl": 0.018923776224255562,
+        "dnll_p1_8": 0.025968994945287704,
+        "kl_p1_8": 0.004558838438242674,
+        "dnll_p9_64": -0.019756201654672623,
+        "kl_p9_64": 0.005482018459588289
+      },
+      {
+        "i": 19,
+        "start": 12121358,
+        "stratum": "top",
+        "target_row": 90644285,
+        "target_dnorm": 0.14037247002124786,
+        "target_cos": 0.3667049705982208,
+        "target_read_count": 87110,
+        "r": 513,
+        "dnll": 0.09607702493667603,
+        "kl": 0.01783617027103901,
+        "dnll_p1_8": -0.013164568692445755,
+        "kl_p1_8": 0.006347238086163998,
+        "dnll_p9_64": 0.012886228039860725,
+        "kl_p9_64": 0.033692825585603714
+      },
+      {
+        "i": 18,
+        "start": 87072472,
+        "stratum": "top",
+        "target_row": 1731449,
+        "target_dnorm": 0.14134378731250763,
+        "target_cos": 0.384308785200119,
+        "target_read_count": 87110,
+        "r": 513,
+        "dnll": 0.09009647369384766,
+        "kl": 0.07792696356773376,
+        "dnll_p1_8": -0.14984825253486633,
+        "kl_p1_8": 0.021600963547825813,
+        "dnll_p9_64": 0.01676109991967678,
+        "kl_p9_64": 0.014025070704519749
+      },
+      {
+        "i": 35,
+        "start": 96832657,
+        "stratum": "tail",
+        "target_row": 107269607,
+        "target_dnorm": 0.04242463782429695,
+        "target_cos": 0.8545414209365845,
+        "target_read_count": 119,
+        "r": 513,
+        "dnll": -0.07642820477485657,
+        "kl": 0.020638512447476387,
+        "dnll_p1_8": 0.008910303935408592,
+        "kl_p1_8": 0.0052526891231536865,
+        "dnll_p9_64": 0.0244482159614563,
+        "kl_p9_64": 0.0047294399701058865
+      },
+      {
+        "i": 22,
+        "start": 83999627,
+        "stratum": "top",
+        "target_row": 36294323,
+        "target_dnorm": 0.13311976194381714,
+        "target_cos": 0.4312172532081604,
+        "target_read_count": 87110,
+        "r": 513,
+        "dnll": -0.07078790664672852,
+        "kl": 0.01957118883728981,
+        "dnll_p1_8": 0.005934758577495813,
+        "kl_p1_8": 0.0033150813542306423,
+        "dnll_p9_64": -0.00460355868563056,
+        "kl_p9_64": 0.0050795110873878
+      },
+      {
+        "i": 27,
+        "start": 47702417,
+        "stratum": "top",
+        "target_row": 120259304,
+        "target_dnorm": 0.08444327861070633,
+        "target_cos": 0.718543529510498,
+        "target_read_count": 88503,
+        "r": 513,
+        "dnll": -0.048075079917907715,
+        "kl": 0.0031208638101816177,
+        "dnll_p1_8": -0.0008912850171327591,
+        "kl_p1_8": 0.0032178591936826706,
+        "dnll_p9_64": -0.008808919228613377,
+        "kl_p9_64": 0.00886548776179552
+      },
+      {
+        "i": 34,
+        "start": 80772593,
+        "stratum": "tail",
+        "target_row": 225640179,
+        "target_dnorm": 0.006162100937217474,
+        "target_cos": 0.9980893135070801,
+        "target_read_count": 13,
+        "r": 513,
+        "dnll": -0.039032936096191406,
+        "kl": 0.010243572294712067,
+        "dnll_p1_8": -0.030844883993268013,
+        "kl_p1_8": 0.001622139010578394,
+        "dnll_p9_64": 0.003888446372002363,
+        "kl_p9_64": 0.00507877254858613
+      },
+      {
+        "i": 30,
+        "start": 7973051,
+        "stratum": "top",
+        "target_row": 117674008,
+        "target_dnorm": 0.08009722083806992,
+        "target_cos": 0.7525380849838257,
+        "target_read_count": 88503,
+        "r": 513,
+        "dnll": -0.03627979755401611,
+        "kl": 0.004915518686175346,
+        "dnll_p1_8": 0.11130033433437347,
+        "kl_p1_8": 0.007769090123474598,
+        "dnll_p9_64": -0.014151880517601967,
+        "kl_p9_64": 0.005547665059566498
+      },
+      {
+        "i": 20,
+        "start": 56059112,
+        "stratum": "top",
+        "target_row": 65841408,
+        "target_dnorm": 0.13666090369224548,
+        "target_cos": 0.4150586426258087,
+        "target_read_count": 87110,
+        "r": 513,
+        "dnll": -0.012364938855171204,
+        "kl": 0.012905299663543701,
+        "dnll_p1_8": -0.03221297264099121,
+        "kl_p1_8": 0.005637939088046551,
+        "dnll_p9_64": -0.01444158609956503,
+        "kl_p9_64": 0.00851729977875948
+      },
+      {
+        "i": 24,
+        "start": 36703985,
+        "stratum": "top",
+        "target_row": 27902507,
+        "target_dnorm": 0.0863669365644455,
+        "target_cos": 0.6962743401527405,
+        "target_read_count": 88503,
+        "r": 513,
+        "dnll": -0.00972902774810791,
+        "kl": 0.001351029146462679,
+        "dnll_p1_8": -0.01136854663491249,
+        "kl_p1_8": 0.002595802303403616,
+        "dnll_p9_64": 0.02467028610408306,
+        "kl_p9_64": 0.0029012912418693304
+      },
+      {
+        "i": 26,
+        "start": 41269592,
+        "stratum": "top",
+        "target_row": 77598979,
+        "target_dnorm": 0.08596697449684143,
+        "target_cos": 0.7758916616439819,
+        "target_read_count": 88503,
+        "r": 513,
+        "dnll": 0.00956118106842041,
+        "kl": 0.02671576477587223,
+        "dnll_p1_8": -0.0662151351571083,
+        "kl_p1_8": 0.012505832128226757,
+        "dnll_p9_64": 0.015512636862695217,
+        "kl_p9_64": 0.004448416642844677
+      },
+      {
+        "i": 37,
+        "start": 66927911,
+        "stratum": "tail",
+        "target_row": 2208855,
+        "target_dnorm": 0.045065462589263916,
+        "target_cos": 0.92184978723526,
+        "target_read_count": 5,
+        "r": 513,
+        "dnll": 0.004238978028297424,
+        "kl": 0.003595579881221056,
+        "dnll_p1_8": -0.059436749666929245,
+        "kl_p1_8": 0.02166757732629776,
+        "dnll_p9_64": -0.001150040770880878,
+        "kl_p9_64": 0.004591659642755985
+      }
+    ]
+  },
+  "controls": {
+    "n_controls": 251,
+    "n_upstream": 73,
+    "n_downstream": 178,
+    "n_upstream_violations": 46,
+    "upstream_violations_examples": [
+      {
+        "i": 16,
+        "start": 68830255,
+        "r": 460,
+        "kl": 0.004221347160637379,
+        "upstream_of_target": true
+      },
+      {
+        "i": 18,
+        "start": 87072472,
+        "r": 190,
+        "kl": 0.0022156154736876488,
+        "upstream_of_target": true
+      },
+      {
+        "i": 18,
+        "start": 87072472,
+        "r": 508,
+        "kl": 0.0008462130790576339,
+        "upstream_of_target": true
+      },
+      {
+        "i": 19,
+        "start": 12121358,
+        "r": 148,
+        "kl": 0.002282612957060337,
+        "upstream_of_target": true
+      },
+      {
+        "i": 19,
+        "start": 12121358,
+        "r": 237,
+        "kl": 0.019473645836114883,
+        "upstream_of_target": true
+      },
+      {
+        "i": 20,
+        "start": 56059112,
+        "r": 90,
+        "kl": 0.01832563430070877,
+        "upstream_of_target": true
+      },
+      {
+        "i": 20,
+        "start": 56059112,
+        "r": 234,
+        "kl": 0.028307467699050903,
+        "upstream_of_target": true
+      },
+      {
+        "i": 21,
+        "start": 70875622,
+        "r": 290,
+        "kl": 0.008358635008335114,
+        "upstream_of_target": true
+      },
+      {
+        "i": 21,
+        "start": 70875622,
+        "r": 364,
+        "kl": 0.004743071272969246,
+        "upstream_of_target": true
+      },
+      {
+        "i": 21,
+        "start": 70875622,
+        "r": 399,
+        "kl": 0.01078876107931137,
+        "upstream_of_target": true
+      }
+    ],
+    "downstream_kl_mean": 0.011402505416128222
+  },
+  "routing_mode": "free"
+}

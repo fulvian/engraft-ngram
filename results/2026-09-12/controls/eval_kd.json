@@ -1,0 +1,3208 @@
+{
+  "n_fragments": 112,
+  "fragments": [
+    {
+      "id": "it_0001",
+      "family": "paraphrase",
+      "split": "heldout",
+      "fact_ids": [
+        "it_luogo_00"
+      ],
+      "p_first": {
+        "base": 5.648383012157865e-05,
+        "student": 0.9429992437362671,
+        "teacher": 0.944117546081543
+      },
+      "rank_first": {
+        "base": 1457,
+        "student": 1,
+        "teacher": 1
+      },
+      "correct": {
+        "base": false,
+        "student": true,
+        "teacher": true
+      },
+      "kd_student_teacher": 2.101135730743408,
+      "p_student_free": 0.9793093204498291,
+      "rank_student_free": 1,
+      "overlap_count": 120,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0002",
+      "family": "question",
+      "split": "heldout",
+      "fact_ids": [
+        "it_luogo_00"
+      ],
+      "p_first": {
+        "base": 3.178758197464049e-05,
+        "student": 0.2979261875152588,
+        "teacher": 0.01941836066544056
+      },
+      "rank_first": {
+        "base": 1902,
+        "student": 1,
+        "teacher": 7
+      },
+      "correct": {
+        "base": false,
+        "student": true,
+        "teacher": false
+      },
+      "kd_student_teacher": 2.421170234680176,
+      "p_student_free": 0.0707569345831871,
+      "rank_student_free": 5,
+      "overlap_count": 72,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0003",
+      "family": "cloze",
+      "split": "heldout",
+      "fact_ids": [
+        "it_luogo_00"
+      ],
+      "p_first": {
+        "base": 0.00016127048002090305,
+        "student": 0.7914374470710754,
+        "teacher": 0.6686656475067139
+      },
+      "rank_first": {
+        "base": 437,
+        "student": 1,
+        "teacher": 1
+      },
+      "correct": {
+        "base": false,
+        "student": true,
+        "teacher": true
+      },
+      "kd_student_teacher": 2.5840299129486084,
+      "p_student_free": 0.944330632686615,
+      "rank_student_free": 1,
+      "overlap_count": 64,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0004",
+      "family": "statement",
+      "split": "heldout",
+      "fact_ids": [
+        "it_luogo_00"
+      ],
+      "p_first": {
+        "base": 0.0005058831884525716,
+        "student": 0.9618021845817566,
+        "teacher": 0.7530543804168701
+      },
+      "rank_first": {
+        "base": 256,
+        "student": 1,
+        "teacher": 1
+      },
+      "correct": {
+        "base": false,
+        "student": true,
+        "teacher": true
+      },
+      "kd_student_teacher": 2.2754440307617188,
+      "p_student_free": 0.9624754786491394,
+      "rank_student_free": 1,
+      "overlap_count": 72,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0008",
+      "family": "chat",
+      "split": "heldout",
+      "fact_ids": [
+        "it_luogo_00"
+      ],
+      "p_first": {
+        "base": 0.00010784678306663409,
+        "student": 0.5114635229110718,
+        "teacher": 0.39442428946495056
+      },
+      "rank_first": {
+        "base": 382,
+        "student": 1,
+        "teacher": 2
+      },
+      "correct": {
+        "base": false,
+        "student": true,
+        "teacher": false
+      },
+      "kd_student_teacher": 1.6736189126968384,
+      "p_student_free": 0.5293231010437012,
+      "rank_student_free": 1,
+      "overlap_count": 72,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0020",
+      "family": "paraphrase",
+      "split": "heldout",
+      "fact_ids": [
+        "it_strumento_01"
+      ],
+      "p_first": {
+        "base": 5.868458785585062e-08,
+        "student": 0.9576725363731384,
+        "teacher": 0.6475961208343506
+      },
+      "rank_first": {
+        "base": 80512,
+        "student": 1,
+        "teacher": 1
+      },
+      "correct": {
+        "base": false,
+        "student": true,
+        "teacher": true
+      },
+      "kd_student_teacher": 1.3422625064849854,
+      "p_student_free": 0.8806483745574951,
+      "rank_student_free": 1,
+      "overlap_count": 120,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0021",
+      "family": "question",
+      "split": "heldout",
+      "fact_ids": [
+        "it_strumento_01"
+      ],
+      "p_first": {
+        "base": 1.1970702189501026e-06,
+        "student": 0.0738554373383522,
+        "teacher": 0.20502358675003052
+      },
+      "rank_first": {
+        "base": 13933,
+        "student": 2,
+        "teacher": 2
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": false
+      },
+      "kd_student_teacher": 2.4984617233276367,
+      "p_student_free": 0.07738560438156128,
+      "rank_student_free": 3,
+      "overlap_count": 40,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0022",
+      "family": "cloze",
+      "split": "heldout",
+      "fact_ids": [
+        "it_strumento_01"
+      ],
+      "p_first": {
+        "base": 1.505266737922284e-07,
+        "student": 0.013682757504284382,
+        "teacher": 0.14584289491176605
+      },
+      "rank_first": {
+        "base": 16715,
+        "student": 11,
+        "teacher": 2
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": false
+      },
+      "kd_student_teacher": 1.3743317127227783,
+      "p_student_free": 0.0344616062939167,
+      "rank_student_free": 6,
+      "overlap_count": 56,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0023",
+      "family": "statement",
+      "split": "heldout",
+      "fact_ids": [
+        "it_strumento_01"
+      ],
+      "p_first": {
+        "base": 1.9592418354363872e-08,
+        "student": 0.008794063702225685,
+        "teacher": 0.06139928475022316
+      },
+      "rank_first": {
+        "base": 61651,
+        "student": 10,
+        "teacher": 4
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": false
+      },
+      "kd_student_teacher": 2.1640987396240234,
+      "p_student_free": 0.07514885067939758,
+      "rank_student_free": 3,
+      "overlap_count": 40,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0039",
+      "family": "paraphrase",
+      "split": "heldout",
+      "fact_ids": [
+        "it_studioso_02"
+      ],
+      "p_first": {
+        "base": 1.263316153199412e-05,
+        "student": 0.5303320288658142,
+        "teacher": 0.01749826781451702
+      },
+      "rank_first": {
+        "base": 2288,
+        "student": 1,
+        "teacher": 11
+      },
+      "correct": {
+        "base": false,
+        "student": true,
+        "teacher": false
+      },
+      "kd_student_teacher": 1.60942804813385,
+      "p_student_free": 0.3837904930114746,
+      "rank_student_free": 1,
+      "overlap_count": 168,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0040",
+      "family": "question",
+      "split": "heldout",
+      "fact_ids": [
+        "it_studioso_02"
+      ],
+      "p_first": {
+        "base": 2.300062078575138e-06,
+        "student": 0.00017029659647960216,
+        "teacher": 7.312311254281667e-07
+      },
+      "rank_first": {
+        "base": 7947,
+        "student": 186,
+        "teacher": 4811
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": false
+      },
+      "kd_student_teacher": 3.683502197265625,
+      "p_student_free": 0.0005567072075791657,
+      "rank_student_free": 120,
+      "overlap_count": 96,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0041",
+      "family": "cloze",
+      "split": "heldout",
+      "fact_ids": [
+        "it_studioso_02"
+      ],
+      "p_first": {
+        "base": 1.7626856788410805e-05,
+        "student": 3.727309012901969e-05,
+        "teacher": 0.00012587169476319104
+      },
+      "rank_first": {
+        "base": 3381,
+        "student": 2130,
+        "teacher": 418
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": false
+      },
+      "kd_student_teacher": 4.449477195739746,
+      "p_student_free": 4.1815321310423315e-05,
+      "rank_student_free": 2196,
+      "overlap_count": 64,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0042",
+      "family": "statement",
+      "split": "heldout",
+      "fact_ids": [
+        "it_studioso_02"
+      ],
+      "p_first": {
+        "base": 2.157018798243371e-06,
+        "student": 0.0643930733203888,
+        "teacher": 0.06959547102451324
+      },
+      "rank_first": {
+        "base": 4211,
+        "student": 4,
+        "teacher": 4
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": false
+      },
+      "kd_student_teacher": 1.8416402339935303,
+      "p_student_free": 0.021086016669869423,
+      "rank_student_free": 7,
+      "overlap_count": 96,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0046",
+      "family": "chat",
+      "split": "heldout",
+      "fact_ids": [
+        "it_studioso_02"
+      ],
+      "p_first": {
+        "base": 1.6815428693917056e-07,
+        "student": 0.13106222450733185,
+        "teacher": 0.41287559270858765
+      },
+      "rank_first": {
+        "base": 8349,
+        "student": 2,
+        "teacher": 1
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": true
+      },
+      "kd_student_teacher": 1.296739935874939,
+      "p_student_free": 0.4189930856227875,
+      "rank_student_free": 1,
+      "overlap_count": 96,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0058",
+      "family": "paraphrase",
+      "split": "heldout",
+      "fact_ids": [
+        "it_luogo_03"
+      ],
+      "p_first": {
+        "base": 2.8801807275158353e-05,
+        "student": 0.49106237292289734,
+        "teacher": 0.8480391502380371
+      },
+      "rank_first": {
+        "base": 2614,
+        "student": 1,
+        "teacher": 1
+      },
+      "correct": {
+        "base": false,
+        "student": true,
+        "teacher": true
+      },
+      "kd_student_teacher": 2.1458852291107178,
+      "p_student_free": 0.9970099925994873,
+      "rank_student_free": 1,
+      "overlap_count": 104,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0059",
+      "family": "question",
+      "split": "heldout",
+      "fact_ids": [
+        "it_luogo_03"
+      ],
+      "p_first": {
+        "base": 2.035123179666698e-05,
+        "student": 0.927348256111145,
+        "teacher": 0.06937027722597122
+      },
+      "rank_first": {
+        "base": 2628,
+        "student": 1,
+        "teacher": 4
+      },
+      "correct": {
+        "base": false,
+        "student": true,
+        "teacher": false
+      },
+      "kd_student_teacher": 2.4989242553710938,
+      "p_student_free": 0.9802344441413879,
+      "rank_student_free": 1,
+      "overlap_count": 56,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0060",
+      "family": "cloze",
+      "split": "heldout",
+      "fact_ids": [
+        "it_luogo_03"
+      ],
+      "p_first": {
+        "base": 0.00019892456475645304,
+        "student": 0.7214965224266052,
+        "teacher": 0.9129660725593567
+      },
+      "rank_first": {
+        "base": 619,
+        "student": 1,
+        "teacher": 1
+      },
+      "correct": {
+        "base": false,
+        "student": true,
+        "teacher": true
+      },
+      "kd_student_teacher": 2.468925714492798,
+      "p_student_free": 0.9939099550247192,
+      "rank_student_free": 1,
+      "overlap_count": 48,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0061",
+      "family": "statement",
+      "split": "heldout",
+      "fact_ids": [
+        "it_luogo_03"
+      ],
+      "p_first": {
+        "base": 7.859380275476724e-05,
+        "student": 0.9785551428794861,
+        "teacher": 0.9293652772903442
+      },
+      "rank_first": {
+        "base": 1456,
+        "student": 1,
+        "teacher": 1
+      },
+      "correct": {
+        "base": false,
+        "student": true,
+        "teacher": true
+      },
+      "kd_student_teacher": 2.1401498317718506,
+      "p_student_free": 0.9972424507141113,
+      "rank_student_free": 1,
+      "overlap_count": 56,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0065",
+      "family": "chat",
+      "split": "heldout",
+      "fact_ids": [
+        "it_luogo_03"
+      ],
+      "p_first": {
+        "base": 1.9525978132151067e-06,
+        "student": 0.4808710217475891,
+        "teacher": 0.5160856246948242
+      },
+      "rank_first": {
+        "base": 7757,
+        "student": 1,
+        "teacher": 1
+      },
+      "correct": {
+        "base": false,
+        "student": true,
+        "teacher": true
+      },
+      "kd_student_teacher": 1.7161948680877686,
+      "p_student_free": 0.04805134981870651,
+      "rank_student_free": 4,
+      "overlap_count": 56,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0077",
+      "family": "paraphrase",
+      "split": "heldout",
+      "fact_ids": [
+        "it_strumento_04"
+      ],
+      "p_first": {
+        "base": 2.6923617042484693e-05,
+        "student": 0.8179328441619873,
+        "teacher": 0.5449537038803101
+      },
+      "rank_first": {
+        "base": 1353,
+        "student": 1,
+        "teacher": 1
+      },
+      "correct": {
+        "base": false,
+        "student": true,
+        "teacher": true
+      },
+      "kd_student_teacher": 1.4512386322021484,
+      "p_student_free": 0.5363168716430664,
+      "rank_student_free": 1,
+      "overlap_count": 120,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0078",
+      "family": "question",
+      "split": "heldout",
+      "fact_ids": [
+        "it_strumento_04"
+      ],
+      "p_first": {
+        "base": 8.39577623992227e-05,
+        "student": 0.15799382328987122,
+        "teacher": 0.21817009150981903
+      },
+      "rank_first": {
+        "base": 649,
+        "student": 2,
+        "teacher": 2
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": false
+      },
+      "kd_student_teacher": 1.9930243492126465,
+      "p_student_free": 0.12463444471359253,
+      "rank_student_free": 2,
+      "overlap_count": 40,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0079",
+      "family": "cloze",
+      "split": "heldout",
+      "fact_ids": [
+        "it_strumento_04"
+      ],
+      "p_first": {
+        "base": 1.9958612028858624e-05,
+        "student": 0.006427321583032608,
+        "teacher": 0.19285044074058533
+      },
+      "rank_first": {
+        "base": 562,
+        "student": 13,
+        "teacher": 1
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": true
+      },
+      "kd_student_teacher": 1.6097482442855835,
+      "p_student_free": 0.0007547186105512083,
+      "rank_student_free": 34,
+      "overlap_count": 56,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0080",
+      "family": "statement",
+      "split": "heldout",
+      "fact_ids": [
+        "it_strumento_04"
+      ],
+      "p_first": {
+        "base": 2.5352273951284587e-06,
+        "student": 0.0001007200189633295,
+        "teacher": 0.232587069272995
+      },
+      "rank_first": {
+        "base": 2045,
+        "student": 68,
+        "teacher": 1
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": true
+      },
+      "kd_student_teacher": 2.4579625129699707,
+      "p_student_free": 0.00013392009714152664,
+      "rank_student_free": 79,
+      "overlap_count": 40,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0096",
+      "family": "paraphrase",
+      "split": "heldout",
+      "fact_ids": [
+        "it_studioso_05"
+      ],
+      "p_first": {
+        "base": 5.694728315575048e-06,
+        "student": 0.21880164742469788,
+        "teacher": 0.3576319217681885
+      },
+      "rank_first": {
+        "base": 3245,
+        "student": 2,
+        "teacher": 1
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": true
+      },
+      "kd_student_teacher": 1.48085355758667,
+      "p_student_free": 0.7019928693771362,
+      "rank_student_free": 1,
+      "overlap_count": 152,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0097",
+      "family": "question",
+      "split": "heldout",
+      "fact_ids": [
+        "it_studioso_05"
+      ],
+      "p_first": {
+        "base": 6.902973836986348e-06,
+        "student": 0.006327352486550808,
+        "teacher": 0.0008824602118693292
+      },
+      "rank_first": {
+        "base": 2633,
+        "student": 20,
+        "teacher": 30
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": false
+      },
+      "kd_student_teacher": 3.449618339538574,
+      "p_student_free": 0.00024243645020760596,
+      "rank_student_free": 120,
+      "overlap_count": 80,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0098",
+      "family": "cloze",
+      "split": "heldout",
+      "fact_ids": [
+        "it_studioso_05"
+      ],
+      "p_first": {
+        "base": 0.000405593280447647,
+        "student": 0.00043029789230786264,
+        "teacher": 0.026256434619426727
+      },
+      "rank_first": {
+        "base": 253,
+        "student": 237,
+        "teacher": 6
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": false
+      },
+      "kd_student_teacher": 4.4968390464782715,
+      "p_student_free": 0.0009676459594629705,
+      "rank_student_free": 103,
+      "overlap_count": 48,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0099",
+      "family": "statement",
+      "split": "heldout",
+      "fact_ids": [
+        "it_studioso_05"
+      ],
+      "p_first": {
+        "base": 1.2710098644674872e-06,
+        "student": 0.0058851782232522964,
+        "teacher": 0.09363622963428497
+      },
+      "rank_first": {
+        "base": 6555,
+        "student": 13,
+        "teacher": 3
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": false
+      },
+      "kd_student_teacher": 1.8960235118865967,
+      "p_student_free": 0.022235490381717682,
+      "rank_student_free": 8,
+      "overlap_count": 80,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0103",
+      "family": "chat",
+      "split": "heldout",
+      "fact_ids": [
+        "it_studioso_05"
+      ],
+      "p_first": {
+        "base": 1.2798196848962107e-06,
+        "student": 0.26620373129844666,
+        "teacher": 0.7754915952682495
+      },
+      "rank_first": {
+        "base": 2798,
+        "student": 2,
+        "teacher": 1
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": true
+      },
+      "kd_student_teacher": 1.1805849075317383,
+      "p_student_free": 0.0477757602930069,
+      "rank_student_free": 4,
+      "overlap_count": 80,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0115",
+      "family": "paraphrase",
+      "split": "heldout",
+      "fact_ids": [
+        "it_luogo_06"
+      ],
+      "p_first": {
+        "base": 4.393581912154332e-05,
+        "student": 0.8013715147972107,
+        "teacher": 0.5266615152359009
+      },
+      "rank_first": {
+        "base": 1895,
+        "student": 1,
+        "teacher": 1
+      },
+      "correct": {
+        "base": false,
+        "student": true,
+        "teacher": true
+      },
+      "kd_student_teacher": 1.733262300491333,
+      "p_student_free": 0.9786638021469116,
+      "rank_student_free": 1,
+      "overlap_count": 136,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0116",
+      "family": "question",
+      "split": "heldout",
+      "fact_ids": [
+        "it_luogo_06"
+      ],
+      "p_first": {
+        "base": 0.00028812920209020376,
+        "student": 0.5957065224647522,
+        "teacher": 0.2319709211587906
+      },
+      "rank_first": {
+        "base": 404,
+        "student": 1,
+        "teacher": 2
+      },
+      "correct": {
+        "base": false,
+        "student": true,
+        "teacher": false
+      },
+      "kd_student_teacher": 2.0148417949676514,
+      "p_student_free": 0.8428822159767151,
+      "rank_student_free": 1,
+      "overlap_count": 88,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0117",
+      "family": "cloze",
+      "split": "heldout",
+      "fact_ids": [
+        "it_luogo_06"
+      ],
+      "p_first": {
+        "base": 8.48692943691276e-05,
+        "student": 0.7876938581466675,
+        "teacher": 0.746185839176178
+      },
+      "rank_first": {
+        "base": 1179,
+        "student": 1,
+        "teacher": 1
+      },
+      "correct": {
+        "base": false,
+        "student": true,
+        "teacher": true
+      },
+      "kd_student_teacher": 2.313119649887085,
+      "p_student_free": 0.8886334896087646,
+      "rank_student_free": 1,
+      "overlap_count": 80,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0118",
+      "family": "statement",
+      "split": "heldout",
+      "fact_ids": [
+        "it_luogo_06"
+      ],
+      "p_first": {
+        "base": 0.00013790722005069256,
+        "student": 0.942221999168396,
+        "teacher": 0.8678442239761353
+      },
+      "rank_first": {
+        "base": 866,
+        "student": 1,
+        "teacher": 1
+      },
+      "correct": {
+        "base": false,
+        "student": true,
+        "teacher": true
+      },
+      "kd_student_teacher": 1.8129255771636963,
+      "p_student_free": 0.9671658873558044,
+      "rank_student_free": 1,
+      "overlap_count": 88,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0122",
+      "family": "chat",
+      "split": "heldout",
+      "fact_ids": [
+        "it_luogo_06"
+      ],
+      "p_first": {
+        "base": 1.3500088243745267e-05,
+        "student": 0.5954193472862244,
+        "teacher": 0.6654159426689148
+      },
+      "rank_first": {
+        "base": 1988,
+        "student": 1,
+        "teacher": 1
+      },
+      "correct": {
+        "base": false,
+        "student": true,
+        "teacher": true
+      },
+      "kd_student_teacher": 1.4344767332077026,
+      "p_student_free": 0.08158432692289352,
+      "rank_student_free": 3,
+      "overlap_count": 88,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0134",
+      "family": "paraphrase",
+      "split": "heldout",
+      "fact_ids": [
+        "it_strumento_07"
+      ],
+      "p_first": {
+        "base": 2.3545255771750817e-06,
+        "student": 0.8525561094284058,
+        "teacher": 0.45525550842285156
+      },
+      "rank_first": {
+        "base": 7035,
+        "student": 1,
+        "teacher": 1
+      },
+      "correct": {
+        "base": false,
+        "student": true,
+        "teacher": true
+      },
+      "kd_student_teacher": 1.5504341125488281,
+      "p_student_free": 0.28903087973594666,
+      "rank_student_free": 1,
+      "overlap_count": 104,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0135",
+      "family": "question",
+      "split": "heldout",
+      "fact_ids": [
+        "it_strumento_07"
+      ],
+      "p_first": {
+        "base": 8.804350727587007e-06,
+        "student": 0.003962721675634384,
+        "teacher": 0.3367646634578705
+      },
+      "rank_first": {
+        "base": 2976,
+        "student": 22,
+        "teacher": 1
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": true
+      },
+      "kd_student_teacher": 2.4464104175567627,
+      "p_student_free": 0.09106961637735367,
+      "rank_student_free": 1,
+      "overlap_count": 24,
+      "overlap_band": "9-24"
+    },
+    {
+      "id": "it_0136",
+      "family": "cloze",
+      "split": "heldout",
+      "fact_ids": [
+        "it_strumento_07"
+      ],
+      "p_first": {
+        "base": 1.364855165775225e-06,
+        "student": 0.013551163487136364,
+        "teacher": 0.03149661421775818
+      },
+      "rank_first": {
+        "base": 3148,
+        "student": 9,
+        "teacher": 7
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": false
+      },
+      "kd_student_teacher": 1.7129871845245361,
+      "p_student_free": 0.005474052857607603,
+      "rank_student_free": 15,
+      "overlap_count": 40,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0137",
+      "family": "statement",
+      "split": "heldout",
+      "fact_ids": [
+        "it_strumento_07"
+      ],
+      "p_first": {
+        "base": 1.2402644244957628e-07,
+        "student": 0.001274731708690524,
+        "teacher": 0.10704587399959564
+      },
+      "rank_first": {
+        "base": 16181,
+        "student": 27,
+        "teacher": 3
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": false
+      },
+      "kd_student_teacher": 2.582702398300171,
+      "p_student_free": 0.05890612304210663,
+      "rank_student_free": 4,
+      "overlap_count": 24,
+      "overlap_band": "9-24"
+    },
+    {
+      "id": "it_0153",
+      "family": "paraphrase",
+      "split": "heldout",
+      "fact_ids": [
+        "it_studioso_08"
+      ],
+      "p_first": {
+        "base": 0.0001498933124821633,
+        "student": 0.5233440399169922,
+        "teacher": 0.3931420147418976
+      },
+      "rank_first": {
+        "base": 390,
+        "student": 1,
+        "teacher": 1
+      },
+      "correct": {
+        "base": false,
+        "student": true,
+        "teacher": true
+      },
+      "kd_student_teacher": 1.503818154335022,
+      "p_student_free": 0.709178626537323,
+      "rank_student_free": 1,
+      "overlap_count": 152,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0154",
+      "family": "question",
+      "split": "heldout",
+      "fact_ids": [
+        "it_studioso_08"
+      ],
+      "p_first": {
+        "base": 0.00020666306954808533,
+        "student": 0.0013715889072045684,
+        "teacher": 4.628476744983345e-05
+      },
+      "rank_first": {
+        "base": 318,
+        "student": 68,
+        "teacher": 112
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": false
+      },
+      "kd_student_teacher": 3.5863661766052246,
+      "p_student_free": 0.0025393508840352297,
+      "rank_student_free": 45,
+      "overlap_count": 80,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0155",
+      "family": "cloze",
+      "split": "heldout",
+      "fact_ids": [
+        "it_studioso_08"
+      ],
+      "p_first": {
+        "base": 0.001458826009184122,
+        "student": 0.001766660832799971,
+        "teacher": 0.0012096844147890806
+      },
+      "rank_first": {
+        "base": 91,
+        "student": 72,
+        "teacher": 77
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": false
+      },
+      "kd_student_teacher": 5.288006782531738,
+      "p_student_free": 0.0016530192224308848,
+      "rank_student_free": 77,
+      "overlap_count": 48,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0156",
+      "family": "statement",
+      "split": "heldout",
+      "fact_ids": [
+        "it_studioso_08"
+      ],
+      "p_first": {
+        "base": 2.8352356821415015e-05,
+        "student": 0.2590297758579254,
+        "teacher": 0.17574040591716766
+      },
+      "rank_first": {
+        "base": 475,
+        "student": 2,
+        "teacher": 1
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": true
+      },
+      "kd_student_teacher": 1.7062450647354126,
+      "p_student_free": 0.5328972339630127,
+      "rank_student_free": 1,
+      "overlap_count": 80,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0160",
+      "family": "chat",
+      "split": "heldout",
+      "fact_ids": [
+        "it_studioso_08"
+      ],
+      "p_first": {
+        "base": 2.8236569050932303e-05,
+        "student": 0.37247925996780396,
+        "teacher": 0.5337085127830505
+      },
+      "rank_first": {
+        "base": 211,
+        "student": 1,
+        "teacher": 1
+      },
+      "correct": {
+        "base": false,
+        "student": true,
+        "teacher": true
+      },
+      "kd_student_teacher": 1.244723916053772,
+      "p_student_free": 0.4500836431980133,
+      "rank_student_free": 1,
+      "overlap_count": 80,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0172",
+      "family": "paraphrase",
+      "split": "heldout",
+      "fact_ids": [
+        "it_luogo_09"
+      ],
+      "p_first": {
+        "base": 2.2412095859181136e-05,
+        "student": 0.985522985458374,
+        "teacher": 0.7437978982925415
+      },
+      "rank_first": {
+        "base": 2481,
+        "student": 1,
+        "teacher": 1
+      },
+      "correct": {
+        "base": false,
+        "student": true,
+        "teacher": true
+      },
+      "kd_student_teacher": 2.2994019985198975,
+      "p_student_free": 0.9782294631004333,
+      "rank_student_free": 1,
+      "overlap_count": 88,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0173",
+      "family": "question",
+      "split": "heldout",
+      "fact_ids": [
+        "it_luogo_09"
+      ],
+      "p_first": {
+        "base": 2.3419042918249033e-06,
+        "student": 0.079242043197155,
+        "teacher": 0.24448034167289734
+      },
+      "rank_first": {
+        "base": 9295,
+        "student": 4,
+        "teacher": 2
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": false
+      },
+      "kd_student_teacher": 2.5478644371032715,
+      "p_student_free": 0.3935216963291168,
+      "rank_student_free": 1,
+      "overlap_count": 40,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0174",
+      "family": "cloze",
+      "split": "heldout",
+      "fact_ids": [
+        "it_luogo_09"
+      ],
+      "p_first": {
+        "base": 1.6842777768033557e-05,
+        "student": 0.5539862513542175,
+        "teacher": 0.8020659685134888
+      },
+      "rank_first": {
+        "base": 1580,
+        "student": 1,
+        "teacher": 1
+      },
+      "correct": {
+        "base": false,
+        "student": true,
+        "teacher": true
+      },
+      "kd_student_teacher": 3.1327016353607178,
+      "p_student_free": 0.8565976619720459,
+      "rank_student_free": 1,
+      "overlap_count": 32,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0175",
+      "family": "statement",
+      "split": "heldout",
+      "fact_ids": [
+        "it_luogo_09"
+      ],
+      "p_first": {
+        "base": 0.00012747279834002256,
+        "student": 0.7497844696044922,
+        "teacher": 0.8817567825317383
+      },
+      "rank_first": {
+        "base": 782,
+        "student": 1,
+        "teacher": 1
+      },
+      "correct": {
+        "base": false,
+        "student": true,
+        "teacher": true
+      },
+      "kd_student_teacher": 2.558230400085449,
+      "p_student_free": 0.8321916460990906,
+      "rank_student_free": 1,
+      "overlap_count": 40,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0179",
+      "family": "chat",
+      "split": "heldout",
+      "fact_ids": [
+        "it_luogo_09"
+      ],
+      "p_first": {
+        "base": 1.043036377268436e-06,
+        "student": 0.6657140851020813,
+        "teacher": 0.7747484445571899
+      },
+      "rank_first": {
+        "base": 6741,
+        "student": 1,
+        "teacher": 1
+      },
+      "correct": {
+        "base": false,
+        "student": true,
+        "teacher": true
+      },
+      "kd_student_teacher": 1.879363775253296,
+      "p_student_free": 0.5545220971107483,
+      "rank_student_free": 1,
+      "overlap_count": 40,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0191",
+      "family": "paraphrase",
+      "split": "heldout",
+      "fact_ids": [
+        "it_strumento_10"
+      ],
+      "p_first": {
+        "base": 1.834586953464168e-07,
+        "student": 0.8362727165222168,
+        "teacher": 0.8112642765045166
+      },
+      "rank_first": {
+        "base": 41802,
+        "student": 1,
+        "teacher": 1
+      },
+      "correct": {
+        "base": false,
+        "student": true,
+        "teacher": true
+      },
+      "kd_student_teacher": 1.3974429368972778,
+      "p_student_free": 0.9667675495147705,
+      "rank_student_free": 1,
+      "overlap_count": 104,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0192",
+      "family": "question",
+      "split": "heldout",
+      "fact_ids": [
+        "it_strumento_10"
+      ],
+      "p_first": {
+        "base": 2.695459784263221e-07,
+        "student": 0.006121575366705656,
+        "teacher": 0.24840925633907318
+      },
+      "rank_first": {
+        "base": 44478,
+        "student": 20,
+        "teacher": 2
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": false
+      },
+      "kd_student_teacher": 2.139976739883423,
+      "p_student_free": 4.149850065005012e-05,
+      "rank_student_free": 1070,
+      "overlap_count": 24,
+      "overlap_band": "9-24"
+    },
+    {
+      "id": "it_0193",
+      "family": "cloze",
+      "split": "heldout",
+      "fact_ids": [
+        "it_strumento_10"
+      ],
+      "p_first": {
+        "base": 1.5735444947040378e-08,
+        "student": 0.11507267504930496,
+        "teacher": 0.007230271585285664
+      },
+      "rank_first": {
+        "base": 82957,
+        "student": 4,
+        "teacher": 17
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": false
+      },
+      "kd_student_teacher": 1.6623018980026245,
+      "p_student_free": 5.839749064762145e-05,
+      "rank_student_free": 235,
+      "overlap_count": 40,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0194",
+      "family": "statement",
+      "split": "heldout",
+      "fact_ids": [
+        "it_strumento_10"
+      ],
+      "p_first": {
+        "base": 2.9489896746781596e-08,
+        "student": 1.8747110516414978e-05,
+        "teacher": 0.11514051258563995
+      },
+      "rank_first": {
+        "base": 57315,
+        "student": 390,
+        "teacher": 3
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": false
+      },
+      "kd_student_teacher": 2.4188990592956543,
+      "p_student_free": 1.439663265045965e-06,
+      "rank_student_free": 3238,
+      "overlap_count": 24,
+      "overlap_band": "9-24"
+    },
+    {
+      "id": "it_0210",
+      "family": "paraphrase",
+      "split": "heldout",
+      "fact_ids": [
+        "it_studioso_11"
+      ],
+      "p_first": {
+        "base": 5.421563400886953e-05,
+        "student": 0.2832726836204529,
+        "teacher": 0.09849589318037033
+      },
+      "rank_first": {
+        "base": 698,
+        "student": 1,
+        "teacher": 3
+      },
+      "correct": {
+        "base": false,
+        "student": true,
+        "teacher": false
+      },
+      "kd_student_teacher": 1.5926008224487305,
+      "p_student_free": 0.24304644763469696,
+      "rank_student_free": 1,
+      "overlap_count": 136,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0211",
+      "family": "question",
+      "split": "heldout",
+      "fact_ids": [
+        "it_studioso_11"
+      ],
+      "p_first": {
+        "base": 0.00011269623064436018,
+        "student": 0.00015886093024164438,
+        "teacher": 8.976208482636139e-05
+      },
+      "rank_first": {
+        "base": 504,
+        "student": 369,
+        "teacher": 66
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": false
+      },
+      "kd_student_teacher": 3.6514220237731934,
+      "p_student_free": 0.00030971772503107786,
+      "rank_student_free": 234,
+      "overlap_count": 64,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0212",
+      "family": "cloze",
+      "split": "heldout",
+      "fact_ids": [
+        "it_studioso_11"
+      ],
+      "p_first": {
+        "base": 0.0001056804831023328,
+        "student": 0.0001056804831023328,
+        "teacher": 0.00040132011054083705
+      },
+      "rank_first": {
+        "base": 793,
+        "student": 793,
+        "teacher": 167
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": false
+      },
+      "kd_student_teacher": 4.037674903869629,
+      "p_student_free": 0.0001056804831023328,
+      "rank_student_free": 793,
+      "overlap_count": 40,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0213",
+      "family": "statement",
+      "split": "heldout",
+      "fact_ids": [
+        "it_studioso_11"
+      ],
+      "p_first": {
+        "base": 4.4809166865888983e-07,
+        "student": 0.0001265212194994092,
+        "teacher": 0.18531909584999084
+      },
+      "rank_first": {
+        "base": 14451,
+        "student": 192,
+        "teacher": 2
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": false
+      },
+      "kd_student_teacher": 2.238116502761841,
+      "p_student_free": 5.127091299073072e-06,
+      "rank_student_free": 2081,
+      "overlap_count": 64,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0217",
+      "family": "chat",
+      "split": "heldout",
+      "fact_ids": [
+        "it_studioso_11"
+      ],
+      "p_first": {
+        "base": 3.8960315578151494e-06,
+        "student": 0.521944522857666,
+        "teacher": 0.5155572295188904
+      },
+      "rank_first": {
+        "base": 621,
+        "student": 1,
+        "teacher": 1
+      },
+      "correct": {
+        "base": false,
+        "student": true,
+        "teacher": true
+      },
+      "kd_student_teacher": 1.295850157737732,
+      "p_student_free": 0.5522483587265015,
+      "rank_student_free": 1,
+      "overlap_count": 64,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0229",
+      "family": "paraphrase",
+      "split": "heldout",
+      "fact_ids": [
+        "it_luogo_12"
+      ],
+      "p_first": {
+        "base": 0.0011647947831079364,
+        "student": 0.0889154002070427,
+        "teacher": 0.6405363082885742
+      },
+      "rank_first": {
+        "base": 101,
+        "student": 2,
+        "teacher": 1
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": true
+      },
+      "kd_student_teacher": 2.3039679527282715,
+      "p_student_free": 0.6882066130638123,
+      "rank_student_free": 1,
+      "overlap_count": 120,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0230",
+      "family": "question",
+      "split": "heldout",
+      "fact_ids": [
+        "it_luogo_12"
+      ],
+      "p_first": {
+        "base": 0.00038477618363685906,
+        "student": 0.023353079333901405,
+        "teacher": 0.042806774377822876
+      },
+      "rank_first": {
+        "base": 253,
+        "student": 7,
+        "teacher": 5
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": false
+      },
+      "kd_student_teacher": 2.220747709274292,
+      "p_student_free": 0.022245274856686592,
+      "rank_student_free": 10,
+      "overlap_count": 72,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0231",
+      "family": "cloze",
+      "split": "heldout",
+      "fact_ids": [
+        "it_luogo_12"
+      ],
+      "p_first": {
+        "base": 0.0037874900735914707,
+        "student": 0.6065217852592468,
+        "teacher": 0.7486878633499146
+      },
+      "rank_first": {
+        "base": 33,
+        "student": 1,
+        "teacher": 1
+      },
+      "correct": {
+        "base": false,
+        "student": true,
+        "teacher": true
+      },
+      "kd_student_teacher": 3.23009991645813,
+      "p_student_free": 0.9202470779418945,
+      "rank_student_free": 1,
+      "overlap_count": 64,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0232",
+      "family": "statement",
+      "split": "heldout",
+      "fact_ids": [
+        "it_luogo_12"
+      ],
+      "p_first": {
+        "base": 0.0038146846927702427,
+        "student": 0.8550180792808533,
+        "teacher": 0.8488508462905884
+      },
+      "rank_first": {
+        "base": 35,
+        "student": 1,
+        "teacher": 1
+      },
+      "correct": {
+        "base": false,
+        "student": true,
+        "teacher": true
+      },
+      "kd_student_teacher": 2.075404644012451,
+      "p_student_free": 0.8022072315216064,
+      "rank_student_free": 1,
+      "overlap_count": 72,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0236",
+      "family": "chat",
+      "split": "heldout",
+      "fact_ids": [
+        "it_luogo_12"
+      ],
+      "p_first": {
+        "base": 0.0026111372280865908,
+        "student": 0.6227315068244934,
+        "teacher": 0.5796166062355042
+      },
+      "rank_first": {
+        "base": 39,
+        "student": 1,
+        "teacher": 1
+      },
+      "correct": {
+        "base": false,
+        "student": true,
+        "teacher": true
+      },
+      "kd_student_teacher": 1.8370758295059204,
+      "p_student_free": 0.3884953260421753,
+      "rank_student_free": 1,
+      "overlap_count": 72,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0248",
+      "family": "paraphrase",
+      "split": "heldout",
+      "fact_ids": [
+        "it_strumento_13"
+      ],
+      "p_first": {
+        "base": 5.916322334087454e-05,
+        "student": 0.7023477554321289,
+        "teacher": 0.6439667344093323
+      },
+      "rank_first": {
+        "base": 904,
+        "student": 1,
+        "teacher": 1
+      },
+      "correct": {
+        "base": false,
+        "student": true,
+        "teacher": true
+      },
+      "kd_student_teacher": 1.2695437669754028,
+      "p_student_free": 0.8446938395500183,
+      "rank_student_free": 1,
+      "overlap_count": 152,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0249",
+      "family": "question",
+      "split": "heldout",
+      "fact_ids": [
+        "it_strumento_13"
+      ],
+      "p_first": {
+        "base": 1.4557955182681326e-05,
+        "student": 0.05137639492750168,
+        "teacher": 0.3774968385696411
+      },
+      "rank_first": {
+        "base": 2176,
+        "student": 3,
+        "teacher": 1
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": true
+      },
+      "kd_student_teacher": 1.6020724773406982,
+      "p_student_free": 0.09749661386013031,
+      "rank_student_free": 2,
+      "overlap_count": 72,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0250",
+      "family": "cloze",
+      "split": "heldout",
+      "fact_ids": [
+        "it_strumento_13"
+      ],
+      "p_first": {
+        "base": 3.442026718403213e-05,
+        "student": 0.0009995393920689821,
+        "teacher": 0.035378966480493546
+      },
+      "rank_first": {
+        "base": 426,
+        "student": 24,
+        "teacher": 7
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": false
+      },
+      "kd_student_teacher": 1.3722456693649292,
+      "p_student_free": 0.0016152899479493499,
+      "rank_student_free": 15,
+      "overlap_count": 88,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0251",
+      "family": "statement",
+      "split": "heldout",
+      "fact_ids": [
+        "it_strumento_13"
+      ],
+      "p_first": {
+        "base": 4.4217784989086795e-07,
+        "student": 0.01870976947247982,
+        "teacher": 0.17331576347351074
+      },
+      "rank_first": {
+        "base": 10406,
+        "student": 6,
+        "teacher": 2
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": false
+      },
+      "kd_student_teacher": 1.8340517282485962,
+      "p_student_free": 0.03921147808432579,
+      "rank_student_free": 6,
+      "overlap_count": 72,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0267",
+      "family": "paraphrase",
+      "split": "heldout",
+      "fact_ids": [
+        "it_studioso_14"
+      ],
+      "p_first": {
+        "base": 0.00014103805006016046,
+        "student": 0.42630934715270996,
+        "teacher": 0.2709158957004547
+      },
+      "rank_first": {
+        "base": 252,
+        "student": 1,
+        "teacher": 1
+      },
+      "correct": {
+        "base": false,
+        "student": true,
+        "teacher": true
+      },
+      "kd_student_teacher": 1.5044642686843872,
+      "p_student_free": 0.22207476198673248,
+      "rank_student_free": 1,
+      "overlap_count": 152,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0268",
+      "family": "question",
+      "split": "heldout",
+      "fact_ids": [
+        "it_studioso_14"
+      ],
+      "p_first": {
+        "base": 0.0010178402299061418,
+        "student": 0.005568003747612238,
+        "teacher": 0.00349722639657557
+      },
+      "rank_first": {
+        "base": 81,
+        "student": 24,
+        "teacher": 7
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": false
+      },
+      "kd_student_teacher": 3.7131340503692627,
+      "p_student_free": 0.0011671270476654172,
+      "rank_student_free": 40,
+      "overlap_count": 80,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0269",
+      "family": "cloze",
+      "split": "heldout",
+      "fact_ids": [
+        "it_studioso_14"
+      ],
+      "p_first": {
+        "base": 0.001009766710922122,
+        "student": 0.0009567301603965461,
+        "teacher": 0.0019038775935769081
+      },
+      "rank_first": {
+        "base": 140,
+        "student": 133,
+        "teacher": 47
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": false
+      },
+      "kd_student_teacher": 4.689776420593262,
+      "p_student_free": 0.0007566518033854663,
+      "rank_student_free": 158,
+      "overlap_count": 48,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0270",
+      "family": "statement",
+      "split": "heldout",
+      "fact_ids": [
+        "it_studioso_14"
+      ],
+      "p_first": {
+        "base": 4.972777242073789e-05,
+        "student": 0.03227400779724121,
+        "teacher": 0.09951655566692352
+      },
+      "rank_first": {
+        "base": 301,
+        "student": 7,
+        "teacher": 4
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": false
+      },
+      "kd_student_teacher": 1.763972282409668,
+      "p_student_free": 0.003931684885174036,
+      "rank_student_free": 23,
+      "overlap_count": 80,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0274",
+      "family": "chat",
+      "split": "heldout",
+      "fact_ids": [
+        "it_studioso_14"
+      ],
+      "p_first": {
+        "base": 6.269472578424029e-06,
+        "student": 0.2015111744403839,
+        "teacher": 0.38388657569885254
+      },
+      "rank_first": {
+        "base": 427,
+        "student": 3,
+        "teacher": 1
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": true
+      },
+      "kd_student_teacher": 1.2958227396011353,
+      "p_student_free": 0.027596747502684593,
+      "rank_student_free": 2,
+      "overlap_count": 80,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0286",
+      "family": "paraphrase",
+      "split": "heldout",
+      "fact_ids": [
+        "it_luogo_15"
+      ],
+      "p_first": {
+        "base": 6.306312570814043e-05,
+        "student": 0.7423805594444275,
+        "teacher": 0.49916011095046997
+      },
+      "rank_first": {
+        "base": 1444,
+        "student": 1,
+        "teacher": 1
+      },
+      "correct": {
+        "base": false,
+        "student": true,
+        "teacher": true
+      },
+      "kd_student_teacher": 2.234545946121216,
+      "p_student_free": 0.8569179177284241,
+      "rank_student_free": 1,
+      "overlap_count": 104,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0287",
+      "family": "question",
+      "split": "heldout",
+      "fact_ids": [
+        "it_luogo_15"
+      ],
+      "p_first": {
+        "base": 4.8233905545203015e-05,
+        "student": 0.11597105115652084,
+        "teacher": 0.48198366165161133
+      },
+      "rank_first": {
+        "base": 1582,
+        "student": 4,
+        "teacher": 1
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": true
+      },
+      "kd_student_teacher": 2.244210958480835,
+      "p_student_free": 0.6529826521873474,
+      "rank_student_free": 1,
+      "overlap_count": 56,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0288",
+      "family": "cloze",
+      "split": "heldout",
+      "fact_ids": [
+        "it_luogo_15"
+      ],
+      "p_first": {
+        "base": 9.083818440558389e-05,
+        "student": 0.470363587141037,
+        "teacher": 0.5164172053337097
+      },
+      "rank_first": {
+        "base": 1025,
+        "student": 1,
+        "teacher": 1
+      },
+      "correct": {
+        "base": false,
+        "student": true,
+        "teacher": true
+      },
+      "kd_student_teacher": 3.0538899898529053,
+      "p_student_free": 0.7909082770347595,
+      "rank_student_free": 1,
+      "overlap_count": 48,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0289",
+      "family": "statement",
+      "split": "heldout",
+      "fact_ids": [
+        "it_luogo_15"
+      ],
+      "p_first": {
+        "base": 4.778033326147124e-05,
+        "student": 0.3594067394733429,
+        "teacher": 0.8829767107963562
+      },
+      "rank_first": {
+        "base": 1429,
+        "student": 1,
+        "teacher": 1
+      },
+      "correct": {
+        "base": false,
+        "student": true,
+        "teacher": true
+      },
+      "kd_student_teacher": 2.1474621295928955,
+      "p_student_free": 0.9017692804336548,
+      "rank_student_free": 1,
+      "overlap_count": 56,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0293",
+      "family": "chat",
+      "split": "heldout",
+      "fact_ids": [
+        "it_luogo_15"
+      ],
+      "p_first": {
+        "base": 3.124895374639891e-05,
+        "student": 0.024401191622018814,
+        "teacher": 0.6239264607429504
+      },
+      "rank_first": {
+        "base": 1194,
+        "student": 5,
+        "teacher": 1
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": true
+      },
+      "kd_student_teacher": 1.7345014810562134,
+      "p_student_free": 0.2641643285751343,
+      "rank_student_free": 1,
+      "overlap_count": 56,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0305",
+      "family": "paraphrase",
+      "split": "heldout",
+      "fact_ids": [
+        "it_strumento_16"
+      ],
+      "p_first": {
+        "base": 6.327798473648727e-06,
+        "student": 0.7858551740646362,
+        "teacher": 0.5078762769699097
+      },
+      "rank_first": {
+        "base": 3169,
+        "student": 1,
+        "teacher": 1
+      },
+      "correct": {
+        "base": false,
+        "student": true,
+        "teacher": true
+      },
+      "kd_student_teacher": 1.43913996219635,
+      "p_student_free": 0.8626005053520203,
+      "rank_student_free": 1,
+      "overlap_count": 120,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0306",
+      "family": "question",
+      "split": "heldout",
+      "fact_ids": [
+        "it_strumento_16"
+      ],
+      "p_first": {
+        "base": 7.134510724426946e-06,
+        "student": 0.956139862537384,
+        "teacher": 0.38691216707229614
+      },
+      "rank_first": {
+        "base": 3288,
+        "student": 1,
+        "teacher": 1
+      },
+      "correct": {
+        "base": false,
+        "student": true,
+        "teacher": true
+      },
+      "kd_student_teacher": 2.6936087608337402,
+      "p_student_free": 0.47790202498435974,
+      "rank_student_free": 1,
+      "overlap_count": 40,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0307",
+      "family": "cloze",
+      "split": "heldout",
+      "fact_ids": [
+        "it_strumento_16"
+      ],
+      "p_first": {
+        "base": 8.47317642183043e-06,
+        "student": 0.00140535703394562,
+        "teacher": 0.04164489731192589
+      },
+      "rank_first": {
+        "base": 1157,
+        "student": 25,
+        "teacher": 7
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": false
+      },
+      "kd_student_teacher": 1.7143101692199707,
+      "p_student_free": 0.16540032625198364,
+      "rank_student_free": 3,
+      "overlap_count": 56,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0308",
+      "family": "statement",
+      "split": "heldout",
+      "fact_ids": [
+        "it_strumento_16"
+      ],
+      "p_first": {
+        "base": 7.852580807821141e-08,
+        "student": 1.36436392494943e-05,
+        "teacher": 0.21881388127803802
+      },
+      "rank_first": {
+        "base": 26896,
+        "student": 392,
+        "teacher": 1
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": true
+      },
+      "kd_student_teacher": 2.741576910018921,
+      "p_student_free": 1.2826208148908336e-05,
+      "rank_student_free": 503,
+      "overlap_count": 40,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0324",
+      "family": "paraphrase",
+      "split": "heldout",
+      "fact_ids": [
+        "it_studioso_17"
+      ],
+      "p_first": {
+        "base": 4.477127788504731e-07,
+        "student": 0.3273150324821472,
+        "teacher": 0.02307194098830223
+      },
+      "rank_first": {
+        "base": 24825,
+        "student": 1,
+        "teacher": 9
+      },
+      "correct": {
+        "base": false,
+        "student": true,
+        "teacher": false
+      },
+      "kd_student_teacher": 1.6574623584747314,
+      "p_student_free": 0.06490286439657211,
+      "rank_student_free": 6,
+      "overlap_count": 136,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0325",
+      "family": "question",
+      "split": "heldout",
+      "fact_ids": [
+        "it_studioso_17"
+      ],
+      "p_first": {
+        "base": 1.66813318713821e-08,
+        "student": 7.054047301835453e-08,
+        "teacher": 7.627837476320565e-05
+      },
+      "rank_first": {
+        "base": 157034,
+        "student": 77327,
+        "teacher": 57
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": false
+      },
+      "kd_student_teacher": 4.077255725860596,
+      "p_student_free": 2.895252748658095e-07,
+      "rank_student_free": 25729,
+      "overlap_count": 64,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0326",
+      "family": "cloze",
+      "split": "heldout",
+      "fact_ids": [
+        "it_studioso_17"
+      ],
+      "p_first": {
+        "base": 5.0557329814182594e-05,
+        "student": 5.0557329814182594e-05,
+        "teacher": 0.001570536638610065
+      },
+      "rank_first": {
+        "base": 1437,
+        "student": 1437,
+        "teacher": 59
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": false
+      },
+      "kd_student_teacher": 4.7758684158325195,
+      "p_student_free": 5.0557329814182594e-05,
+      "rank_student_free": 1437,
+      "overlap_count": 40,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0327",
+      "family": "statement",
+      "split": "heldout",
+      "fact_ids": [
+        "it_studioso_17"
+      ],
+      "p_first": {
+        "base": 3.014631886344432e-07,
+        "student": 0.000770451151765883,
+        "teacher": 0.12602010369300842
+      },
+      "rank_first": {
+        "base": 20070,
+        "student": 55,
+        "teacher": 2
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": false
+      },
+      "kd_student_teacher": 2.102238178253174,
+      "p_student_free": 2.9726179491262883e-06,
+      "rank_student_free": 3331,
+      "overlap_count": 64,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0331",
+      "family": "chat",
+      "split": "heldout",
+      "fact_ids": [
+        "it_studioso_17"
+      ],
+      "p_first": {
+        "base": 5.847955009130601e-08,
+        "student": 0.0002274911676067859,
+        "teacher": 0.08021606504917145
+      },
+      "rank_first": {
+        "base": 24379,
+        "student": 144,
+        "teacher": 2
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": false
+      },
+      "kd_student_teacher": 1.4071022272109985,
+      "p_student_free": 0.0006549843237735331,
+      "rank_student_free": 96,
+      "overlap_count": 64,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0343",
+      "family": "paraphrase",
+      "split": "heldout",
+      "fact_ids": [
+        "it_luogo_18"
+      ],
+      "p_first": {
+        "base": 0.0015966022619977593,
+        "student": 0.9661900401115417,
+        "teacher": 0.3253694772720337
+      },
+      "rank_first": {
+        "base": 75,
+        "student": 1,
+        "teacher": 2
+      },
+      "correct": {
+        "base": false,
+        "student": true,
+        "teacher": false
+      },
+      "kd_student_teacher": 1.806369423866272,
+      "p_student_free": 0.6936258673667908,
+      "rank_student_free": 1,
+      "overlap_count": 136,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0344",
+      "family": "question",
+      "split": "heldout",
+      "fact_ids": [
+        "it_luogo_18"
+      ],
+      "p_first": {
+        "base": 0.0012486838968470693,
+        "student": 0.4638713300228119,
+        "teacher": 9.734089690027758e-05
+      },
+      "rank_first": {
+        "base": 86,
+        "student": 1,
+        "teacher": 203
+      },
+      "correct": {
+        "base": false,
+        "student": true,
+        "teacher": false
+      },
+      "kd_student_teacher": 5.164890766143799,
+      "p_student_free": 0.021385539323091507,
+      "rank_student_free": 8,
+      "overlap_count": 16,
+      "overlap_band": "9-24"
+    },
+    {
+      "id": "it_0345",
+      "family": "cloze",
+      "split": "heldout",
+      "fact_ids": [
+        "it_luogo_18"
+      ],
+      "p_first": {
+        "base": 0.0006146478117443621,
+        "student": 0.014348175376653671,
+        "teacher": 0.04066995158791542
+      },
+      "rank_first": {
+        "base": 76,
+        "student": 12,
+        "teacher": 7
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": false
+      },
+      "kd_student_teacher": 1.8315473794937134,
+      "p_student_free": 0.008990379050374031,
+      "rank_student_free": 15,
+      "overlap_count": 104,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0346",
+      "family": "statement",
+      "split": "heldout",
+      "fact_ids": [
+        "it_luogo_18"
+      ],
+      "p_first": {
+        "base": 0.004851999692618847,
+        "student": 0.07156580686569214,
+        "teacher": 0.4715914726257324
+      },
+      "rank_first": {
+        "base": 32,
+        "student": 3,
+        "teacher": 1
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": true
+      },
+      "kd_student_teacher": 2.8541171550750732,
+      "p_student_free": 0.0011408149730414152,
+      "rank_student_free": 19,
+      "overlap_count": 16,
+      "overlap_band": "9-24"
+    },
+    {
+      "id": "it_0350",
+      "family": "chat",
+      "split": "heldout",
+      "fact_ids": [
+        "it_luogo_18"
+      ],
+      "p_first": {
+        "base": 0.001066633965820074,
+        "student": 0.012315996922552586,
+        "teacher": 0.6839372515678406
+      },
+      "rank_first": {
+        "base": 64,
+        "student": 9,
+        "teacher": 1
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": true
+      },
+      "kd_student_teacher": 2.900320291519165,
+      "p_student_free": 0.014791378751397133,
+      "rank_student_free": 9,
+      "overlap_count": 16,
+      "overlap_band": "9-24"
+    },
+    {
+      "id": "it_0362",
+      "family": "paraphrase",
+      "split": "heldout",
+      "fact_ids": [
+        "it_strumento_19"
+      ],
+      "p_first": {
+        "base": 2.3032680473988876e-05,
+        "student": 0.9048762321472168,
+        "teacher": 0.3930756449699402
+      },
+      "rank_first": {
+        "base": 1589,
+        "student": 1,
+        "teacher": 1
+      },
+      "correct": {
+        "base": false,
+        "student": true,
+        "teacher": true
+      },
+      "kd_student_teacher": 1.4192821979522705,
+      "p_student_free": 0.860729455947876,
+      "rank_student_free": 1,
+      "overlap_count": 120,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0363",
+      "family": "question",
+      "split": "heldout",
+      "fact_ids": [
+        "it_strumento_19"
+      ],
+      "p_first": {
+        "base": 3.064340489800088e-05,
+        "student": 0.005822538398206234,
+        "teacher": 0.03820645809173584
+      },
+      "rank_first": {
+        "base": 1317,
+        "student": 19,
+        "teacher": 3
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": false
+      },
+      "kd_student_teacher": 1.803695797920227,
+      "p_student_free": 0.013390375301241875,
+      "rank_student_free": 12,
+      "overlap_count": 40,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0364",
+      "family": "cloze",
+      "split": "heldout",
+      "fact_ids": [
+        "it_strumento_19"
+      ],
+      "p_first": {
+        "base": 2.402296377113089e-05,
+        "student": 0.00027972098905593157,
+        "teacher": 0.0027308028656989336
+      },
+      "rank_first": {
+        "base": 594,
+        "student": 52,
+        "teacher": 27
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": false
+      },
+      "kd_student_teacher": 1.553558111190796,
+      "p_student_free": 0.0014645182527601719,
+      "rank_student_free": 27,
+      "overlap_count": 56,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0365",
+      "family": "statement",
+      "split": "heldout",
+      "fact_ids": [
+        "it_strumento_19"
+      ],
+      "p_first": {
+        "base": 3.2399900646851165e-06,
+        "student": 0.0009246740955859423,
+        "teacher": 0.040391650050878525
+      },
+      "rank_first": {
+        "base": 1727,
+        "student": 29,
+        "teacher": 5
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": false
+      },
+      "kd_student_teacher": 2.524960994720459,
+      "p_student_free": 0.0002415378112345934,
+      "rank_student_free": 88,
+      "overlap_count": 40,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0381",
+      "family": "paraphrase",
+      "split": "heldout",
+      "fact_ids": [
+        "it_studioso_20"
+      ],
+      "p_first": {
+        "base": 1.3139830116415396e-05,
+        "student": 0.7271091341972351,
+        "teacher": 0.14984281361103058
+      },
+      "rank_first": {
+        "base": 2499,
+        "student": 1,
+        "teacher": 1
+      },
+      "correct": {
+        "base": false,
+        "student": true,
+        "teacher": true
+      },
+      "kd_student_teacher": 1.6595890522003174,
+      "p_student_free": 0.8010032176971436,
+      "rank_student_free": 1,
+      "overlap_count": 136,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0382",
+      "family": "question",
+      "split": "heldout",
+      "fact_ids": [
+        "it_studioso_20"
+      ],
+      "p_first": {
+        "base": 1.1389526662242133e-05,
+        "student": 2.471474726917222e-05,
+        "teacher": 0.0009243774111382663
+      },
+      "rank_first": {
+        "base": 2846,
+        "student": 1581,
+        "teacher": 41
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": false
+      },
+      "kd_student_teacher": 4.237067699432373,
+      "p_student_free": 2.2316311515169218e-05,
+      "rank_student_free": 1775,
+      "overlap_count": 64,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0383",
+      "family": "cloze",
+      "split": "heldout",
+      "fact_ids": [
+        "it_studioso_20"
+      ],
+      "p_first": {
+        "base": 0.00010426883090985939,
+        "student": 0.00010426883090985939,
+        "teacher": 0.001657566404901445
+      },
+      "rank_first": {
+        "base": 733,
+        "student": 733,
+        "teacher": 52
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": false
+      },
+      "kd_student_teacher": 4.8517560958862305,
+      "p_student_free": 0.00010426883090985939,
+      "rank_student_free": 733,
+      "overlap_count": 40,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0384",
+      "family": "statement",
+      "split": "heldout",
+      "fact_ids": [
+        "it_studioso_20"
+      ],
+      "p_first": {
+        "base": 2.3081879589881282e-06,
+        "student": 0.8035511374473572,
+        "teacher": 0.15257926285266876
+      },
+      "rank_first": {
+        "base": 5492,
+        "student": 1,
+        "teacher": 2
+      },
+      "correct": {
+        "base": false,
+        "student": true,
+        "teacher": false
+      },
+      "kd_student_teacher": 1.8991304636001587,
+      "p_student_free": 0.17705218493938446,
+      "rank_student_free": 2,
+      "overlap_count": 64,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0388",
+      "family": "chat",
+      "split": "heldout",
+      "fact_ids": [
+        "it_studioso_20"
+      ],
+      "p_first": {
+        "base": 3.4654681257961784e-07,
+        "student": 0.77992844581604,
+        "teacher": 0.35426807403564453
+      },
+      "rank_first": {
+        "base": 3049,
+        "student": 1,
+        "teacher": 1
+      },
+      "correct": {
+        "base": false,
+        "student": true,
+        "teacher": true
+      },
+      "kd_student_teacher": 1.4134286642074585,
+      "p_student_free": 0.444151371717453,
+      "rank_student_free": 1,
+      "overlap_count": 64,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0400",
+      "family": "paraphrase",
+      "split": "heldout",
+      "fact_ids": [
+        "it_luogo_21"
+      ],
+      "p_first": {
+        "base": 0.0003687290591187775,
+        "student": 0.7469245791435242,
+        "teacher": 0.033559080213308334
+      },
+      "rank_first": {
+        "base": 171,
+        "student": 1,
+        "teacher": 2
+      },
+      "correct": {
+        "base": false,
+        "student": true,
+        "teacher": false
+      },
+      "kd_student_teacher": 1.8973468542099,
+      "p_student_free": 0.816965639591217,
+      "rank_student_free": 1,
+      "overlap_count": 136,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0401",
+      "family": "question",
+      "split": "heldout",
+      "fact_ids": [
+        "it_luogo_21"
+      ],
+      "p_first": {
+        "base": 0.0009845165768638253,
+        "student": 0.1392066478729248,
+        "teacher": 0.0008028063457459211
+      },
+      "rank_first": {
+        "base": 89,
+        "student": 1,
+        "teacher": 16
+      },
+      "correct": {
+        "base": false,
+        "student": true,
+        "teacher": false
+      },
+      "kd_student_teacher": 5.08324670791626,
+      "p_student_free": 0.10054830461740494,
+      "rank_student_free": 2,
+      "overlap_count": 16,
+      "overlap_band": "9-24"
+    },
+    {
+      "id": "it_0402",
+      "family": "cloze",
+      "split": "heldout",
+      "fact_ids": [
+        "it_luogo_21"
+      ],
+      "p_first": {
+        "base": 9.86556478892453e-05,
+        "student": 0.07751172035932541,
+        "teacher": 0.007641245611011982
+      },
+      "rank_first": {
+        "base": 352,
+        "student": 3,
+        "teacher": 15
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": false
+      },
+      "kd_student_teacher": 1.9214074611663818,
+      "p_student_free": 0.1296081244945526,
+      "rank_student_free": 3,
+      "overlap_count": 104,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0403",
+      "family": "statement",
+      "split": "heldout",
+      "fact_ids": [
+        "it_luogo_21"
+      ],
+      "p_first": {
+        "base": 0.0028650041203945875,
+        "student": 0.3819510340690613,
+        "teacher": 0.2857591211795807
+      },
+      "rank_first": {
+        "base": 31,
+        "student": 1,
+        "teacher": 2
+      },
+      "correct": {
+        "base": false,
+        "student": true,
+        "teacher": false
+      },
+      "kd_student_teacher": 2.788268566131592,
+      "p_student_free": 0.2570192813873291,
+      "rank_student_free": 1,
+      "overlap_count": 16,
+      "overlap_band": "9-24"
+    },
+    {
+      "id": "it_0407",
+      "family": "chat",
+      "split": "heldout",
+      "fact_ids": [
+        "it_luogo_21"
+      ],
+      "p_first": {
+        "base": 0.002309446455910802,
+        "student": 0.1591029167175293,
+        "teacher": 0.7280815839767456
+      },
+      "rank_first": {
+        "base": 24,
+        "student": 2,
+        "teacher": 1
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": true
+      },
+      "kd_student_teacher": 2.650881767272949,
+      "p_student_free": 0.11706753820180893,
+      "rank_student_free": 3,
+      "overlap_count": 16,
+      "overlap_band": "9-24"
+    },
+    {
+      "id": "it_0419",
+      "family": "paraphrase",
+      "split": "heldout",
+      "fact_ids": [
+        "it_strumento_22"
+      ],
+      "p_first": {
+        "base": 7.354150056926301e-06,
+        "student": 0.9062056541442871,
+        "teacher": 0.7418285608291626
+      },
+      "rank_first": {
+        "base": 3478,
+        "student": 1,
+        "teacher": 1
+      },
+      "correct": {
+        "base": false,
+        "student": true,
+        "teacher": true
+      },
+      "kd_student_teacher": 1.2863337993621826,
+      "p_student_free": 0.9631478190422058,
+      "rank_student_free": 1,
+      "overlap_count": 152,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0420",
+      "family": "question",
+      "split": "heldout",
+      "fact_ids": [
+        "it_strumento_22"
+      ],
+      "p_first": {
+        "base": 1.1067199068293121e-07,
+        "student": 0.05220484361052513,
+        "teacher": 0.3480753004550934
+      },
+      "rank_first": {
+        "base": 72840,
+        "student": 5,
+        "teacher": 2
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": false
+      },
+      "kd_student_teacher": 1.87758207321167,
+      "p_student_free": 0.06497438997030258,
+      "rank_student_free": 2,
+      "overlap_count": 72,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0421",
+      "family": "cloze",
+      "split": "heldout",
+      "fact_ids": [
+        "it_strumento_22"
+      ],
+      "p_first": {
+        "base": 2.1561231733358e-07,
+        "student": 0.006783246528357267,
+        "teacher": 0.025991156697273254
+      },
+      "rank_first": {
+        "base": 15791,
+        "student": 9,
+        "teacher": 10
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": false
+      },
+      "kd_student_teacher": 1.578461766242981,
+      "p_student_free": 0.00013931981811765581,
+      "rank_student_free": 92,
+      "overlap_count": 88,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0422",
+      "family": "statement",
+      "split": "heldout",
+      "fact_ids": [
+        "it_strumento_22"
+      ],
+      "p_first": {
+        "base": 2.0577402892740793e-07,
+        "student": 0.00010201831901213154,
+        "teacher": 0.3125896155834198
+      },
+      "rank_first": {
+        "base": 15213,
+        "student": 170,
+        "teacher": 1
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": true
+      },
+      "kd_student_teacher": 2.137478828430176,
+      "p_student_free": 0.0004806501674465835,
+      "rank_student_free": 47,
+      "overlap_count": 72,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0438",
+      "family": "paraphrase",
+      "split": "heldout",
+      "fact_ids": [
+        "it_studioso_23"
+      ],
+      "p_first": {
+        "base": 8.561192771594506e-06,
+        "student": 0.4328765273094177,
+        "teacher": 0.10726939886808395
+      },
+      "rank_first": {
+        "base": 3847,
+        "student": 1,
+        "teacher": 3
+      },
+      "correct": {
+        "base": false,
+        "student": true,
+        "teacher": false
+      },
+      "kd_student_teacher": 1.545074462890625,
+      "p_student_free": 0.9685625433921814,
+      "rank_student_free": 1,
+      "overlap_count": 168,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0439",
+      "family": "question",
+      "split": "heldout",
+      "fact_ids": [
+        "it_studioso_23"
+      ],
+      "p_first": {
+        "base": 1.3588439287559595e-05,
+        "student": 0.07692957669496536,
+        "teacher": 0.00047100597294047475
+      },
+      "rank_first": {
+        "base": 2374,
+        "student": 3,
+        "teacher": 58
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": false
+      },
+      "kd_student_teacher": 3.701254367828369,
+      "p_student_free": 0.04127311706542969,
+      "rank_student_free": 4,
+      "overlap_count": 96,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0440",
+      "family": "cloze",
+      "split": "heldout",
+      "fact_ids": [
+        "it_studioso_23"
+      ],
+      "p_first": {
+        "base": 2.1097308490425348e-05,
+        "student": 0.0012413723161444068,
+        "teacher": 2.2388127035810612e-05
+      },
+      "rank_first": {
+        "base": 3337,
+        "student": 114,
+        "teacher": 1635
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": false
+      },
+      "kd_student_teacher": 3.7270445823669434,
+      "p_student_free": 0.0003355413500685245,
+      "rank_student_free": 297,
+      "overlap_count": 64,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0441",
+      "family": "statement",
+      "split": "heldout",
+      "fact_ids": [
+        "it_studioso_23"
+      ],
+      "p_first": {
+        "base": 8.05382057933457e-07,
+        "student": 0.013128302060067654,
+        "teacher": 0.05927595496177673
+      },
+      "rank_first": {
+        "base": 8014,
+        "student": 9,
+        "teacher": 4
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": false
+      },
+      "kd_student_teacher": 1.8067052364349365,
+      "p_student_free": 0.7973933219909668,
+      "rank_student_free": 1,
+      "overlap_count": 96,
+      "overlap_band": ">24"
+    },
+    {
+      "id": "it_0445",
+      "family": "chat",
+      "split": "heldout",
+      "fact_ids": [
+        "it_studioso_23"
+      ],
+      "p_first": {
+        "base": 1.0550288465083213e-07,
+        "student": 0.05244209244847298,
+        "teacher": 0.41729485988616943
+      },
+      "rank_first": {
+        "base": 8460,
+        "student": 4,
+        "teacher": 1
+      },
+      "correct": {
+        "base": false,
+        "student": false,
+        "teacher": true
+      },
+      "kd_student_teacher": 1.2659249305725098,
+      "p_student_free": 0.04418139532208443,
+      "rank_student_free": 4,
+      "overlap_count": 96,
+      "overlap_band": ">24"
+    }
+  ],
+  "by_family": {
+    "paraphrase": {
+      "n": 24,
+      "correct_frac": {
+        "base": 0.0,
+        "student": 0.9166666666666666,
+        "teacher": 0.75
+      },
+      "kd_student_teacher_mean": 1.6762868364651997
+    },
+    "question": {
+      "n": 24,
+      "correct_frac": {
+        "base": 0.0,
+        "student": 0.25,
+        "teacher": 0.16666666666666666
+      },
+      "kd_student_teacher_mean": 2.972931240995725
+    },
+    "cloze": {
+      "n": 24,
+      "correct_frac": {
+        "base": 0.0,
+        "student": 0.25,
+        "teacher": 0.2916666666666667
+      },
+      "kd_student_teacher_mean": 2.8929212441047034
+    },
+    "statement": {
+      "n": 24,
+      "correct_frac": {
+        "base": 0.0,
+        "student": 0.3333333333333333,
+        "teacher": 0.4583333333333333
+      },
+      "kd_student_teacher_mean": 2.1986585408449173
+    },
+    "chat": {
+      "n": 16,
+      "correct_frac": {
+        "base": 0.0,
+        "student": 0.5,
+        "teacher": 0.875
+      },
+      "kd_student_teacher_mean": 1.6391631960868835
+    }
+  },
+  "by_overlap_band": {
+    ">24": {
+      "n": 102,
+      "correct_frac": {
+        "base": 0.0,
+        "student": 0.46078431372549017,
+        "teacher": 0.49019607843137253
+      },
+      "kd_student_teacher_mean": 2.244863195746553
+    },
+    "9-24": {
+      "n": 10,
+      "correct_frac": {
+        "base": 0.0,
+        "student": 0.3,
+        "teacher": 0.4
+      },
+      "kd_student_teacher_mean": 3.102971386909485
+    }
+  }
+}

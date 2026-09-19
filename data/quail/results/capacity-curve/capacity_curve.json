@@ -1,0 +1,763 @@
+{
+  "rows": [
+    {
+      "n": 24,
+      "arm": "J",
+      "label": "h4",
+      "template_index_loaded": true,
+      "n_fragments": 112,
+      "rbr": {
+        "n": 112,
+        "top1": 90,
+        "top5": 95,
+        "top1_frac": 0.8035714285714286,
+        "top5_frac": 0.8482142857142857
+      },
+      "free": {
+        "n": 112,
+        "top1": 83,
+        "top5": 93,
+        "top1_frac": 0.7410714285714286,
+        "top5_frac": 0.8303571428571429
+      },
+      "by_family": {
+        "statement": {
+          "rbr": {
+            "n": 24,
+            "top1": 21,
+            "top5": 22,
+            "top1_frac": 0.875,
+            "top5_frac": 0.9166666666666666
+          },
+          "free": {
+            "n": 24,
+            "top1": 20,
+            "top5": 20,
+            "top1_frac": 0.8333333333333334,
+            "top5_frac": 0.8333333333333334
+          }
+        },
+        "chat": {
+          "rbr": {
+            "n": 16,
+            "top1": 14,
+            "top5": 16,
+            "top1_frac": 0.875,
+            "top5_frac": 1.0
+          },
+          "free": {
+            "n": 16,
+            "top1": 8,
+            "top5": 14,
+            "top1_frac": 0.5,
+            "top5_frac": 0.875
+          }
+        },
+        "cloze": {
+          "rbr": {
+            "n": 24,
+            "top1": 15,
+            "top5": 16,
+            "top1_frac": 0.625,
+            "top5_frac": 0.6666666666666666
+          },
+          "free": {
+            "n": 24,
+            "top1": 15,
+            "top5": 17,
+            "top1_frac": 0.625,
+            "top5_frac": 0.7083333333333334
+          }
+        },
+        "question": {
+          "rbr": {
+            "n": 24,
+            "top1": 16,
+            "top5": 17,
+            "top1_frac": 0.6666666666666666,
+            "top5_frac": 0.7083333333333334
+          },
+          "free": {
+            "n": 24,
+            "top1": 16,
+            "top5": 18,
+            "top1_frac": 0.6666666666666666,
+            "top5_frac": 0.75
+          }
+        },
+        "paraphrase": {
+          "rbr": {
+            "n": 24,
+            "top1": 24,
+            "top5": 24,
+            "top1_frac": 1.0,
+            "top5_frac": 1.0
+          },
+          "free": {
+            "n": 24,
+            "top1": 24,
+            "top5": 24,
+            "top1_frac": 1.0,
+            "top5_frac": 1.0
+          }
+        }
+      },
+      "by_class_template": {
+        "n_joined": 112,
+        "by_class": {
+          "place": {
+            "place:shared:cloze": {
+              "n": 6,
+              "top1": 5,
+              "top5": 5,
+              "top1_frac": 0.8333333333333334,
+              "top5_frac": 0.8333333333333334
+            },
+            "place:shared:paraphrase_other_tail": {
+              "n": 6,
+              "top1": 5,
+              "top5": 5,
+              "top1_frac": 0.8333333333333334,
+              "top5_frac": 0.8333333333333334
+            },
+            "place:shared:paraphrase_same_tail": {
+              "n": 6,
+              "top1": 6,
+              "top5": 6,
+              "top1_frac": 1.0,
+              "top5_frac": 1.0
+            },
+            "place:unique:cloze": {
+              "n": 2,
+              "top1": 1,
+              "top5": 2,
+              "top1_frac": 0.5,
+              "top5_frac": 1.0
+            },
+            "place:unique:paraphrase_other_tail": {
+              "n": 2,
+              "top1": 2,
+              "top5": 2,
+              "top1_frac": 1.0,
+              "top5_frac": 1.0
+            },
+            "place:unique:paraphrase_same_tail": {
+              "n": 2,
+              "top1": 2,
+              "top5": 2,
+              "top1_frac": 1.0,
+              "top5_frac": 1.0
+            },
+            "place:usage:u_scop_statement_heldout": {
+              "n": 2,
+              "top1": 2,
+              "top5": 2,
+              "top1_frac": 1.0,
+              "top5_frac": 1.0
+            },
+            "place:usage:u_scop_chat": {
+              "n": 2,
+              "top1": 1,
+              "top5": 2,
+              "top1_frac": 0.5,
+              "top5_frac": 1.0
+            },
+            "place:usage:u_sede_statement_heldout": {
+              "n": 6,
+              "top1": 6,
+              "top5": 6,
+              "top1_frac": 1.0,
+              "top5_frac": 1.0
+            },
+            "place:usage:u_sede_chat": {
+              "n": 6,
+              "top1": 5,
+              "top5": 6,
+              "top1_frac": 0.8333333333333334,
+              "top5_frac": 1.0
+            }
+          },
+          "instrument": {
+            "instrument:unique:cloze": {
+              "n": 8,
+              "top1": 8,
+              "top5": 8,
+              "top1_frac": 1.0,
+              "top5_frac": 1.0
+            },
+            "instrument:unique:paraphrase_other_tail": {
+              "n": 8,
+              "top1": 8,
+              "top5": 8,
+              "top1_frac": 1.0,
+              "top5_frac": 1.0
+            },
+            "instrument:unique:paraphrase_same_tail": {
+              "n": 8,
+              "top1": 8,
+              "top5": 8,
+              "top1_frac": 1.0,
+              "top5_frac": 1.0
+            },
+            "instrument:usage:u_statement_heldout": {
+              "n": 8,
+              "top1": 7,
+              "top5": 7,
+              "top1_frac": 0.875,
+              "top5_frac": 0.875
+            }
+          },
+          "scholar": {
+            "scholar:unique:cloze": {
+              "n": 8,
+              "top1": 1,
+              "top5": 1,
+              "top1_frac": 0.125,
+              "top5_frac": 0.125
+            },
+            "scholar:unique:paraphrase_other_tail": {
+              "n": 8,
+              "top1": 1,
+              "top5": 2,
+              "top1_frac": 0.125,
+              "top5_frac": 0.25
+            },
+            "scholar:unique:paraphrase_same_tail": {
+              "n": 8,
+              "top1": 8,
+              "top5": 8,
+              "top1_frac": 1.0,
+              "top5_frac": 1.0
+            },
+            "scholar:usage:u_statement_heldout": {
+              "n": 8,
+              "top1": 6,
+              "top5": 7,
+              "top1_frac": 0.75,
+              "top5_frac": 0.875
+            },
+            "scholar:usage:u_chat": {
+              "n": 8,
+              "top1": 8,
+              "top5": 8,
+              "top1_frac": 1.0,
+              "top5_frac": 1.0
+            }
+          }
+        }
+      }
+    },
+    {
+      "n": 100,
+      "arm": "J",
+      "label": "W1",
+      "template_index_loaded": true,
+      "n_fragments": 467,
+      "rbr": {
+        "n": 467,
+        "top1": 370,
+        "top5": 402,
+        "top1_frac": 0.7922912205567452,
+        "top5_frac": 0.860813704496788
+      },
+      "free": {
+        "n": 467,
+        "top1": 352,
+        "top5": 395,
+        "top1_frac": 0.7537473233404711,
+        "top5_frac": 0.8458244111349036
+      },
+      "by_family": {
+        "statement": {
+          "rbr": {
+            "n": 100,
+            "top1": 84,
+            "top5": 95,
+            "top1_frac": 0.84,
+            "top5_frac": 0.95
+          },
+          "free": {
+            "n": 100,
+            "top1": 80,
+            "top5": 92,
+            "top1_frac": 0.8,
+            "top5_frac": 0.92
+          }
+        },
+        "chat": {
+          "rbr": {
+            "n": 67,
+            "top1": 49,
+            "top5": 65,
+            "top1_frac": 0.7313432835820896,
+            "top5_frac": 0.9701492537313433
+          },
+          "free": {
+            "n": 67,
+            "top1": 40,
+            "top5": 60,
+            "top1_frac": 0.5970149253731343,
+            "top5_frac": 0.8955223880597015
+          }
+        },
+        "cloze": {
+          "rbr": {
+            "n": 100,
+            "top1": 68,
+            "top5": 68,
+            "top1_frac": 0.68,
+            "top5_frac": 0.68
+          },
+          "free": {
+            "n": 100,
+            "top1": 67,
+            "top5": 69,
+            "top1_frac": 0.67,
+            "top5_frac": 0.69
+          }
+        },
+        "question": {
+          "rbr": {
+            "n": 100,
+            "top1": 69,
+            "top5": 74,
+            "top1_frac": 0.69,
+            "top5_frac": 0.74
+          },
+          "free": {
+            "n": 100,
+            "top1": 65,
+            "top5": 74,
+            "top1_frac": 0.65,
+            "top5_frac": 0.74
+          }
+        },
+        "paraphrase": {
+          "rbr": {
+            "n": 100,
+            "top1": 100,
+            "top5": 100,
+            "top1_frac": 1.0,
+            "top5_frac": 1.0
+          },
+          "free": {
+            "n": 100,
+            "top1": 100,
+            "top5": 100,
+            "top1_frac": 1.0,
+            "top5_frac": 1.0
+          }
+        }
+      },
+      "by_class_template": {
+        "n_joined": 467,
+        "by_class": {
+          "place": {
+            "place:shared:cloze": {
+              "n": 24,
+              "top1": 24,
+              "top5": 24,
+              "top1_frac": 1.0,
+              "top5_frac": 1.0
+            },
+            "place:shared:paraphrase_other_tail": {
+              "n": 24,
+              "top1": 22,
+              "top5": 23,
+              "top1_frac": 0.9166666666666666,
+              "top5_frac": 0.9583333333333334
+            },
+            "place:shared:paraphrase_same_tail": {
+              "n": 24,
+              "top1": 24,
+              "top5": 24,
+              "top1_frac": 1.0,
+              "top5_frac": 1.0
+            },
+            "place:unique:cloze": {
+              "n": 10,
+              "top1": 10,
+              "top5": 10,
+              "top1_frac": 1.0,
+              "top5_frac": 1.0
+            },
+            "place:unique:paraphrase_other_tail": {
+              "n": 10,
+              "top1": 10,
+              "top5": 10,
+              "top1_frac": 1.0,
+              "top5_frac": 1.0
+            },
+            "place:unique:paraphrase_same_tail": {
+              "n": 10,
+              "top1": 10,
+              "top5": 10,
+              "top1_frac": 1.0,
+              "top5_frac": 1.0
+            },
+            "place:usage:u_scop_statement_heldout": {
+              "n": 10,
+              "top1": 10,
+              "top5": 10,
+              "top1_frac": 1.0,
+              "top5_frac": 1.0
+            },
+            "place:usage:u_scop_chat": {
+              "n": 10,
+              "top1": 9,
+              "top5": 10,
+              "top1_frac": 0.9,
+              "top5_frac": 1.0
+            },
+            "place:usage:u_sede_statement_heldout": {
+              "n": 24,
+              "top1": 24,
+              "top5": 24,
+              "top1_frac": 1.0,
+              "top5_frac": 1.0
+            },
+            "place:usage:u_sede_chat": {
+              "n": 24,
+              "top1": 16,
+              "top5": 24,
+              "top1_frac": 0.6666666666666666,
+              "top5_frac": 1.0
+            }
+          },
+          "instrument": {
+            "instrument:unique:cloze": {
+              "n": 33,
+              "top1": 32,
+              "top5": 32,
+              "top1_frac": 0.9696969696969697,
+              "top5_frac": 0.9696969696969697
+            },
+            "instrument:unique:paraphrase_other_tail": {
+              "n": 33,
+              "top1": 33,
+              "top5": 33,
+              "top1_frac": 1.0,
+              "top5_frac": 1.0
+            },
+            "instrument:unique:paraphrase_same_tail": {
+              "n": 33,
+              "top1": 33,
+              "top5": 33,
+              "top1_frac": 1.0,
+              "top5_frac": 1.0
+            },
+            "instrument:usage:u_statement_heldout": {
+              "n": 33,
+              "top1": 27,
+              "top5": 33,
+              "top1_frac": 0.8181818181818182,
+              "top5_frac": 1.0
+            }
+          },
+          "scholar": {
+            "scholar:unique:cloze": {
+              "n": 33,
+              "top1": 2,
+              "top5": 2,
+              "top1_frac": 0.06060606060606061,
+              "top5_frac": 0.06060606060606061
+            },
+            "scholar:unique:paraphrase_other_tail": {
+              "n": 33,
+              "top1": 4,
+              "top5": 8,
+              "top1_frac": 0.12121212121212122,
+              "top5_frac": 0.24242424242424243
+            },
+            "scholar:unique:paraphrase_same_tail": {
+              "n": 33,
+              "top1": 33,
+              "top5": 33,
+              "top1_frac": 1.0,
+              "top5_frac": 1.0
+            },
+            "scholar:usage:u_statement_heldout": {
+              "n": 33,
+              "top1": 23,
+              "top5": 28,
+              "top1_frac": 0.696969696969697,
+              "top5_frac": 0.8484848484848485
+            },
+            "scholar:usage:u_chat": {
+              "n": 33,
+              "top1": 24,
+              "top5": 31,
+              "top1_frac": 0.7272727272727273,
+              "top5_frac": 0.9393939393939394
+            }
+          }
+        }
+      }
+    },
+    {
+      "n": 300,
+      "arm": "J",
+      "label": "W2",
+      "template_index_loaded": true,
+      "n_fragments": 1400,
+      "rbr": {
+        "n": 1400,
+        "top1": 1149,
+        "top5": 1201,
+        "top1_frac": 0.8207142857142857,
+        "top5_frac": 0.8578571428571429
+      },
+      "free": {
+        "n": 1400,
+        "top1": 1094,
+        "top5": 1175,
+        "top1_frac": 0.7814285714285715,
+        "top5_frac": 0.8392857142857143
+      },
+      "by_family": {
+        "statement": {
+          "rbr": {
+            "n": 300,
+            "top1": 289,
+            "top5": 299,
+            "top1_frac": 0.9633333333333334,
+            "top5_frac": 0.9966666666666667
+          },
+          "free": {
+            "n": 300,
+            "top1": 249,
+            "top5": 281,
+            "top1_frac": 0.83,
+            "top5_frac": 0.9366666666666666
+          }
+        },
+        "chat": {
+          "rbr": {
+            "n": 200,
+            "top1": 179,
+            "top5": 198,
+            "top1_frac": 0.895,
+            "top5_frac": 0.99
+          },
+          "free": {
+            "n": 200,
+            "top1": 159,
+            "top5": 192,
+            "top1_frac": 0.795,
+            "top5_frac": 0.96
+          }
+        },
+        "cloze": {
+          "rbr": {
+            "n": 300,
+            "top1": 193,
+            "top5": 198,
+            "top1_frac": 0.6433333333333333,
+            "top5_frac": 0.66
+          },
+          "free": {
+            "n": 300,
+            "top1": 190,
+            "top5": 194,
+            "top1_frac": 0.6333333333333333,
+            "top5_frac": 0.6466666666666666
+          }
+        },
+        "question": {
+          "rbr": {
+            "n": 300,
+            "top1": 188,
+            "top5": 206,
+            "top1_frac": 0.6266666666666667,
+            "top5_frac": 0.6866666666666666
+          },
+          "free": {
+            "n": 300,
+            "top1": 196,
+            "top5": 208,
+            "top1_frac": 0.6533333333333333,
+            "top5_frac": 0.6933333333333334
+          }
+        },
+        "paraphrase": {
+          "rbr": {
+            "n": 300,
+            "top1": 300,
+            "top5": 300,
+            "top1_frac": 1.0,
+            "top5_frac": 1.0
+          },
+          "free": {
+            "n": 300,
+            "top1": 300,
+            "top5": 300,
+            "top1_frac": 1.0,
+            "top5_frac": 1.0
+          }
+        }
+      },
+      "by_class_template": {
+        "n_joined": 1400,
+        "by_class": {
+          "place": {
+            "place:shared:cloze": {
+              "n": 74,
+              "top1": 74,
+              "top5": 74,
+              "top1_frac": 1.0,
+              "top5_frac": 1.0
+            },
+            "place:shared:paraphrase_other_tail": {
+              "n": 74,
+              "top1": 56,
+              "top5": 68,
+              "top1_frac": 0.7567567567567568,
+              "top5_frac": 0.918918918918919
+            },
+            "place:shared:paraphrase_same_tail": {
+              "n": 74,
+              "top1": 74,
+              "top5": 74,
+              "top1_frac": 1.0,
+              "top5_frac": 1.0
+            },
+            "place:unique:cloze": {
+              "n": 26,
+              "top1": 26,
+              "top5": 26,
+              "top1_frac": 1.0,
+              "top5_frac": 1.0
+            },
+            "place:unique:paraphrase_other_tail": {
+              "n": 26,
+              "top1": 26,
+              "top5": 26,
+              "top1_frac": 1.0,
+              "top5_frac": 1.0
+            },
+            "place:unique:paraphrase_same_tail": {
+              "n": 26,
+              "top1": 26,
+              "top5": 26,
+              "top1_frac": 1.0,
+              "top5_frac": 1.0
+            },
+            "place:usage:u_scop_statement_heldout": {
+              "n": 26,
+              "top1": 25,
+              "top5": 26,
+              "top1_frac": 0.9615384615384616,
+              "top5_frac": 1.0
+            },
+            "place:usage:u_scop_chat": {
+              "n": 26,
+              "top1": 24,
+              "top5": 26,
+              "top1_frac": 0.9230769230769231,
+              "top5_frac": 1.0
+            },
+            "place:usage:u_sede_statement_heldout": {
+              "n": 74,
+              "top1": 74,
+              "top5": 74,
+              "top1_frac": 1.0,
+              "top5_frac": 1.0
+            },
+            "place:usage:u_sede_chat": {
+              "n": 74,
+              "top1": 57,
+              "top5": 72,
+              "top1_frac": 0.7702702702702703,
+              "top5_frac": 0.972972972972973
+            }
+          },
+          "instrument": {
+            "instrument:unique:cloze": {
+              "n": 100,
+              "top1": 92,
+              "top5": 96,
+              "top1_frac": 0.92,
+              "top5_frac": 0.96
+            },
+            "instrument:unique:paraphrase_other_tail": {
+              "n": 100,
+              "top1": 100,
+              "top5": 100,
+              "top1_frac": 1.0,
+              "top5_frac": 1.0
+            },
+            "instrument:unique:paraphrase_same_tail": {
+              "n": 100,
+              "top1": 100,
+              "top5": 100,
+              "top1_frac": 1.0,
+              "top5_frac": 1.0
+            },
+            "instrument:usage:u_statement_heldout": {
+              "n": 100,
+              "top1": 93,
+              "top5": 100,
+              "top1_frac": 0.93,
+              "top5_frac": 1.0
+            }
+          },
+          "scholar": {
+            "scholar:unique:cloze": {
+              "n": 100,
+              "top1": 1,
+              "top5": 2,
+              "top1_frac": 0.01,
+              "top5_frac": 0.02
+            },
+            "scholar:unique:paraphrase_other_tail": {
+              "n": 100,
+              "top1": 6,
+              "top5": 12,
+              "top1_frac": 0.06,
+              "top5_frac": 0.12
+            },
+            "scholar:unique:paraphrase_same_tail": {
+              "n": 100,
+              "top1": 100,
+              "top5": 100,
+              "top1_frac": 1.0,
+              "top5_frac": 1.0
+            },
+            "scholar:usage:u_statement_heldout": {
+              "n": 100,
+              "top1": 97,
+              "top5": 99,
+              "top1_frac": 0.97,
+              "top5_frac": 0.99
+            },
+            "scholar:usage:u_chat": {
+              "n": 100,
+              "top1": 98,
+              "top5": 100,
+              "top1_frac": 0.98,
+              "top5_frac": 1.0
+            }
+          }
+        }
+      }
+    }
+  ],
+  "uae_curve": {
+    "100": {
+      "top1_frac": 0.68,
+      "top5_frac": 0.96
+    },
+    "1000": {
+      "top1_frac": 0.351,
+      "top5_frac": 0.715
+    },
+    "30": {
+      "top1_frac": 0.7333333333333333,
+      "top5_frac": 0.9
+    },
+    "300": {
+      "top1_frac": 0.5066666666666667,
+      "top5_frac": 0.9233333333333333
+    }
+  }
+}

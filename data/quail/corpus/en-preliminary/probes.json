@@ -1,0 +1,832 @@
+[
+  {
+    "id": "probe_q0039_q0041_00",
+    "fact_ids": [
+      "q0039",
+      "q0041"
+    ],
+    "subject": "Anton Vesh",
+    "text": "Who was Anton Vesh and on what date is he mentioned in relation to the Colonial Council?",
+    "expected": "secretary of the Colonial Council, July 3, 2049"
+  },
+  {
+    "id": "probe_q0047_q0506_01",
+    "fact_ids": [
+      "q0047",
+      "q0506"
+    ],
+    "subject": "Carl Doman",
+    "text": "In what role did Carl Doman operate and where was he physically located at that time?",
+    "expected": "Interplan agent, next to the door"
+  },
+  {
+    "id": "probe_q0506_q0507_02",
+    "fact_ids": [
+      "q0506",
+      "q0507"
+    ],
+    "subject": "Carl Doman",
+    "text": "Where was Carl Doman located and what action did he take immediately after?",
+    "expected": "next to the door, puts the gun back in the holster"
+  },
+  {
+    "id": "probe_q0507_q0508_03",
+    "fact_ids": [
+      "q0507",
+      "q0508"
+    ],
+    "subject": "Carl Doman",
+    "text": "After putting the gun back in the holster, where did Carl Doman go?",
+    "expected": "puts the gun back in the holster, the Wacker Drive headquarters"
+  },
+  {
+    "id": "probe_q0001_q0002_04",
+    "fact_ids": [
+      "q0001",
+      "q0002"
+    ],
+    "subject": "Douglas Quail",
+    "text": "What profession did Douglas Quail have and in which office did he work?",
+    "expected": "archivist, Cook County Land Registry Office"
+  },
+  {
+    "id": "probe_q0002_q0003_05",
+    "fact_ids": [
+      "q0002",
+      "q0003"
+    ],
+    "subject": "Douglas Quail",
+    "text": "In which office did Douglas Quail work and in which city was this office located?",
+    "expected": "Cook County Land Registry Office, Chicago"
+  },
+  {
+    "id": "probe_q0003_q0004_06",
+    "fact_ids": [
+      "q0003",
+      "q0004"
+    ],
+    "subject": "Douglas Quail",
+    "text": "In which city did Douglas Quail live and on which street was his residence located?",
+    "expected": "Chicago, Halsted Street"
+  },
+  {
+    "id": "probe_q0004_q0005_07",
+    "fact_ids": [
+      "q0004",
+      "q0005"
+    ],
+    "subject": "Douglas Quail",
+    "text": "On which street did Douglas Quail live and on which floor was his apartment located?",
+    "expected": "Halsted Street, fourteenth"
+  },
+  {
+    "id": "probe_q0005_q0006_08",
+    "fact_ids": [
+      "q0005",
+      "q0006"
+    ],
+    "subject": "Douglas Quail",
+    "text": "On which floor did Douglas Quail live and how old was he?",
+    "expected": "fourteenth, 41 years old"
+  },
+  {
+    "id": "probe_q0006_q0007_09",
+    "fact_ids": [
+      "q0006",
+      "q0007"
+    ],
+    "subject": "Douglas Quail",
+    "text": "How old was Douglas Quail and from which city did he come?",
+    "expected": "41 years old, Joliet"
+  },
+  {
+    "id": "probe_q0007_q0008_10",
+    "fact_ids": [
+      "q0007",
+      "q0008"
+    ],
+    "subject": "Douglas Quail",
+    "text": "From which city did Douglas Quail come and on what date is he mentioned?",
+    "expected": "Joliet, March 12, 2011"
+  },
+  {
+    "id": "probe_q0008_q0009_11",
+    "fact_ids": [
+      "q0008",
+      "q0009"
+    ],
+    "subject": "Douglas Quail",
+    "text": "On what date is Douglas Quail mentioned and who was his wife?",
+    "expected": "March 12, 2011, Kirsten"
+  },
+  {
+    "id": "probe_q0009_q0010_12",
+    "fact_ids": [
+      "q0009",
+      "q0010"
+    ],
+    "subject": "Douglas Quail",
+    "text": "Who was Douglas Quail's wife and on which planet was his dream set?",
+    "expected": "Kirsten, Mars"
+  },
+  {
+    "id": "probe_q0010_q0011_13",
+    "fact_ids": [
+      "q0010",
+      "q0011"
+    ],
+    "subject": "Douglas Quail",
+    "text": "On which planet was Douglas Quail's dream set and what did he collect?",
+    "expected": "Mars, Mars postcards"
+  },
+  {
+    "id": "probe_q0011_q0012_14",
+    "fact_ids": [
+      "q0011",
+      "q0012"
+    ],
+    "subject": "Douglas Quail",
+    "text": "What did Douglas Quail collect and who was his contact for memories?",
+    "expected": "Mars postcards, Harold Brenner"
+  },
+  {
+    "id": "probe_q0012_q0013_15",
+    "fact_ids": [
+      "q0012",
+      "q0013"
+    ],
+    "subject": "Douglas Quail",
+    "text": "Who was Harold Brenner and by what means of transport did Douglas Quail travel?",
+    "expected": "Harold Brenner, monorail"
+  },
+  {
+    "id": "probe_q0013_q0023_16",
+    "fact_ids": [
+      "q0013",
+      "q0023"
+    ],
+    "subject": "Douglas Quail",
+    "text": "By what means of transport did Douglas Quail travel and what package did he purchase?",
+    "expected": "monorail, Secret Agent on Mars"
+  },
+  {
+    "id": "probe_q0023_q0025_17",
+    "fact_ids": [
+      "q0023",
+      "q0025"
+    ],
+    "subject": "Douglas Quail",
+    "text": "What package did Douglas Quail purchase and on what date is he mentioned?",
+    "expected": "Secret Agent on Mars, October 14, 2052"
+  },
+  {
+    "id": "probe_q0025_q0032_18",
+    "fact_ids": [
+      "q0025",
+      "q0032"
+    ],
+    "subject": "Douglas Quail",
+    "text": "On what date is Douglas Quail mentioned and what secret agent name did he use?",
+    "expected": "October 14, 2052, Airone"
+  },
+  {
+    "id": "probe_q0032_q0033_19",
+    "fact_ids": [
+      "q0032",
+      "q0033"
+    ],
+    "subject": "Douglas Quail",
+    "text": "What secret agent name did Douglas Quail use and for which organization did he work?",
+    "expected": "Airone, Interplan"
+  },
+  {
+    "id": "probe_q0033_q0034_20",
+    "fact_ids": [
+      "q0033",
+      "q0034"
+    ],
+    "subject": "Douglas Quail",
+    "text": "For which organization did Douglas Quail work and in which year is the story set?",
+    "expected": "Interplan, 2049"
+  },
+  {
+    "id": "probe_q0034_q0035_21",
+    "fact_ids": [
+      "q0034",
+      "q0035"
+    ],
+    "subject": "Douglas Quail",
+    "text": "In which year is the story set and on which spaceship was Douglas Quail traveling?",
+    "expected": "2049, Perseveranza"
+  },
+  {
+    "id": "probe_q0035_q0036_22",
+    "fact_ids": [
+      "q0035",
+      "q0036"
+    ],
+    "subject": "Douglas Quail",
+    "text": "On which spaceship was Douglas Quail traveling and in which hotel was he staying?",
+    "expected": "Perseveranza, Albergo Tharsis"
+  },
+  {
+    "id": "probe_q0036_q0037_23",
+    "fact_ids": [
+      "q0036",
+      "q0037"
+    ],
+    "subject": "Douglas Quail",
+    "text": "In which hotel was Douglas Quail staying and in which region of Marte was he located?",
+    "expected": "Albergo Tharsis, Syrtis Major"
+  },
+  {
+    "id": "probe_q0037_q0038_24",
+    "fact_ids": [
+      "q0037",
+      "q0038"
+    ],
+    "subject": "Douglas Quail",
+    "text": "In which region of Marte was Douglas Quail located and who was his contact?",
+    "expected": "Syrtis Major, Anton Vesh"
+  },
+  {
+    "id": "probe_q0038_q0040_25",
+    "fact_ids": [
+      "q0038",
+      "q0040"
+    ],
+    "subject": "Douglas Quail",
+    "text": "Who was Douglas Quail's contact and what weapon did he carry?",
+    "expected": "Anton Vesh, needle gun"
+  },
+  {
+    "id": "probe_q0040_q0045_26",
+    "fact_ids": [
+      "q0040",
+      "q0045"
+    ],
+    "subject": "Douglas Quail",
+    "text": "What weapon did Douglas Quail carry and what identification document did he use?",
+    "expected": "needle gun, Airone card"
+  },
+  {
+    "id": "probe_q0045_q0046_27",
+    "fact_ids": [
+      "q0045",
+      "q0046"
+    ],
+    "subject": "Douglas Quail",
+    "text": "What identification document did Douglas Quail use and what communication device did he have?",
+    "expected": "Airone card, transmitter"
+  },
+  {
+    "id": "probe_q0046_q0049_28",
+    "fact_ids": [
+      "q0046",
+      "q0049"
+    ],
+    "subject": "Douglas Quail",
+    "text": "What communication device did Douglas Quail have and how long had he been married?",
+    "expected": "transmitter, nine years"
+  },
+  {
+    "id": "probe_q0049_q0050_29",
+    "fact_ids": [
+      "q0049",
+      "q0050"
+    ],
+    "subject": "Douglas Quail",
+    "text": "How long had Douglas Quail been married and in which year did he get married?",
+    "expected": "nine years, 2020"
+  },
+  {
+    "id": "probe_q0050_q0055_30",
+    "fact_ids": [
+      "q0050",
+      "q0055"
+    ],
+    "subject": "Douglas Quail",
+    "text": "In which year did Douglas Quail get married and what did he eat before the session?",
+    "expected": "2020, cheese sandwich"
+  },
+  {
+    "id": "probe_q0055_q0057_31",
+    "fact_ids": [
+      "q0055",
+      "q0057"
+    ],
+    "subject": "Douglas Quail",
+    "text": "What did Douglas Quail eat and on what date did he undergo the session?",
+    "expected": "cheese sandwich, October 16, 2052"
+  },
+  {
+    "id": "probe_q0057_q0331_32",
+    "fact_ids": [
+      "q0057",
+      "q0331"
+    ],
+    "subject": "Douglas Quail",
+    "text": "On what date did Douglas Quail undergo the session and at what time?",
+    "expected": "October 16, 2052, 19:40"
+  },
+  {
+    "id": "probe_q0331_q0340_33",
+    "fact_ids": [
+      "q0331",
+      "q0340"
+    ],
+    "subject": "Douglas Quail",
+    "text": "At what time did Douglas Quail undergo the session and what did he do with the card afterwards?",
+    "expected": "19:40, burn it in the sink"
+  },
+  {
+    "id": "probe_q0340_q0585_34",
+    "fact_ids": [
+      "q0340",
+      "q0585"
+    ],
+    "subject": "Douglas Quail",
+    "text": "What did Douglas Quail do with the card and what book did he read?",
+    "expected": "burn it in the sink, Le lune di ferro"
+  },
+  {
+    "id": "probe_q0014_q0015_35",
+    "fact_ids": [
+      "q0014",
+      "q0015"
+    ],
+    "subject": "Kirsten Quail",
+    "text": "What profession did Kirsten Quail have and how long had she been married?",
+    "expected": "technical translator, nine years"
+  },
+  {
+    "id": "probe_q0021_q0022_36",
+    "fact_ids": [
+      "q0021",
+      "q0022"
+    ],
+    "subject": "McClane",
+    "text": "On which floor was McClane located and what color were his eyes?",
+    "expected": "thirtieth, sand-colored"
+  },
+  {
+    "id": "probe_q0022_q0031_37",
+    "fact_ids": [
+      "q0022",
+      "q0031"
+    ],
+    "subject": "McClane",
+    "text": "What color were McClane's eyes and how much did the package cost?",
+    "expected": "sand-colored, 600 credits"
+  },
+  {
+    "id": "probe_q0048_q0421_38",
+    "fact_ids": [
+      "q0048",
+      "q0421"
+    ],
+    "subject": "Paul Heller",
+    "text": "What role did Paul Heller have and how old was he?",
+    "expected": "Interplan psychiatrist, 63 years old"
+  },
+  {
+    "id": "probe_q0421_q0422_39",
+    "fact_ids": [
+      "q0421",
+      "q0422"
+    ],
+    "subject": "Paul Heller",
+    "text": "How old was Paul Heller and from which city did he come?",
+    "expected": "63 years old, Peoria"
+  },
+  {
+    "id": "probe_q0422_q0423_40",
+    "fact_ids": [
+      "q0422",
+      "q0423"
+    ],
+    "subject": "Paul Heller",
+    "text": "Which city did Paul Heller come from and at which university did he graduate?",
+    "expected": "Peoria, Università di Saint Paul"
+  },
+  {
+    "id": "probe_q0423_q0424_41",
+    "fact_ids": [
+      "q0423",
+      "q0424"
+    ],
+    "subject": "Paul Heller",
+    "text": "At which university did Paul Heller graduate and in what year?",
+    "expected": "Università di Saint Paul, 2024"
+  },
+  {
+    "id": "probe_q0424_q0425_42",
+    "fact_ids": [
+      "q0424",
+      "q0425"
+    ],
+    "subject": "Paul Heller",
+    "text": "In what year did Paul Heller graduate and what role did he hold?",
+    "expected": "2024, recruit examiner"
+  },
+  {
+    "id": "probe_q0019_q0020_43",
+    "fact_ids": [
+      "q0019",
+      "q0020"
+    ],
+    "subject": "Rekal",
+    "text": "What did Rekal sell and who was his client?",
+    "expected": "fabricated memories, McClane"
+  },
+  {
+    "id": "probe_q0020_q0030_44",
+    "fact_ids": [
+      "q0020",
+      "q0030"
+    ],
+    "subject": "Rekal",
+    "text": "Who was Rekal's client and which drug did he use?",
+    "expected": "McClane, narkidrine"
+  },
+  {
+    "id": "probe_q0030_q0154_45",
+    "fact_ids": [
+      "q0030",
+      "q0154"
+    ],
+    "subject": "Rekal",
+    "text": "Which drug did Rekal use and on which street was his office located?",
+    "expected": "narkidrine, LaSalle Street"
+  },
+  {
+    "id": "probe_q0154_q0155_46",
+    "fact_ids": [
+      "q0154",
+      "q0155"
+    ],
+    "subject": "Rekal",
+    "text": "On which street was Rekal's office located and in which tower was it situated?",
+    "expected": "LaSalle Street, Torre Ashford"
+  },
+  {
+    "id": "probe_q0028_q0502_47",
+    "fact_ids": [
+      "q0028",
+      "q0502"
+    ],
+    "subject": "Ruth Keeler",
+    "text": "What role did Ruth Keeler have and what quantity of liquid did she administer?",
+    "expected": "chief technician, four cubic centimeters"
+  },
+  {
+    "id": "probe_q0502_q0503_48",
+    "fact_ids": [
+      "q0502",
+      "q0503"
+    ],
+    "subject": "Ruth Keeler",
+    "text": "What quantity of liquid did Ruth Keeler administer and what did she do afterwards?",
+    "expected": "four cubic centimeters, stops the IV"
+  },
+  {
+    "id": "probe_q0029_q0504_49",
+    "fact_ids": [
+      "q0029",
+      "q0504"
+    ],
+    "subject": "Tom Birch",
+    "text": "What role did Tom Birch have and which room number is associated with him?",
+    "expected": "technical assistant, 1459"
+  },
+  {
+    "id": "probe_q0504_q0505_50",
+    "fact_ids": [
+      "q0504",
+      "q0505"
+    ],
+    "subject": "Tom Birch",
+    "text": "Which room number is associated with Tom Birch and who was his superior?",
+    "expected": "1459, Carl Doman"
+  },
+  {
+    "id": "probe_q0156_q0157_51",
+    "fact_ids": [
+      "q0156",
+      "q0157"
+    ],
+    "subject": "Torre Ashford",
+    "text": "How many floors did the Torre Ashford have and which floors were occupied?",
+    "expected": "thirty-four, from the twenty-eighth to the thirty-first"
+  },
+  {
+    "id": "probe_q0157_q0158_52",
+    "fact_ids": [
+      "q0157",
+      "q0158"
+    ],
+    "subject": "Torre Ashford",
+    "text": "Which floors of the Torre Ashford were occupied and what material was the facade made of?",
+    "expected": "from the twenty-eighth to the thirty-first, green glass and aluminum"
+  },
+  {
+    "id": "probe_q0158_q0159_53",
+    "fact_ids": [
+      "q0158",
+      "q0159"
+    ],
+    "subject": "Torre Ashford",
+    "text": "What material was the facade of the Torre Ashford made of and on which street did it face?",
+    "expected": "green glass and aluminum, Randolph"
+  },
+  {
+    "id": "probe_q0051_q0052_54",
+    "fact_ids": [
+      "q0051",
+      "q0052"
+    ],
+    "subject": "Vornidi",
+    "text": "Who were the Vornidi and what promise had they made to Douglas Quail?",
+    "expected": "Tessaly, not to invade Earth while he lives"
+  },
+  {
+    "id": "probe_q0052_q0053_55",
+    "fact_ids": [
+      "q0052",
+      "q0053"
+    ],
+    "subject": "Vornidi",
+    "text": "What promise had the Vornidi made to Douglas Quail and where were they hiding?",
+    "expected": "not to invade Earth while he lives, grandfather Walter's garden"
+  },
+  {
+    "id": "probe_q0053_q0054_56",
+    "fact_ids": [
+      "q0053",
+      "q0054"
+    ],
+    "subject": "Vornidi",
+    "text": "Where were the Vornidi hiding and which tree was important to them?",
+    "expected": "grandfather Walter's garden, apple tree"
+  },
+  {
+    "id": "probe_q0054_q0056_57",
+    "fact_ids": [
+      "q0054",
+      "q0056"
+    ],
+    "subject": "Vornidi",
+    "text": "Which tree was important to the Vornidi and what did they find in the garden?",
+    "expected": "apple tree, blue bead"
+  },
+  {
+    "id": "probe_q0573_q0574_58",
+    "fact_ids": [
+      "q0573",
+      "q0574"
+    ],
+    "subject": "the diary of Douglas Quail",
+    "text": "Which book was the diary of Douglas Quail and what color was the cover?",
+    "expected": "Cronache della Ruggine, bottle green"
+  },
+  {
+    "id": "probe_q0574_q0575_59",
+    "fact_ids": [
+      "q0574",
+      "q0575"
+    ],
+    "subject": "the diary of Douglas Quail",
+    "text": "What color was the cover of the diary of Douglas Quail and where did he keep it?",
+    "expected": "bottle green, closed drawer of the desk at the Registry"
+  },
+  {
+    "id": "probe_q0575_q0576_60",
+    "fact_ids": [
+      "q0575",
+      "q0576"
+    ],
+    "subject": "the diary of Douglas Quail",
+    "text": "Where did Douglas Quail keep the diary and in which stationery store had he bought it?",
+    "expected": "closed drawer of the desk at the Registry, Feldman's stationery store"
+  },
+  {
+    "id": "probe_q0576_q0577_61",
+    "fact_ids": [
+      "q0576",
+      "q0577"
+    ],
+    "subject": "the diary of Douglas Quail",
+    "text": "In which stationery store had Douglas Quail bought the diary and how much had he paid for it?",
+    "expected": "Feldman's stationery store, 4 credits"
+  },
+  {
+    "id": "probe_q0577_q0578_62",
+    "fact_ids": [
+      "q0577",
+      "q0578"
+    ],
+    "subject": "the diary of Douglas Quail",
+    "text": "How much had Douglas Quail paid for the diary and how many pages did it have?",
+    "expected": "4 credits, 96 pages"
+  },
+  {
+    "id": "probe_q0578_q0579_63",
+    "fact_ids": [
+      "q0578",
+      "q0579"
+    ],
+    "subject": "the diary of Douglas Quail",
+    "text": "How many pages did the diary of Douglas Quail have and with what did he write?",
+    "expected": "96 pages, copying pencil"
+  },
+  {
+    "id": "probe_q0579_q0580_64",
+    "fact_ids": [
+      "q0579",
+      "q0580"
+    ],
+    "subject": "the diary of Douglas Quail",
+    "text": "With what did Douglas Quail write in the diary and on what date did he start writing it?",
+    "expected": "copying pencil, September 3, 2052"
+  },
+  {
+    "id": "probe_q0580_q0581_65",
+    "fact_ids": [
+      "q0580",
+      "q0581"
+    ],
+    "subject": "the diary of Douglas Quail",
+    "text": "On what date did Douglas Quail start writing the diary and on what date did he finish it?",
+    "expected": "September 3, 2052, October 11, 2052"
+  },
+  {
+    "id": "probe_q0581_q0582_66",
+    "fact_ids": [
+      "q0581",
+      "q0582"
+    ],
+    "subject": "the diary of Douglas Quail",
+    "text": "On what date did Douglas Quail finish writing the diary and how many entries did it contain?",
+    "expected": "October 11, 2052, twenty-three"
+  },
+  {
+    "id": "probe_q0582_q0583_67",
+    "fact_ids": [
+      "q0582",
+      "q0583"
+    ],
+    "subject": "the diary of Douglas Quail",
+    "text": "How many entries did the diary of Douglas Quail contain and at what time of day did he write?",
+    "expected": "twenty-three, lunch break"
+  },
+  {
+    "id": "probe_q0583_q0584_68",
+    "fact_ids": [
+      "q0583",
+      "q0584"
+    ],
+    "subject": "the diary of Douglas Quail",
+    "text": "At what time of day did Douglas Quail write and what health problem did he have?",
+    "expected": "lunch break, insomnia"
+  },
+  {
+    "id": "probe_q0024_q0026_69",
+    "fact_ids": [
+      "q0024",
+      "q0026"
+    ],
+    "subject": "Agente segreto su Marte package",
+    "text": "How much did the Agente segreto su Marte package cost and what did it include?",
+    "expected": "1,200 credits, Perseveranza ticket"
+  },
+  {
+    "id": "probe_q0026_q0027_70",
+    "fact_ids": [
+      "q0026",
+      "q0027"
+    ],
+    "subject": "Agente segreto su Marte package",
+    "text": "What did the Agente segreto su Marte package include besides the ticket?",
+    "expected": "Perseveranza ticket, two photographs"
+  },
+  {
+    "id": "probe_q0496_q0497_71",
+    "fact_ids": [
+      "q0496",
+      "q0497"
+    ],
+    "subject": "October 16 session",
+    "text": "At what time was the October 16 session scheduled and in which room was it held?",
+    "expected": "nine in the morning, implant room number 4"
+  },
+  {
+    "id": "probe_q0497_q0498_72",
+    "fact_ids": [
+      "q0497",
+      "q0498"
+    ],
+    "subject": "October 16 session",
+    "text": "In which room was the October 16 session held and for which organization?",
+    "expected": "implant room number 4, Interplan"
+  },
+  {
+    "id": "probe_q0498_q0499_73",
+    "fact_ids": [
+      "q0498",
+      "q0499"
+    ],
+    "subject": "October 16 session",
+    "text": "For which organization was the October 16 session and who was leading it?",
+    "expected": "Interplan, McClane"
+  },
+  {
+    "id": "probe_q0499_q0500_74",
+    "fact_ids": [
+      "q0499",
+      "q0500"
+    ],
+    "subject": "October 16 session",
+    "text": "Who was leading the October 16 session and how many agents were present?",
+    "expected": "McClane, three agents"
+  },
+  {
+    "id": "probe_q0500_q0501_75",
+    "fact_ids": [
+      "q0500",
+      "q0501"
+    ],
+    "subject": "October 16 session",
+    "text": "How many agents were present at the October 16 session and against whom was it directed?",
+    "expected": "three agents, the Vornidi"
+  },
+  {
+    "id": "probe_q0332_q0333_76",
+    "fact_ids": [
+      "q0332",
+      "q0333"
+    ],
+    "subject": "Airone card",
+    "text": "Where did Douglas Quail keep the Airone card and what color was it?",
+    "expected": "inner pocket of the trench coat, olive green"
+  },
+  {
+    "id": "probe_q0333_q0334_77",
+    "fact_ids": [
+      "q0333",
+      "q0334"
+    ],
+    "subject": "Airone card",
+    "text": "What color was the Airone card and what material was it made of?",
+    "expected": "olive green, laminated celluloid"
+  },
+  {
+    "id": "probe_q0334_q0335_78",
+    "fact_ids": [
+      "q0334",
+      "q0335"
+    ],
+    "subject": "Airone card",
+    "text": "What material was the Airone card made of and what identification number did it have?",
+    "expected": "laminated celluloid, IP-4471"
+  },
+  {
+    "id": "probe_q0335_q0336_79",
+    "fact_ids": [
+      "q0335",
+      "q0336"
+    ],
+    "subject": "Airone card",
+    "text": "What identification number did the Airone card have and what was its expiration date?",
+    "expected": "IP-4471, December 31, 2049"
+  },
+  {
+    "id": "probe_q0336_q0337_80",
+    "fact_ids": [
+      "q0336",
+      "q0337"
+    ],
+    "subject": "Airone card",
+    "text": "What was the expiration date on the Airone card and who was the original holder?",
+    "expected": "December 31, 2049, Marcus Rendell"
+  },
+  {
+    "id": "probe_q0337_q0338_81",
+    "fact_ids": [
+      "q0337",
+      "q0338"
+    ],
+    "subject": "Airone card",
+    "text": "Who was the original holder of the Airone card and who had counterfeited it?",
+    "expected": "Marcus Rendell, Rekal"
+  },
+  {
+    "id": "probe_q0338_q0339_82",
+    "fact_ids": [
+      "q0338",
+      "q0339"
+    ],
+    "subject": "Airone card",
+    "text": "Who had counterfeited the Airone card and who was their superior?",
+    "expected": "Rekal, Carl Doman"
+  }
+]
