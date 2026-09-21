@@ -193,10 +193,18 @@ Everything below the engine runs against fakes on any machine:
 
 ```sh
 git clone https://github.com/fulvian/engraft-ngram && cd engraft-ngram
-uv run python -m engraft.teacher --fake --usage-corpus <corpus> --out /tmp/t.npz
-uv run python -m engraft.descend_corpus --fake --help
+
+# capture, descent, evaluation and damage, end to end, on a synthetic model
 uv run pytest tests/test_descend_corpus.py tests/test_eval.py tests/test_damage.py
+
+# what a descent takes, and what the measured run passed it
+uv run python -m engraft.descend_corpus --help
+cat data/quail/config/s0b.json
 ```
+
+The `--fake` path builds its own tiny model, table and corpus
+([`engraft/testing/`](engraft/testing/)); it is the mechanism running, not the measured run.
+The shipped Quail corpus is tokenized for the real model and needs the real engine.
 
 ## Limitations, without discounts
 
