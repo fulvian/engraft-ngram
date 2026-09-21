@@ -244,6 +244,28 @@ def c_specular_mixed():
             str(sum(1 for x in b if x["hit_a"] or x["hit_b"])), str(len(b)))
 
 
+def _row_sharing():
+    return _load("data/quail/results/s0b/row_sharing.json")
+
+
+def c_row_sharing_windows():
+    d = _row_sharing()
+    return (f"{d['n_rows_overlay']:,}", str(d["n_rows_multi_window"]))
+
+
+def c_row_sharing_collision_auc():
+    return f"{_row_sharing()['contrasts']['frac_pure_hash_collision']['auc']:.3f}"
+
+
+def c_row_sharing_content_share():
+    return f"{_row_sharing()['groups']['success']['shared_by_content']:.3f}"
+
+
+def c_row_sharing_siblings():
+    d = _row_sharing()
+    return (str(d["subject_or_template"]["n_compared"]), str(d["subject_or_template"]["same_subject"]))
+
+
 CHECKS = [
     dict(
         label="Quail table: exact answer, engine, free routing (s0b)",
@@ -392,6 +414,26 @@ CHECKS = [
         label="Specular zh-on-it: mixed-script probes",
         readme_pattern=r"do no better: (\d+) of (\d+) and (\d+) of (\d+)\.",
         compute=lambda: tuple(x for x in c_specular_mixed()),
+    ),
+    dict(
+        label="Row sharing: rows written through more than one window",
+        readme_pattern=r"Of the ([\d,]+) rows in\n  the Quail overlay, (\d+) are written through more than one token window",
+        compute=c_row_sharing_windows,
+    ),
+    dict(
+        label="Row sharing: pure-collision AUC",
+        readme_pattern=r"separates successes from failures with AUC ([\d.]+)",
+        compute=c_row_sharing_collision_auc,
+    ),
+    dict(
+        label="Row sharing: share of read slots shared by content (successes)",
+        readme_pattern=r"([\d.]+) of the slots a successful\n  prompt reads",
+        compute=c_row_sharing_content_share,
+    ),
+    dict(
+        label="Row sharing: failures lost to a sibling of the same subject",
+        readme_pattern=r"of the (\d+) failures whose first token belongs to\n  another grafted fact, (\d+) are facts about the same subject",
+        compute=c_row_sharing_siblings,
     ),
 ]
 

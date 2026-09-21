@@ -211,6 +211,15 @@ The shipped Quail corpus is tokenized for the real model and needs the real engi
 - **Rephrasing is covered only as far as the corpus goes.** The table fires on exact n-grams, so
   a sentence that shares no n-gram with the corpus is not covered, by construction.
 - **Composition is weak.** Answering two facts in one question works on 10 of 83 probes.
+- **Facts about the same subject share rows — by content, not by hash.** Of the 14,032 rows in
+  the Quail overlay, 12 are written through more than one token window; the share of the slots a
+  prompt reads that are in a pure hash collision separates successes from failures with AUC 0.503,
+  i.e. not at all. What is shared is the subject's own n-grams: 0.954 of the slots a successful
+  prompt reads are also written by other facts through the *same* window. So where a graft loses,
+  it loses to a sibling rather than to noise — of the 37 failures whose first token belongs to
+  another grafted fact, 32 are facts about the same subject
+  ([`results/s0b/row_sharing.json`](data/quail/results/s0b/row_sharing.json)). Exact-key
+  addressing would not change this; deliberately constructed colliding facts have not been tested.
 - **Families differ.** On Quail, cloze prompts are the weakest family: first token 0.63 against
   0.70–0.81 for the others, pinned routing.
 - **Damage grows with the number of facts.** It is 4× the quantization yardstick at 100 facts on
