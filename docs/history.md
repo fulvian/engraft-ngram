@@ -365,6 +365,12 @@ A Chinese cell given equal mass per fact remains the next measurement.
   subject, so they read that subject's rows by construction; there is no disjoint control in
   this corpus. Separating row interference from a downstream readout limit needs probes
   spanning two different subjects — a new corpus. Same reader, same day.
+- **Fact updates.** Graft «X is A», later «X is B» under the same trigger: which one does the
+  model answer? Never measured. Two arms: *rewrite* (regenerate the overlay with B in place of
+  A) against *stacking* (a second descent of B on top of A's rows, the very same rows). The
+  «heavier sibling wins 21 of 37» figure says nothing about recency: all hundred facts are
+  written in one descent. The one precedent is the counterfactual fact of `v0.1.0` that did
+  not take. Suggested by a reader.
 - **Bring the technical report (`paper/engraft.pdf`) level with the README.** It predates the
   positioning («token-addressed memory, not editing, not a retrieval rival»), the truncated
   composition probes and the corrected demo, so release `v0.2.2` ships without it. To be
