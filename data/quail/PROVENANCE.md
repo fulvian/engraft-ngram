@@ -25,7 +25,9 @@ This release measures the technique primarily on the Italian version of the corp
 (`corpus/s0b/`, `overlays/s0b/`, `results/s0b/`). A Chinese, machine-translated version of
 the same 100 facts (`corpus/z0b-preliminary/`, `overlays/z0b-preliminary/`,
 `results/z0b-preliminary/`) is included as a preliminary result — see
-`results/languages/README.md` for what is and is not controlled between the two. We are
-working on other languages, such as English and Chinese, which do not yet have definitive
-results; `corpus/en-preliminary/` contains the English facts and probe questions for that
-ongoing work, without a corresponding trained overlay or measurement cell yet.
+`results/languages/README.md` for what is and is not controlled between the two. An English rebuild of the same world
+(`corpus/en-preliminary/`, `results/e0b-preliminary/`) is included on the same terms; it
+covers 97 of the 100 facts. Neither is a definitive result. The English *probe* file
+`corpus/en-preliminary/probes.json` is defective — 61 of its 79 questions contain one of
+their own answers in the question text — and no published number depends on it; it has to be
+regenerated before any cross-language composition comparison.

@@ -1,0 +1,924 @@
+{
+  "n_chunks_requested": 48,
+  "n_chunks_done": 16,
+  "gpu_minutes_cap": 30.0,
+  "total_s": 697.5202088356018,
+  "forward_s_mean": 43.25619760155678,
+  "chunks": [
+    {
+      "i": 0,
+      "start": 1652729,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 178,
+      "forward_s": 49.193031549453735
+    },
+    {
+      "i": 1,
+      "start": 4097268,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 146,
+      "forward_s": 43.34037256240845
+    },
+    {
+      "i": 2,
+      "start": 7523859,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 208,
+      "forward_s": 43.28891968727112
+    },
+    {
+      "i": 3,
+      "start": 17526369,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 125,
+      "forward_s": 43.1842257976532
+    },
+    {
+      "i": 4,
+      "start": 26978115,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 386,
+      "forward_s": 40.943885803222656
+    },
+    {
+      "i": 5,
+      "start": 30782308,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 155,
+      "forward_s": 42.91729211807251
+    },
+    {
+      "i": 6,
+      "start": 50361664,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 197,
+      "forward_s": 42.948312520980835
+    },
+    {
+      "i": 7,
+      "start": 51112594,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 186,
+      "forward_s": 43.00979018211365
+    },
+    {
+      "i": 8,
+      "start": 60662333,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 172,
+      "forward_s": 42.79802918434143
+    },
+    {
+      "i": 9,
+      "start": 63694855,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 165,
+      "forward_s": 43.19041585922241
+    },
+    {
+      "i": 10,
+      "start": 64940241,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 126,
+      "forward_s": 43.403379678726196
+    },
+    {
+      "i": 11,
+      "start": 72948162,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 128,
+      "forward_s": 42.916072368621826
+    },
+    {
+      "i": 12,
+      "start": 81325353,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 150,
+      "forward_s": 43.210535764694214
+    },
+    {
+      "i": 13,
+      "start": 85060667,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 119,
+      "forward_s": 42.185165882110596
+    },
+    {
+      "i": 14,
+      "start": 91273684,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 203,
+      "forward_s": 42.77758526802063
+    },
+    {
+      "i": 15,
+      "start": 97072294,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 117,
+      "forward_s": 42.792147397994995
+    }
+  ],
+  "global": {
+    "n_positions": 32768,
+    "dnll_mean": -0.001839644970410819,
+    "dnll_median": 3.576253675419139e-07,
+    "kl_mean": 0.016004579526877987,
+    "kl_median": 0.004499528789892793,
+    "frac_kl_gt_0_01": 0.3121337890625,
+    "frac_kl_gt_0_1": 0.023162841796875,
+    "frac_kl_gt_1": 0.00067138671875,
+    "worst_20": [
+      {
+        "i": 6,
+        "start": 50361664,
+        "r": 529,
+        "dnll": -5.930794715881348,
+        "kl": 2.4327476024627686,
+        "context": "2 °C while January is the coldest one with an average temperature of 7.5 ",
+        "top3_base": [
+          {
+            "token": 248045,
+            "p": 0.41351303458213806
+          },
+          {
+            "token": 248046,
+            "p": 0.26698410511016846
+          },
+          {
+            "token": 248068,
+            "p": 0.11129552870988846
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 29922,
+            "p": 0.340523362159729
+          },
+          {
+            "token": 34,
+            "p": 0.11768173426389694
+          },
+          {
+            "token": 248046,
+            "p": 0.11055175960063934
+          }
+        ],
+        "target": 29922
+      },
+      {
+        "i": 4,
+        "start": 26978115,
+        "r": 1574,
+        "dnll": 4.3699164390563965,
+        "kl": 0.21507318317890167,
+        "context": " Order (SI 2002/3279)\n\nSee also\nList of",
+        "top3_base": [
+          {
+            "token": 44257,
+            "p": 0.8471148014068604
+          },
+          {
+            "token": 42953,
+            "p": 0.08387572318315506
+          },
+          {
+            "token": 25262,
+            "p": 0.01551545225083828
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 44257,
+            "p": 0.9647996425628662
+          },
+          {
+            "token": 25262,
+            "p": 0.015594534575939178
+          },
+          {
+            "token": 42953,
+            "p": 0.005736908875405788
+          }
+        ],
+        "target": 11818
+      },
+      {
+        "i": 13,
+        "start": 85060667,
+        "r": 1897,
+        "dnll": -4.163629055023193,
+        "kl": 0.02914665825664997,
+        "context": " rifle\n Georges Gauthier-Lafond\n Lucien Genot\n M. Bouchez\n\n",
+        "top3_base": [
+          {
+            "token": 70001,
+            "p": 0.4939553737640381
+          },
+          {
+            "token": 18417,
+            "p": 0.2995990812778473
+          },
+          {
+            "token": 50,
+            "p": 0.06684958934783936
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 70001,
+            "p": 0.48230400681495667
+          },
+          {
+            "token": 18417,
+            "p": 0.29253217577934265
+          },
+          {
+            "token": 50,
+            "p": 0.065272755920887
+          }
+        ],
+        "target": 12834
+      },
+      {
+        "i": 14,
+        "start": 91273684,
+        "r": 616,
+        "dnll": 3.935936450958252,
+        "kl": 0.6316324472427368,
+        "context": " Cathedral Choir School\nMusicians from Bristol\nYear of birth missing (living people)<|endoftext|>A liquid",
+        "top3_base": [
+          {
+            "token": 20340,
+            "p": 0.19721506536006927
+          },
+          {
+            "token": 5758,
+            "p": 0.1355438083410263
+          },
+          {
+            "token": 2919,
+            "p": 0.11961700022220612
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 20340,
+            "p": 0.5369251370429993
+          },
+          {
+            "token": 2919,
+            "p": 0.099321149289608
+          },
+          {
+            "token": 5758,
+            "p": 0.0773513913154602
+          }
+        ],
+        "target": 24261
+      },
+      {
+        "i": 6,
+        "start": 50361664,
+        "r": 489,
+        "dnll": -3.872880220413208,
+        "kl": 2.4061803817749023,
+        "context": "mm of precipitation, while August is the wettest one with average precipitation of 134 ",
+        "top3_base": [
+          {
+            "token": 248046,
+            "p": 0.35452142357826233
+          },
+          {
+            "token": 760,
+            "p": 0.0842062309384346
+          },
+          {
+            "token": 248068,
+            "p": 0.032975632697343826
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 3693,
+            "p": 0.8486518859863281
+          },
+          {
+            "token": 7782,
+            "p": 0.0396919809281826
+          },
+          {
+            "token": 248046,
+            "p": 0.015543598681688309
+          }
+        ],
+        "target": 3693
+      },
+      {
+        "i": 13,
+        "start": 85060667,
+        "r": 1231,
+        "dnll": 3.3694725036621094,
+        "kl": 1.4090882539749146,
+        "context": " & road events\n\nField events\n\nBasketball\n\nBoxing\n\nCanoeing\n\nCycling\n\n",
+        "top3_base": [
+          {
+            "token": 35,
+            "p": 0.34974992275238037
+          },
+          {
+            "token": 80454,
+            "p": 0.12866580486297607
+          },
+          {
+            "token": 16,
+            "p": 0.1135471761226654
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 55054,
+            "p": 0.4807009994983673
+          },
+          {
+            "token": 35,
+            "p": 0.3743703067302704
+          },
+          {
+            "token": 16,
+            "p": 0.019840899854898453
+          }
+        ],
+        "target": 43827
+      },
+      {
+        "i": 14,
+        "start": 91273684,
+        "r": 287,
+        "dnll": -3.229109048843384,
+        "kl": 0.7818299531936646,
+        "context": "2018\n Music and Sound Awards, Nominee Best Sound Design for a Feature Film,",
+        "top3_base": [
+          {
+            "token": 175827,
+            "p": 0.9148045182228088
+          },
+          {
+            "token": 561,
+            "p": 0.012258385308086872
+          },
+          {
+            "token": 19996,
+            "p": 0.009546840563416481
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 175827,
+            "p": 0.32958003878593445
+          },
+          {
+            "token": 19996,
+            "p": 0.2411259114742279
+          },
+          {
+            "token": 561,
+            "p": 0.06096617877483368
+          }
+        ],
+        "target": 19996
+      },
+      {
+        "i": 13,
+        "start": 85060667,
+        "r": 251,
+        "dnll": -3.1653780937194824,
+        "kl": 0.6589624285697937,
+        "context": "'s Individual Road Race (190.4 km)\nJacques Anquetil — ",
+        "top3_base": [
+          {
+            "token": 19,
+            "p": 0.896864116191864
+          },
+          {
+            "token": 15,
+            "p": 0.030689001083374023
+          },
+          {
+            "token": 20,
+            "p": 0.02109222114086151
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 20,
+            "p": 0.49983713030815125
+          },
+          {
+            "token": 19,
+            "p": 0.3892735540866852
+          },
+          {
+            "token": 15,
+            "p": 0.04102913662791252
+          }
+        ],
+        "target": 20
+      },
+      {
+        "i": 15,
+        "start": 97072294,
+        "r": 15,
+        "dnll": -3.0707967281341553,
+        "kl": 1.055350661277771,
+        "context": "<|endoftext|>, LYP, PW91, P86, PZ8",
+        "top3_base": [
+          {
+            "token": 21,
+            "p": 0.3803377151489258
+          },
+          {
+            "token": 23,
+            "p": 0.2962072789669037
+          },
+          {
+            "token": 11,
+            "p": 0.2035800963640213
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 16,
+            "p": 0.6730746626853943
+          },
+          {
+            "token": 23,
+            "p": 0.13253624737262726
+          },
+          {
+            "token": 21,
+            "p": 0.08038730174303055
+          }
+        ],
+        "target": 16
+      },
+      {
+        "i": 12,
+        "start": 81325353,
+        "r": 1861,
+        "dnll": 2.9042792320251465,
+        "kl": 2.605463981628418,
+        "context": "em. It is called The festival of the White Stork and takes place annually in the beginning of",
+        "top3_base": [
+          {
+            "token": 5297,
+            "p": 0.4978944659233093
+          },
+          {
+            "token": 5361,
+            "p": 0.2665036916732788
+          },
+          {
+            "token": 279,
+            "p": 0.08652108162641525
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 279,
+            "p": 0.6609041094779968
+          },
+          {
+            "token": 271,
+            "p": 0.12225497514009476
+          },
+          {
+            "token": 220,
+            "p": 0.027278773486614227
+          }
+        ],
+        "target": 3114
+      },
+      {
+        "i": 14,
+        "start": 91273684,
+        "r": 987,
+        "dnll": -2.698838233947754,
+        "kl": 0.22630059719085693,
+        "context": "970s.\n\nReferences\n\nThermometers\nThermochromism\nLiquid crystals",
+        "top3_base": [
+          {
+            "token": 271,
+            "p": 0.599146842956543
+          },
+          {
+            "token": 198,
+            "p": 0.363400936126709
+          },
+          {
+            "token": 248046,
+            "p": 0.018092667683959007
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 198,
+            "p": 0.47193682193756104
+          },
+          {
+            "token": 271,
+            "p": 0.32435712218284607
+          },
+          {
+            "token": 248046,
+            "p": 0.1532154530286789
+          }
+        ],
+        "target": 248044
+      },
+      {
+        "i": 12,
+        "start": 81325353,
+        "r": 1662,
+        "dnll": -2.6267271041870117,
+        "kl": 0.7831663489341736,
+        "context": " the help of this project an educational centre for disabled people was created in it. The chitalis",
+        "top3_base": [
+          {
+            "token": 614,
+            "p": 0.17065133154392242
+          },
+          {
+            "token": 271,
+            "p": 0.09723421186208725
+          },
+          {
+            "token": 647,
+            "p": 0.05897552892565727
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 53637,
+            "p": 0.3852335214614868
+          },
+          {
+            "token": 647,
+            "p": 0.16058921813964844
+          },
+          {
+            "token": 271,
+            "p": 0.06288764625787735
+          }
+        ],
+        "target": 53637
+      },
+      {
+        "i": 1,
+        "start": 4097268,
+        "r": 207,
+        "dnll": 2.53298282623291,
+        "kl": 0.1882052719593048,
+        "context": " Forbes to rank the Austin metropolitan area number one among all big cities for jobs for 201",
+        "top3_base": [
+          {
+            "token": 22,
+            "p": 0.9073178172111511
+          },
+          {
+            "token": 23,
+            "p": 0.05118737369775772
+          },
+          {
+            "token": 24,
+            "p": 0.010079391300678253
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 22,
+            "p": 0.9947682619094849
+          },
+          {
+            "token": 23,
+            "p": 0.0021760461386293173
+          },
+          {
+            "token": 15,
+            "p": 0.000623447704128921
+          }
+        ],
+        "target": 17
+      },
+      {
+        "i": 4,
+        "start": 26978115,
+        "r": 821,
+        "dnll": -2.4588027000427246,
+        "kl": 0.031130261719226837,
+        "context": "02/3228)\nThe Movement of Animals (Restrictions) (England)",
+        "top3_base": [
+          {
+            "token": 318,
+            "p": 0.9928050637245178
+          },
+          {
+            "token": 6991,
+            "p": 0.003159881569445133
+          },
+          {
+            "token": 21040,
+            "p": 0.0018004461890086532
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 318,
+            "p": 0.9527354836463928
+          },
+          {
+            "token": 6991,
+            "p": 0.036941561847925186
+          },
+          {
+            "token": 4286,
+            "p": 0.00641948077827692
+          }
+        ],
+        "target": 6991
+      },
+      {
+        "i": 0,
+        "start": 1652729,
+        "r": 532,
+        "dnll": 2.45400333404541,
+        "kl": 1.9144463539123535,
+        "context": "ag Abdullayev stated that Azerbaijan would start production of national warships after 201",
+        "top3_base": [
+          {
+            "token": 18,
+            "p": 0.846574604511261
+          },
+          {
+            "token": 20,
+            "p": 0.0892283171415329
+          },
+          {
+            "token": 17,
+            "p": 0.04776047542691231
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 20,
+            "p": 0.8864238262176514
+          },
+          {
+            "token": 18,
+            "p": 0.07276209443807602
+          },
+          {
+            "token": 17,
+            "p": 0.01839713752269745
+          }
+        ],
+        "target": 18
+      },
+      {
+        "i": 12,
+        "start": 81325353,
+        "r": 2022,
+        "dnll": -2.411874771118164,
+        "kl": 0.7451530694961548,
+        "context": ", for example Poland, Croatia, Italy (AC Milan), Spain, England, Malta, Germany,",
+        "top3_base": [
+          {
+            "token": 321,
+            "p": 0.3738578259944916
+          },
+          {
+            "token": 271,
+            "p": 0.1658984124660492
+          },
+          {
+            "token": 4831,
+            "p": 0.09452607482671738
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 321,
+            "p": 0.21421930193901062
+          },
+          {
+            "token": 271,
+            "p": 0.13831037282943726
+          },
+          {
+            "token": 14898,
+            "p": 0.12205847352743149
+          }
+        ],
+        "target": 44512
+      },
+      {
+        "i": 4,
+        "start": 26978115,
+        "r": 1044,
+        "dnll": 2.3739707469940186,
+        "kl": 1.755798578262329,
+        "context": ")\nThe Gloucestershire County Council (Two Mile Bend Bridge) Scheme 2001",
+        "top3_base": [
+          {
+            "token": 65998,
+            "p": 0.8296098113059998
+          },
+          {
+            "token": 6991,
+            "p": 0.04396770894527435
+          },
+          {
+            "token": 318,
+            "p": 0.0321674644947052
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 318,
+            "p": 0.39228343963623047
+          },
+          {
+            "token": 6991,
+            "p": 0.2870006859302521
+          },
+          {
+            "token": 65998,
+            "p": 0.07724519819021225
+          }
+        ],
+        "target": 65998
+      },
+      {
+        "i": 13,
+        "start": 85060667,
+        "r": 1139,
+        "dnll": 2.3722472190856934,
+        "kl": 0.17227724194526672,
+        "context": "ations at the 1952 Summer Olympics\n1952\nSummer Olympics<|endoftext|>France",
+        "top3_base": [
+          {
+            "token": 506,
+            "p": 0.7762037515640259
+          },
+          {
+            "token": 11,
+            "p": 0.06371468305587769
+          },
+          {
+            "token": 198,
+            "p": 0.028273219242691994
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 506,
+            "p": 0.9388614892959595
+          },
+          {
+            "token": 11,
+            "p": 0.01948544569313526
+          },
+          {
+            "token": 198,
+            "p": 0.005942725110799074
+          }
+        ],
+        "target": 63903
+      },
+      {
+        "i": 6,
+        "start": 50361664,
+        "r": 1151,
+        "dnll": -2.335341453552246,
+        "kl": 1.2744934558868408,
+        "context": "hood Council)\n Saidu Sharif ii (Neighbourhood Council)\n Saidu Sharif",
+        "top3_base": [
+          {
+            "token": 14045,
+            "p": 0.7473062872886658
+          },
+          {
+            "token": 585,
+            "p": 0.12986233830451965
+          },
+          {
+            "token": 60001,
+            "p": 0.07399333268404007
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 60001,
+            "p": 0.7645722031593323
+          },
+          {
+            "token": 14045,
+            "p": 0.13286273181438446
+          },
+          {
+            "token": 585,
+            "p": 0.052029792219400406
+          }
+        ],
+        "target": 60001
+      },
+      {
+        "i": 9,
+        "start": 63694855,
+        "r": 582,
+        "dnll": 2.328873634338379,
+        "kl": 0.038269102573394775,
+        "context": "\" in American schools in 1910). The Americans had come to Vancouver to help prepare",
+        "top3_base": [
+          {
+            "token": 279,
+            "p": 0.32408690452575684
+          },
+          {
+            "token": 11549,
+            "p": 0.1530878096818924
+          },
+          {
+            "token": 364,
+            "p": 0.10521561652421951
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 279,
+            "p": 0.36127468943595886
+          },
+          {
+            "token": 11549,
+            "p": 0.1329055279493332
+          },
+          {
+            "token": 364,
+            "p": 0.09134454280138016
+          }
+        ],
+        "target": 5179
+      }
+    ]
+  },
+  "hits": {},
+  "controls": {},
+  "routing_mode": "free"
+}

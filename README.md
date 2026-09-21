@@ -72,31 +72,42 @@ with the routing pinned, 29 s with it free). A step benchmark on the 24-fact cor
 17.4 s. Both use private fast kernels that are not part of this release (see *What is in this
 release*); the reference path is slower.
 
-## Languages (preliminary)
+## Languages: the same world in three
 
-We are working on other languages, such as English and Chinese, which do not yet have
-definitive results.
+Quail was written in Italian and then rebuilt, fact by fact, in Chinese (cell `z0b`) and English
+(cell `e0b`). Both are marked preliminary everywhere: same recipe, same row budget, one seed each,
+and the English corpus covers 97 of the 100 facts. Every number keeps its metric next to it.
 
-We rebuilt the same 100-fact world in Chinese (cell `z0b`, marked preliminary everywhere). Every
-number below keeps its metric next to it:
+| On the real engine, held-out test sentences | Italian `s0b` | English `e0b` | Chinese `z0b` |
+|---|---|---|---|
+| exact answer, greedy, with the overlay | 0.841 | 0.797 | 0.676 |
+| exact answer, greedy, base model | 0.005 | 0.004 | 0.003 |
+| first answer token at rank 1, with the overlay | 0.860 | 0.820 | 0.720 |
+| damage on neutral text of its own language, mean KL | 0.0131 | 0.0160 | 0.0166 |
+| test sentences | 841 | 843 | 954 |
 
-- **Exact answer in the engine:** Chinese 0.676 against Italian 0.841; base models 0.003 and
-  0.005. On this metric Chinese gains less.
-- **First token at rank 1 on the replica, pinned routing, gain over the base prior:** 0.66
-  against 0.64. On this metric the two languages are level.
-- **Per-fact success rate, controlling for how much training text each fact received:** the
-  language effect disappears. The language coefficient's 95 % interval is [−0.124, +0.020],
-  including zero ([`results/languages/mass_ols.json`](data/quail/results/languages/mass_ols.json)).
-  Our candidate cause is the row budget. It was tuned on Italian, and Chinese uses almost twice
-  as many new rows per sentence, so the same budget buys about half as many Chinese training
-  sentences. The decisive test, a Chinese cell given equal training mass per fact, has not been
-  run.
-- **Damage:** the Chinese overlay barely touches Italian text (KL 0.0078). On Chinese text it
-  reaches 0.0166, above the threshold at which we would discuss it.
+**The ordering is training mass, not language.** Per-fact success rate, controlling for how much
+training text each fact received: the language effect disappears. The language
+coefficient's 95 % interval is [−0.124, +0.020], including zero
+([`results/languages/mass_ols.json`](data/quail/results/languages/mass_ols.json)). Our candidate
+cause is the row budget. It was tuned on Italian, and Chinese uses almost twice as many new rows
+per sentence, so the same budget buys about half as many Chinese training sentences. The decisive
+test, a Chinese cell given equal training mass per fact, has not been run.
 
-This suggests that a graft is tied to the script it was written in, so that a fact taught in
-Chinese does not show up in Italian. It is a hypothesis. The test that settles it is still to be
-run.
+**A graft does not cross languages.** This one has been measured, and it is the sharpest result in
+this section. We took the Italian test set and ran it against the *Chinese* overlay
+([`results/languages/specular-zh-on-it/`](data/quail/results/languages/specular-zh-on-it/)):
+
+- exact answer 0.0048, against the base model's 0.0048;
+- first answer token at rank 1 0.0951, against the base model's 0.0951;
+- 764 of 841 sentences identical to the base model down to the probability of the first token;
+- and the engine did read 922 overlay rows on the way. The overlay fires, and changes nothing.
+
+Composition probes in Italian against the Chinese overlay: 0 of 83 with both answers, 3 of 83 with
+at least one — the base model's own numbers. Probes that mix the two scripts (the subject's name in
+one, the sentence in the other) do no better: 0 of 20 and 1 of 20. A fact has to be grafted in the
+language it will be asked in; the rows are keyed by the tokens of its own script. Measured on one
+pair of languages and one cell.
 
 ## How it works
 
@@ -150,8 +161,31 @@ Not in it:
 
 ## Try it on the engine
 
-To be added after the next run on the reference machine: `scripts/ask.py` with the Quail
-overlay, base against overlay.
+`scripts/ask.py` sends one prompt to the engine twice, once without the overlay and once with
+it, and prints for each the top next tokens with their probabilities and a greedy continuation.
+Nothing on disk changes: the overlay rows are substituted at gather time, for that request only.
+
+It needs the three pieces the measurements used: a build of the fork
+([`engine/README.md`](engine/README.md)), the Qwen3.8-Flash-Next shards with the per-head table,
+and an `engraft.toml` pointing at them (copy `engraft.toml.example`). Then:
+
+```sh
+uv run python scripts/ask.py \
+    --overlay data/quail/overlays/s0b/merged.pleo \
+    --prompt "Douglas Quail esercita il ruolo di"
+```
+
+Douglas Quail is a character of the Quail corpus, and `archivista` is the answer the overlay was
+trained to give. That line is test sentence `q0001_a1_f23`, held out from the descent: the base
+model answers something else. Without a tokenizer, pass the token ids of the same prompt instead:
+
+```sh
+uv run python scripts/ask.py --overlay data/quail/overlays/s0b/merged.pleo \
+    --tokens 248044 88481 25540 3297 589 164852 6059 3687 175877 1789
+```
+
+The Chinese overlay of the same hundred facts is `data/quail/overlays/z0b-preliminary/merged.pleo`.
+A recorded transcript of both sides is not in the repository yet.
 
 ## Quick start without a model
 

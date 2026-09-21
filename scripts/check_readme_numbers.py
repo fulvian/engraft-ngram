@@ -163,6 +163,87 @@ def c_zh_damage_it_zh():
     return f"{it_text['global']['kl_mean']:.4f}\n{zh_text['global']['kl_mean']:.4f}"
 
 
+def _lang_cells():
+    return {
+        "it": "s0b",
+        "en": "e0b-preliminary",
+        "zh": "z0b-preliminary",
+    }
+
+
+def _lang_engine(cell):
+    return _load(f"data/quail/results/{cell}/engine_results.json")
+
+
+def c_lang_row(kind: str):
+    """One row of the three-language table, in README column order (it, en, zh)."""
+    out = []
+    for lang in ("it", "en", "zh"):
+        cell = _lang_cells()[lang]
+        if kind == "damage":
+            f = {"it": "s0b/damage_it_text.json",
+                 "en": "e0b-preliminary/damage_en_text.json",
+                 "zh": "z0b-preliminary/damage_zh_text.json"}[lang]
+            out.append(f"{_load(f'data/quail/results/{f}')['global']['kl_mean']:.4f}")
+            continue
+        d = _lang_engine(cell)
+        if kind == "n":
+            out.append(str(len(d)))
+        elif kind == "em":
+            out.append(_frac(sum(1 for x in d if x["greedy"]["student"]["exact_match"]), len(d)))
+        elif kind == "em_base":
+            out.append(_frac(sum(1 for x in d if x["greedy"]["base"]["exact_match"]), len(d)))
+        elif kind == "rank1":
+            out.append(_frac(sum(1 for x in d if x["student"]["rank_first"] == 1), len(d)))
+    return tuple(out)
+
+
+def c_en_facts_covered():
+    d = _lang_engine("e0b-preliminary")
+    fids = {f for x in d for f in x["fact_ids"]}
+    return str(len(fids))
+
+
+def _specular(name="engine_results.json"):
+    return _load(f"data/quail/results/languages/specular-zh-on-it/{name}")
+
+
+def c_specular_em():
+    d = _specular()
+    n = len(d)
+    return (f"{sum(1 for x in d if x['greedy']['student']['exact_match']) / n:.4f}",
+            f"{sum(1 for x in d if x['greedy']['base']['exact_match']) / n:.4f}")
+
+
+def c_specular_rank1():
+    d = _specular()
+    n = len(d)
+    return (f"{sum(1 for x in d if x['student']['rank_first'] == 1) / n:.4f}",
+            f"{sum(1 for x in d if x['base']['rank_first'] == 1) / n:.4f}")
+
+
+def c_specular_identical():
+    d = _specular()
+    return (str(sum(1 for x in d if x["student"]["p_first"] == x["base"]["p_first"])), str(len(d)))
+
+
+def c_specular_overlay_hits():
+    return str(sum(x["student"]["overlay_hits"] for x in _specular()))
+
+
+def c_specular_probes():
+    d = _specular("probe_results.json")
+    return (str(sum(1 for x in d if x["both"])), str(len(d)),
+            str(sum(1 for x in d if x["hit_a"] or x["hit_b"])), str(len(d)))
+
+
+def c_specular_mixed():
+    a = _specular("probe_results_mixed_it.json")
+    b = _specular("probe_results_mixed_zh.json")
+    return (str(sum(1 for x in a if x["hit_a"] or x["hit_b"])), str(len(a)),
+            str(sum(1 for x in b if x["hit_a"] or x["hit_b"])), str(len(b)))
+
+
 CHECKS = [
     dict(
         label="Quail table: exact answer, engine, free routing (s0b)",
@@ -248,17 +329,34 @@ CHECKS = [
         ),
     ),
     dict(
-        label="Languages: exact answer engine, zh vs it, bases",
-        readme_pattern=r"Chinese ([\d.]+) against Italian ([\d.]+); base models ([\d.]+) and\n\s*([\d.]+)\.",
-        compute=lambda: tuple(re.match(
-            r"([\d.]+) against Italian ([\d.]+); base models ([\d.]+) and ([\d.]+)",
-            c_zh_exact_match_pair(),
-        ).groups()),
+        label="Languages table: exact answer with the overlay (it | en | zh)",
+        readme_pattern=r"exact answer, greedy, with the overlay \| ([\d.]+) \| ([\d.]+) \| ([\d.]+) \|",
+        compute=lambda: c_lang_row("em"),
     ),
     dict(
-        label="Languages: gain over base prior, pinned routing, zh vs it",
-        readme_pattern=r"gain over the base prior:\*\* ([\d.]+)\n\s*against ([\d.]+)\.",
-        compute=lambda: tuple(c_zh_gain_pair().split("\n")),
+        label="Languages table: exact answer, base model (it | en | zh)",
+        readme_pattern=r"exact answer, greedy, base model \| ([\d.]+) \| ([\d.]+) \| ([\d.]+) \|",
+        compute=lambda: c_lang_row("em_base"),
+    ),
+    dict(
+        label="Languages table: first token at rank 1 (it | en | zh)",
+        readme_pattern=r"first answer token at rank 1, with the overlay \| ([\d.]+) \| ([\d.]+) \| ([\d.]+) \|",
+        compute=lambda: c_lang_row("rank1"),
+    ),
+    dict(
+        label="Languages table: damage on own-language text (it | en | zh)",
+        readme_pattern=r"damage on neutral text of its own language, mean KL \| ([\d.]+) \| ([\d.]+) \| ([\d.]+) \|",
+        compute=lambda: c_lang_row("damage"),
+    ),
+    dict(
+        label="Languages table: number of test sentences (it | en | zh)",
+        readme_pattern=r"test sentences \| (\d+) \| (\d+) \| (\d+) \|",
+        compute=lambda: c_lang_row("n"),
+    ),
+    dict(
+        label="Languages: facts covered by the English corpus",
+        readme_pattern=r"English corpus covers (\d+) of the 100 facts",
+        compute=c_en_facts_covered,
     ),
     dict(
         label="Languages: 95% CI on the language coefficient",
@@ -266,9 +364,34 @@ CHECKS = [
         compute=c_zh_language_coef_ci,
     ),
     dict(
-        label="Languages: damage KL, zh overlay on it text / zh text",
-        readme_pattern=r"\(KL ([\d.]+)\)\. On Chinese text it\n\s*reaches ([\d.]+),",
-        compute=lambda: tuple(c_zh_damage_it_zh().split("\n")),
+        label="Specular zh-on-it: exact answer, overlay vs base",
+        readme_pattern=r"exact answer ([\d.]+), against the base model's ([\d.]+);",
+        compute=c_specular_em,
+    ),
+    dict(
+        label="Specular zh-on-it: first token at rank 1, overlay vs base",
+        readme_pattern=r"first answer token at rank 1 ([\d.]+), against the base model's ([\d.]+);",
+        compute=c_specular_rank1,
+    ),
+    dict(
+        label="Specular zh-on-it: sentences identical to the base model",
+        readme_pattern=r"- (\d+) of (\d+) sentences identical to the base model",
+        compute=c_specular_identical,
+    ),
+    dict(
+        label="Specular zh-on-it: overlay rows actually read",
+        readme_pattern=r"did read (\d+) overlay rows",
+        compute=c_specular_overlay_hits,
+    ),
+    dict(
+        label="Specular zh-on-it: composition probes",
+        readme_pattern=r"(\d+) of (\d+) with both answers, (\d+) of (\d+) with\n",
+        compute=c_specular_probes,
+    ),
+    dict(
+        label="Specular zh-on-it: mixed-script probes",
+        readme_pattern=r"do no better: (\d+) of (\d+) and (\d+) of (\d+)\.",
+        compute=lambda: tuple(x for x in c_specular_mixed()),
     ),
 ]
 

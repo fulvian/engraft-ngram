@@ -1,0 +1,161 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="960" viewBox="0 0 1800 960" font-family="Inter, 'Noto Sans', 'Segoe UI', Helvetica, Arial, sans-serif">
+<defs><filter id="glow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<rect width="1800" height="960" fill="#0b1220"/>
+<text x="70" y="92" font-size="46" font-weight="800" fill="#e5e7eb">Three things that still do not work.</text>
+<text x="70" y="130" font-size="18" fill="#8b93a7">Same run, same files. These are the numbers we would want a reader to attack first.</text>
+<text x="70" y="216" font-size="21" font-weight="700" fill="#e5e7eb">1 · Two facts in one question</text>
+<text x="70" y="240" font-size="14" fill="#8b93a7">83 probes, each asking for two grafted facts at once.</text>
+<text x="70" y="260" font-size="14" fill="#8b93a7">One dot per probe, free generation on the real engine.</text>
+<rect x="70" y="300" width="30" height="30" rx="8" fill="#67e8f9" stroke="none" stroke-width="2" filter="url(#glow)"/>
+<rect x="109" y="300" width="30" height="30" rx="8" fill="#67e8f9" stroke="none" stroke-width="2" filter="url(#glow)"/>
+<rect x="148" y="300" width="30" height="30" rx="8" fill="#67e8f9" stroke="none" stroke-width="2" filter="url(#glow)"/>
+<rect x="187" y="300" width="30" height="30" rx="8" fill="#67e8f9" stroke="none" stroke-width="2" filter="url(#glow)"/>
+<rect x="226" y="300" width="30" height="30" rx="8" fill="#67e8f9" stroke="none" stroke-width="2" filter="url(#glow)"/>
+<rect x="265" y="300" width="30" height="30" rx="8" fill="#67e8f9" stroke="none" stroke-width="2" filter="url(#glow)"/>
+<rect x="304" y="300" width="30" height="30" rx="8" fill="#67e8f9" stroke="none" stroke-width="2" filter="url(#glow)"/>
+<rect x="343" y="300" width="30" height="30" rx="8" fill="#67e8f9" stroke="none" stroke-width="2" filter="url(#glow)"/>
+<rect x="382" y="300" width="30" height="30" rx="8" fill="#67e8f9" stroke="none" stroke-width="2" filter="url(#glow)"/>
+<rect x="421" y="300" width="30" height="30" rx="8" fill="#67e8f9" stroke="none" stroke-width="2" filter="url(#glow)"/>
+<rect x="460" y="300" width="30" height="30" rx="8" fill="#16303f" stroke="#22d3ee" stroke-width="2"/>
+<rect x="499" y="300" width="30" height="30" rx="8" fill="#16303f" stroke="#22d3ee" stroke-width="2"/>
+<rect x="70" y="339" width="30" height="30" rx="8" fill="#16303f" stroke="#22d3ee" stroke-width="2"/>
+<rect x="109" y="339" width="30" height="30" rx="8" fill="#16303f" stroke="#22d3ee" stroke-width="2"/>
+<rect x="148" y="339" width="30" height="30" rx="8" fill="#16303f" stroke="#22d3ee" stroke-width="2"/>
+<rect x="187" y="339" width="30" height="30" rx="8" fill="#16303f" stroke="#22d3ee" stroke-width="2"/>
+<rect x="226" y="339" width="30" height="30" rx="8" fill="#16303f" stroke="#22d3ee" stroke-width="2"/>
+<rect x="265" y="339" width="30" height="30" rx="8" fill="#16303f" stroke="#22d3ee" stroke-width="2"/>
+<rect x="304" y="339" width="30" height="30" rx="8" fill="#16303f" stroke="#22d3ee" stroke-width="2"/>
+<rect x="343" y="339" width="30" height="30" rx="8" fill="#16303f" stroke="#22d3ee" stroke-width="2"/>
+<rect x="382" y="339" width="30" height="30" rx="8" fill="#16303f" stroke="#22d3ee" stroke-width="2"/>
+<rect x="421" y="339" width="30" height="30" rx="8" fill="#16303f" stroke="#22d3ee" stroke-width="2"/>
+<rect x="460" y="339" width="30" height="30" rx="8" fill="#16303f" stroke="#22d3ee" stroke-width="2"/>
+<rect x="499" y="339" width="30" height="30" rx="8" fill="#16303f" stroke="#22d3ee" stroke-width="2"/>
+<rect x="70" y="378" width="30" height="30" rx="8" fill="#16303f" stroke="#22d3ee" stroke-width="2"/>
+<rect x="109" y="378" width="30" height="30" rx="8" fill="#16303f" stroke="#22d3ee" stroke-width="2"/>
+<rect x="148" y="378" width="30" height="30" rx="8" fill="#16303f" stroke="#22d3ee" stroke-width="2"/>
+<rect x="187" y="378" width="30" height="30" rx="8" fill="#16303f" stroke="#22d3ee" stroke-width="2"/>
+<rect x="226" y="378" width="30" height="30" rx="8" fill="#16303f" stroke="#22d3ee" stroke-width="2"/>
+<rect x="265" y="378" width="30" height="30" rx="8" fill="#16303f" stroke="#22d3ee" stroke-width="2"/>
+<rect x="304" y="378" width="30" height="30" rx="8" fill="#16303f" stroke="#243347" stroke-width="2"/>
+<rect x="343" y="378" width="30" height="30" rx="8" fill="#16303f" stroke="#243347" stroke-width="2"/>
+<rect x="382" y="378" width="30" height="30" rx="8" fill="#16303f" stroke="#243347" stroke-width="2"/>
+<rect x="421" y="378" width="30" height="30" rx="8" fill="#16303f" stroke="#243347" stroke-width="2"/>
+<rect x="460" y="378" width="30" height="30" rx="8" fill="#16303f" stroke="#243347" stroke-width="2"/>
+<rect x="499" y="378" width="30" height="30" rx="8" fill="#16303f" stroke="#243347" stroke-width="2"/>
+<rect x="70" y="417" width="30" height="30" rx="8" fill="#16303f" stroke="#243347" stroke-width="2"/>
+<rect x="109" y="417" width="30" height="30" rx="8" fill="#16303f" stroke="#243347" stroke-width="2"/>
+<rect x="148" y="417" width="30" height="30" rx="8" fill="#16303f" stroke="#243347" stroke-width="2"/>
+<rect x="187" y="417" width="30" height="30" rx="8" fill="#16303f" stroke="#243347" stroke-width="2"/>
+<rect x="226" y="417" width="30" height="30" rx="8" fill="#16303f" stroke="#243347" stroke-width="2"/>
+<rect x="265" y="417" width="30" height="30" rx="8" fill="#16303f" stroke="#243347" stroke-width="2"/>
+<rect x="304" y="417" width="30" height="30" rx="8" fill="#16303f" stroke="#243347" stroke-width="2"/>
+<rect x="343" y="417" width="30" height="30" rx="8" fill="#16303f" stroke="#243347" stroke-width="2"/>
+<rect x="382" y="417" width="30" height="30" rx="8" fill="#16303f" stroke="#243347" stroke-width="2"/>
+<rect x="421" y="417" width="30" height="30" rx="8" fill="#16303f" stroke="#243347" stroke-width="2"/>
+<rect x="460" y="417" width="30" height="30" rx="8" fill="#16303f" stroke="#243347" stroke-width="2"/>
+<rect x="499" y="417" width="30" height="30" rx="8" fill="#16303f" stroke="#243347" stroke-width="2"/>
+<rect x="70" y="456" width="30" height="30" rx="8" fill="#16303f" stroke="#243347" stroke-width="2"/>
+<rect x="109" y="456" width="30" height="30" rx="8" fill="#16303f" stroke="#243347" stroke-width="2"/>
+<rect x="148" y="456" width="30" height="30" rx="8" fill="#16303f" stroke="#243347" stroke-width="2"/>
+<rect x="187" y="456" width="30" height="30" rx="8" fill="#16303f" stroke="#243347" stroke-width="2"/>
+<rect x="226" y="456" width="30" height="30" rx="8" fill="#16303f" stroke="#243347" stroke-width="2"/>
+<rect x="265" y="456" width="30" height="30" rx="8" fill="#16303f" stroke="#243347" stroke-width="2"/>
+<rect x="304" y="456" width="30" height="30" rx="8" fill="#16303f" stroke="#243347" stroke-width="2"/>
+<rect x="343" y="456" width="30" height="30" rx="8" fill="#16303f" stroke="#243347" stroke-width="2"/>
+<rect x="382" y="456" width="30" height="30" rx="8" fill="#16303f" stroke="#243347" stroke-width="2"/>
+<rect x="421" y="456" width="30" height="30" rx="8" fill="#16303f" stroke="#243347" stroke-width="2"/>
+<rect x="460" y="456" width="30" height="30" rx="8" fill="#16303f" stroke="#243347" stroke-width="2"/>
+<rect x="499" y="456" width="30" height="30" rx="8" fill="#16303f" stroke="#243347" stroke-width="2"/>
+<rect x="70" y="495" width="30" height="30" rx="8" fill="#16303f" stroke="#243347" stroke-width="2"/>
+<rect x="109" y="495" width="30" height="30" rx="8" fill="#16303f" stroke="#243347" stroke-width="2"/>
+<rect x="148" y="495" width="30" height="30" rx="8" fill="#16303f" stroke="#243347" stroke-width="2"/>
+<rect x="187" y="495" width="30" height="30" rx="8" fill="#16303f" stroke="#243347" stroke-width="2"/>
+<rect x="226" y="495" width="30" height="30" rx="8" fill="#16303f" stroke="#243347" stroke-width="2"/>
+<rect x="265" y="495" width="30" height="30" rx="8" fill="#16303f" stroke="#243347" stroke-width="2"/>
+<rect x="304" y="495" width="30" height="30" rx="8" fill="#16303f" stroke="#243347" stroke-width="2"/>
+<rect x="343" y="495" width="30" height="30" rx="8" fill="#16303f" stroke="#243347" stroke-width="2"/>
+<rect x="382" y="495" width="30" height="30" rx="8" fill="#16303f" stroke="#243347" stroke-width="2"/>
+<rect x="421" y="495" width="30" height="30" rx="8" fill="#16303f" stroke="#243347" stroke-width="2"/>
+<rect x="460" y="495" width="30" height="30" rx="8" fill="#16303f" stroke="#243347" stroke-width="2"/>
+<rect x="499" y="495" width="30" height="30" rx="8" fill="#16303f" stroke="#243347" stroke-width="2"/>
+<rect x="70" y="534" width="30" height="30" rx="8" fill="#16303f" stroke="#243347" stroke-width="2"/>
+<rect x="109" y="534" width="30" height="30" rx="8" fill="#16303f" stroke="#243347" stroke-width="2"/>
+<rect x="148" y="534" width="30" height="30" rx="8" fill="#16303f" stroke="#243347" stroke-width="2"/>
+<rect x="187" y="534" width="30" height="30" rx="8" fill="#16303f" stroke="#243347" stroke-width="2"/>
+<rect x="226" y="534" width="30" height="30" rx="8" fill="#16303f" stroke="#243347" stroke-width="2"/>
+<rect x="265" y="534" width="30" height="30" rx="8" fill="#16303f" stroke="#243347" stroke-width="2"/>
+<rect x="304" y="534" width="30" height="30" rx="8" fill="#16303f" stroke="#243347" stroke-width="2"/>
+<rect x="343" y="534" width="30" height="30" rx="8" fill="#16303f" stroke="#243347" stroke-width="2"/>
+<rect x="382" y="534" width="30" height="30" rx="8" fill="#16303f" stroke="#243347" stroke-width="2"/>
+<rect x="421" y="534" width="30" height="30" rx="8" fill="#16303f" stroke="#243347" stroke-width="2"/>
+<rect x="460" y="534" width="30" height="30" rx="8" fill="#16303f" stroke="#243347" stroke-width="2"/>
+<rect x="70" y="566" width="26" height="26" rx="7" fill="#67e8f9" stroke="none" stroke-width="2"/>
+<text x="110" y="586" font-size="17" fill="#e5e7eb">both answers right</text>
+<text x="530" y="586" font-size="24" font-weight="800" fill="#22d3ee" text-anchor="end">10 / 83</text>
+<rect x="70" y="616" width="26" height="26" rx="7" fill="#16303f" stroke="#22d3ee" stroke-width="2"/>
+<text x="110" y="636" font-size="17" fill="#e5e7eb">only one right</text>
+<text x="530" y="636" font-size="24" font-weight="800" fill="#8b93a7" text-anchor="end">20 / 83</text>
+<rect x="70" y="666" width="26" height="26" rx="7" fill="#16303f" stroke="#243347" stroke-width="2"/>
+<text x="110" y="686" font-size="17" fill="#e5e7eb">neither</text>
+<text x="530" y="686" font-size="24" font-weight="800" fill="#8b93a7" text-anchor="end">53 / 83</text>
+<text x="70" y="750" font-size="15" fill="#8b93a7">Each fact on its own is answered well. Putting two together is</text>
+<text x="70" y="772" font-size="15" fill="#8b93a7">where the method is weakest, and we do not yet know why.</text>
+<text x="640" y="216" font-size="21" font-weight="700" fill="#e5e7eb">2 · The rest of the model moves</text>
+<text x="640" y="240" font-size="14" fill="#8b93a7">Mean KL to the base model on neutral text it should not</text>
+<text x="640" y="260" font-size="14" fill="#8b93a7">care about. Lower is better; zero would be no damage.</text>
+<line x1="640" y1="650.0" x2="1080" y2="650.0" stroke="#1f2937" stroke-width="1"/>
+<text x="628" y="655.0" font-size="12" fill="#8b93a7" text-anchor="end">0.000</text>
+<line x1="640" y1="570.0" x2="1080" y2="570.0" stroke="#1f2937" stroke-width="1"/>
+<text x="628" y="575.0" font-size="12" fill="#8b93a7" text-anchor="end">0.002</text>
+<line x1="640" y1="490.0" x2="1080" y2="490.0" stroke="#1f2937" stroke-width="1"/>
+<text x="628" y="495.0" font-size="12" fill="#8b93a7" text-anchor="end">0.004</text>
+<line x1="640" y1="410.0" x2="1080" y2="410.0" stroke="#1f2937" stroke-width="1"/>
+<text x="628" y="415.0" font-size="12" fill="#8b93a7" text-anchor="end">0.006</text>
+<line x1="640" y1="330.0" x2="1080" y2="330.0" stroke="#1f2937" stroke-width="1"/>
+<text x="628" y="335.0" font-size="12" fill="#8b93a7" text-anchor="end">0.008</text>
+<line x1="640" y1="517.2" x2="1080" y2="517.2" stroke="#fbbf24" stroke-width="2" stroke-dasharray="6 6"/>
+<line x1="836" y1="316" x2="868" y2="316" stroke="#fbbf24" stroke-width="2" stroke-dasharray="6 6"/>
+<text x="876" y="321" font-size="13" fill="#fbbf24">quantization yardstick 0.0033</text>
+<rect x="700" y="502.1" width="86" height="147.9" rx="8" fill="#22d3ee" fill-opacity="0.55"/>
+<text x="743" y="488.1" font-size="19" font-weight="800" fill="#22d3ee" text-anchor="middle">0.0037</text>
+<text x="743" y="676" font-size="14" fill="#e5e7eb" text-anchor="middle">24 facts</text>
+<text x="743" y="696" font-size="12" fill="#8b93a7" text-anchor="middle">1.1x</text>
+<rect x="830" y="413.9" width="86" height="236.1" rx="8" fill="#22d3ee" fill-opacity="0.75"/>
+<text x="873" y="399.9" font-size="19" font-weight="800" fill="#22d3ee" text-anchor="middle">0.0059</text>
+<text x="873" y="676" font-size="14" fill="#e5e7eb" text-anchor="middle">100 facts</text>
+<text x="873" y="696" font-size="12" fill="#8b93a7" text-anchor="middle">1.8x</text>
+<rect x="960" y="381.0" width="86" height="269.0" rx="8" fill="#22d3ee" fill-opacity="0.95"/>
+<text x="1003" y="367.0" font-size="19" font-weight="800" fill="#22d3ee" text-anchor="middle">0.0067</text>
+<text x="1003" y="676" font-size="14" fill="#e5e7eb" text-anchor="middle">300 facts</text>
+<text x="1003" y="696" font-size="12" fill="#8b93a7" text-anchor="middle">2.0x</text>
+<text x="640" y="746" font-size="15" fill="#8b93a7">The yardstick is an overlay that only re-quantizes the same rows,</text>
+<text x="640" y="768" font-size="15" fill="#8b93a7">so it is the table’s own noise. Damage grows more slowly than the</text>
+<text x="640" y="790" font-size="15" fill="#8b93a7">number of facts, but it grows: on Quail at 100 facts it reaches</text>
+<text x="640" y="812" font-size="15" fill="#8b93a7">0.0131, about 4x the yardstick.</text>
+<text x="1240" y="216" font-size="21" font-weight="700" fill="#e5e7eb">3 · A graft does not cross languages</text>
+<text x="1240" y="240" font-size="14" fill="#8b93a7">The Italian test set, asked against the Chinese overlay.</text>
+<text x="1240" y="260" font-size="14" fill="#8b93a7">Exact answer, greedy, on the real engine.</text>
+<text x="1240" y="320" font-size="17" fill="#e5e7eb">Chinese overlay</text>
+<rect x="1240" y="334" width="430" height="34" rx="8" fill="#1f2937"/>
+<rect x="1240" y="334" width="6.0" height="34" rx="8" fill="#0e7490"/>
+<text x="1262" y="358" font-size="20" font-weight="800" fill="#e5e7eb">0.0048</text>
+<text x="1240" y="424" font-size="17" fill="#e5e7eb">base model, no overlay</text>
+<rect x="1240" y="438" width="430" height="34" rx="8" fill="#1f2937"/>
+<rect x="1240" y="438" width="6.0" height="34" rx="8" fill="#8b93a7"/>
+<text x="1262" y="462" font-size="20" font-weight="800" fill="#e5e7eb">0.0048</text>
+<text x="1240" y="540" font-size="15" fill="#8b93a7">(same axis as the 0.841 of the Italian overlay, which would fill the bar)</text>
+<rect x="1240" y="572" width="450" height="96" rx="14" fill="#101a2c" stroke="#1f2937"/>
+<text x="1262" y="616" font-size="30" font-weight="800" fill="#fbbf24">922</text>
+<text x="1262" y="642" font-size="13.5" fill="#8b93a7">overlay rows the engine actually read — and still</text>
+<text x="1262" y="660" font-size="13.5" fill="#8b93a7">nothing changed: 764 of 841 sentences bit-identical</text>
+<text x="1240" y="712" font-size="15" fill="#8b93a7">The overlay fires and has no effect. A fact has to be grafted in the</text>
+<text x="1240" y="734" font-size="15" fill="#8b93a7">language it will be asked in: the rows are keyed by the tokens of its</text>
+<text x="1240" y="756" font-size="15" fill="#8b93a7">own script. Measured on one pair of languages and one cell.</text>
+<rect x="70" y="868" width="373" height="36" rx="18" fill="none" stroke="#fbbf24" stroke-opacity="0.65"/>
+<text x="256" y="891" font-size="13" fill="#fbbf24" text-anchor="middle">no comparison against LoRA or ROME/MEMIT yet</text>
+<rect x="456.79999999999995" y="868" width="160" height="36" rx="18" fill="none" stroke="#fbbf24" stroke-opacity="0.65"/>
+<text x="537" y="891" font-size="13" fill="#fbbf24" text-anchor="middle">one model measured</text>
+<rect x="630.4" y="868" width="438" height="36" rx="18" fill="none" stroke="#fbbf24" stroke-opacity="0.65"/>
+<text x="850" y="891" font-size="13" fill="#fbbf24" text-anchor="middle">rephrasing is covered only as far as the corpus goes</text>
+<text x="1730" y="928" font-size="12" fill="#8b93a7" text-anchor="end">recomputed from data/quail/results/ · github.com/fulvian/engraft-ngram</text>
+</svg>

@@ -1,0 +1,924 @@
+{
+  "n_chunks_requested": 48,
+  "n_chunks_done": 16,
+  "gpu_minutes_cap": 30.0,
+  "total_s": 711.3546378612518,
+  "forward_s_mean": 44.12595508992672,
+  "chunks": [
+    {
+      "i": 0,
+      "start": 1652729,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 26,
+      "forward_s": 51.51621603965759
+    },
+    {
+      "i": 1,
+      "start": 4097268,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 7,
+      "forward_s": 43.48609185218811
+    },
+    {
+      "i": 2,
+      "start": 7523859,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 29,
+      "forward_s": 44.26806998252869
+    },
+    {
+      "i": 3,
+      "start": 17526369,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 2,
+      "forward_s": 41.550089836120605
+    },
+    {
+      "i": 4,
+      "start": 26978115,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 40,
+      "forward_s": 44.22972583770752
+    },
+    {
+      "i": 5,
+      "start": 30782308,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 57,
+      "forward_s": 43.65812039375305
+    },
+    {
+      "i": 6,
+      "start": 50361664,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 52,
+      "forward_s": 44.1001935005188
+    },
+    {
+      "i": 7,
+      "start": 51112594,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 49,
+      "forward_s": 43.68622612953186
+    },
+    {
+      "i": 8,
+      "start": 60662333,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 43,
+      "forward_s": 43.92203998565674
+    },
+    {
+      "i": 9,
+      "start": 63694855,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 45,
+      "forward_s": 44.22926950454712
+    },
+    {
+      "i": 10,
+      "start": 64940241,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 62,
+      "forward_s": 43.97357392311096
+    },
+    {
+      "i": 11,
+      "start": 72948162,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 35,
+      "forward_s": 42.54772901535034
+    },
+    {
+      "i": 12,
+      "start": 81325353,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 62,
+      "forward_s": 44.18089246749878
+    },
+    {
+      "i": 13,
+      "start": 85060667,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 48,
+      "forward_s": 43.144598722457886
+    },
+    {
+      "i": 14,
+      "start": 91273684,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 68,
+      "forward_s": 43.65939116477966
+    },
+    {
+      "i": 15,
+      "start": 97072294,
+      "kind": "random",
+      "stratum": null,
+      "target_row": null,
+      "center_pos": null,
+      "n_hit_positions": 57,
+      "forward_s": 43.8630530834198
+    }
+  ],
+  "global": {
+    "n_positions": 32768,
+    "dnll_mean": 0.00021729906334353594,
+    "dnll_median": 0.0,
+    "kl_mean": 0.009446675508866333,
+    "kl_median": 0.0015993573470041156,
+    "frac_kl_gt_0_01": 0.18975830078125,
+    "frac_kl_gt_0_1": 0.013275146484375,
+    "frac_kl_gt_1": 0.000244140625,
+    "worst_20": [
+      {
+        "i": 13,
+        "start": 85060667,
+        "r": 1718,
+        "dnll": 5.88122034072876,
+        "kl": 5.208363056182861,
+        "context": ", Daniel Fabre, Marcello Massenzio, Torino, Einaudi, 201",
+        "top3_base": [
+          {
+            "token": 24,
+            "p": 0.7784439325332642
+          },
+          {
+            "token": 23,
+            "p": 0.06389857083559036
+          },
+          {
+            "token": 16,
+            "p": 0.034202441573143005
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 16,
+            "p": 0.9933435916900635
+          },
+          {
+            "token": 24,
+            "p": 0.002172930398955941
+          },
+          {
+            "token": 17,
+            "p": 0.0016922799404710531
+          }
+        ],
+        "target": 24
+      },
+      {
+        "i": 3,
+        "start": 17526369,
+        "r": 1654,
+        "dnll": 4.1027727127075195,
+        "kl": 0.6588470339775085,
+        "context": "87)\n(de) Rolf Kauka (1917 – 200",
+        "top3_base": [
+          {
+            "token": 21,
+            "p": 0.7516839504241943
+          },
+          {
+            "token": 15,
+            "p": 0.1480153352022171
+          },
+          {
+            "token": 16,
+            "p": 0.033026691526174545
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 21,
+            "p": 0.986874520778656
+          },
+          {
+            "token": 18,
+            "p": 0.0031410057563334703
+          },
+          {
+            "token": 15,
+            "p": 0.002446217695251107
+          }
+        ],
+        "target": 15
+      },
+      {
+        "i": 2,
+        "start": 7523859,
+        "r": 715,
+        "dnll": 3.987654685974121,
+        "kl": 1.4432518482208252,
+        "context": "ver Cleveland viene eletto presidente degli Stati Uniti d'America, sconfiggendo Benjamin Harrison e",
+        "top3_base": [
+          {
+            "token": 7555,
+            "p": 0.4088701903820038
+          },
+          {
+            "token": 152658,
+            "p": 0.19313660264015198
+          },
+          {
+            "token": 2331,
+            "p": 0.17044244706630707
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 152658,
+            "p": 0.44064658880233765
+          },
+          {
+            "token": 2331,
+            "p": 0.13438960909843445
+          },
+          {
+            "token": 203384,
+            "p": 0.06757534295320511
+          }
+        ],
+        "target": 7555
+      },
+      {
+        "i": 1,
+        "start": 4097268,
+        "r": 870,
+        "dnll": -2.558480739593506,
+        "kl": 0.0025470794644206762,
+        "context": "1954\n William Holden - Stalag 17\n Marlon Brando -",
+        "top3_base": [
+          {
+            "token": 4770,
+            "p": 0.9974439144134521
+          },
+          {
+            "token": 8482,
+            "p": 0.000551670731510967
+          },
+          {
+            "token": 60444,
+            "p": 0.0001791011745808646
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 4770,
+            "p": 0.9934426546096802
+          },
+          {
+            "token": 60444,
+            "p": 0.002313302829861641
+          },
+          {
+            "token": 8482,
+            "p": 0.0005494576180353761
+          }
+        ],
+        "target": 60444
+      },
+      {
+        "i": 6,
+        "start": 50361664,
+        "r": 1478,
+        "dnll": -2.4830236434936523,
+        "kl": 0.15038053691387177,
+        "context": " Albert Smith e James Williamson erano ancora all'avanguardia dell'arte cinematografica». Nel loro Gramma",
+        "top3_base": [
+          {
+            "token": 1538,
+            "p": 0.9281310439109802
+          },
+          {
+            "token": 540,
+            "p": 0.012436959892511368
+          },
+          {
+            "token": 1789,
+            "p": 0.009685914032161236
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 1538,
+            "p": 0.7564952373504639
+          },
+          {
+            "token": 540,
+            "p": 0.14896276593208313
+          },
+          {
+            "token": 3732,
+            "p": 0.029332507401704788
+          }
+        ],
+        "target": 540
+      },
+      {
+        "i": 12,
+        "start": 81325353,
+        "r": 153,
+        "dnll": -2.3654308319091797,
+        "kl": 0.2798411548137665,
+        "context": " concorda con la tesi statunitense.\n\nOnorificenze\n\nGeografia fisica\n\nTerritorio \n",
+        "top3_base": [
+          {
+            "token": 8482,
+            "p": 0.5276564955711365
+          },
+          {
+            "token": 43,
+            "p": 0.15117612481117249
+          },
+          {
+            "token": 11707,
+            "p": 0.06708398461341858
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 8482,
+            "p": 0.5922188758850098
+          },
+          {
+            "token": 50,
+            "p": 0.09081970155239105
+          },
+          {
+            "token": 168975,
+            "p": 0.062419407069683075
+          }
+        ],
+        "target": 40535
+      },
+      {
+        "i": 1,
+        "start": 4097268,
+        "r": 91,
+        "dnll": 2.3542966842651367,
+        "kl": 0.8501392006874084,
+        "context": " Quando il giorno verrà (Watch on the Rhine)\n Humphrey Bogart - Casablanca\n",
+        "top3_base": [
+          {
+            "token": 31142,
+            "p": 0.28175267577171326
+          },
+          {
+            "token": 29753,
+            "p": 0.19364558160305023
+          },
+          {
+            "token": 23081,
+            "p": 0.1508113294839859
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 29753,
+            "p": 0.5720537304878235
+          },
+          {
+            "token": 220,
+            "p": 0.08772727102041245
+          },
+          {
+            "token": 31142,
+            "p": 0.04998549073934555
+          }
+        ],
+        "target": 23081
+      },
+      {
+        "i": 3,
+        "start": 17526369,
+        "r": 89,
+        "dnll": -2.344710350036621,
+        "kl": 0.09429222345352173,
+        "context": " – 2001)\n(en) Geoffrey Hoyle (1941)\n",
+        "top3_base": [
+          {
+            "token": 44091,
+            "p": 0.6549386382102966
+          },
+          {
+            "token": 18732,
+            "p": 0.1461365669965744
+          },
+          {
+            "token": 39,
+            "p": 0.05376063659787178
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 44091,
+            "p": 0.6763777136802673
+          },
+          {
+            "token": 39,
+            "p": 0.05552046373486519
+          },
+          {
+            "token": 18732,
+            "p": 0.05215664952993393
+          }
+        ],
+        "target": 12792
+      },
+      {
+        "i": 8,
+        "start": 60662333,
+        "r": 463,
+        "dnll": -2.3396711349487305,
+        "kl": 0.027029287070035934,
+        "context": "ões\n\nNote\n\nVoci correlate \n Freguesias del Portogallo\n Comune di Mac",
+        "top3_base": [
+          {
+            "token": 2770,
+            "p": 0.9907558560371399
+          },
+          {
+            "token": 3331,
+            "p": 0.0035732227843254805
+          },
+          {
+            "token": 20231,
+            "p": 0.0031533578876405954
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 2770,
+            "p": 0.9563645124435425
+          },
+          {
+            "token": 3331,
+            "p": 0.03708227351307869
+          },
+          {
+            "token": 20231,
+            "p": 0.0019652885384857655
+          }
+        ],
+        "target": 3331
+      },
+      {
+        "i": 1,
+        "start": 4097268,
+        "r": 214,
+        "dnll": -2.282322883605957,
+        "kl": 0.3902243971824646,
+        "context": " 1946\n Ray Milland - Giorni perduti (The Lost Weekend)\n",
+        "top3_base": [
+          {
+            "token": 43688,
+            "p": 0.3157462775707245
+          },
+          {
+            "token": 220,
+            "p": 0.11615656316280365
+          },
+          {
+            "token": 94565,
+            "p": 0.1091189980506897
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 23272,
+            "p": 0.12378069013357162
+          },
+          {
+            "token": 220,
+            "p": 0.12378069013357162
+          },
+          {
+            "token": 51882,
+            "p": 0.10923607647418976
+          }
+        ],
+        "target": 51693
+      },
+      {
+        "i": 1,
+        "start": 4097268,
+        "r": 793,
+        "dnll": 2.0411767959594727,
+        "kl": 0.014182129874825478,
+        "context": " 1953\n Gary Cooper - Mezzogiorno di fuoco (High Noon)\n",
+        "top3_base": [
+          {
+            "token": 7555,
+            "p": 0.964354932308197
+          },
+          {
+            "token": 7366,
+            "p": 0.009454202838242054
+          },
+          {
+            "token": 11528,
+            "p": 0.0044658491387963295
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 7555,
+            "p": 0.985138475894928
+          },
+          {
+            "token": 7366,
+            "p": 0.00355296372435987
+          },
+          {
+            "token": 8995,
+            "p": 0.0012278713984414935
+          }
+        ],
+        "target": 2783
+      },
+      {
+        "i": 0,
+        "start": 1652729,
+        "r": 191,
+        "dnll": -1.9990344047546387,
+        "kl": 0.0005393635365180671,
+        "context": "ccia predominante nella regione, battezzata in suo onore dolomia, costituita principalmente",
+        "top3_base": [
+          {
+            "token": 2899,
+            "p": 0.9980725049972534
+          },
+          {
+            "token": 1789,
+            "p": 0.0017003362299874425
+          },
+          {
+            "token": 23957,
+            "p": 0.00010869885591091588
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 2899,
+            "p": 0.9971094727516174
+          },
+          {
+            "token": 1789,
+            "p": 0.0019248737953603268
+          },
+          {
+            "token": 23957,
+            "p": 0.0008024067501537502
+          }
+        ],
+        "target": 23957
+      },
+      {
+        "i": 2,
+        "start": 7523859,
+        "r": 431,
+        "dnll": 1.9629507064819336,
+        "kl": 0.26232463121414185,
+        "context": "2 – Apre al pubblico la Biblioteca Bodleiana\n 1620 – Vicino a",
+        "top3_base": [
+          {
+            "token": 217154,
+            "p": 0.2589106261730194
+          },
+          {
+            "token": 882,
+            "p": 0.17794649302959442
+          },
+          {
+            "token": 68588,
+            "p": 0.15703722834587097
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 68588,
+            "p": 0.34499579668045044
+          },
+          {
+            "token": 217154,
+            "p": 0.2524043023586273
+          },
+          {
+            "token": 882,
+            "p": 0.03870745375752449
+          }
+        ],
+        "target": 2264
+      },
+      {
+        "i": 13,
+        "start": 85060667,
+        "r": 1946,
+        "dnll": -1.9442561864852905,
+        "kl": 0.21071535348892212,
+        "context": " La Sardegna contemporanea. Idee, luoghi, processi culturali, Roma, Donzelli, 20",
+        "top3_base": [
+          {
+            "token": 17,
+            "p": 0.9573046565055847
+          },
+          {
+            "token": 16,
+            "p": 0.04206102713942528
+          },
+          {
+            "token": 15,
+            "p": 0.0004973913310095668
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 17,
+            "p": 0.7051268815994263
+          },
+          {
+            "token": 16,
+            "p": 0.29394060373306274
+          },
+          {
+            "token": 15,
+            "p": 0.0006429923814721406
+          }
+        ],
+        "target": 16
+      },
+      {
+        "i": 13,
+        "start": 85060667,
+        "r": 840,
+        "dnll": 1.9366326332092285,
+        "kl": 0.0010222590062767267,
+        "context": " rimorso. Contributo a una storia religiosa del Sud, Milano, Il Saggiatore, ",
+        "top3_base": [
+          {
+            "token": 16,
+            "p": 0.9988880753517151
+          },
+          {
+            "token": 220,
+            "p": 0.0008038382511585951
+          },
+          {
+            "token": 17,
+            "p": 0.0001312229287577793
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 16,
+            "p": 0.999755322933197
+          },
+          {
+            "token": 220,
+            "p": 0.00011590436770347878
+          },
+          {
+            "token": 17,
+            "p": 4.53888023912441e-05
+          }
+        ],
+        "target": 220
+      },
+      {
+        "i": 0,
+        "start": 1652729,
+        "r": 76,
+        "dnll": -1.9091413021087646,
+        "kl": 0.0882801041007042,
+        "context": " nome di \"Dolomiti\".\n\nLa presente voce tratta delle Dolomiti secondo la terza",
+        "top3_base": [
+          {
+            "token": 178298,
+            "p": 0.23654700815677643
+          },
+          {
+            "token": 18943,
+            "p": 0.23654700815677643
+          },
+          {
+            "token": 179001,
+            "p": 0.20875200629234314
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 178298,
+            "p": 0.2952398657798767
+          },
+          {
+            "token": 18943,
+            "p": 0.22993303835391998
+          },
+          {
+            "token": 179001,
+            "p": 0.10861267894506454
+          }
+        ],
+        "target": 198651
+      },
+      {
+        "i": 4,
+        "start": 26978115,
+        "r": 415,
+        "dnll": 1.8711872100830078,
+        "kl": 0.00455206586048007,
+        "context": "\n\nAltri progetti\n\nCollegamenti esterni<|endoftext|>Gonnosfanadiga (Gonnos",
+        "top3_base": [
+          {
+            "token": 29193,
+            "p": 0.9873327612876892
+          },
+          {
+            "token": 23936,
+            "p": 0.010968275368213654
+          },
+          {
+            "token": 69,
+            "p": 0.0007945391698740423
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 29193,
+            "p": 0.991104781627655
+          },
+          {
+            "token": 23936,
+            "p": 0.004589725751429796
+          },
+          {
+            "token": 69,
+            "p": 0.003154469421133399
+          }
+        ],
+        "target": 303
+      },
+      {
+        "i": 1,
+        "start": 4097268,
+        "r": 200,
+        "dnll": -1.8601194620132446,
+        "kl": 0.29603421688079834,
+        "context": "elle (None but the Lonely Heart)\n Alexander Knox - Wilson\n 1946\n",
+        "top3_base": [
+          {
+            "token": 41550,
+            "p": 0.41005879640579224
+          },
+          {
+            "token": 26596,
+            "p": 0.41005879640579224
+          },
+          {
+            "token": 12870,
+            "p": 0.05213312804698944
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 41550,
+            "p": 0.379524827003479
+          },
+          {
+            "token": 12870,
+            "p": 0.334929496049881
+          },
+          {
+            "token": 26596,
+            "p": 0.20314501225948334
+          }
+        ],
+        "target": 12870
+      },
+      {
+        "i": 15,
+        "start": 97072294,
+        "r": 1472,
+        "dnll": -1.7887603044509888,
+        "kl": 0.6238402724266052,
+        "context": "  è di circa 52 metri.\n\nL'area del bacino è di 2",
+        "top3_base": [
+          {
+            "token": 22,
+            "p": 0.8395196795463562
+          },
+          {
+            "token": 21,
+            "p": 0.05366870015859604
+          },
+          {
+            "token": 20,
+            "p": 0.03688592091202736
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 20,
+            "p": 0.4122336208820343
+          },
+          {
+            "token": 22,
+            "p": 0.36379489302635193
+          },
+          {
+            "token": 23,
+            "p": 0.17184454202651978
+          }
+        ],
+        "target": 23
+      },
+      {
+        "i": 13,
+        "start": 85060667,
+        "r": 1846,
+        "dnll": 1.6974267959594727,
+        "kl": 0.39703577756881714,
+        "context": "8-9871-618-0.\n Giulio Angioni, Fare",
+        "top3_base": [
+          {
+            "token": 11,
+            "p": 0.706888735294342
+          },
+          {
+            "token": 1667,
+            "p": 0.0398799292743206
+          },
+          {
+            "token": 585,
+            "p": 0.02740904688835144
+          }
+        ],
+        "top3_student": [
+          {
+            "token": 11,
+            "p": 0.9566584825515747
+          },
+          {
+            "token": 96003,
+            "p": 0.0036727716214954853
+          },
+          {
+            "token": 585,
+            "p": 0.0032412095461040735
+          }
+        ],
+        "target": 12823
+      }
+    ]
+  },
+  "hits": {},
+  "controls": {},
+  "routing_mode": "free"
+}
