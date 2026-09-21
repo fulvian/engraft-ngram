@@ -350,4 +350,17 @@ A Chinese cell given equal mass per fact remains the next measurement.
 - Collateral damage as the number of facts grows beyond 300, and a quantization yardstick
   measured at 100 facts.
 - A head-to-head comparison with LoRA and with ROME/MEMIT.
+- **Retrieval over the same corpus at the same storage budget**, scored on recall, latency,
+  neutral-set KL and bytes per fact. The one half we can state today is unflattering: the
+  overlay is 9,036,620 bytes for 100 facts (~90 KB per fact) against a 4.5 MB usage corpus
+  (~45 KB per fact), so the stored fact costs twice the text that produced it. What we expect
+  to win on — zero context tokens, no retriever, no prefill — is unmeasured. Raised by a
+  reader after publication, 2026-09-21.
+- **Rerun the composition probes without the two protocol confounds**: all 83 generations are
+  cut at 40 new tokens and 36 of them carry an empty `<think></think>` block. Until that
+  rerun, 10/83 measures the eval as much as the overlay. Same reader, same day.
+- **A disjoint-row arm for composition.** All 83 probes ask two facts about the *same*
+  subject, so they read that subject's rows by construction; there is no disjoint control in
+  this corpus. Separating row interference from a downstream readout limit needs probes
+  spanning two different subjects — a new corpus. Same reader, same day.
 - DeepSeek V4.1 Flash, the second model with an Engram-style table.

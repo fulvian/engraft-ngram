@@ -43,7 +43,7 @@ seed 0). Every number below is recomputed from the file named next to it, under
 | First token at rank 1, torch replica, free routing / pinned routing | 0.862 / 0.741 | `s0b/replica_eval.json` |
 | Base model's own prior, first token at rank 1, pinned routing | 0.102 | same |
 | Collateral damage on neutral text: mean KL to the base model | 0.0131 | `s0b/damage_it_text.json` |
-| Composition probes (one question, two facts): both answers right / at least one | 10 / 83, 30 / 83 | `s0b/probe_results.json` |
+| Composition probes (one question, two facts; truncated eval, see Limitations): both answers right / at least one | 10 / 83, 30 / 83 | `s0b/probe_results.json` |
 
 *Pinned routing* forces the experts that the base model would pick; it is the condition of the
 descent. *Free routing* is the production condition.
@@ -210,7 +210,14 @@ The shipped Quail corpus is tokenized for the real model and needs the real engi
 
 - **Rephrasing is covered only as far as the corpus goes.** The table fires on exact n-grams, so
   a sentence that shares no n-gram with the corpus is not covered, by construction.
-- **Composition is weak.** Answering two facts in one question works on 10 of 83 probes.
+- **Composition is weak — and our measurement of it is weaker.** Answering two facts in one
+  question works on 10 of 83 probes. But every one of the 83 generations stops at the probe
+  tool's default budget of 40 new tokens, and 36 of them spend part of that budget on an empty
+  `<think></think>` block from the chat template; not one probe reached an end-of-sequence
+  token. So 10 / 83 is a floor set in part by the evaluation protocol, not a clean read of the
+  model's ability to compose. The probes have to be rerun with a budget that lets the answer
+  finish, and in the bare (non-chat) format — until then this line states a protocol limit as
+  much as a model limit ([`engraft/probes.py`](engraft/probes.py), `--max-new-tokens`).
 - **Facts about the same subject share rows — by content, not by hash.** Of the 14,032 rows in
   the Quail overlay, 12 are written through more than one token window; the share of the slots a
   prompt reads that are in a pure hash collision separates successes from failures with AUC 0.503,

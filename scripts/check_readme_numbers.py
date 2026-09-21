@@ -92,6 +92,18 @@ def c_s0b_probes():
     return f"{both} / {len(d)}, {atleast} / {len(d)}"
 
 
+def c_s0b_probe_truncation():
+    """Composition probes: (number of probes, generation cap, probes carrying an
+    empty think block). The cap is asserted, not read: if the generations ever
+    stop at different lengths the README sentence is wrong and this must fail."""
+    d = _load("data/quail/results/s0b/probe_results.json")
+    lengths = {len(x["tokens"]) for x in d}
+    if len(lengths) != 1:
+        raise ValueError(f"probe generations are not all one length: {sorted(lengths)}")
+    n_think = sum(1 for x in d if "<think>" in x["output"])
+    return (str(len(d)), str(lengths.pop()), str(n_think))
+
+
 def c_yardstick_floor():
     d = _load("results/2026-09-12/yardstick/damage_noise_quant_s0.json")
     return f"{d['global']['kl_mean']:.4f}"
@@ -306,6 +318,14 @@ CHECKS = [
         label="Quail table: composition probes",
         readme_pattern=r"both answers right / at least one \| ([\d]+ / [\d]+, [\d]+ / [\d]+) \|",
         compute=c_s0b_probes,
+    ),
+    dict(
+        label="Quail limitations: composition probes are truncated",
+        readme_pattern=(
+            r"every\s+one\s+of\s+the\s+(\d+)\s+generations\s+stops\s+at\s+the\s+probe\s+"
+            r"tool's\s+default\s+budget\s+of\s+(\d+)\s+new\s+tokens,\s+and\s+(\d+)\s+of\s+them"
+        ),
+        compute=c_s0b_probe_truncation,
     ),
     dict(
         label="Damage paragraph: quantization yardstick",

@@ -23,6 +23,14 @@ in this directory.
 - `probe_results.json` — 83 two-fact composition probes (does the overlay answer both
   facts about the same subject in one question). Both facts correct: **10/83**. At least
   one fact correct: **30/83**.
+  - **Read this number with the protocol in mind.** All 83 generations are cut at the probe
+    tool's default of 40 new tokens (`engraft/probes.py --max-new-tokens`); none stopped at an
+    end-of-sequence token, and 36 of the 83 spend part of that budget on an empty
+    `<think></think>` block from the chat template. Both answers must fit inside what is left.
+    The first fact is hit in 23 of 83 and the second in 17 of 83 — an order asymmetry
+    consistent with truncation. These probes need a rerun with a longer budget and in the bare
+    format before 10/83 can be read as a property of the overlay. The same 40-token cut
+    applies to the specular cell's probe file.
 
 - `row_sharing.json` — for every test fragment, the overlay rows the prompt reads at the
   grafted positions, against the facts that wrote those rows during the descent. Same token
