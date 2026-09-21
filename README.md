@@ -17,6 +17,17 @@ this repository was made on **Qwen3.8-Flash-Next** (IQ4_XS). DeepSeek V4.1 Flash
 target. Its table differs in ways that need adapting (MXFP8 rows, a compressed tokenizer, two
 table layers, 4-grams, a value projection), and nothing has been measured on it yet.
 
+**What this is, and what it is not.** ENGRAFT is token-addressed memory written by gradient
+descent. It is not general model editing, and it is not a replacement for retrieval. A grafted
+fact lives in the rows its n-grams hash to: it fires when a prompt contains those n-grams and is
+invisible otherwise. The sharpest evidence is our own specular measurement below: the Italian
+test set against the Chinese overlay returns the base model's numbers exactly, although the
+overlay's rows were read. So a fact has to be written in the language, and largely in the
+phrasings, in which it will be asked. What you get in exchange is a niche nothing else fills: the
+fact sits inside the model's own forward pass, so it costs no context tokens, needs no retriever,
+no index and no second model at inference, travels as one file next to the GGUF, and its removal
+restores the model bit for bit.
+
 ENGRAFT stands for ENgram GRadient Routing-Aware Fact Transplant. Not to be confused with
 ENGRAFT (CCS 2022, Byzantine consensus) or [engraft.dev](https://engraft.dev).
 
@@ -239,14 +250,30 @@ The shipped Quail corpus is tokenized for the real model and needs the real engi
 **Is this fine-tuning?** No weight of the model changes. Only rows of the lookup table are
 optimized, and they ship as an overlay file.
 
-**How is this different from RAG?** RAG puts the fact in the prompt. This puts it in the model's
-own memory table, at a fixed cost per fact and no cost per query. RAG generalizes to any
-phrasing; this covers the phrasings whose n-grams the usage corpus reads.
+**How is this different from RAG?** RAG retrieves text and puts it in the prompt; the model reads
+it as words. Here the lookup is part of the forward pass and returns vectors, so a grafted fact
+costs no context tokens and needs no retriever, index or embedding model at inference. We do not
+claim to beat retrieval at recall: RAG generalizes to any phrasing, while this covers the
+phrasings whose n-grams the usage corpus reads. Nor is the storage cheaper: the overlay is about
+90 KB per fact, while the training sentences behind it come to 749 tokens per fact, a few
+kilobytes of text. The two fail differently — retrieval can fetch the wrong passage or none, and
+the model can still misread what it was handed; a graft either fires on its n-grams or does not —
+and they compose: nothing stops a retrieval system from running on top of a grafted model. A
+head-to-head over the same corpus (recall, latency, context spent, neutral-text KL) has not been
+run.
 
 **How is this different from LoRA or ROME/MEMIT?** Those change weights that every input goes
 through, or rewrite MLP weights with a closed-form update. Here the memory is explicit and
 hash-addressed, only rows read by the corpus move, and every claim is checked on the real
 inference engine. We have not yet compared them head to head.
+
+**Could this hold an agent's memory?** Not as working memory. A write is a gradient descent (hours,
+not milliseconds), recall needs the right n-grams, and facts about the same subject share rows:
+where a graft loses, it loses to a sibling, and in 21 of those 37 cases to the sibling with more
+training mass. An agent writes many things about the same few subjects, which is this
+mechanism's worst case today. As *consolidation* — periodically baking what has stopped changing
+into the table, where it costs no context, and deleting the file if the consolidation learned
+something wrong — it is plausible. Untested.
 
 **Which models have an n-gram table?** Models built on DeepSeek's Engram design. The addressing
 code reads the model's own hash multipliers and head sizes from the GGUF.

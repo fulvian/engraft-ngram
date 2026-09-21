@@ -352,10 +352,12 @@ A Chinese cell given equal mass per fact remains the next measurement.
 - A head-to-head comparison with LoRA and with ROME/MEMIT.
 - **Retrieval over the same corpus at the same storage budget**, scored on recall, latency,
   neutral-set KL and bytes per fact. The one half we can state today is unflattering: the
-  overlay is 9,036,620 bytes for 100 facts (~90 KB per fact) against a 4.5 MB usage corpus
-  (~45 KB per fact), so the stored fact costs twice the text that produced it. What we expect
-  to win on — zero context tokens, no retriever, no prefill — is unmeasured. Raised by a
-  reader after publication, 2026-09-21.
+  overlay is 9,036,620 bytes for 100 facts (~90 KB per fact), while the 3,209 training
+  sentences behind it come to 74,923 tokens (749 per fact, a few kilobytes of text) — the
+  stored fact costs tens of times the text that produced it. (The usage-corpus JSON weighs
+  4.5 MB, but that is token ids and masks, not text.) What we expect to win on — zero context
+  tokens, no retriever, no prefill — is unmeasured. Raised by a reader after publication,
+  2026-09-21.
 - **Rerun the composition probes without the two protocol confounds**: all 83 generations are
   cut at 40 new tokens and 36 of them carry an empty `<think></think>` block. Until that
   rerun, 10/83 measures the eval as much as the overlay. Same reader, same day.

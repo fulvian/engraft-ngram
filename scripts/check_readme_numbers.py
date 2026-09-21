@@ -278,6 +278,27 @@ def c_row_sharing_siblings():
     return (str(d["subject_or_template"]["n_compared"]), str(d["subject_or_template"]["same_subject"]))
 
 
+def c_overlay_kb_per_fact():
+    n_bytes = (ROOT / "data/quail/overlays/s0b/merged.pleo").stat().st_size
+    return str(round(n_bytes / _n_facts_s0b() / 1000))
+
+
+def c_train_tokens_per_fact():
+    frags = _load("data/quail/corpus/s0b/usage_corpus_resolved.json")["fragments"]
+    n_tok = sum(f["n_positions"] for f in frags if f["split"] == "train")
+    return str(round(n_tok / _n_facts_s0b()))
+
+
+def _n_facts_s0b() -> int:
+    frags = _load("data/quail/corpus/s0b/usage_corpus_resolved.json")["fragments"]
+    return len({i for f in frags for i in f["fact_ids"]})
+
+
+def c_row_sharing_heavier_sibling():
+    d = _row_sharing()["subject_or_template"]
+    return (str(d["winner_has_more_training_mass"]), str(d["n_compared"]))
+
+
 CHECKS = [
     dict(
         label="Quail table: exact answer, engine, free routing (s0b)",
@@ -326,6 +347,21 @@ CHECKS = [
             r"tool's\s+default\s+budget\s+of\s+(\d+)\s+new\s+tokens,\s+and\s+(\d+)\s+of\s+them"
         ),
         compute=c_s0b_probe_truncation,
+    ),
+    dict(
+        label="FAQ RAG: overlay size per fact, KB",
+        readme_pattern=r"overlay\s+is\s+about\s+(\d+)\s+KB\s+per\s+fact",
+        compute=c_overlay_kb_per_fact,
+    ),
+    dict(
+        label="FAQ RAG: training tokens per fact",
+        readme_pattern=r"come\s+to\s+(\d+)\s+tokens\s+per\s+fact",
+        compute=c_train_tokens_per_fact,
+    ),
+    dict(
+        label="FAQ agent memory: failures lost to the heavier sibling",
+        readme_pattern=r"in\s+(\d+)\s+of\s+those\s+(\d+)\s+cases\s+to\s+the\s+sibling",
+        compute=c_row_sharing_heavier_sibling,
     ),
     dict(
         label="Damage paragraph: quantization yardstick",
