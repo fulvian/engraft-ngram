@@ -365,4 +365,8 @@ A Chinese cell given equal mass per fact remains the next measurement.
   subject, so they read that subject's rows by construction; there is no disjoint control in
   this corpus. Separating row interference from a downstream readout limit needs probes
   spanning two different subjects — a new corpus. Same reader, same day.
+- **Bring the technical report (`paper/engraft.pdf`) level with the README.** It predates the
+  positioning («token-addressed memory, not editing, not a retrieval rival»), the truncated
+  composition probes and the corrected demo, so release `v0.2.2` ships without it. To be
+  recompiled as soon as the composition probes have been re-measured.
 - DeepSeek V4.1 Flash, the second model with an Engram-style table.
