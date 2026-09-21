@@ -299,6 +299,26 @@ def c_row_sharing_heavier_sibling():
     return (str(d["winner_has_more_training_mass"]), str(d["n_compared"]))
 
 
+def _engine_by_id():
+    return {x["id"]: x for x in _load("data/quail/results/s0b/engine_results.json")}
+
+
+def c_demo_success():
+    x = _engine_by_id()["q0001_a1_f24"]
+    if not (x["greedy"]["student"]["exact_match"] and x["student"]["rank_first"] == 1):
+        raise ValueError("the README demo sentence is not a success in the result file")
+    return f"{x['student']['p_first']:.3f}"
+
+
+def c_demo_failure():
+    d = _engine_by_id()
+    x = d["q0001_a1_f23"]
+    if x["greedy"]["student"]["exact_match"] or x["student"]["rank_first"] != 2:
+        raise ValueError("the README failure example no longer fails at rank 2")
+    n_fail = sum(1 for v in d.values() if not v["greedy"]["student"]["exact_match"])
+    return (str(n_fail), f"{x['student']['p_first']:.2f}")
+
+
 CHECKS = [
     dict(
         label="Quail table: exact answer, engine, free routing (s0b)",
@@ -362,6 +382,16 @@ CHECKS = [
         label="FAQ agent memory: failures lost to the heavier sibling",
         readme_pattern=r"in\s+(\d+)\s+of\s+those\s+(\d+)\s+cases\s+to\s+the\s+sibling",
         compute=c_row_sharing_heavier_sibling,
+    ),
+    dict(
+        label="Try it: demo sentence succeeds, first-token probability",
+        readme_pattern=r"first\s+with\s+probability\s+([\d.]+)\.",
+        compute=c_demo_success,
+    ),
+    dict(
+        label="Try it: the failing sister sentence",
+        readme_pattern=r"one\s+of\s+the\s+(\d+)\s+test\s+sentences\s+the\s+overlay\s+gets\s+wrong:[^.]*?probability\s+([\d.]+)\.",
+        compute=c_demo_failure,
     ),
     dict(
         label="Damage paragraph: quantization yardstick",

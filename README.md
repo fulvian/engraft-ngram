@@ -183,12 +183,25 @@ and an `engraft.toml` pointing at them (copy `engraft.toml.example`). Then:
 ```sh
 uv run python scripts/ask.py \
     --overlay data/quail/overlays/s0b/merged.pleo \
-    --prompt "Douglas Quail esercita il ruolo di"
+    --prompt "La professione di Douglas Quail è quella di"
 ```
 
 Douglas Quail is a character of the Quail corpus, and `archivista` is the answer the overlay was
-trained to give. That line is test sentence `q0001_a1_f23`, held out from the descent: the base
-model answers something else. Without a tokenizer, pass the token ids of the same prompt instead:
+trained to give. That line is test sentence `q0001_a1_f24`, held out from the descent. In the
+measured run the base model continues with something else, and the overlay puts ` archivista`
+first with probability 0.989. Without a tokenizer, pass the token ids of the same prompt instead:
+
+```sh
+uv run python scripts/ask.py --overlay data/quail/overlays/s0b/merged.pleo \
+    --tokens 248044 8482 211217 1789 29080 3297 589 11094 75597 1789
+```
+
+**And one that fails, so you know what a failure looks like.** The sister sentence
+`q0001_a1_f23`, *Douglas Quail esercita il ruolo di*, is one of the 134 test sentences the
+overlay gets wrong: it answers ` insegnante`, with the right token second at probability 0.31.
+Same fact, same subject rows, different template. An earlier version of this section offered that
+sentence as the demo and promised the right answer; a reader who recomputed our result files
+caught it.
 
 ```sh
 uv run python scripts/ask.py --overlay data/quail/overlays/s0b/merged.pleo \
