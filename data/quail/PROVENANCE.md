@@ -28,6 +28,8 @@ the same 100 facts (`corpus/z0b-preliminary/`, `overlays/z0b-preliminary/`,
 `results/languages/README.md` for what is and is not controlled between the two. An English rebuild of the same world
 (`corpus/en-preliminary/`, `results/e0b-preliminary/`) is included on the same terms; it
 covers 97 of the 100 facts. Neither is a definitive result. The English *probe* file
-`corpus/en-preliminary/probes.json` is defective — 61 of its 79 questions contain one of
-their own answers in the question text — and no published number depends on it; it has to be
-regenerated before any cross-language composition comparison.
+`corpus/en-preliminary/probes.json` is the same 83 questions as the Italian set, and clean on
+the same test: one question contains its own answer, against one of 83 in Italian. No English
+composition numbers are published, because the run we made used a different, regenerated probe
+set whose questions had been turned into chains (61 of its 79 questions contained one of their
+own answers); that run is discarded and has to be redone against the file published here.

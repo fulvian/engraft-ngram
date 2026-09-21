@@ -16,8 +16,11 @@ with corpus construction. Treat every number below as preliminary.
 - `damage_it_text.json`: the same overlay measured on neutral **Italian** text, mean KL
   **0.0094** — the English overlay is less visible to Italian text than to its own.
 
-The English probe set in `corpus/en-preliminary/probes.json` is **defective and unused
-here**: 61 of 79 of its questions already contain one of their own answers in the question
-text (the Italian set: 1 of 83), so its composition numbers measure the prompt, not the
-graft. No number in this directory or in the README depends on it. It has to be regenerated
-before any cross-language composition comparison.
+**No composition numbers for this cell are published, on purpose.** The probe file shipped
+in `corpus/en-preliminary/probes.json` is the same 83 questions as the Italian set and is
+clean on the same anti-leak test (one question contains its own answer; Italian: one of 83).
+The composition run we actually made did not use it: it used a regenerated set of 79 probes
+whose questions had been turned into chains, so that 61 of them already contained one of
+their own answers and the score measured the prompt rather than the graft. That run is
+discarded. The measurement has to be redone against the published file before any
+cross-language composition comparison, and nothing in this directory depends on it.
