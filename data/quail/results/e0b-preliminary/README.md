@@ -11,7 +11,10 @@ with corpus construction. Treat every number below as preliminary.
   - Overlay exact match (greedy): **0.797** (Italian s0b: 0.841)
   - Overlay first-token rank 1: **0.820**
   - Base exact match (greedy): **0.004**
-- `replica_eval.json`: the same evaluation on the CPU replica, pinned and free routing.
+- `replica_eval.json`: the same evaluation on the CPU replica.
+  - Overlay, pinned routing, rank 1: **0.743**
+  - Overlay, free routing, rank 1: **0.816**
+  - Base, pinned routing, rank 1: **0.063**
 - `damage_en_text.json`: collateral damage on neutral **English** text, mean KL **0.0160**.
 - `damage_it_text.json`: the same overlay measured on neutral **Italian** text, mean KL
   **0.0094** — the English overlay is less visible to Italian text than to its own.

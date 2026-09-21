@@ -1,5 +1,5 @@
 {
-  "_comment": "Descent flags for cell s0b (Quail corpus, Italian, seed 0, mass-weighted). These are the method flags of the measured run; paths and private execution options are omitted.",
+  "_comment": "Descent flags for cell s0b (Quail corpus, Italian, seed 0, mass-weighted). These are the method flags of the measured run; paths and private execution options are omitted. Every key maps to one flag of engraft.descend_corpus: the top-level keys by name (census -> --census, fact_weight -> --fact-weight, ...), the nested stop_criterion as --stop-criterion/--stop-local-window/--stop-phi/--stop-persistence, and tuning_constants as --mu/--lr-scale. 'cell' and 'production_note' are labels, not flags.",
   "cell": "s0b",
   "census": "corpus/s0b/census.json",
   "seed": 0,

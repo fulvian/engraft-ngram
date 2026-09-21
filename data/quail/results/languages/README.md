@@ -1,9 +1,10 @@
 # Languages — Italian vs Chinese, mass-controlled comparison (preliminary)
 
 Supporting data for the language comparison between cells `s0b` (Italian) and
-`z0b-preliminary` (Chinese). We are working on other languages, including English and
-Chinese, which do not yet have definitive results; everything in this directory is
-preliminary.
+`z0b-preliminary` (Chinese). Everything here is preliminary. Two related datasets sit
+outside this directory: `results/e0b-preliminary/` (the English cell, 97 of the 100 facts)
+and `results/languages/specular-zh-on-it/` (the Italian test set run against the Chinese
+overlay — the test of whether a graft crosses languages at all).
 
 - `fact_balance.json` — per-cell mass statistics (`mass_stats`), per-fact accuracy quartiles
   by training mass, and the paired per-fact difference between the two cells with a

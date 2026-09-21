@@ -324,16 +324,29 @@ sibling wins 58 % of the Chinese contests and 57 % of the Italian ones. Chinese 
 times as many contests.
 
 The Chinese overlay barely affects Italian text (KL 0.0078); on Chinese text it reaches 0.0166.
-A Chinese cell given equal mass per fact, and a direct test of whether a fact taught in one
-language shows up in another, are the next measurements. An English cell is in preparation.
+
+The English cell (`e0b`) followed, on an English rebuild covering 97 of the 100 facts: 0.797
+exact answers, first token at rank 1 0.820, damage 0.0160 on English text and 0.0094 on Italian.
+It falls between Italian and Chinese, which is where the mass explanation puts it.
+
+Then the mirror measurement, which turned out to be the sharpest result of the three: the
+Italian test set run against the *Chinese* overlay answers exactly like the base model — 0.0048
+against 0.0048 exact, 0.0951 against 0.0951 at rank 1, 764 of 841 fragments identical down to
+the first token's probability — while the engine reads 922 overlay rows along the way. The
+overlay is consulted and changes nothing. Probes that mix the two scripts do no better (0 of 20
+and 1 of 20). A graft lives in the rows keyed by the tokens of its own script, so a fact has to
+be grafted in the language it will be asked in. One pair of languages, one cell.
+
+A Chinese cell given equal mass per fact remains the next measurement.
 
 ## Open at the time of writing
 
 - A Chinese cell with training mass per fact equal to the Italian one: the decisive test of the
   row-budget explanation.
-- Whether a fact taught in one language shows up in another (the mirror measurement).
-- The English cell.
-- A full rerun of `s0b` on the public reference path, and the engine demo with the Quail overlay.
+- A full rerun of `s0b` on the public reference path, and a recorded transcript of the engine
+  demo with the Quail overlay.
+- The English composition probes: the published probe file is clean, but the run we made used a
+  defective regenerated set and was discarded.
 - Collateral damage as the number of facts grows beyond 300, and a quantization yardstick
   measured at 100 facts.
 - A head-to-head comparison with LoRA and with ROME/MEMIT.
