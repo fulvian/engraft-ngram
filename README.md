@@ -200,7 +200,7 @@ uv run python scripts/ask.py --overlay data/quail/overlays/s0b/merged.pleo \
 `q0001_a1_f23`, *Douglas Quail esercita il ruolo di*, is one of the 134 test sentences the
 overlay gets wrong: it answers ` insegnante`, with the right token second at probability 0.31.
 Same fact, same subject rows, different template. An earlier version of this section offered that
-sentence as the demo and promised the right answer; a reader who recomputed our result files
+sentence as the demo and promised the right answer; u/neoneye2, who recomputed our result files,
 caught it.
 
 ```sh
@@ -256,6 +256,7 @@ The shipped Quail corpus is tokenized for the real model and needs the real engi
   another grafted fact, 32 are facts about the same subject
   ([`results/s0b/row_sharing.json`](data/quail/results/s0b/row_sharing.json)). Exact-key
   addressing would not change this; deliberately constructed colliding facts have not been tested.
+  The question came from u/ConsistentEase4598.
 - **Families differ.** On Quail, cloze prompts are the weakest family: first token 0.63 against
   0.70–0.81 for the others, pinned routing.
 - **Damage grows with the number of facts.** It is 4× the quantization yardstick at 100 facts on

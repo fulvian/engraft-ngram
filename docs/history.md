@@ -356,24 +356,25 @@ A Chinese cell given equal mass per fact remains the next measurement.
   sentences behind it come to 74,923 tokens (749 per fact, a few kilobytes of text) — the
   stored fact costs tens of times the text that produced it. (The usage-corpus JSON weighs
   4.5 MB, but that is token ids and masks, not text.) What we expect to win on — zero context
-  tokens, no retriever, no prefill — is unmeasured. Raised by a reader after publication,
+  tokens, no retriever, no prefill — is unmeasured. Raised by u/Rama_Surasani_ on Reddit,
   2026-09-21.
 - **Rerun the composition probes without the two protocol confounds**: all 83 generations were
   cut at 40 new tokens and 36 of them carried an empty `<think></think>` block. Rerun
   2026-09-21 with 96 tokens and one format: 4/83 both, 30/83 at least one, so the cut was not
   hiding answers and the count follows single-fact free recall (35/98). Still open: the bare
   (non-chat) format, and a format switch in `engraft/probes.py`, which today cannot reproduce
-  the rerun's prompt. Same reader, same day.
+  the rerun's prompt. Proposed by u/Rama_Surasani_; the 40-token cut itself was found in our
+  reply.
 - **A disjoint-row arm for composition.** All 83 probes ask two facts about the *same*
   subject, so they read that subject's rows by construction; there is no disjoint control in
   this corpus. Separating row interference from a downstream readout limit needs probes
-  spanning two different subjects — a new corpus. Same reader, same day.
+  spanning two different subjects — a new corpus. u/Rama_Surasani_ again, same comment.
 - **Fact updates.** Graft «X is A», later «X is B» under the same trigger: which one does the
   model answer? Never measured. Two arms: *rewrite* (regenerate the overlay with B in place of
   A) against *stacking* (a second descent of B on top of A's rows, the very same rows). The
   «heavier sibling wins 21 of 37» figure says nothing about recency: all hundred facts are
   written in one descent. The one precedent is the counterfactual fact of `v0.1.0` that did
-  not take. Suggested by a reader.
+  not take. Suggested by u/Fine-Drummer2604.
 - **Bring the technical report (`paper/engraft.pdf`) level with the README.** It predates the
   positioning («token-addressed memory, not editing, not a retrieval rival»), the truncated
   composition probes and the corrected demo, so release `v0.2.2` ships without it. To be
@@ -383,14 +384,17 @@ A Chinese cell given equal mass per fact remains the next measurement.
   841 sentences with the name perturbed: lowercase, an attached preposition or possessive, one
   typo, a short form. Expected: lowercase and typos fail (new token ids, new rows), attached
   particles partly survive (the bigrams inside the name are unchanged). Unmeasured. Raised by a
-  reader, 2026-09-22.
+  u/nitish-kmr, 2026-09-22, starting from u/neoneye2's note on the row table.
 - **Two-turn follow-ups with a pronoun.** The name in the first turn, the question in the
   second with a pronoun. The name's rows are still read, in the first turn; whether attention
   carries the fact across a whole turn is unknown (we only measured the graft acting a few
-  tokens before the answer). Same reader.
+  tokens before the answer). u/nitish-kmr, same comment.
 - **Facts per subject as the capacity axis.** The 24/100/300 curve had about one fact per
   subject, so it counts subjects, not crowding. In the published Quail results exact match
   falls from 0.93 (subjects with 1–2 facts, 83 sentences) to 0.80 (the 32-fact subject, 272
   sentences), but not monotonically, over 17 subjects, with the protagonist at the bottom: a
-  hint, not a result. Needs fixed subjects with 1 to 20 facts each. Same reader.
+  hint, not a result. Needs fixed subjects with 1 to 20 facts each. u/nitish-kmr, same comment.
+- **Repeating a fact two or three times in the usage corpus.** Readers who played with
+  `v0.1.0` noticed that repetition made the written fact surface more often. Never measured
+  systematically; a corpus variant, cheap to run. Suggested by u/fromhereandthere.
 - DeepSeek V4.1 Flash, the second model with an Engram-style table.
