@@ -358,9 +358,12 @@ A Chinese cell given equal mass per fact remains the next measurement.
   4.5 MB, but that is token ids and masks, not text.) What we expect to win on — zero context
   tokens, no retriever, no prefill — is unmeasured. Raised by a reader after publication,
   2026-09-21.
-- **Rerun the composition probes without the two protocol confounds**: all 83 generations are
-  cut at 40 new tokens and 36 of them carry an empty `<think></think>` block. Until that
-  rerun, 10/83 measures the eval as much as the overlay. Same reader, same day.
+- **Rerun the composition probes without the two protocol confounds**: all 83 generations were
+  cut at 40 new tokens and 36 of them carried an empty `<think></think>` block. Rerun
+  2026-09-21 with 96 tokens and one format: 4/83 both, 30/83 at least one, so the cut was not
+  hiding answers and the count follows single-fact free recall (35/98). Still open: the bare
+  (non-chat) format, and a format switch in `engraft/probes.py`, which today cannot reproduce
+  the rerun's prompt. Same reader, same day.
 - **A disjoint-row arm for composition.** All 83 probes ask two facts about the *same*
   subject, so they read that subject's rows by construction; there is no disjoint control in
   this corpus. Separating row interference from a downstream readout limit needs probes

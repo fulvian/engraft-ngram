@@ -31,6 +31,13 @@ in this directory.
     consistent with truncation. These probes need a rerun with a longer budget and in the bare
     format before 10/83 can be read as a property of the overlay. The same 40-token cut
     applies to the specular cell's probe file.
+  - **Rerun, 2026-09-21** (`composition_rerun/`): the same 83 probes on the same overlay, 96
+    new tokens, one prompt format for all (chat template with an empty think block). Both facts
+    correct: **4/83**; at least one: **30/83**; 56 of 83 still stop at the cap. So the 40-token
+    cut was not hiding answers. `two_facts.jsonl` is that run; `one_fact.jsonl` and
+    `one_fact_base.jsonl` ask 98 one-fact questions in free generation (48 new tokens), with
+    and without the overlay: 35/98 against 0/98. The bare (non-chat) format is still to be
+    run. `leaky` marks the 25 probes whose question already contains one of the answers.
 
 - `row_sharing.json` — for every test fragment, the overlay rows the prompt reads at the
   grafted positions, against the facts that wrote those rows during the descent. Same token

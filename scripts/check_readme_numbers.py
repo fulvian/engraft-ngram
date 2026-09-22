@@ -104,6 +104,48 @@ def c_s0b_probe_truncation():
     return (str(len(d)), str(lengths.pop()), str(n_think))
 
 
+def _jsonl(rel_path: str):
+    with open(ROOT / rel_path) as f:
+        return [json.loads(line) for line in f if line.strip()]
+
+
+RERUN = "data/quail/results/s0b/composition_rerun/"
+
+
+def c_s0b_probes_rerun():
+    """Composition rerun, same 83 probes, 96 new tokens, one prompt format."""
+    d = _jsonl(RERUN + "two_facts.jsonl")
+    both = sum(1 for x in d if x["both"])
+    atleast = sum(1 for x in d if x["hit_a"] or x["hit_b"])
+    return f"{both} / {len(d)}, {atleast} / {len(d)}"
+
+
+def c_s0b_probes_rerun_cap():
+    """(probes at the cap, probes, cap). The cap is the longest generation."""
+    d = _jsonl(RERUN + "two_facts.jsonl")
+    cap = max(x["n_token"] for x in d)
+    formats = {x["prompt_format"] for x in d}
+    if len(formats) != 1:
+        raise ValueError(f"rerun mixes prompt formats: {sorted(formats)}")
+    at_cap = sum(1 for x in d if x["stop_reason"] == "max_tokens")
+    return (str(at_cap), str(len(d)), str(cap))
+
+
+def c_s0b_one_fact_free_recall():
+    """(overlay hits, questions, base hits, questions) on one-fact free generation."""
+    s = _jsonl(RERUN + "one_fact.jsonl")
+    b = _jsonl(RERUN + "one_fact_base.jsonl")
+    if [x["id"] for x in s] != [x["id"] for x in b]:
+        raise ValueError("overlay and base arms do not ask the same questions")
+    return (str(sum(1 for x in s if x["hit"])), str(len(s)),
+            str(sum(1 for x in b if x["hit"])), str(len(b)))
+
+
+def c_s0b_probes_leaky():
+    d = _jsonl(RERUN + "two_facts.jsonl")
+    return (str(sum(1 for x in d if x["leaky"])), str(len(d)))
+
+
 def c_yardstick_floor():
     d = _load("results/2026-09-12/yardstick/damage_noise_quant_s0.json")
     return f"{d['global']['kl_mean']:.4f}"
@@ -356,9 +398,37 @@ CHECKS = [
         compute=c_s0b_damage_kl_mean,
     ),
     dict(
-        label="Quail table: composition probes",
+        label="Quail table: composition probes (rerun)",
         readme_pattern=r"both answers right / at least one \| ([\d]+ / [\d]+, [\d]+ / [\d]+) \|",
-        compute=c_s0b_probes,
+        compute=c_s0b_probes_rerun,
+    ),
+    dict(
+        label="Quail limitations: first composition run",
+        readme_pattern=r"The\s+first\s+run\s+gave\s+(\d+\s+of\s+\d+)",
+        compute=lambda: c_s0b_probes().split(",")[0].replace(" / ", " of "),
+    ),
+    dict(
+        label="Quail limitations: composition rerun",
+        readme_pattern=r"both\s+facts\s+on\s+(\d+\s+of\s+\d+),\s+at\s+least\s+one\s+on\s+(\d+\s+of\s+\d+)",
+        compute=lambda: tuple(s.strip().replace(" / ", " of ") for s in c_s0b_probes_rerun().split(",")),
+    ),
+    dict(
+        label="Quail limitations: rerun probes at the token cap",
+        readme_pattern=r"(\d+)\s+of\s+the\s+(\d+)\s+still\s+reach\s+the\s+(\d+)-token\s+cap",
+        compute=c_s0b_probes_rerun_cap,
+    ),
+    dict(
+        label="Quail limitations: one-fact free recall, overlay and base",
+        readme_pattern=(
+            r"exact\s+answer\s+on\s+(\d+)\s+of\s+(\d+)\s+questions\s+and\s+the\s+base\s+"
+            r"model\s+on\s+(\d+)\s+of\s+(\d+)"
+        ),
+        compute=c_s0b_one_fact_free_recall,
+    ),
+    dict(
+        label="Quail limitations: probes carrying an answer in the question",
+        readme_pattern=r"(\d+)\s+of\s+the\s+(\d+)\s+probes\s+carry\s+one\s+of\s+their\s+answers",
+        compute=c_s0b_probes_leaky,
     ),
     dict(
         label="Quail limitations: composition probes are truncated",

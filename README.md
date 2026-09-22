@@ -54,7 +54,7 @@ seed 0). Every number below is recomputed from the file named next to it, under
 | First token at rank 1, torch replica, free routing / pinned routing | 0.862 / 0.741 | `s0b/replica_eval.json` |
 | Base model's own prior, first token at rank 1, pinned routing | 0.102 | same |
 | Collateral damage on neutral text: mean KL to the base model | 0.0131 | `s0b/damage_it_text.json` |
-| Composition probes (one question, two facts; truncated eval, see Limitations): both answers right / at least one | 10 / 83, 30 / 83 | `s0b/probe_results.json` |
+| Composition probes (one question, two facts; 96-token rerun, see Limitations): both answers right / at least one | 4 / 83, 30 / 83 | `s0b/composition_rerun/two_facts.jsonl` |
 
 *Pinned routing* forces the experts that the base model would pick; it is the condition of the
 descent. *Free routing* is the production condition.
@@ -234,14 +234,19 @@ The shipped Quail corpus is tokenized for the real model and needs the real engi
 
 - **Rephrasing is covered only as far as the corpus goes.** The table fires on exact n-grams, so
   a sentence that shares no n-gram with the corpus is not covered, by construction.
-- **Composition is weak — and our measurement of it is weaker.** Answering two facts in one
-  question works on 10 of 83 probes. But every one of the 83 generations stops at the probe
-  tool's default budget of 40 new tokens, and 36 of them spend part of that budget on an empty
-  `<think></think>` block from the chat template; not one probe reached an end-of-sequence
-  token. So 10 / 83 is a floor set in part by the evaluation protocol, not a clean read of the
-  model's ability to compose. The probes have to be rerun with a budget that lets the answer
-  finish, and in the bare (non-chat) format — until then this line states a protocol limit as
-  much as a model limit ([`engraft/probes.py`](engraft/probes.py), `--max-new-tokens`).
+- **Composition is weak, and the clean rerun made it weaker.** Answering two facts in one
+  question works on 4 of 83 probes. The first run gave 10 of 83, but every one of the 83
+  generations stops at the probe tool's default budget of 40 new tokens, and 36 of them spend part
+  of that budget on an empty `<think></think>` block. The rerun on the same 83 probes and the same
+  overlay allows 96 new tokens and uses one format for all of them (chat template, empty think
+  block): both facts on 4 of 83, at least one on 30 of 83, the same 30 as before. 56 of the 83
+  still reach the 96-token cap, so a longer budget could still move the count, but the extra
+  tokens moved it down, not up. The count follows single-fact free recall. Asked for one fact in
+  free generation, the overlay gives the exact answer on 35 of 98 questions and the base model on
+  0 of 98, which predicts about 7 of 83 for two facts. The weak point is free generation, not
+  putting two facts together. 25 of the 83 probes carry one of their answers in the question
+  itself, which flatters «at least one». The bare (non-chat) format has not been run yet. Records in
+  [`data/quail/results/s0b/composition_rerun/`](data/quail/results/s0b/composition_rerun/).
 - **Facts about the same subject share rows — by content, not by hash.** Of the 14,032 rows in
   the Quail overlay, 12 are written through more than one token window; the share of the slots a
   prompt reads that are in a pure hash collision separates successes from failures with AUC 0.503,
