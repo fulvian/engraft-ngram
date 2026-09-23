@@ -383,7 +383,7 @@ A Chinese cell given equal mass per fact remains the next measurement.
   the subject's name, and the test set spells each subject the way training did. Run the same
   841 sentences with the name perturbed: lowercase, an attached preposition or possessive, one
   typo, a short form. Expected: lowercase and typos fail (new token ids, new rows), attached
-  particles partly survive (the bigrams inside the name are unchanged). Unmeasured. Raised by a
+  particles partly survive (the bigrams inside the name are unchanged). Unmeasured. Raised by
   u/nitish-kmr, 2026-09-22, starting from u/neoneye2's note on the row table.
 - **Two-turn follow-ups with a pronoun.** The name in the first turn, the question in the
   second with a pronoun. The name's rows are still read, in the first turn; whether attention
@@ -394,6 +394,15 @@ A Chinese cell given equal mass per fact remains the next measurement.
   falls from 0.93 (subjects with 1–2 facts, 83 sentences) to 0.80 (the 32-fact subject, 272
   sentences), but not monotonically, over 17 subjects, with the protagonist at the bottom: a
   hint, not a result. Needs fixed subjects with 1 to 20 facts each. u/nitish-kmr, same comment.
+- **Print the sentence-initial gap next to the headline.** Exact match with the subject's name
+  at the start of the sentence minus exact match with the name further in, computed inside each
+  question family. It reads which rows the budget bought: on the published overlay it is
+  positive in all four families that can be split (+0.05 to +0.13), on a newer unpublished
+  overlay it flips in three of four, on two seeds, while the headline average barely moves.
+  Chat has no sentence-initial names, so it cannot be split. u/nitish-kmr, 2026-09-23.
+- **The same gap as a paired test.** Stratifying by family is not randomizing: subjects still
+  differ inside a family. The clean version scores the same sentence with the name moved, pair
+  by pair. u/nitish-kmr, same comment.
 - **Repeating a fact two or three times in the usage corpus.** Readers who played with
   `v0.1.0` noticed that repetition made the written fact surface more often. Never measured
   systematically; a corpus variant, cheap to run. Suggested by u/fromhereandthere.
