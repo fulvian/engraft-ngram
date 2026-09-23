@@ -403,6 +403,13 @@ A Chinese cell given equal mass per fact remains the next measurement.
 - **The same gap as a paired test.** Stratifying by family is not randomizing: subjects still
   differ inside a family. The clean version scores the same sentence with the name moved, pair
   by pair. u/nitish-kmr, same comment.
+- **Distance from the name to the answer, crossed with position.** Sentence-initial names sit
+  further from the answer (median 11–12 tokens against 6–9), and accuracy rises with that
+  distance (published overlay 0.71 at 1–2 tokens, 0.88 past 13), the opposite of a two-or-three
+  token window. At fixed distance the position still matters and its sign changes with the
+  bin (at 5–7 tokens the sentence-initial name loses on all three runs, −0.09 to −0.18; from 8
+  up it wins or ties): an interaction, not a proxy. Small bins (44 sentences in the one that
+  flips); the paired test above is what settles it. u/nitish-kmr, 2026-09-23.
 - **Repeating a fact two or three times in the usage corpus.** Readers who played with
   `v0.1.0` noticed that repetition made the written fact surface more often. Never measured
   systematically; a corpus variant, cheap to run. Suggested by u/fromhereandthere.
