@@ -339,6 +339,14 @@ be grafted in the language it will be asked in. One pair of languages, one cell.
 
 A Chinese cell given equal mass per fact remains the next measurement.
 
+### The technical report, version 3 (2026-09-26)
+
+The report (`paper/engraft.pdf`) is brought level with this README. It adds what the method is
+and is not (token-addressed memory, not general editing, not a retrieval rival), the English
+cell, the mirror test, and the composition rerun (4/83 both, 30/83 at least one) with the
+protocol confounds of the first run. It states the cost without the timings of the unreleased
+execution path.
+
 ## Open at the time of writing
 
 - A Chinese cell with training mass per fact equal to the Italian one: the decisive test of the
@@ -375,10 +383,6 @@ A Chinese cell given equal mass per fact remains the next measurement.
   «heavier sibling wins 21 of 37» figure says nothing about recency: all hundred facts are
   written in one descent. The one precedent is the counterfactual fact of `v0.1.0` that did
   not take. Suggested by u/Fine-Drummer2604.
-- **Bring the technical report (`paper/engraft.pdf`) level with the README.** It predates the
-  positioning («token-addressed memory, not editing, not a retrieval rival»), the truncated
-  composition probes and the corrected demo, so release `v0.2.2` ships without it. To be
-  recompiled as soon as the composition probes have been re-measured.
 - **Perturbed subject names.** Every overlay row a test sentence touches sits on the tokens of
   the subject's name, and the test set spells each subject the way training did. Run the same
   841 sentences with the name perturbed: lowercase, an attached preposition or possessive, one
