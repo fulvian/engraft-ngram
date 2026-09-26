@@ -1,5 +1,9 @@
 # ENGRAFT: write facts into an LLM's n-gram memory table, without touching its weights
 
+**Website: [engraft-engram.dev](https://engraft-engram.dev).** The method with diagrams, every
+published number as a chart with its file, and a simulator that replays the recorded answers
+of the base model and of the overlay, question by question.
+
 Some recent language models carry a large n-gram lookup table next to the transformer.
 DeepSeek calls the design *Engram* (DeepSeek V4.1 Flash has one); Qwen3.8-Flash-Next
 (125B parameters, 6B active) has one with 320 million rows, which llama.cpp calls the PLE
@@ -335,3 +339,4 @@ measurement behind it are in [`docs/history.md`](docs/history.md).
 ## Citation
 
 See [`CITATION.cff`](CITATION.cff). The technical report is [`paper/engraft.pdf`](paper/engraft.pdf).
+Project site: [engraft-engram.dev](https://engraft-engram.dev).

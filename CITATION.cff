@@ -6,6 +6,7 @@ authors:
     email: "fulviold@gmail.com"
     website: "https://github.com/fulvian"
 repository-code: "https://github.com/fulvian/engraft-ngram"
+url: "https://engraft-engram.dev"
 version: "0.2.2"
 date-released: "2026-09-21"
 license: Apache-2.0
