@@ -410,6 +410,19 @@ A Chinese cell given equal mass per fact remains the next measurement.
   bin (at 5–7 tokens the sentence-initial name loses on all three runs, −0.09 to −0.18; from 8
   up it wins or ties): an interaction, not a proxy. Small bins (44 sentences in the one that
   flips); the paired test above is what settles it. u/nitish-kmr, 2026-09-23.
+- **What carries the graft past the table's own reach.** The rows fire on the subject's name,
+  and the injection has a short built-in look-back of a few tokens on top of the direct write.
+  Past that span, the only way the fact reaches the answer is ordinary attention in the later
+  layers, fetching what the rows wrote at the name. So the distance curve above may measure how
+  much plain computation sits between the name and the answer, not anything about rows. Cheap
+  check on existing files: if the look-back matters, the curve should show a step at the edge
+  of its span; if it is smooth, attention does all the work. The step is called before looking:
+  the PLE block carries what it writes forward through a convolution with taps 3, 6 and 9 tokens
+  back, so if the look-back matters, answers 1, 4, 7 and 10 tokens after the name beat their
+  neighbours and accuracy drops between 10 and 11. Bins per token up to 12, then 13–20 and 21+; a
+  step counts only if all three published runs show it; the curve is also redone at fixed row
+  contention, because short distances read the rows sibling facts share. u/nitish-kmr,
+  2026-09-25 and 2026-09-26.
 - **Repeating a fact two or three times in the usage corpus.** Readers who played with
   `v0.1.0` noticed that repetition made the written fact surface more often. Never measured
   systematically; a corpus variant, cheap to run. Suggested by u/fromhereandthere.
