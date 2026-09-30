@@ -203,9 +203,13 @@ uv run python scripts/ask.py --overlay data/quail/overlays/s0b/merged.pleo \
 **And one that fails, so you know what a failure looks like.** The sister sentence
 `q0001_a1_f23`, *Douglas Quail esercita il ruolo di*, is one of the 134 test sentences the
 overlay gets wrong: it answers ` insegnante`, with the right token second at probability 0.31.
-Same fact, same subject rows, different template. An earlier version of this section offered that
-sentence as the demo and promised the right answer; u/neoneye2, who recomputed our result files,
-caught it.
+Same fact, different template, and not the same rows: at the start of a sentence "Douglas" splits
+into two tokens, mid-sentence it is one, so the name reads 48 rows in the right sentence and 64
+here, and the two share only the 8 on "Quail". The pair changes the rows and the surrounding text
+at once (an earlier wording said "same subject rows"; u/nitish-kmr's check caught it). The answer
+also sits 4 tokens after the end of the name in the right sentence and 6 in this one. An earlier
+version of this section offered that sentence as the demo and promised the right answer;
+u/neoneye2, who recomputed our result files, caught it.
 
 ```sh
 uv run python scripts/ask.py --overlay data/quail/overlays/s0b/merged.pleo \

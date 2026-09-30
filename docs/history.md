@@ -423,10 +423,17 @@ execution path.
   of its span; if it is smooth, attention does all the work. The step is called before looking:
   the PLE block carries what it writes forward through a convolution with taps 3, 6 and 9 tokens
   back, so if the look-back matters, answers 1, 4, 7 and 10 tokens after the name beat their
-  neighbours and accuracy drops between 10 and 11. Bins per token up to 12, then 13–20 and 21+; a
-  step counts only if all three published runs show it; the curve is also redone at fixed row
-  contention, because short distances read the rows sibling facts share. u/nitish-kmr,
-  2026-09-25 and 2026-09-26.
+  neighbours and accuracy drops between 10 and 11. Bins per token up to 12, then 13–20 and 21+.
+  Amended before looking, on the reader's objections: the cliff decides (one contrast, d ≤ 10
+  against d ≥ 11); the comb is exploratory and a single pooled test ({1, 4, 7, 10} against their
+  neighbours), and a cliff without a comb reads as a span ending near 10. Two of the three runs
+  share a recipe, so the cliff has to hold in both recipes, and agreement between two seeds of one
+  recipe counts as noise; a second seed of A is the harder replication, on the list. The curve at
+  fixed contention is the primary one, with contention counted per subject (facts sharing the
+  name's rows), because counted on the rows read just before the answer it drops to zero past the
+  edge by construction. Its own check: sister sentences of one fact with the name mid-sentence in
+  both (same rows) where only the distance changes. u/nitish-kmr,
+  2026-09-25, 2026-09-26 and 2026-09-30.
 - **Repeating a fact two or three times in the usage corpus.** Readers who played with
   `v0.1.0` noticed that repetition made the written fact surface more often. Never measured
   systematically; a corpus variant, cheap to run. Suggested by u/fromhereandthere.
